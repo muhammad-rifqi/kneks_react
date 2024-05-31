@@ -2,19 +2,19 @@
 // import { Link } from 'react-router-dom';
 import React from 'react';
 
-import Section1 from '../home/Section1';
-import Section2 from '../home/Section2';
-import Section3 from '../home/Section3';
-import Section4 from '../home/Section4';
-import Section5 from '../home/Section5';
-import Section6 from '../home/Section6';
-import Section7 from '../home/Section7';
-import Section8 from '../home/Section8';
-import Section9 from '../home/Section9';
-import Section10 from '../home/Section10';
-import Section11 from '../home/Section11';
-import Section12 from '../home/Section12';
-import Section13 from '../home/Section13';
+import Section1 from '../home/component/Section1';
+import Section2 from '../home/component/Section2';
+import Section3 from '../home/component/Section3';
+import Section4 from '../home/component/Section4';
+import Section5 from '../home/component/Section5';
+import Section6 from '../home/component/Section6';
+import Section7 from '../home/component/Section7';
+import Section8 from '../home/component/Section8';
+import Section9 from '../home/component/Section9';
+import Section10 from '../home/component/Section10';
+import Section11 from '../home/component/Section11';
+import Section12 from '../home/component/Section12';
+import Section13 from '../home/component/Section13';
 
 
 const Home = () => {
