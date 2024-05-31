@@ -4,7 +4,7 @@ const Section1 = () => {
         <section className="main-slider">
             <div className="main-slider-swiper owl-carousel owl-theme">
                 <div className="item">
-                    <div className="item-slider-bg" style="background-image: url(%PUBLIC_URL%/assets/image/bg/slider-bg-1.png)"></div>
+                    <div className="item-slider-bg" style={{backgroundImage: `url("%PUBLIC_URL%/assets/image/bg/slider-bg-1.png")`}}></div>
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
@@ -18,7 +18,7 @@ const Section1 = () => {
                     </div>
                 </div>
                 <div className="item">
-                    <div className="item-slider-bg" style="background-image: url(%PUBLIC_URL%/assets/image/bg/slider-two-bg-1.png)"></div>
+                    <div className="item-slider-bg" style={{backgroundImage: `url("%PUBLIC_URL%/assets/image/bg/slider-two-bg-1.png")`}}></div>
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">

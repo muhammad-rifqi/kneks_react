@@ -79,7 +79,7 @@ try {
 	$mail->Body .= 'message: ' . "<br>" . $message;
 
 	$mail->send();
-	echo "<div class='inner success'><p class='success'>Thanks for contacting us. We will contact you ASAP!</p></div><!-- /.inner -->";
+	echo "<div className='inner success'><p className='success'>Thanks for contacting us. We will contact you ASAP!</p></div><!-- /.inner -->";
 } catch (Exception $e) {
-	echo "<div class='inner error'><p class='error'>Message could not be sent. Mailer Error: {$mail->ErrorInfo}</p></div><!-- /.inner -->";
+	echo "<div className='inner error'><p className='error'>Message could not be sent. Mailer Error: {$mail->ErrorInfo}</p></div><!-- /.inner -->";
 }

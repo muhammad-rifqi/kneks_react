@@ -6,41 +6,41 @@ const Header = () => {
       <div id="pre-loader">
         <div id="loader-logo"></div>
         <div id="loader-circle"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
+        <div className="loader-section section-left"></div>
+        <div className="loader-section section-right"></div>
       </div>
-      <header class="header">
-        <div class="topbar">
-          <div class="topbar-inner">
-            <div class="topbar-left">
-              <div class="topbar-socials">
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <header className="header">
+        <div className="topbar">
+          <div className="topbar-inner">
+            <div className="topbar-left">
+              <div className="topbar-socials">
+                <a href="#"><i className="fa-brands fa-twitter"></i></a>
+                <a href="#"><i className="fa-brands fa-facebook"></i></a>
+                <a href="#"><i className="fa-brands fa-pinterest-p"></i></a>
+                <a href="#"><i className="fa-brands fa-instagram"></i></a>
               </div>
-              <div class="topbar-info">
+              <div className="topbar-info">
                 <ul>
                   <li>
-                    <div class="topbar-icon">
-                      <i class="fa-solid fa-envelope"></i>
+                    <div className="topbar-icon">
+                      <i className="fa-solid fa-envelope"></i>
                     </div>
-                    <div class="topbar-text">
+                    <div className="topbar-text">
                       <a href="mailto:needhelp@company.com">needhelp@company.com</a>
                     </div>
                   </li>
                   <li>
-                    <div class="topbar-icon">
-                      <i class="fa-solid fa-clock"></i>
+                    <div className="topbar-icon">
+                      <i className="fa-solid fa-clock"></i>
                     </div>
-                    <div class="topbar-text">
+                    <div className="topbar-text">
                       <span>Open Hours: Mon - Fri 8.00 am - 6.00 pm</span>
                     </div>
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="topbar-right">
+            <div className="topbar-right">
               <ul>
                 <li><a href="department-details.html">Council</a></li>
                 <li><a href="departments.html">Government</a></li>
@@ -49,24 +49,24 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div class="main-menu sticky-header">
-          <div class="main-menu-inner">
-            <div class="main-menu-left">
-              <div class="main-menu-logo">
+        <div className="main-menu sticky-header">
+          <div className="main-menu-inner">
+            <div className="main-menu-left">
+              <div className="main-menu-logo">
                 <a href="index.html"><img src="/assets/image/logo.png" alt="img-1" width="140" /></a>
               </div>
-              <div class="navigation">
-                <ul class="main-menu-list list-unstyled">
-                  <li class="active has-dropdown">
+              <div className="navigation">
+                <ul className="main-menu-list list-unstyled">
+                  <li className="active has-dropdown">
                     <a href="#">Home</a>
-                    <ul class="list-unstyled">
+                    <ul className="list-unstyled">
                       <li><a href="index.html">Home 1</a></li>
                       <li><a href="index-2.html">Home 2</a></li>
                     </ul>
                   </li>
-                  <li class="has-dropdown">
+                  <li className="has-dropdown">
                     <a href="#">Pages</a>
-                    <ul class="list-unstyled">
+                    <ul className="list-unstyled">
                       <li><a href="about.html">About</a></li>
                       <li><a href="team.html">Team</a></li>
                       <li><a href="team-details.html">Team Details</a></li>
@@ -76,30 +76,30 @@ const Header = () => {
                       <li><a href="cause-details.html">Cause Details</a></li>
                     </ul>
                   </li>
-                  <li class="has-dropdown">
+                  <li className="has-dropdown">
                     <a href="#">Services</a>
-                    <ul class="list-unstyled">
+                    <ul className="list-unstyled">
                       <li><a href="services.html">Services</a></li>
                       <li><a href="service-details.html">Service Details</a></li>
                     </ul>
                   </li>
-                  <li class="has-dropdown">
+                  <li className="has-dropdown">
                     <a href="#">Departments</a>
-                    <ul class="list-unstyled">
+                    <ul className="list-unstyled">
                       <li><a href="departments.html">Departments</a></li>
                       <li><a href="department-details.html">Department Details</a></li>
                     </ul>
                   </li>
-                  <li class="has-dropdown">
+                  <li className="has-dropdown">
                     <a href="#">Events</a>
-                    <ul class="list-unstyled">
+                    <ul className="list-unstyled">
                       <li><a href="events.html">Events</a></li>
                       <li><a href="event-details.html">Event Details</a></li>
                     </ul>
                   </li>
-                  <li class="has-dropdown">
+                  <li className="has-dropdown">
                     <a href="#">News</a>
-                    <ul class="list-unstyled">
+                    <ul className="list-unstyled">
                       <li><a href="news.html">News</a></li>
                       <li><a href="news-details.html">News Details</a></li>
                     </ul>
@@ -109,19 +109,19 @@ const Header = () => {
                 </ul>
               </div>
             </div>
-            <div class="main-menu-right">
-              <div class="mobile-menu-button mobile-nav-toggler">
+            <div className="main-menu-right">
+              <div className="mobile-menu-button mobile-nav-toggler">
                 <span></span>
                 <span></span>
                 <span></span>
               </div>
-              <div class="search-box">
-                <a href="#" class="search-toggler">
-                  <i class="flaticon-search-interface-symbol"></i>
+              <div className="search-box">
+                <a href="#" className="search-toggler">
+                  <i className="flaticon-search-interface-symbol"></i>
                 </a>
               </div>
-              <div class="main-menu-right-button">
-                <a href="contact.html" class="btn btn-primary">Report Issue</a>
+              <div className="main-menu-right-button">
+                <a href="contact.html" className="btn btn-primary">Report Issue</a>
               </div>
             </div>
           </div>

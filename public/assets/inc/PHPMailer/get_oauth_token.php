@@ -7,7 +7,7 @@
  * @see https://github.com/PHPMailer/PHPMailer/ The PHPMailer GitHub project
  * @author Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
  * @author Jim Jagielski (jimjag) <jimjag@gmail.com>
- * @author Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
+ * @author Andy Prevost (codeworxtech) <codeworxtech@users.sourcehtmlForge.net>
  * @author Brent R. Matzelle (original founder)
  * @copyright 2012 - 2020 Marcus Bointon
  * @copyright 2010 - 2012 Jim Jagielski
@@ -15,7 +15,7 @@
  * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
  * @note This program is distributed in the hope that it will be useful - WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE.
+ * FITNESS htmlFor A PARTICULAR PURPOSE.
  */
 
 /**
@@ -33,7 +33,7 @@
 namespace PHPMailer\PHPMailer;
 
 /**
- * Aliases for League Provider Classes
+ * Aliases htmlFor League Provider Classes
  * Make sure you have added these to your composer.json and run `composer install`
  * Plenty to choose from here:
  * @see http://oauth2-client.thephpleague.com/providers/thirdparty/
@@ -49,21 +49,21 @@ if (!isset($_GET['code']) && !isset($_POST['provider'])) {
     ?>
 <html>
 <body>
-<form method="post">
+<htmlForm method="post">
     <h1>Select Provider</h1>
     <input type="radio" name="provider" value="Google" id="providerGoogle">
-    <label for="providerGoogle">Google</label><br>
+    <label htmlFor="providerGoogle">Google</label><br>
     <input type="radio" name="provider" value="Yahoo" id="providerYahoo">
-    <label for="providerYahoo">Yahoo</label><br>
+    <label htmlFor="providerYahoo">Yahoo</label><br>
     <input type="radio" name="provider" value="Microsoft" id="providerMicrosoft">
-    <label for="providerMicrosoft">Microsoft</label><br>
+    <label htmlFor="providerMicrosoft">Microsoft</label><br>
     <h1>Enter id and secret</h1>
     <p>These details are obtained by setting up an app in your provider's developer console.
     </p>
     <p>ClientId: <input type="text" name="clientId"><p>
     <p>ClientSecret: <input type="text" name="clientSecret"></p>
     <input type="submit" value="Continue">
-</form>
+</htmlForm>
 </body>
 </html>
     <?php
@@ -91,7 +91,7 @@ if (array_key_exists('provider', $_POST)) {
     $clientSecret = $_SESSION['clientSecret'];
 }
 
-//If you don't want to use the built-in form, set your client id and secret here
+//If you don't want to use the built-in htmlForm, set your client id and secret here
 //$clientId = 'RANDOMCHARS-----duv1n2.apps.googleusercontent.com';
 //$clientSecret = 'RANDOMCHARS-----lGyjPcRtvP';
 

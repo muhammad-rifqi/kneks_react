@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import React, { useEffect, useState } from 'react';
+// import { Link } from 'react-router-dom';
+import React from 'react';
+
 import Section1 from '../home/Section1';
 import Section2 from '../home/Section2';
 import Section3 from '../home/Section3';
@@ -18,13 +20,14 @@ import Section13 from '../home/Section13';
 const Home = () => {
 
   return (
-<div class="page-wrapper">
+<div className="page-wrapper">
     <Section1 />
     <Section2 />
     <Section3 />
     <Section4 />
     <Section5 />
     <Section6 />
+    <Section7 />
     <Section8 />
     <Section9 />
     <Section10 />

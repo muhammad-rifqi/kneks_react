@@ -7,7 +7,7 @@ const Section4 = () => {
 					<div className="col-lg-6">
 						<div className="section-title-box">
 							<div className="section-tagline">Government Service</div>
-							<div classNameName="section-title text-white">Explore our Online <br /> Governmet Services <br /> & Resources</div>
+							<div className="section-title text-white">Explore our Online <br /> Governmet Services <br /> & Resources</div>
 								<div className="section-text">
 									<p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis, sit amet mattis magna varius non.</p>
 								</div>
