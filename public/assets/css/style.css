@@ -1255,7 +1255,7 @@ a.search-toggler{
 }
 .department-card{
 	text-align: center;
-	padding: 0px 39px;
+	padding: 0px 10px;
 	position: relative;
 }
 @media (min-width: 1200px) {
