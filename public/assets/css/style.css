@@ -1264,7 +1264,7 @@ a.search-toggler{
 	}
 }
 .department-card-icon{
-	font-size: 35px;
+	font-size: 30px;
 	color: var(--thm-primary);
 	height: 80px;
 	width: 80px;
@@ -1292,7 +1292,7 @@ a.search-toggler{
 }
 .department-card-content h5 > a{
 	color: inherit;
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: 800;
 }
 .department-card-content h5 > a:hover{
@@ -1309,7 +1309,7 @@ a.search-toggler{
 	max-width: 400px;
 	width: 100%;
 	position: relative;
-	font-size: 16px;
+	font-size: 17px;
 	font-weight: 500;
 	height: 50px;
 	outline: 0;
