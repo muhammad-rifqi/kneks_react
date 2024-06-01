@@ -18,7 +18,7 @@ import Section13 from '../component/home/Section13';
 
 
 const Home = () => {
-
+ 
   return (
 <div className="page-wrapper">
     <Section1 />
