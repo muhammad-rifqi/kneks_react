@@ -15,10 +15,10 @@ const Footer = () => {
                   <p>The gowrnx official guide to living, working, visiting and investing in the Texas</p>
                 </div>
                 <div className="footer-widget-socials">
-                  <a href="#"><i className="fa-brands fa-twitter"></i></a>
-                  <a href="#"><i className="fa-brands fa-facebook"></i></a>
-                  <a href="#"><i className="fa-brands fa-pinterest-p"></i></a>
-                  <a href="#"><i className="fa-brands fa-instagram"></i></a>
+                  <a href="/twitter"><i className="fa-brands fa-twitter"></i></a>
+                  <a href="/twitter"><i className="fa-brands fa-facebook"></i></a>
+                  <a href="/twitter"><i className="fa-brands fa-pinterest-p"></i></a>
+                  <a href="/twitter"><i className="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
               <div className="col-lg-3">
@@ -81,7 +81,7 @@ const Footer = () => {
       <div className="mobile-nav-wrapper">
         <div className="mobile-nav-overlay mobile-nav-toggler"></div>
         <div className="mobile-nav-content">
-          <a href="#" className="mobile-nav-close mobile-nav-toggler">
+          <a href="#test" className="mobile-nav-close mobile-nav-toggler">
             <span></span>
             <span></span>
           </a>
@@ -104,10 +104,10 @@ const Footer = () => {
             </li>
           </ul>
           <ul className="mobile-nav-social list-unstyled">
-            <li><a href="#"><i className="fa-brands fa-twitter"></i></a></li>
-            <li><a href="#"><i className="fa-brands fa-facebook"></i></a></li>
-            <li><a href="#"><i className="fa-brands fa-pinterest-p"></i></a></li>
-            <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>
+            <li><a href="/twitter"><i className="fa-brands fa-twitter"></i></a></li>
+            <li><a href="/facebook"><i className="fa-brands fa-facebook"></i></a></li>
+            <li><a href="/pinterest"><i className="fa-brands fa-pinterest-p"></i></a></li>
+            <li><a href="/instagram"><i className="fa-brands fa-instagram"></i></a></li>
           </ul>
         </div>
       </div>
@@ -123,7 +123,7 @@ const Footer = () => {
           </form>
         </div>
       </div>
-      <a href="#" className="scroll-to-top scroll-to-target" data-target="html"><i className="fa-solid fa-arrow-up"></i></a>
+      <a href="#test2" className="scroll-to-top scroll-to-target" data-target="html"><i className="fa-solid fa-arrow-up"></i></a>
     </div>
   )
 

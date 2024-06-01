@@ -60,7 +60,7 @@ const Header = () => {
                   <li className="active"><a href="contact.html">Beranda</a>
                   </li>
                   <li className="has-dropdown">
-                    <a href="#">Profile</a>
+                    <a href="/profile">Profile</a>
                     <ul className="list-unstyled">
                       <li><a href="about.html">Tentang Kami</a></li>
                       <li><a href="team.html">Struktur Organisasi</a></li>
@@ -69,7 +69,7 @@ const Header = () => {
                     </ul>
                   </li>
                   <li className="has-dropdown">
-                    <a href="#">Berita & Kegitan</a>
+                    <a href="/berita">Berita & Kegitan</a>
                     <ul className="list-unstyled">
                       <li><a href="services.html">Siaran Pers</a></li>
                       <li><a href="service-details.html">Liputan Media</a></li>

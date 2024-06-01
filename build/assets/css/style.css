@@ -159,7 +159,7 @@ a{
 }
 .section-title {
 	position: relative;
-	font-size: 50px;
+	font-size: 35px;
 	color: var(--thm-black);
 	margin-bottom: 40px;
 }
@@ -527,12 +527,32 @@ a{
 .topbar-right{
 	padding: 10px 0px;
 }
+.topNav-right{
+	padding: 10px 0px;
+	margin-right: 40px;
+	
+}
+
+@media(max-width: 575px){
+
+	.topNav-right{
+		margin-right: 13px;
+
+	}
+}
 @media(max-width: 1399px){
 	.topbar-right{
 		display: none;
 	}
+	
 }
 .topbar-right ul{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.topNav-right ul{
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
@@ -550,6 +570,19 @@ a{
 }
 .topbar-right li + li:before {
 	content: '/';
+	margin: 0px 10px;
+}
+.topNav-right li{
+	display: inline-block;
+	color: var(--thm-secondary);
+	font-size: 16px;
+}
+
+.topNav-right li a:hover{
+	color: var(--thm-black);
+}
+.topNav-right li + li:before {
+	content: '|';
 	margin: 0px 10px;
 }
 .topbar-one{
@@ -639,7 +672,8 @@ a{
 }
 .main-menu-left{
 	display: flex;
-	flex-grow: 1;
+	/* flex-grow: 1; */
+	
 }
 .main-menu-logo{
 	min-width: 253px;
@@ -820,6 +854,7 @@ a{
 	.main-menu-right{
 		margin-right: 20px;
 	}
+	
 }
 @media (max-width: 250px) {
 	.main-menu-right{
@@ -905,6 +940,7 @@ a.search-toggler{
 	.topbar-one-button{
 		margin-left: 0px;
 	}
+	
 }
 .topbar-one-button .btn-primary{
 	padding: 14px 24px;
@@ -1198,7 +1234,7 @@ a.search-toggler{
 ***********************/
 .department-section{
 	background-image:url("../image/bg/department-bg-1.jpg");
-	padding-bottom: 120px;
+	padding-bottom: 20px;
 	margin-top: -20px;
 }
 .department-section .department-section-inner{
@@ -1632,13 +1668,13 @@ a.search-toggler{
 		padding-bottom: 70px;
 	}
 }
-.about-image {
+/* .about-image {
 	display: inline-flex;
 }
 .about-image .img-one {
 	position: relative;
 	top: -140px;
-}
+} */
 @media (max-width: 1399px) {
 	.about-image .img-one{
 		top: 0px;
@@ -1764,7 +1800,7 @@ a.search-toggler{
 }
 .about-inner{
 	padding-left: 60px;
-	padding-top: 53px;
+	padding-top: 10px;
 }
 @media(max-width: 1399px){
 	.about-inner{
@@ -1790,7 +1826,12 @@ a.search-toggler{
 	margin-bottom: 4px;
 }
 .about-inner .section-title{
-	margin-bottom: 30px;
+	margin-bottom: 10px;
+	
+}
+
+.about-inner p{
+	text-align: justify;
 }
 .about-card{
 	margin-bottom: 36px;
