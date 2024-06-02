@@ -20,22 +20,22 @@ import Section13 from '../component/home/Section13';
 const Home = () => {
 
   return (
-<div className="page-wrapper">
-    <Section1 />
-    <Section2 />
-    <Section3 />
-    <Section4 />
-    <Section5 />
-    <Section6 />
-    <Section7 />
-    <Section8 />
-    <Section9 />
-    <Section10 />
-    <Section11 />
-    <Section12 />
-    <Section13 />
-</div>
-  
+    <div className="page-wrapper">
+      <Section1 />
+      <Section2 />
+      <Section3 />
+      <Section4 />
+      <Section5 />
+      <Section6 />
+      <Section7 />
+      <Section8 />
+      <Section9 />
+      <Section10 />
+      <Section11 />
+      <Section12 />
+      <Section13 />
+    </div>
+
   )
 }
 export default Home;

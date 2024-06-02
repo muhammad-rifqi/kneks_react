@@ -96,9 +96,6 @@ const Header = () => {
                 <span></span>
                 <span></span>
               </div>
-
-
-
             </div>
           </div>
         </div>
