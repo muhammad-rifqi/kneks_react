@@ -15,7 +15,7 @@ import Section10 from '../component/home/Section10';
 import Section11 from '../component/home/Section11';
 import Section12 from '../component/home/Section12';
 import Section13 from '../component/home/Section13';
-import Section14 from '../component/home/Section14';
+// import Section14 from '../component/home/Section14';
 
 
 const Home = () => {
@@ -25,7 +25,7 @@ const Home = () => {
       <Section1 />
       <Section2 />
       <Section3 />
-      <Section14 />
+      {/* <Section14 /> */}
       <Section5 />
       <Section12 />
       <Section4 />
