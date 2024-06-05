@@ -1669,13 +1669,13 @@ a.search-toggler{
 		padding-bottom: 70px;
 	}
 }
-/* .about-image {
+.about-image {
 	display: inline-flex;
 }
 .about-image .img-one {
 	position: relative;
 	top: -140px;
-} */
+}
 @media (max-width: 1399px) {
 	.about-image .img-one{
 		top: 0px;
