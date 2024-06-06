@@ -2606,8 +2606,15 @@ a.search-toggler{
 /***********************
 * Funfact
 ***********************/
+
+.funfact-box .section-title {
+	position: relative;
+	font-size: 35px;
+	color: var(--thm-white);
+	margin-bottom: 80px;
+}
 .funfact-section {
-	padding-top: 120px;
+	padding-top: 50px;
 	padding-bottom: 111px;
 	background-color: var(--thm-primary);
 	background-image: url(../image/bg/funfact-bg-1.png);
