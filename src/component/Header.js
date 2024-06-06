@@ -69,6 +69,16 @@ const Header = () => {
                     </ul>
                   </li>
                   <li className="has-dropdown">
+                    <a href="#">Direktorat</a>
+                    <ul className="list-unstyled">
+                      <li><a href="services.html">Industri Produk Halal</a></li>
+                      <li><a href="service-details.html">Jasa Keuangan Syariah</a></li>
+                      <li><a href="service-details.html">Keuangan Sosial Syariah</a></li>
+                      <li><a href="service-details.html">Bisnis dan Kewirausahaan Syariah</a></li>
+                      <li><a href="service-details.html">Infrastruktur Ekosistem Syariah</a></li>
+                    </ul>
+                  </li>
+                  <li className="has-dropdown">
                     <a href="#">Berita & Kegitan</a>
                     <ul className="list-unstyled">
                       <li><a href="services.html">Siaran Pers</a></li>

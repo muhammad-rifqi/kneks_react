@@ -5,7 +5,7 @@ const Section5 = () => {
 			<div className="container">
 				<div className="funfact-box">
 					<div className="section-title-box text-center">
-						<h2 className="section-title">Index Keuangan <br />Syariah</h2>
+						<h2 className="section-title">INDEX KEUANGAN <br />SYARIAH</h2>
 					</div>
 				</div>
 				<div className="row">
