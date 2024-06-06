@@ -10,8 +10,8 @@ const Section7 = () => {
 			<div className="container pb-5">
 				<div className="blog-box">
 					<div className="section-title-box text-center">
-						<div className="section-tagline">DIRECT FROM THE BLOG POSTS</div>
-						<h2 className="section-title">Checkout Latest News <br />and Articles</h2>
+						<div className="section-tagline">News</div>
+						<h2 className="section-title">BERITA DAN KEGIATAN</h2>
 					</div>
 				</div>
 				<div className="row row-gutter-y-155">
