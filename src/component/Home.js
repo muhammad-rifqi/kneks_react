@@ -27,11 +27,12 @@ const Home = () => {
       <Section3 />
       {/* <Section14 /> */}
       <Section5 />
+      <Section7 />
       <Section12 />
       <Section4 />
 
       <Section6 />
-      <Section7 />
+
       <Section8 />
       <Section9 />
       <Section10 />
