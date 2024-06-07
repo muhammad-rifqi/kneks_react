@@ -39,6 +39,29 @@ const Home = () => {
       <Section11 />
 
       {/* <Section13 /> */}
+
+      <div className="information-popup active">
+        <div className="information-popup-overlay search-toggler"></div>
+        <div className="information-popup-content">
+
+          <div className="card" style={{ backgroundImage: `url("/assets/image/iklan.svg")` }}>
+            
+            <div className="d-flex flex-row-reverse p-2">
+              <button type="button" className="btn-close mr-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div className="card-body" >
+              
+              
+            </div>
+
+            {/* <div className="card-footer">
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary">Save changes</button>
+            </div> */}
+          </div>
+        </div>
+      </div>
     </div>
 
   )
