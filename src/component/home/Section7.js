@@ -15,7 +15,7 @@ const Section7 = () => {
 					</div>
 				</div>
 				<div className="row row-gutter-y-155">
-					<div className="col-lg-6">
+					<div className="col-lg-4">
 						<div className="blog-card">
 							<div className="blog-card-image">
 								<img src="/assets/image/blog/blog-1.jpg" className="img-fluid" alt="img-22" />
@@ -38,7 +38,30 @@ const Section7 = () => {
 							</div>
 						</div>
 					</div>
-					<div className="col-lg-6">
+					<div className="col-lg-4">
+						<div className="blog-card">
+							<div className="blog-card-image">
+								<img src="/assets/image/blog/blog-1.jpg" className="img-fluid" alt="img-22" />
+								<a href="news-details.html"></a>
+							</div>
+							<div className="blog-card-date">
+								<a href="news-details.html">28SEP</a>
+							</div>
+							<div className="blog-card-content">
+								<div className="blog-card-meta">
+									<span className="author">
+										by<a href="news-details.html">Admin</a>
+									</span>
+									<span className="comment">
+										<a href="news-details.html">02 Comments</a>
+									</span>
+								</div>
+								<h4><a href="news-details.html">Supporting local business to bounce back</a></h4>
+								<p>Tellus amet vel nisi, vel felis morbi sit et. Risus, pulvinar ultricie</p>
+							</div>
+						</div>
+					</div>
+					<div className="col-lg-4">
 						<div className="blog-card">
 							<div className="blog-card-image">
 								<img src="/assets/image/blog/blog-1.jpg" className="img-fluid" alt="img-22" />
