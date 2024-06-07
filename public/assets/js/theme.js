@@ -53,7 +53,15 @@ $(document).ready(function(){
 		if ($(".search-toggler").length) {
 		$(".search-toggler").on("click", function (e) {
 			e.preventDefault();
-			$(".search-popup").toggleClass("active");
+			$(".search-popup").removeClass("active");
+			$(".information-popup").removeClass("active");
+			$(".mobile-nav-wrapper").removeClass("expanded");
+			$("body").toggleClass("locked");
+		});
+		$(".btn-close").on("click", function (e) {
+			e.preventDefault();
+			$(".search-popup").removeClass("active");
+			$(".information-popup").removeClass("active");
 			$(".mobile-nav-wrapper").removeClass("expanded");
 			$("body").toggleClass("locked");
 		});
