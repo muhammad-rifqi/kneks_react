@@ -7,6 +7,7 @@ import Section1 from '../component/home/Section1';
 import Section3 from '../component/home/Section3';
 import Section4 from '../component/home/Section4';
 import Section5 from '../component/home/Section5';
+import News from '../component/home/News';
 import Section6 from '../component/home/Section6';
 import Section7 from '../component/home/Section7';
 import Section8 from '../component/home/Section8';
@@ -27,8 +28,9 @@ const Home = () => {
       <Section3 />
       {/* <Section14 /> */}
       <Section5 />
-      <Section7 />
-      <Section4 />
+      {/* <Section7 /> */}
+      <News />
+      {/* <Section4 /> */}
       {/* <Section12 /> */}
 
       <Section6 />
