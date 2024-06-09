@@ -28,7 +28,7 @@ const News = () => {
 									<div className="card-title-b">
 										<h2 className="title-2">
 											<a href="blog-single.html">Travel is comming
-												<br /> new</a>
+												new</a>
 										</h2>
 									</div>
 									<div className="card-date">
@@ -51,7 +51,7 @@ const News = () => {
 									<div className="card-title-b">
 										<h2 className="title-2">
 											<a href="blog-single.html">Travel is comming
-												<br /> new</a>
+												new</a>
 										</h2>
 									</div>
 									<div className="card-date">
