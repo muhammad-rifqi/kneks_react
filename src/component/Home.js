@@ -28,9 +28,9 @@ const Home = () => {
       <Section3 />
       {/* <Section14 /> */}
       <Section5 />
-      {/* <Section7 /> */}
       <News />
-      {/* <Section4 /> */}
+      <Section7 />
+      <Section4 />
       {/* <Section12 /> */}
 
       <Section6 />
