@@ -46,12 +46,12 @@ const News = () => {
 							<div className="card-overlay">
 								<div className="card-header-b">
 									<div className="card-category-b">
-										<a href="#" className="category-b">Berita Baru</a>
+										<a href="/" className="category-b">Berita Baru</a>
 									</div>
 									<div className="card-title-b">
 										<h2 className="title-2">
 											<a href="blog-single.html">Travel is comming
-												new</a>
+												new sclc delfkelfkel wldkwldkw fkmdfmlemf kfefkelkfle efkefkelfkel</a>
 										</h2>
 									</div>
 									<div className="card-date">

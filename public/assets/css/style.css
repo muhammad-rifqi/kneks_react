@@ -7955,23 +7955,46 @@ label {
 	margin-bottom: 0;
 	padding: .6rem 0;
 	font-size: 1.5rem;
+	white-space: nowrap;
+	width: 500px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@media (max-width: 575px) {
+	.card-header-b .title-2 {
+		font-size: 1rem;
+		white-space: nowrap;
+		width: 300px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 }
 
 @media (min-width: 768px) {
 	.card-header-b .title-2 {
 		font-size: 1rem;
+		white-space: nowrap;
+		width: 300px;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
 
 @media (min-width: 992px) {
 	.card-header-b .title-2 {
 		font-size: 1.6rem;
+		white-space: nowrap;
+		width: 500px;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 }
 
 .card-header-b .title-2 a {
 	color: #ffffff;
 	text-decoration: none;
+
 }
 
 .card-header-b .date-b {
