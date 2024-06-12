@@ -86,7 +86,9 @@ const Header = () => {
                       <li><a href="service-details.html">Info Terkini</a></li>
                     </ul>
                   </li>
-                  <li ><a href="contact.html">One Data Center</a></li>
+                  <li ><a href="contact.html">E-library</a></li>
+                  <li ><a href="contact.html">KDEKS</a></li>
+                  <li ><a href="contact.html">PDES</a></li>
                   <li ><a href="contact.html">Agenda</a></li>
                   <li ><a href="contact.html">Kontak</a>
                   </li>

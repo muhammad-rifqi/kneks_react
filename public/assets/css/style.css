@@ -34,6 +34,18 @@
 * Search-popup
 * Sidebar
 --------------------------------------------------------------*/
+
+.error404{
+	
+	height: 70vh;
+	text-align: center;
+
+	
+}
+
+.error404 h1{
+	font-size: 180px;
+}
 /***********************
 * Variable
 ***********************/
@@ -543,7 +555,7 @@ a {
 * Topbar
 ***********************/
 .header {
-	min-width: 400px;
+	min-width: 300px;
 }
 
 @media(max-width: 1199px) {
@@ -830,11 +842,11 @@ a {
 }
 
 .main-menu-logo {
-	min-width: 253px;
+	min-width: 100px;
 	justify-content: center;
 	display: flex;
 	align-items: center;
-	padding: 33px 20px;
+	padding: 25px 20px;
 	background: #fff;
 }
 
