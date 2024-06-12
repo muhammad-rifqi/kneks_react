@@ -1,7 +1,7 @@
 import React from "react"
 const Section4 = () => {
 	return (
-		<section className="service-section">
+		<section className="service-section funfact-section">
 			<div className="container">
 				<div className="row justify-content-between">
 					<div className="col-lg-6">

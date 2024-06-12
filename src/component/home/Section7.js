@@ -1,7 +1,7 @@
 import React from "react"
 const Section7 = () => {
 	return (
-		<section className="portfolio-section">
+		<section className="portfolio-section ">
 			{/* <div className="section-title-box text-center">
 				<div className="section-tagline">recent work portfolio</div>
 				<h2 className="section-title">BERITA DAN KEGIATAN</h2>
