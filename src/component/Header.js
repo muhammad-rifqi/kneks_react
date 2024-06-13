@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div>
+    <>
       <div id="pre-loader">
         <div id="loader-logo"></div>
         <div id="loader-circle"></div>
@@ -57,40 +57,40 @@ const Header = () => {
               </div>
               <div className="navigation">
                 <ul className="main-menu-list list-unstyled">
-                  <li className="active"><a href="contact.html">Beranda</a>
+                  <li className="active"><a href="/">Beranda</a>
                   </li>
                   <li className="has-dropdown">
                     <a href="#">Profile</a>
                     <ul className="list-unstyled">
-                      <li><a href="about.html">Tentang Kami</a></li>
-                      <li><a href="team.html">Struktur Organisasi</a></li>
-                      <li><a href="team-details.html">Galeri Foto</a></li>
-                      <li><a href="portfolio.html">Galri Video</a></li>
+                      <li><a href="/tentang-kami">Tentang Kami</a></li>
+                      <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
+                      <li><a href="/galeri-foto">Galeri Foto</a></li>
+                      <li><a href="/galeri-Video">Galeri Video</a></li>
                     </ul>
                   </li>
                   <li className="has-dropdown">
                     <a href="#">Direktorat</a>
                     <ul className="list-unstyled">
-                      <li><a href="services.html">Industri Produk Halal</a></li>
-                      <li><a href="service-details.html">Jasa Keuangan Syariah</a></li>
-                      <li><a href="service-details.html">Keuangan Sosial Syariah</a></li>
-                      <li><a href="service-details.html">Bisnis dan Kewirausahaan Syariah</a></li>
-                      <li><a href="service-details.html">Infrastruktur Ekosistem Syariah</a></li>
+                      <li><a href="/industri-produk-halal">Industri Produk Halal</a></li>
+                      <li><a href="/jasa-keuangan-syariah">Jasa Keuangan Syariah</a></li>
+                      <li><a href="/keuangan-sosial-syariah">Keuangan Sosial Syariah</a></li>
+                      <li><a href="/bisnis-dan-kewiraushaan-syariah">Bisnis dan Kewirausahaan Syariah</a></li>
+                      <li><a href="/infrastruktur-ekosistem-syariah">Infrastruktur Ekosistem Syariah</a></li>
                     </ul>
                   </li>
                   <li className="has-dropdown">
                     <a href="#">Berita & Kegitan</a>
                     <ul className="list-unstyled">
-                      <li><a href="services.html">Siaran Pers</a></li>
-                      <li><a href="service-details.html">Liputan Media</a></li>
-                      <li><a href="service-details.html">Info Terkini</a></li>
+                      <li><a href="/siaran-pers">Siaran Pers</a></li>
+                      <li><a href="/liputan-media">Liputan Media</a></li>
+                      <li><a href="/info-terkini">Info Terkini</a></li>
                     </ul>
                   </li>
-                  <li ><a href="contact.html">E-library</a></li>
-                  <li ><a href="contact.html">KDEKS</a></li>
-                  <li ><a href="contact.html">PDES</a></li>
-                  <li ><a href="contact.html">Agenda</a></li>
-                  <li ><a href="contact.html">Kontak</a>
+                  <li ><a href="/e-library">E-library</a></li>
+                  <li ><a href="/kdeks">KDEKS</a></li>
+                  <li ><a href="/pdes">PDES</a></li>
+                  <li ><a href="/agenda">Agenda</a></li>
+                  <li ><a href="/kontak">Kontak</a>
                   </li>
                 </ul>
               </div>
@@ -112,7 +112,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-    </div>
+    </>
   );
 
 }
