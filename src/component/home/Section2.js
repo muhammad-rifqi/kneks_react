@@ -4,7 +4,7 @@ const Section2 = () => {
         <section className="department-section">
             <div className="container">
                 <div className="department-section-inner">
-                    <div className="row row-gutter-y-40">
+                    <div className="row justify-content-center row-gutter-y-40">
                         <div className="col-xl-2 col-lg-4 col-md-6">
                             <div className="department-card">
                                 <div className="department-card-icon">

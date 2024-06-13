@@ -3,6 +3,11 @@ const Section5 = () => {
 	return (
 		<section className="funfact-section">
 			<div className="container">
+				<div className="funfact-box">
+					<div className="section-title-box text-center">
+						<h2 className="section-title">INDEX KEUANGAN <br />SYARIAH</h2>
+					</div>
+				</div>
 				<div className="row">
 					<div className="col-xl-3 col-md-6">
 						<div className="funfact-counter-item">
