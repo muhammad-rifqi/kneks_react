@@ -2,7 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
+
     <div>
+      
       <section className="footer">
         <div className="footer-inner">
           <div className="container">
