@@ -19,7 +19,7 @@ const Section7 = () => {
 							<div className="card-overlay">
 								<div className="card-header-b">
 									<div className="card-category-b">
-										<a href="#" className="category-b">Berita Baru</a>
+										<a href="#test" className="category-b">Berita Baru</a>
 									</div>
 									<div className="card-title-b">
 										<h2 className="title-2">
@@ -42,7 +42,7 @@ const Section7 = () => {
 							<div className="card-overlay">
 								<div className="card-header-b">
 									<div className="card-category-b">
-										<a href="#" className="category-b">Berita Baru</a>
+										<a href="#test" className="category-b">Berita Baru</a>
 									</div>
 									<div className="card-title-b">
 										<h2 className="title-2">
@@ -65,7 +65,7 @@ const Section7 = () => {
 							<div className="card-overlay">
 								<div className="card-header-b">
 									<div className="card-category-b">
-										<a href="#" className="category-b">Berita Baru</a>
+										<a href="#test" className="category-b">Berita Baru</a>
 									</div>
 									<div className="card-title-b">
 										<h2 className="title-2">
