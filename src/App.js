@@ -23,10 +23,6 @@ import Pdes from './component/Pdes';
 import Agenda from './component/Agenda';
 import Kontak from './component/Kontak';
 
-
-
-
-
 function App() {
   
   return (
