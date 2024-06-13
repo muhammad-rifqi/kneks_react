@@ -2,7 +2,7 @@ import React from "react";
 const LiputanMedia = () => {
     return (
         <>
-        <div class="page-wrapper">
+        <div className="page-wrapper">
             
             <section className="page-banner">
                 <div className="container">
