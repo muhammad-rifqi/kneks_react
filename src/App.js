@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './component/Home';
 import Detail from './component/Detail';
@@ -36,27 +37,27 @@ function App() {
         <Route path="/add" element={<Add />}></Route>
         <Route path="/detail/:id" element={<Detail />}></Route>
 
-        <Route exact path="/tentang-kami" element={<TentangKami/>} /> 
-        <Route exact path="/struktur-organisasi" element={<StrukturOrganisasi/>} /> 
-        <Route exact path="/galeri-foto" element={<GaleriFoto/>} /> 
-        <Route exact path="/galeri-video" element={<GaleriVideo/>} /> 
+        <Route path="/tentang-kami" element={<TentangKami/>} /> 
+        <Route path="/struktur-organisasi" element={<StrukturOrganisasi/>} /> 
+        <Route path="/galeri-foto" element={<GaleriFoto/>} /> 
+        <Route path="/galeri-video" element={<GaleriVideo/>} /> 
 
 
-        <Route exact path="/industri-produk-halal" element={<IndustriProdukHalal/>} /> 
-        <Route exact path="/jasa-keuangan-syariah" element={<JasakeuanganSyariah/>} /> 
-        <Route exact path="/keuangan-sosial-syariah" element={<KeuanganSosialSyariah/>} /> 
-        <Route exact path="/bisnis-dan-kewiraushaan-syariah" element={<BisnisDanKewirausahaanSyariah />} /> 
-        <Route exact path="/infrastruktur-ekosistem-syariah" element={<InfrastrukturEkosistemSyariah/>} /> 
+        <Route path="/industri-produk-halal" element={<IndustriProdukHalal/>} /> 
+        <Route path="/jasa-keuangan-syariah" element={<JasakeuanganSyariah/>} /> 
+        <Route path="/keuangan-sosial-syariah" element={<KeuanganSosialSyariah/>} /> 
+        <Route path="/bisnis-dan-kewiraushaan-syariah" element={<BisnisDanKewirausahaanSyariah />} /> 
+        <Route path="/infrastruktur-ekosistem-syariah" element={<InfrastrukturEkosistemSyariah/>} /> 
 
-        <Route exact path="/siaran-pers" element={<SiaranPers/>} /> 
-        <Route exact path="/liputan-media" element={<LiputanMedia/>} /> 
-        <Route exact path="/info-terkini" element={<InfoTerkini/>} /> 
+        <Route path="/siaran-pers" element={<SiaranPers/>} /> 
+        <Route path="/liputan-media" element={<LiputanMedia/>} /> 
+        <Route path="/info-terkini" element={<InfoTerkini/>} /> 
 
-        <Route exact path="/e-library" element={<Elibrary/>} /> 
-        <Route exact path="/kdeks" element={<IndustriProdukHalal/>} /> 
-        <Route exact path="/pdes" element={<Pdes/>} /> 
-        <Route exact path="/agenda" element={<Agenda/>} /> 
-        <Route exact path="/kontak" element={<Kontak/>} /> 
+        <Route path="/e-library" element={<Elibrary/>} /> 
+        <Route path="/kdeks" element={<IndustriProdukHalal/>} /> 
+        <Route path="/pdes" element={<Pdes/>} /> 
+        <Route path="/agenda" element={<Agenda/>} /> 
+        <Route path="/kontak" element={<Kontak/>} /> 
         <Route path="*" element={<Error404/>} /> 
       </Routes>
       <Footer />
