@@ -69,7 +69,7 @@ const Header = () => {
                     </ul>
                   </li>
                   <li className="has-dropdown">
-                    <a href="#test">Direktorat</a>
+                    <a href="#test">Direktorat</a> 
                     <ul className="list-unstyled">
                       <li><a href="/industri-produk-halal">Industri Produk Halal</a></li>
                       <li><a href="/jasa-keuangan-syariah">Jasa Keuangan Syariah</a></li>
