@@ -20,7 +20,7 @@ import Section12 from '../component/home/Section12';
 
 
 const Home = () => {
-
+ 
   return (
     <div className="page-wrapper">
       <Section1 />
@@ -50,7 +50,7 @@ const Home = () => {
 
           </div>
 
-          <img className='img-fluid img-thumbnail' src='/assets/image/iklan.svg' alt='iklan' />
+          <img className='img-fluid img-thumbnail' src='/assets/image/Iklan.svg' alt='Iklan' />
           <div className='selengkapnya'>
             <a href="/" className="btn btn-primary">Lihat Selengkap</a>
           </div>
