@@ -412,7 +412,7 @@ a {
 	height: 9.375em;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-image: url("http://imgh.us/loading_4.svg");
+	background-image: url("https://imgh.us/loading_4.svg");
 	z-index: 1001;
 }
 
@@ -3982,7 +3982,7 @@ a.search-toggler {
 
 @media only screen and (max-width: 991px) {
 	.cta-two-form-group {
-		width: 100%%
+		width: 100%
 	}
 }
 
