@@ -29,7 +29,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/add" element={<Add />}></Route>
         <Route path="/detail/:id" element={<Detail />}></Route>
 
