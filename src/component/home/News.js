@@ -2,10 +2,7 @@ import React from "react"
 const News = () => {
 	return (
 		<section className="news-section">
-			{/* <div className="section-title-box text-center">
-				<div className="section-tagline">recent work portfolio</div>
-				<h2 className="section-title">BERITA DAN KEGIATAN</h2>
-			</div> */}
+		
 
 			<div className="container">
 				<div className="blog-box">
@@ -41,7 +38,7 @@ const News = () => {
 					<div className="col-md-6 col-lg-6">
 						<div className="card-box-b card-shadow news-box">
 							<div className="img-box-b">
-								<img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+								<img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
 							</div>
 							<div className="card-overlay">
 								<div className="card-header-b">
