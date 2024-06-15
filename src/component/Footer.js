@@ -4,7 +4,7 @@ const Footer = () => {
   return (
 
     <div>
-      
+
       <section className="footer">
         <div className="footer-inner">
           <div className="container">
@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
         <div className="bottom-footer">
           <div className="conatiner">
-            <p>© Copyright 2023 by Company.com</p>
+            <p>© Copyright {(new Date().getFullYear())} by KNEKS</p>
           </div>
         </div>
       </section>
