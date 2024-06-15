@@ -35,17 +35,18 @@
 * Sidebar
 --------------------------------------------------------------*/
 
-.error404{
-	
+.error404 {
+
 	height: 70vh;
 	text-align: center;
 
-	
+
 }
 
-.error404 h1{
+.error404 h1 {
 	font-size: 180px;
 }
+
 /***********************
 * Variable
 ***********************/
@@ -2637,6 +2638,7 @@ a.search-toggler {
 	color: var(--thm-secondary);
 	margin-bottom: 110px;
 }
+
 .service-section .section-text-b p {
 	color: var(--thm-white);
 	margin-bottom: 110px;
@@ -2792,6 +2794,7 @@ a.search-toggler {
 .service-card .section-text {
 	margin-bottom: 40px;
 }
+
 .service-card .section-text-b {
 	margin-bottom: 40px;
 }
@@ -3506,6 +3509,20 @@ a.search-toggler {
 
 .portfolio-card-title a:hover {
 	color: var(--thm-black);
+}
+
+.portfolio-content .card-header-b {
+	padding: 1rem;
+	color: #ffffff;
+	position: absolute;
+
+	z-index: 2;
+}
+
+@media (min-width: 992px) {
+	.portfolio-content .card-header-b {
+		bottom: 0px;
+	}
 }
 
 .portfolio-content {
@@ -7831,7 +7848,7 @@ label {
 
 }
 
-.news-section img{
+.news-section img {
 	height: 400px;
 	object-fit: cover;
 }
@@ -8039,5 +8056,84 @@ label {
 @media (min-width: 992px) {
 	.card-header-b .date-b {
 		font-size: 1rem;
+	}
+}
+
+
+.foto-section {
+	padding-top: 120px;
+	padding-bottom: 120px;
+
+}
+
+.foto-section img {
+	height: 260px;
+	object-fit: cover;
+}
+
+@media(max-width: 1199px) {
+	.foto-section {
+		padding: 70px 0px;
+	}
+}
+
+.foto-section .card-header-b {
+	padding: 1rem;
+	color: #ffffff;
+	position: absolute;
+
+	z-index: 2;
+}
+
+@media (min-width: 992px) {
+	.foto-section .card-header-b {
+		bottom: 0px;
+	}
+}
+
+.video-section {
+	padding-top: 120px;
+	padding-bottom: 120px;
+
+}
+
+.video-section img {
+	height: 260px;
+	object-fit: cover;
+}
+
+.video-section .video-btn {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.video-section .video-btn img {
+	height: 50px;
+	width: 50px;
+
+}
+
+@media(max-width: 1199px) {
+	.video-section {
+		padding: 70px 0px;
+	}
+}
+
+.video-section .card-header-b {
+	padding: 1rem;
+	color: #ffffff;
+	position: absolute;
+	z-index: 2;
+}
+
+@media (min-width: 992px) {
+	.video-section .card-header-b {
+		bottom: 0px;
 	}
 }
