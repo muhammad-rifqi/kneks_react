@@ -11,11 +11,9 @@ const Footer = () => {
             <div className="row">
               <div className="col-lg-4">
                 <div className="footer-widget-logo">
-                  <a href="index.html"><img src="/assets/image/logo-light.png" className="img-fluid" alt="img-25" /></a>
+                  <a href="/"><img src="/assets/image/img-knks-2.png" className="img-fluid" alt="img-25" /></a>
                 </div>
-                <div className="footer-widget-text">
-                  <p>The gowrnx official guide to living, working, visiting and investing in the Texas</p>
-                </div>
+
                 <div className="footer-widget-socials">
                   <a href="/twitter"><i className="fa-brands fa-twitter"></i></a>
                   <a href="/twitter"><i className="fa-brands fa-facebook"></i></a>

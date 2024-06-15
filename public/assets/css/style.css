@@ -4271,9 +4271,9 @@ a.search-toggler {
 * Footer
 ***********************/
 .footer {
-	background-image: url("../image/bg/footer-bg-1.png");
+
 	background-repeat: no-repeat;
-	background-color: var(--thm-black);
+	background-color: var(--thm-white);
 	background-size: auto;
 	background-position: left 20px bottom 90px;
 }
@@ -4289,12 +4289,12 @@ a.search-toggler {
 }
 
 .footer-widget-logo {
-	padding: 45px 60px;
+
 	max-width: 250px;
 	align-items: center;
 	color: var(--thm-white);
 	display: inline-block;
-	background-color: var(--thm-dark-black);
+
 }
 
 .footer-widget-text {
