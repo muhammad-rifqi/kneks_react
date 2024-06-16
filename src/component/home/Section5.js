@@ -5,6 +5,7 @@ const Section5 = () => {
 			<div className="container">
 				<div className="funfact-box">
 					<div className="section-title-box text-center">
+						{/* <div className="section-tagline-b">Index</div> */}
 						<h2 className="section-title">INDEX KEUANGAN <br />SYARIAH</h2>
 					</div>
 				</div>

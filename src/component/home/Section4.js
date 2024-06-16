@@ -6,9 +6,9 @@ const Section4 = () => {
 				<div className="row justify-content-between">
 					<div className="col-lg-6">
 						<div className="section-title-box">
-							<div className="section-tagline">Isu Utama</div>
+							<div className="section-tagline-b">Isu Utama</div>
 							<h2 className="section-title text-white">Ekonomi & Keuangan
-							 <br /> Syariah</h2>
+								<br /> Syariah</h2>
 							<div className="section-text-b">
 								<p>Indonesia merupakan negara dengan mayoritas muslim terbesar dan jumlah institusi keuangan syariah terbanyak di dunia. KNKS hadir sebagai katalisator dalam upaya mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional.</p>
 							</div>
