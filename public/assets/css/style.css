@@ -4274,10 +4274,13 @@ a.search-toggler {
 
 	background-color: var(--thm-white);
 
+
 }
 
 .footer-inner {
 	padding-bottom: 60px;
+	padding-top: 60px;
+
 }
 
 @media (max-width: 1199px) {
@@ -4305,7 +4308,7 @@ a.search-toggler {
 	font-size: 20px;
 	line-height: 32px;
 	font-weight: 600;
-	color: var(--thm-white);
+	color: var(--thm-black);
 }
 
 .footer-widget-socials {
@@ -4359,7 +4362,7 @@ a.search-toggler {
 
 .footer-widget-title {
 	font-size: 18px;
-	color: var(--thm-white);
+	color: var(--thm-black);
 	margin-bottom: 35px;
 }
 
@@ -4396,7 +4399,7 @@ a.search-toggler {
 }
 
 .footer-widget-explore li a:hover {
-	color: var(--thm-white);
+	color: var(--thm-primary);
 }
 
 .footer-widget-department ul {
@@ -4416,7 +4419,7 @@ a.search-toggler {
 }
 
 .footer-widget-department li a:hover {
-	color: var(--thm-white);
+	color: var(--thm-primary);
 }
 
 .footer-widget-contact {
@@ -4426,7 +4429,7 @@ a.search-toggler {
 .footer-widget-contact p {
 	font-size: 15px;
 	margin-bottom: -8px;
-	color: var(--thm-secondary);
+	color: var(--thm-black);
 	font-family: var(--thm-font);
 	font-weight: 500;
 }
@@ -4448,13 +4451,13 @@ a.search-toggler {
 .footer-widget-contact-item a {
 	margin-left: 10px;
 	font-size: 15px;
-	color: var(--thm-white);
+	color: var(--thm-black);
 	font-family: var(--thm-font);
 	font-weight: 700;
 }
 
 .footer-widget-contact-item a:hover {
-	color: var(--thm-white);
+	color: var(--thm-primary);
 }
 
 .bottom-footer {

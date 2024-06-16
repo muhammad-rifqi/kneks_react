@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-inner">
           <div className="container">
             <div className="row">
-              <div className="col-lg-4">
+              <div className="col-lg-3">
                 <div className="footer-widget-logo">
                   <a href="/"><img src="/assets/image/img-knks-2.png" className="img-fluid" alt="img-25" /></a>
                 </div>
@@ -24,7 +24,7 @@ const Footer = () => {
               <div className="col-lg-3">
                 <div className="footer-widget">
                   <div className="footer-widget-explore">
-                    <h4 className="footer-widget-title">Explore</h4>
+                    <h4 className="footer-widget-title">Menu</h4>
                     <ul className="list-unstyled">
                       <li><a href="department-details.html">Administration</a></li>
                       <li><a href="service-details.html">Fire Services</a></li>
@@ -38,33 +38,29 @@ const Footer = () => {
               <div className="col-lg-2">
                 <div className="footer-widget">
                   <div className="footer-widget-department">
-                    <h4 className="footer-widget-title">Departments</h4>
-                    <ul className="list-unstyled">
-                      <li><a href="department-details.html">Health & Safety</a></li>
-                      <li><a href="department-details.html">Housing & Land</a></li>
-                      <li><a href="department-details.html">Legal & Finance</a></li>
-                      <li><a href="department-details.html">Transport & Traffic</a></li>
-                      <li><a href="department-details.html">Arts & Culture</a></li>
-                    </ul>
+                    <h4 className="footer-widget-title">Alamat</h4>
+                    <p>Gedung Djuanda II Lantai 17 Jalan Wahidin Nomor 1,
+                      Jakarta, Indonesia</p>
+
                   </div>
                 </div>
               </div>
               <div className="col-lg-3">
                 <div className="footer-widget">
                   <div className="footer-widget-contact">
-                    <h4 className="footer-widget-title">Contact</h4>
-                    <p>88 Broklyn Golden Road Street,<br />New York. USA</p>
+                    <h4 className="footer-widget-title">Kontak</h4>
+
                   </div>
                   <div className="footer-widget-contact-list">
                     <i className="fa-solid fa-envelope"></i>
                     <div className="footer-widget-contact-item">
-                      <a href="mailto:needhelp@company.com">needhelp@company.com</a>
+                      <a href="mailto:humas@kneks.go.id">humas@kneks.go.id</a>
                     </div>
                   </div>
                   <div className="footer-widget-contact-list">
                     <i className="fa-solid fa-phone"></i>
                     <div className="footer-widget-contact-item">
-                      <a href="tel:+92-003-68-090">+92 (003) 68-090</a>
+                      <a href="tel:+021-3449230">(021) 3449230</a>
                     </div>
                   </div>
                 </div>
