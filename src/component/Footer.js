@@ -9,28 +9,29 @@ const Footer = () => {
         <div className="footer-inner">
           <div className="container">
             <div className="row">
-              <div className="col-lg-3">
-                <div className="footer-widget-logo">
-                  <a href="/"><img src="/assets/image/img-knks-2.png" className="img-fluid" alt="img-25" /></a>
+              <div className="col-lg-3 ">
+                <div className="footer-widget-logo pb-3">
+                  <a href="/"><img src="/assets/image/img-knks-2.png" className="img-fluid " alt="img-25" /></a>
                 </div>
 
-                <div className="footer-widget-socials">
+                <div className="footer-widget-socials ">
                   <a href="/twitter"><i className="fa-brands fa-twitter"></i></a>
                   <a href="/twitter"><i className="fa-brands fa-facebook"></i></a>
                   <a href="/twitter"><i className="fa-brands fa-pinterest-p"></i></a>
                   <a href="/twitter"><i className="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
-              <div className="col-lg-3">
+              <div className="col-lg-2">
                 <div className="footer-widget">
                   <div className="footer-widget-explore">
                     <h4 className="footer-widget-title">Menu</h4>
                     <ul className="list-unstyled">
-                      <li><a href="department-details.html">Administration</a></li>
-                      <li><a href="service-details.html">Fire Services</a></li>
-                      <li><a href="event-details.html">Business & Taxation</a></li>
-                      <li><a href="team-details.html">Circular’s And Go’s</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
+                      <li><a href="#">Beranda</a></li>
+                      <li><a href="#">Profil</a></li>
+                      <li><a href="#">Berita & Kegiatan</a></li>
+                      <li><a href="#">One Data Center</a></li>
+                      <li><a href="#">Agenda</a></li>
+                      <li><a href="#">Kontak</a></li>
                     </ul>
                   </div>
                 </div>
@@ -45,7 +46,7 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-3">
+              <div className="col-lg-2">
                 <div className="footer-widget">
                   <div className="footer-widget-contact">
                     <h4 className="footer-widget-title">Kontak</h4>
@@ -64,6 +65,18 @@ const Footer = () => {
                     </div>
                   </div>
                 </div>
+
+              </div>
+              <div className="col-lg-3">
+                <div className="footer-widget">
+
+                  {/* <div className="footer-widget-contact-list"> */}
+                  <iframe width="100%" height="300vw" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7933.418301716268!2d106.8388627!3d-6.1696863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cbd72035e3%3A0x78a3dc4ef4719cb8!2sKementerian%20Keuangan%20Republik%20Indonesia!5e0!3m2!1sid!2sid!4v1690270978567!5m2!1sid!2sid">
+                  </iframe>
+                  {/* </div> */}
+
+                </div>
+
               </div>
             </div>
           </div>
