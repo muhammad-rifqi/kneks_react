@@ -4272,14 +4272,12 @@ a.search-toggler {
 ***********************/
 .footer {
 
-	background-repeat: no-repeat;
 	background-color: var(--thm-white);
-	background-size: auto;
-	background-position: left 20px bottom 90px;
+
 }
 
 .footer-inner {
-	padding-bottom: 98px;
+	padding-bottom: 60px;
 }
 
 @media (max-width: 1199px) {
@@ -4344,9 +4342,7 @@ a.search-toggler {
 	margin-left: 10px;
 }
 
-.footer-widget {
-	margin-top: 120px;
-}
+
 
 @media (max-width: 991px) {
 	.footer-widget {

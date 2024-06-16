@@ -2,22 +2,89 @@ import React from "react"
 import { Link } from "react-router-dom"
 const Section11 = () => {
 	return (
-		<section className="cta-five-section">
+		// <section className="cta-five-section">
+		// 	<div className="container">
+		// 		<div className="cta-five-card">
+		// 			<div className="cta-five-card-icon">
+		// 				<i className="flaticon-file"></i>
+		// 			</div>
+		// 			<div className="cta-five-content">
+		// 				<h4>Download Recent Documents</h4>
+		// 				<p>There are many variations of passages of Lorem Ipsum available, but the majority <br /> have suffered in some form, by injected humour words.</p>
+		// 			</div>
+		// 			<div className="cta-five-button">
+		// 				{/* <a href="#" className="btn btn-primary"></a> */}
+		// 				<Link to={'download/'} className="btn btn-primary">Download Files</Link>
+		// 			</div>
+		// 			<div className="cta-five-img">
+		// 				<i className="flaticon-file"></i>
+		// 			</div>
+		// 		</div>
+		// 	</div>
+		// </section>
+		<section className="funfact-section">
 			<div className="container">
-				<div className="cta-five-card">
-					<div className="cta-five-card-icon">
-						<i className="flaticon-file"></i>
+				<div className="funfact-box">
+					<div className="section-title-box text-center">
+						<h2 className="section-title">INDEX KEUANGAN <br />SYARIAH</h2>
 					</div>
-					<div className="cta-five-content">
-						<h4>Download Recent Documents</h4>
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority <br /> have suffered in some form, by injected humour words.</p>
+				</div>
+				<div className="row">
+					<div className="col-xl-3 col-md-6">
+						<div className="funfact-counter-item">
+							<div className="funfact-counter-box">
+								<div className="funfact-counter-icon">
+									<i className="flaticon-running-man"></i>
+								</div>
+								<div className="funfact-counter-number">
+									<h3 className="counter-number">84</h3>
+									<span className="funfact-counter-number-postfix">k</span>
+								</div>
+							</div>
+							<p className="funfact-text">Total People Lived<br />in our City</p>
+						</div>
 					</div>
-					<div className="cta-five-button">
-						{/* <a href="#" className="btn btn-primary"></a> */}
-						<Link to={'download/'} className="btn btn-primary">Download Files</Link>
+					<div className="col-xl-3 col-md-6">
+						<div className="funfact-counter-item">
+							<div className="funfact-counter-box">
+								<div className="funfact-counter-icon">
+									<i className="flaticon-coverage"></i>
+								</div>
+								<div className="funfact-counter-number">
+									<h3 className="counter-number">3.3</h3>
+									<span className="funfact-counter-number-postfix">k</span>
+								</div>
+							</div>
+							<p className="funfact-text">Square kilometres<br /> Region Covers</p>
+						</div>
 					</div>
-					<div className="cta-five-img">
-						<i className="flaticon-file"></i>
+					<div className="col-xl-3 col-md-6">
+						<div className="funfact-counter-item">
+							<div className="funfact-counter-box">
+								<div className="funfact-counter-icon">
+									<i className="flaticon-landscape"></i>
+								</div>
+								<div className="funfact-counter-number">
+									<h3 className="counter-number">26</h3>
+									<span className="funfact-counter-number-postfix">%</span>
+								</div>
+							</div>
+							<p className="funfact-text">Private & Domestic <br />Garden Land</p>
+						</div>
+					</div>
+					<div className="col-xl-3 col-md-6">
+						<div className="funfact-counter-item">
+							<div className="funfact-counter-box">
+								<div className="funfact-counter-icon">
+									<i className="flaticon-barn-3"></i>
+								</div>
+								<div className="funfact-counter-number">
+									<h3 className="counter-number">4</h3>
+									<span className="funfact-counter-number-postfix">th</span>
+								</div>
+							</div>
+							<p className="funfact-text">Average Costs of Home <br /> Ownership</p>
+						</div>
 					</div>
 				</div>
 			</div>
