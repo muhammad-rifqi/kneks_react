@@ -65,7 +65,7 @@ const Header = () => {
                       <li><a href="/tentang-kami">Tentang Kami</a></li>
                       <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
                       <li><a href="/galeri-foto">Galeri Foto</a></li>
-                      <li><a href="/galeri-Video">Galeri Video</a></li>
+                      <li><a href="/galeri-video">Galeri Video</a></li>
                     </ul>
                   </li>
                   <li className="has-dropdown">
