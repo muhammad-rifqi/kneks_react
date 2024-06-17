@@ -7177,8 +7177,37 @@ label {
 	margin-bottom: 0px;
 }
 
+
 .list-style-one>li>p {
+	margin-left: 20px;
+
+}
+
+.list-style-one-x {
+	margin-bottom: 45px;
+}
+
+.list-style-one-x>li {
+	display: flex;
+	align-items: center;
+}
+
+.list-style-one-x>li>i {
+
+	font-size: 14px;
+}
+
+.list-style-one-x>li>h5 {
 	margin-left: 10px;
+	font-weight: 600;
+	font-size: 17px;
+	color: var(--thm-gray);
+	margin-bottom: 0px;
+}
+
+.list-style-one-x>li>p {
+	margin-left: 20px;
+	/* font-size: 20px; */
 }
 
 .list-style-two {

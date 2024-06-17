@@ -14,15 +14,7 @@ const Kontak = () => {
                 <section className="contact-section">
                     <div className="container">
                         <div className="row">
-                            {/* <div className="col-lg-4">
-                                <div className="contact-box">
-                                    <div className="section-tagline">
-                                        WRITE A MESSAGE
-                                    </div>
-                                    <h1 className="section-title">Always Here to Help you</h1>
-                                    <p>There are certain attributes of a profession and one has to catch hold of them in order to efficiently and grow in that business. I share my experience as an interior designer. </p>
-                                </div>
-                            </div> */}
+
                             <div className="col-lg-8 offset-lg-2">
                                 <form action="assets/inc/sendemail.php" className="contact-form  contact-form-validated" method="post" >
                                     <div className="row row-gutter-10">
