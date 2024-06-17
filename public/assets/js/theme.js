@@ -78,6 +78,36 @@ $(document).ready(function () {
 			fixedContentPos: false
 		});
 	});
+	$(function () {
+		new VenoBox({
+			selector: '.my-image-links',
+			numeration: true,
+			infinigall: true,
+			share: true,
+			spinner: 'swing',
+			spinColor: '#5A8DEE',
+			titlePosition: 'bottom',
+			toolsColor: '#ffffff',
+			titleattr: 'data-title',
+			titleStyle: 'block'
+
+		});
+	});
+	$(function () {
+		new VenoBox({
+			selector: '.my-image-links-foto',
+			numeration: true,
+			infinigall: true,
+			share: true,
+			spinner: 'swing',
+			spinColor: '#5A8DEE',
+			titlePosition: 'bottom',
+			toolsColor: '#ffffff',
+			titleattr: 'data-title',
+			titleStyle: 'block'
+
+		});
+	});
 	$(window).on("scroll", function () {
 		if ($(".sticky-header").length) {
 			var headerScrollPos = 230;

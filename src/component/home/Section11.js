@@ -36,7 +36,21 @@ const Section11 = () => {
 						</div >
 					</div >
 
-				</div >
+				</div>
+				<div className="sm-box pt-5">
+					<div className="section-title-box text-center">
+
+						<h2 className="section-title">Instansi Terkasit</h2>
+						<div class="section-text-b "><p className="text-white ">
+							KNEKS beranggotakan 3 Menteri Koordinator, 7 Menteri, 3 Ketua lembaga pemerintah, <br /> Ketua Umum MUI dan Ketua Umum KADIN, dengan Menteri Keuangan merangkap sebagai Sekretaris.
+						</p>
+							<img src="assets/image/instansi.png" className="img-fluid pt-5" alt="img-97" />
+						</div>
+					</div>
+				</div>
+				<div className="row">
+
+				</div>
 			</div >
 		</section >
 	)
