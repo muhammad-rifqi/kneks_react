@@ -53,7 +53,7 @@ const Header = () => {
           <div className="main-menu-inner">
             <div className="main-menu-left">
               <div className="main-menu-logo">
-                <a href="index.html"><img src="/assets/image/img-knks.png" alt="img-1" width="130" /></a>
+                <a href="/"><img src="/assets/image/img-knks.png" alt="img-1" width="130" /></a>
               </div>
               <div className="navigation">
                 <ul className="main-menu-list list-unstyled">
@@ -69,7 +69,7 @@ const Header = () => {
                     </ul>
                   </li>
                   <li className="has-dropdown">
-                    <a href="#test">Direktorat</a> 
+                    <a href="#test">Direktorat</a>
                     <ul className="list-unstyled">
                       <li><a href="/industri-produk-halal">Industri Produk Halal</a></li>
                       <li><a href="/jasa-keuangan-syariah">Jasa Keuangan Syariah</a></li>
