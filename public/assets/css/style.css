@@ -8616,3 +8616,8 @@ SOCIAL MEDIA
 	color: inherit;
 	font-weight: 800;
 }
+
+
+.text-justify {
+	text-align: justify;
+  }
