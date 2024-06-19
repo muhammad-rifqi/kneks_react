@@ -13,7 +13,7 @@ const TentangKami = () => {
                 </section>
                 <section className="about-one-section">
                     <div className="container">
-                        <div className="row row-gutter-y-40 border">
+                        <div className="row row-gutter-y-40">
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
                                     <img src="assets/image/logo-tk.svg" alt="img-59" className="img-fluid" />
