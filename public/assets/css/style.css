@@ -862,7 +862,7 @@ a {
 
 .main-menu-left {
 	display: flex;
-	/* flex-grow: 1; */
+	flex-grow: 1;
 
 }
 
@@ -933,7 +933,7 @@ a {
 	padding: 38px 0;
 	display: flex;
 	align-items: center;
-	font-size: 17px;
+	font-size: 14px;
 	font-weight: 700;
 	position: relative;
 	color: var(--thm-gray);
@@ -5484,6 +5484,8 @@ a.search-toggler {
 	border-radius: 0;
 }
 
+ 
+
 .contact-form-one textarea.input-text {
 	height: 190px;
 	padding-top: 30px;
@@ -6765,10 +6767,19 @@ a.search-toggler {
 	padding: 0px 30px;
 	font-size: 16px;
 	font-weight: 600;
-	color: var(--thm-gray);
+	color: var(--thm-dark-black);
 	height: 60px;
 	border-radius: 0;
 }
+
+/* .contact-form input[required] {
+	background-color: #EE8282;
+	
+  } */
+
+  /* .contact-form ::placeholder{
+	color: var(--thm-white)
+  } */
 
 .contact-form textarea.input-text {
 	height: 190px;
@@ -6786,14 +6797,8 @@ a.search-toggler {
 	}
 }
 
-.responsive-map {
-	height: 440px;
-}
 
-.responsive-map iframe {
-	width: 100%;
-	height: 100%;
-}
+
 
 /***********************
 * Mobile-Nav

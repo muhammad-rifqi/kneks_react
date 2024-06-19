@@ -53,7 +53,7 @@ const Header = () => {
           <div className="main-menu-inner">
             <div className="main-menu-left">
               <div className="main-menu-logo">
-                <a href="/"><img src="/assets/image/img-knks.png" alt="img-1" width="130" /></a>
+                <a href="/"><img src="/assets/image/logo.svg" alt="img-1" width="130" /></a>
               </div>
               <div className="navigation">
                 <ul className="main-menu-list list-unstyled">

@@ -11,6 +11,7 @@ $(document).ready(function () {
 			return false;
 		});
 	}
+
 	// mobile nav
 	if ($('.mobile-nav-wrapper').length) {
 		$('.mobile-nav-toggler').on('click', function () {
@@ -296,6 +297,7 @@ $(document).ready(function () {
 			$(this).css('width', total_width + 'px')
 		})
 	}
+	
 	if ($('.count-box').length) {
 		$('.count-box').appear(function () {
 			var el = $(this);
