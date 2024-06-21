@@ -70,7 +70,7 @@ const Kontak = () => {
                                             name="name" 
                                             value={formValues.name}
                                             onChange={handleInputChange}
-                                            style={{ backgroundColor: fieldErrors.name ? '#EE8282' : '' }} 
+                                            style={{ border: fieldErrors.name ? '1px solid #EE8282' : '' }} 
                                             
                                         />
                                         {fieldErrors.name && <small className="text-danger">*Wajib diisi</small>}
@@ -84,7 +84,7 @@ const Kontak = () => {
                                             name="email" 
                                             value={formValues.email}
                                             onChange={handleInputChange}
-                                           style={{ backgroundColor: fieldErrors.email ? '#EE8282' : ''  }} 
+                                           style={{ border: fieldErrors.email ? '1px solid #EE8282' : ''  }} 
                                             
                                         />
                                         {fieldErrors.email && <small className="text-danger">*Wajib diisi</small>}
@@ -98,7 +98,7 @@ const Kontak = () => {
                                             name="phone" 
                                             value={formValues.phone}
                                             onChange={handleInputChange}
-                                            style={{ backgroundColor: fieldErrors.phone ? '#EE8282' : '' }} 
+                                            style={{ border: fieldErrors.phone ? '1px solid #EE8282' : '' }} 
                                             
                                         />
                                         {fieldErrors.phone && <small className="text-danger">*Wajib diisi</small>}
@@ -112,7 +112,7 @@ const Kontak = () => {
                                             name="subject" 
                                             value={formValues.subject}
                                             onChange={handleInputChange}
-                                            style={{ backgroundColor: fieldErrors.subject ? '#EE8282' : '' }} 
+                                            style={{ border: fieldErrors.subject ? '1px solid #EE8282' : '' }} 
                                             
                                         />
                                         {fieldErrors.subject && <small className="text-danger">*Wajib diisi</small>}
@@ -124,7 +124,7 @@ const Kontak = () => {
                                             className="input-text" 
                                             value={formValues.inputText}
                                             onChange={handleInputChange}
-                                            style={{ backgroundColor: fieldErrors.inputText ? '#EE8282' : '' ,color: fieldErrors.inputText ?'#ffffff':''}} 
+                                            style={{ border: fieldErrors.inputText ? '1px solid #EE8282' : '' ,color: fieldErrors.inputText ?'#ffffff':''}} 
                                            
                                         ></textarea>
                                         {fieldErrors.inputText && <small className="text-danger">*Wajib diisi</small>}
