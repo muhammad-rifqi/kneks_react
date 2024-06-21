@@ -2,51 +2,46 @@ import React from "react";
 const LiputanMedia = () => {
     return (
         <>
-        <div className="page-wrapper">
-            
-            <section className="page-banner">
-                <div className="container">
-                    <div className="page-banner-title">
-                        <h3>Liputan Media</h3>
+            <div className="page-wrapper">
+
+                <section className="page-banner">
+                    <div className="container">
+                        <div className="page-banner-title">
+                            <h3>Liputan Media</h3>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section className="about-one-section">
-                <div className="container">
-                    <div className="row row-gutter-y-40">
-                        <div className="col-lg-12 col-xl-6">
-                            <div className="about-one-inner">
-                                <div className="section-tagline">
-                                    Our introductions
-                                </div>
-                                <h2 className="section-title">Welcome to Mexican City Municipal Council</h2>
-                                <p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis, sit amet mattis magna varius non.</p>
-                                <h5 className="about-one-inner-text">Denounce with righteous indignation and dislike men who are so beguiled & demoralized our power.</h5>
-                                <div className="row row-gutter-y-30">
-                                    <div className="col-xl-6 col-lg-6 col-md-6">
-                                        <div className="about-one-card">
-                                            <div className="about-one-card-number">01</div>
-                                            <div className="about-one-card-content"><h5>Going Above and Beyond</h5></div>
-                                        </div>
+                </section>
+                <section className="causes-section">
+                    <div className="container">
+                        <div className="row row-gutter-30">
+                            <div className="col-lg-6 col-xl-4">
+                                <div className="causes-card">
+                                    <div className="causes-card-imgbox">
+                                        <img src="assets/image/causes/causes-1.jpg" className="img-fluid" alt="img-117" />
                                     </div>
-                                    <div className="col-xl-6 col-lg-6 col-md-6">
-                                        <div className="about-one-card">
-                                            <div className="about-one-card-number">02</div>
-                                            <div className="about-one-card-content"><h5>Committed to People First</h5></div>
+                                    <div className="causes-content">
+                                        <div className="causes-card-funding">
+                                            
+                                            <div className="causes-card-funding-list">
+                                                <div className="causes-card-funding-item">
+                                                    <div className="causes-card-funding-amount">$25,487</div>
+                                                    <div className="causes-card-funding-text">Raised</div>
+                                                </div>
+                                                <div className="causes-card-funding-item">
+                                                    <div className="causes-card-funding-amount">$30,000</div>
+                                                    <div className="causes-card-funding-text">Goal</div>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <h4> <a href="cause-details.html">Your little help can heal their pains</a> </h4>
+                                        <p>Aellentesque porttitor lacus quis enim varius sed efficitur...</p>
+                                        <a href="cause-details.html" className="btn btn-primary">Donate Now</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-12 col-xl-6">
-                            <div className="about-one-image">
-                                <img src="assets/image/shapes/shape-1.png" className="floated-image-one" alt="img-58" />
-                                <img src="assets/image/gallery/about-7.jpg" alt="img-59" className="img-fluid" />
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
             </div>
         </>
     )
