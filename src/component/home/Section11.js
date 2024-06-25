@@ -48,9 +48,7 @@ const Section11 = () => {
 						</div>
 					</div>
 				</div>
-				<div className="row">
-
-				</div>
+				
 			</div >
 		</section >
 	)

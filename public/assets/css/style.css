@@ -7073,6 +7073,16 @@ a.search-toggler {
 	background-color: #fff;
 	overflow: hidden;
 }
+.search-popup-content-x form {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	position: relative;
+	background-color: #fff;
+	overflow: hidden;
+}
 
 .fa-sr-only,
 .fa-sr-only-focusable:not(:focus),
@@ -7103,6 +7113,17 @@ label {
 	height: 66px;
 	padding-left: 30px;
 }
+.search-popup-content-x form input[type="search"],
+.search-popup-content-x form input[type="text"] {
+	width: 100%;
+	/* background-color: #fff; */
+	font-size: 16px;
+	/* border: none;
+	outline: none; */
+	border-radius: 10px;
+	height: 66px;
+	padding-left: 30px;
+}
 
 .search-popup-content .search-btn {
 	padding: 0;
@@ -7126,8 +7147,33 @@ label {
 	border: 0;
 	color: var(--thm-white);
 }
+.search-popup-content-x .search-btn {
+	padding: 0;
+	width: 68px;
+	height: 68px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	right: -1px;
+	border-radius: 0 10px 10px 0;
+	background-color: var(--thm-primary);
+	border: 0;
+	color: var(--thm-white);
+}
 
 .search-popup-content .search-btn i {
+	font-size: 20px;
+}
+.search-popup-content-x .search-btn i {
 	font-size: 20px;
 }
 
@@ -8214,11 +8260,9 @@ SOCIAL MEDIA
 	padding-top: 80px;
 	padding-bottom: 80px;
 	background-color: var(--thm-primary);
-	/* background-color: rgb(20,106,164);
-	background-color: linear-gradient(90deg, rgba(20,106,164,1) 30%, rgba(28,181,95,1) 70%); */
 	background-image: url(../image/bg/funfact-bg-1.png);
 	background-position: top center;
-	background-repeat: no-repeat;
+	/* background-repeat: no-repeat; */
 }
 
 @media(max-width: 575px) {
