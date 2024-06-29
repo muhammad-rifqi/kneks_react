@@ -8921,7 +8921,7 @@ SOCIAL MEDIA
 
 
 .block-box {
-    background-color: #ffffff;
+    background-color: var(--thm-primary);
     border-radius: 8px;
     margin-bottom: 20px;
 }
@@ -8941,7 +8941,7 @@ SOCIAL MEDIA
     justify-content: center;
     text-align: center;
     font-weight: 700;
-    color: #000000;
+    color: var(--thm-white);
     padding: 22px 10px;
     border-radius: 8px;
 }
@@ -8962,7 +8962,7 @@ SOCIAL MEDIA
 .load-more-btn .item-btn i {
     font-size: 18px;
     margin-right: 10px;
-    color: var(--thm-primary);
+    color: var(--thm-white);
     font-weight: 700;
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -8978,7 +8978,7 @@ SOCIAL MEDIA
 }
 
 .load-more-btn .item-btn:hover {
-    background-color: var(--thm-primary);
+    background-color: var(--thm-black);
     color: var(--thm-white);
 }
 
