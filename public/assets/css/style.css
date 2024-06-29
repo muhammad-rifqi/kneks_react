@@ -8962,7 +8962,7 @@ SOCIAL MEDIA
 .load-more-btn .item-btn i {
     font-size: 18px;
     margin-right: 10px;
-    color: #615dfa;
+    color: var(--thm-primary);
     font-weight: 700;
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -8978,12 +8978,12 @@ SOCIAL MEDIA
 }
 
 .load-more-btn .item-btn:hover {
-    background-color: #5edfff;
-    color: #ffffff;
+    background-color: var(--thm-primary);
+    color: var(--thm-white);
 }
 
 .load-more-btn .item-btn:hover i {
-    color: #ffffff;
+    color: var(--thm-white);
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);

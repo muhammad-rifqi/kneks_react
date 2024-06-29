@@ -1,33 +1,121 @@
-import React from "react";
-const isiItemsBerita = [
-    {
-        title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-        tag: "#BERITABARU",
-        tanggal: "20 Juni 2024",
-        foto: "assets/image/berita.jpg"
-    },
-    {
-        title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-        tag: "#BERITABARU",
-        tanggal: "20 Juni 2024",
-        foto: "assets/image/berita3.svg"
-    },
-    {
-        title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-        tag: "#BERITABARU",
-        tanggal: "20 Juni 2024",
-        foto: "assets/image/berita3.svg"
-    },
-    {
-        title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-        tag: "#BERITABARU",
-        tanggal: "20 Juni 2024",
-        foto: "assets/image/berita3.svg"
-    },
+import React, { useState, useEffect } from "react";
 
-];
 
 const SiaranPers = () => {
+
+    const isiItemsBerita = () => [
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita.jpg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita.jpg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita.jpg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita.jpg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita.jpg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita.jpg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+
+    ];
+    const [items, setItems] = useState([]);
+    const [visible, setVisible] = useState(9)
+
+    // untukmengeloladatasebelumdiloop
+    useEffect(() => {
+        const isian = isiItemsBerita();
+        setItems(isian);
+        // alert(items.length);
+    }, []);
+
+    const showMore = () => {
+        setVisible((preValue) => preValue + 3);
+    }
+
     return (
         <>
             <div className="page-wrapper">
@@ -42,7 +130,7 @@ const SiaranPers = () => {
                 <section className="berita-section">
                     <div className="container">
                         <div className="row row-gutter-30">
-                            {isiItemsBerita.map((item) => {
+                            {items.slice(0, visible).map((item) => {
                                 return (
                                     <div className="col-lg-4 col-xl-4" key={item.title}>
                                         <div className="berita-card">
@@ -71,6 +159,15 @@ const SiaranPers = () => {
                                     </div>
                                 );
                             })}
+                            {visible < items.length && (
+                                <div className="col-12">
+                                    <div className="block-box load-more-btn">
+                                        <a href="javascript:void(0)" className="item-btn" onClick={showMore}>
+                                            <i className="fa-solid fa-refresh"></i>Load More
+                                        </a>
+                                    </div>
+                                </div>
+                            )}
 
                         </div >
                     </div >
