@@ -8665,3 +8665,240 @@ SOCIAL MEDIA
 .text-justify {
 	text-align: justify;
   }
+
+
+  .berita-section {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+@media(max-width: 1199px) {
+	.berita-section {
+		padding: 70px 0px;
+	}
+}
+
+@media(max-width: 991px) {
+	.berita-card-imgbox img {
+		width: 100%;
+	}
+}
+
+.berita-content {
+	padding: 0 40px 40px;
+	background-color: var(--thm-white);
+	box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
+}
+
+.berita-card-funding {
+	position: relative;
+	padding: 15px 20px;
+	background-color: #fff;
+	box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
+	margin-top: -32px;
+}
+
+.berita-card-progressbar {
+	position: relative;
+	margin-bottom: 10px;
+	height: 6px;
+	background-color: var(--thm-light-bg);
+}
+
+.berita-card-progressbar-inner {
+	background-color: var(--thm-primary);
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	transition: all 1000ms ease;
+}
+
+.berita-card-progressbar-text {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 26px;
+	width: 26px;
+	background-color: var(--thm-primary);
+	color: #fff;
+	font-size: 9px;
+	font-weight: 900;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transform: translate(50%, calc(-50% + 2px));
+}
+
+.berita-card-funding-list {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@media(max-width: 575px) {
+	.berita-card-funding-list {
+		flex-wrap: wrap;
+	}
+}
+
+.berita-card-funding-item {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+}
+
+.berita-card-funding-amount {
+	color: var(--thm-black);
+	font-weight: 700;
+}
+
+.berita-card-funding-text {
+	margin-left: 5px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.berita-content h4 {
+	margin-top: 25px;
+	margin-bottom: 13px;
+	font-size: 24px;
+}
+
+.berita-content h4>a {
+	color: inherit;
+	transition: all 500ms ease;
+}
+
+.berita-content h4>a:hover {
+	color: var(--thm-primary);
+}
+
+.berita-content p {
+	margin-bottom: 10px;
+}
+
+.berita-content .btn-primary {
+	padding: 11px 27px;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.berita-details-section {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+@media(max-width: 1199px) {
+	.berita-details-section {
+		padding: 70px 0px;
+	}
+}
+
+.berita-details-content-box {
+	margin-bottom: 50px;
+}
+
+.berita-details-funding {
+	position: relative;
+	padding: 20px 20px 12px 20px;
+	background-color: #fff;
+	box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
+	margin-top: -32px;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-bottom: 20px;
+}
+
+.berita-details-progressbar {
+	position: relative;
+	margin-bottom: 10px;
+	height: 6px;
+	background-color: var(--thm-light-bg);
+}
+
+.berita-details-progressbar-inner {
+	background-color: var(--thm-primary);
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	transition: all 1000ms ease;
+}
+
+.berita-details-progressbar-text {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 26px;
+	width: 26px;
+	background-color: var(--thm-primary);
+	color: #fff;
+	font-size: 9px;
+	font-weight: 900;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transform: translate(50%, calc(-50% + 2px));
+}
+
+.berita-details-funding-list {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.berita-details-funding-item {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+}
+
+.berita-details-funding-amount {
+	color: var(--thm-black);
+	font-weight: 700;
+}
+
+.berita-details-funding-text {
+	margin-left: 5px;
+}
+
+.berita-details-imgbox {
+	margin-bottom: 40px;
+}
+
+@media(max-width: 991px) {
+	.berita-details-img img {
+		width: 100%;
+	}
+}
+
+.berita-details-content-box h4 {
+	font-size: 34px;
+}
+
+.berita-details-summary-box {
+	margin-bottom: 45px;
+}
+
+.berita-details-summary-box h3 {
+	font-size: 34px;
+	margin-bottom: 20px;
+}
+
+.berita-details-text p {
+	margin-top: 30px;
+	margin-bottom: 53px;
+}
+
+.berita-details-button {
+	display: inline-block;
+}
+
+.berita-details-button .btn-primary {
+	padding: 18px 49px;
+}

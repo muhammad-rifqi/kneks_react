@@ -11,31 +11,31 @@ const LiputanMedia = () => {
                         </div>
                     </div>
                 </section>
-                <section className="causes-section">
+                <section className="berita-section">
                     <div className="container">
                         <div className="row row-gutter-30">
                             <div className="col-lg-6 col-xl-4">
-                                <div className="causes-card">
-                                    <div className="causes-card-imgbox">
+                                <div className="berita-card">
+                                    <div className="berita-card-imgbox">
                                         <img src="assets/image/causes/causes-1.jpg" className="img-fluid" alt="img-117" />
                                     </div>
-                                    <div className="causes-content">
-                                        <div className="causes-card-funding">
+                                    <div className="berita-content">
+                                        <div className="berita-card-funding">
                                             
-                                            <div className="causes-card-funding-list">
-                                                <div className="causes-card-funding-item">
-                                                    <div className="causes-card-funding-amount">$25,487</div>
-                                                    <div className="causes-card-funding-text">Raised</div>
+                                            <div className="berita-card-funding-list">
+                                                <div className="berita-card-funding-item">
+                                                    <div className="berita-card-funding-amount">$25,487</div>
+                                                    <div className="berita-card-funding-text">Raised</div>
                                                 </div>
-                                                <div className="causes-card-funding-item">
-                                                    <div className="causes-card-funding-amount">$30,000</div>
-                                                    <div className="causes-card-funding-text">Goal</div>
+                                                <div className="berita-card-funding-item">
+                                                    <div className="berita-card-funding-amount">$30,000</div>
+                                                    <div className="berita-card-funding-text">Goal</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h4> <a href="cause-details.html">Your little help can heal their pains</a> </h4>
-                                        <p>Aellentesque porttitor lacus quis enim varius sed efficitur...</p>
-                                        <a href="cause-details.html" className="btn btn-primary">Donate Now</a>
+                                        <h4> <a href="cause-details.html">Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah</a> </h4>
+                                        {/* <p>Aellentesque porttitor lacus quis enim varius sed efficitur...</p> */}
+                                        {/* <a href="cause-details.html" className="btn btn-primary">Donate Now</a> */}
                                     </div>
                                 </div>
                             </div>
