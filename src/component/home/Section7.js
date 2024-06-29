@@ -2,10 +2,7 @@ import React from "react"
 const Section7 = () => {
 	return (
 		<section className="portfolio-section ">
-			{/* <div className="section-title-box text-center">
-				<div className="section-tagline">recent work portfolio</div>
-				<h2 className="section-title">BERITA DAN KEGIATAN</h2>
-			</div> */}
+
 
 
 			<div className="portfolio-content conatainer-fluid">
@@ -46,7 +43,7 @@ const Section7 = () => {
 									</div>
 									<div className="card-title-b">
 										<h2 className="title-2">
-											<a href="blog-single.html">Travel is comming
+											<a href="blog-single.html">Travelx is comming
 												new</a>
 										</h2>
 									</div>

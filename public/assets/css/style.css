@@ -8671,6 +8671,11 @@ SOCIAL MEDIA
 	padding-top: 120px;
 	padding-bottom: 120px;
 }
+.berita-card-imgbox img {
+	height: 270px;
+	object-fit: cover;
+}
+
 
 @media(max-width: 1199px) {
 	.berita-section {
@@ -8685,7 +8690,7 @@ SOCIAL MEDIA
 }
 
 .berita-content {
-	padding: 0 40px 40px;
+	padding: 0 30px 30px;
 	background-color: var(--thm-white);
 	box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
 }
@@ -8759,12 +8764,22 @@ SOCIAL MEDIA
 	margin-left: 5px;
 	font-size: 14px;
 	font-weight: 600;
+	
+}
+.berita-card-funding-text-tag {
+	margin-left: 5px;
+	font-size: 14px;
+	font-weight: 600;
+	color: 
+	#F2994A
+	;
+	
 }
 
 .berita-content h4 {
 	margin-top: 25px;
 	margin-bottom: 13px;
-	font-size: 24px;
+	font-size: 16px;
 }
 
 .berita-content h4>a {
@@ -8871,6 +8886,7 @@ SOCIAL MEDIA
 	margin-bottom: 40px;
 }
 
+
 @media(max-width: 991px) {
 	.berita-details-img img {
 		width: 100%;
@@ -8901,4 +8917,74 @@ SOCIAL MEDIA
 
 .berita-details-button .btn-primary {
 	padding: 18px 49px;
+}
+
+
+.block-box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.load-more-btn .item-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    color: #000000;
+    padding: 22px 10px;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width: 767px) {
+    .load-more-btn .item-btn {
+        padding: 20px 10px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .load-more-btn .item-btn {
+        padding: 15px 10px;
+    }
+}
+
+.load-more-btn .item-btn i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #615dfa;
+    font-weight: 700;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+@media only screen and (max-width: 767px) {
+    .load-more-btn .item-btn i {
+        font-size: 16px;
+    }
+}
+
+.load-more-btn .item-btn:hover {
+    background-color: #5edfff;
+    color: #ffffff;
+}
+
+.load-more-btn .item-btn:hover i {
+    color: #ffffff;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
