@@ -11,6 +11,7 @@ $(document).ready(function () {
 			return false;
 		});
 	}
+
 	// mobile nav
 	if ($('.mobile-nav-wrapper').length) {
 		$('.mobile-nav-toggler').on('click', function () {
@@ -19,7 +20,7 @@ $(document).ready(function () {
 		})
 		var menu_content = $('.main-menu .navigation ul')[0].outerHTML
 		$('.mobile-nav-container').html(menu_content)
-		$('.mobile-nav-container .main-menu-list li.has-dropdown > a').append('<button><i className="fa-solid fa-chevron-right"></i></button>')
+		$('.mobile-nav-container .main-menu-list li.has-dropdown > a').append('<button><i class="fa-solid fa-chevron-right"></i></button>')
 		$('.mobile-nav-container .main-menu-list li.has-dropdown > a button').on('click', function () {
 			$(this).toggleClass('expanded')
 			$(this).parents('a').siblings('ul').slideToggle()
@@ -32,7 +33,7 @@ $(document).ready(function () {
 			nav: true,
 			items: 1,
 			dots: false,
-			navText: ['<i className="fa-solid fa-arrow-left-long"></i>', '<i className="fa-solid fa-arrow-right-long"></i>']
+			navText: ['<i class="fa-solid fa-arrow-left-long"></i>', '<i class="fa-solid fa-arrow-right-long"></i>']
 		})
 	}
 	if ($('.main-slider-two-swiper').length) {
@@ -41,7 +42,7 @@ $(document).ready(function () {
 			nav: true,
 			items: 1,
 			dots: false,
-			navText: ['<i className="fa-solid fa-arrow-left-long"></i>', '<i className="fa-solid fa-arrow-right-long"></i>']
+			navText: ['<i class="fa-solid fa-arrow-left-long"></i>', '<i class="fa-solid fa-arrow-right-long"></i>']
 		})
 	}
 	if ($('.counter-number').length) {
@@ -296,6 +297,7 @@ $(document).ready(function () {
 			$(this).css('width', total_width + 'px')
 		})
 	}
+	
 	if ($('.count-box').length) {
 		$('.count-box').appear(function () {
 			var el = $(this);
