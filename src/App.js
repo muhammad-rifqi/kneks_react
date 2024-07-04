@@ -16,6 +16,7 @@ import KeuanganSosialSyariah from './component/direktorat/KeuanganSosialSyariah'
 import BisnisDanKewirausahaanSyariah from './component/direktorat/BisnisDanKewirausahaanSyariah';
 import InfrastrukturEkosistemSyariah from './component/direktorat/InfrastrukturEkosistemSyariah';
 import SiaranPers from './component/berita/SiaranPers';
+import SiaranPersDetail from './component/berita/SiaranPersDetail';
 import LiputanMedia from './component/berita/LiputanMedia';
 import InfoTerkini from './component/berita/InfoTerkini';
 import Elibrary from './component/Elibrary';
@@ -48,7 +49,7 @@ function App() {
         <Route path="/infrastruktur-ekosistem-syariah" element={<InfrastrukturEkosistemSyariah/>}></Route> 
 
         <Route path="/siaran-pers" element={<SiaranPers/>}></Route> 
-        {/* <Route path="/siaran-pers/:slug" element={<ProductDetails />} /> */}
+        <Route path="/siaran-pers/:slug" element={<SiaranPersDetail />} />
         <Route path="/liputan-media" element={<LiputanMedia/>}></Route> 
         <Route path="/info-terkini" element={<InfoTerkini/>}></Route> 
 

@@ -1,101 +1,133 @@
 import React, { useState, useEffect } from "react";
-
+import {Link, useParams } from "react-router-dom";
 
 const SiaranPers = () => {
 
     const isiItemsBerita = () => [
         {
+            id:"1",
+            slug:"slug-satu",
+            title: "Slug Satu",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita.jpg"
+        },
+        {
+            id:"2",
+            slug:"slug-dua",
+            title: "Slug Dua",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            id:"3",
+            slug:"slug-tiga",
+            title: "Slug Tiga",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            id:"4",
+            slug:"slug-empat",
+            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            tag: "#BERITABARU",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/berita3.svg"
+        },
+        {
+            id:"5",
+            slug:"slug-lima",
             title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita.jpg"
         },
         {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
+            id:"6",
+            slug:"slug-enam",
             title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita.jpg"
         },
         {
+            id:"7",
+            slug:"slug-tujuh",
             title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita.jpg"
         },
         {
+            id:"8",
+            slug:"slug-delapan",
             title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita.jpg"
         },
         {
+            id:"9",
+            slug:"slug-sembilan",
             title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita.jpg"
         },
         {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
+            id:"10",
+            slug:"slug-sepuluh",
             title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita3.svg"
         },
         {
+            id:"11",
+            slug:"slug-sebelas",
             title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita3.svg"
         },
         {
+            id:"12",
+            slug:"slug-dua-belas",
             title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita3.svg"
         },
         {
+            id:"13",
+            slug:"slug-tiga-belas",
             title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita3.svg"
         },
         {
+            id:"14",
+            slug:"slug-empat-belas",
             title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita3.svg"
         },
         {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            id:"15",
+            slug:"slug-lima-belas",
+            title: "Slug Lima Belas",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita3.svg"
         },
         {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
+            id:"16",
+            slug:"slug-enam-belas",
+            title: "Slug Enam Belas",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita3.svg"
@@ -123,7 +155,7 @@ const SiaranPers = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Liputan Media</h3>
+                            <h3>Siaran Pers</h3>
                         </div>
                     </div>
                 </section>
@@ -132,7 +164,7 @@ const SiaranPers = () => {
                         <div className="row row-gutter-30">
                             {items.slice(0, visible).map((item) => {
                                 return (
-                                    <div className="col-lg-4 col-xl-4" key={item.title}>
+                                    <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox">
                                                 <img src={item.foto} className="img-fluid" alt="img-117" />
@@ -151,7 +183,7 @@ const SiaranPers = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <h4> <a href="cause-details.html">{item.title}</a> </h4>
+                                                <h4> <Link to={`/SiaranPers/${item.slug}`}>{item.title}</Link></h4>
                                                 {/* <p>Aellentesque porttitor lacus quis enim varius sed efficitur...</p> */}
                                                 {/* <a href="cause-details.html" className="btn btn-primary">Donate Now</a> */}
                                             </div>

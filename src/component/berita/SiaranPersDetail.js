@@ -1,105 +1,22 @@
 import React, { useState, useEffect } from "react";
 
+import {Link, useParams } from "react-router-dom";
 
 
-const InfoTerkini = () => {
+const SiaranPersDetail = () => {
+
+
+    const params = useParams();
     const isiItemsBerita = () => [
         {
+            id:"1",
+            slug:"slug-satu",
             title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita.jpg"
         },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
+       
 
     ];
     const [items, setItems] = useState([]);
@@ -123,7 +40,7 @@ const InfoTerkini = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Info Terkini</h3>
+                            <h3>Liputan Media {JSON.stringify(params)}</h3>
                         </div>
                     </div>
                 </section>
@@ -132,7 +49,7 @@ const InfoTerkini = () => {
                         <div className="row row-gutter-30">
                             {items.slice(0, visible).map((item) => {
                                 return (
-                                    <div className="col-lg-4 col-xl-4" key={item.title}>
+                                    <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox">
                                                 <img src={item.foto} className="img-fluid" alt="img-117" />
@@ -151,7 +68,9 @@ const InfoTerkini = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <h4> <a href="cause-details.html">{item.title}</a> </h4>
+                                                <h4> <a href="cause-details.html">{item.title}</a>
+                                                <Link to={`/SiaranPers/${item.slug}`}></Link>
+                                                 </h4>
                                                 {/* <p>Aellentesque porttitor lacus quis enim varius sed efficitur...</p> */}
                                                 {/* <a href="cause-details.html" className="btn btn-primary">Donate Now</a> */}
                                             </div>
@@ -176,4 +95,5 @@ const InfoTerkini = () => {
         </>
     )
 }
-export default InfoTerkini
+
+export default SiaranPersDetail
