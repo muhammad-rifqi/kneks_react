@@ -22,6 +22,8 @@ import Elibrary from './component/Elibrary';
 import Pdes from './component/Pdes';
 import Agenda from './component/Agenda';
 import Kontak from './component/Kontak';
+import Data from './component/Data';
+import Opini from './component/Opini';
 
 function App() {
   
@@ -46,11 +48,14 @@ function App() {
         <Route path="/infrastruktur-ekosistem-syariah" element={<InfrastrukturEkosistemSyariah/>}></Route> 
 
         <Route path="/siaran-pers" element={<SiaranPers/>}></Route> 
+        {/* <Route path="/siaran-pers/:slug" element={<ProductDetails />} /> */}
         <Route path="/liputan-media" element={<LiputanMedia/>}></Route> 
         <Route path="/info-terkini" element={<InfoTerkini/>}></Route> 
 
         <Route path="/e-library" element={<Elibrary/>}></Route> 
         <Route path="/kdeks" element={<IndustriProdukHalal/>}></Route> 
+        <Route path="/data" element={<Data/>}></Route> 
+        <Route path="/opini" element={<Opini/>}></Route> 
         <Route path="/pdes" element={<Pdes/>}></Route> 
         <Route path="/agenda" element={<Agenda/>}></Route> 
         <Route path="/kontak" element={<Kontak/>}></Route> 
