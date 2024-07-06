@@ -27,7 +27,26 @@ const SiaranPersDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>{item.title}</h3>
+                            <h3>Siaran Pers</h3>
+                        </div>
+                    </div>
+                </section>
+                <section className="event-details-section">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="event-details-inner-box">
+                                    <img src={item.foto} className="img-fluid" alt={item.title} />
+                                    <div className="event-details-meta">
+                                        <div className="event-details-meta-number">
+                                            <span>28</span>
+                                        </div>
+                                        <div className="event-details-meta-date">
+                                            <span>{item.tanggal}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
