@@ -1,110 +1,12 @@
 import React, { useState, useEffect } from "react";
-
+import isiItemsBerita from "../dataBerita"
 
 
 
 const LiputanMedia = () => {
 
 
-    const isiItemsBerita = () => [
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
-        {
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita3.svg"
-        },
 
-    ];
     const [items, setItems] = useState([]);
     const [visible, setVisible] = useState(9)
 
@@ -135,10 +37,10 @@ const LiputanMedia = () => {
                         <div className="row row-gutter-30">
                             {items.slice(0, visible).map((item) => {
                                 return (
-                                    <div className="col-lg-4 col-xl-4" key={item.title}>
+                                    <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox">
-                                                <img src={item.foto} className="img-fluid" alt="img-117" />
+                                                <img src={item.foto} className="img-fluid" alt={item.title} />
                                             </div>
                                             <div className="berita-content">
                                                 <div className="berita-card-funding">

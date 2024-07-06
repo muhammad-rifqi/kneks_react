@@ -1,25 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
-
+import isiItemsBerita from "../dataBerita"
 
 const SiaranPersDetail = () => {
 
 
     const { slug } = useParams();
     const [item, setItem] = useState(null);
-    const isiItemsBerita = () => [
-        {
-            id: "1",
-            slug: "slug-satu",
-            title: "Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah",
-            tag: "#BERITABARU",
-            tanggal: "20 Juni 2024",
-            foto: "assets/image/berita.jpg"
-        },
 
-
-    ];
 
 
     useEffect(() => {
