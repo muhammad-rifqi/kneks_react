@@ -21,6 +21,10 @@ const SiaranPersDetail = () => {
         return <div>Loading...</div>;
     }
 
+    const tanggal = item.tanggal;
+    const arrTgl = tanggal.split(" ");
+
+
     return (
         <>
             <div className="page-wrapper">
@@ -39,37 +43,25 @@ const SiaranPersDetail = () => {
                                     <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} />
                                     <div className="event-details-meta">
                                         <div className="event-details-meta-number">
-                                            <span>28</span>
+                                            <span>{arrTgl[0]}</span>
                                         </div>
                                         <div className="event-details-meta-date">
-                                            <span>{item.tanggal}</span>
+                                            <span>{arrTgl[1]} &nbsp;{arrTgl[2]}</span>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="event-details-content-box">
+                                    <h4>{item.title}</h4>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum ley of type and scrambled it to make a type specimen book.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section className="berita-section">
-                    <div className="container">
-                        <div className="berita-detail">
-                            <img src={item.foto} className="img-fluid" alt={item.title} />
-                            <div className="berita-content">
-                                <div className="berita-card-funding">
-                                    <div className="berita-card-funding-list">
-                                        <div className="berita-card-funding-item">
-                                            <div className="berita-card-funding-text-tag">{item.tag}</div>
-                                        </div>
-                                        <div className="berita-card-funding-item">
-                                            <div className="berita-card-funding-text">{item.tanggal}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p>{item.content}</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+
             </div>
         </>
     )
