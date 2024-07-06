@@ -36,7 +36,7 @@ const SiaranPersDetail = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src={item.foto} className="img-fluid" alt={item.title} />
+                                    <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} />
                                     <div className="event-details-meta">
                                         <div className="event-details-meta-number">
                                             <span>28</span>

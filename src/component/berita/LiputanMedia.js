@@ -40,7 +40,7 @@ const LiputanMedia = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox">
-                                                <img src={require(item.foto).default} className="img-fluid" alt={item.title} />
+                                                <img src={item.foto} className="img-fluid" alt={item.title} />
                                             </div>
                                             <div className="berita-content">
                                                 <div className="berita-card-funding">
