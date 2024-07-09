@@ -82,6 +82,23 @@ const SiaranPersDetail = () => {
                                     <p>{item.deskripsi}</p>
                                 </div>
                             </div>
+                            <hr />
+                            <div className="news-details-list-title pb-3">
+                                <h4>Tags :</h4>
+                            </div>
+                            <div className="news-details-list-button">
+                                <a href="news-details.html" className="btn btn-primary">#Culturse</a>
+                                <a href="news-details.html" className="btn btn-primary">Government</a>
+                                <a href="news-details.html" className="btn btn-primary">Government</a>
+                                <a href="news-details.html" className="btn btn-primary">Government</a>
+                                <a href="news-details.html" className="btn btn-primary">Government</a>
+                                <a href="news-details.html" className="btn btn-primary">Government</a>
+                                <a href="news-details.html" className="btn btn-primary">Government</a>
+                                <a href="news-details.html" className="btn btn-primary">Government</a>
+                                <a href="news-details.html" className="btn btn-primary">Government</a>
+                                <a href="news-details.html" className="btn btn-primary">Government</a>
+                                <a href="news-details.html" className="btn btn-primary">Government</a>
+                            </div>
                         </div>
                     </div>
                 </section>

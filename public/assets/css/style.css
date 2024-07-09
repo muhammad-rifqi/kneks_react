@@ -6550,7 +6550,7 @@ a.search-toggler {
 }
 
 .news-details-list-button {
-	margin-left: 10px;
+	margin-left: 0;
 }
 
 .news-details-list-button a {
@@ -6572,6 +6572,7 @@ a.search-toggler {
 .news-details-list-button .btn-primary+.btn-primary {
 	margin-left: 10px;
 	padding: 10px 20px;
+	margin: 5px;
 }
 
 .news-details-socials a {
