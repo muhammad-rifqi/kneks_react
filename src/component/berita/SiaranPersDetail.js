@@ -56,24 +56,30 @@ const SiaranPersDetail = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row pb-5">
-                                <div className="col-lg-3">
-                                    <img src={`${process.env.PUBLIC_URL}/${item.foto}`} width={`100%`} className="img-fluid" alt={item.title} />
-                                </div>
-                                <div className="col-lg-3">
-                                    <img src={`${process.env.PUBLIC_URL}/${item.foto}`} width={`100%`} className="img-fluid" alt={item.title} />
-                                </div>
-                                <div className="col-lg-3">
-                                    <img src={`${process.env.PUBLIC_URL}/${item.foto}`} width={`100%`} className="img-fluid" alt={item.title} />
-                                </div>
-                                <div className="col-lg-3">
-                                    <img src={`${process.env.PUBLIC_URL}/${item.foto}`} width={`100%`} className="img-fluid" alt={item.title} />
-                                </div>
+                            <div className="row">
+                                {item.foto_gallery && item.foto_gallery.length > 0 ? (
+                                    item.foto_gallery.map((result, index) => (
+                                        <div className="col-lg-3 pb-3" key={index}>
+                                            <a href={`${process.env.PUBLIC_URL}/${result.foto}`} className="beritaDetail" data-gall="gallery01">
+                                                <img
+                                                    src={`${process.env.PUBLIC_URL}/${result.foto}`}
+                                                    width="100%"
+                                                    style={{ height: "195px" }}
+                                                    className="img-fluid"
+                                                    alt={item.title}
+                                                />
+                                            </a>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <div className="col-lg-12 text-center ">
+                                        <p className="text-white bg-danger p-2">Tidak ada foto</p>
+                                    </div>
+                                )}
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum ley of type and scrambled it to make a type specimen book.</p>
+                                    <p>{item.deskripsi}</p>
                                 </div>
                             </div>
                         </div>
