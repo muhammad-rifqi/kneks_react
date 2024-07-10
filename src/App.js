@@ -52,7 +52,10 @@ function App() {
         <Route path="/siaran-pers/:slug" element={<SiaranPersDetail />} />
 
         <Route path="/liputan-media" element={<LiputanMedia />}></Route>
+        <Route path="/liputan-media/:slug" element={<SiaranPersDetail />} />
+
         <Route path="/info-terkini" element={<InfoTerkini />}></Route>
+        <Route path="/info-terkini/:slug" element={<SiaranPersDetail />} />
 
         <Route path="/e-library" element={<Elibrary />}></Route>
         <Route path="/kdeks" element={<IndustriProdukHalal />}></Route>

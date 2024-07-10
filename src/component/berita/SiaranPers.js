@@ -45,18 +45,19 @@ const SiaranPers = () => {
 
                                                     <div className="berita-card-funding-list">
                                                         <div className="berita-card-funding-item">
-                                                            {/* <div className="berita-card-funding-amount">$25,487</div> */}
+                                                            
                                                             <div className="berita-card-funding-text-tag">{item.tag}</div>
                                                         </div>
                                                         <div className="berita-card-funding-item">
-                                                            {/* <div className="berita-card-funding-amount">$30,000</div> */}
+                                                           
                                                             <div className="berita-card-funding-text">{item.tanggal}</div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <h4> <Link to={`/siaran-pers/${item.slug}`}>{item.title}</Link></h4>
-                                                {/* <p>Aellentesque porttitor lacus quis enim varius sed efficitur...</p> */}
-                                                {/* <a href="cause-details.html" className="btn btn-primary">Donate Now</a> */}
+                                                <h4> 
+                                                    <Link to={`/siaran-pers/${item.slug}`}>{item.title}</Link>
+                                                </h4>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -65,9 +66,9 @@ const SiaranPers = () => {
                             {visible < items.length && (
                                 <div className="col-12 pt-5">
                                     <div className="block-box load-more-btn">
-                                        <a href="javascript:void(0)" className="item-btn" onClick={showMore}>
+                                        <Link to="javascript:void(0)" className="item-btn" onClick={showMore}>
                                             <i className="fa-solid fa-refresh"></i>Load More
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             )}
