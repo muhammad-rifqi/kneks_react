@@ -2297,6 +2297,12 @@ a.search-toggler {
 	font-family: var(--thm-font);
 }
 
+.about-one-section-ber {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color:  #FAFAFA;
+	;
+}
 .about-one-section {
 	padding-top: 120px;
 	padding-bottom: 120px;
@@ -4949,6 +4955,10 @@ a.search-toggler {
 	margin-top: 0px;
 }
 
+.event-details-section-ber {
+	padding-top: 120px;
+	padding-bottom: 50px;
+}
 .event-details-section {
 	padding-top: 120px;
 	padding-bottom: 120px;
@@ -8671,6 +8681,12 @@ SOCIAL MEDIA
   .berita-section {
 	padding-top: 120px;
 	padding-bottom: 120px;
+}
+  .berita-section-det {
+	padding-top: 70px;
+	padding-bottom: 70px;
+	background: #FAFAFA;
+
 }
 .berita-card-imgbox img {
 	height: 270px;

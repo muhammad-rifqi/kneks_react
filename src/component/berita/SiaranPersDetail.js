@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from "react";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import isiItemsBerita from "../dataBerita"
 
 const SiaranPersDetail = () => {
 
 
     const { slug } = useParams();
+    const [itemx, setItemx] = useState([]);
     const [item, setItem] = useState(null);
 
 
 
+
     useEffect(() => {
+
+
         const items = isiItemsBerita();
+        setItemx(items);
         const foundItem = items.find(item => item.slug === slug);
         setItem(foundItem);
     }, [slug]);
@@ -35,7 +40,7 @@ const SiaranPersDetail = () => {
                         </div>
                     </div>
                 </section>
-                <section className="event-details-section">
+                <section className="event-details-section-ber">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
@@ -99,6 +104,51 @@ const SiaranPersDetail = () => {
                                 <a href="news-details.html" className="btn btn-primary">Government</a>
                                 <a href="news-details.html" className="btn btn-primary">Government</a>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="berita-section-det">
+                    <div className="container">
+                        <div className="row row-gutter-y-40 mb-5">
+                            <div className="col-lg-12 col-xl-12">
+                                <div className="about-one-inner">
+                                    <div className="section-tagline">
+                                        Berita Lainnya
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row row-gutter-30">
+                            {itemx.slice(0, 3).map((item) => {
+                                return (
+                                    <div className="col-lg-4 col-xl-4" key={item.id}>
+                                        <div className="berita-card">
+                                            <div className="berita-card-imgbox">
+                                                <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} />
+                                            </div>
+                                            <div className="berita-content">
+                                                <div className="berita-card-funding">
+
+                                                    <div className="berita-card-funding-list">
+                                                        <div className="berita-card-funding-item">
+                                                            {/* <div className="berita-card-funding-amount">$25,487</div> */}
+                                                            <div className="berita-card-funding-text-tag">{item.tag}</div>
+                                                        </div>
+                                                        <div className="berita-card-funding-item">
+                                                            {/* <div className="berita-card-funding-amount">$30,000</div> */}
+                                                            <div className="berita-card-funding-text">{item.tanggal}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h4> <Link to={`/siaran-pers/${item.slug}`}>{item.title}</Link></h4>
+                                                {/* <p>Aellentesque porttitor lacus quis enim varius sed efficitur...</p> */}
+                                                {/* <a href="cause-details.html" className="btn btn-primary">Donate Now</a> */}
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </section>
