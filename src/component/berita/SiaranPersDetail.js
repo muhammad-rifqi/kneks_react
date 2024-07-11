@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import isiItemsBerita from "../dataBerita"
 
+
 const SiaranPersDetail = () => {
 
 
@@ -14,8 +15,6 @@ const SiaranPersDetail = () => {
 
 
     useEffect(() => {
-
-
         const items = isiItemsBerita();
         setItemx(items);
         const foundItem = items.find(item => item.slug === slug);
