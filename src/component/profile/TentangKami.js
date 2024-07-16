@@ -163,7 +163,7 @@ const TentangKami = () => {
                         
                     </div>
                     {/* end row konten */}
-
+                    
                 </div>
             </section>
             {/* END SECTION FILOSOFI LOGO */}

@@ -1,52 +1,127 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Card, Form, Button, Pagination } from 'react-bootstrap';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const GaleriFoto = () => {
+    const [photos, setPhotos] = useState([]);
+    const [filteredPhotos, setFilteredPhotos] = useState([]);
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const photosPerPage = 12; // 3 columns * 4 rows
+
+    useEffect(() => {
+        // Simulating fetching photo data
+        const fetchedPhotos = [
+            { id: 1, name: 'Photo 1', filename: 'berita.jpg', date: new Date('2023-01-01') },
+            { id: 2, name: 'Photo 2', filename: 'berita.jpg', date: new Date('2023-02-15') },
+            { id: 3, name: 'Photo 2', filename: 'berita.jpg', date: new Date('2023-02-15') },
+            { id: 4, name: 'Photo 2', filename: 'berita.jpg', date: new Date('2023-02-15') },
+            { id: 5, name: 'Photo 2', filename: 'berita.jpg', date: new Date('2023-02-15') },
+            { id: 6, name: 'Photo 2', filename: 'berita.jpg', date: new Date('2023-02-15') },
+            { id: 7, name: 'Photo 2', filename: 'berita.jpg', date: new Date('2023-02-15') },
+            { id: 8, name: 'Photo 2', filename: 'berita.jpg', date: new Date('2023-02-15') },
+            { id: 9, name: 'Photo 2', filename: 'berita.jpg', date: new Date('2023-02-15') },
+            { id: 10, name: 'Photo 2', filename: 'berita.jpg', date: new Date('2023-02-15') },
+            { id: 11, name: 'Photo 2', filename: 'berita.jpg', date: new Date('2023-02-15') },
+            { id: 12, name: 'Photo 2', filename: 'berita.jpg', date: new Date('2023-02-15') },
+            // ... add more photos
+        ];
+        setPhotos(fetchedPhotos);
+        setFilteredPhotos(fetchedPhotos);
+    }, []);
+
+    const filterPhotos = () => {
+        if (startDate && endDate) {
+            const filtered = photos.filter(photo =>
+                photo.date >= startDate && photo.date <= endDate
+            );
+            setFilteredPhotos(filtered);
+            setCurrentPage(1);
+        }
+    };
+
+    const indexOfLastPhoto = currentPage * photosPerPage;
+    const indexOfFirstPhoto = indexOfLastPhoto - photosPerPage;
+    const currentPhotos = filteredPhotos.slice(indexOfFirstPhoto, indexOfLastPhoto);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return (
         <>
-           <div class="page-wrapper">
-            
-            <section className="page-banner">
-                <div className="container">
-                    <div className="page-banner-title">
-                        <h3>Galeri Foto</h3>
-                    </div>
-                </div>
-            </section>
-            <section className="about-one-section">
-                <div className="container">
-                    <div className="row row-gutter-y-40">
-                        <div className="col-lg-12 col-xl-6">
-                            <div className="about-one-inner">
-                                <div className="section-tagline">
-                                    Our introductions
-                                </div>
-                                <h2 className="section-title">Welcome to Mexican City Municipal Council</h2>
-                                <p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis, sit amet mattis magna varius non.</p>
-                                <h5 className="about-one-inner-text">Denounce with righteous indignation and dislike men who are so beguiled & demoralized our power.</h5>
-                                <div className="row row-gutter-y-30">
-                                    <div className="col-xl-6 col-lg-6 col-md-6">
-                                        <div className="about-one-card">
-                                            <div className="about-one-card-number">01</div>
-                                            <div className="about-one-card-content"><h5>Going Above and Beyond</h5></div>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-6 col-lg-6 col-md-6">
-                                        <div className="about-one-card">
-                                            <div className="about-one-card-number">02</div>
-                                            <div className="about-one-card-content"><h5>Committed to People First</h5></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-12 col-xl-6">
-                            <div className="about-one-image">
-                                <img src="assets/image/shapes/shape-1.png" className="floated-image-one" alt="img-58" />
-                                <img src="assets/image/gallery/about-7.jpg" alt="img-59" className="img-fluid" />
-                            </div>
+            <div class="page-wrapper">
+
+                <section className="page-banner">
+                    <div className="container">
+                        <div className="page-banner-title">
+                            <h3>Galeri Foto</h3>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+                <section className="about-one-section">
+                    <Container>
+                        <Row className="mb-3">
+                            <Col md={4}>
+                                <DatePicker
+                                    selected={startDate}
+                                    onChange={date => setStartDate(date)}
+                                    selectsStart
+                                    startDate={startDate}
+                                    endDate={endDate}
+                                    placeholderText="Start Date"
+                                    className="form-control"
+                                />
+                            </Col>
+                            <Col md={4}>
+                                <DatePicker
+                                    selected={endDate}
+                                    onChange={date => setEndDate(date)}
+                                    selectsEnd
+                                    startDate={startDate}
+                                    endDate={endDate}
+                                    minDate={startDate}
+                                    placeholderText="End Date"
+                                    className="form-control"
+                                />
+                            </Col>
+                            <Col md={4}>
+                                <Button onClick={filterPhotos}>Filter</Button>
+                            </Col>
+                        </Row>
+
+                        <Row>
+                            {currentPhotos.map(photo => (
+                                <Col key={photo.id} xs={12} sm={6} md={4} className="mb-4">
+                                    <Card>
+                                        <Card.Img
+                                            variant="top"
+                                            src={`${process.env.PUBLIC_URL}/assets/image/${photo.filename}`}
+                                            alt={photo.name}
+                                        />
+                                        <Card.Body>
+                                            <Card.Title>{photo.name}</Card.Title>
+                                            <Card.Text>{photo.date.toDateString()}</Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            ))}
+                        </Row>
+
+                        <Row className="mt-3">
+                            <Col className="d-flex justify-content-center">
+                                <Pagination>
+                                    {[...Array(Math.ceil(filteredPhotos.length / photosPerPage))].map((_, index) => (
+                                        <Pagination.Item key={index + 1} active={index + 1 === currentPage} onClick={() => paginate(index + 1)}>
+                                            {index + 1}
+                                        </Pagination.Item>
+                                    ))}
+                                </Pagination>
+                            </Col>
+                        </Row>
+                    </Container>
+                </section>
             </div>
         </>
     )

@@ -9,6 +9,7 @@ import TentangKami from './component/profile/TentangKami';
 import StrukturOrganisasi from './component/profile/StrukturOrganisasi';
 import GaleriFoto from './component/profile/GaleriFoto';
 import GaleriVideo from './component/profile/GaleriVideo';
+import GaleriDetail from './component/profile/GaleriDetail';
 import IndustriProdukHalal from './component/direktorat/IndustriProdukHalal';
 import JasakeuanganSyariah from './component/direktorat/JasakeuanganSyariah';
 import KeuanganSosialSyariah from './component/direktorat/KeuanganSosialSyariah';
@@ -40,6 +41,7 @@ function App() {
         <Route exact path="/struktur-organisasi" element={<StrukturOrganisasi/>} /> 
         <Route exact path="/galeri-foto" element={<GaleriFoto/>} /> 
         <Route exact path="/galeri-video" element={<GaleriVideo/>} /> 
+        <Route exact path="/galeri-detail" element={<GaleriDetail/>} /> 
 
 
         <Route exact path="/industri-produk-halal" element={<IndustriProdukHalal/>} /> 
