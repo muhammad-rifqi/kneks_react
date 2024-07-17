@@ -9021,6 +9021,15 @@ SOCIAL MEDIA
     min-height: 100vh;
 }
 
+.side-image{
+    background-image: url(/assets/image/gbr-login.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+    position: relative;
+}
+
 .row{
 	width:  900px;
 	height:550px;
