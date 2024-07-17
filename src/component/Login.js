@@ -48,9 +48,17 @@ const Login = () => {
 
     return (
 
-        <section className="login-section">
-<h1>login</h1>
-        </section>
+        <>
+            <div className="wrappers">
+                <div className="container main">
+                    <div className="row">
+                        <div className="col-md-6 side-image">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 };
 
