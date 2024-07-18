@@ -53,17 +53,28 @@ const Login = () => {
                 <div className="row">
                     <div className="col-md-8 ">
                         <div className=" m-5">
-                            <img src="/assets/image/logo-login.svg" alt="logoLogin"  />
+                            <img src="/assets/image/logo-login.svg" alt="logoLogin" />
                         </div>
                         <div className="text-center gb-login">
-                            <img src="/assets/image/gbr-login.png" alt="imgLogin" width={`60%`}  />
+                            <img src="/assets/image/gbr-login.png" alt="imgLogin" width={`60%`} />
 
                         </div>
 
                     </div>
                     <div className="col-md-4 right ">
                         <div className="input-box">
-                            <header>Create account</header>
+                            <header>KNEKS</header>
+                            <h5>USER LOGIN</h5>
+                            <form action="#" class="sign-in-form">
+                                <div class="input-field">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" placeholder="Masukkan Username" />
+                                </div>
+                                <div class="input-field">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" placeholder="Masukkan Password" />
+                                </div>
+                            </form>
 
                         </div>
                     </div>
