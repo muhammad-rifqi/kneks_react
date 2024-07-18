@@ -2,19 +2,13 @@ import React, { useState } from "react";
 
 const Login = () => {
     const [formValues, setFormValues] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        inputText: ''
+        username: '',
+
     });
 
     const [fieldErrors, setFieldErrors] = useState({
-        name: false,
-        email: false,
-        phone: false,
-        subject: false,
-        inputText: false
+        username: false,
+
     });
 
     const handleInputChange = (e) => {
@@ -29,11 +23,8 @@ const Login = () => {
         e.preventDefault();
 
         const newFieldErrors = {
-            name: formValues.name.trim() === '',
-            email: formValues.email.trim() === '',
-            phone: formValues.phone.trim() === '',
-            subject: formValues.subject.trim() === '',
-            inputText: formValues.inputText.trim() === ''
+            username: formValues.username.trim() === '',
+
         };
 
         setFieldErrors(newFieldErrors);
@@ -71,22 +62,29 @@ const Login = () => {
                         <div className="input-box">
                             <header>KNEKS</header>
                             <h5>USER LOGIN</h5>
-                            <form action="#" class="sign-in-form">
-                                <div class="input-field">
-                                    <i class="fas fa-user"></i>
-                                    <input type="text" placeholder="Masukkan Username" />
+                            <form  className="sign-in-form" onSubmit={handleSubmit}>
+                                <div className={ fieldErrors.username ? 'input-field-danger' : 'input-field' }>
+                                    <i className="fas fa-user"></i>
+                                    <input type="text" placeholder="Masukkan Username"
+                                        id="username"
+                                        name="username"
+                                        value={formValues.username}
+                                        onChange={handleInputChange}
+                                       
+                                    />
                                 </div>
-                                <div class="input-field">
-                                    <i class="fas fa-lock"></i>
+                                {fieldErrors.username && <small className="text-danger">*Wajib diisi</small>}
+                                <div className="input-field">
+                                    <i className="fas fa-lock"></i>
                                     <input type={passwordShown ? 'text' : 'password'} placeholder="Masukkan Password" />
                                     <span className="toggle-password" onClick={togglePasswordVisibility}>
                                         <i className={passwordShown ? 'fas fa-eye-slash' : 'fas fa-eye'}></i>
                                     </span>
                                 </div>
 
-                                <input type="submit" value="Login" class="btn solid" />
-                                <div class="signin">
-                                    <a href="#">Forgot Password</a>
+                                <input type="submit" value="Login" className="btn solid" />
+                                <div className="text-center">
+                                    <a href="#" className="link-secondary">Forgot Password</a>
                                 </div>
                             </form>
 
