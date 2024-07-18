@@ -9021,20 +9021,31 @@ SOCIAL MEDIA
     min-height: 100vh;
 }
 
-.side-image{
-    background-image: url(/assets/image/gbr-login.svg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 10px 0 0 10px;
-    position: relative;
+.gb-login{
+   padding-top: 100px;
+   padding-bottom: 0;
 }
 
-.row{
-	width:  900px;
-	height:550px;
-	border-radius: 10px;
-	background: #fff;
-	padding: 0px;
+
+
+
+  .right{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background-color: var(--thm-white);
 	box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+	height: 100vh; /* 100% of the viewport height */
+	bottom: 0;
   }
+  .input-box{
+	width: 330px;
+	box-sizing: border-box;
+  }
+
+  .input-box header{
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 45px;
+}

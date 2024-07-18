@@ -50,9 +50,20 @@ const Login = () => {
 
         <>
             <div className="wrappers">
-                <div className="container main">
-                    <div className="row">
-                        <div className="col-md-6 side-image">
+                <div className="row">
+                    <div className="col-md-8 ">
+                        <div className=" m-5">
+                            <img src="/assets/image/logo-login.svg" alt="logoLogin"  />
+                        </div>
+                        <div className="text-center gb-login">
+                            <img src="/assets/image/gbr-login.png" alt="imgLogin" width={`60%`}  />
+
+                        </div>
+
+                    </div>
+                    <div className="col-md-4 right ">
+                        <div className="input-box">
+                            <header>Create account</header>
 
                         </div>
                     </div>
