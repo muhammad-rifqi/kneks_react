@@ -57,7 +57,7 @@ const Login = () => {
         <>
             <div className="wrappers">
                 <div className="row">
-                    <div className="col-md-8 d-none d-md-block ">
+                    <div className="col-lg-8 col-md-6 d-none d-md-block ">
                         <div className=" m-5">
                             <img src="/assets/image/logo-login.svg" alt="logoLogin" />
                         </div>
@@ -67,7 +67,7 @@ const Login = () => {
                         </div>
 
                     </div>
-                    <div className="col-md-4  col-sm-12 right ">
+                    <div className="col-lg-4 col-md-6  col-sm-12 right ">
                         <div className="input-box">
                             <header>KNEKS</header>
                             <h5>USER LOGIN</h5>
@@ -85,6 +85,9 @@ const Login = () => {
                                 </div>
 
                                 <input type="submit" value="Login" class="btn solid" />
+                                <div class="signin">
+                                    <a href="#">Forgot Password</a>
+                                </div>
                             </form>
 
                         </div>
