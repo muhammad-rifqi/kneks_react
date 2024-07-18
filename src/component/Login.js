@@ -46,12 +46,18 @@ const Login = () => {
         }
     };
 
+    const [passwordShown, setPasswordShown] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setPasswordShown(!passwordShown);
+    };
+
     return (
 
         <>
             <div className="wrappers">
                 <div className="row">
-                    <div className="col-md-8 ">
+                    <div className="col-md-8 d-none d-md-block ">
                         <div className=" m-5">
                             <img src="/assets/image/logo-login.svg" alt="logoLogin" />
                         </div>
@@ -61,7 +67,7 @@ const Login = () => {
                         </div>
 
                     </div>
-                    <div className="col-md-4 right ">
+                    <div className="col-md-4  col-sm-12 right ">
                         <div className="input-box">
                             <header>KNEKS</header>
                             <h5>USER LOGIN</h5>
@@ -72,8 +78,13 @@ const Login = () => {
                                 </div>
                                 <div class="input-field">
                                     <i class="fas fa-lock"></i>
-                                    <input type="password" placeholder="Masukkan Password" />
+                                    <input type={passwordShown ? 'text' : 'password'} placeholder="Masukkan Password" />
+                                    <span className="toggle-password" onClick={togglePasswordVisibility}>
+                                        <i className={passwordShown ? 'fas fa-eye-slash' : 'fas fa-eye'}></i>
+                                    </span>
                                 </div>
+
+                                <input type="submit" value="Login" class="btn solid" />
                             </form>
 
                         </div>

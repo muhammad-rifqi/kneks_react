@@ -9082,6 +9082,13 @@ SOCIAL MEDIA
 	transition: 0.5s;
 	font-size: 1.1rem;
   }
+  .toggle-password {
+	position: absolute;
+	right: 13px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+  }
   
   .input-field input {
 	background: none;
@@ -9096,4 +9103,24 @@ SOCIAL MEDIA
   .input-field input::placeholder {
 	color: #146AA4;
 	font-weight: 200;
+  }
+
+  .btn {
+	width: 100%;
+	background-color: #146AA4;
+	border: none;
+	outline: none;
+	height: 49px;
+	border-radius: 49px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin: 10px 0;
+	cursor: pointer;
+	transition: 0.5s;
+	padding-top: 10px;
+  }
+  
+  .btn:hover {
+	background-color: #4d84e2;
   }
