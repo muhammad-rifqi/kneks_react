@@ -3,11 +3,13 @@ import React, { useState } from "react";
 const Login = () => {
     const [formValues, setFormValues] = useState({
         username: '',
+        password: '',
 
     });
 
     const [fieldErrors, setFieldErrors] = useState({
         username: false,
+        password: false,
 
     });
 
@@ -24,6 +26,7 @@ const Login = () => {
 
         const newFieldErrors = {
             username: formValues.username.trim() === '',
+            password: formValues.password.trim() === '',
 
         };
 
@@ -63,7 +66,7 @@ const Login = () => {
                             <header>KNEKS</header>
                             <h5>USER LOGIN</h5>
                             <form  className="sign-in-form" onSubmit={handleSubmit}>
-                                <div className={ fieldErrors.username ? 'input-field-danger' : 'input-field' }>
+                                <div className={ fieldErrors.username ? 'input-field-danger' : 'input-field mb-4' }>
                                     <i className="fas fa-user"></i>
                                     <input type="text" placeholder="Masukkan Username"
                                         id="username"
@@ -73,15 +76,20 @@ const Login = () => {
                                        
                                     />
                                 </div>
-                                {fieldErrors.username && <small className="text-danger">*Wajib diisi</small>}
-                                <div className="input-field">
+                                {fieldErrors.username && (<small className="text-danger" style={{paddingLeft:'20px'}}>*Wajib diisi</small>)}
+                                <div className={ fieldErrors.password ? 'input-field-danger' : 'input-field mb-4' }>
                                     <i className="fas fa-lock"></i>
-                                    <input type={passwordShown ? 'text' : 'password'} placeholder="Masukkan Password" />
+                                    <input type={passwordShown ? 'text' : 'password'} placeholder="Masukkan Password"
+                                    id="password"
+                                    name="password"
+                                    value={formValues.password}
+                                    onChange={handleInputChange}
+                                    />
                                     <span className="toggle-password" onClick={togglePasswordVisibility}>
                                         <i className={passwordShown ? 'fas fa-eye-slash' : 'fas fa-eye'}></i>
                                     </span>
                                 </div>
-
+                                {fieldErrors.password && (<small className="text-danger" style={{paddingLeft:'20px'}}>*Wajib diisi</small>)}
                                 <input type="submit" value="Login" className="btn solid" />
                                 <div className="text-center">
                                     <a href="#" className="link-secondary">Forgot Password</a>
