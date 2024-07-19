@@ -1,5 +1,56 @@
 import React from "react";
+import { Container, Row, Col, Card, Modal } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const JasakeuanganSyariah = () => {
+    const [showModal, setShowModal] = React.useState(false);
+    const [modalContent, setModalContent] = React.useState('');
+
+    const handleShowModal = (content) => {
+        setModalContent(content);
+        setShowModal(true);
+    };
+
+    const photos = [
+        'berita.jpg', 'berita.jpg', 'berita.jpg', 'berita.jpg', 'berita.jpg'
+    ];
+
+    const videos = [
+        'https://www.youtube.com/embed/4k6Xgjqkad4?si=q_VtC-e0sxFB4Ute',
+        'https://www.youtube.com/embed/4k6Xgjqkad4?si=q_VtC-e0sxFB4Ute',
+        'https://www.youtube.com/embed/4k6Xgjqkad4?si=q_VtC-e0sxFB4Ute',
+        'https://www.youtube.com/embed/4k6Xgjqkad4?si=q_VtC-e0sxFB4Ute',
+        'https://www.youtube.com/embed/4k6Xgjqkad4?si=q_VtC-e0sxFB4Ute'
+    ];
+
+    const news = [
+        { img: 'berita.jpg', title: 'Berita 1', date: '2023-01-01' },
+        { img: 'berita.jpg', title: 'Berita 2', date: '2023-02-15' },
+        { img: 'berita.jpg', title: 'Berita 3', date: '2023-03-20' },
+        { img: 'berita.jpg', title: 'Berita 4', date: '2023-04-10' }
+    ];
+
+    const opinions = [
+        { title: 'Opini 1', url: 'https://example.com/opini1' },
+        { title: 'Opini 2', url: 'https://example.com/opini2' },
+        { title: 'Opini 3', url: 'https://example.com/opini3' },
+        { title: 'Opini 4', url: 'https://example.com/opini4' }
+    ];
+
+    const epustaka = [
+        { title: 'e-Pustaka 1', url: 'https://example.com/epustaka1' },
+        { title: 'e-Pustaka 2', url: 'https://example.com/epustaka2' },
+        { title: 'e-Pustaka 3', url: 'https://example.com/epustaka3' },
+        { title: 'e-Pustaka 4', url: 'https://example.com/epustaka4' }
+    ];
+
+    const data = [
+        { title: 'Data 1', url: 'https://example.com/data1' },
+        { title: 'Data 2', url: 'https://example.com/data2' },
+        { title: 'Data 3', url: 'https://example.com/data3' },
+        { title: 'Data 4', url: 'https://example.com/data4' }
+    ];
+    
     return (
         <>
         <div class="page-wrapper">
