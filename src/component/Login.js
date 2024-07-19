@@ -65,39 +65,53 @@ const Login = () => {
                         <div className="input-box">
                             <header>KNEKS</header>
                             <h5>USER LOGIN</h5>
-                            <form  className="sign-in-form" onSubmit={handleSubmit}>
-                                <div className={ fieldErrors.username ? 'input-field-danger' : 'input-field mb-4' }>
+                            <form className="sign-in-form" onSubmit={handleSubmit}>
+                                <div className={fieldErrors.username ? 'input-field-danger' : 'input-field mb-4'}>
                                     <i className="fas fa-user"></i>
                                     <input type="text" placeholder="Masukkan Username"
                                         id="username"
                                         name="username"
                                         value={formValues.username}
                                         onChange={handleInputChange}
-                                       
+
                                     />
                                 </div>
-                                {fieldErrors.username && (<small className="text-danger" style={{paddingLeft:'20px'}}>*Wajib diisi</small>)}
-                                <div className={ fieldErrors.password ? 'input-field-danger' : 'input-field mb-4' }>
+                                {fieldErrors.username && (<small className="text-danger" style={{ paddingLeft: '20px' }}>*Wajib diisi</small>)}
+                                <div className={fieldErrors.password ? 'input-field-danger' : 'input-field mb-4'}>
                                     <i className="fas fa-lock"></i>
                                     <input type={passwordShown ? 'text' : 'password'} placeholder="Masukkan Password"
-                                    id="password"
-                                    name="password"
-                                    value={formValues.password}
-                                    onChange={handleInputChange}
+                                        id="password"
+                                        name="password"
+                                        value={formValues.password}
+                                        onChange={handleInputChange}
                                     />
                                     <span className="toggle-password" onClick={togglePasswordVisibility}>
                                         <i className={passwordShown ? 'fas fa-eye-slash' : 'fas fa-eye'}></i>
                                     </span>
                                 </div>
-                                {fieldErrors.password && (<small className="text-danger" style={{paddingLeft:'20px'}}>*Wajib diisi</small>)}
+                                {fieldErrors.password && (<small className="text-danger" style={{ paddingLeft: '20px' }}>*Wajib diisi</small>)}
                                 <input type="submit" value="Login" className="btn-login solid" />
                                 <div className="text-center">
                                     <a href="#" className="link-secondary">Forgot Password</a>
                                 </div>
                             </form>
-                            <button  className="btn-primaryx solid" > Daftar</button>
+                            <button className="btn-primaryx solid daftar-toggler" > Daftar</button>
 
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="information-popup ">
+                <div className="information-popup-overlay daftar-toggler"></div>
+                <div className="information-popup-content">
+                    <div className="p-3 close">
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+                    <div className="card">
+                        <h1>Daftar</h1>
                     </div>
                 </div>
             </div>
