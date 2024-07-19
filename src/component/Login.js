@@ -95,6 +95,7 @@ const Login = () => {
                                     <a href="#" className="link-secondary">Forgot Password</a>
                                 </div>
                             </form>
+                            <button  className="btn-primary solid" > Daftar</button>
 
                         </div>
                     </div>

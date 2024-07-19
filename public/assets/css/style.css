@@ -9157,4 +9157,24 @@ SOCIAL MEDIA
   
   .btn:hover {
 	background-color: #4d84e2;
+	color: #ffffff;
+  }
+  .btn-primary {
+	width: 100%;
+	background-color: var(--thm-primary);
+	border: none;
+	outline: none;
+	height: 49px;
+	border-radius: 49px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin: 10px 0;
+	cursor: pointer;
+	transition: 0.5s;
+	padding-top: 10px;
+  }
+  
+  .btn-primary:hover {
+	background-color: #099750;
   }
