@@ -90,12 +90,12 @@ const Login = () => {
                                     </span>
                                 </div>
                                 {fieldErrors.password && (<small className="text-danger" style={{paddingLeft:'20px'}}>*Wajib diisi</small>)}
-                                <input type="submit" value="Login" className="btn solid" />
+                                <input type="submit" value="Login" className="btn-login solid" />
                                 <div className="text-center">
                                     <a href="#" className="link-secondary">Forgot Password</a>
                                 </div>
                             </form>
-                            <button  className="btn-primary solid" > Daftar</button>
+                            <button  className="btn-primaryx solid" > Daftar</button>
 
                         </div>
                     </div>

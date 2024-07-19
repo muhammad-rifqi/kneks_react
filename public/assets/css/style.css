@@ -9139,7 +9139,7 @@ SOCIAL MEDIA
 	font-weight: 200;
   }
 
-  .btn {
+  .btn-login {
 	width: 100%;
 	background-color: #146AA4;
 	border: none;
@@ -9152,14 +9152,14 @@ SOCIAL MEDIA
 	margin: 10px 0;
 	cursor: pointer;
 	transition: 0.5s;
-	padding-top: 10px;
+	padding-top: 0px;
   }
   
-  .btn:hover {
+  .btn-login:hover {
 	background-color: #4d84e2;
 	color: #ffffff;
   }
-  .btn-primary {
+  .btn-primaryx {
 	width: 100%;
 	background-color: var(--thm-primary);
 	border: none;
@@ -9172,9 +9172,9 @@ SOCIAL MEDIA
 	margin: 10px 0;
 	cursor: pointer;
 	transition: 0.5s;
-	padding-top: 10px;
+	padding-top: 0px;
   }
   
-  .btn-primary:hover {
-	background-color: #099750;
+  .btn-primaryx:hover {
+	background-color:var(--thm-dark-black);
   }
