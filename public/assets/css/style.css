@@ -2314,6 +2314,13 @@ a.search-toggler {
 	}
 }
 
+.about-one-inner-x {
+	text-align: justify
+}
+
+.about-one-inner-x h2 {
+	margin-bottom: 35px;
+}
 .about-one-inner {
 	margin-top: 14px;
 	margin-right: 30px;
