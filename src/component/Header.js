@@ -14,10 +14,10 @@ const Header = () => {
           <div className="topbar-inner">
             <div className="topbar-left">
               <div className="topbar-socials">
-                <a href="javascript:void(0)"><i className="fa-brands fa-twitter"></i></a>
-                <a href="javascript:void(0)"><i className="fa-brands fa-facebook"></i></a>
-                <a href="javascript:void(0)"><i className="fa-brands fa-pinterest-p"></i></a>
-                <a href="javascript:void(0)"><i className="fa-brands fa-instagram"></i></a>
+                <a href="#"><i className="fa-brands fa-twitter"></i></a>
+                <a href="#"><i className="fa-brands fa-facebook"></i></a>
+                <a href="#"><i className="fa-brands fa-pinterest-p"></i></a>
+                <a href="#"><i className="fa-brands fa-instagram"></i></a>
               </div>
               <div className="topbar-info">
                 <ul>
@@ -60,7 +60,7 @@ const Header = () => {
                   <li className="active"><a href="/">Beranda</a>
                   </li>
                   <li className="has-dropdown">
-                    <a href="javascript:void(0)">Profile</a>
+                    <a href="#">Profile</a>
                     <ul className="list-unstyled">
                       <li><a href="/tentang-kami">Tentang Kami</a></li>
                       <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
@@ -69,7 +69,7 @@ const Header = () => {
                     </ul>
                   </li>
                   <li className="has-dropdown">
-                    <a href="javascript:void(0)">Direktorat</a>
+                    <a href="#">Direktorat</a>
                     <ul className="list-unstyled">
                       <li><a href="/industri-produk-halal">Industri Produk Halal</a></li>
                       <li><a href="/jasa-keuangan-syariah">Jasa Keuangan Syariah</a></li>
@@ -79,7 +79,7 @@ const Header = () => {
                     </ul>
                   </li>
                   <li className="has-dropdown">
-                    <a href="javascript:void(0)">Berita & Kegitan</a>
+                    <a href="#">Berita & Kegitan</a>
                     <ul className="list-unstyled">
                       <li><a href="/siaran-pers">Siaran Pers</a></li>
                       <li><a href="/liputan-media">Liputan Media</a></li>
