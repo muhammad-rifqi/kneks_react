@@ -84,14 +84,13 @@ const Header = () => {
                       <li><a href="/siaran-pers">Siaran Pers</a></li>
                       <li><a href="/liputan-media">Liputan Media</a></li>
                       <li><a href="/info-terkini">Info Terkini</a></li>
+                      <li ><a href="/opini-ekonomi-syariah">Opini Ekonomi Syariah</a></li>
                     </ul>
                   </li>
-                  <li ><a href="/e-library">E-Pustaka</a></li>
+                  <li ><a href="/agenda">Agenda</a></li>
+                  <li ><a href="/e-pustaka">E-Pustaka</a></li>
                   <li ><a href="/data">DATA</a></li>
                   <li ><a href="/kdeks">KDEKS</a></li>
-                  <li ><a href="/pdes">PDES</a></li>
-                  <li ><a href="/agenda">Agenda</a></li>
-                  <li ><a href="/opini">Opini</a></li>
                   <li ><a href="/kontak">Kontak</a>
                   </li>
                 </ul>

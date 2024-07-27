@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation  } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './component/Home';
 import Detail from './component/Detail';
 import Add from './component/Add';
@@ -20,7 +20,6 @@ import SiaranPersDetail from './component/berita/SiaranPersDetail';
 import LiputanMedia from './component/berita/LiputanMedia';
 import InfoTerkini from './component/berita/InfoTerkini';
 import Elibrary from './component/Elibrary';
-import Pdes from './component/Pdes';
 import Agenda from './component/Agenda';
 import Kontak from './component/Kontak';
 import Data from './component/Data';
@@ -54,11 +53,10 @@ function AppContent() {
         <Route path="/liputan-media/:slug" element={<SiaranPersDetail />} />
         <Route path="/info-terkini" element={<InfoTerkini />} />
         <Route path="/info-terkini/:slug" element={<SiaranPersDetail />} />
-        <Route path="/e-library" element={<Elibrary />} />
+        <Route path="/e-pustaka" element={<Elibrary />} />
         <Route path="/kdeks" element={<IndustriProdukHalal />} />
         <Route path="/data" element={<Data />} />
-        <Route path="/opini" element={<Opini />} />
-        <Route path="/pdes" element={<Pdes />} />
+        <Route path="/opini-ekonomi-syariah" element={<Opini />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/kontak" element={<Kontak />} />
         <Route path="/login" element={<Login />} />
