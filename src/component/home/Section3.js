@@ -9,12 +9,6 @@ const Section3 = () => {
                         <div className="about-image">
                             <div className="about-image-inner img-one">
                                 <img src="/assets/image/about-1.svg" className="img-fluid" alt="img-2" />
-                                {/* <div class="about-image-caption">
-                                    <div class="about-image-caption-inner">
-
-                                    </div>
-                                </div> */}
-
                             </div>
                             <div className="about-image-inner img-two">
                                 <img src="/assets/image/shapes/about-3.jpg" className="floated-image" alt="img-3" />
