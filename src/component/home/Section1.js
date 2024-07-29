@@ -9,8 +9,8 @@ const Section1 = () => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="slider-content">
-                                    <div className="slider-tagline">City Goverment Online Services</div>
-                                    <h1 className="section-title">Fastest Growing<br /> City Rome</h1>
+                                    <h1 className="section-title">"Menyatukan langkah, Memajukan Negeri"</h1>
+                                    <div className="slider-tagline">Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional </div>
                                     {/* <a href="index-2.html" className="btn btn-primary">Discover More</a> */}
                                 </div>
                             </div>
@@ -23,8 +23,8 @@ const Section1 = () => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="slider-content">
-                                    <div className="slider-tagline">City Goverment Online Services</div>
-                                    <h1 className="section-title">Fastest Growing <br />City Rome</h1>
+                                    <h1 className="section-title">"Menyatukan langkah, Memajukan Negeri"</h1>
+                                    <div className="slider-tagline">Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional </div>
                                     {/* <a href="index-2.html" className="btn btn-primary">Discover More</a> */}
                                 </div>
                             </div>
