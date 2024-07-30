@@ -2,8 +2,6 @@ import React from "react"
 const News = () => {
 	return (
 		<section className="news-section">
-		
-
 			<div className="container">
 				<div className="blog-box">
 					<div className="section-title-box text-center">
