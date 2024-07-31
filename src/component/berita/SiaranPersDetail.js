@@ -83,7 +83,7 @@ const SiaranPersDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                    <p>{item.deskripsi}</p>
+                                    <p style={{textAlign:`justify`}}>{item.deskripsi}</p>
                                 </div>
                             </div>
                             <hr />
