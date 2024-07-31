@@ -97,14 +97,14 @@ h6 {
   margin-bottom: 15px;
 }
 
-p {
+/* p {
   font-family: var(--thm-font);
   color: var(--thm-gray);
   line-height: 1.875;
   font-weight: 500;
   font-size: 16px;
   margin-bottom: 20px;
-}
+} */
 
 .btn-primary {
   padding: 18px 50px;
