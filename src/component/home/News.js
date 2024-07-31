@@ -6,7 +6,7 @@ const News = () => {
 				<div className="blog-box">
 					<div className="section-title-box text-center">
 						<div className="section-tagline">News</div>
-						<h2 className="section-title">BERITA DAN KEGIATAN</h2>
+						<h2 className="section-title">Berita Dan Kegiatan</h2>
 					</div>
 				</div>
 				<div className="row ">
