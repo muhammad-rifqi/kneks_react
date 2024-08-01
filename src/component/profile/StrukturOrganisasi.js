@@ -19,19 +19,75 @@ const StrukturOrganisasi = () => {
                                     <img src="assets/image/struktur1.svg" alt="img-59" className="img-fluid" />
                                 </div>
                             </div>
-                            <div className="col-lg-12 col-xl-12">
-                                <div className="about-one-image">
-                                    <img src="assets/image/struktur2.svg" alt="img-60" className="img-fluid" />
-                                </div>
-                            </div>
-                            <div className="col-lg-12 col-xl-12">
-                                <div className="about-one-image">
-                                    <img src="assets/image/struktur3.svg" alt="img-61" className="img-fluid" />
-                                </div>
-                            </div>
 
                         </div>
-                        <div className="row row-gutter-y-40 d-flex justify-content-center pt-5">
+                        <div className="row row-gutter-y-30">
+					<div className="col-12 col-md-6 col-xl-3">
+						<div className="team-card">
+							<div className="team-card-img">
+								<img src="assets/image/team/team-1.jpg" className="img-fluid" alt="img-40"/>
+								<div className="team-card-icon">
+									<a href="#" className="pinterest"><i className="fa-brands fa-pinterest-p"></i></a>
+									<a href="#" className="twitter"><i className="fa-brands fa-twitter"></i></a>
+									<a href="#" className="facebook"><i className="fa-brands fa-facebook"></i></a>
+								</div>
+							</div>
+							<div className="team-card-content">
+								<h4><a href="team-details.html">Sarah Albert</a></h4>
+								<p>Consultant</p>
+							</div>
+						</div>
+					</div>
+					<div className="col-12 col-md-6 col-xl-3">
+						<div className="team-card">
+							<div className="team-card-img">
+								<img src="assets/image/team/team-2.jpg" className="img-fluid" alt="img-41" />
+								<div className="team-card-icon">
+									<a href="#" className="pinterest"><i className="fa-brands fa-pinterest-p"></i></a>
+									<a href="#" className="twitter"><i className="fa-brands fa-twitter"></i></a>
+									<a href="#" className="facebook"><i className="fa-brands fa-facebook"></i></a>
+								</div>
+							</div>
+							<div className="team-card-content">
+								<h4><a href="team-details.html">Mike Hardson</a></h4>
+								<p>Consultant</p>
+							</div>
+						</div>
+					</div>
+					<div className="col-12 col-md-6 col-xl-3">
+						<div className="team-card">
+							<div className="team-card-img">
+								<img src="assets/image/team/team-3.jpg" className="img-fluid" alt="img-42"/>
+								<div className="team-card-icon">
+									<a href="#" className="pinterest"><i className="fa-brands fa-pinterest-p"></i></a>
+									<a href="#" className="twitter"><i className="fa-brands fa-twitter"></i></a>
+									<a href="#" className="facebook"><i className="fa-brands fa-facebook"></i></a>
+								</div>
+							</div>
+							<div className="team-card-content">
+								<h4><a href="team-details.html">Christine Eve</a></h4>
+								<p>Consultant</p>
+							</div>
+						</div>
+					</div>
+					<div className="col-12 col-md-6 col-xl-3">
+						<div className="team-card">
+							<div className="team-card-img">
+								<img src="assets/image/team/team-4.jpg" className="img-fluid" alt="img-43"/>
+								<div className="team-card-icon">
+									<a href="#" className="pinterest"><i className="fa-brands fa-pinterest-p"></i></a>
+									<a href="#" className="twitter"><i className="fa-brands fa-twitter"></i></a>
+									<a href="#" className="facebook"><i className="fa-brands fa-facebook"></i></a>
+								</div>
+							</div>
+							<div className="team-card-content">
+								<h4><a href="team-details.html">John Martin</a></h4>
+								<p>Consultant</p>
+							</div>
+						</div>
+					</div>
+				</div>
+                        {/* <div className="row row-gutter-y-40 d-flex justify-content-center pt-5">
                             <div className="col-lg-8 col-xl-8">
                                 <div className="search-popup-content-x">
                                     <form action="#">
@@ -43,7 +99,7 @@ const StrukturOrganisasi = () => {
                                     </form>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
             </div>
