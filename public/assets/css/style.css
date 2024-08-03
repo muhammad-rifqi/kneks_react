@@ -4743,6 +4743,13 @@ a.search-toggler {
   flex-shrink: 0;
 }
 
+.event-card-image-inner-x {
+  position: relative;
+}
+.event-card-image-inner-x img {
+  width: 500px;
+  object-fit: cover;
+}
 .event-card-image-inner {
   position: relative;
   top: -30px;
@@ -4806,6 +4813,11 @@ a.search-toggler {
   margin-left: 5px;
   font-size: 14px;
   color: var(--thm-gray);
+}
+.event-card-info-x ul li > span {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #f2994a;
 }
 
 .event-card-title h4 {
@@ -5033,7 +5045,6 @@ a.search-toggler {
 
 .event-details-content-box p + p {
   margin-bottom: 40px;
-  
 }
 
 .event-details-content-box h3 {
@@ -6013,7 +6024,7 @@ a.search-toggler {
   padding-bottom: 30px;
   padding-top: 80px;
 }
-.blog-box-x  {
+.blog-box-x {
   font-weight: 800;
   letter-spacing: -0.4px;
   margin-bottom: 100px;

@@ -2,51 +2,112 @@ import React from "react";
 const Opini = () => {
     return (
         <>
-        <div className="page-wrapper">
-            
-            <section className="page-banner">
-                <div className="container">
-                    <div className="page-banner-title">
-                        <h3>Opini</h3>
-                    </div>
-                </div>
-            </section>
-            <section className="about-one-section">
-                <div className="container">
-                    <div className="row row-gutter-y-40">
-                        <div className="col-lg-12 col-xl-6">
-                            <div className="about-one-inner">
-                                <div className="section-tagline">
-                                    Our introductions
-                                </div>
-                                <h2 className="section-title">Welcome to Mexican City Municipal Council</h2>
-                                <p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis, sit amet mattis magna varius non.</p>
-                                <h5 className="about-one-inner-text">Denounce with righteous indignation and dislike men who are so beguiled & demoralized our power.</h5>
-                                <div className="row row-gutter-y-30">
-                                    <div className="col-xl-6 col-lg-6 col-md-6">
-                                        <div className="about-one-card">
-                                            <div className="about-one-card-number">01</div>
-                                            <div className="about-one-card-content"><h5>Going Above and Beyond</h5></div>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-6 col-lg-6 col-md-6">
-                                        <div className="about-one-card">
-                                            <div className="about-one-card-number">02</div>
-                                            <div className="about-one-card-content"><h5>Committed to People First</h5></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-12 col-xl-6">
-                            <div className="about-one-image">
-                                <img src="assets/image/shapes/shape-1.png" className="floated-image-one" alt="img-58" />
-                                <img src="assets/image/gallery/about-7.jpg" alt="img-59" className="img-fluid" />
-                            </div>
+            <div className="page-wrapper">
+
+                <section className="page-banner">
+                    <div className="container">
+                        <div className="page-banner-title">
+                            <h3>Opini Ekonomi Syariah</h3>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+                <section className="event-three-section">
+                    <div className="event-section-outer">
+                        <div className="container">
+                            <div className="row row-gutter-y-30">
+                                <div className="col-12 col-lg-12 col-xl-12 ">
+                                    <div className="event-card">
+                                        <div className="event-card-image">
+                                            <div className="event-card-image-inner-x">
+                                                <a href="event-details.html"><img src="/assets/image/berita.jpg" className="img-fluid" alt="img-164" /></a>
+
+                                            </div>
+                                        </div>
+                                        <div className="event-card-content align-self-center">
+                                            <div className="event-card-info-x pb-3">
+                                                <ul className="list-unstyled" style={{ color: `#F2994A` }}>
+                                                    <li>
+                                                        <span>#BERITABARU</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className="event-card-title pb-4">
+                                                <h4><a href="event-details.html">Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah</a></h4>
+                                            </div>
+                                            <div className="event-card-info">
+                                                <ul className="list-unstyled">
+                                                    <li>
+                                                        <span>21 Mei 2024</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12 col-lg-12 col-xl-12 ">
+                                    <div className="event-card">
+                                        <div className="event-card-image">
+                                            <div className="event-card-image-inner-x">
+                                                <a href="event-details.html"><img src="/assets/image/berita2.jpeg" className="img-fluid" alt="img-164" /></a>
+
+                                            </div>
+                                        </div>
+                                        <div className="event-card-content align-self-center">
+                                            <div className="event-card-info-x pb-3">
+                                                <ul className="list-unstyled" style={{ color: `#F2994A` }}>
+                                                    <li>
+                                                        <span>#BERITABARU</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className="event-card-title pb-4">
+                                                <h4><a href="event-details.html">Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah</a></h4>
+                                            </div>
+                                            <div className="event-card-info">
+                                                <ul className="list-unstyled">
+                                                    <li>
+                                                        <span>21 Mei 2024</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12 col-lg-12 col-xl-12 ">
+                                    <div className="event-card">
+                                        <div className="event-card-image">
+                                            <div className="event-card-image-inner-x">
+                                                <a href="event-details.html"><img src="/assets/image/berita.jpg" className="img-fluid" alt="img-164" /></a>
+
+                                            </div>
+                                        </div>
+                                        <div className="event-card-content align-self-center">
+                                            <div className="event-card-info-x pb-3">
+                                                <ul className="list-unstyled" style={{ color: `#F2994A` }}>
+                                                    <li>
+                                                        <span>#BERITABARU</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className="event-card-title pb-4">
+                                                <h4><a href="event-details.html">Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah</a></h4>
+                                            </div>
+                                            <div className="event-card-info">
+                                                <ul className="list-unstyled">
+                                                    <li>
+                                                        <span>21 Mei 2024</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </>
     )
