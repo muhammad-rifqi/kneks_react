@@ -2,51 +2,51 @@ import React from "react";
 const Elibrabry = () => {
     return (
         <>
-        <div className="page-wrapper">
-            
-            <section className="page-banner">
-                <div className="container">
-                    <div className="page-banner-title">
-                        <h3>E-Librabry</h3>
+            <div className="page-wrapper">
+
+                <section className="page-banner">
+                    <div className="container">
+                        <div className="page-banner-title">
+                            <h3>E-Librabry</h3>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section className="about-one-section">
-                <div className="container">
-                    <div className="row row-gutter-y-40">
-                        <div className="col-lg-12 col-xl-6">
-                            <div className="about-one-inner">
-                                <div className="section-tagline">
-                                    Our introductions
-                                </div>
-                                <h2 className="section-title">Welcome to Mexican City Municipal Council</h2>
-                                <p>Aliquam viverra arcu. Donec aliquet blandit enim feugiat. Suspendisse id quam sed eros tincidunt luctus sit amet eu nibh egestas tempus turpis, sit amet mattis magna varius non.</p>
-                                <h5 className="about-one-inner-text">Denounce with righteous indignation and dislike men who are so beguiled & demoralized our power.</h5>
-                                <div className="row row-gutter-y-30">
-                                    <div className="col-xl-6 col-lg-6 col-md-6">
-                                        <div className="about-one-card">
-                                            <div className="about-one-card-number">01</div>
-                                            <div className="about-one-card-content"><h5>Going Above and Beyond</h5></div>
-                                        </div>
-                                    </div>
-                                    <div className="col-xl-6 col-lg-6 col-md-6">
-                                        <div className="about-one-card">
-                                            <div className="about-one-card-number">02</div>
-                                            <div className="about-one-card-content"><h5>Committed to People First</h5></div>
-                                        </div>
+                </section>
+                <section className="department-details-section">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12 col-lg-3 col-xl-3">
+                                <div className="sidebar">
+                                    <div className="sidebar-widget-list-inner">
+                                        <ul>
+                                            <li><a href="services.html">Roadmap/Masterplan</a></li>
+                                            <li><a href="services.html">Pidato/Paparan</a></li>
+                                            <li><a href="services.html">Kajian/Penelitian</a></li>
+                                            <li><a href="services.html">Publikasi</a></li>
+                                            <li><a href="services.html">Regulasi</a></li>
+                                            <li><a href="services.html">Siaran Pers</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-12 col-xl-6">
-                            <div className="about-one-image">
-                                <img src="assets/image/shapes/shape-1.png" className="floated-image-one" alt="img-58" />
-                                <img src="assets/image/gallery/about-7.jpg" alt="img-59" className="img-fluid" />
+                        <div className="row row-gutter-y-30">
+
+                            <div className="col-12 col-md-6 col-xl-3">
+                                <div className="team-card">
+                                    <div className="team-card-img">
+                                        <img src="assets/image/team/team-1.jpg" className="img-fluid" alt="img-40" />
+
+                                    </div>
+                                    <div className="team-card-content">
+                                        <h4><a href="team-details.html">Sarah Albert</a></h4>
+                                        <p>Consultant</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+
+                </section>
             </div>
         </>
     )
