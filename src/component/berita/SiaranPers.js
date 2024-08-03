@@ -63,20 +63,26 @@ const SiaranPers = () => {
                                             <div className="berita-card-imgbox">
                                                 <img src={item.foto} className="img-fluid" alt={item.title} />
                                             </div>
-                                            <div className="berita-content">
-                                                <div className="berita-card-funding">
-                                                    <div className="berita-card-funding-list">
-                                                        <div className="berita-card-funding-item">
-                                                            <div className="berita-card-funding-text-tag">{item.tag}</div>
-                                                        </div>
-                                                        <div className="berita-card-funding-item">
-                                                            <div className="berita-card-funding-text">{item.tanggal}</div>
-                                                        </div>
-                                                    </div>
+                                            <div className="berita-content pt-2">
+                                                <div className="event-card-info-x ">
+                                                    <ul className="list-unstyled" style={{ color: `#F2994A` }}>
+                                                        <li>
+                                                            <span>{item.tag}</span>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <h4>
-                                                    <Link to={`/siaran-pers/${item.slug}`}>{item.title}</Link>
-                                                </h4>
+                                                <div className="event-card-title pb-4">
+                                                    <h4>
+                                                        <Link to={`/siaran-pers/${item.slug}`}>{item.title}</Link>
+                                                    </h4>
+                                                </div>
+                                                <div className="event-card-info">
+                                                    <ul className="list-unstyled">
+                                                        <li>
+                                                            <span>{item.tanggal}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
