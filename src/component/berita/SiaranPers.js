@@ -60,16 +60,13 @@ const SiaranPers = () => {
                                 items.slice(0, visible).map((item) => (
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
-                                            <div className="berita-card-imgbox">
-                                                <img src={item.foto} className="img-fluid" alt={item.title} />
+                                            <div className="berita-card-imgbox ">
+                                                <Link to={`/siaran-pers/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
                                             </div>
-                                            <div className="berita-content pt-2">
-                                                <div className="event-card-info-x ">
-                                                    <ul className="list-unstyled" style={{ color: `#F2994A` }}>
-                                                        <li>
-                                                            <span>{item.tag}</span>
-                                                        </li>
-                                                    </ul>
+                                            <div className="berita-content ">
+                                                <div className="event-card-info-x " style={{ color: `#F2994A` }}>
+
+                                                    <span>{item.tag}</span>
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
@@ -77,11 +74,7 @@ const SiaranPers = () => {
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
-                                                    <ul className="list-unstyled">
-                                                        <li>
-                                                            <span>{item.tanggal}</span>
-                                                        </li>
-                                                    </ul>
+                                                    <span>{item.tanggal}</span>
                                                 </div>
                                             </div>
                                         </div>
