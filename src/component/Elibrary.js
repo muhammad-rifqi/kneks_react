@@ -17,7 +17,7 @@ const Elibrabry = () => {
                             <div className="col-12 col-lg-3 col-xl-3">
                                 <div className="sidebar">
                                     <div className="sidebar-widget-list-inner">
-                                        <ul>
+                                        <ul >
                                             <li><a href="services.html">Roadmap/Masterplan</a></li>
                                             <li><a href="services.html">Pidato/Paparan</a></li>
                                             <li><a href="services.html">Kajian/Penelitian</a></li>
@@ -28,22 +28,73 @@ const Elibrabry = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="row row-gutter-y-30">
+                            <div className="col-lg-9">
+                                <div className="row row-gutter-y-30">
 
-                            <div className="col-12 col-md-6 col-xl-3">
-                                <div className="team-card">
-                                    <div className="team-card-img">
-                                        <img src="assets/image/team/team-1.jpg" className="img-fluid" alt="img-40" />
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card">
+                                            <div className="team-card-img">
+                                                <img src="assets/image/team/team-1.jpg" className="img-fluid" alt="img-40" />
 
+                                            </div>
+                                            <div className="team-card-content">
+                                                <h4><a href="team-details.html">Sarah Albert</a></h4>
+                                                <p>Consultant</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="team-card-content">
-                                        <h4><a href="team-details.html">Sarah Albert</a></h4>
-                                        <p>Consultant</p>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card">
+                                            <div className="team-card-img">
+                                                <img src="assets/image/team/team-1.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content">
+                                                <h4><a href="team-details.html">Sarah Albert</a></h4>
+                                                <p>Consultant</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card">
+                                            <div className="team-card-img">
+                                                <img src="assets/image/team/team-1.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content">
+                                                <h4><a href="team-details.html">Sarah Albert</a></h4>
+                                                <p>Consultant</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card">
+                                            <div className="team-card-img">
+                                                <img src="assets/image/team/team-1.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content">
+                                                <h4><a href="team-details.html">Sarah Albert</a></h4>
+                                                <p>Consultant</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card">
+                                            <div className="team-card-img">
+                                                <img src="assets/image/team/team-1.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content">
+                                                <h4><a href="team-details.html">Sarah Albert</a></h4>
+                                                <p>Consultant</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                 </section>

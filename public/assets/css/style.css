@@ -7468,6 +7468,10 @@ label {
   transition: all 500ms ease;
   background-color: var(--thm-primary);
 }
+.sidebar-widget-list-inner li.active {
+  border-color: var(--thm-primary);
+  background: #ffffff;
+}
 
 .sidebar-widget-card {
   background-image: url("../image/shapes/widget-1.png");
