@@ -330,7 +330,7 @@ $(document).ready(function () {
 			$(this).css('width', total_width + 'px')
 		})
 	}
-	
+
 	if ($('.count-box').length) {
 		$('.count-box').appear(function () {
 			var el = $(this);
@@ -389,3 +389,4 @@ if ($(".contact-form-validated").length) {
 $(window).on('load', function () {
 	$('body').addClass('loaded');
 });
+

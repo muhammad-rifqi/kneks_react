@@ -27,6 +27,8 @@ import Opini from './component/Opini';
 
 import Login from './component/Login';
 
+  
+
 function AppContent() {
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';

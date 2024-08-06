@@ -39,8 +39,12 @@ const Elibrabry = () => {
                                             </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="team-details.html">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                <p>21 Mei 2024</p>
-                                                <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#" data-bs-toggle="tooltip" title="download">
+                                                        <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -52,8 +56,12 @@ const Elibrabry = () => {
                                             </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="team-details.html">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                <p>21 Mei 2024</p>
-                                                <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#" data-bs-toggle="tooltip" title="download">
+                                                        <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
