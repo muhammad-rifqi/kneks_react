@@ -1287,6 +1287,12 @@ a.search-toggler {
   font-weight: 500;
   font-size: 20px;
 }
+.main-slider-two-swiper-x .owl-item.active .slider-tagline {
+  transform: translateY(0);
+  opacity: 1;
+  font-weight: 500;
+  font-size: 20px;
+}
 
 .slider-content p {
   font-size: 20px;
@@ -1462,7 +1468,7 @@ a.search-toggler {
 }
 
 .slider-content-two .section-title {
-  font-size: 80px;
+  font-size: 55px;
   color: var(--thm-white);
   font-family: var(--thm-font);
   font-weight: 800;
@@ -1474,13 +1480,13 @@ a.search-toggler {
 
 @media (max-width: 1199px) {
   .slider-content-two .section-title {
-    font-size: 70px;
+    font-size: 53px;
   }
 }
 
 @media (max-width: 991px) {
   .slider-content-two .section-title {
-    font-size: 60px;
+    font-size: 45px;
   }
 }
 

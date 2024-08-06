@@ -36,8 +36,8 @@ $(document).ready(function () {
 			navText: ['<i class="fa-solid fa-arrow-left-long"></i>', '<i class="fa-solid fa-arrow-right-long"></i>']
 		})
 	}
-	if ($('.main-slider-two-swiper').length) {
-		$('.main-slider-two-swiper').owlCarousel({
+	if ($('.main-slider-two-swiper-x').length) {
+		$('.main-slider-two-swiper-x').owlCarousel({
 			loop: true,
 			nav: true,
 			items: 1,
