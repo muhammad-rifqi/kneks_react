@@ -104,13 +104,22 @@ const Data = () => {
         }
     }, []);
     const downloadPDF = () => {
+        const pdfWidth = 210; // A4 width in mm
+        const pdfHeight = 297; // A4 height in mm
         html2canvas(document.querySelector("#payment-records-chart")).then(canvas => {
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF();
-            pdf.addImage(imgData, 'PNG', 0, 0);
-            pdf.save("chart.pdf");
+          const imgData = canvas.toDataURL('image/png');
+          const pdf = new jsPDF('portrait', 'mm', [pdfWidth, pdfHeight]);
+    
+          // Adjust image dimensions to maintain aspect ratio
+          const imgWidth = pdfWidth - 20; // padding of 10mm
+          const imgHeight = (canvas.height * imgWidth) / canvas.width;
+          const margin = 10;
+    
+          pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
+          pdf.save("custom-size-chart.pdf");
         });
-    };
+      };
+    
     return (
         <>
             <div className="page-wrapper">
