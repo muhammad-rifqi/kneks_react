@@ -1,5 +1,116 @@
-import React from "react";
+import React, { useEffect } from "react";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 const Data = () => {
+    useEffect(() => {
+        // Ensure ApexCharts is loaded before using it
+        if (window.ApexCharts) {
+            const chartOptions = {
+                chart: {
+                    height: 380,
+                    width: '100%',
+                    stacked: false,
+                    toolbar: { show: false }
+                },
+                stroke: {
+                    width: [1, 2, 3],
+                    curve: 'smooth',
+                    lineCap: 'round'
+                },
+                plotOptions: {
+                    bar: {
+                        endingShape: 'rounded',
+                        columnWidth: '30%'
+                    }
+                },
+                colors: ['#3454d1', '#a2acc7', '#E1E3EA'],
+                series: [
+                    {
+                        name: 'Payment Rejected',
+                        type: 'bar',
+                        data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30, 21]
+                    },
+                    {
+                        name: 'Payment Completed',
+                        type: 'line',
+                        data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43, 41]
+                    },
+                    {
+                        name: 'Awaiting Payment',
+                        type: 'bar',
+                        data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43, 56]
+                    }
+                ],
+                fill: {
+                    opacity: [0.85, 0.25, 1, 1],
+                    gradient: {
+                        inverseColors: false,
+                        shade: 'light',
+                        type: 'vertical',
+                        opacityFrom: 0.5,
+                        opacityTo: 0.1,
+                        stops: [0, 100, 100, 100]
+                    }
+                },
+                markers: { size: 0 },
+                xaxis: {
+                    categories: [
+                        'JAN/23', 'FEB/23', 'MAR/23', 'APR/23', 'MAY/23', 'JUN/23',
+                        'JUL/23', 'AUG/23', 'SEP/23', 'OCT/23', 'NOV/23', 'DEC/23'
+                    ],
+                    axisBorder: { show: false },
+                    axisTicks: { show: false },
+                    labels: { style: { fontSize: '10px', colors: '#A0ACBB' } }
+                },
+                yaxis: {
+                    labels: {
+                        formatter: (value) => `${value}K`,
+                        offsetX: -5,
+                        offsetY: 0,
+                        style: { color: '#A0ACBB' }
+                    }
+                },
+                grid: {
+                    xaxis: { lines: { show: false } },
+                    yaxis: { lines: { show: false } }
+                },
+                dataLabels: { enabled: false },
+                tooltip: {
+                    y: {
+                        formatter: (value) => `${value}K`
+                    },
+                    style: { fontSize: '12px', fontFamily: 'Inter' }
+                },
+                legend: {
+                    //   show: false,
+                    position: 'top',
+                    labels: {
+                        fontSize: '12px',
+                        colors: '#A0ACBB'
+                    },
+                    fontSize: '12px',
+                    fontFamily: 'Inter'
+                },
+
+            };
+
+            const chart = new window.ApexCharts(document.querySelector("#payment-records-chart"), chartOptions);
+            chart.render();
+
+            // Cleanup function to destroy the chart when the component is unmounted
+            return () => {
+                chart.destroy();
+            };
+        }
+    }, []);
+    const downloadPDF = () => {
+        html2canvas(document.querySelector("#payment-records-chart")).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF();
+            pdf.addImage(imgData, 'PNG', 0, 0);
+            pdf.save("chart.pdf");
+        });
+    };
     return (
         <>
             <div className="page-wrapper">
@@ -27,83 +138,17 @@ const Data = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-8">
+                            <div className="col-lg-9">
                                 <div className="card stretch stretch-full">
-                                    <div className="card-header">
-                                        <h5 className="card-title">Payment Record</h5>
-                                        <div className="card-header-action">
-                                            <div className="card-header-btn">
-                                                <div data-bs-toggle="tooltip" title="Delete">
-                                                    <a href="javascript:void(0);" className="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
-                                                </div>
-                                                <div data-bs-toggle="tooltip" title="Refresh">
-                                                    <a href="javascript:void(0);" className="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
-                                                </div>
-                                                <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                                    <a href="javascript:void(0);" className="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
-                                                </div>
-                                            </div>
-                                            <div className="dropdown">
-                                                <a href="javascript:void(0);" className="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
-                                                    <div data-bs-toggle="tooltip" title="Options">
-                                                        <i className="feather-more-vertical"></i>
-                                                    </div>
-                                                </a>
-                                                <div className="dropdown-menu dropdown-menu-end">
-                                                    <a href="javascript:void(0);" className="dropdown-item"><i className="feather-at-sign"></i>New</a>
-                                                    <a href="javascript:void(0);" className="dropdown-item"><i className="feather-calendar"></i>Event</a>
-                                                    <a href="javascript:void(0);" className="dropdown-item"><i className="feather-bell"></i>Snoozed</a>
-                                                    <a href="javascript:void(0);" className="dropdown-item"><i className="feather-trash-2"></i>Deleted</a>
-                                                    <div className="dropdown-divider"></div>
-                                                    <a href="javascript:void(0);" className="dropdown-item"><i className="feather-settings"></i>Settings</a>
-                                                    <a href="javascript:void(0);" className="dropdown-item"><i className="feather-life-buoy"></i>Tips & Tricks</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div className="card-header d-flex justify-content-between align-items-center">
+                                        <h5 className="card-title">Sertifikat Halal UMK</h5>
+                                        <a href="#" onClick={downloadPDF} className="card-header-action" data-bs-toggle="tooltip" title="download"><i class="fa-solid fa-download" aria-hidden="true"></i></a>
+
                                     </div>
                                     <div className="card-body custom-card-action p-0">
                                         <div id="payment-records-chart"></div>
                                     </div>
-                                    <div className="card-footer">
-                                        <div className="row g-4">
-                                            <div className="col-lg-3">
-                                                <div className="p-3 border border-dashed rounded">
-                                                    <div className="fs-12 text-muted mb-1">Awaiting</div>
-                                                    <h6 className="fw-bold text-dark">$5,486</h6>
-                                                    <div className="progress mt-2 ht-3">
-                                                        <div className="progress-bar bg-primary" role="progressbar" style={{width:`81%`}}></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-3">
-                                                <div className="p-3 border border-dashed rounded">
-                                                    <div className="fs-12 text-muted mb-1">Completed</div>
-                                                    <h6 className="fw-bold text-dark">$9,275</h6>
-                                                    <div className="progress mt-2 ht-3">
-                                                        <div className="progress-bar bg-success" role="progressbar" style={{width:`82%`}}></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-3">
-                                                <div className="p-3 border border-dashed rounded">
-                                                    <div className="fs-12 text-muted mb-1">Rejected</div>
-                                                    <h6 className="fw-bold text-dark">$3,868</h6>
-                                                    <div className="progress mt-2 ht-3">
-                                                        <div className="progress-bar bg-danger" role="progressbar" style={{width:`68%`}}></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-3">
-                                                <div className="p-3 border border-dashed rounded">
-                                                    <div className="fs-12 text-muted mb-1">Revenue</div>
-                                                    <h6 className="fw-bold text-dark">$50,668</h6>
-                                                    <div className="progress mt-2 ht-3">
-                                                        <div className="progress-bar bg-dark" role="progressbar" style={{width:`75%`}}></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
