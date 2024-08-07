@@ -218,6 +218,32 @@ $(document).ready(function () {
 			}
 		});
 	}
+
+	if ($(".portfolio-carousel-x").length) {
+		var owl = $(".portfolio-carousel-x");
+		owl.owlCarousel({
+			items: 1,
+			nav: true,
+			margin: 80,
+			loop: true,
+			autoplay: true,
+			smartSpeed: 2000,
+			responsive: {
+				0: {
+					items: 1,
+				},
+				575: {
+					items: 2,
+				},
+				767: {
+					items: 3,
+				},
+				991: {
+					items: 4,
+				}
+			}
+		});
+	}
 	// Owl Carousel
 	if ($(".client-carousel").length) {
 		var owl = $(".client-carousel");

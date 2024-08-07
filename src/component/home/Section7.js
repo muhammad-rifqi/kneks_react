@@ -2,9 +2,6 @@ import React from "react"
 const Section7 = () => {
 	return (
 		<section className="portfolio-section ">
-
-
-
 			<div className="portfolio-content conatainer-fluid">
 				<div className="portfolio-carousel owl-carousel owl-theme">
 
