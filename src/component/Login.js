@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+    const navigate = useNavigate();
+
     const [formValues, setFormValues] = useState({
         username: '',
         password: '',
@@ -37,6 +41,8 @@ const Login = () => {
         if (allValid) {
             // Proceed with form submission
             console.log('Form submitted:', formValues);
+            
+            navigate('/dashboard')
         }
     };
 

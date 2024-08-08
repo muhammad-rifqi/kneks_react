@@ -26,6 +26,7 @@ import Data from './component/Data';
 import Opini from './component/Opini';
 
 import Login from './component/Login';
+import Dashboard from './component/Dashboard';
 
   
 
@@ -62,6 +63,7 @@ function AppContent() {
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/kontak" element={<Kontak />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       {!isLoginPage && <Footer />}
