@@ -36,8 +36,8 @@ $(document).ready(function () {
 			navText: ['<i class="fa-solid fa-arrow-left-long"></i>', '<i class="fa-solid fa-arrow-right-long"></i>']
 		})
 	}
-	if ($('.main-slider-two-swiper').length) {
-		$('.main-slider-two-swiper').owlCarousel({
+	if ($('.main-slider-two-swiper-x').length) {
+		$('.main-slider-two-swiper-x').owlCarousel({
 			loop: true,
 			nav: true,
 			items: 1,
@@ -218,6 +218,32 @@ $(document).ready(function () {
 			}
 		});
 	}
+
+	if ($(".portfolio-carousel-x").length) {
+		var owl = $(".portfolio-carousel-x");
+		owl.owlCarousel({
+			items: 1,
+			nav: true,
+			margin: 80,
+			loop: true,
+			autoplay: true,
+			smartSpeed: 2000,
+			responsive: {
+				0: {
+					items: 1,
+				},
+				575: {
+					items: 2,
+				},
+				767: {
+					items: 3,
+				},
+				991: {
+					items: 4,
+				}
+			}
+		});
+	}
 	// Owl Carousel
 	if ($(".client-carousel").length) {
 		var owl = $(".client-carousel");
@@ -330,7 +356,7 @@ $(document).ready(function () {
 			$(this).css('width', total_width + 'px')
 		})
 	}
-	
+
 	if ($('.count-box').length) {
 		$('.count-box').appear(function () {
 			var el = $(this);
@@ -389,3 +415,4 @@ if ($(".contact-form-validated").length) {
 $(window).on('load', function () {
 	$('body').addClass('loaded');
 });
+
