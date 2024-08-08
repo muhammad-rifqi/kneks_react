@@ -41,7 +41,7 @@ const Login = () => {
         if (allValid) {
             // Proceed with form submission
             console.log('Form submitted:', formValues);
-            
+            localStorage.setItem('users', formValues);
             navigate('/dashboard')
         }
     };

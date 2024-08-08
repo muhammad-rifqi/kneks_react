@@ -18,7 +18,7 @@ const Section6 = () => {
 
 							</div>
 							<div className="card-footer text-end" style={{ borderTop:`none`, background: `#146AA4`, color: `#ffffff` }}>
-								<i class="fa-solid fa-calendar "></i>
+								<i className="fa-solid fa-calendar "></i>
 							</div>
 						</div>
 					</div>
@@ -31,7 +31,7 @@ const Section6 = () => {
 
 							</div>
 							<div className="card-footer text-end" style={{ borderTop:`none`, background: `#146AA4`, color: `#ffffff` }}>
-								<i class="fa-solid fa-calendar "></i>
+								<i className="fa-solid fa-calendar "></i>
 							</div>
 						</div>
 					</div>
@@ -44,7 +44,7 @@ const Section6 = () => {
 
 							</div>
 							<div className="card-footer text-end" style={{ borderTop:`none`, background: `#146AA4`, color: `#ffffff` }}>
-								<i class="fa-solid fa-calendar "></i>
+								<i className="fa-solid fa-calendar "></i>
 							</div>
 						</div>
 					</div>
@@ -57,7 +57,7 @@ const Section6 = () => {
 
 							</div>
 							<div className="card-footer text-end" style={{ borderTop:`none`, background: `#146AA4`, color: `#ffffff` }}>
-								<i class="fa-solid fa-calendar "></i>
+								<i className="fa-solid fa-calendar "></i>
 							</div>
 						</div>
 					</div>

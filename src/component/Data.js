@@ -138,11 +138,11 @@ const Data = () => {
                                 <div className="sidebar">
                                     <div className="sidebar-widget-list-inner">
                                         <ul>
-                                            <li><a href="services.html">IPH</a></li>
-                                            <li><a href="services.html">JKS</a></li>
-                                            <li><a href="services.html">KSS</a></li>
-                                            <li><a href="services.html">BIWIS</a></li>
-                                            <li><a href="services.html">INSIS</a></li>
+                                            <li><a href="#t">IPH</a></li>
+                                            <li><a href="#t">JKS</a></li>
+                                            <li><a href="#t">KSS</a></li>
+                                            <li><a href="#t">BIWIS</a></li>
+                                            <li><a href="#t">INSIS</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -151,7 +151,7 @@ const Data = () => {
                                 <div className="card stretch stretch-full">
                                     <div className="card-header d-flex justify-content-between align-items-center">
                                         <h5 className="card-title">Sertifikat Halal UMK</h5>
-                                        <a href="#" onClick={downloadPDF} className="card-header-action" data-bs-toggle="tooltip" title="download"><i class="fa-solid fa-download" aria-hidden="true"></i></a>
+                                        <a href="#t" onClick={downloadPDF} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></a>
 
                                     </div>
                                     <div className="card-body custom-card-action p-0">
