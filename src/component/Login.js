@@ -7,7 +7,7 @@ const Login = () => {
 
     const navigate = useNavigate();
     const [cookies, setCookie] = useCookies(['user']);
-
+    // removeCookie
     const [formValues, setFormValues] = useState({
         username: '',
         password: '',
