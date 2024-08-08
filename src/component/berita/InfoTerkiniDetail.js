@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import isiItemsBerita from "../dumy/dataBerita"
 
 
-const SiaranPersDetail = () => {
+const InfoTerkiniDetail = () => {
 
 
     const { slug } = useParams();
@@ -35,7 +35,7 @@ const SiaranPersDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Siaran Pers</h3>
+                            <h3>Info Terkini</h3>
                         </div>
                     </div>
                 </section>
@@ -157,4 +157,4 @@ const SiaranPersDetail = () => {
     )
 }
 
-export default SiaranPersDetail
+export default InfoTerkiniDetail

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import isiItemsBerita from "../dataBerita"
+import isiItemsBerita from "../dumy/dataBerita"
 import SkeletonCardBerita from "../skeleton/CardBerita";
 
 const SiaranPers = () => {

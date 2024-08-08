@@ -19,7 +19,9 @@ import InfrastrukturEkosistemSyariah from './component/direktorat/InfrastrukturE
 import SiaranPers from './component/berita/SiaranPers';
 import SiaranPersDetail from './component/berita/SiaranPersDetail';
 import LiputanMedia from './component/berita/LiputanMedia';
+import LiputanMediaDetail from './component/berita/LiputanMediaDetail';
 import InfoTerkini from './component/berita/InfoTerkini';
+import InfoTerkiniDetail from './component/berita/InfoTerkiniDetail';
 import Elibrary from './component/Elibrary';
 import Agenda from './component/Agenda';
 import Kontak from './component/Kontak';
@@ -55,9 +57,9 @@ function AppContent() {
         <Route path="/siaran-pers" element={<SiaranPers />} />
         <Route path="/siaran-pers/:slug" element={<SiaranPersDetail />} />
         <Route path="/liputan-media" element={<LiputanMedia />} />
-        <Route path="/liputan-media/:slug" element={<SiaranPersDetail />} />
+        <Route path="/liputan-media/:slug" element={<LiputanMediaDetail />} />
         <Route path="/info-terkini" element={<InfoTerkini />} />
-        <Route path="/info-terkini/:slug" element={<SiaranPersDetail />} />
+        <Route path="/info-terkini/:slug" element={<InfoTerkiniDetail />} />
         <Route path="/e-pustaka" element={<Elibrary />} />
         <Route path="/kdeks" element={<IndustriProdukHalal />} />
         <Route path="/data" element={<Data />} />
