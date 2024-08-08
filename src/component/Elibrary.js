@@ -18,12 +18,12 @@ const Elibrabry = () => {
                                 <div className="sidebar">
                                     <div className="sidebar-widget-list-inner">
                                         <ul >
-                                            <li><a href="services.html">Roadmap/Masterplan</a></li>
-                                            <li><a href="services.html">Pidato/Paparan</a></li>
-                                            <li><a href="services.html">Kajian/Penelitian</a></li>
-                                            <li><a href="services.html">Publikasi</a></li>
-                                            <li><a href="services.html">Regulasi</a></li>
-                                            <li><a href="services.html">Siaran Pers</a></li>
+                                            <li><a href="#t">Roadmap/Masterplan</a></li>
+                                            <li><a href="#t">Pidato/Paparan</a></li>
+                                            <li><a href="#t">Kajian/Penelitian</a></li>
+                                            <li><a href="#t">Publikasi</a></li>
+                                            <li><a href="#t">Regulasi</a></li>
+                                            <li><a href="#t">Siaran Pers</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@ const Elibrabry = () => {
                                                 <h4><a href="team-details.html">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
                                                     <p>21 Mei 2024</p>
-                                                    <a href="#" data-bs-toggle="tooltip" title="download">
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
                                                         <i class="fa-solid fa-download" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
@@ -58,7 +58,7 @@ const Elibrabry = () => {
                                                 <h4><a href="team-details.html">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
                                                     <p>21 Mei 2024</p>
-                                                    <a href="#" data-bs-toggle="tooltip" title="download">
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
                                                         <i class="fa-solid fa-download" aria-hidden="true"></i>
                                                     </a>
                                                 </div>

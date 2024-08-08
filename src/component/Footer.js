@@ -26,12 +26,12 @@ const Footer = () => {
                   <div className="footer-widget-explore">
                     <h4 className="footer-widget-title">Menu</h4>
                     <ul className="list-unstyled">
-                      <li><a href="#">Beranda</a></li>
-                      <li><a href="#">Profil</a></li>
-                      <li><a href="#">Berita & Kegiatan</a></li>
-                      <li><a href="#">One Data Center</a></li>
-                      <li><a href="#">Agenda</a></li>
-                      <li><a href="#">Kontak</a></li>
+                      <li><a href="#t">Beranda</a></li>
+                      <li><a href="#t">Profil</a></li>
+                      <li><a href="#t">Berita & Kegiatan</a></li>
+                      <li><a href="#t">One Data Center</a></li>
+                      <li><a href="#t">Agenda</a></li>
+                      <li><a href="#t">Kontak</a></li>
                     </ul>
                   </div>
                 </div>
@@ -70,7 +70,7 @@ const Footer = () => {
               <div className="col-lg-3">
                 <div className="footer-widget">
 
-                  <iframe width="100%" height="250px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7933.418301716268!2d106.8388627!3d-6.1696863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cbd72035e3%3A0x78a3dc4ef4719cb8!2sKementerian%20Keuangan%20Republik%20Indonesia!5e0!3m2!1sid!2sid!4v1690270978567!5m2!1sid!2sid">
+                  <iframe width="100%" height="250px" frameborder="0" scrolling="no" title="frame" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7933.418301716268!2d106.8388627!3d-6.1696863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cbd72035e3%3A0x78a3dc4ef4719cb8!2sKementerian%20Keuangan%20Republik%20Indonesia!5e0!3m2!1sid!2sid!4v1690270978567!5m2!1sid!2sid">
                   </iframe>
 
                 </div>
@@ -93,7 +93,7 @@ const Footer = () => {
             <span></span>
           </a>
           <div className="logo-box">
-            <a href="index.html"><img src="/assets/image/logo-light.png" width="160" height="40" alt="26" /></a>
+            <a href="#tt"><img src="/assets/image/logo-light.png" width="160" height="40" alt="26" /></a>
           </div>
           <div className="mobile-nav-container"></div>
           <ul className="mobile-nav-contact list-unstyled">
@@ -121,7 +121,7 @@ const Footer = () => {
       <div className="search-popup">
         <div className="search-popup-overlay search-toggler"></div>
         <div className="search-popup-content">
-          <form action="#">
+          <form>
             <label htmlFor="search" className="sr-only">search here</label>
             <input type="text" id="search" placeholder="Search Here..." />
             <button type="submit" aria-label="search submit" className="search-btn">

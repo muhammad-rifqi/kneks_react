@@ -60,7 +60,7 @@ const Header = () => {
                   <li className="active"><a href="/">Beranda</a>
                   </li>
                   <li className="has-dropdown">
-                    <a href="#">Profile</a>
+                    <a href="#t">Profile</a>
                     <ul className="list-unstyled">
                       <li><a href="/tentang-kami">Tentang Kami</a></li>
                       <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
@@ -69,7 +69,7 @@ const Header = () => {
                     </ul>
                   </li>
                   <li className="has-dropdown">
-                    <a href="#">Direktorat</a>
+                    <a href="#t">Direktorat</a>
                     <ul className="list-unstyled">
                       <li><a href="/industri-produk-halal">Industri Produk Halal</a></li>
                       <li><a href="/jasa-keuangan-syariah">Jasa Keuangan Syariah</a></li>
@@ -79,7 +79,7 @@ const Header = () => {
                     </ul>
                   </li>
                   <li className="has-dropdown">
-                    <a href="#">Berita & Kegitan</a>
+                    <a href="#t">Berita & Kegitan</a>
                     <ul className="list-unstyled">
                       <li><a href="/siaran-pers">Siaran Pers</a></li>
                       <li><a href="/liputan-media">Liputan Media</a></li>
@@ -100,8 +100,8 @@ const Header = () => {
             <div className="main-menu-right">
               <div className="topNav-right ">
                 <ul>
-                  <li><a href="department-details.html">EN</a></li>
-                  <li><a href="departments.html">IN</a></li>
+                  <li><a href="#t">EN</a></li>
+                  <li><a href="#t">IN</a></li>
                 </ul>
               </div>
               <div className="mobile-menu-button mobile-nav-toggler">

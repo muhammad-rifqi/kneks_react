@@ -64,9 +64,9 @@ const InfoTerkini = () => {
                             {visible < items.length && (
                                 <div className="col-12 pt-5">
                                     <div className="block-box load-more-btn">
-                                        <a href="javascript:void(0)" className="item-btn" onClick={showMore}>
+                                        <button className="item-btn" onClick={showMore}>
                                             <i className="fa-solid fa-refresh"></i>Load More
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             )}

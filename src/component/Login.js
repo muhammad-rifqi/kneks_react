@@ -98,7 +98,7 @@ const Login = () => {
                                 {fieldErrors.password && (<small className="text-danger" style={{ paddingLeft: '20px' }}>*Wajib diisi</small>)}
                                 <input type="submit" value="Login" className="btn-login solid" />
                                 <div className="text-center">
-                                    <a href="#" className="link-secondary">Forgot Password</a>
+                                    <a href="#tt" className="link-secondary">Forgot Password</a>
                                 </div>
                             </form>
                             <button className="btn-primaryx solid daftar-toggler" > Daftar</button>

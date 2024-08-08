@@ -56,7 +56,7 @@ const LiputanMedia = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <h4> <a href="cause-details.html">{item.title}</a> </h4>
+                                                <h4> <a href="#t">{item.title}</a> </h4>
                                                 {/* <p>Aellentesque porttitor lacus quis enim varius sed efficitur...</p> */}
                                                 {/* <a href="cause-details.html" className="btn btn-primary">Donate Now</a> */}
                                             </div>
@@ -67,9 +67,9 @@ const LiputanMedia = () => {
                             {visible < items.length && (
                                 <div className="col-12 pt-5">
                                     <div className="block-box load-more-btn">
-                                        <a href="javascript:void(0)" className="item-btn" onClick={showMore}>
+                                        <button className="item-btn" onClick={showMore}>
                                             <i className="fa-solid fa-refresh"></i>Load More
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             )}

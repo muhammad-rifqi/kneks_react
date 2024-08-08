@@ -138,6 +138,7 @@ const Kontak = () => {
                                 <iframe 
                                     width="100%" 
                                     height="450px" 
+                                    title="Frame"
                                     // frameBorder="0" 
                                     // scrolling="no" 
                                     // marginHeight="0" 
