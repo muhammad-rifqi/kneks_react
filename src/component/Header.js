@@ -25,6 +25,7 @@ const Header = () => {
                     <a href="#t">Profile</a>
                     <ul className="list-unstyled">
                       <li><a href="/tentang-kami">Tentang Kami</a></li>
+                      <li><a href="/tentang-ekonomi-syariah">Tentang Ekonomi Syariah</a></li>
                       <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
                       <li><a href="/galeri-foto">Galeri Foto</a></li>
                       <li><a href="/galeri-video">Galeri Video</a></li>
@@ -60,11 +61,11 @@ const Header = () => {
             </div>
 
             <div className="main-menu-right">
-            <div className="topNav-right ">
-                 <ul>
-                    <li><a href="#t">{cookies?.username}</a></li>
-                    <li><a href="#t">Logout</a></li>
-                  </ul>
+              <div className="topNav-right ">
+                <ul>
+                  <li><a href="#t">{cookies?.username}</a></li>
+                  <li><a href="#t">Logout</a></li>
+                </ul>
               </div>
               <div className="mobile-menu-button mobile-nav-toggler">
                 <span></span>

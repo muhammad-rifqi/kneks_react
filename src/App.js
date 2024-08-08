@@ -7,6 +7,7 @@ import Header from './component/Header';
 import Footer from './component/Footer';
 import Error404 from './component/error404';
 import TentangKami from './component/profile/TentangKami';
+import TentangEkonomiSyariah from './component/profile/TentangEkonomiSyariah';
 import StrukturOrganisasi from './component/profile/StrukturOrganisasi';
 import GaleriFoto from './component/profile/GaleriFoto';
 import GaleriVideo from './component/profile/GaleriVideo';
@@ -28,7 +29,7 @@ import Opini from './component/Opini';
 import Login from './component/Login';
 import Dashboard from './component/Dashboard';
 
-  
+
 
 function AppContent() {
   const location = useLocation();
@@ -42,6 +43,7 @@ function AppContent() {
         <Route path="/add" element={<Add />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/tentang-kami" element={<TentangKami />} />
+        <Route path="/tentang-ekonomi-syariah" element={<TentangEkonomiSyariah />} />
         <Route path="/struktur-organisasi" element={<StrukturOrganisasi />} />
         <Route path="/galeri-foto" element={<GaleriFoto />} />
         <Route path="/galeri-video" element={<GaleriVideo />} />
