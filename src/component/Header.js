@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useCookies } from 'react-cookie';
 const Header = () => {
+  const [cookies] = useCookies(['user']);
   return (
     <>
       <div id="pre-loader">
@@ -10,45 +11,6 @@ const Header = () => {
         <div className="loader-section section-right"></div>
       </div>
       <header className="header">
-        {/* <div className="topbar">
-          <div className="topbar-inner">
-            <div className="topbar-left">
-              <div className="topbar-socials">
-                <a href="#"><i className="fa-brands fa-twitter"></i></a>
-                <a href="#"><i className="fa-brands fa-facebook"></i></a>
-                <a href="#"><i className="fa-brands fa-pinterest-p"></i></a>
-                <a href="#"><i className="fa-brands fa-instagram"></i></a>
-              </div>
-              <div className="topbar-info">
-                <ul>
-                  <li>
-                    <div className="topbar-icon">
-                      <i className="fa-solid fa-envelope"></i>
-                    </div>
-                    <div className="topbar-text">
-                      <a href="mailto:needhelp@company.com">needhelp@company.com</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="topbar-icon">
-                      <i className="fa-solid fa-clock"></i>
-                    </div>
-                    <div className="topbar-text">
-                      <span>Open Hours: Mon - Fri 8.00 am - 6.00 pm</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="topbar-right">
-              <ul>
-                <li><a href="department-details.html">Council</a></li>
-                <li><a href="departments.html">Government</a></li>
-                <li><a href="contact.html">Complaints</a></li>
-              </ul>
-            </div>
-          </div>
-        </div> */}
         <div className="main-menu sticky-header">
           <div className="main-menu-inner">
             <div className="main-menu-left">
@@ -98,11 +60,11 @@ const Header = () => {
             </div>
 
             <div className="main-menu-right">
-              <div className="topNav-right ">
-                <ul>
-                  <li><a href="#t">EN</a></li>
-                  <li><a href="#t">IN</a></li>
-                </ul>
+            <div className="topNav-right ">
+                 <ul>
+                    <li><a href="#t">{cookies?.username}</a></li>
+                    <li><a href="#t">Logout</a></li>
+                  </ul>
               </div>
               <div className="mobile-menu-button mobile-nav-toggler">
                 <span></span>

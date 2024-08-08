@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from 'react-cookie';
+
 
 const Login = () => {
 
     const navigate = useNavigate();
+    const [cookies, setCookie] = useCookies(['user']);
 
     const [formValues, setFormValues] = useState({
         username: '',
@@ -41,7 +44,8 @@ const Login = () => {
         if (allValid) {
             // Proceed with form submission
             console.log('Form submitted:', formValues);
-            localStorage.setItem('users', formValues);
+            setCookie('username', formValues?.username, { path: '/' });
+            setCookie('password', formValues?.password, { path: '/' });
             navigate('/dashboard')
         }
     };
