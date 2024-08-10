@@ -207,6 +207,10 @@ a {
   margin-bottom: 40px;
 }
 
+.section-title p {
+  /* justify-content: end; */
+  justify-content: space-between;
+}
 .section-tagline {
   position: relative;
   font-size: 14px;
@@ -2372,6 +2376,12 @@ a.search-toggler {
   font-size: 18px;
   line-height: 30px;
   margin-bottom: 43px;
+}
+.about-one-inner-text-x {
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 15px;
 }
 
 .about-one-card {
@@ -9302,12 +9312,45 @@ SOCIAL MEDIA
   background-color: var(--thm-dark-black);
 }
 
-.card .card-header-action
- {
+.card .card-header-action {
   height: 40px;
   width: 40px;
   background-color: var(--thm-white);
   line-height: 40px;
   text-align: center;
   border-radius: 50%;
+}
+
+.component-service {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px 20px 20px 20px;
+  /* margin-bottom: 20px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  height: 180px;
+  position: relative;
+}
+
+.component-service:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+/* .service-image {
+  position: relative;
+} */
+
+.service-image img {
+  position: absolute;
+  top: 1vw;
+  bottom: 1vw;
+  left: 1vw;
+  right: 1vw;
+  margin: auto;
+  max-width: 80%;
+  max-height: 80%;
 }
