@@ -47,7 +47,7 @@ const Header = () => {
                       <li><a href="/siaran-pers">Siaran Pers</a></li>
                       <li><a href="/liputan-media">Liputan Media</a></li>
                       <li><a href="/info-terkini">Info Terkini</a></li>
-                      <li ><a href="/opini-ekonomi-syariah">Opini Ekonomi Syariah</a></li>
+                      <li ><a href="/opini">Opini</a></li>
                     </ul>
                   </li>
                   <li ><a href="/agenda">Agenda</a></li>

@@ -30,6 +30,7 @@ import Opini from './component/Opini';
 
 import Login from './component/Login';
 import Dashboard from './component/Dashboard';
+import BeritaTerkaitDetail from './component/berita/BeritaTerkaitDetail';
 
 
 
@@ -60,10 +61,11 @@ function AppContent() {
         <Route path="/liputan-media/:slug" element={<LiputanMediaDetail />} />
         <Route path="/info-terkini" element={<InfoTerkini />} />
         <Route path="/info-terkini/:slug" element={<InfoTerkiniDetail />} />
+        <Route path="/berita-terkait/:slug" element={<BeritaTerkaitDetail />} />
         <Route path="/e-pustaka" element={<Elibrary />} />
         <Route path="/kdeks" element={<IndustriProdukHalal />} />
         <Route path="/data" element={<Data />} />
-        <Route path="/opini-ekonomi-syariah" element={<Opini />} />
+        <Route path="/opini" element={<Opini />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/kontak" element={<Kontak />} />
         <Route path="/login" element={<Login />} />

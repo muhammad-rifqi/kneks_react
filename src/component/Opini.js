@@ -7,7 +7,7 @@ const Opini = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Opini Ekonomi Syariah</h3>
+                            <h3>Opini</h3>
                         </div>
                     </div>
                 </section>

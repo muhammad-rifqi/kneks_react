@@ -5,7 +5,6 @@ const Section5 = () => {
 			<div className="container">
 				<div className="funfact-box">
 					<div className="section-title-box text-center">
-						{/* <div className="section-tagline-b">Index</div> */}
 						<h2 className="section-title">Statistik Ekonomi Dan Keuangan Syariah</h2>
 					</div>
 				</div>
