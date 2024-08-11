@@ -2,7 +2,7 @@ import React from "react"
 const News = () => {
 	return (
 		<section className="news-section">
-			<div className="container">
+			<div className="portfolio-content conatainer-fluid">
 				<div className="blog-box">
 					<div className="section-title-box text-center">
 						<div className="section-tagline">News</div>
