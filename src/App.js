@@ -10,6 +10,7 @@ import TentangKami from './component/profile/TentangKami';
 import TentangEkonomiSyariah from './component/profile/TentangEkonomiSyariah';
 import StrukturOrganisasi from './component/profile/StrukturOrganisasi';
 import GaleriFoto from './component/profile/GaleriFoto';
+import GaleriFotoDetail from './component/profile/GaleriFotoDetail';
 import GaleriVideo from './component/profile/GaleriVideo';
 import IndustriProdukHalal from './component/direktorat/IndustriProdukHalal';
 import JasakeuanganSyariah from './component/direktorat/JasakeuanganSyariah';
@@ -49,6 +50,7 @@ function AppContent() {
         <Route path="/tentang-ekonomi-syariah" element={<TentangEkonomiSyariah />} />
         <Route path="/struktur-organisasi" element={<StrukturOrganisasi />} />
         <Route path="/galeri-foto" element={<GaleriFoto />} />
+        <Route path="/galeri-foto/:slug" element={<GaleriFotoDetail />} />
         <Route path="/galeri-video" element={<GaleriVideo />} />
         <Route path="/industri-produk-halal" element={<IndustriProdukHalal />} />
         <Route path="/jasa-keuangan-syariah" element={<JasakeuanganSyariah />} />

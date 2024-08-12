@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import isiItemsBerita from "../dumy/dataBerita"
 
 
-const LiputanMediaDetail = () => {
+const GaleriFotoDetail = () => {
 
 
     const { slug } = useParams();
@@ -35,7 +35,7 @@ const LiputanMediaDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Info Terkini</h3>
+                            <h3>Galeri Foto</h3>
                         </div>
                     </div>
                 </section>
@@ -107,7 +107,7 @@ const LiputanMediaDetail = () => {
                     </div>
                 </section>
 
-                <section className="berita-section-det">
+                <section className="berita-section-det ">
                     <div className="container">
                         <div className="row row-gutter-y-40 mb-5">
                             <div className="col-lg-12 col-xl-12">
@@ -119,7 +119,7 @@ const LiputanMediaDetail = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-30">
-                        {itemx.slice(0, 3).map((item) => {
+                            {itemx.slice(0, 3).map((item) => {
                                 return (
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                     <div className="berita-card">
@@ -152,4 +152,4 @@ const LiputanMediaDetail = () => {
     )
 }
 
-export default LiputanMediaDetail
+export default GaleriFotoDetail

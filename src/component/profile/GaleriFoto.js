@@ -1,6 +1,37 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import isiItemsBerita from "../dumy/dataBerita"
+import SkeletonCardBerita from "../skeleton/CardBerita";
+import { Link } from "react-router-dom";
 const GaleriFoto = () => {
+    const [items, setItems] = useState([]);
+    const [visible, setVisible] = useState(9)
+
+    const [loading, setLoading] = useState(true);
+
+    const [loadingMore, setLoadingMore] = useState(false);
+
+
+    // untukmengeloladatasebelumdiloop
+    useEffect(() => {
+        const isian = isiItemsBerita();
+        setItems(isian);
+        // alert(items.length);
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+    }, []);
+
+    const showMore = () => {
+        // setVisible((preValue) => preValue + 3);
+
+        setLoadingMore(true);
+
+        setTimeout(() => {
+            setVisible((preValue) => preValue + 3);
+            setLoadingMore(false);
+        }, 2000); // Simulate network delay
+    }
 
     return (
         <>
@@ -16,121 +47,55 @@ const GaleriFoto = () => {
                 <section className="foto-section">
                     <div className="container">
                         <div className="row row-gutter-y-40">
-                            <div className="col-md-4 col-lg-4">
-                                <a href="/assets/image/berita2.jpeg" className="my-image-links-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b " data-gall="gallery01">
-                                            <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b">
+                            {loading ? (
+                                Array(visible).fill().map((_, index) => (
+                                    <div className="col-md-4 col-lg-4" key={index}>
+                                        <SkeletonCardBerita />
+                                    </div>
+                                ))
+                            ) : (
+                                items.slice(0, visible).map((item) => (
+                                    <div className="col-md-4 col-lg-4" key={item.id}>
+                                        <div className="card-box-b card-shadow news-box">
+                                            <div className="img-box-b " data-gall="gallery01">
+                                                <Link to={`/galeri-foto/${item.slug}`}><img src={item.foto} className="img-fluid img-b" alt={item.title} /></Link>
+                                            </div>
+                                            <div className="card-overlay">
+                                                <div className="card-header-b">
 
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
+                                                    <div className="card-title-b">
+                                                        <h2 className="title-2">
+                                                            <Link to={`/galeri-foto/${item.slug}`}>{item.title}</Link>
+                                                        </h2>
+                                                    </div>
+                                                    <div className="card-date">
+                                                        <span>{item.tanggal}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </a>
-                            </div>
-                            <div className="col-md-4 col-lg-4">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b">
+                                ))
+                            )}
 
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                            {loadingMore && (
+                                Array(3).fill().map((_, index) => (
+                                    <div className="col-md-4 col-lg-4" key={index + visible}>
+                                        <SkeletonCardBerita />
                                     </div>
-                                </a>
-                            </div>
-                            <div className="col-md-4 col-lg-4">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b">
+                                ))
+                            )}
 
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                            {visible < items.length && (
+                                <div className="col-12 pt-5">
+                                    <div className="block-box load-more-btn">
+                                        <Link className="item-btn" onClick={showMore}>
+                                            <i className="fa-solid fa-refresh"></i>Load More
+                                        </Link>
                                     </div>
-                                </a>
-                            </div>
-                            <div className="col-md-4 col-lg-4">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b">
+                                </div>
+                            )}
 
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col-md-4 col-lg-4">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b">
-
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </section>

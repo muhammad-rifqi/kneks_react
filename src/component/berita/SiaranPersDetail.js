@@ -119,33 +119,28 @@ const SiaranPersDetail = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-30">
-                            {itemx.slice(0, 3).map((item) => {
+                        {itemx.slice(0, 3).map((item) => {
                                 return (
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
-                                        <div className="berita-card">
-                                            <div className="berita-card-imgbox">
-                                                <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} />
+                                    <div className="berita-card">
+                                        <div className="berita-card-imgbox ">
+                                            <Link to={`/liputan-media/${item.slug}`}> <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} /></Link>
+                                        </div>
+                                        <div className="berita-content ">
+                                            <div className="event-card-info-x " style={{ color: `#F2994A` }}>
+                                                <span>{item.tag}</span>
                                             </div>
-                                            <div className="berita-content">
-                                                <div className="berita-card-funding">
-
-                                                    <div className="berita-card-funding-list">
-                                                        <div className="berita-card-funding-item">
-                                                            {/* <div className="berita-card-funding-amount">$25,487</div> */}
-                                                            <div className="berita-card-funding-text-tag">{item.tag}</div>
-                                                        </div>
-                                                        <div className="berita-card-funding-item">
-                                                            {/* <div className="berita-card-funding-amount">$30,000</div> */}
-                                                            <div className="berita-card-funding-text">{item.tanggal}</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <h4> <Link to={`/siaran-pers/${item.slug}`}>{item.title}</Link></h4>
-                                                {/* <p>Aellentesque porttitor lacus quis enim varius sed efficitur...</p> */}
-                                                {/* <a href="cause-details.html" className="btn btn-primary">Donate Now</a> */}
+                                            <div className="event-card-title pb-4">
+                                                <h4>
+                                                    <Link to={`/liputan-media/${item.slug}`}>{item.title}</Link>
+                                                </h4>
+                                            </div>
+                                            <div className="event-card-info">
+                                                <span>{item.tanggal}</span>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                                 );
                             })}
                         </div>

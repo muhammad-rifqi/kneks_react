@@ -8960,7 +8960,11 @@ SOCIAL MEDIA
 .berita-section-det {
   padding-top: 70px;
   padding-bottom: 70px;
-  background: #fafafa;
+  background-color: var(--thm-white);
+ 
+}
+.berita-card{
+  box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
 }
 .berita-card-imgbox img {
   height: 270px;
@@ -9099,7 +9103,9 @@ SOCIAL MEDIA
   font-weight: 600;
   color: #f2994a;
 }
-
+.berita-content{
+  padding: 20px;
+}
 .berita-content h4 {
   margin-top: 25px;
   margin-bottom: 13px;
