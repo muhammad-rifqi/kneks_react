@@ -65,7 +65,7 @@ const Section6 = () => {
 				</div>
 				<div className="row">
 				<div className="col-md-12 col-lg-12 text-center">
-						<div className="maps-indo">
+						<div className="maps-indo" data-bs-toggle="tooltip" title="download">
 
 							<svg width="792.54596" height="316.66394">
 
