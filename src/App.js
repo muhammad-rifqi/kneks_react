@@ -26,6 +26,7 @@ import InfoTerkiniDetail from './component/berita/InfoTerkiniDetail';
 import Elibrary from './component/Elibrary';
 import Agenda from './component/Agenda';
 import Kontak from './component/Kontak';
+import Kdeks from './component/Kdeks';
 import Data from './component/Data';
 import Opini from './component/Opini';
 
@@ -65,7 +66,7 @@ function AppContent() {
         <Route path="/info-terkini/:slug" element={<InfoTerkiniDetail />} />
         <Route path="/berita-terkait/:slug" element={<BeritaTerkaitDetail />} />
         <Route path="/e-pustaka" element={<Elibrary />} />
-        <Route path="/kdeks" element={<IndustriProdukHalal />} />
+        <Route path="/kdeks" element={<Kdeks />} />
         <Route path="/data" element={<Data />} />
         <Route path="/opini" element={<Opini />} />
         <Route path="/agenda" element={<Agenda />} />
