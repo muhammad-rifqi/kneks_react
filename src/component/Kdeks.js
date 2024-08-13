@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import isiItemsBerita from "../component/dumy/dataBerita";
 const Kdeks = () => {
-    const [items, setItems] = useState([]);
+    const [rows, setItems] = useState([]);
 
 
     // untukmengeloladatasebelumdiloop
@@ -82,36 +82,89 @@ const Kdeks = () => {
                         </div>
                     </div>
                 </section>
-                
+
                 <section className="portfolio-section">
                     <div className="section-title-box text-center">
                         <h2 className="section-title">Berita Dan Kegiatan</h2>
                     </div>
                     <div className="portfolio-content conatainer-fluid">
                         <div className="portfolio-carousel-kdeks owl-carousel owl-theme">
-                        {items.slice(0, 4).map((item) => {
-                            return (
-                            <div className="item">
-                                <div className="berita-card-kdeks">
-                                    <div className="berita-card-imgbox-kdeks ">
-                                        <Link to={`/liputan-media/${item.slug}`}> <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} /></Link>
-                                    </div>
-                                    <div className="berita-content-direktorat">
 
-                                        <div className="event-card-title pb-2">
-                                            <h4>
-                                                <Link to={`/berita-terkait/`}>sdxsdsk scksmscl</Link>
-                                            </h4>
+                            {/* {rows.slice(0, 4).map((data, i) => ( */}
+                                <div className="item">
+                                    <div className="berita-card-kdeks" >
+                                        <div className="berita-card-imgbox-kdeks ">
+                                            <img src="http://localhost:3000/assets/image/berita.jpg" className="img-fluid" alt="test" />
                                         </div>
-                                        <div className="event-card-info-direktorat">
-                                            <span>20 mei 2024</span>
+                                        <div className="berita-content-direktorat">
+
+                                            <div className="event-card-title pb-2">
+                                                <h4>
+                                                    <a href="#RRRR"> test test test </a>
+                                                </h4>
+                                            </div>
+                                            <div className="event-card-info-direktorat">
+                                                <span>20 mei 2024</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            );
-                        })}
-                                                     
+                                <div className="item">
+                                    <div className="berita-card-kdeks" >
+                                        <div className="berita-card-imgbox-kdeks ">
+                                            <img src="http://localhost:3000/assets/image/berita.jpg" className="img-fluid" alt="test" />
+                                        </div>
+                                        <div className="berita-content-direktorat">
+
+                                            <div className="event-card-title pb-2">
+                                                <h4>
+                                                    <a href="#RRRR"> test test test </a>
+                                                </h4>
+                                            </div>
+                                            <div className="event-card-info-direktorat">
+                                                <span>20 mei 2024</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="item">
+                                    <div className="berita-card-kdeks" >
+                                        <div className="berita-card-imgbox-kdeks ">
+                                            <img src="http://localhost:3000/assets/image/berita.jpg" className="img-fluid" alt="test" />
+                                        </div>
+                                        <div className="berita-content-direktorat">
+
+                                            <div className="event-card-title pb-2">
+                                                <h4>
+                                                    <a href="#RRRR"> test test test </a>
+                                                </h4>
+                                            </div>
+                                            <div className="event-card-info-direktorat">
+                                                <span>20 mei 2024</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="item">
+                                    <div className="berita-card-kdeks" >
+                                        <div className="berita-card-imgbox-kdeks ">
+                                            <img src="http://localhost:3000/assets/image/berita.jpg" className="img-fluid" alt="test" />
+                                        </div>
+                                        <div className="berita-content-direktorat">
+
+                                            <div className="event-card-title pb-2">
+                                                <h4>
+                                                    <a href="#RRRR"> test test test </a>
+                                                </h4>
+                                            </div>
+                                            <div className="event-card-info-direktorat">
+                                                <span>20 mei 2024</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {/* ))} */}
+
                         </div>
                     </div>
                 </section>

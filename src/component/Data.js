@@ -151,7 +151,7 @@ const Data = () => {
                                 <div className="card stretch stretch-full">
                                     <div className="card-header d-flex justify-content-between align-items-center">
                                         <h5 className="card-title">Sertifikat Halal UMK</h5>
-                                        <a href="#t" onClick={downloadPDF} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></a>
+                                        <button onClick={downloadPDF} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
 
                                     </div>
                                     <div className="card-body custom-card-action p-0">
