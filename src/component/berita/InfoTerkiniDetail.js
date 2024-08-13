@@ -45,19 +45,13 @@ const InfoTerkiniDetail = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
                                     <h4>{item.title}</h4>
+                                    <p>{item.tanggal}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
                                     <img src={`${process.env.PUBLIC_URL}/${item.foto}`} width={`100%`} className="img-fluid" alt={item.title} />
-                                    <div className="event-details-meta">
-                                        <div className="event-details-meta-number">
-                                            <span>{arrTgl[0]}</span>
-                                        </div>
-                                        <div className="event-details-meta-date">
-                                            <span>{arrTgl[1]} &nbsp;{arrTgl[2]}</span>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                             <div className="row">
@@ -119,28 +113,28 @@ const InfoTerkiniDetail = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-30">
-                        {itemx.slice(0, 3).map((item) => {
+                            {itemx.slice(0, 3).map((item) => {
                                 return (
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
-                                    <div className="berita-card">
-                                        <div className="berita-card-imgbox ">
-                                            <Link to={`/liputan-media/${item.slug}`}> <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} /></Link>
-                                        </div>
-                                        <div className="berita-content ">
-                                            <div className="event-card-info-x " style={{ color: `#F2994A` }}>
-                                                <span>{item.tag}</span>
+                                        <div className="berita-card">
+                                            <div className="berita-card-imgbox ">
+                                                <Link to={`/liputan-media/${item.slug}`}> <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} /></Link>
                                             </div>
-                                            <div className="event-card-title pb-4">
-                                                <h4>
-                                                    <Link to={`/liputan-media/${item.slug}`}>{item.title}</Link>
-                                                </h4>
-                                            </div>
-                                            <div className="event-card-info">
-                                                <span>{item.tanggal}</span>
+                                            <div className="berita-content ">
+                                                <div className="event-card-info-x " style={{ color: `#F2994A` }}>
+                                                    <span>{item.tag}</span>
+                                                </div>
+                                                <div className="event-card-title pb-4">
+                                                    <h4>
+                                                        <Link to={`/liputan-media/${item.slug}`}>{item.title}</Link>
+                                                    </h4>
+                                                </div>
+                                                <div className="event-card-info">
+                                                    <span>{item.tanggal}</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 );
                             })}
                         </div>
