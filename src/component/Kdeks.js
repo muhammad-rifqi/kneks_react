@@ -107,7 +107,7 @@ const Kdeks = () => {
                                                 <span>20 mei 2024</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div>
                                 <div className="item">
                                     <div className="berita-card-kdeks" >
