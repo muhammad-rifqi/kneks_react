@@ -94,7 +94,7 @@ const Kdeks = () => {
                                 <div className="item">
                                     <div className="berita-card-kdeks" >
                                         <div className="berita-card-imgbox-kdeks ">
-                                            <img src="http://localhost:3000/assets/image/berita.jpg" className="img-fluid" alt="test" />
+                                            <img src="/assets/image/berita.jpg" className="img-fluid" alt="test" />
                                         </div>
                                         <div className="berita-content-direktorat">
 
@@ -112,7 +112,7 @@ const Kdeks = () => {
                                 <div className="item">
                                     <div className="berita-card-kdeks" >
                                         <div className="berita-card-imgbox-kdeks ">
-                                            <img src="http://localhost:3000/assets/image/berita.jpg" className="img-fluid" alt="test" />
+                                            <img src="/assets/image/berita.jpg" className="img-fluid" alt="test" />
                                         </div>
                                         <div className="berita-content-direktorat">
 
@@ -130,7 +130,7 @@ const Kdeks = () => {
                                 <div className="item">
                                     <div className="berita-card-kdeks" >
                                         <div className="berita-card-imgbox-kdeks ">
-                                            <img src="http://localhost:3000/assets/image/berita.jpg" className="img-fluid" alt="test" />
+                                            <img src="/assets/image/berita.jpg" className="img-fluid" alt="test" />
                                         </div>
                                         <div className="berita-content-direktorat">
 
@@ -148,7 +148,7 @@ const Kdeks = () => {
                                 <div className="item">
                                     <div className="berita-card-kdeks" >
                                         <div className="berita-card-imgbox-kdeks ">
-                                            <img src="http://localhost:3000/assets/image/berita.jpg" className="img-fluid" alt="test" />
+                                            <img src="/assets/image/berita.jpg" className="img-fluid" alt="test" />
                                         </div>
                                         <div className="berita-content-direktorat">
 
