@@ -89,10 +89,12 @@ const Kdeks = () => {
                     </div>
                     <div className="portfolio-content conatainer-fluid">
                         <div className="portfolio-carousel-kdeks owl-carousel owl-theme">
+                        {items.slice(0, 4).map((item) => {
+                            return (
                             <div className="item">
                                 <div className="berita-card-kdeks">
                                     <div className="berita-card-imgbox-kdeks ">
-                                        <Link to={`/berita-terkait`}><img src="assets/image/berita2.jpeg" className="img-fluid" alt="Sc" /></Link>
+                                        <Link to={`/liputan-media/${item.slug}`}> <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} /></Link>
                                     </div>
                                     <div className="berita-content-direktorat">
 
@@ -107,61 +109,9 @@ const Kdeks = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="item">
-                                <div className="berita-card-kdeks">
-                                    <div className="berita-card-imgbox-kdeks ">
-                                        <Link to={`/berita-terkait`}><img src="assets/image/berita.jpg" className="img-fluid" alt="Sc" /></Link>
-                                    </div>
-                                    <div className="berita-content-direktorat">
-
-                                        <div className="event-card-title pb-2">
-                                            <h4>
-                                                <Link to={`/berita-terkait/`}>sdxsdsk scksmscl</Link>
-                                            </h4>
-                                        </div>
-                                        <div className="event-card-info-direktorat">
-                                            <span>20 mei 2024</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="item">
-                                <div className="berita-card-kdeks">
-                                    <div className="berita-card-imgbox-kdeks ">
-                                        <Link to={`/berita-terkait`}><img src="assets/image/berita.jpg" className="img-fluid" alt="Sc" /></Link>
-                                    </div>
-                                    <div className="berita-content-direktorat">
-
-                                        <div className="event-card-title pb-2">
-                                            <h4>
-                                                <Link to={`/berita-terkait/`}>sdxsdsk scksmscl</Link>
-                                            </h4>
-                                        </div>
-                                        <div className="event-card-info-direktorat">
-                                            <span>20 mei 2024</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="item">
-                                <div className="berita-card-kdeks">
-                                    <div className="berita-card-imgbox-kdeks ">
-                                        <Link to={`/berita-terkait`}><img src="assets/image/berita.jpg" className="img-fluid" alt="Sc" /></Link>
-                                    </div>
-                                    <div className="berita-content-direktorat">
-
-                                        <div className="event-card-title pb-2">
-                                            <h4>
-                                                <Link to={`/berita-terkait/`}>sdxsdsk scksmscl</Link>
-                                            </h4>
-                                        </div>
-                                        <div className="event-card-info-direktorat">
-                                            <span>20 mei 2024</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            );
+                        })}
+                                                     
                         </div>
                     </div>
                 </section>

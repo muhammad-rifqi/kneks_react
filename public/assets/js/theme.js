@@ -195,7 +195,7 @@ $(document).ready(function () {
 		var owl = $(".portfolio-carousel-kdeks");
 		owl.each(function () {
 			owl.owlCarousel({
-				items: 4,
+				items: 1,
 				nav: false,
 				margin: 30,
 				loop: true,
