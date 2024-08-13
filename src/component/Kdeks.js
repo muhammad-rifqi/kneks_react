@@ -24,7 +24,7 @@ const Kdeks = () => {
                         </div>
                     </div>
                 </section>
-                <section className="about-one-section">
+                <section className="about-one-section-kdeks">
                     <div className="container">
                         <div className="row row-gutter-y-40">
 
@@ -67,7 +67,7 @@ const Kdeks = () => {
                             </div>
 
                         </div>
-                        <div className="row row-gutter-y-40 d-flex justify-content-center">
+                        <div className="row row-gutter-y-40 d-flex justify-content-center pt-5">
                             <div className="col-lg-3 text-center">
                                 <div className="sidebar-widget">
                                     {/* <div className="sidebar-widget-box-icon">
@@ -82,118 +82,90 @@ const Kdeks = () => {
                         </div>
                     </div>
                 </section>
-                <section className="news-section">
-                    <div className="container">
-                        <div className="blog-box">
-                            <div className="section-title-box text-center">
-                                <h2 className="section-title">Berita Dan Kegiatan</h2>
-                            </div>
-                        </div>
-                        <div className="row row-gutter-30">
-                            {
-                                items.slice(0, 4).map((item) => (
-                                    <div className="col-lg-3 col-xl-3" key={item.id}>
-                                        <div className="berita-card">
-                                            <div className="berita-card-imgbox-direktorat ">
-                                                <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
-                                            </div>
-                                            <div className="berita-content-direktorat">
-
-                                                <div className="event-card-title pb-2">
-                                                    <h4>
-                                                        <Link to={`/berita-terkait/${item.slug}`}>{item.title}</Link>
-                                                    </h4>
-                                                </div>
-                                                <div className="event-card-info-direktorat">
-                                                    <span>{item.tanggal}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                        </div >
+                
+                <section className="portfolio-section">
+                    <div className="section-title-box text-center">
+                        <h2 className="section-title">Berita Dan Kegiatan</h2>
                     </div>
-                </section>
-                <section className="portfolio-section ">
-
                     <div className="portfolio-content conatainer-fluid">
-                        <div className="portfolio-carousel owl-carousel owl-theme">
-
+                        <div className="portfolio-carousel-kdeks owl-carousel owl-theme">
                             <div className="item">
-                                <div className="card-box-b card-shadow news-box">
-                                    <div className="img-box-b">
-                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                <div className="berita-card-kdeks">
+                                    <div className="berita-card-imgbox-kdeks ">
+                                        <Link to={`/berita-terkait`}><img src="assets/image/berita2.jpeg" className="img-fluid" alt="Sc" /></Link>
                                     </div>
-                                    <div className="card-overlay">
-                                        <div className="card-header-b">
-                                            <div className="card-category-b">
-                                                <a href="#test" className="category-b">Berita Baru</a>
-                                            </div>
-                                            <div className="card-title-b">
-                                                <h2 className="title-2">
-                                                    <a href="blog-single.html">Travel is comming
-                                                        new</a>
-                                                </h2>
-                                            </div>
-                                            <div className="card-date">
-                                                <span className="date-b">18 Sep. 2017</span>
-                                            </div>
+                                    <div className="berita-content-direktorat">
+
+                                        <div className="event-card-title pb-2">
+                                            <h4>
+                                                <Link to={`/berita-terkait/`}>sdxsdsk scksmscl</Link>
+                                            </h4>
+                                        </div>
+                                        <div className="event-card-info-direktorat">
+                                            <span>20 mei 2024</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="item">
-                                <div className="card-box-b card-shadow news-box">
-                                    <div className="img-box-b">
-                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                <div className="berita-card-kdeks">
+                                    <div className="berita-card-imgbox-kdeks ">
+                                        <Link to={`/berita-terkait`}><img src="assets/image/berita.jpg" className="img-fluid" alt="Sc" /></Link>
                                     </div>
-                                    <div className="card-overlay">
-                                        <div className="card-header-b">
-                                            <div className="card-category-b">
-                                                <a href="#test" className="category-b">Berita Baru</a>
-                                            </div>
-                                            <div className="card-title-b">
-                                                <h2 className="title-2">
-                                                    <a href="blog-single.html">Travelx is comming
-                                                        new</a>
-                                                </h2>
-                                            </div>
-                                            <div className="card-date">
-                                                <span className="date-b">18 Sep. 2017</span>
-                                            </div>
+                                    <div className="berita-content-direktorat">
+
+                                        <div className="event-card-title pb-2">
+                                            <h4>
+                                                <Link to={`/berita-terkait/`}>sdxsdsk scksmscl</Link>
+                                            </h4>
+                                        </div>
+                                        <div className="event-card-info-direktorat">
+                                            <span>20 mei 2024</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="item">
-                                <div className="card-box-b card-shadow news-box">
-                                    <div className="img-box-b">
-                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                <div className="berita-card-kdeks">
+                                    <div className="berita-card-imgbox-kdeks ">
+                                        <Link to={`/berita-terkait`}><img src="assets/image/berita.jpg" className="img-fluid" alt="Sc" /></Link>
                                     </div>
-                                    <div className="card-overlay">
-                                        <div className="card-header-b">
-                                            <div className="card-category-b">
-                                                <a href="#test" className="category-b">Berita Baru</a>
-                                            </div>
-                                            <div className="card-title-b">
-                                                <h2 className="title-2">
-                                                    <a href="blog-single.html">Travel is comming
-                                                        new</a>
-                                                </h2>
-                                            </div>
-                                            <div className="card-date">
-                                                <span className="date-b">18 Sep. 2017</span>
-                                            </div>
+                                    <div className="berita-content-direktorat">
+
+                                        <div className="event-card-title pb-2">
+                                            <h4>
+                                                <Link to={`/berita-terkait/`}>sdxsdsk scksmscl</Link>
+                                            </h4>
+                                        </div>
+                                        <div className="event-card-info-direktorat">
+                                            <span>20 mei 2024</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div className="item">
+                                <div className="berita-card-kdeks">
+                                    <div className="berita-card-imgbox-kdeks ">
+                                        <Link to={`/berita-terkait`}><img src="assets/image/berita.jpg" className="img-fluid" alt="Sc" /></Link>
+                                    </div>
+                                    <div className="berita-content-direktorat">
 
-
-
+                                        <div className="event-card-title pb-2">
+                                            <h4>
+                                                <Link to={`/berita-terkait/`}>sdxsdsk scksmscl</Link>
+                                            </h4>
+                                        </div>
+                                        <div className="event-card-info-direktorat">
+                                            <span>20 mei 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </section>
+
             </div>
         </>
     )

@@ -1,6 +1,5 @@
 import React from "react";
-
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 const Header = () => {
   const [cookies] = useCookies(['user']);
@@ -22,52 +21,56 @@ const Header = () => {
               <div className="main-menu-logo">
 
                 {isKdeksPage ? (
-                  <a href="/kdeks"><img src="/assets/image/logoKdeks.png" alt="logo" width="130" /></a>
+                  <Link to="/kdeks"><img src="/assets/image/logoKdeks.png" alt="logo" width="130" /></Link>
                 ) : (
-                  <a href="/"><img src="/assets/image/logo.svg" alt="logo" width="130" /></a>
+                  <Link to="/"><img src="/assets/image/logo.svg" alt="logo" width="130" /></Link>
                 )}
               </div>
               {isKdeksPage ? (
-                ""
+                <div className="navigation">
+                  <ul className="main-menu-list list-unstyled">
+                    
+                  </ul>
+                </div>
               ) : (
                 <div className="navigation">
                   <ul className="main-menu-list list-unstyled">
-                    <li className="active"><a href="/">Beranda</a>
+                    <li className="active"><Link to="/">Beranda</Link>
                     </li>
                     <li className="has-dropdown">
-                      <a href="#t">Profile</a>
+                      <Link to="#t">Profile</Link>
                       <ul className="list-unstyled">
-                        <li><a href="/tentang-kami">Tentang Kami</a></li>
-                        <li><a href="/tentang-ekonomi-syariah">Tentang Ekonomi Syariah</a></li>
-                        <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
-                        <li><a href="/galeri-foto">Galeri Foto</a></li>
-                        <li><a href="/galeri-video">Galeri Video</a></li>
+                        <li><Link to="/tentang-kami">Tentang Kami</Link></li>
+                        <li><Link to="/tentang-ekonomi-syariah">Tentang Ekonomi Syariah</Link></li>
+                        <li><Link to="/struktur-organisasi">Struktur Organisasi</Link></li>
+                        <li><Link to="/galeri-foto">Galeri Foto</Link></li>
+                        <li><Link to="/galeri-video">Galeri Video</Link></li>
                       </ul>
                     </li>
                     <li className="has-dropdown">
-                      <a href="#t">Direktorat</a>
+                      <Link to="#t">Direktorat</Link>
                       <ul className="list-unstyled">
-                        <li><a href="/industri-produk-halal">Industri Produk Halal</a></li>
-                        <li><a href="/jasa-keuangan-syariah">Jasa Keuangan Syariah</a></li>
-                        <li><a href="/keuangan-sosial-syariah">Keuangan Sosial Syariah</a></li>
-                        <li><a href="/bisnis-dan-kewiraushaan-syariah">Bisnis dan Kewirausahaan Syariah</a></li>
-                        <li><a href="/infrastruktur-ekosistem-syariah">Infrastruktur Ekosistem Syariah</a></li>
+                        <li><Link to="/industri-produk-halal">Industri Produk Halal</Link></li>
+                        <li><Link to="/jasa-keuangan-syariah">Jasa Keuangan Syariah</Link></li>
+                        <li><Link to="/keuangan-sosial-syariah">Keuangan Sosial Syariah</Link></li>
+                        <li><Link to="/bisnis-dan-kewiraushaan-syariah">Bisnis dan Kewirausahaan Syariah</Link></li>
+                        <li><Link to="/infrastruktur-ekosistem-syariah">Infrastruktur Ekosistem Syariah</Link></li>
                       </ul>
                     </li>
                     <li className="has-dropdown">
-                      <a href="#t">Berita & Kegitan</a>
+                      <Link to="#t">Berita & Kegitan</Link>
                       <ul className="list-unstyled">
-                        <li><a href="/siaran-pers">Siaran Pers</a></li>
-                        <li><a href="/liputan-media">Liputan Media</a></li>
-                        <li><a href="/info-terkini">Info Terkini</a></li>
-                        <li ><a href="/opini">Opini</a></li>
+                        <li><Link to="/siaran-pers">Siaran Pers</Link></li>
+                        <li><Link to="/liputan-media">Liputan Media</Link></li>
+                        <li><Link to="/info-terkini">Info Terkini</Link></li>
+                        <li ><Link to="/opini">Opini</Link></li>
                       </ul>
                     </li>
-                    <li ><a href="/agenda">Agenda</a></li>
-                    <li ><a href="/e-pustaka">E-Pustaka</a></li>
-                    <li ><a href="/data">DATA</a></li>
-                    <li ><a href="/kdeks">KDEKS</a></li>
-                    <li ><a href="/kontak">Kontak</a>
+                    <li ><Link to="/agenda">Agenda</Link></li>
+                    <li ><Link to="/e-pustaka">E-Pustaka</Link></li>
+                    <li ><Link to="/data">DATA</Link></li>
+                    <li ><Link to="/kdeks">KDEKS</Link></li>
+                    <li ><Link to="/kontak">Kontak</Link>
                     </li>
                   </ul>
                 </div>
@@ -78,8 +81,8 @@ const Header = () => {
             <div className="main-menu-right">
               <div className="topNav-right ">
                 <ul>
-                  <li><a href="#t">{cookies?.username}</a></li>
-                  <li><a href="#t">Logout</a></li>
+                  <li><Link to="#t">{cookies?.username}</Link></li>
+                  <li><Link to="#t">Logout</Link></li>
                 </ul>
               </div>
               <div className="mobile-menu-button mobile-nav-toggler">

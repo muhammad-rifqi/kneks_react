@@ -2354,6 +2354,16 @@ a.search-toggler {
     padding: 70px 0px;
   }
 }
+.about-one-section-kdeks {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 1199px) {
+  .about-one-section-kdeks {
+    padding: 70px 0px;
+  }
+}
 
 .about-one-inner-x {
   text-align: justify;
@@ -8154,6 +8164,37 @@ label {
     padding-bottom: 70px;
   }
 }
+.news-section-kdeks img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.news-section-kdeks .card-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.news-section-kdeks .blog-box h2 {
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  margin-bottom: 100px;
+}
+
+.news-section-kdeks {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 1199px) {
+  .news-section-kdeks {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
 
 @media (max-width: 767px) {
   .card-box-a,
@@ -8968,6 +9009,10 @@ SOCIAL MEDIA
 }
 .berita-card-imgbox img {
   height: 270px;
+  object-fit: cover;
+}
+.berita-card-imgbox-kdeks img {
+  height: 100%;
   object-fit: cover;
 }
 .berita-card-imgbox-direktorat img {
