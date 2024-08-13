@@ -195,7 +195,7 @@ $(document).ready(function () {
 		var owl = $(".portfolio-carousel-kdeks");
 		owl.each(function () {
 			owl.owlCarousel({
-				items: 1,
+				items: 4,
 				nav: false,
 				margin: 30,
 				loop: true,
@@ -216,9 +216,7 @@ $(document).ready(function () {
 					}
 				}
 			});
-		});
-
-		
+		});		
 	}
 	
 	// Owl Carousel
