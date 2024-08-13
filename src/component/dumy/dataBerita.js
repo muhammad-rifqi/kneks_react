@@ -2,8 +2,8 @@ const dataBerita = () => {
     return [
         {
             id: "1",
-            slug: "slug-satu",
-            title: "Slug Satu",
+            slug: "sektor-halal-value-chain-tumbuh-positif-dukung-pertumbuhane-ekonomi-nasional",
+            title: "Sektor Halal Value Chain Tumbuh Positif, Dukung Pertumbuhan Ekonomi Nasional",
             tag: "#BERITABARU",
             tanggal: "20 Juni 2024",
             foto: "assets/image/berita.jpg",
