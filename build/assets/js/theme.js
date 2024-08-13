@@ -191,6 +191,34 @@ $(document).ready(function () {
 			}
 		});
 	}
+	if ($(".portfolio-carousel-kdeks").length) {
+		var owl = $(".portfolio-carousel-kdeks");
+		owl.each(function () {
+			owl.owlCarousel({
+				items: 4,
+				nav: false,
+				margin: 30,
+				loop: true,
+				autoplay: true,
+				smartSpeed: 2000,
+				responsive: {
+					0: {
+						items: 1,
+					},
+					575: {
+						items: 2,
+					},
+					767: {
+						items: 3,
+					},
+					991: {
+						items: 4,
+					}
+				}
+			});
+		});		
+	}
+	
 	// Owl Carousel
 	if ($(".portfolio-two-carousel").length) {
 		var owl = $(".portfolio-two-carousel");
