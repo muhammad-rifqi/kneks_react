@@ -23,6 +23,7 @@ import LiputanMedia from './component/berita/LiputanMedia';
 import LiputanMediaDetail from './component/berita/LiputanMediaDetail';
 import InfoTerkini from './component/berita/InfoTerkini';
 import InfoTerkiniDetail from './component/berita/InfoTerkiniDetail';
+import IsuEkonomi from './component/berita/IsuEkonomi';
 import Elibrary from './component/Elibrary';
 import Agenda from './component/Agenda';
 import Kontak from './component/Kontak';
@@ -73,6 +74,7 @@ function AppContent() {
         <Route path="/kontak" element={<Kontak />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/isu-ekonomi" element={<IsuEkonomi />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       {!isLoginPage && <Footer />}

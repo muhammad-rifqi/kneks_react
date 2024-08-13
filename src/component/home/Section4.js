@@ -20,11 +20,11 @@ const Section4 = () => {
 					<div className="col-lg-5">
 						<div className="service-card">
 							<ul className="list-unstyled">
-								<li><a href="department-details.html">Pengembangan Produk Industri Halal <i className="fa-solid fa-chevron-right"></i></a></li>
-								<li><a href="department-details.html">Pengembangan Jasa Keuangan Syariah <i className="fa-solid fa-chevron-right"></i></a></li>
-								<li><a href="department-details.html">Pengembangan Keuangan Sosial Syariah <i className="fa-solid fa-chevron-right"></i></a></li>
-								<li><a href="department-details.html">Pengembangan Bisnis dan Kewirausahaan Syariah <i className="fa-solid fa-chevron-right"></i></a></li>
-								<li><a href="department-details.html">Pengembangan Infrastruktur Ekosistem Syariah <i className="fa-solid fa-chevron-right"></i></a></li>
+								<li><a href="/isu-ekonomi">Pengembangan Produk Industri Halal <i className="fa-solid fa-chevron-right"></i></a></li>
+								<li><a href="/isu-ekonomi">Pengembangan Jasa Keuangan Syariah <i className="fa-solid fa-chevron-right"></i></a></li>
+								<li><a href="/isu-ekonomi">Pengembangan Keuangan Sosial Syariah <i className="fa-solid fa-chevron-right"></i></a></li>
+								<li><a href="/isu-ekonomi">Pengembangan Bisnis dan Kewirausahaan Syariah <i className="fa-solid fa-chevron-right"></i></a></li>
+								<li><a href="/isu-ekonomi">Pengembangan Infrastruktur Ekosistem Syariah <i className="fa-solid fa-chevron-right"></i></a></li>
 							</ul>
 						</div>
 					</div>

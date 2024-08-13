@@ -5,93 +5,40 @@ const Data = () => {
     useEffect(() => {
         // Ensure ApexCharts is loaded before using it
         if (window.ApexCharts) {
-            const chartOptions = {
-                chart: {
-                    height: 380,
-                    width: '100%',
-                    stacked: false,
-                    toolbar: { show: false }
-                },
-                stroke: {
-                    width: [1, 2, 3],
-                    curve: 'smooth',
-                    lineCap: 'round'
-                },
-                plotOptions: {
-                    bar: {
-                        endingShape: 'rounded',
-                        columnWidth: '30%'
-                    }
-                },
-                colors: ['#3454d1', '#a2acc7', '#E1E3EA'],
+            const chartOptions =
+            {
                 series: [
                     {
-                        name: 'Payment Rejected',
-                        type: 'bar',
-                        data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30, 21]
-                    },
-                    {
-                        name: 'Payment Completed',
-                        type: 'line',
-                        data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43, 41]
-                    },
-                    {
-                        name: 'Awaiting Payment',
-                        type: 'bar',
-                        data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43, 56]
+                        name: "Series 1",
+                        data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
                     }
                 ],
-                fill: {
-                    opacity: [0.85, 0.25, 1, 1],
-                    gradient: {
-                        inverseColors: false,
-                        shade: 'light',
-                        type: 'vertical',
-                        opacityFrom: 0.5,
-                        opacityTo: 0.1,
-                        stops: [0, 100, 100, 100]
+                chart: {
+                    height: 350,
+                    type: 'line', // This specifies that it's a line chart
+                    zoom: {
+                        enabled: false
                     }
                 },
-                markers: { size: 0 },
-                xaxis: {
-                    categories: [
-                        'JAN/23', 'FEB/23', 'MAR/23', 'APR/23', 'MAY/23', 'JUN/23',
-                        'JUL/23', 'AUG/23', 'SEP/23', 'OCT/23', 'NOV/23', 'DEC/23'
-                    ],
-                    axisBorder: { show: false },
-                    axisTicks: { show: false },
-                    labels: { style: { fontSize: '10px', colors: '#A0ACBB' } }
+                dataLabels: {
+                    enabled: false
                 },
-                yaxis: {
-                    labels: {
-                        formatter: (value) => `${value}K`,
-                        offsetX: -5,
-                        offsetY: 0,
-                        style: { color: '#A0ACBB' }
-                    }
+                stroke: {
+                    curve: 'straight'
+                },
+                title: {
+                    text: 'Pendaftaran sehati perbulan',
+                    align: 'left'
                 },
                 grid: {
-                    xaxis: { lines: { show: false } },
-                    yaxis: { lines: { show: false } }
-                },
-                dataLabels: { enabled: false },
-                tooltip: {
-                    y: {
-                        formatter: (value) => `${value}K`
+                    row: {
+                        colors: ['#f3f3f3', 'transparent'], // alternating background colors
+                        opacity: 0.5
                     },
-                    style: { fontSize: '12px', fontFamily: 'Inter' }
                 },
-                legend: {
-                    //   show: false,
-                    position: 'top',
-                    labels: {
-                        fontSize: '12px',
-                        colors: '#A0ACBB'
-                    },
-                    fontSize: '12px',
-                    fontFamily: 'Inter'
-                },
-
+                xaxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                }
             };
 
             const chart = new window.ApexCharts(document.querySelector("#payment-records-chart"), chartOptions);
@@ -107,19 +54,19 @@ const Data = () => {
         const pdfWidth = 210; // A4 width in mm
         const pdfHeight = 297; // A4 height in mm
         html2canvas(document.querySelector("#payment-records-chart")).then(canvas => {
-          const imgData = canvas.toDataURL('image/png');
-          const pdf = new jsPDF('portrait', 'mm', [pdfWidth, pdfHeight]);
-    
-          // Adjust image dimensions to maintain aspect ratio
-          const imgWidth = pdfWidth - 20; // padding of 10mm
-          const imgHeight = (canvas.height * imgWidth) / canvas.width;
-          const margin = 10;
-    
-          pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
-          pdf.save("custom-size-chart.pdf");
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF('portrait', 'mm', [pdfWidth, pdfHeight]);
+
+            // Adjust image dimensions to maintain aspect ratio
+            const imgWidth = pdfWidth - 20; // padding of 10mm
+            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+            const margin = 10;
+
+            pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
+            pdf.save("custom-size-chart.pdf");
         });
-      };
-    
+    };
+
     return (
         <>
             <div className="page-wrapper">
