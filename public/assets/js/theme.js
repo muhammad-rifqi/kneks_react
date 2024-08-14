@@ -193,7 +193,6 @@ $(document).ready(function () {
 	}
 	if ($(".portfolio-carousel-kdeks").length) {
 		var owl = $(".portfolio-carousel-kdeks");
-		owl.each(function () {
 			owl.owlCarousel({
 				items: 4,
 				nav: false,
@@ -216,7 +215,6 @@ $(document).ready(function () {
 					}
 				}
 			});
-		});		
 	}
 	
 	// Owl Carousel
