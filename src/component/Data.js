@@ -192,7 +192,7 @@ const Data = () => {
             <div className="page-wrapper">
 
                 <section className="page-banner">
-                    <div className="container">
+                    <div className="container-fluid">
                         <div className="page-banner-title">
                             <h3>Data</h3>
                         </div>
