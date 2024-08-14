@@ -28,11 +28,12 @@ const Data = () => {
                         enabled: false
                     }
                 },
+
                 dataLabels: {
-                    enabled: false
+                    enabled: true
                 },
                 stroke: {
-                    curve: 'straight'
+                    curve: 'smooth'
                 },
                 title: {
                     text: 'Pendaftaran sehati perbulan',
@@ -65,8 +66,16 @@ const Data = () => {
             {
                 series: [
                     {
-                        name: "Series 1",
+                        name: "Fasilitas",
                         data: [101, 41, 35, 51, 49, 62, 69, 91, 148]
+                    },
+                    {
+                        name: "Reguler",
+                        data: [110, 31, 55, 91, 99, 62, 69, 91, 148]
+                    },
+                    {
+                        name: "Total",
+                        data: [101, 41, 35, 13, 79, 62, 69, 91, 148]
                     },
 
                 ],
@@ -85,13 +94,13 @@ const Data = () => {
                     }
                 },
                 dataLabels: {
-                    enabled: false
+                    enabled: true
                 },
                 stroke: {
                     curve: 'straight'
                 },
                 title: {
-                    text: 'Pendaftaran sehati perbulan',
+                    text: 'Perkembangan Sertifikat Halal Berdasarkan Jenis',
                     align: 'left'
                 },
                 grid: {
@@ -147,7 +156,7 @@ const Data = () => {
                     curve: 'straight'
                 },
                 title: {
-                    text: 'Pendaftaran sehati perbulan',
+                    text: 'Progress Sertifikat Halal Gratis Untuk Pelaku UMK',
                     align: 'left'
                 },
                 grid: {
@@ -300,24 +309,7 @@ const Data = () => {
                                                                 <td className="text-end">250.000</td>
 
                                                             </tr>
-                                                            <tr>
 
-                                                                <td>Jawa Tengah</td>
-                                                                <td className="text-end">250.000</td>
-
-                                                            </tr>
-                                                            <tr>
-
-                                                                <td>Jawa Tengah</td>
-                                                                <td className="text-end">250.000</td>
-
-                                                            </tr>
-                                                            <tr>
-
-                                                                <td>Jawa Tengah</td>
-                                                                <td className="text-end">250.000</td>
-
-                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -330,32 +322,24 @@ const Data = () => {
                         <div className="row d-flex justify-content-end pt-5">
                             <div className="col-lg-9">
                                 <div className="row">
-                                <div className="col-lg-6">
-                                <div className="card stretch stretch-full">
-                                    <div className="card-header d-flex justify-content-between align-items-center">
-                                        <h5 className="card-title">Sertifikat Halal UMK</h5>
-                                        <button onClick={downloadPDF} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
+                                    <div className="col-lg-6">
+                                        <div className="card stretch stretch-full">
 
-                                    </div>
-                                    <div className="card-body custom-card-action p-0">
-                                        <div id="payment-records-chartx"></div>
-                                    </div>
+                                            <div className="card-body custom-card-action p-0">
+                                                <div id="payment-records-chartx"></div>
+                                            </div>
 
-                                </div>
-                            </div>
-                            <div className="col-lg-6">
-                                <div className="card stretch stretch-full">
-                                    <div className="card-header d-flex justify-content-between align-items-center">
-                                        <h5 className="card-title">Sertifikat Halal UMK</h5>
-                                        <button onClick={downloadPDF} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
-
+                                        </div>
                                     </div>
-                                    <div className="card-body custom-card-action p-0">
-                                        <div id="payment-records-charts"></div>
-                                    </div>
+                                    <div className="col-lg-6">
+                                        <div className="card stretch stretch-full">
 
-                                </div>
-                            </div>
+                                            <div className="card-body custom-card-action p-0">
+                                                <div id="payment-records-charts"></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>

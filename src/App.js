@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './component/Home';
 import Detail from './component/Detail';
 import Add from './component/Add';
@@ -31,19 +32,20 @@ import Kdeks from './component/Kdeks';
 import Data from './component/Data';
 import Opini from './component/Opini';
 
-import Login from './component/Login';
+// import Login from './component/Login';
 import Dashboard from './component/Dashboard';
 import BeritaTerkaitDetail from './component/berita/BeritaTerkaitDetail';
 
 
 
 function AppContent() {
-  const location = useLocation();
-  const isLoginPage = location.pathname === '/login';
+  // const location = useLocation();
+  // const isLoginPage = location.pathname === '/login';
 
   return (
     <div>
-      {!isLoginPage && <Header />}
+      {/* {!isLoginPage && <Header />} */}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add" element={<Add />} />
@@ -72,12 +74,13 @@ function AppContent() {
         <Route path="/opini" element={<Opini />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/kontak" element={<Kontak />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/isu-ekonomi" element={<IsuEkonomi />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
-      {!isLoginPage && <Footer />}
+      <Footer />
+      {/* {!isLoginPage && <Footer />} */}
     </div>
   );
 }
