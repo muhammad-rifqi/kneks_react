@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import html2canvas from 'html2canvas';
+import { Link } from "react-router-dom";
 // import jsPDF from 'jspdf';
 const Data = () => {
     useEffect(() => {
@@ -217,22 +218,7 @@ const Data = () => {
                                 </div>
                             </div>
                             <div className="col-lg-9" id="dwnjpg">
-                                {/* <nav aria-label="breadcrumb d-flex justify-content-between">
-                                    <ol className="breadcrumb">
-                                        <li className="breadcrumb-item"><a href="#">IPH</a></li>
-                                        <li className="breadcrumb-item active" aria-current="page">Setifikasi Halal UMK</li>
-                                    </ol>
-                                    <form>
-                                        
-                                            <select className="" style={{borderColor :`1px solid blue !importand`}} id="exampleFormControlSelect1">
-                                                <option>Sertifikat Halal Umk</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                    </form>
-                                </nav> */}
+                               
                                 <div className="topbar pb-3">
                                     <div className="topbar-inner">
                                         <div className="topbar-left-x">
@@ -240,26 +226,7 @@ const Data = () => {
                                                 <li><a href="department-details.html">IPH</a></li>
                                                 <li className="active"><a href="departments.html">Sertifikasi Halal UMK</a></li>
                                             </ul>
-                                            {/* <div className="topbar-info">
-                                                <ul>
-                                                    <li>
-                                                        <div className="topbar-icon">
-                                                            <i className="fa-solid fa-envelope"></i>
-                                                        </div>
-                                                        <div className="topbar-text">
-                                                            <a href="mailto:needhelp@company.com">needhelp@company.com</a>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div className="topbar-icon">
-                                                            <i className="fa-solid fa-clock"></i>
-                                                        </div>
-                                                        <div className="topbar-text">
-                                                            <span>Open Hours: Mon - Fri 8.00 am - 6.00 pm</span>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div> */}
+                                            
 
                                         </div>
                                         <div className="topbar-right">
@@ -425,21 +392,21 @@ const Data = () => {
                                                 <tbody>
                                                     <tr>
 
-                                                        <td>Dataset A</td>
+                                                        <td><Link to="/detail-data">Dataset A</Link></td>
                                                         <td className="text-center">Ojk</td>
                                                         <td className="text-center">12:30:34 27-04-2024</td>
 
                                                     </tr>
                                                     <tr>
 
-                                                        <td>Dataset B</td>
+                                                        <td><Link to="/detail-data">Dataset B</Link></td>
                                                         <td className="text-center">Ojk</td>
                                                         <td className="text-center">12:30:34 27-04-2024</td>
 
                                                     </tr>
                                                     <tr>
 
-                                                        <td>Dataset C</td>
+                                                        <td><Link to="/detail-data">Dataset C</Link></td>
                                                         <td className="text-center">Ojk</td>
                                                         <td className="text-center">12:30:34 27-04-2024</td>
 
