@@ -17,13 +17,7 @@ const Data = () => {
                 chart: {
                     height: 350,
                     type: 'line', // This specifies that it's a line chart
-                    dropShadow: {
-                        enabled: true,
-                        top: 18,
-                        left: 7,
-                        blur: 10,
-                        opacity: 0.2
-                    },
+
                     zoom: {
                         enabled: false
                     }
@@ -82,13 +76,7 @@ const Data = () => {
                 chart: {
                     height: 350,
                     type: 'line', // This specifies that it's a line chart
-                    dropShadow: {
-                        enabled: true,
-                        top: 18,
-                        left: 7,
-                        blur: 10,
-                        opacity: 0.2
-                    },
+
                     zoom: {
                         enabled: false
                     }
@@ -138,13 +126,7 @@ const Data = () => {
                 chart: {
                     height: 350,
                     type: 'bar', // This specifies that it's a line chart
-                    dropShadow: {
-                        enabled: true,
-                        top: 18,
-                        left: 7,
-                        blur: 10,
-                        opacity: 0.2
-                    },
+
                     zoom: {
                         enabled: false
                     }
@@ -354,7 +336,24 @@ const Data = () => {
 
                                 </div>
                             </div>
+                            <div className="col-lg-9">
+                                <div className="about-one-inner-x">
+                                    <div className="d-flex justify-content-between pt-5">
+
+                                        <h5 >Narasi</h5>
+                                        <div className="">
+                                            <h5 style={{ fontSize: `14px` }}>Sumber</h5>
+                                            <p style={{ fontSize: `12px` }}>www.kneks.co.id/e-pustaka</p>
+                                        </div>
+
+                                    </div>
+                                    <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+
+                            </div>
+
                         </div>
+
                     </div>
 
                 </section>
