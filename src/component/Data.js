@@ -200,7 +200,7 @@ const Data = () => {
                         </div>
                     </div>
                 </section>
-                <section className="department-details-section" id="dwnjpg">
+                <section className="department-details-section" >
                     <div className="container">
                         <div className="row">
                             <div className="col-12 col-lg-3 col-xl-3">
@@ -216,7 +216,67 @@ const Data = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-9">
+                            <div className="col-lg-9" id="dwnjpg">
+                                {/* <nav aria-label="breadcrumb d-flex justify-content-between">
+                                    <ol className="breadcrumb">
+                                        <li className="breadcrumb-item"><a href="#">IPH</a></li>
+                                        <li className="breadcrumb-item active" aria-current="page">Setifikasi Halal UMK</li>
+                                    </ol>
+                                    <form>
+                                        
+                                            <select className="" style={{borderColor :`1px solid blue !importand`}} id="exampleFormControlSelect1">
+                                                <option>Sertifikat Halal Umk</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                    </form>
+                                </nav> */}
+                                <div className="topbar pb-3">
+                                    <div className="topbar-inner">
+                                        <div className="topbar-left-x">
+                                            <ul>
+                                                <li><a href="department-details.html">IPH</a></li>
+                                                <li className="active"><a href="departments.html">Sertifikasi Halal UMK</a></li>
+                                            </ul>
+                                            {/* <div className="topbar-info">
+                                                <ul>
+                                                    <li>
+                                                        <div className="topbar-icon">
+                                                            <i className="fa-solid fa-envelope"></i>
+                                                        </div>
+                                                        <div className="topbar-text">
+                                                            <a href="mailto:needhelp@company.com">needhelp@company.com</a>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div className="topbar-icon">
+                                                            <i className="fa-solid fa-clock"></i>
+                                                        </div>
+                                                        <div className="topbar-text">
+                                                            <span>Open Hours: Mon - Fri 8.00 am - 6.00 pm</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div> */}
+
+                                        </div>
+                                        <div className="topbar-right">
+
+                                            <form>
+
+                                                <select className="" style={{ borderColor: `1px solid blue !importand` }} id="exampleFormControlSelect1">
+                                                    <option>Sertifikat Halal Umk</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="card stretch stretch-full">
                                     <div className="card-header d-flex justify-content-between align-items-center">
                                         <h5 className="card-title">Sertifikat Halal UMK</h5>
@@ -228,133 +288,177 @@ const Data = () => {
                                     </div>
 
                                 </div>
-                            </div>
-                        </div>
-                        <div className="row d-flex justify-content-end pt-5">
-                            <div className="col-lg-9 ">
-                                <div className="row">
-                                    <div className="col-lg-6">
-                                        <div className="card stretch stretch-full">
-                                            <div className="card-body p-0">
-                                                <div className="mb-4 border-bottom">
-                                                    <div className="pt-4 text-center">
-                                                        <h1>1.608.804</h1>
-                                                        <p>Jumlah Pendaftaran Sehati</p>
+                                <div className="col-lg-12 pt-5">
+                                    <div className="row">
+                                        <div className="col-lg-6">
+                                            <div className="card stretch stretch-full">
+                                                <div className="card-body p-0">
+                                                    <div className="mb-4 border-bottom">
+                                                        <div className="pt-4 text-center">
+                                                            <h1>1.608.804</h1>
+                                                            <p>Jumlah Pendaftaran Sehati</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="mb-4 ">
+                                                        <div className="pt-4 text-center">
+                                                            <h1>86.571</h1>
+                                                            <p>Jumlah SH Terbit Sehati</p>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="mb-4 ">
-                                                    <div className="pt-4 text-center">
-                                                        <h1>86.571</h1>
-                                                        <p>Jumlah SH Terbit Sehati</p>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-6">
+                                            <div className="card stretch stretch-full">
+                                                <div className="card-header">
+                                                    <h5 className="card-title" style={{ fontSize: `16px` }}>Pendaftaran Sehati per Peovinsi</h5>
+                                                </div>
+                                                <div className="card-body custom-card-action p-0">
+                                                    <div className="table-responsive">
+                                                        <table className="table table-hover mb-0" style={{ fontSize: `14px` }}>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Provinsi</th>
+                                                                    <th className="text-end">Jumlah</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+
+                                                                    <td>Jawa Barat</td>
+                                                                    <td className="text-end"> 250.000 </td>
+
+                                                                </tr>
+                                                                <tr>
+
+                                                                    <td>Jawa Tengah</td>
+                                                                    <td className="text-end">250.000</td>
+
+                                                                </tr>
+                                                                <tr>
+
+                                                                    <td>Jawa Tengah</td>
+                                                                    <td className="text-end">250.000</td>
+
+                                                                </tr>
+                                                                <tr>
+
+                                                                    <td>Jawa Tengah</td>
+                                                                    <td className="text-end">250.000</td>
+
+                                                                </tr>
+                                                                <tr>
+
+                                                                    <td>Jawa Tengah</td>
+                                                                    <td className="text-end">250.000</td>
+
+                                                                </tr>
+                                                                <tr>
+
+                                                                    <td>Jawa Tengah</td>
+                                                                    <td className="text-end">250.000</td>
+
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-6">
-                                        <div className="card stretch stretch-full">
-                                            <div className="card-header">
-                                                <h5 className="card-title" style={{ fontSize: `16px` }}>Pendaftaran Sehati per Peovinsi</h5>
-                                            </div>
-                                            <div className="card-body custom-card-action p-0">
-                                                <div className="table-responsive">
-                                                    <table className="table table-hover mb-0" style={{ fontSize: `14px` }}>
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Provinsi</th>
-                                                                <th className="text-end">Jumlah</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
+                                </div>
+                                <div className="col-lg-12 pt-5">
+                                    <div className="row">
+                                        <div className="col-lg-6">
+                                            <div className="card stretch stretch-full">
 
-                                                                <td>Jawa Barat</td>
-                                                                <td className="text-end"> 250.000 </td>
-
-                                                            </tr>
-                                                            <tr>
-
-                                                                <td>Jawa Tengah</td>
-                                                                <td className="text-end">250.000</td>
-
-                                                            </tr>
-                                                            <tr>
-
-                                                                <td>Jawa Tengah</td>
-                                                                <td className="text-end">250.000</td>
-
-                                                            </tr>
-                                                            <tr>
-
-                                                                <td>Jawa Tengah</td>
-                                                                <td className="text-end">250.000</td>
-
-                                                            </tr>
-                                                            <tr>
-
-                                                                <td>Jawa Tengah</td>
-                                                                <td className="text-end">250.000</td>
-
-                                                            </tr>
-                                                            <tr>
-
-                                                                <td>Jawa Tengah</td>
-                                                                <td className="text-end">250.000</td>
-
-                                                            </tr>
-
-                                                        </tbody>
-                                                    </table>
+                                                <div className="card-body custom-card-action p-0">
+                                                    <div id="payment-records-chartx"></div>
                                                 </div>
+
                                             </div>
                                         </div>
+                                        <div className="col-lg-6">
+                                            <div className="card stretch stretch-full">
+
+                                                <div className="card-body custom-card-action p-0">
+                                                    <div id="payment-records-charts"></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
+                                <div className="col-lg-12 pt-5">
+                                    <div className="about-one-inner-x">
+                                        <div className="d-flex justify-content-between ">
+
+                                            <h5 >Narasi</h5>
+                                            <div className="">
+                                                <h5 style={{ fontSize: `14px` }}>Sumber</h5>
+                                                <p style={{ fontSize: `12px` }}>www.kneks.co.id/e-pustaka</p>
+                                            </div>
+
+                                        </div>
+                                        <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    </div>
+
+                                </div>
+                                <div className="col-lg-12 pt-5">
+                                    <div className="about-one-inner-x">
+                                        <div className="text-start">
+
+                                            <h5 >Sumber Data</h5>
+
+                                        </div>
+                                        <div className="table-responsive">
+                                            <table className="table table-hover mb-0" style={{ fontSize: `14px` }}>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Dataset</th>
+                                                        <th className="text-center">Produsen Data</th>
+                                                        <th className="text-center">Tanggal Pembaharuan Data</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td>Dataset A</td>
+                                                        <td className="text-center">Ojk</td>
+                                                        <td className="text-center">12:30:34 27-04-2024</td>
+
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>Dataset B</td>
+                                                        <td className="text-center">Ojk</td>
+                                                        <td className="text-center">12:30:34 27-04-2024</td>
+
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>Dataset C</td>
+                                                        <td className="text-center">Ojk</td>
+                                                        <td className="text-center">12:30:34 27-04-2024</td>
+
+                                                    </tr>
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
                             </div>
                         </div>
-                        <div className="row d-flex justify-content-end pt-5">
-                            <div className="col-lg-9">
-                                <div className="row">
-                                    <div className="col-lg-6">
-                                        <div className="card stretch stretch-full">
 
-                                            <div className="card-body custom-card-action p-0">
-                                                <div id="payment-records-chartx"></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <div className="card stretch stretch-full">
-
-                                            <div className="card-body custom-card-action p-0">
-                                                <div id="payment-records-charts"></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="col-lg-9">
-                                <div className="about-one-inner-x">
-                                    <div className="d-flex justify-content-between pt-5">
-
-                                        <h5 >Narasi</h5>
-                                        <div className="">
-                                            <h5 style={{ fontSize: `14px` }}>Sumber</h5>
-                                            <p style={{ fontSize: `12px` }}>www.kneks.co.id/e-pustaka</p>
-                                        </div>
-
-                                    </div>
-                                    <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-
-                            </div>
-
-                        </div>
 
                     </div>
+
 
                 </section>
             </div>

@@ -693,6 +693,9 @@ a {
 .topbar-right {
   padding: 10px 0px;
 }
+.topbar-left-x {
+  padding: 10px 19px;
+}
 
 .topNav-right {
   padding: 10px 0px;
@@ -710,8 +713,18 @@ a {
     display: none;
   }
 }
+@media (max-width: 1399px) {
+  .topbar-left-x {
+    display: none;
+  }
+}
 
 .topbar-right ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.topbar-left-x ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -726,8 +739,16 @@ a {
 .menu-two .topbar-right ul {
   padding: 20px 0px 15px;
 }
+.menu-two .topbar-left-x ul {
+  padding: 20px 0px 15px;
+}
 
 .topbar-right li {
+  display: inline-block;
+  color: var(--thm-secondary);
+  font-size: 13px;
+}
+.topbar-left-x li {
   display: inline-block;
   color: var(--thm-secondary);
   font-size: 13px;
@@ -736,8 +757,15 @@ a {
 .topbar-right li a:hover {
   color: var(--thm-white);
 }
+.topbar-left-x li a:hover {
+  color: var(--thm-white);
+}
 
 .topbar-right li + li:before {
+  content: "/";
+  margin: 0px 10px;
+}
+.topbar-left-x li + li:before {
   content: "/";
   margin: 0px 10px;
 }
