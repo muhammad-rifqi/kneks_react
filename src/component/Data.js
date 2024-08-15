@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+// import jsPDF from 'jspdf';
 const Data = () => {
     useEffect(() => {
         // Ensure ApexCharts is loaded before using it
@@ -137,7 +137,7 @@ const Data = () => {
                 ],
                 chart: {
                     height: 350,
-                    type: 'line', // This specifies that it's a line chart
+                    type: 'bar', // This specifies that it's a line chart
                     dropShadow: {
                         enabled: true,
                         top: 18,
@@ -150,7 +150,7 @@ const Data = () => {
                     }
                 },
                 dataLabels: {
-                    enabled: false
+                    enabled: true
                 },
                 stroke: {
                     curve: 'straight'
@@ -179,22 +179,33 @@ const Data = () => {
             };
         }
     }, []);
-    const downloadPDF = () => {
-        const pdfWidth = 210; // A4 width in mm
-        const pdfHeight = 297; // A4 height in mm
-        html2canvas(document.querySelector("#payment-records-chart")).then(canvas => {
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF('portrait', 'mm', [pdfWidth, pdfHeight]);
+    const downloadJPG = () => {
+        html2canvas(document.querySelector("#dwnjpg")).then(canvas => {
+            const imgData = canvas.toDataURL('image/jpeg', 1.0);
+            const link = document.createElement('a');
+            link.href = imgData;
+            link.download = 'payment-records-chart.jpg';
 
-            // Adjust image dimensions to maintain aspect ratio
-            const imgWidth = pdfWidth - 20; // padding of 10mm
-            const imgHeight = (canvas.height * imgWidth) / canvas.width;
-            const margin = 10;
-
-            pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
-            pdf.save("custom-size-chart.pdf");
+            // Trigger the download
+            link.click();
         });
     };
+    // const downloadPDF = () => {
+    //     const pdfWidth = 210; // A4 width in mm
+    //     const pdfHeight = 297; // A4 height in mm
+    //     html2canvas(document.querySelector("#payment-records-chart")).then(canvas => {
+    //         const imgData = canvas.toDataURL('image/png');
+    //         const pdf = new jsPDF('portrait', 'mm', [pdfWidth, pdfHeight]);
+
+    //         // Adjust image dimensions to maintain aspect ratio
+    //         const imgWidth = pdfWidth - 20; // padding of 10mm
+    //         const imgHeight = (canvas.height * imgWidth) / canvas.width;
+    //         const margin = 10;
+
+    //         pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
+    //         pdf.save("custom-size-chart.pdf");
+    //     });
+    // };
 
     return (
         <>
@@ -207,7 +218,7 @@ const Data = () => {
                         </div>
                     </div>
                 </section>
-                <section className="department-details-section">
+                <section className="department-details-section" id="dwnjpg">
                     <div className="container">
                         <div className="row">
                             <div className="col-12 col-lg-3 col-xl-3">
@@ -227,7 +238,7 @@ const Data = () => {
                                 <div className="card stretch stretch-full">
                                     <div className="card-header d-flex justify-content-between align-items-center">
                                         <h5 className="card-title">Sertifikat Halal UMK</h5>
-                                        <button onClick={downloadPDF} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
+                                        <button onClick={downloadJPG} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
 
                                     </div>
                                     <div className="card-body custom-card-action p-0">
