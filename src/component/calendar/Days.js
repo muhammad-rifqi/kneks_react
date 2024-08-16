@@ -5,14 +5,14 @@ export default function Days({ day, rowIdx }) {
 
     function getCurrentDayClass() {
         return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
-            ? "bg-primary text-white rounded-circle p-1 text-center"
+            ? "bg-primary text-white rounded-circle text-center"
             : "";
     }
     return (
         <div className="border border-secondary d-flex flex-column">
             <header className="d-flex flex-column align-items-center">
                 {rowIdx === 0 && (
-                    <p className="small ">
+                    <p className="small text-center">
                         {day.format("ddd").toUpperCase()}
                     </p>
                 )}
