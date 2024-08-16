@@ -298,6 +298,385 @@ const Kdeks = () => {
                         </div>
                     </div>
                 </section>
+                <section className="news-section">
+                    <div className="container">
+                        <div className="blog-box">
+                            <div className="section-title-box text-center">
+                                <h2 className="section-title">Opini</h2>
+                            </div>
+                        </div>
+                        <div className="row row-gutter-30">
+                            {
+                                rows.slice(0, 4).map((item) => (
+                                    <div className="col-lg-3 col-xl-3" key={item.id}>
+                                        <div className="berita-card">
+                                            {/* <div className="berita-card-imgbox-direktorat ">
+                                                <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
+                                            </div> */}
+                                            <div className="berita-content-direktorat">
+
+                                                <div className="event-card-title pb-2">
+                                                    <h4>
+                                                        <Link to={`/berita-terkait/${item.slug}`}>{item.title}</Link>
+                                                    </h4>
+                                                </div>
+                                                <div className="event-card-info-direktorat">
+                                                    <span>{item.tanggal}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                        </div >
+                    </div>
+                </section>
+                <section className="funfact-section">
+                    <div className="container">
+                        <div className="funfact-box">
+                            <div className="section-title-box text-center">
+                                <h2 className="section-title">E-pustaka</h2>
+                            </div>
+                        </div>
+                        <div className="row row-gutter-y-30 d-flex justify-content-center">
+
+                            <div className="col-lg-9">
+                                <div className="row ">
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="team-details.html">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className="news-section">
+                    <div className="container">
+                        <div className="blog-box">
+                            <div className="section-title-box text-center">
+                                <h2 className="section-title">Data</h2>
+                            </div>
+                        </div>
+                        <div className="row ">
+                            {
+                                rows.slice(0, 4).map((item) => (
+                                    <div className="col-lg-3 col-xl-3" key={item.id}>
+                                        <div className="berita-card">
+                                            {/* <div className="berita-card-imgbox-direktorat ">
+                                                <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
+                                            </div> */}
+                                            <div className="berita-content-direktorat">
+
+                                                <div className="event-card-title pb-2">
+                                                    <h4>
+                                                        <Link to={`/berita-terkait/${item.slug}`}>{item.title}</Link>
+                                                    </h4>
+                                                </div>
+                                                <div className="event-card-info-direktorat">
+                                                    <span>{item.tanggal}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+
+                        </div>
+                    </div>
+                </section>
+                <section className="funfact-section foto-section-x">
+                    <div className="container">
+                        <div className="funfact-box">
+                            <div className="section-title-box text-center">
+                                <h2 className="section-title">Galeri Foto</h2>
+                            </div>
+                        </div>
+                        <div className="row row-gutter-y-40">
+                            <div className="col-md-3 col-lg-3">
+                                <a href="/assets/image/berita2.jpeg" className="my-image-links-foto" data-gall="gallery01">
+                                    <div className="card-box-b card-shadow news-box">
+                                        <div className="img-box-b " data-gall="gallery01">
+                                            <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
+                                        </div>
+                                        <div className="card-overlay">
+                                            <div className="card-header-b-x">
+
+                                                <div className="card-title-b">
+                                                    <h2 className="title-2-x">
+                                                        <a href="blog-single.html">Travel is comming
+                                                            new</a>
+                                                    </h2>
+                                                </div>
+                                                <div className="card-date">
+                                                    <span className="date-b">18 Sep. 2017</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div className="col-md-3 col-lg-3">
+                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
+                                    <div className="card-box-b card-shadow news-box">
+                                        <div className="img-box-b">
+                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                        </div>
+                                        <div className="card-overlay">
+                                            <div className="card-header-b-x">
+
+                                                <div className="card-title-b">
+                                                    <h2 className="title-2-x">
+                                                        <a href="blog-single.html">Travel is comming
+                                                            new</a>
+                                                    </h2>
+                                                </div>
+                                                <div className="card-date">
+                                                    <span className="date-b">18 Sep. 2017</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div className="col-md-3 col-lg-3">
+                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
+                                    <div className="card-box-b card-shadow news-box">
+                                        <div className="img-box-b">
+                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                        </div>
+                                        <div className="card-overlay">
+                                            <div className="card-header-b-x">
+
+                                                <div className="card-title-b">
+                                                    <h2 className="title-2-x">
+                                                        <a href="blog-single.html">Travel is comming
+                                                            new</a>
+                                                    </h2>
+                                                </div>
+                                                <div className="card-date">
+                                                    <span className="date-b">18 Sep. 2017</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div className="col-md-3 col-lg-3">
+                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
+                                    <div className="card-box-b card-shadow news-box">
+                                        <div className="img-box-b">
+                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                        </div>
+                                        <div className="card-overlay">
+                                            <div className="card-header-b-x">
+
+                                                <div className="card-title-b">
+                                                    <h2 className="title-2-x">
+                                                        <a href="blog-single.html">Travel is comming
+                                                            new</a>
+                                                    </h2>
+                                                </div>
+                                                <div className="card-date">
+                                                    <span className="date-b">18 Sep. 2017</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div className="funfact-box pt-5">
+                            <div className="section-title-box text-center">
+                                <h2 className="section-title">Galeri Video</h2>
+                            </div>
+                        </div>
+                        <div className="row row-gutter-y-40">
+                            <section className="video-section-x">
+                                <div className="container">
+                                    <div className="row row-gutter-y-40">
+                                        <div className="col-md-3 col-lg-3">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                                <div className="card-box-b card-shadow news-box">
+                                                    <div className="img-box-bc">
+                                                        <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
+                                                        <div className="video-btn">
+                                                            <div className="play-icon" >
+                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="card-overlay">
+                                                        <div className="card-header-b-x">
+
+                                                            <div className="card-title-b">
+                                                                <h2 className="title-2-x text-white">
+                                                                    Travel is comming
+                                                                    new
+                                                                </h2>
+                                                            </div>
+                                                            <div className="card-date">
+                                                                <span className="date-b">18 Sep. 2017</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div className="col-md-3 col-lg-3">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                                <div className="card-box-b card-shadow news-box">
+                                                    <div className="img-box-bc">
+                                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                                        <div className="video-btn">
+                                                            <div className="play-icon" >
+                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="card-overlay">
+                                                        <div className="card-header-b-x">
+
+                                                            <div className="card-title-b">
+                                                                <h2 className="title-2-x text-white">
+                                                                    Travel is comming
+                                                                    new
+                                                                </h2>
+                                                            </div>
+                                                            <div className="card-date">
+                                                                <span className="date-b">18 Sep. 2017</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div className="col-md-3 col-lg-3">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                                <div className="card-box-b card-shadow news-box">
+                                                    <div className="img-box-bc">
+                                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                                        <div className="video-btn">
+                                                            <div className="play-icon" >
+                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="card-overlay">
+                                                        <div className="card-header-b-x">
+
+                                                            <div className="card-title-b">
+                                                                <h2 className="title-2-x text-white">
+                                                                    Travel is comming
+                                                                    new
+                                                                </h2>
+                                                            </div>
+                                                            <div className="card-date">
+                                                                <span className="date-b">18 Sep. 2017</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div className="col-md-3 col-lg-3">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                                <div className="card-box-b card-shadow news-box">
+                                                    <div className="img-box-bc">
+                                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                                        <div className="video-btn">
+                                                            <div className="play-icon" >
+                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="card-overlay">
+                                                        <div className="card-header-b-x">
+
+                                                            <div className="card-title-b">
+                                                                <h2 className="title-2-x text-white">
+                                                                    Travel is comming
+                                                                    new
+                                                                </h2>
+                                                            </div>
+                                                            <div className="card-date">
+                                                                <span className="date-b">18 Sep. 2017</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
 
             </div>
         </>
