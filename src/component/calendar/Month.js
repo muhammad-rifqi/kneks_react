@@ -8,7 +8,7 @@ export default function Month({ month }) {
                     {month.map((row, i) => (
                         <div className="row" key={i}>
                             {row.map((day, idx) => (
-                                <div className="col " key={idx}>
+                                <div className="col" key={idx}>
                                     <Day day={day} rowIdx={i} />
                                 </div>
                             ))}
