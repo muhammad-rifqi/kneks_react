@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import VenoBox from 'venobox';
 import { Link } from "react-router-dom";
 import isiItemsBerita from "../component/dumy/dataBerita";
 // import OwlCarousel from 'react-owl-carousel';
@@ -7,7 +8,18 @@ import 'swiper/swiper-bundle.css';
 const Kdeks = () => {
     const [rows, setItems] = useState([]);
 
-
+    new VenoBox({
+        selector: '.my-image-links',
+        numeration: true,
+        infinigall: true,
+        share: true,
+        spinner: 'swing',
+        spinColor: '#5A8DEE',
+        titlePosition: 'bottom',
+        toolsColor: '#ffffff',
+        titleattr: 'data-title',
+        titleStyle: 'block'
+    });
     // untukmengeloladatasebelumdiloop
     useEffect(() => {
         if (document.querySelector('.swiper-kdeks-agenda')) {

@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import isiItemsBerita from "../dumy/dataBerita"
+import VenoBox from 'venobox';
 const IndustriProdukHalal = () => {
 
     const [items, setItems] = useState([]);
-
+    new VenoBox({
+        selector: '.my-image-links',
+        numeration: true,
+        infinigall: true,
+        share: true,
+        spinner: 'swing',
+        spinColor: '#5A8DEE',
+        titlePosition: 'bottom',
+        toolsColor: '#ffffff',
+        titleattr: 'data-title',
+        titleStyle: 'block'
+    });
 
     // untukmengeloladatasebelumdiloop
     useEffect(() => {

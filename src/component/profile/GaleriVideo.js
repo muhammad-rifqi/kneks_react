@@ -1,5 +1,4 @@
 import React,{useEffect} from "react";
-// import 'venobox/venobox.css';
 import VenoBox from 'venobox';
 const GaleriVideo = () => {
     useEffect(() => {
