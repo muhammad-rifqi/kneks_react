@@ -69,7 +69,7 @@ const Header = () => {
                     <li ><Link to="/agenda">Agenda</Link></li>
                     <li ><Link to="/e-pustaka">E-Pustaka</Link></li>
                     <li ><Link to="/data">DATA</Link></li>
-                    <li ><Link to="/kdeks">KDEKS</Link></li>
+                    <li ><Link to="/kdeks" >KDEKS</Link></li>
                     <li ><Link to="/kontak">Kontak</Link>
                     </li>
                   </ul>

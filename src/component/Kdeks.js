@@ -175,41 +175,43 @@ const Kdeks = () => {
                 </section>
 
                 <section className="portfolio-section">
-                    <div className="section-title-box text-center">
-                        <h2 className="section-title">Berita Dan Kegiatan</h2>
-                    </div>
-                    <div className="portfolio-content container-fluid">
-                        <div className="swiper swiper-kdeks">
-                            <div className="swiper-wrapper">
-
-                                {rows.slice(0, 5).map((item, i) => (
-                                    <div className="swiper-slide" key={i}>
-                                        <div className="berita-card-kdeks shadow" >
-                                            <div className="berita-card-imgbox-kdeks">
-                                                <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
-                                            </div>
-                                            <div className="berita-content-kdeks">
-
-                                                <div className="event-card-title pb-2">
-                                                    <h4>
-                                                        <Link to={`/berita-terkait/${item.slug}`}> {item.title} </Link>
-                                                    </h4>
-                                                </div>
-                                                <div className="event-card-info-direktorat">
-                                                    <span>{item.tanggal}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-
-
-                            </div>
-                            {/* <div className="swiper-pagination"></div> */}
-                            <div className="swiper-button-next"></div>
-                            <div className="swiper-button-prev"></div>
+                    <div className="container">
+                        <div className="section-title-box text-center">
+                            <h2 className="section-title">Berita Dan Kegiatan</h2>
                         </div>
-                    </div>
+                        <div className="row row-gutter-30">
+                            <div className="swiper swiper-kdeks">
+                                <div className="swiper-wrapper">
+                                    {
+                                        rows.slice(0, 5).map((item) => (
+                                            <div className="col-lg-3 col-xl-3 swiper-slide" key={item.id}>
+                                                <div className="berita-card-kdeks shadow">
+                                                    <div className="berita-card-imgbox-direktorat ">
+                                                        <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
+                                                    </div>
+                                                    <div className="berita-content-direktorat">
+
+                                                        <div className="event-card-title pb-2">
+                                                            <h4>
+                                                                <Link to={`/berita-terkait/${item.slug}`}>{item.title}</Link>
+                                                            </h4>
+                                                        </div>
+                                                        <div className="event-card-info-direktorat">
+                                                            <span>{item.tanggal}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                </div >
+                                <div className="swiper-button-prev">
+                                </div>
+                                <div className="swiper-button-next">
+                                </div>
+                            </div >
+                        </div >
+                    </div >
+                    
                 </section>
                 <section className="funfact-section">
                     <div className="container">
