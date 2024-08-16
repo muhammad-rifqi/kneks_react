@@ -140,11 +140,11 @@ const Kdeks = () => {
 
                                 {rows.map((item, i) => (
                                     <div className="swiper-slide" key={i}>
-                                        <div className="berita-card-kdeks" >
+                                        <div className="berita-card-kdeks shadow" >
                                             <div className="berita-card-imgbox-kdeks">
                                                 <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
                                             </div>
-                                            <div className="berita-content-direktorat">
+                                            <div className="berita-content-kdeks">
 
                                                 <div className="event-card-title pb-2">
                                                     <h4>

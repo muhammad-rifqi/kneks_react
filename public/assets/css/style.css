@@ -9041,7 +9041,7 @@ SOCIAL MEDIA
   object-fit: cover;
 }
 .berita-card-imgbox-kdeks img {
-  /* height: 100%; */
+  height: 290px;
   object-fit: cover;
 }
 .berita-card-imgbox-direktorat img {
@@ -9096,6 +9096,40 @@ SOCIAL MEDIA
 }
 
 .berita-content-direktorat .btn-primary {
+  padding: 11px 27px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.berita-card-kdeks{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.berita-content-kdeks {
+  padding: 15px;
+  background-color: var(--thm-white);
+  
+}
+
+.berita-content-kdeks h4 {
+  margin-top: 5px;
+  margin-bottom: 1px;
+  font-size: 16px;
+}
+
+.berita-content-kdeks h4 > a {
+  color: inherit;
+  transition: all 500ms ease;
+}
+
+.berita-content-kdeks h4 > a:hover {
+  color: var(--thm-primary);
+}
+
+.berita-content-kdeks p {
+  margin-bottom: 10px;
+}
+
+.berita-content-kdeks .btn-primary {
   padding: 11px 27px;
   font-size: 13px;
   font-weight: 600;
