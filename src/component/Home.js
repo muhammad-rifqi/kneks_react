@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
-import React from 'react';
+import React,{useState} from 'react';
 
 import Section1 from '../component/home/Section1';
 import Section2 from '../component/home/Section2';
@@ -21,6 +21,13 @@ import Section11 from '../component/home/Section11';
 
 
 const Home = () => {
+
+  const [isPopupActive, setPopupActive] = useState(true);
+
+  // Handler untuk menutup popup
+  const handleClose = () => {
+    setPopupActive(false);
+  };
 
   return (
     <div className="page-wrapper">
@@ -45,21 +52,35 @@ const Home = () => {
 
       {/* <Section13 /> */}
 
-      <div className="information-popup active">
-        <div className="information-popup-overlay search-toggler"></div>
-        <div className="information-popup-content">
-          <div className="p-3 close">
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      {isPopupActive && (
+        <div className={`information-popup ${isPopupActive ? 'active' : ''}`}>
+          <div
+            className="information-popup-overlay search-toggler"
+            onClick={handleClose}
+          ></div>
+          <div className="information-popup-content">
+            <div className="p-3 close">
+              <button
+                type="button"
+                className="btn-close"
+                aria-label="Close"
+                onClick={handleClose}
+              ></button>
+            </div>
 
+            <img
+              className="img-fluid img-thumbnail"
+              src="/assets/image/Iklan.svg"
+              alt="Iklan"
+            />
+            <div className="selengkapnya">
+              <a href="/" className="btn btn-primary">
+                Lihat Selengkap
+              </a>
+            </div>
           </div>
-
-          <img className='img-fluid img-thumbnail' src='/assets/image/Iklan.svg' alt='Iklan' />
-          <div className='selengkapnya'>
-            <a href="/" className="btn btn-primary">Lihat Selengkap</a>
-          </div>
-
         </div>
-      </div>
+      )}
     </div>
 
   )

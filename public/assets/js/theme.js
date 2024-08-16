@@ -51,24 +51,24 @@ $(document).ready(function () {
 			time: 1000
 		});
 	}
-	if ($(".search-toggler").length) {
-		$(".search-toggler").on("click", function (e) {
-			e.preventDefault();
-			// $(".search-popup").removeClass("active");
-			$(".information-popup").removeClass("active");
-			$(".mobile-nav-wrapper").removeClass("expanded");
-			// $("body").toggleClass("locked");
-			$("body").removeClass("locked");
-		});
-		$(".btn-close").on("click", function (e) {
-			e.preventDefault();
-			// $(".search-popup").removeClass("active");
-			$(".information-popup").removeClass("active");
-			$(".mobile-nav-wrapper").removeClass("expanded");
-			// $("body").toggleClass("locked");
-			$("body").removeClass("locked");
-		});
-	}
+	// if ($(".search-toggler").length) {
+	// 	$(".search-toggler").on("click", function (e) {
+	// 		e.preventDefault();
+	// 		// $(".search-popup").removeClass("active");
+	// 		$(".information-popup").removeClass("active");
+	// 		$(".mobile-nav-wrapper").removeClass("expanded");
+	// 		// $("body").toggleClass("locked");
+	// 		$("body").removeClass("locked");
+	// 	});
+	// 	$(".btn-close").on("click", function (e) {
+	// 		e.preventDefault();
+	// 		// $(".search-popup").removeClass("active");
+	// 		$(".information-popup").removeClass("active");
+	// 		$(".mobile-nav-wrapper").removeClass("expanded");
+	// 		// $("body").toggleClass("locked");
+	// 		$("body").removeClass("locked");
+	// 	});
+	// }
 	if ($(".daftar-toggler").length) {
 		$(".daftar-toggler").on("click", function (e) {
 			e.preventDefault();

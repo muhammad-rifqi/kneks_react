@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import isiItemsBerita from "../component/dumy/dataBerita";
 // import OwlCarousel from 'react-owl-carousel';
 import Swiper from 'swiper/bundle';
-import Swipers from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 const Kdeks = () => {
     const [rows, setItems] = useState([]);
@@ -15,7 +14,7 @@ const Kdeks = () => {
             // var mySwiper = new Swiper('.swiper-kdeks', {
             // pengaturan Swiper
 
-            const swipers = new Swipers('.swiper-kdeks-agenda', {
+            const swipers = new Swiper('.swiper-kdeks-agenda', {
                 // pengaturan Swiper
                 loop: true,
                 pagination: {
@@ -52,7 +51,7 @@ const Kdeks = () => {
                 }
             };
         }
-    },[])
+    }, [])
     useEffect(() => {
         const isian = isiItemsBerita();
         setItems(isian);
@@ -98,7 +97,7 @@ const Kdeks = () => {
                 }
             };
         }
-       
+
 
 
 
@@ -183,7 +182,7 @@ const Kdeks = () => {
                         <div className="swiper swiper-kdeks">
                             <div className="swiper-wrapper">
 
-                                {rows.slice(0,5).map((item, i) => (
+                                {rows.slice(0, 5).map((item, i) => (
                                     <div className="swiper-slide" key={i}>
                                         <div className="berita-card-kdeks shadow" >
                                             <div className="berita-card-imgbox-kdeks">
@@ -289,8 +288,10 @@ const Kdeks = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="swiper-button-next"></div>
-                                <div className="swiper-button-prev"></div>
+                                <div className="swiper-button-prev">
+                                </div>
+                                <div className="swiper-button-next">
+                                </div>
                             </div>
                         </div>
                     </div>
