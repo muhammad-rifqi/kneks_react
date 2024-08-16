@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import isiItemsBerita from "../component/dumy/dataBerita";
+// import OwlCarousel from 'react-owl-carousel';
+import Swiper from 'swiper/bundle';
+import 'swiper/swiper-bundle.css';
 const Kdeks = () => {
     const [rows, setItems] = useState([]);
 
@@ -10,9 +13,53 @@ const Kdeks = () => {
         const isian = isiItemsBerita();
         setItems(isian);
         // alert(items.length);
+        if (document.querySelector('.swiper-kdeks')) {
+            // var mySwiper = new Swiper('.swiper-kdeks', {
+                // pengaturan Swiper
+        
+        const swiper = new Swiper('.swiper-kdeks', {
+            // pengaturan Swiper
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+            },
+        });
+          // Cleanup function to destroy Swiper instance
+          return () => {
+            if (swiper) {
+                swiper.destroy(true, true);
+            }
+        };
+    }
+      
 
 
     }, []);
+
+
     return (
         <>
             <div className="page-wrapper">
@@ -87,84 +134,36 @@ const Kdeks = () => {
                     <div className="section-title-box text-center">
                         <h2 className="section-title">Berita Dan Kegiatan</h2>
                     </div>
-                    <div className="portfolio-content conatainer-fluid">
-                        <div className="portfolio-carousel-kdeks owl-carousel owl-theme">
+                    <div className="portfolio-content container-fluid">
+                    <div className="swiper swiper-kdeks">
+                            <div className="swiper-wrapper">
 
-                            {/* {rows.slice(0, 4).map((data, i) => ( */}
-                                <div className="item">
-                                    <div className="berita-card-kdeks" >
-                                        <div className="berita-card-imgbox-kdeks ">
-                                            <img src="/assets/image/berita.jpg" className="img-fluid" alt="test" />
-                                        </div>
-                                        <div className="berita-content-direktorat">
+                                {rows.map((item, i) => (
+                                    <div className="swiper-slide" key={i}>
+                                        <div className="berita-card-kdeks" >
+                                            <div className="berita-card-imgbox-kdeks">
+                                                <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
+                                            </div>
+                                            <div className="berita-content-direktorat">
 
-                                            <div className="event-card-title pb-2">
-                                                <h4>
-                                                    <a href="#RRRR"> test test test </a>
-                                                </h4>
-                                            </div>
-                                            <div className="event-card-info-direktorat">
-                                                <span>20 mei 2024</span>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                </div>
-                                <div className="item">
-                                    <div className="berita-card-kdeks" >
-                                        <div className="berita-card-imgbox-kdeks ">
-                                            <img src="/assets/image/berita.jpg" className="img-fluid" alt="test" />
-                                        </div>
-                                        <div className="berita-content-direktorat">
-
-                                            <div className="event-card-title pb-2">
-                                                <h4>
-                                                    <a href="#RRRR"> test test test </a>
-                                                </h4>
-                                            </div>
-                                            <div className="event-card-info-direktorat">
-                                                <span>20 mei 2024</span>
+                                                <div className="event-card-title pb-2">
+                                                    <h4>
+                                                        <Link to={`/berita-terkait/${item.slug}`}> {item.title} </Link>
+                                                    </h4>
+                                                </div>
+                                                <div className="event-card-info-direktorat">
+                                                    <span>{item.tanggal}</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="item">
-                                    <div className="berita-card-kdeks" >
-                                        <div className="berita-card-imgbox-kdeks ">
-                                            <img src="/assets/image/berita.jpg" className="img-fluid" alt="test" />
-                                        </div>
-                                        <div className="berita-content-direktorat">
+                                ))}
 
-                                            <div className="event-card-title pb-2">
-                                                <h4>
-                                                    <a href="#RRRR"> test test test </a>
-                                                </h4>
-                                            </div>
-                                            <div className="event-card-info-direktorat">
-                                                <span>20 mei 2024</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="item">
-                                    <div className="berita-card-kdeks" >
-                                        <div className="berita-card-imgbox-kdeks ">
-                                            <img src="/assets/image/berita.jpg" className="img-fluid" alt="test" />
-                                        </div>
-                                        <div className="berita-content-direktorat">
 
-                                            <div className="event-card-title pb-2">
-                                                <h4>
-                                                    <a href="#RRRR"> test test test </a>
-                                                </h4>
-                                            </div>
-                                            <div className="event-card-info-direktorat">
-                                                <span>20 mei 2024</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            {/* ))} */}
-
+                            </div>
+                            {/* <div className="swiper-pagination"></div> */}
+                            <div className="swiper-button-next"></div>
+                            <div className="swiper-button-prev"></div>
                         </div>
                     </div>
                 </section>

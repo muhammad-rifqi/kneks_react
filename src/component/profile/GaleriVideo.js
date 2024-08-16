@@ -1,5 +1,21 @@
-import React from "react";
+import React,{useEffect} from "react";
+// import 'venobox/venobox.css';
+import VenoBox from 'venobox';
 const GaleriVideo = () => {
+    useEffect(() => {
+        new VenoBox({
+            selector: '.my-image-links',
+            numeration: true,
+            infinigall: true,
+            share: true,
+            spinner: 'swing',
+            spinColor: '#5A8DEE',
+            titlePosition: 'bottom',
+            toolsColor: '#ffffff',
+            titleattr: 'data-title',
+            titleStyle: 'block'
+        });
+    }, []);
     return (
         <>
             <div className="page-wrapper">
