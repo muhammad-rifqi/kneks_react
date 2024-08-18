@@ -17,6 +17,7 @@
     "react-scripts": "5.0.1",
     "sweetalert2": "^11.12.4",
     "swiper": "^11.1.9",
+    "tui-calendar": "^1.15.3",
     "venobox": "^2.1.8",
     "web-vitals": "^2.1.4"
   },

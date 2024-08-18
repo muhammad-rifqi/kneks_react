@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import isiItemsBerita from "../dumy/dataBerita"
 import VenoBox from 'venobox';
 const IndustriProdukHalal = () => {
@@ -52,25 +51,25 @@ const IndustriProdukHalal = () => {
                                     <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <Link to={`https://www.kemenkeu.go.id/`} target="_blank" className="component-service d-block ">
+                                            <a href={`https://www.kemenkeu.go.id/`} target="_blank" rel="noreferrer" className="component-service d-block ">
                                                 <div className="service-image ">
                                                     <img src="assets/image/kemenkeu.png" className="img-fluid " alt="kemenkeu" />
                                                 </div>
-                                            </Link>
+                                            </a>
                                         </div>
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <Link to={`https://www.ekon.go.id/`} target="_blank" className="component-service  d-block">
+                                            <a href={`https://www.ekon.go.id/`} target="_blank" rel="noreferrer" className="component-service  d-block">
                                                 <div className="service-image">
                                                     <img src="assets/image/instansi2.png" className="img-fluid" alt="kementriang bidang perekonomian republik indonesia" />
                                                 </div>
-                                            </Link>
+                                            </a>
                                         </div>
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <Link to={`https://www.kemenkopmk.go.id/`} target="_blank" className="component-service  d-block">
+                                            <a href={`https://www.kemenkopmk.go.id/`} target="_blank" rel="noreferrer" className="component-service  d-block">
                                                 <div className="service-image">
                                                     <img src="assets/image/instansi32.png" className="img-fluid" alt="kemenko pmk" />
                                                 </div>
-                                            </Link>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -93,13 +92,13 @@ const IndustriProdukHalal = () => {
                                     <div className="col-lg-3 col-xl-3" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox-direktorat ">
-                                                <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
+                                                <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                             </div>
                                             <div className="berita-content-direktorat">
 
                                                 <div className="event-card-title pb-2">
                                                     <h4>
-                                                        <Link to={`/berita-terkait/${item.slug}`}>{item.title}</Link>
+                                                        <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info-direktorat">
@@ -126,13 +125,13 @@ const IndustriProdukHalal = () => {
                                     <div className="col-lg-3 col-xl-3" key={item.id}>
                                         <div className="berita-card">
                                             {/* <div className="berita-card-imgbox-direktorat ">
-                                                <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
+                                                <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                             </div> */}
                                             <div className="berita-content-direktorat">
 
                                                 <div className="event-card-title pb-2">
                                                     <h4>
-                                                        <Link to={`/berita-terkait/${item.slug}`}>{item.title}</Link>
+                                                        <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info-direktorat">
@@ -242,13 +241,13 @@ const IndustriProdukHalal = () => {
                                     <div className="col-lg-3 col-xl-3" key={item.id}>
                                         <div className="berita-card">
                                             {/* <div className="berita-card-imgbox-direktorat ">
-                                                <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
+                                                <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                             </div> */}
                                             <div className="berita-content-direktorat">
 
                                                 <div className="event-card-title pb-2">
                                                     <h4>
-                                                        <Link to={`/berita-terkait/${item.slug}`}>{item.title}</Link>
+                                                        <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info-direktorat">

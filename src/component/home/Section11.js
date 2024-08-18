@@ -51,119 +51,119 @@ const Section11 = () => {
 
 				<div className="row">
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://www.kemenkeu.go.id/`} target="_blank" className="component-service d-block ">
+						<a rel="noreferrer" href={`https://www.kemenkeu.go.id/`} target="_blank" className="component-service d-block ">
 							<div className="service-image ">
 								<img src="assets/image/kemenkeu.png" className="img-fluid " alt="kemenkeu" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://www.ekon.go.id/`} target="_blank" className="component-service  d-block">
+						<a rel="noreferrer" href={`https://www.ekon.go.id/`} target="_blank" className="component-service  d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi2.png" className="img-fluid" alt="kementriang bidang perekonomian republik indonesia" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://www.kemenkopmk.go.id/`} target="_blank" className="component-service  d-block">
+						<a rel="noreferrer" href={`https://www.kemenkopmk.go.id/`} target="_blank" className="component-service  d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi32.png" className="img-fluid" alt="kemenko pmk" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://www.maritim.go.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://www.maritim.go.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi41.png" className="img-fluid" alt="maritim" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://www.kemenag.go.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://www.kemenag.go.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi5.png" className="img-fluid" alt="kemenag" />
 							</div>
-						</Link>
+						</a>
 					</div>
 
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://www.kemendag.go.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://www.kemendag.go.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi7.png" className="img-fluid" alt="kemendag" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://bappenas.go.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://bappenas.go.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi8.png" className="img-fluid" alt="bappenas" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://bumn.go.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://bumn.go.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi9.png" className="img-fluid" alt="bumn" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://kemenkopukm.go.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://kemenkopukm.go.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi10.png" className="img-fluid" alt="kemenkopukm" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://kemenparekraf.go.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://kemenparekraf.go.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi11.png" className="img-fluid" alt="kemenparekraf" />
 							</div>
-						</Link>
+						</a>
 					</div>
 
 
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://mui.or.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://mui.or.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi15.png" className="img-fluid" alt="mui" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-2 pb-3">
-						<Link to={`https://kadin.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://kadin.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi17.png" className="img-fluid" alt="kadin" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-3 pb-3">
-						<Link to={`https://bi.go.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://bi.go.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi13.png" className="img-fluid" alt="bi" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-3 pb-3">
-						<Link to={`https://lps.go.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://lps.go.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi14.png" className="img-fluid" alt="lps" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-3 pb-3">
-						<Link to={`https://www.kemenperin.go.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://www.kemenperin.go.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi6.png" className="img-fluid" alt="kemenperin" />
 							</div>
-						</Link>
+						</a>
 					</div>
 					<div className="col-6 col-md-4 col-lg-3 pb-3">
-						<Link to={`https://ojk.go.id/`} target="_blank" className="component-service d-block">
+						<a rel="noreferrer" href={`https://ojk.go.id/`} target="_blank" className="component-service d-block">
 							<div className="service-image">
 								<img src="assets/image/instansi12.png" className="img-fluid" alt="ojk" />
 							</div>
-						</Link>
+						</a>
 					</div>
 				</div>
 

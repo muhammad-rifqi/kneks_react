@@ -4,7 +4,6 @@ import CalendarHeader from "./calendar/CalendarHeader";
 import SideBar from "./calendar/SideBar";
 import Month from "./calendar/Month";
 const Agenda = () => {
-    const [currenMonth, setCurrentMonth] = useState(getMonth());
     return (
         <>
             <div className="page-wrapper">
@@ -23,7 +22,7 @@ const Agenda = () => {
                             <div className="d-flex flex-grow-1">
 
                                 <SideBar />
-                                <Month month={currenMonth} />
+                                <Month />
 
                             </div>
                         </div>
