@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import html2canvas from 'html2canvas';
-import { Link } from "react-router-dom";
 // import jsPDF from 'jspdf';
 const Data = () => {
     useEffect(() => {
@@ -392,21 +391,21 @@ const Data = () => {
                                                 <tbody>
                                                     <tr>
 
-                                                        <td><Link to="/detail-data">Dataset A</Link></td>
+                                                        <td><a href="/detail-data">Dataset A</a></td>
                                                         <td className="text-center">Ojk</td>
                                                         <td className="text-center">12:30:34 27-04-2024</td>
 
                                                     </tr>
                                                     <tr>
 
-                                                        <td><Link to="/detail-data">Dataset B</Link></td>
+                                                        <td><a href="/detail-data">Dataset B</a></td>
                                                         <td className="text-center">Ojk</td>
                                                         <td className="text-center">12:30:34 27-04-2024</td>
 
                                                     </tr>
                                                     <tr>
 
-                                                        <td><Link to="/detail-data">Dataset C</Link></td>
+                                                        <td><a href="/detail-data">Dataset C</a></td>
                                                         <td className="text-center">Ojk</td>
                                                         <td className="text-center">12:30:34 27-04-2024</td>
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import isiItemsBerita from "../dumy/dataBerita"
 import SkeletonCardBerita from "../skeleton/CardBerita";
-import { Link } from "react-router-dom";
 const GaleriFoto = () => {
     const [items, setItems] = useState([]);
     const [visible, setVisible] = useState(9)
@@ -58,14 +57,14 @@ const GaleriFoto = () => {
                                     <div className="col-md-4 col-lg-4" key={item.id}>
                                         <div className="card-box-b card-shadow news-box">
                                             <div className="img-box-b " data-gall="gallery01">
-                                                <Link to={`/galeri-foto/${item.slug}`}><img src={item.foto} className="img-fluid img-b" alt={item.title} /></Link>
+                                                <a href={`/galeri-foto/${item.slug}`}><img src={item.foto} className="img-fluid img-b" alt={item.title} /></a>
                                             </div>
                                             <div className="card-overlay">
                                                 <div className="card-header-b">
 
                                                     <div className="card-title-b">
                                                         <h2 className="title-2">
-                                                            <Link to={`/galeri-foto/${item.slug}`}>{item.title}</Link>
+                                                            <a href={`/galeri-foto/${item.slug}`}>{item.title}</a>
                                                         </h2>
                                                     </div>
                                                     <div className="card-date">
@@ -89,9 +88,9 @@ const GaleriFoto = () => {
                             {visible < items.length && (
                                 <div className="col-12 pt-5">
                                     <div className="block-box load-more-btn">
-                                        <Link className="item-btn" onClick={showMore}>
+                                        <a className="item-btn" onClick={showMore}>
                                             <i className="fa-solid fa-refresh"></i>Load More
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
                             )}

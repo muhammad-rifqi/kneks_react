@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 const Section11 = () => {
 	return (
 		<section className="blog-section">
@@ -15,7 +14,7 @@ const Section11 = () => {
 						<div className="blog-card">
 							<div className="blog-card-image">
 								<img src="/assets/image/blog/blog-1.jpg" className="img-fluid" alt="img-22" />
-									<Link to={'detail/'}>Detail</Link>
+									<a href={'detail/'}>Detail</a>
 							</div>
 							<div className="blog-card-date">
 								<a href="news-details.html">28SEP</a>
@@ -38,7 +37,7 @@ const Section11 = () => {
 						<div className="blog-card">
 							<div className="blog-card-image">
 								<img src="/assets/image/blog/blog-2.jpg" className="img-fluid" alt="img-23" />
-									<Link to={'detail/'}>Detail</Link>
+									<a href={'detail/'}>Detail</a>
 							</div>
 							<div className="blog-card-date">
 								<a href="news-details.html">28SEP</a>
@@ -61,7 +60,7 @@ const Section11 = () => {
 						<div className="blog-card">
 							<div className="blog-card-image">
 								<img src="/assets/image/blog/blog-3.jpg" className="img-fluid" alt="img-24" />
-									<Link to={'detail/'}>Detail</Link>
+									<a href={'detail/'}>Detail</a>
 							</div>
 							<div className="blog-card-date">
 								<a href="news-details.html">28SEP</a>

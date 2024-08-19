@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import VenoBox from 'venobox';
-import { Link } from "react-router-dom";
 import isiItemsBerita from "../component/dumy/dataBerita";
 // import OwlCarousel from 'react-owl-carousel';
 import Swiper from 'swiper/bundle';
@@ -9,7 +8,7 @@ const Kdeks = () => {
     const [rows, setItems] = useState([]);
 
     new VenoBox({
-        selector: '.my-image-links',
+        selector: '.my-image-as',
         numeration: true,
         infinigall: true,
         share: true,
@@ -178,7 +177,7 @@ const Kdeks = () => {
                                     </div> */}
                                     <div className="sidebar-widget-box-content">
                                         <h3>Surat Keputusan Kdeks Jawa Tengah</h3>
-                                        <Link className="btn btn-primary">View</Link>
+                                        <a href="#" className="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -199,13 +198,13 @@ const Kdeks = () => {
                                             <div className="col-lg-3 col-xl-3 swiper-slide" key={item.id}>
                                                 <div className="berita-card-kdeks shadow">
                                                     <div className="berita-card-imgbox-direktorat ">
-                                                        <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
+                                                        <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                                     </div>
                                                     <div className="berita-content-direktorat">
 
                                                         <div className="event-card-title pb-2">
                                                             <h4>
-                                                                <Link to={`/berita-terkait/${item.slug}`}>{item.title}</Link>
+                                                                <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
                                                             </h4>
                                                         </div>
                                                         <div className="event-card-info-direktorat">
@@ -323,13 +322,13 @@ const Kdeks = () => {
                                     <div className="col-lg-3 col-xl-3" key={item.id}>
                                         <div className="berita-card">
                                             {/* <div className="berita-card-imgbox-direktorat ">
-                                                <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
+                                                <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                             </div> */}
                                             <div className="berita-content-direktorat">
 
                                                 <div className="event-card-title pb-2">
                                                     <h4>
-                                                        <Link to={`/berita-terkait/${item.slug}`}>{item.title}</Link>
+                                                        <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info-direktorat">
@@ -439,13 +438,13 @@ const Kdeks = () => {
                                     <div className="col-lg-3 col-xl-3" key={item.id}>
                                         <div className="berita-card">
                                             {/* <div className="berita-card-imgbox-direktorat ">
-                                                <Link to={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
+                                                <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                             </div> */}
                                             <div className="berita-content-direktorat">
 
                                                 <div className="event-card-title pb-2">
                                                     <h4>
-                                                        <Link to={`/berita-terkait/${item.slug}`}>{item.title}</Link>
+                                                        <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info-direktorat">
@@ -468,7 +467,7 @@ const Kdeks = () => {
                         </div>
                         <div className="row row-gutter-y-40">
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita2.jpeg" className="my-image-links-foto" data-gall="gallery01">
+                                <a href="/assets/image/berita2.jpeg" className="my-image-as-foto" data-gall="gallery01">
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b " data-gall="gallery01">
                                             <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
@@ -491,7 +490,7 @@ const Kdeks = () => {
                                 </a>
                             </div>
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
+                                <a href="/assets/image/berita.jpg" className="my-image-as-foto" data-gall="gallery01">
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b">
                                             <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -514,7 +513,7 @@ const Kdeks = () => {
                                 </a>
                             </div>
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
+                                <a href="/assets/image/berita.jpg" className="my-image-as-foto" data-gall="gallery01">
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b">
                                             <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -537,7 +536,7 @@ const Kdeks = () => {
                                 </a>
                             </div>
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
+                                <a href="/assets/image/berita.jpg" className="my-image-as-foto" data-gall="gallery01">
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b">
                                             <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -571,7 +570,7 @@ const Kdeks = () => {
                                 <div className="container">
                                     <div className="row row-gutter-y-40">
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-as" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
@@ -599,7 +598,7 @@ const Kdeks = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-as" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -627,7 +626,7 @@ const Kdeks = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-as" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -655,7 +654,7 @@ const Kdeks = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-as" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
