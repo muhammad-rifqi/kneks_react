@@ -1,5 +1,15 @@
-import React from "react"
+import React, { useState, useEffect } from "react";
+import isiItemsBerita from "../dumy/dataBerita"
+
 const Section7 = () => {
+	const [items, setItems] = useState([]);
+	useEffect(() => {
+        const isian = isiItemsBerita();
+        setItems(isian);
+        // alert(items.length);
+
+      
+    }, []);
 	return (
 		<section className="portfolio-section ">
 
