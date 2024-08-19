@@ -3588,6 +3588,35 @@ a.search-toggler {
     font-size: 30px;
   }
 }
+.page-banner-title-x h3 {
+  font-size: 45px;
+  margin-bottom: 0px;
+  color: var(--thm-white);
+}
+.page-banner-title-x h5 {
+  font-size: 30px;
+  margin-bottom: 0px;
+  color: var(--thm-white);
+}
+
+@media (max-width: 1199px) {
+  .page-banner-title-x h3 {
+    font-size: 40px;
+  }
+  .page-banner-title-x h5 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 991px) {
+  .page-banner-title-x h3 {
+    font-size: 25px;
+  }
+@media (max-width: 991px) {
+  .page-banner-title-x h5 {
+    font-size: 20px;
+  }
+}
 
 /***********************
 * Portfolio
@@ -9050,9 +9079,8 @@ SOCIAL MEDIA
   padding-top: 70px;
   padding-bottom: 70px;
   background-color: var(--thm-white);
- 
 }
-.berita-card{
+.berita-card {
   box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
 }
 .berita-card-imgbox img {
@@ -9119,14 +9147,13 @@ SOCIAL MEDIA
   font-size: 13px;
   font-weight: 600;
 }
-.berita-card-kdeks{
+.berita-card-kdeks {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 .berita-content-kdeks {
   padding: 15px;
   background-color: var(--thm-white);
-  
 }
 
 .berita-content-kdeks h4 {
@@ -9230,7 +9257,7 @@ SOCIAL MEDIA
   font-weight: 600;
   color: #f2994a;
 }
-.berita-content{
+.berita-content {
   padding: 20px;
 }
 .berita-content h4 {
@@ -9655,6 +9682,6 @@ SOCIAL MEDIA
   max-width: 80%;
   max-height: 80%;
 }
-g{
+g {
   background-color: #146aa4;
 }

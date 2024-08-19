@@ -1,13 +1,28 @@
 import React from "react";
-const StrukturOrganisasi = () => {
+const StrukturOrganisasiDetail = () => {
 	return (
 		<>
 			<div className="page-wrapper">
 
 				<section className="page-banner">
 					<div className="container">
-						<div className="page-banner-title">
-							<h3>Struktur Organisasi</h3>
+						<div className="page-banner-title-x">
+							<h3>Nama Direktur</h3>
+							<h5>Jabatan</h5>
+							<div className="team-card">
+								<div className="team-card-img">
+									<img src={`${process.env.PUBLIC_URL}/assets/image/team/team-1.jpg`} className="img-fluid" alt="img-40" />
+									<div className="team-card-icon">
+										<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
+										<a href="#t" className="twitter"><i className="fa-brands fa-linkedin"></i></a>
+										<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
+									</div>
+								</div>
+								<div className="team-card-content">
+									<h4><a href="#t">Sarah Albert</a></h4>
+									<p>Consultant</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -37,7 +52,7 @@ const StrukturOrganisasi = () => {
 										</div>
 									</div>
 									<div className="team-card-content">
-										<h4><a href="/struktur-organisasi/detail">Sarah Albert</a></h4>
+										<h4><a href="#t">Sarah Albert</a></h4>
 										<p>Consultant</p>
 									</div>
 								</div>
@@ -162,4 +177,4 @@ const StrukturOrganisasi = () => {
 	)
 }
 
-export default StrukturOrganisasi
+export default StrukturOrganisasiDetail
