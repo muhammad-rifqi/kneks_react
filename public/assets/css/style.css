@@ -3365,7 +3365,7 @@ a.search-toggler {
 .mayor-section {
   overflow: hidden;
   padding-top: 120px;
-  padding-bottom: 120px;
+  padding-bottom: 80px;
 }
 
 @media (max-width: 1199px) {
@@ -3377,6 +3377,25 @@ a.search-toggler {
 
 @media (max-width: 300px) {
   .mayor-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+.mayor-section-maps {
+  overflow: hidden;
+  padding-top: 70px;
+  padding-bottom: 120px;
+}
+
+@media (max-width: 1199px) {
+  .mayor-section-maps {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 300px) {
+  .mayor-section-maps {
     padding-top: 40px;
     padding-bottom: 40px;
   }
