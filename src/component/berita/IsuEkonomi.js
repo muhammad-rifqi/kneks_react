@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import isiItemsBerita from "../dumy/dataBerita"
 import SkeletonCardBerita from "../skeleton/CardBerita";
 
@@ -61,7 +60,7 @@ const IsuEkonomi = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <Link to={`/siaran-pers/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></Link>
+                                                <a href={`/siaran-pers/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
@@ -70,7 +69,7 @@ const IsuEkonomi = () => {
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <Link to={`/siaran-pers/${item.slug}`}>{item.title}</Link>
+                                                        <a href={`/siaran-pers/${item.slug}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
@@ -93,9 +92,9 @@ const IsuEkonomi = () => {
                             {visible < items.length && (
                                 <div className="col-12 pt-5">
                                     <div className="block-box load-more-btn">
-                                        <Link className="item-btn" onClick={showMore}>
+                                        <a hrefassName="item-btn" onClick={showMore}>
                                             <i className="fa-solid fa-refresh"></i>Load More
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
                             )}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import isiItemsBerita from "../dumy/dataBerita"
 
 
@@ -85,17 +85,17 @@ const BeritaTerkaitDetail = () => {
                                 <h4>Tags :</h4>
                             </div>
                             <div className="news-details-list-button">
-                                <a href="news-details.html" className="btn btn-primary">#Culturse</a>
-                                <a href="news-details.html" className="btn btn-primary">Government</a>
-                                <a href="news-details.html" className="btn btn-primary">Government</a>
-                                <a href="news-details.html" className="btn btn-primary">Government</a>
-                                <a href="news-details.html" className="btn btn-primary">Government</a>
-                                <a href="news-details.html" className="btn btn-primary">Government</a>
-                                <a href="news-details.html" className="btn btn-primary">Government</a>
-                                <a href="news-details.html" className="btn btn-primary">Government</a>
-                                <a href="news-details.html" className="btn btn-primary">Government</a>
-                                <a href="news-details.html" className="btn btn-primary">Government</a>
-                                <a href="news-details.html" className="btn btn-primary">Government</a>
+                                <a href="#" className="btn btn-primary">#Culturse</a>
+                                <a href="#" className="btn btn-primary">Government</a>
+                                <a href="#" className="btn btn-primary">Government</a>
+                                <a href="#" className="btn btn-primary">Government</a>
+                                <a href="#" className="btn btn-primary">Government</a>
+                                <a href="#" className="btn btn-primary">Government</a>
+                                <a href="#" className="btn btn-primary">Government</a>
+                                <a href="#" className="btn btn-primary">Government</a>
+                                <a href="#" className="btn btn-primary">Government</a>
+                                <a href="#" className="btn btn-primary">Government</a>
+                                <a href="#" className="btn btn-primary">Government</a>
                             </div>
                         </div>
                     </div>
@@ -118,7 +118,7 @@ const BeritaTerkaitDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <Link to={`/liputan-media/${item.slug}`}> <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} /></Link>
+                                                <a href={`/liputan-media/${item.slug}`}> <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} /></a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
@@ -126,7 +126,7 @@ const BeritaTerkaitDetail = () => {
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <Link to={`/liputan-media/${item.slug}`}>{item.title}</Link>
+                                                        <a href={`/liputan-media/${item.slug}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
