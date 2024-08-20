@@ -18,16 +18,15 @@ const News = () => {
 							<div className="card-overlay">
 								<div className="card-header-b">
 									<div className="card-category-b">
-										<a href="#test" className="category-b">Berita Baru</a>
+										<a href="#test" className="category-b-x">#BERITABARU</a>
 									</div>
 									<div className="card-title-b">
 										<h2 className="title-2">
-											<a href="blog-single.html">Travel is comming
-												new</a>
+											<a href="blog-single.html">Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah</a>
 										</h2>
 									</div>
 									<div className="card-date">
-										<span className="date-b">18 Sep. 2017</span>
+										<span className="date-b">18 September 2017</span>
 									</div>
 								</div>
 							</div>
@@ -41,16 +40,15 @@ const News = () => {
 							<div className="card-overlay">
 								<div className="card-header-b">
 									<div className="card-category-b">
-										<a href="/" className="category-b">Berita Baru</a>
+										<a href="/" className="category-b-x">#BERITABARU</a>
 									</div>
 									<div className="card-title-b">
 										<h2 className="title-2">
-											<a href="blog-single.html">Travel is comming
-												new sclc delfkelfkel wldkwldkw fkmdfmlemf kfefkelkfle efkefkelfkel</a>
+											<a href="blog-single.html">Pengukuhan KDEKS Provinsi Sulawesi Tengah</a>
 										</h2>
 									</div>
 									<div className="card-date">
-										<span className="date-b">18 Sep. 2017</span>
+										<span className="date-b">18 September 2017</span>
 									</div>
 								</div>
 							</div>

@@ -8417,6 +8417,13 @@ label {
   }
 }
 
+.card-header-b .category-b-x {
+  font-size: 0.9rem;
+  color: #F2994A;
+  letter-spacing: 0.03em;
+  border-radius: 50px;
+  text-decoration: none;
+}
 .card-header-b .category-b {
   font-size: 0.9rem;
   background-color: #2eca6a;
@@ -9109,6 +9116,14 @@ SOCIAL MEDIA
 .berita-card-imgbox-kdeks img {
   height: 290px;
   object-fit: cover;
+}
+.berita-card-imgbox-berita img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.event-card-info-berita {
+  margin-bottom: 5px;
 }
 .berita-card-imgbox-direktorat img {
   height: 200px;
