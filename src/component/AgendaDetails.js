@@ -185,144 +185,144 @@ const AgendaDetails = () => {
                                     </div>
                                 </div>
                                 <section className="video-section-x">
-                                        <div className="row row-gutter-y-40">
-                                            <div className="col-md-3 col-lg-3">
-                                                <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links-video" data-autoplay="true" data-vbtype="video">
-                                                    <div className="card-box-b card-shadow news-box">
-                                                        <div className="img-box-bc">
-                                                            <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
-                                                            <div className="video-btn">
-                                                                <div className="play-icon" >
-                                                                    <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                                </div>
+                                    <div className="row row-gutter-y-40">
+                                        <div className="col-md-3 col-lg-3">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links-video" data-autoplay="true" data-vbtype="video">
+                                                <div className="card-box-b card-shadow news-box">
+                                                    <div className="img-box-bc">
+                                                        <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
+                                                        <div className="video-btn">
+                                                            <div className="play-icon" >
+                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
                                                             </div>
                                                         </div>
-                                                        
                                                     </div>
-                                                </a>
-                                            </div>
-                                            <div className="col-md-3 col-lg-3">
-                                                <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links-video" data-autoplay="true" data-vbtype="video">
-                                                    <div className="card-box-b card-shadow news-box">
-                                                        <div className="img-box-bc">
-                                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                                            <div className="video-btn">
-                                                                <div className="play-icon" >
-                                                                    <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className="col-md-3 col-lg-3">
-                                                <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links-video" data-autoplay="true" data-vbtype="video">
-                                                    <div className="card-box-b card-shadow news-box">
-                                                        <div className="img-box-bc">
-                                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                                            <div className="video-btn">
-                                                                <div className="play-icon" >
-                                                                    <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className="col-md-3 col-lg-3">
-                                                <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links-video" data-autoplay="true" data-vbtype="video">
-                                                    <div className="card-box-b card-shadow news-box">
-                                                        <div className="img-box-bc">
-                                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                                            <div className="video-btn">
-                                                                <div className="play-icon" >
-                                                                    <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </a>
-                                            </div>
 
+                                                </div>
+                                            </a>
                                         </div>
+                                        <div className="col-md-3 col-lg-3">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links-video" data-autoplay="true" data-vbtype="video">
+                                                <div className="card-box-b card-shadow news-box">
+                                                    <div className="img-box-bc">
+                                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                                        <div className="video-btn">
+                                                            <div className="play-icon" >
+                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div className="col-md-3 col-lg-3">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links-video" data-autoplay="true" data-vbtype="video">
+                                                <div className="card-box-b card-shadow news-box">
+                                                    <div className="img-box-bc">
+                                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                                        <div className="video-btn">
+                                                            <div className="play-icon" >
+                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div className="col-md-3 col-lg-3">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links-video" data-autoplay="true" data-vbtype="video">
+                                                <div className="card-box-b card-shadow news-box">
+                                                    <div className="img-box-bc">
+                                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
+                                                        <div className="video-btn">
+                                                            <div className="play-icon" >
+                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                    </div>
                                 </section>
                                 <section className="department-all">
-				<div className="container">
-					<div className="blog-box-x">
-						<div className="section-title-box text-center">
-							<h2 className="section-title">Rekomendasi Agenda Lainnya</h2>
-						</div>
-					</div>
-					<div className="row ">
-						<div className="col-lg-3 col-md-3">
-							<a href="/agenda/detail">
-								<div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-									<div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-									<div className="card-body">
-										<div className="card-text">24/05/2024 - 24/05/2024</div>
-										<div className="card-text">12:00 - 14:00 WIP</div>
+                                    <div className="container">
+                                        <div className="blog-box-x">
+                                            <div className="section-title-box text-center">
+                                                <h2 className="section-title">Rekomendasi Agenda Lainnya</h2>
+                                            </div>
+                                        </div>
+                                        <div className="row ">
+                                            <div className="col-lg-3 col-md-3">
+                                                <a href="/agenda/detail">
+                                                    <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
+                                                        <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
+                                                        <div className="card-body">
+                                                            <div className="card-text">24/05/2024 - 24/05/2024</div>
+                                                            <div className="card-text">12:00 - 14:00 WIP</div>
 
-									</div>
-									<div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-										<i className="fa-solid fa-calendar "></i>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div className="col-lg-3 col-md-3">
-							<a href="/agenda/detail">
-								<div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-									<div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-									<div className="card-body">
-										<div className="card-text">24/05/2024 - 24/05/2024</div>
-										<div className="card-text">12:00 - 14:00 WIP</div>
+                                                        </div>
+                                                        <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
+                                                            <i className="fa-solid fa-calendar "></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div className="col-lg-3 col-md-3">
+                                                <a href="/agenda/detail">
+                                                    <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
+                                                        <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
+                                                        <div className="card-body">
+                                                            <div className="card-text">24/05/2024 - 24/05/2024</div>
+                                                            <div className="card-text">12:00 - 14:00 WIP</div>
 
-									</div>
-									<div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-										<i className="fa-solid fa-calendar "></i>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div className="col-lg-3 col-md-3">
-							<a href="/agenda/detail">
-								<div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-									<div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-									<div className="card-body">
-										<div className="card-text">24/05/2024 - 24/05/2024</div>
-										<div className="card-text">12:00 - 14:00 WIP</div>
+                                                        </div>
+                                                        <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
+                                                            <i className="fa-solid fa-calendar "></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div className="col-lg-3 col-md-3">
+                                                <a href="/agenda/detail">
+                                                    <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
+                                                        <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
+                                                        <div className="card-body">
+                                                            <div className="card-text">24/05/2024 - 24/05/2024</div>
+                                                            <div className="card-text">12:00 - 14:00 WIP</div>
 
-									</div>
-									<div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-										<i className="fa-solid fa-calendar "></i>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div className="col-lg-3 col-md-3">
-							<a href="/agenda/detail">
-								<div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-									<div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-									<div className="card-body">
-										<div className="card-text">24/05/2024 - 24/05/2024</div>
-										<div className="card-text">12:00 - 14:00 WIP</div>
+                                                        </div>
+                                                        <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
+                                                            <i className="fa-solid fa-calendar "></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div className="col-lg-3 col-md-3">
+                                                <a href="/agenda/detail">
+                                                    <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
+                                                        <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
+                                                        <div className="card-body">
+                                                            <div className="card-text">24/05/2024 - 24/05/2024</div>
+                                                            <div className="card-text">12:00 - 14:00 WIP</div>
 
-									</div>
-									<div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-										<i className="fa-solid fa-calendar "></i>
-									</div>
-								</div>
-							</a>
-						</div>
+                                                        </div>
+                                                        <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
+                                                            <i className="fa-solid fa-calendar "></i>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
 
 
-					</div>
+                                        </div>
 
-				</div>
-			</section >
+                                    </div>
+                                </section >
                             </div>
                         </div>
                     </div>

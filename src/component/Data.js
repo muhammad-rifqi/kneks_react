@@ -391,21 +391,21 @@ const Data = () => {
                                                 <tbody>
                                                     <tr>
 
-                                                        <td><a href="/detail-data">Dataset A</a></td>
+                                                        <td><a href="/data/detail">Dataset A</a></td>
                                                         <td className="text-center">Ojk</td>
                                                         <td className="text-center">12:30:34 27-04-2024</td>
 
                                                     </tr>
                                                     <tr>
 
-                                                        <td><a href="/detail-data">Dataset B</a></td>
+                                                        <td><a href="/data/detail">Dataset B</a></td>
                                                         <td className="text-center">Ojk</td>
                                                         <td className="text-center">12:30:34 27-04-2024</td>
 
                                                     </tr>
                                                     <tr>
 
-                                                        <td><a href="/detail-data">Dataset C</a></td>
+                                                        <td><a href="/data/detail">Dataset C</a></td>
                                                         <td className="text-center">Ojk</td>
                                                         <td className="text-center">12:30:34 27-04-2024</td>
 
