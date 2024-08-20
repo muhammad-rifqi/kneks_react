@@ -48,8 +48,8 @@ const StrukturOrganisasiDetail = () => {
 								</div>
 							</div>
 							<div className="col-lg-3">
-								<div className="footer-widget-socials ">
-									<a href="/twitter"><i className="fa-brands fa-x-twitter"></i></a>
+								<div className="sidebar-widget-event-meta-socials">
+									<a href="/twitter"><i className="fa-brands fa-x-twitter s"></i></a>
 									<a href="/twitter"><i className="fa-brands fa-facebook"></i></a>
 									<a href="/twitter"><i className="fa-brands fa-linkedin"></i></a>
 									<a href="/twitter"><i className="fa-brands fa-instagram"></i></a>

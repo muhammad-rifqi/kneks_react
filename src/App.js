@@ -27,6 +27,7 @@ import InfoTerkini from './component/berita/InfoTerkini';
 import InfoTerkiniDetail from './component/berita/InfoTerkiniDetail';
 import IsuEkonomi from './component/berita/IsuEkonomi';
 import Elibrary from './component/Elibrary';
+import ElibraryDetail from './component/ElibraryDetail';
 import Agenda from './component/Agenda';
 import Kontak from './component/Kontak';
 import Kdeks from './component/Kdeks';
@@ -71,6 +72,7 @@ function AppContent() {
         <Route path="/info-terkini/:slug" element={<InfoTerkiniDetail />} />
         <Route path="/berita-terkait/:slug" element={<BeritaTerkaitDetail />} />
         <Route path="/e-pustaka" element={<Elibrary />} />
+        <Route path="/e-pustaka/detail" element={<ElibraryDetail />} />
         <Route path="/kdeks" element={<Kdeks />} />
         <Route path="/data" element={<Data />} />
         <Route path="/opini" element={<Opini />} />

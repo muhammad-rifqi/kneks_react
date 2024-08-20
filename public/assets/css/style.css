@@ -3538,6 +3538,14 @@ a.search-toggler {
 /***********************
 * Page banner
 ***********************/
+.page-banner-perpus {
+  background-image: url("../image/bannerPerpustakaan.svg");
+  background-repeat: no-repeat;
+  background-color: var(--thm-black);
+  background-size: cover;
+  padding-top: 122px;
+  padding-bottom: 122px;
+}
 .page-banner {
   background-image: url("../image/page-banner.svg");
   background-repeat: no-repeat;
