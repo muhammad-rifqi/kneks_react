@@ -9,7 +9,7 @@ const News = () => {
 						<h2 className="section-title">Berita Dan Kegiatan</h2>
 					</div>
 				</div>
-				<div className="row ">
+				<div className="row row-gutter-30">
 					<div className="col-md-6 col-lg-6">
 						<div className="card-box-b card-shadow news-box">
 							<div className="img-box-b">
