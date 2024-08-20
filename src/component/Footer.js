@@ -15,7 +15,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-widget-socials ">
-                  <a href="/twitter"><i className="fa-brands fa-twitter"></i></a>
+                  <a href="/twitter"><i className="fa-brands fa-x-twitter"></i></a>
                   <a href="/twitter"><i className="fa-brands fa-facebook"></i></a>
                   <a href="/twitter"><i className="fa-brands fa-pinterest-p"></i></a>
                   <a href="/twitter"><i className="fa-brands fa-instagram"></i></a>

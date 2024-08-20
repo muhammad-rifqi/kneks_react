@@ -29,10 +29,10 @@ const StrukturOrganisasi = () => {
 							<div className="col-12 col-md-6 col-xl-3">
 								<div className="team-card">
 									<div className="team-card-img">
-										<img src="assets/image/team/team-1.jpg" className="img-fluid" alt="img-40" />
+										<a href="/struktur-organisasi/detail"><img src="assets/image/team/team-1.jpg" className="img-fluid" alt="img-40" /></a>
 										<div className="team-card-icon">
 											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-linkedin"></i></a>
+											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
 											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
 										</div>
 									</div>
@@ -45,15 +45,15 @@ const StrukturOrganisasi = () => {
 							<div className="col-12 col-md-6 col-xl-3">
 								<div className="team-card">
 									<div className="team-card-img">
-										<img src="assets/image/team/team-2.jpg" className="img-fluid" alt="img-41" />
+										<a href="/struktur-organisasi/detail"><img src="assets/image/team/team-2.jpg" className="img-fluid" alt="img-41" /></a>
 										<div className="team-card-icon">
 											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-linkedin"></i></a>
+											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
 											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
 										</div>
 									</div>
 									<div className="team-card-content">
-										<h4><a href="team-details.html">Mike Hardson</a></h4>
+										<h4><a href="/struktur-organisasi/detail">Mike Hardson</a></h4>
 										<p>Consultant</p>
 									</div>
 								</div>
@@ -61,15 +61,15 @@ const StrukturOrganisasi = () => {
 							<div className="col-12 col-md-6 col-xl-3">
 								<div className="team-card">
 									<div className="team-card-img">
-										<img src="assets/image/team/team-3.jpg" className="img-fluid" alt="img-42" />
+									<a href="/struktur-organisasi/detail"><img src="assets/image/team/team-3.jpg" className="img-fluid" alt="img-42" /></a>
 										<div className="team-card-icon">
 											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-linkedin"></i></a>
+											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
 											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
 										</div>
 									</div>
 									<div className="team-card-content">
-										<h4><a href="team-details.html">Christine Eve</a></h4>
+										<h4><a href="/struktur-organisasi/detail">Christine Eve</a></h4>
 										<p>Consultant</p>
 									</div>
 								</div>
@@ -77,15 +77,15 @@ const StrukturOrganisasi = () => {
 							<div className="col-12 col-md-6 col-xl-3">
 								<div className="team-card">
 									<div className="team-card-img">
-										<img src="assets/image/team/team-4.jpg" className="img-fluid" alt="img-43" />
+									<a href="/struktur-organisasi/detail"><img src="assets/image/team/team-4.jpg" className="img-fluid" alt="img-43" /></a>
 										<div className="team-card-icon">
 											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-linkedin"></i></a>
+											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
 											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
 										</div>
 									</div>
 									<div className="team-card-content">
-										<h4><a href="team-details.html">John Martin</a></h4>
+										<h4><a href="/struktur-organisasi/detail">John Martin</a></h4>
 										<p>Consultant</p>
 									</div>
 								</div>
@@ -93,15 +93,15 @@ const StrukturOrganisasi = () => {
 							<div className="col-12 col-md-6 col-xl-3">
 								<div className="team-card">
 									<div className="team-card-img">
-										<img src="assets/image/team/team-4.jpg" className="img-fluid" alt="img-43" />
+									<a href="/struktur-organisasi/detail"><img src="assets/image/team/team-4.jpg" className="img-fluid" alt="img-43" /></a>
 										<div className="team-card-icon">
 											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-linkedin"></i></a>
+											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
 											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
 										</div>
 									</div>
 									<div className="team-card-content">
-										<h4><a href="team-details.html">John Martin</a></h4>
+										<h4><a href="/struktur-organisasi/detail">John Martin</a></h4>
 										<p>Consultant</p>
 									</div>
 								</div>
@@ -109,15 +109,15 @@ const StrukturOrganisasi = () => {
 							<div className="col-12 col-md-6 col-xl-3">
 								<div className="team-card">
 									<div className="team-card-img">
-										<img src="assets/image/team/team-4.jpg" className="img-fluid" alt="img-43" />
+									<a href="/struktur-organisasi/detail"><img src="assets/image/team/team-4.jpg" className="img-fluid" alt="img-43" /></a>
 										<div className="team-card-icon">
 											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-linkedin"></i></a>
+											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
 											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
 										</div>
 									</div>
 									<div className="team-card-content">
-										<h4><a href="team-details.html">John Martin</a></h4>
+										<h4><a href="/struktur-organisasi/detail">John Martin</a></h4>
 										<p>Consultant</p>
 									</div>
 								</div>
@@ -125,15 +125,15 @@ const StrukturOrganisasi = () => {
 							<div className="col-12 col-md-6 col-xl-3">
 								<div className="team-card">
 									<div className="team-card-img">
-										<img src="assets/image/team/team-4.jpg" className="img-fluid" alt="img-43" />
+									<a href="/struktur-organisasi/detail"><img src="assets/image/team/team-4.jpg" className="img-fluid" alt="img-43" /></a>
 										<div className="team-card-icon">
 											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-linkedin"></i></a>
+											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
 											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
 										</div>
 									</div>
 									<div className="team-card-content">
-										<h4><a href="team-details.html">John Martin</a></h4>
+										<h4><a href="/struktur-organisasi/detail">John Martin</a></h4>
 										<p>Consultant</p>
 									</div>
 								</div>
@@ -141,15 +141,15 @@ const StrukturOrganisasi = () => {
 							<div className="col-12 col-md-6 col-xl-3">
 								<div className="team-card">
 									<div className="team-card-img">
-										<img src="assets/image/team/team-4.jpg" className="img-fluid" alt="img-43" />
+									<a href="/struktur-organisasi/detail"><img src="assets/image/team/team-4.jpg" className="img-fluid" alt="img-43" /></a>
 										<div className="team-card-icon">
 											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-linkedin"></i></a>
+											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
 											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
 										</div>
 									</div>
 									<div className="team-card-content">
-										<h4><a href="team-details.html">John Martin</a></h4>
+										<h4><a href="/struktur-organisasi/detail">John Martin</a></h4>
 										<p>Consultant</p>
 									</div>
 								</div>
