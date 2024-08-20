@@ -65,6 +65,142 @@ const Elibrabry = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 col-xl-3">
+                                        <div className="team-card-x">
+                                            <div className="team-card-img-x">
+                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+
+                                            </div>
+                                            <div className="team-card-content-x">
+                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <div className="d-flex justify-content-between align-items-end">
+                                                    <p>21 Mei 2024</p>
+                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
