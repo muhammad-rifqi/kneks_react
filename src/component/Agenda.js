@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import { getMonth } from "../utils";
-import CalendarHeader from "./calendar/CalendarHeader";
-import SideBar from "./calendar/SideBar";
-import Month from "./calendar/Month";
 const Agenda = () => {
     return (
         <>
@@ -17,16 +13,8 @@ const Agenda = () => {
                 </section>
                 <section className="about-one-section">
                     <div className="container">
-                        <div className="d-flex flex-column vh-100">
-                            <CalendarHeader />
-                            <div className="d-flex flex-grow-1">
-
-                                <SideBar />
-                                <Month />
-
-                            </div>
-                        </div>
-
+                        
+                        
                     </div>
                 </section>
             </div>

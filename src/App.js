@@ -37,6 +37,7 @@ import Opini from './component/Opini';
 // import Login from './component/Login';
 import Dashboard from './component/Dashboard';
 import BeritaTerkaitDetail from './component/berita/BeritaTerkaitDetail';
+import AgendaDetail from './component/AgendaDetails';
 
 
 
@@ -77,6 +78,7 @@ function AppContent() {
         <Route path="/data" element={<Data />} />
         <Route path="/opini" element={<Opini />} />
         <Route path="/agenda" element={<Agenda />} />
+        <Route path="/agenda/detail" element={<AgendaDetail />} />
         <Route path="/kontak" element={<Kontak />} />
         {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/dashboard" element={<Dashboard />} />
