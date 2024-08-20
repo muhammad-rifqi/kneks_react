@@ -88,7 +88,7 @@ const GaleriFoto = () => {
                             {visible < items.length && (
                                 <div className="col-12 pt-5">
                                     <div className="block-box load-more-btn">
-                                        <a className="item-btn" onClick={showMore}>
+                                        <a className="item-btn" onClick={showMore} href="#t" rel="noreferrer">
                                             <i className="fa-solid fa-refresh"></i>Load More
                                         </a>
                                     </div>

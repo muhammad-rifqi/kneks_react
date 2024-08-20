@@ -12,13 +12,13 @@ const StrukturOrganisasiDetail = () => {
 								<h5>Jabatan</h5>
 							</div>
 							<div className="struktur-profil col-lg-6 col-md-6 col-sm-12 text-end  d-none d-lg-block d-md-block">
-								<img src={`${process.env.PUBLIC_URL}/assets/image/team/team-1.jpg`} alt="stuktur-image" className="img-fluid" />
+								<img src={`${process.env.PUBLIC_URL}/assets/image/team/team-1.jpg`} alt="" className="img-fluid" />
 							</div>
 
 
 
 							<div className="struktur-profil col-lg-6 col-md-6 col-sm-12 text-center  d-block d-lg-none d-md-none">
-								<img src={`${process.env.PUBLIC_URL}/assets/image/team/team-1.jpg`} alt="stuktur-image" className="img-fluid" />
+								<img src={`${process.env.PUBLIC_URL}/assets/image/team/team-1.jpg`} alt="" className="img-fluid" />
 							</div>
 							<div className="col-lg-6 col-md-6 col-sm-12 page-banner-title-x  text-center d-block d-lg-none d-md-none pt-5">
 								<h3>Nama Direktur</h3>

@@ -177,7 +177,7 @@ const Kdeks = () => {
                                     </div> */}
                                     <div className="sidebar-widget-box-content">
                                         <h3>Surat Keputusan Kdeks Jawa Tengah</h3>
-                                        <a href="#" className="btn btn-primary">View</a>
+                                        <a href="#tt" className="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>

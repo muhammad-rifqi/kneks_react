@@ -92,7 +92,7 @@ const IsuEkonomi = () => {
                             {visible < items.length && (
                                 <div className="col-12 pt-5">
                                     <div className="block-box load-more-btn">
-                                        <a hrefassName="item-btn" onClick={showMore}>
+                                        <a href className="item-btn" onClick={showMore}>
                                             <i className="fa-solid fa-refresh"></i>Load More
                                         </a>
                                     </div>

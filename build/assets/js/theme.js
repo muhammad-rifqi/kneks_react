@@ -51,24 +51,7 @@ $(document).ready(function () {
 			time: 1000
 		});
 	}
-	if ($(".search-toggler").length) {
-		$(".search-toggler").on("click", function (e) {
-			e.preventDefault();
-			// $(".search-popup").removeClass("active");
-			$(".information-popup").removeClass("active");
-			$(".mobile-nav-wrapper").removeClass("expanded");
-			// $("body").toggleClass("locked");
-			$("body").removeClass("locked");
-		});
-		$(".btn-close").on("click", function (e) {
-			e.preventDefault();
-			// $(".search-popup").removeClass("active");
-			$(".information-popup").removeClass("active");
-			$(".mobile-nav-wrapper").removeClass("expanded");
-			// $("body").toggleClass("locked");
-			$("body").removeClass("locked");
-		});
-	}
+	
 	if ($(".daftar-toggler").length) {
 		$(".daftar-toggler").on("click", function (e) {
 			e.preventDefault();
@@ -97,36 +80,8 @@ $(document).ready(function () {
 			fixedContentPos: false
 		});
 	});
-	$(function () {
-		new VenoBox({
-			selector: '.my-image-links',
-			numeration: true,
-			infinigall: true,
-			share: true,
-			spinner: 'swing',
-			spinColor: '#5A8DEE',
-			titlePosition: 'bottom',
-			toolsColor: '#ffffff',
-			titleattr: 'data-title',
-			titleStyle: 'block'
-
-		});
-	});
-	$(function () {
-		new VenoBox({
-			selector: '.my-image-links-foto',
-			numeration: true,
-			infinigall: true,
-			share: true,
-			spinner: 'swing',
-			spinColor: '#5A8DEE',
-			titlePosition: 'bottom',
-			toolsColor: '#ffffff',
-			titleattr: 'data-title',
-			titleStyle: 'block'
-
-		});
-	});
+	
+	
 	$(function () {
 		new VenoBox({
 			selector: '.beritaDetail',
@@ -193,7 +148,6 @@ $(document).ready(function () {
 	}
 	if ($(".portfolio-carousel-kdeks").length) {
 		var owl = $(".portfolio-carousel-kdeks");
-		owl.each(function () {
 			owl.owlCarousel({
 				items: 4,
 				nav: false,
@@ -216,7 +170,6 @@ $(document).ready(function () {
 					}
 				}
 			});
-		});		
 	}
 	
 	// Owl Carousel
