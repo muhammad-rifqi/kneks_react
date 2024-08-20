@@ -270,7 +270,7 @@ const IndustriProdukHalal = () => {
                         </div>
                         <div className="row row-gutter-y-40">
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita2.jpeg" className="my-image-links-foto" data-gall="gallery01">
+                                <a href="/galeri-foto/:slug">
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b " data-gall="gallery01">
                                             <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
@@ -293,7 +293,7 @@ const IndustriProdukHalal = () => {
                                 </a>
                             </div>
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
+                                <a href="/galeri-foto/:slug" >
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b">
                                             <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -316,7 +316,7 @@ const IndustriProdukHalal = () => {
                                 </a>
                             </div>
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
+                                <a href="/galeri-foto/:slug" >
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b">
                                             <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -339,7 +339,7 @@ const IndustriProdukHalal = () => {
                                 </a>
                             </div>
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
+                                <a href="/galeri-foto/:slug">
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b">
                                             <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
