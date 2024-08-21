@@ -17,7 +17,9 @@ const Agenda = () => {
     };
 
     const handleEventClick = (selected) => {
-        setSelectedEvent(selected.event);
+        const eventId = selected.event.id;
+        const event = currentEvents.find(evt => evt.id === eventId);
+        setSelectedEvent(event);
         setShowDetailModal(true);
     };
 
@@ -55,8 +57,8 @@ const Agenda = () => {
                                         { id: "12315", title: "All-day event", date: "2024-08-23" },
                                         { id: "5123", title: "Timed event", date: "2024-08-21" },
                                         { id: "5124", title: "Timed event", date: "2024-08-25" },
-                                        { id: "5125", title: "Timed e", date: "2024-08-25" },
-                                        { id: "5126", title: "Timed ez", date: "2024-08-25" },
+                                        { id: "5125", title: "Timed evendt", date: "2024-08-25" },
+                                        { id: "5126", title: "Timed evenddt", date: "2024-08-25" },
                                     ]}
                                 />
                             </div>
