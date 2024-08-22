@@ -51,6 +51,9 @@ const Section1 = () => {
 		}
 
 	}, []);
+
+	console.log(rows);
+	
     return (
         <section className="main-slider main-slider-two">
             <div className="main-slider-two-swiper-x owl-carousel owl-theme">
