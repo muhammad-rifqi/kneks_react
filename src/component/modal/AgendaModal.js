@@ -7,7 +7,7 @@ const AgendaModal = ({ show, handleClose, event }) => {
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Event Details</Modal.Title>
+                <Modal.Title>Agenda Detail</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <h5>{event.title}</h5>

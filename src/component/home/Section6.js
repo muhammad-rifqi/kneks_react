@@ -11,11 +11,7 @@ const Section6 = () => {
 	};
 	return (
 		<>
-			<EventDetailModal
-				show={showDetailModal}
-				handleClose={() => setShowDetailModal(false)}
-			// event={selectedEvent}
-			/>
+			
 			<section className="mayor-section">
 				<div className="container">
 					<div className="blog-box-x">
@@ -90,6 +86,12 @@ const Section6 = () => {
 
 				</div>
 			</section >
+
+			<EventDetailModal
+				show={showDetailModal}
+				handleClose={() => setShowDetailModal(false)}
+			// event={selectedEvent}
+			/>
 			<section className="mayor-section-maps">
 				{/* <div className="container"> */}
 				<div className="row" >
