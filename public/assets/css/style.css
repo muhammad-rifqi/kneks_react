@@ -9724,11 +9724,11 @@ SOCIAL MEDIA
   border-radius: 50%;
 }
 
-.cur-map:hover {
+.maps-indo g:hover {
   cursor: pointer;
 }
 
-.cur-map:focus {
+.maps-indo g:focus {
   outline: none;
   border: none;
 }
