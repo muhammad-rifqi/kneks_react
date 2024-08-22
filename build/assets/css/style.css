@@ -8419,7 +8419,7 @@ label {
 
 .card-header-b .category-b-x {
   font-size: 0.9rem;
-  color: #F2994A;
+  color: #f2994a;
   letter-spacing: 0.03em;
   border-radius: 50px;
   text-decoration: none;
@@ -9717,11 +9717,18 @@ SOCIAL MEDIA
   max-height: 80%;
 }
 
-
-.struktur-profil img{
+.struktur-profil img {
   height: 170px;
   width: 170px;
   object-fit: cover;
   border-radius: 50%;
 }
 
+.cur-map:hover {
+  cursor: pointer;
+}
+
+.cur-map:focus {
+  outline: none;
+  border: none;
+}
