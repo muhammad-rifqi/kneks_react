@@ -25,8 +25,8 @@ const BeritaTerkaitDetail = () => {
         return <div>Loading...</div>;
     }
 
-    const tanggal = item.tanggal;
-    const arrTgl = tanggal.split(" ");
+    // const tanggal = item.tanggal;
+    // const arrTgl = tanggal.split(" ");
 
 
     return (
@@ -85,17 +85,17 @@ const BeritaTerkaitDetail = () => {
                                 <h4>Tags :</h4>
                             </div>
                             <div className="news-details-list-button">
-                                <a href="#" className="btn btn-primary">#Culturse</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">#Culturse</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
                             </div>
                         </div>
                     </div>

@@ -1,19 +1,19 @@
-import React, { useEffect } from "react";
-import html2canvas from 'html2canvas';
+// import React, { useEffect } from "react";
+// import html2canvas from 'html2canvas';
 // import jsPDF from 'jspdf';
 const DataDetail = () => {
 
-    const downloadJPG = () => {
-        html2canvas(document.querySelector("#dwnjpg")).then(canvas => {
-            const imgData = canvas.toDataURL('image/jpeg', 1.0);
-            const link = document.createElement('a');
-            link.href = imgData;
-            link.download = 'payment-records-chart.jpg';
+    // const downloadJPG = () => {
+    //     html2canvas(document.querySelector("#dwnjpg")).then(canvas => {
+    //         const imgData = canvas.toDataURL('image/jpeg', 1.0);
+    //         const link = document.createElement('a');
+    //         link.href = imgData;
+    //         link.download = 'payment-records-chart.jpg';
 
-            // Trigger the download
-            link.click();
-        });
-    };
+    //         // Trigger the download
+    //         link.click();
+    //     });
+    // };
     // const downloadPDF = () => {
     //     const pdfWidth = 210; // A4 width in mm
     //     const pdfHeight = 297; // A4 height in mm
