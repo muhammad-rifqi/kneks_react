@@ -1,34 +1,66 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import { useParams } from "react-router-dom";
-import isiItemsBerita from "../dumy/dataBerita"
+import Swal from "sweetalert2";
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
+import axios from 'axios';
+import error404 from "../error404";
+
 
 
 const InfoTerkiniDetail = () => {
-
+    dayjs.locale('id');
 
     const { slug } = useParams();
+    const [rows, setItem] = useState(null);
+
     const [itemx, setItemx] = useState([]);
-    const [item, setItem] = useState(null);
 
+    const convertToSlug = (title) => {
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    };
 
-
-
+    const effectrun = useRef(false);
     useEffect(() => {
-        const items = isiItemsBerita();
-        setItemx(items);
-        const foundItem = items.find(item => item.slug === slug);
-        setItem(foundItem);
+        if (effectrun.current === false) {
+            const fetchPosts = async () => {
+                try {
+                    const responsei = await axios.get(`https://webdev.rifhandi.com/posts`);
+                    const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
+
+                    // throw new Error("Error!");
+
+                    if (responsei) {
+                        setItemx(responsei.data);
+                        setItem(foundItem);
+                    }
+                    console.log(responsei.data)
+                    console.log(foundItem)
+                } catch (err) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: err.message || "An error occurred while fetching data.",
+                    });
+                }
+            };
+
+            fetchPosts();
+
+            return () => {
+                effectrun.current = true
+            }
+        }
     }, [slug]);
 
-    if (!item) {
-        return <div>Loading...</div>;
-    }
 
-    const tanggal = item.tanggal;
-    const arrTgl = tanggal.split(" ");
-
-
+    const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
     return (
         <>
             <div className="page-wrapper">
@@ -44,19 +76,18 @@ const InfoTerkiniDetail = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                    <h4>{item.title}</h4>
-                                    <p>{item.tanggal}</p>
+                                    <h4>{rows?.title}</h4>
+                                    <p>{formattedDate}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src={`${process.env.PUBLIC_URL}/${item.foto}`} width={`100%`} className="img-fluid" alt={item.title} />
-
+                                    <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} width={`100%`} className="img-fluid" alt={rows?.title} />
                                 </div>
                             </div>
                             <div className="row">
-                                {item.foto_gallery && item.foto_gallery.length > 0 ? (
-                                    item.foto_gallery.map((result, index) => (
+                                {rows?.foto_gallery && rows?.foto_gallery.length > 0 ? (
+                                    rows?.foto_gallery.map((result, index) => (
                                         <div className="col-lg-3 pb-3" key={index}>
                                             <a href={`${process.env.PUBLIC_URL}/${result.foto}`} className="beritaDetail" data-gall="gallery01">
                                                 <img
@@ -64,7 +95,7 @@ const InfoTerkiniDetail = () => {
                                                     width="100%"
                                                     style={{ height: "195px" }}
                                                     className="img-fluid"
-                                                    alt={item.title}
+                                                    alt={rows?.title}
                                                 />
                                             </a>
                                         </div>
@@ -77,7 +108,7 @@ const InfoTerkiniDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                    <p style={{ textAlign: `justify` }}>{item.deskripsi}</p>
+                                    <p style={{ textAlign: `justify` }}>{rows?.content}</p>
                                 </div>
                             </div>
                             <hr />
@@ -118,7 +149,7 @@ const InfoTerkiniDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/liputan-media/${item.slug}`}> <img src={`${process.env.PUBLIC_URL}/${item.foto}`} className="img-fluid" alt={item.title} /></a>
+                                                <a href={`/liputan-media/${item.slug}`}> <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} className="img-fluid" alt={item.title} /></a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
@@ -130,7 +161,7 @@ const InfoTerkiniDetail = () => {
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
-                                                    <span>{item.tanggal}</span>
+                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
                                                 </div>
                                             </div>
                                         </div>
