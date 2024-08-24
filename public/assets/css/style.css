@@ -8443,6 +8443,15 @@ label {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.card-header-b .title-2-x {
+  margin-bottom: 0;
+  padding: 0.6rem 0;
+  font-size: 20px;
+  white-space: nowrap;
+  width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 @media (max-width: 575px) {
   .card-header-b .title-2 {

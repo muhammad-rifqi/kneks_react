@@ -1,6 +1,20 @@
-import React,{useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import SkeletonCardBerita from "../skeleton/CardBerita";
+import axios from 'axios';
+import Swal from "sweetalert2";
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
+
 import VenoBox from 'venobox';
 const GaleriVideo = () => {
+    const [visible, setVisible] = useState(9)
+
+    const [loading, setLoading] = useState(true);
+
+    const [loadingMore, setLoadingMore] = useState(false);
+    const [posts, setPosts] = useState([]);
+
+
     useEffect(() => {
         new VenoBox({
             selector: '.my-image-links',
@@ -14,7 +28,38 @@ const GaleriVideo = () => {
             titleattr: 'data-title',
             titleStyle: 'block'
         });
+        // Function to fetch posts
+        const fetchPosts = async () => {
+            setLoading(true);
+            try {
+                const response = await axios.get(`https://webdev.rifhandi.com/posts/type/videos`);
+                setPosts(response.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPosts(); // Call fetchPosts function when component mounts
     }, []);
+
+    const showMore = () => {
+        setLoadingMore(true);
+
+        setTimeout(() => {
+            setVisible((preValue) => preValue + 3);
+            setLoadingMore(false);
+        }, 2000); // Simulate network delay
+    }
+
+
+
     return (
         <>
             <div className="page-wrapper">
@@ -29,119 +74,69 @@ const GaleriVideo = () => {
                 <section className="video-section">
                     <div className="container">
                         <div className="row row-gutter-y-40">
-                            <div className="col-md-4 col-lg-4">
-                                <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-bc">
-                                            <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
-                                            <div className="video-btn">
-                                                <div className="play-icon" >
-                                                    <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b">
-
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2 text-white">
-                                                        Travel is comming
-                                                        new
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                            {loading ? (
+                                Array(visible).fill().map((_, index) => (
+                                    <div className="col-md-4 col-lg-4" key={index}>
+                                        <SkeletonCardBerita />
                                     </div>
-                                </a>
-                            </div>
-                            <div className="col-md-4 col-lg-4">
-                                <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-bc">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                            <div className="video-btn">
-                                                <div className="play-icon" >
-                                                    <img src="/assets/image/play-circle.svg" alt="imgplay" />
+                                ))
+                            ) : (
+                                posts.slice(0, visible).map((item) => (
+                                    <div className="col-md-4 col-lg-4">
+                                        <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <div className="card-box-b card-shadow news-box">
+                                                <div className="img-box-bc">
+                                                    <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
+                                                    <div className="video-btn">
+                                                        <div className="play-icon" >
+                                                            <img src="/assets/image/play-circle.svg" alt="imgplay" />
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b">
+                                                <div className="card-overlay ">
+                                                    <div className="card-header-b ">
+                                                        <div className="row d-flex align-items-center" >
+                                                            <div className="col-6">
+                                                                <div className="card-title-b">
+                                                                    <h2 className="title-2-x text-white">
+                                                                        {item.title}
+                                                                    </h2>
+                                                                </div>
 
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2 text-white">
-                                                        Travel is comming
-                                                        new
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
+                                                                <div className="card-date">
+                                                                    <span className="date-b">{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-6 text-end">
+                                                                <span className="date-b bg-dark p-1">{item.duration}</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                            <div className="col-md-4 col-lg-4">
-                                <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-bc">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                            <div className="video-btn">
-                                                <div className="play-icon" >
-                                                    <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b">
+                                ))
+                            )}
 
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2 text-white">
-                                                        Travel is comming
-                                                        new
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                            {loadingMore && (
+                                Array(3).fill().map((_, index) => (
+                                    <div className="col-md-4 col-lg-4" key={index + visible}>
+                                        <SkeletonCardBerita />
                                     </div>
-                                </a>
-                            </div>
-                            <div className="col-md-4 col-lg-4">
-                                <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-bc">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                            <div className="video-btn">
-                                                <div className="play-icon" >
-                                                    <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b">
+                                ))
+                            )}
 
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2 text-white">
-                                                        Travel is comming
-                                                        new
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                            {visible < posts.length && (
+                                <div className="col-12 pt-5">
+                                    <div className="block-box load-more-btn">
+                                        <a className="item-btn" onClick={showMore} href="#t" rel="noreferrer">
+                                            <i className="fa-solid fa-refresh"></i>Load More
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-
+                                </div>
+                            )}
                         </div>
                     </div>
                 </section>
