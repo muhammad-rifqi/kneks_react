@@ -9117,10 +9117,10 @@ SOCIAL MEDIA
   height: 290px;
   object-fit: cover;
 }
-.berita-card-imgbox-berita img {
+/* .berita-card-imgbox-berita img {
   height: 270px;
   object-fit: cover;
-}
+} */
 
 .event-card-info-berita {
   margin-bottom: 5px;

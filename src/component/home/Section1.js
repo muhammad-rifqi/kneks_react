@@ -1,13 +1,14 @@
-import React,{ useState, useEffect }  from "react";
+import React, { useState, useEffect } from "react";
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 
-import isiItemsBerita from "../dumy/dataBerita"
+
+
+import axios from 'axios';
+import Swal from "sweetalert2";
 const Section1 = () => {
-    const [rows, setItems] = useState([]);
-    useEffect(() => {
-		const isian = isiItemsBerita();
-		setItems(isian);
+	useEffect(() => {
+
 		if (document.querySelector('.swiper-banner')) {
 			// var mySwiper = new Swiper('.swiper-kdeks', {
 			// pengaturan Swiper
@@ -52,39 +53,62 @@ const Section1 = () => {
 
 	}, []);
 
-	console.log(rows);
-	
-    return (
-        <section className="main-slider main-slider-two">
-            <div className="main-slider-two-swiper-x owl-carousel owl-theme">
-                <div className="item ">
-                    <div className="item-slider-bg" style={{ backgroundImage: `url("/assets/image/slide.png")` }}></div>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-12">
-                                <div className="slider-content-two">
-                                    <h1 className="section-title">"Menyatukan langkah, Memajukan Negeri"</h1>
-                                    <div className="slider-tagline">Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="item">
-                    <div className="item-slider-bg" style={{ backgroundImage: `url("/assets/image/slide.png")` }}></div>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-12">
-                                <div className="slider-content-two">
-                                    <h1 className="section-title">"Menyatukan langkah, Memajukan Negeri"</h1>
-                                    <div className="slider-tagline">Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+	const [posts, setPosts] = useState([]);
+	useEffect(() => {
+		// Function to fetch posts
+		const fetchPosts = async () => {
+			// setLoading(true);
+			try {
+				const response = await axios.get(`https://webdev.rifhandi.com/posts`);
+				setPosts(response.data);
+			} catch (err) {
+				Swal.fire({
+					icon: "error",
+					title: "Oops...",
+					text: err,
+
+				});
+			} finally {
+				// setLoading(false);
+			}
+		};
+
+		fetchPosts(); // Call fetchPosts function when component mounts
+	}, []);
+
+	return (
+		<section className="main-slider main-slider-two">
+			<div className="main-slider-two-swiper-x owl-carousel owl-theme">
+				<div className="item ">
+					<div className="item-slider-bg" style={{ backgroundImage: `url("/assets/image/slide.png")` }}></div>
+					<div className="container">
+						<div className="row">
+							<div className="col-md-12">
+								<div className="slider-content-two">
+									<h1 className="section-title">"Menyatukan langkah, Memajukan Negeri"</h1>
+									<div className="slider-tagline">Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional </div>
+									<a href="#" class="btn btn-primary mt-3 ">Lihat Selengkapnya</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="item">
+					<div className="item-slider-bg" style={{ backgroundImage: `url("/assets/image/slide.png")` }}></div>
+					<div className="container">
+						<div className="row">
+							<div className="col-md-12">
+								<div className="slider-content-two">
+									<h1 className="section-title">"Menyatukan langkah, Memajukan Negeri"</h1>
+									<div className="slider-tagline">Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional </div>
+									<a href="#" class="btn btn-primary mt-3">Lihat Selengkapnya</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	)
 }
 export default Section1

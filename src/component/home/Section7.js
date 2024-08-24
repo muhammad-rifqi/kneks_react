@@ -2,15 +2,34 @@ import React, { useState, useEffect } from "react";
 import isiItemsBerita from "../dumy/dataBerita"
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
+
+import axios from 'axios';
+import Swal from "sweetalert2";
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 const Section7 = () => {
-	const [rows, setItems] = useState([]);
+	const [posts, setPosts] = useState([]);
 	useEffect(() => {
-		const isian = isiItemsBerita();
-		setItems(isian);
-		// alert(items.length);
+		const fetchPosts = async () => {
+			// setLoading(true);
+			try {
+				const response = await axios.get(`https://webdev.rifhandi.com/posts`);
+				setPosts(response.data);
+			} catch (err) {
+				Swal.fire({
+					icon: "error",
+					title: "Oops...",
+					text: err,
+
+				});
+			} finally {
+				// setLoading(false);
+			}
+		};
+
+		fetchPosts();
 		if (document.querySelector('.swiper-berita')) {
-			// var mySwiper = new Swiper('.swiper-kdeks', {
-			// pengaturan Swiper
+
 
 			const swipers = new Swiper('.swiper-berita', {
 				// pengaturan Swiper
@@ -51,29 +70,38 @@ const Section7 = () => {
 		}
 
 	}, []);
+
+	const convertToSlug = (title) => {
+		return title
+			.toLowerCase()
+			.trim()
+			.replace(/[^\w\s-]/g, '')
+			.replace(/\s+/g, '-')
+			.replace(/-+/g, '-');
+	};
 	return (
 		<section className="portfolio-section ">
 
-			<div className="portfolio-content conatainer-fluid">
+			<div className="portfolio-content conatainer">
 				<div className="row row-gutter-30">
 					<div className="swiper swiper-berita">
 						<div className="swiper-wrapper">
 							{
-								rows.slice(0, 5).map((item) => (
+								posts.slice(0, 5).map((item) => (
 									<div className="col-lg-3 col-xl-3 swiper-slide" key={item.id}>
 										<div className="berita-card-kdeks shadow">
 											<div className="berita-card-imgbox-berita ">
-												<a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
+												<a href={`/berita-terkait/${convertToSlug(item.title)}`}><img src="assets/image/berita3.svg" className="img-fluid" alt={item.title} /></a>
 											</div>
 											<div className="berita-content-direktorat">
 
 												<div className="event-card-title pb-2">
 													<h4>
-														<a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
+														<a href={`/berita-terkait/${convertToSlug(item.title)}`}>{item.title}</a>
 													</h4>
 												</div>
 												<div className="event-card-info-direktorat">
-													<span>{item.tanggal}</span>
+													<span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
 												</div>
 											</div>
 										</div>
