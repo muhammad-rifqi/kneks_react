@@ -1,29 +1,41 @@
 import React, { useState, useEffect } from "react";
-import isiItemsBerita from "../dumy/dataBerita"
 import SkeletonCardBerita from "../skeleton/CardBerita";
+import axios from 'axios';
+import Swal from "sweetalert2";
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 const GaleriFoto = () => {
-    const [items, setItems] = useState([]);
     const [visible, setVisible] = useState(9)
 
     const [loading, setLoading] = useState(true);
 
     const [loadingMore, setLoadingMore] = useState(false);
+    const [posts, setPosts] = useState([]);
 
 
-    // untukmengeloladatasebelumdiloop
     useEffect(() => {
-        const isian = isiItemsBerita();
-        setItems(isian);
-        // alert(items.length);
+        // Function to fetch posts
+        const fetchPosts = async () => {
+            setLoading(true);
+            try {
+                const response = await axios.get(`https://webdev.rifhandi.com/posts/type/photos`);
+                setPosts(response.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
 
-        setTimeout(() => {
-            setLoading(false);
-        }, 2000);
+                });
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPosts(); // Call fetchPosts function when component mounts
     }, []);
 
     const showMore = () => {
-        // setVisible((preValue) => preValue + 3);
-
         setLoadingMore(true);
 
         setTimeout(() => {
@@ -31,6 +43,16 @@ const GaleriFoto = () => {
             setLoadingMore(false);
         }, 2000); // Simulate network delay
     }
+
+    const convertToSlug = (title) => {
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    };
+
 
     return (
         <>
@@ -53,26 +75,28 @@ const GaleriFoto = () => {
                                     </div>
                                 ))
                             ) : (
-                                items.slice(0, visible).map((item) => (
+                                posts.slice(0, visible).map((item) => (
                                     <div className="col-md-4 col-lg-4" key={item.id}>
-                                        <div className="card-box-b card-shadow news-box">
-                                            <div className="img-box-b " data-gall="gallery01">
-                                                <a href={`/galeri-foto/${item.slug}`}><img src={item.foto} className="img-fluid img-b" alt={item.title} /></a>
-                                            </div>
-                                            <div className="card-overlay">
-                                                <div className="card-header-b">
+                                        <a href={`/galeri-foto/${convertToSlug(item.title)}`}>
+                                            <div className="card-box-b card-shadow news-box">
+                                                <div className="img-box-b " data-gall="gallery01">
+                                                    <img src="assets/image/berita3.svg" className="img-fluid img-b" alt={item.title} />
+                                                </div>
+                                                <div className="card-overlay">
+                                                    <div className="card-header-b">
 
-                                                    <div className="card-title-b">
-                                                        <h2 className="title-2">
-                                                            <a href={`/galeri-foto/${item.slug}`}>{item.title}</a>
-                                                        </h2>
-                                                    </div>
-                                                    <div className="card-date">
-                                                        <span>{item.tanggal}</span>
+                                                        <div className="card-title-b">
+                                                            <h2 className="title-2">
+                                                                {item.title}
+                                                            </h2>
+                                                        </div>
+                                                        <div className="card-date">
+                                                            <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 ))
                             )}
@@ -85,7 +109,7 @@ const GaleriFoto = () => {
                                 ))
                             )}
 
-                            {visible < items.length && (
+                            {visible < posts.length && (
                                 <div className="col-12 pt-5">
                                     <div className="block-box load-more-btn">
                                         <a className="item-btn" onClick={showMore} href="#t" rel="noreferrer">
@@ -97,9 +121,9 @@ const GaleriFoto = () => {
 
                         </div>
                     </div>
-                </section>
+                </section >
 
-            </div>
+            </div >
         </>
     )
 }
