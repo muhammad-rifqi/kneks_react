@@ -152,7 +152,7 @@ const InfoTerkiniDetail = () => {
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
-                                                    <span>{item.tag}</span>
+                                                    <span>#BERITABARU</span>
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>

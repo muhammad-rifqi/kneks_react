@@ -106,7 +106,7 @@ const SiaranPersDetail = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
                                     {/* <p style={{ textAlign: `justify` }}>{rows?.content}</p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: rows?.content }} />
+                                    <div style={{ textAlign: `justify` }} dangerouslySetInnerHTML={{ __html: rows?.content }} />
                                 </div>
                             </div>
                             <hr />
@@ -141,7 +141,7 @@ const SiaranPersDetail = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="row row-gutter-30">
+                        <div className="row ">
                             {itemx.slice(0, 3).map((item) => {
                                 return (
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
@@ -151,7 +151,7 @@ const SiaranPersDetail = () => {
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
-                                                    <span>{item.tag}</span>
+                                                    <span>#BERITABARU</span>
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
