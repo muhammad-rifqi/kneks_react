@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import axios from 'axios';
-import error404 from "../error404";
 
 
 
@@ -108,7 +106,8 @@ const InfoTerkiniDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                    <p style={{ textAlign: `justify` }}>{rows?.content}</p>
+                                    {/* <p style={{ textAlign: `justify` }}>{rows?.content}</p> */}
+                                    <div dangerouslySetInnerHTML={{ __html: rows?.content }} />
                                 </div>
                             </div>
                             <hr />
