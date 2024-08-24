@@ -82,8 +82,9 @@ const Section7 = () => {
 	return (
 		<section className="portfolio-section ">
 
-			<div className="portfolio-content conatainer">
-				<div className="row row-gutter-30">
+			<div className="portfolio-content">
+				{/* <div className=" conatainer"> */}
+				<div className="row">
 					<div className="swiper swiper-berita">
 						<div className="swiper-wrapper">
 							{
@@ -114,6 +115,7 @@ const Section7 = () => {
 						</div>
 					</div >
 				</div >
+				{/* </div > */}
 			</div>
 		</section>
 	)

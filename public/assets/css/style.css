@@ -9732,3 +9732,11 @@ SOCIAL MEDIA
   outline: none;
   border: none;
 }
+
+.swiper-button-prev::after {
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "" !important;
+}
