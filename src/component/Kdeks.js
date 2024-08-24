@@ -77,6 +77,7 @@ const Kdeks = () => {
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
+                    dynamicBullets: true
                 },
                 navigation: {
                     nextEl: '.swiper-button-next',
@@ -216,13 +217,15 @@ const Kdeks = () => {
                                         ))}
                                 </div >
                                 <div className="swiper-button-prev">
+                                    <i class="fa-solid fa-chevron-left"></i>
                                 </div>
                                 <div className="swiper-button-next">
+                                    <i class="fa-solid fa-chevron-right"></i>
                                 </div>
                             </div >
                         </div >
                     </div >
-                    
+
                 </section>
                 <section className="funfact-section">
                     <div className="container">

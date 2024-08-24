@@ -1,5 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import SkeletonCardBerita from "../../src/component/skeleton/CardBerita";
+import axios from 'axios';
+import Swal from "sweetalert2";
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 const Opini = () => {
+    const [visible, setVisible] = useState(4)
+
+    const [loading, setLoading] = useState(true);
+
+    const [loadingMore, setLoadingMore] = useState(false);
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        // Function to fetch posts
+        const fetchPosts = async () => {
+            setLoading(true);
+            try {
+                const response = await axios.get(`https://webdev.rifhandi.com/posts`);
+                setPosts(response.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPosts(); // Call fetchPosts function when component mounts
+    }, []);
+
+    const showMore = () => {
+        setLoadingMore(true);
+
+        setTimeout(() => {
+            setVisible((preValue) => preValue + 3);
+            setLoadingMore(false);
+        }, 2000);
+    }
+    const convertToSlug = (title) => {
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    };
     return (
         <>
             <div className="page-wrapper">
@@ -15,93 +65,63 @@ const Opini = () => {
                     <div className="event-section-outer">
                         <div className="container">
                             <div className="row row-gutter-y-30">
-                                <div className="col-12 col-lg-12 col-xl-12 ">
-                                    <div className="event-card">
-                                        <div className="event-card-image">
-                                            <div className="event-card-image-inner-x">
-                                                <a href="event-details.html"><img src="/assets/image/berita.jpg" className="img-fluid" alt="img-164" /></a>
+                                {loading ? (
+                                    Array(visible).fill().map((_, index) => (
+                                        <div className="col-12 col-lg-12 col-xl-12" key={index}>
+                                            <SkeletonCardBerita />
+                                        </div>
+                                    ))
+                                ) : (
+                                    posts.slice(0, visible).map((item) => (
+                                        <div className="col-12 col-lg-12 col-xl-12 ">
+                                            <div className="event-card">
+                                                <div className="event-card-image">
+                                                    <div className="event-card-image-inner-x">
+                                                        <a href={`/opini/${convertToSlug(item.title)}`}><img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} /></a>
 
+                                                    </div>
+                                                </div>
+                                                <div className="event-card-content align-self-center">
+                                                    <div className="event-card-info-x pb-3">
+                                                        <ul className="list-unstyled" style={{ color: `#F2994A` }}>
+                                                            <li>
+                                                                <span>#BERITABARU</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="event-card-title pb-4">
+                                                        <h4><a href={`/opini/${convertToSlug(item.title)}`}>{item.title}</a></h4>
+                                                    </div>
+                                                    <div className="event-card-info">
+                                                        <ul className="list-unstyled">
+                                                            <li>
+                                                                <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className="event-card-content align-self-center">
-                                            <div className="event-card-info-x pb-3">
-                                                <ul className="list-unstyled" style={{ color: `#F2994A` }}>
-                                                    <li>
-                                                        <span>#BERITABARU</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div className="event-card-title pb-4">
-                                                <h4><a href="event-details.html">Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah</a></h4>
-                                            </div>
-                                            <div className="event-card-info">
-                                                <ul className="list-unstyled">
-                                                    <li>
-                                                        <span>21 Mei 2024</span>
-                                                    </li>
-                                                </ul>
+                                    ))
+                                )}
+                                {loadingMore && (
+                                    Array(3).fill().map((_, index) => (
+                                        <div className="col-12 col-lg-12 col-xl-12" key={index + visible}>
+                                            <SkeletonCardBerita />
+                                        </div>
+                                    ))
+                                )}
+
+                                {visible < posts.length && (
+                                    <div className="col-12 pt-5">
+                                        <div className="block-box load-more-btn">
+                                            <div className="item-btn" onClick={showMore}>
+                                                <i className="fa-solid fa-refresh"></i>Load More
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="col-12 col-lg-12 col-xl-12 ">
-                                    <div className="event-card">
-                                        <div className="event-card-image">
-                                            <div className="event-card-image-inner-x">
-                                                <a href="event-details.html"><img src="/assets/image/berita2.jpeg" className="img-fluid" alt="img-164" /></a>
+                                )}
 
-                                            </div>
-                                        </div>
-                                        <div className="event-card-content align-self-center">
-                                            <div className="event-card-info-x pb-3">
-                                                <ul className="list-unstyled" style={{ color: `#F2994A` }}>
-                                                    <li>
-                                                        <span>#BERITABARU</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div className="event-card-title pb-4">
-                                                <h4><a href="event-details.html">Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah</a></h4>
-                                            </div>
-                                            <div className="event-card-info">
-                                                <ul className="list-unstyled">
-                                                    <li>
-                                                        <span>21 Mei 2024</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-12 col-lg-12 col-xl-12 ">
-                                    <div className="event-card">
-                                        <div className="event-card-image">
-                                            <div className="event-card-image-inner-x">
-                                                <a href="event-details.html"><img src="/assets/image/berita.jpg" className="img-fluid" alt="img-164" /></a>
-
-                                            </div>
-                                        </div>
-                                        <div className="event-card-content align-self-center">
-                                            <div className="event-card-info-x pb-3">
-                                                <ul className="list-unstyled" style={{ color: `#F2994A` }}>
-                                                    <li>
-                                                        <span>#BERITABARU</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div className="event-card-title pb-4">
-                                                <h4><a href="event-details.html">Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah</a></h4>
-                                            </div>
-                                            <div className="event-card-info">
-                                                <ul className="list-unstyled">
-                                                    <li>
-                                                        <span>21 Mei 2024</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
 
                             </div>

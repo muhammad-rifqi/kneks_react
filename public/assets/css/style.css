@@ -9733,10 +9733,22 @@ SOCIAL MEDIA
   border: none;
 }
 
-.swiper-button-prev::after {
-}
-
 .swiper-button-next::after,
 .swiper-button-prev::after {
   content: "" !important;
+}
+.swiper-button-next i,
+.swiper-button-prev i {
+  width: initial !important;
+  height: initial !important;
+  font-size: 3rem !important;
+}
+
+.swiper-button-prev i {
+  /* position: relative; */
+  left: -1rem !important;
+}
+
+.swiper-button-next i {
+  right: -1rem !important;
 }

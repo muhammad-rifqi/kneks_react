@@ -37,6 +37,7 @@ const Section7 = () => {
 				pagination: {
 					el: '.swiper-pagination',
 					clickable: true,
+					dynamicMainBullets: true
 				},
 				navigation: {
 					nextEl: '.swiper-button-next',
@@ -110,8 +111,10 @@ const Section7 = () => {
 								))}
 						</div >
 						<div className="swiper-button-prev">
+							<i class="fa-solid fa-chevron-left"></i>
 						</div>
 						<div className="swiper-button-next">
+							<i class="fa-solid fa-chevron-right"></i>
 						</div>
 					</div >
 				</div >
