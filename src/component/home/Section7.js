@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import isiItemsBerita from "../dumy/dataBerita"
+// import isiItemsBerita from "../dumy/dataBerita"
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 
