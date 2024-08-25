@@ -115,17 +115,17 @@ const BeritaTerkaitDetail = () => {
                                 <h4>Tags :</h4>
                             </div>
                             <div className="news-details-list-button">
-                                <a href="#" className="btn btn-primary">#Culturse</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
-                                <a href="#" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">#Culturse</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a>
                             </div>
                         </div>
                     </div>

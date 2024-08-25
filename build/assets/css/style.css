@@ -8443,6 +8443,15 @@ label {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.card-header-b .title-2-x {
+  margin-bottom: 0;
+  padding: 0.6rem 0;
+  font-size: 20px;
+  white-space: nowrap;
+  width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 @media (max-width: 575px) {
   .card-header-b .title-2 {
@@ -8477,6 +8486,13 @@ label {
 .card-header-b .title-2 a {
   color: #ffffff;
   text-decoration: none;
+}
+.card-header-b .title-2 {
+  font-size: 20px;
+  color: #ffffff;
+  width: 350px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card-header-b-x .title-2-x {
   margin-bottom: 0;
@@ -8559,10 +8575,10 @@ label {
   padding-bottom: 120px;
 }
 
-.foto-section img {
+/* .foto-section img {
   height: 260px;
   object-fit: cover;
-}
+} */
 .foto-section-x img {
   height: 180px;
   object-fit: cover;
@@ -9117,10 +9133,10 @@ SOCIAL MEDIA
   height: 290px;
   object-fit: cover;
 }
-.berita-card-imgbox-berita img {
+/* .berita-card-imgbox-berita img {
   height: 270px;
   object-fit: cover;
-}
+} */
 
 .event-card-info-berita {
   margin-bottom: 5px;
@@ -9724,11 +9740,31 @@ SOCIAL MEDIA
   border-radius: 50%;
 }
 
-.cur-map:hover {
+.maps-indo g:hover {
   cursor: pointer;
 }
 
-.cur-map:focus {
+.maps-indo g:focus {
   outline: none;
   border: none;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "" !important;
+}
+.swiper-button-next i,
+.swiper-button-prev i {
+  width: initial !important;
+  height: initial !important;
+  font-size: 3rem !important;
+}
+
+.swiper-button-prev i {
+  /* position: relative; */
+  left: -1rem !important;
+}
+
+.swiper-button-next i {
+  right: -1rem !important;
 }
