@@ -1,32 +1,46 @@
 import React, { useState, useEffect } from "react";
-import isiItemsBerita from "../dumy/dataBerita"
 import SkeletonCardBerita from "../skeleton/CardBerita";
+import axios from 'axios';
+import Swal from "sweetalert2";
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 
 const IsuEkonomi = () => {
 
 
-    const [items, setItems] = useState([]);
     const [visible, setVisible] = useState(9)
 
     const [loading, setLoading] = useState(true);
 
     const [loadingMore, setLoadingMore] = useState(false);
+    const [posts, setPosts] = useState([]); // State to hold fetched posts
 
 
-    // untukmengeloladatasebelumdiloop
     useEffect(() => {
-        const isian = isiItemsBerita();
-        setItems(isian);
-        // alert(items.length);
+        // Function to fetch posts
+        const fetchPosts = async () => {
+            setLoading(true);
+            try {
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_POST;
+                const response = await axios.get(`${url}${endpoint}`);
+                setPosts(response.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
 
-        setTimeout(() => {
-            setLoading(false);
-        }, 2000);
+                });
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPosts(); // Call fetchPosts function when component mounts
     }, []);
 
     const showMore = () => {
-        // setVisible((preValue) => preValue + 3);
-
         setLoadingMore(true);
 
         setTimeout(() => {
@@ -34,6 +48,15 @@ const IsuEkonomi = () => {
             setLoadingMore(false);
         }, 2000); // Simulate network delay
     }
+
+    const convertToSlug = (title) => {
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    };
 
     return (
         <>
@@ -56,24 +79,26 @@ const IsuEkonomi = () => {
                                     </div>
                                 ))
                             ) : (
-                                items.slice(0, visible).map((item) => (
+                                posts.slice(0, visible).map((item) => (
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/siaran-pers/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
+                                                <a href={`/info-terkini/${convertToSlug(item.title)}`}>
+                                                    <img src="assets/image/berita3.svg" className="img-fluid" alt={item.title} />
+                                                </a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
 
-                                                    <span>{item.tag}</span>
+                                                    <span>#BERITABARU</span>
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/siaran-pers/${item.slug}`}>{item.title}</a>
+                                                        <a href={`/info-terkini/${convertToSlug(item.title)}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
-                                                    <span>{item.tanggal}</span>
+                                                    <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -89,12 +114,12 @@ const IsuEkonomi = () => {
                                 ))
                             )}
 
-                            {visible < items.length && (
+                            {visible < posts.length && (
                                 <div className="col-12 pt-5">
                                     <div className="block-box load-more-btn">
-                                        <a href className="item-btn" onClick={showMore}>
+                                        <div className="item-btn" onClick={showMore}>
                                             <i className="fa-solid fa-refresh"></i>Load More
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
                             )}

@@ -18,7 +18,9 @@ const GaleriFoto = () => {
         const fetchPosts = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`https://webdev.rifhandi.com/posts/type/photos`);
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_PHOTO;
+                const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
             } catch (err) {
                 Swal.fire({

@@ -26,7 +26,9 @@ const SiaranPersDetail = () => {
         if (effectrun.current === false) {
             const fetchPosts = async () => {
                 try {
-                    const responsei = await axios.get(`https://webdev.rifhandi.com/posts`);
+                    const url = process.env.REACT_APP_API_URL;
+                    const endpoint = process.env.REACT_APP_API_POST;
+                    const responsei = await axios.get(`${url}${endpoint}`);
                     const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 
                     // throw new Error("Error!");
@@ -147,7 +149,7 @@ const SiaranPersDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/liputan-media/${item.slug}`}> <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} className="img-fluid" alt={item.title} /></a>
+                                                <a href={`/liputan-media/${convertToSlug(item.title)}`}> <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} className="img-fluid" alt={item.title} /></a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
@@ -155,7 +157,7 @@ const SiaranPersDetail = () => {
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/liputan-media/${item.slug}`}>{item.title}</a>
+                                                        <a href={`/liputan-media/${convertToSlug(item.title)}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">

@@ -21,7 +21,9 @@ const InfoTerkini = () => {
         const fetchPosts = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`https://webdev.rifhandi.com/posts`);
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_POST;
+                const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
             } catch (err) {
                 Swal.fire({

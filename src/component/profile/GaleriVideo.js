@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import SkeletonCardBerita from "../skeleton/CardBerita";
 import axios from 'axios';
 import Swal from "sweetalert2";
@@ -15,7 +15,8 @@ const GaleriVideo = () => {
     const [posts, setPosts] = useState([]);
 
 
-    useEffect(() => {
+    useLayoutEffect(() => {
+
         new VenoBox({
             selector: '.my-image-links',
             numeration: true,
@@ -28,11 +29,20 @@ const GaleriVideo = () => {
             titleattr: 'data-title',
             titleStyle: 'block'
         });
+
+
+    }, []);
+
+
+    useEffect(() => {
+
         // Function to fetch posts
         const fetchPosts = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`https://webdev.rifhandi.com/posts/type/videos`);
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_VIDEO;
+                const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
             } catch (err) {
                 Swal.fire({
@@ -82,7 +92,7 @@ const GaleriVideo = () => {
                                 ))
                             ) : (
                                 posts.slice(0, visible).map((item) => (
-                                    <div className="col-md-4 col-lg-4">
+                                    <div className="col-md-4 col-lg-4" key={item.id} >
                                         <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
                                             <div className="card-box-b card-shadow news-box">
                                                 <div className="img-box-bc">
@@ -139,9 +149,9 @@ const GaleriVideo = () => {
                             )}
                         </div>
                     </div>
-                </section>
+                </section >
 
-            </div>
+            </div >
         </>
     )
 }
