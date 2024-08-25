@@ -1,24 +1,27 @@
 import React from "react"
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 const Section5 = () => {
     return (
         <section className="funfact-section">
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
 
-                    <div className="col-12 col-lg-3 col-xl-3">
+                    <div className="c col-lg-2 ">
                         <div className="sidebar">
                             <div className="sidebar-widget-list-inner">
                                 <ul>
-                                    <li><a href="#t">IPH</a></li>
-                                    <li><a href="#t">JKS</a></li>
-                                    <li><a href="#t">KSS</a></li>
-                                    <li><a href="#t">BIWIS</a></li>
-                                    <li><a href="#t">INSIS</a></li>
+                                    <li><a href="#t">BI</a></li>
+                                    <li><a href="#t">BPJPH</a></li>
+                                    <li><a href="#t">Kemenko PMK</a></li>
+                                    <li><a href="#t">KNEKS</a></li>
+                                    <li><a href="#t">OJK</a></li>
+                                    <li><a href="#t">(blank)</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-9" >
+                    <div className="col-lg-7" >
                         <div className="card stretch stretch-full">
                             <div className="card-header d-flex justify-content-between align-items-center">
                                 <h5 className="card-title">Sertifikat Halal UMK</h5>
@@ -194,6 +197,18 @@ const Section5 = () => {
 
                         </div>
 
+                    </div>
+                    <div className="col-lg-3">
+                        <Card>
+                            <Card.Header>Featured</Card.Header>
+                            <Card.Body>
+                                <Card.Title>Special title treatment</Card.Title>
+                                <Card.Text>
+                                    With supporting text below as a natural lead-in to additional content.
+                                </Card.Text>
+                                <Button variant="primary">Go somewhere</Button>
+                            </Card.Body>
+                        </Card>
                     </div>
                 </div>
             </div>
