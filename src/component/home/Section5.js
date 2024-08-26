@@ -7,7 +7,15 @@ const Section5 = () => {
             <div className="container-fluid">
                 <div className="row">
 
-                    <div className="c col-lg-2 ">
+                    <div className="col-lg-2 ">
+                        <Card className="bg-dark text-white">
+                            <Card.Body>
+                                <h1 className="text-white">DASHBOARD</h1>
+                                <Card.Text>
+                                    With supporting text below as a natural lead-in to additional content.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
                         <div className="sidebar">
                             <div className="sidebar-widget-list-inner">
                                 <ul>
