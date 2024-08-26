@@ -123,6 +123,58 @@ const Section5 = () => {
                                     <div className="col-sm-6 fw-semibold">Tanggal Mulai</div>
                                     <div className="col-sm-6 text-primary">30 Oktober 2024</div>
                                 </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Tanggal Selesai</div>
+                                    <div className="col-sm-6 text-primary">30 Oktober 2024</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Kontributor</div>
+                                    <div className="col-sm-6 text-primary">Kemenko maritim, Kemenko perekonomian, kemenko PMK,Kementerian PPN/Bapenas</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Indikator Dampak</div>
+                                    <div className="col-sm-6 text-primary">SNLIEKSI 1 Literasi (Ekonomi Syariah)</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Pembukaan Acara</div>
+                                    <div className="col-sm-6 text-primary">Presiden/wakil presiden</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Jumlah Peserta</div>
+                                    <div className="col-sm-6 text-primary">1000</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Area</div>
+                                    <div className="col-sm-6 text-primary">Internasional</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Lokasi</div>
+                                    <div className="col-sm-6 text-primary">DKI Jakarta</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Skala Usia</div>
+                                    <div className="col-sm-6 text-primary">Semua Usia</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Gender Audiens</div>
+                                    <div className="col-sm-6 text-primary">Semua</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Keterlibatan Disabilitas</div>
+                                    <div className="col-sm-6 text-primary">Ya</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Level of Content</div>
+                                    <div className="col-sm-6 text-primary">100%</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Prioritas</div>
+                                    <div className="col-sm-6 text-primary">Tinggi</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">KBLI</div>
+                                    <div className="col-sm-6 text-primary">A- Pertanian, Kehutanan, dan Perikanan</div>
+                                </div>
                             </Card.Body>
                         </Card>
                     </div>
