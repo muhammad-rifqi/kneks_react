@@ -1,13 +1,15 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
-const MapsModal = ({ show, handleClose }) => {
+const MapsModal = ({ show, handleClose, event }) => {
     // if (!event) return null;
+
+    
 
     return (
         <Modal show={show} onHide={handleClose} size="xl">
             <Modal.Header closeButton>
-                <Modal.Title>Agenda</Modal.Title>
+                <Modal.Title style={{ textTransform: 'capitalize' }}>Agenda {event}</Modal.Title>
             </Modal.Header>
             <Modal.Body className="p-5">
 
