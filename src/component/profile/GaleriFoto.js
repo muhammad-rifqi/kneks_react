@@ -35,6 +35,7 @@ const GaleriFoto = () => {
         };
 
         fetchPosts(); // Call fetchPosts function when component mounts
+
     }, []);
 
     const showMore = () => {
@@ -82,7 +83,7 @@ const GaleriFoto = () => {
                                         <a href={`/galeri-foto/${convertToSlug(item.title)}`}>
                                             <div className="card-box-b card-shadow news-box">
                                                 <div className="img-box-b " data-gall="gallery01">
-                                                    <img src={`${process.env.REACT_APP_API_IMAGE}`+item.photo} className="img-fluid img-b" alt={item.title} />
+                                                    <img src={`${process.env.REACT_APP_API_IMAGE}` + item.photo} className="img-fluid img-b" alt={item.title} />
                                                 </div>
                                                 <div className="card-overlay">
                                                     <div className="card-header-b">
