@@ -1,6 +1,7 @@
 import React from "react"
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+
 const Section5 = () => {
     return (
         <section className="funfact-section">
@@ -8,28 +9,67 @@ const Section5 = () => {
                 <div className="row">
 
                     <div className="col-lg-2 ">
-                        <Card className="bg-dark text-white">
+                        <Card className="bg-dark text-white mb-2 text-center">
                             <Card.Body>
                                 <h1 className="text-white">DASHBOARD</h1>
-                                <Card.Text>
-                                    With supporting text below as a natural lead-in to additional content.
+                                <Card.Text style={{ fontSize: `14px` }}>
+                                    Event Ekonomi dan Keuangan Syariah 2024
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <div className="sidebar">
-                            <div className="sidebar-widget-list-inner">
-                                <ul>
-                                    <li><a href="#t">BI</a></li>
-                                    <li><a href="#t">BPJPH</a></li>
-                                    <li><a href="#t">Kemenko PMK</a></li>
-                                    <li><a href="#t">KNEKS</a></li>
-                                    <li><a href="#t">OJK</a></li>
-                                    <li><a href="#t">(blank)</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <Card >
+                            <Card.Header className="p-3">
+                                Pengelola
+                            </Card.Header>
+                            <Card.Body>
+                                <div className="sidebar">
+                                    <div className="sidebar-widget-list-inner">
+                                        <ul>
+                                            <li><a href="#t">BI</a></li>
+                                            <li><a href="#t">BPJPH</a></li>
+                                            <li><a href="#t">Kemenko PMK</a></li>
+                                            <li><a href="#t">KNEKS</a></li>
+                                            <li><a href="#t">OJK</a></li>
+                                            <li><a href="#t">(blank)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </Card.Body>
+                        </Card>
                     </div>
                     <div className="col-lg-7" >
+                        <div className="row pb-2">
+                            <div className="col-lg-4">
+                                <Card className="text-center">
+                                    <Card.Body>
+                                        <Card.Title>Total Kegiatan</Card.Title>
+                                        <h1>
+                                            93
+                                        </h1>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="col-lg-4">
+                                <Card className="text-center">
+                                    <Card.Body>
+                                        <Card.Title>Total Peserta</Card.Title>
+                                        <h1>
+                                            53.17K
+                                        </h1>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="col-lg-4">
+                                <Card className="text-center">
+                                    <Card.Body>
+                                        <Card.Title>TotaL wilayah</Card.Title>
+                                        <h1>
+                                            47
+                                        </h1>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                        </div>
                         <div className="card stretch stretch-full">
                             <div className="card-header d-flex justify-content-between align-items-center">
                                 <h5 className="card-title">Sertifikat Halal UMK</h5>
@@ -39,86 +79,6 @@ const Section5 = () => {
                                 <div id="payment-records-chart"></div>
                             </div>
 
-                        </div>
-                        <div className="col-lg-12 pt-5">
-                            <div className="row">
-                                <div className="col-lg-6">
-                                    <div className="card stretch stretch-full">
-                                        <div className="card-body p-0">
-                                            <div className="mb-4 border-bottom">
-                                                <div className="pt-4 text-center">
-                                                    <h1>1.608.804</h1>
-                                                    <p>Jumlah Pendaftaran Sehati</p>
-                                                </div>
-                                            </div>
-                                            <div className="mb-4 ">
-                                                <div className="pt-4 text-center">
-                                                    <h1>86.571</h1>
-                                                    <p>Jumlah SH Terbit Sehati</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-6">
-                                    <div className="card stretch stretch-full">
-                                        <div className="card-header">
-                                            <h5 className="card-title" style={{ fontSize: `16px` }}>Pendaftaran Sehati per Peovinsi</h5>
-                                        </div>
-                                        <div className="card-body custom-card-action p-0">
-                                            <div className="table-responsive">
-                                                <table className="table table-hover mb-0" style={{ fontSize: `14px` }}>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Provinsi</th>
-                                                            <th className="text-end">Jumlah</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-
-                                                            <td>Jawa Barat</td>
-                                                            <td className="text-end"> 250.000 </td>
-
-                                                        </tr>
-                                                        <tr>
-
-                                                            <td>Jawa Tengah</td>
-                                                            <td className="text-end">250.000</td>
-
-                                                        </tr>
-                                                        <tr>
-
-                                                            <td>Jawa Tengah</td>
-                                                            <td className="text-end">250.000</td>
-
-                                                        </tr>
-                                                        <tr>
-
-                                                            <td>Jawa Tengah</td>
-                                                            <td className="text-end">250.000</td>
-
-                                                        </tr>
-                                                        <tr>
-
-                                                            <td>Jawa Tengah</td>
-                                                            <td className="text-end">250.000</td>
-
-                                                        </tr>
-                                                        <tr>
-
-                                                            <td>Jawa Tengah</td>
-                                                            <td className="text-end">250.000</td>
-
-                                                        </tr>
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div className="col-lg-12 pt-5">
                             <div className="row">
@@ -143,84 +103,32 @@ const Section5 = () => {
 
                             </div>
                         </div>
-                        <div className="col-lg-12 pt-5">
-                            <div className="about-one-inner-x">
-                                <div className="d-flex justify-content-between ">
-
-                                    <h5 >Narasi</h5>
-                                    <div className="">
-                                        <h5 style={{ fontSize: `14px` }}>Sumber</h5>
-                                        <p style={{ fontSize: `12px` }}>www.kneks.co.id/e-pustaka</p>
-                                    </div>
-
-                                </div>
-                                <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-
-                        </div>
-                        <div className="col-lg-12 pt-5">
-                            <div className="about-one-inner-x">
-                                <div className="text-start">
-
-                                    <h5 >Sumber Data</h5>
-
-                                </div>
-                                <div className="table-responsive">
-                                    <table className="table table-hover mb-0" style={{ fontSize: `14px` }}>
-                                        <thead>
-                                            <tr>
-                                                <th>Dataset</th>
-                                                <th className="text-center">Produsen Data</th>
-                                                <th className="text-center">Tanggal Pembaharuan Data</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-
-                                                <td><a href="/data/detail">Dataset A</a></td>
-                                                <td className="text-center">Ojk</td>
-                                                <td className="text-center">12:30:34 27-04-2024</td>
-
-                                            </tr>
-                                            <tr>
-
-                                                <td><a href="/data/detail">Dataset B</a></td>
-                                                <td className="text-center">Ojk</td>
-                                                <td className="text-center">12:30:34 27-04-2024</td>
-
-                                            </tr>
-                                            <tr>
-
-                                                <td><a href="/data/detail">Dataset C</a></td>
-                                                <td className="text-center">Ojk</td>
-                                                <td className="text-center">12:30:34 27-04-2024</td>
-
-                                            </tr>
-
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                        </div>
-
                     </div>
                     <div className="col-lg-3">
                         <Card>
-                            <Card.Header>Featured</Card.Header>
-                            <Card.Body>
-                                <Card.Title>Special title treatment</Card.Title>
-                                <Card.Text>
-                                    With supporting text below as a natural lead-in to additional content.
-                                </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                            <Card.Body className="ml-3 mt-2 mr-2">
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Nama Proyek:</div>
+                                    <div className="col-sm-6 text-primary">Alexandra Della</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Nama Kegiatan</div>
+                                    <div className="col-sm-6 text-primary">Opening Ceremony</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Deskripsi Kegiatan</div>
+                                    <div className="col-sm-6 text-primary">Pembukaan Rangkaian Kegiatan ISEF 2024</div>
+                                </div>
+                                <div className="row g-0 mb-4">
+                                    <div className="col-sm-6 fw-semibold">Tanggal Mulai</div>
+                                    <div className="col-sm-6 text-primary">30 Oktober 2024</div>
+                                </div>
                             </Card.Body>
                         </Card>
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
 
