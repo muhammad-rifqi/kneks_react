@@ -1,4 +1,4 @@
-import React, {useState }  from "react"
+import React, { useState } from "react"
 import Card from 'react-bootstrap/Card';
 // import Button from 'react-bootstrap/Button';
 import Bi from './dashboard/Bi'
@@ -9,17 +9,17 @@ import Ojk from './dashboard/Ojk'
 import Blank from './dashboard/Blank'
 
 const Section5 = () => {
-   
+
 
     const [isActive, setIsActive] = useState("BI");
 
     // Step 2: Fungsi untuk menangani klik dan mengubah status aktif
     const handleClick = (index) => {
-      setIsActive(index);
+        setIsActive(index);
     };
-  
+
     return (
-        <section className="funfact-section">
+        <section className="funfact-section" >
             <div className="container-fluid">
                 <div className="row">
 
@@ -40,7 +40,7 @@ const Section5 = () => {
                                 <div className="sidebar">
                                     <div className="sidebar-widget-list-inner">
                                         <ul>
-                                        {['BI', 'BPJPH', 'KemenkoPMK', 'KNEKS', 'OJK', '(blank)'].map((item,index) => (
+                                            {['BI', 'BPJPH', 'KemenkoPMK', 'KNEKS', 'OJK', '(blank)'].map((item, index) => (
                                                 <li key={index} onClick={() => handleClick(item)} className={isActive === item ? 'active' : ''}>
                                                     <a href="#t">{item}</a>
                                                 </li>
@@ -55,8 +55,8 @@ const Section5 = () => {
                     {isActive === "BPJPH" && <Bpjph />}
                     {isActive === "KemenkoPMK" && <KemenkoPmk />}
                     {isActive === "KNEKS" && <Kneks />}
-                    {isActive === "OJK" && <Ojk/>}
-                    {isActive === "(blank)" && <Blank/>}
+                    {isActive === "OJK" && <Ojk />}
+                    {isActive === "(blank)" && <Blank />}
                 </div>
             </div>
         </section >

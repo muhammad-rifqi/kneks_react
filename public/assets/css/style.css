@@ -3363,12 +3363,38 @@ a.search-toggler {
 .funfact-section {
   padding-top: 80px;
   padding-bottom: 80px;
-  background-color: var(--thm-primary);
-  /* background-color: rgb(20,106,164);
-	background-color: linear-gradient(90deg, rgba(20,106,164,1) 30%, rgba(28,181,95,1) 70%); */
-  background-image: url(../image/bg/funfact-bg-1.png);
-  background-position: top center;
+  background-image: url(../image/bg/dash.jpg);
+  height: 100%; 
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
+}
+.funfact-section-isu {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-image: url(../image/bg/isu.jpg);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.funfact-section-post {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-image: url(../image/bg/Post.jpg);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.funfact-section-instan {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-image: url(../image/bg/instans.jpg);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media (max-width: 575px) {
@@ -8782,14 +8808,7 @@ SOCIAL MEDIA
   margin-bottom: 80px;
 }
 
-.sm-section {
-  padding-top: 80px;
-  padding-bottom: 80px;
-  background-color: var(--thm-primary);
-  background-image: url(../image/bg/funfact-bg-1.png);
-  background-position: top center;
-  /* background-repeat: no-repeat; */
-}
+
 
 @media (max-width: 575px) {
   .sm-section {

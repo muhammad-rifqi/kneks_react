@@ -5,7 +5,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import EventDetailModal from "../component/modal/AgendaModal"; // Event detail modal
-
+import Card from 'react-bootstrap/Card';
 const Agenda = () => {
     const [currentEvents, setCurrentEvents] = useState([]);
     const [showDetailModal, setShowDetailModal] = useState(false);
@@ -13,7 +13,7 @@ const Agenda = () => {
 
     const handleDateClick = (selected) => {
         // Handle date click to add events (if necessary)
-        
+
     };
 
     const handleEventClick = (selected) => {
@@ -36,31 +36,41 @@ const Agenda = () => {
                 <section className="about-one-section">
                     <div className="container-sm">
                         <div className="row">
-                            <div className="col-lg-3"></div>
+                            <div className="col-lg-3">
+                                <Card >
+                                    <Card.Body>
+                                    </Card.Body>
+                                </Card>
+                            </div>
                             <div className="col-lg-9">
-                                <FullCalendar
-                                    height="75vh"
-                                    plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
-                                    headerToolbar={{
-                                        left: "title",
-                                        right: "prev,dayGridMonth,next",
-                                    }}
-                                    initialView="dayGridMonth"
-                                    editable={true}
-                                    selectable={true}
-                                    selectMirror={true}
-                                    dayMaxEvents={true}
-                                    select={handleDateClick}
-                                    eventClick={handleEventClick}
-                                    eventsSet={(events) => setCurrentEvents(events)}
-                                    initialEvents={[
-                                        { id: "12315", title: "All-day event", date: "2024-08-23" },
-                                        { id: "5123", title: "Timed event", date: "2024-08-21" },
-                                        { id: "5124", title: "Timed event", date: "2024-08-25" },
-                                        { id: "5125", title: "Timed evendt", date: "2024-08-25" },
-                                        { id: "5126", title: "Timed evenddt", date: "2024-08-25" },
-                                    ]}
-                                />
+                                <Card className="p-2 border-radius" >
+                                    <Card.Body>
+
+                                        <FullCalendar
+                                            height="75vh"
+                                            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
+                                            headerToolbar={{
+                                                left: "title",
+                                                right: "prev,dayGridMonth,next",
+                                            }}
+                                            initialView="dayGridMonth"
+                                            editable={true}
+                                            selectable={true}
+                                            selectMirror={true}
+                                            dayMaxEvents={true}
+                                            select={handleDateClick}
+                                            eventClick={handleEventClick}
+                                            eventsSet={(events) => setCurrentEvents(events)}
+                                            initialEvents={[
+                                                { id: "12315", title: "All-day event", date: "2024-08-23" },
+                                                { id: "5123", title: "Timed event", date: "2024-08-21" },
+                                                { id: "5124", title: "Timed event", date: "2024-08-25" },
+                                                { id: "5125", title: "Timed evendt", date: "2024-08-25" },
+                                                { id: "5126", title: "Timed evenddt", date: "2024-08-25" },
+                                            ]}
+                                        />
+                                    </Card.Body>
+                                </Card>
                             </div>
                         </div>
                     </div>
