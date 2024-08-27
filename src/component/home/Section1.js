@@ -90,7 +90,7 @@ const Section1 = () => {
 									<div className="slider-content-two">
 										<h1 className="section-title">"Menyatukan langkah, Memajukan Negeri"</h1>
 										<div className="slider-tagline">Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional </div>
-										<a href="#" class="btn btn-primary mt-3">Lihat Selengkapnya</a>
+										<a href="#t" class="btn btn-primary mt-3">Lihat Selengkapnya</a>
 									</div>
 								</div>
 							</div>
