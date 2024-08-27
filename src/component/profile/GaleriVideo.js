@@ -15,7 +15,7 @@ const GaleriVideo = () => {
     const [posts, setPosts] = useState([]);
 
 
-    useLayoutEffect(() => {
+    useEffect(() => {
 
         new VenoBox({
             selector: '.my-image-links',
