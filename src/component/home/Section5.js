@@ -1,4 +1,4 @@
-import React, { useEffect,useState }  from "react"
+import React, {useState }  from "react"
 import Card from 'react-bootstrap/Card';
 // import Button from 'react-bootstrap/Button';
 import Bi from './dashboard/Bi'
@@ -54,7 +54,7 @@ const Section5 = () => {
                     {isActive === "BI" && <Bi />}
                     {isActive === "BPJPH" && <Bpjph />}
                     {isActive === "KemenkoPMK" && <KemenkoPmk />}
-                    {isActive === "KNEK" && <Kneks />}
+                    {isActive === "KNEKS" && <Kneks />}
                     {isActive === "OJK" && <Ojk/>}
                     {isActive === "(blank)" && <Blank/>}
                 </div>
