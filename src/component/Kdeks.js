@@ -463,7 +463,7 @@ const Kdeks = () => {
                         </div>
                     </section>
                 </section>
-                <section className="funfact-section foto-section-x">
+                <section className="funfact-section-direk foto-section-x">
                     <div className="container">
                         <div className="funfact-box">
                             <div className="section-title-box text-center">
