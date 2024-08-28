@@ -120,7 +120,7 @@ const Kdeks = () => {
         <>
             <div className="page-wrapper">
 
-                <section className="page-banner">
+                <section className="page-banner-kdeks ">
                     <div className="container">
                         <div className="page-banner-title">
                             <h3>KDEKS</h3>
