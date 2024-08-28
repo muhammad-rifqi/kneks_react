@@ -3396,6 +3396,31 @@ a.search-toggler {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.funfact-section-struktur {
+  padding-top: 80px;
+  padding-bottom: 180px;
+  background-image: url(../image/bg/struktur.svg);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.funfact-section-struktur-x {
+  background-image: url(../image/bg/struktur.svg);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.funfact-section-direk {
+  padding-top: 80px;
+  padding-bottom: 180px;
+  background-image: url(../image/bg/direk.jpg);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 @media (max-width: 575px) {
   .funfact-section {

@@ -110,114 +110,115 @@ const JasakeuanganSyariah = () => {
                         </div >
                     </div>
                 </section>
-
-                <section className="news-section">
-                    <div className="container">
-                        <div className="blog-box">
-                            <div className="section-title-box text-center">
-                                <h2 className="section-title">Opini</h2>
+                <section className="funfact-section-struktur-x">
+                    <section className="news-section">
+                        <div className="container">
+                            <div className="blog-box">
+                                <div className="section-title-box text-center">
+                                    <h2 className="section-title">Opini</h2>
+                                </div>
                             </div>
-                        </div>
-                        <div className="row row-gutter-30">
-                            {
-                                items.slice(0, 4).map((item) => (
-                                    <div className="col-lg-3 col-xl-3" key={item.id}>
-                                        <div className="berita-card">
-                                            {/* <div className="berita-card-imgbox-direktorat ">
+                            <div className="row row-gutter-30">
+                                {
+                                    items.slice(0, 4).map((item) => (
+                                        <div className="col-lg-3 col-xl-3" key={item.id}>
+                                            <div className="berita-card">
+                                                {/* <div className="berita-card-imgbox-direktorat ">
                                                 <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                             </div> */}
-                                            <div className="berita-content-direktorat">
+                                                <div className="berita-content-direktorat">
 
-                                                <div className="event-card-title pb-2">
-                                                    <h4>
-                                                        <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
-                                                    </h4>
-                                                </div>
-                                                <div className="event-card-info-direktorat">
-                                                    <span>{item.tanggal}</span>
+                                                    <div className="event-card-title pb-2">
+                                                        <h4>
+                                                            <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div className="event-card-info-direktorat">
+                                                        <span>{item.tanggal}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
-                        </div >
-                    </div>
-                </section>
-                <section className="funfact-section">
-                    <div className="container">
-                        <div className="funfact-box">
-                            <div className="section-title-box text-center">
-                                <h2 className="section-title">E-pustaka</h2>
-                            </div>
+                                    ))}
+                            </div >
                         </div>
-                        <div className="row row-gutter-y-30 d-flex justify-content-center">
+                    </section>
+                    <section className="funfact-section">
+                        <div className="container">
+                            <div className="funfact-box">
+                                <div className="section-title-box text-center">
+                                    <h2 className="section-title">E-pustaka</h2>
+                                </div>
+                            </div>
+                            <div className="row row-gutter-y-30 d-flex justify-content-center">
 
-                            <div className="col-lg-9">
-                                <div className="row ">
-                                    <div className="col-12 col-md-6 col-xl-3">
-                                        <div className="team-card-x">
-                                            <div className="team-card-img-x">
-                                                <img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" />
+                                <div className="col-lg-9">
+                                    <div className="row ">
+                                        <div className="col-12 col-md-6 col-xl-3">
+                                            <div className="team-card-x">
+                                                <div className="team-card-img-x">
+                                                    <img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" />
 
-                                            </div>
-                                            <div className="team-card-content-x">
-                                                <h4><a href="team-details.html">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                <div className="d-flex justify-content-between align-items-end">
-                                                    <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                    </a>
+                                                </div>
+                                                <div className="team-card-content-x">
+                                                    <h4><a href="team-details.html">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                    <div className="d-flex justify-content-between align-items-end">
+                                                        <p>21 Mei 2024</p>
+                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="col-12 col-md-6 col-xl-3">
-                                        <div className="team-card-x">
-                                            <div className="team-card-img-x">
-                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+                                        <div className="col-12 col-md-6 col-xl-3">
+                                            <div className="team-card-x">
+                                                <div className="team-card-img-x">
+                                                    <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
 
-                                            </div>
-                                            <div className="team-card-content-x">
-                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                <div className="d-flex justify-content-between align-items-end">
-                                                    <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                    </a>
+                                                </div>
+                                                <div className="team-card-content-x">
+                                                    <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                    <div className="d-flex justify-content-between align-items-end">
+                                                        <p>21 Mei 2024</p>
+                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="col-12 col-md-6 col-xl-3">
-                                        <div className="team-card-x">
-                                            <div className="team-card-img-x">
-                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+                                        <div className="col-12 col-md-6 col-xl-3">
+                                            <div className="team-card-x">
+                                                <div className="team-card-img-x">
+                                                    <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
 
-                                            </div>
-                                            <div className="team-card-content-x">
-                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                <div className="d-flex justify-content-between align-items-end">
-                                                    <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                    </a>
+                                                </div>
+                                                <div className="team-card-content-x">
+                                                    <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                    <div className="d-flex justify-content-between align-items-end">
+                                                        <p>21 Mei 2024</p>
+                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="col-12 col-md-6 col-xl-3">
-                                        <div className="team-card-x">
-                                            <div className="team-card-img-x">
-                                                <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
+                                        <div className="col-12 col-md-6 col-xl-3">
+                                            <div className="team-card-x">
+                                                <div className="team-card-img-x">
+                                                    <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
 
-                                            </div>
-                                            <div className="team-card-content-x">
-                                                <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                <div className="d-flex justify-content-between align-items-end">
-                                                    <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                    </a>
+                                                </div>
+                                                <div className="team-card-content-x">
+                                                    <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                    <div className="d-flex justify-content-between align-items-end">
+                                                        <p>21 Mei 2024</p>
+                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -225,42 +226,42 @@ const JasakeuanganSyariah = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <section className="news-section">
-                    <div className="container">
-                        <div className="blog-box">
-                            <div className="section-title-box text-center">
-                                <h2 className="section-title">Data</h2>
+                    </section>
+                    <section className="news-section">
+                        <div className="container">
+                            <div className="blog-box">
+                                <div className="section-title-box text-center">
+                                    <h2 className="section-title">Data</h2>
+                                </div>
                             </div>
-                        </div>
-                        <div className="row ">
-                            {
-                                items.slice(0, 4).map((item) => (
-                                    <div className="col-lg-3 col-xl-3" key={item.id}>
-                                        <div className="berita-card">
-                                            {/* <div className="berita-card-imgbox-direktorat ">
+                            <div className="row ">
+                                {
+                                    items.slice(0, 4).map((item) => (
+                                        <div className="col-lg-3 col-xl-3" key={item.id}>
+                                            <div className="berita-card">
+                                                {/* <div className="berita-card-imgbox-direktorat ">
                                                 <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                             </div> */}
-                                            <div className="berita-content-direktorat">
+                                                <div className="berita-content-direktorat">
 
-                                                <div className="event-card-title pb-2">
-                                                    <h4>
-                                                        <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
-                                                    </h4>
-                                                </div>
-                                                <div className="event-card-info-direktorat">
-                                                    <span>{item.tanggal}</span>
+                                                    <div className="event-card-title pb-2">
+                                                        <h4>
+                                                            <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div className="event-card-info-direktorat">
+                                                        <span>{item.tanggal}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
 
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 </section>
-                <section className="funfact-section foto-section-x">
+                <section className="funfact-section-direk foto-section-x">
                     <div className="container">
                         <div className="funfact-box">
                             <div className="section-title-box text-center">

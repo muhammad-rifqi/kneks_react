@@ -11,7 +11,7 @@ const StrukturOrganisasi = () => {
 						</div>
 					</div>
 				</section>
-				<section className="about-one-section">
+				<section className="about-one-section funfact-section-struktur">
 					<div className="container">
 						<div className="row row-gutter-y-40 text-center">
 							<div className="col-lg-12 col-xl-12">
