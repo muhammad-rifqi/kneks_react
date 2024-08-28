@@ -6,10 +6,17 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import EventDetailModal from "../component/modal/AgendaModal"; // Event detail modal
 import Card from 'react-bootstrap/Card';
+
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/style.css";
+
 const Agenda = () => {
+
+
     const [currentEvents, setCurrentEvents] = useState([]);
     const [showDetailModal, setShowDetailModal] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState(null);
+
 
     const handleDateClick = (selected) => {
         // Handle date click to add events (if necessary)
@@ -22,6 +29,8 @@ const Agenda = () => {
         setSelectedEvent(event);
         setShowDetailModal(true);
     };
+
+    
 
     return (
         <>
@@ -36,13 +45,18 @@ const Agenda = () => {
                 <section className="about-one-section">
                     <div className="container-sm">
                         <div className="row">
-                            <div className="col-lg-3">
-                                <Card >
-                                    <Card.Body>
-                                    </Card.Body>
+                            <div className="col-lg-4">
+                                <Card>
+                                    <Card.Body  className="d-flex justify-content-center">
+                                        <DayPicker
+                                            mode="single"
+                                            required selected={[new Date()]}
+                                            disabled={{ dayOfWeek: [0, 6] }}
+                                        />
+                                    </Card.Body>"
                                 </Card>
                             </div>
-                            <div className="col-lg-9">
+                            <div className="col-lg-8">
                                 <Card className="p-2 border-radius" >
                                     <Card.Body>
 
