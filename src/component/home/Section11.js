@@ -38,7 +38,26 @@ const Section11 = () => {
 
 					</div>
 
+					<div className="sm-box" style={{ marginTop: `100px` }}>
+						<div className="section-title-box text-center">
 
+							<h2 className="section-title">Instansi Terkait</h2>
+							<div className="section-text-b "><p className="text-white ">
+								KNEKS beranggotakan 3 Menteri Koordinator, 7 Menteri, 3 Ketua lembaga pemerintah, <br /> Ketua Umum MUI dan Ketua Umum KADIN, dengan Menteri Keuangan merangkap sebagai Sekretaris.
+							</p>
+
+							</div>
+						</div>
+					</div>
+
+
+
+
+				</div >
+			</section >
+
+			<section className="funfact-section-instan">
+				<div className="container">
 					<div className="row">
 						<div className="col-6 col-md-4 col-lg-2 pb-3">
 							<a rel="noreferrer" href={`https://www.kemenkeu.go.id/`} target="_blank" className="component-service d-block ">
@@ -156,21 +175,9 @@ const Section11 = () => {
 							</a>
 						</div>
 					</div>
-
-
-				</div >
-			</section >
-			<section className="sm-box  funfact-section-post">
-				<div className="section-title-box text-center">
-
-					<h2 className="section-title">Instansi Terkait</h2>
-					<div className="section-text-b "><p className="text-white ">
-						KNEKS beranggotakan 3 Menteri Koordinator, 7 Menteri, 3 Ketua lembaga pemerintah, <br /> Ketua Umum MUI dan Ketua Umum KADIN, dengan Menteri Keuangan merangkap sebagai Sekretaris.
-					</p>
-
-					</div>
 				</div>
 			</section>
+
 		</>
 	)
 }
