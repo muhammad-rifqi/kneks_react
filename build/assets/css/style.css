@@ -3381,7 +3381,7 @@ a.search-toggler {
 .funfact-section-post {
   padding-top: 80px;
   padding-bottom: 80px;
-  background-image: url(../image/bg/Post.jpg);
+  background-image: url(../image/bg/post.jpg);
   height: 100%; 
   background-position: center;
   background-repeat: no-repeat;
@@ -3390,7 +3390,7 @@ a.search-toggler {
 .funfact-section-instan {
   padding-top: 80px;
   padding-bottom: 180px;
-  background-image: url(../image/bg/instans.jpg);
+  background-image: url(../image/bg/Instans.jpg);
   height: 100%; 
   background-position: center;
   background-repeat: no-repeat;
@@ -3674,6 +3674,14 @@ a.search-toggler {
 ***********************/
 .page-banner-perpus {
   background-image: url("../image/bannerPerpustakaan.svg");
+  background-repeat: no-repeat;
+  background-color: var(--thm-black);
+  background-size: cover;
+  padding-top: 122px;
+  padding-bottom: 122px;
+}
+.page-banner-kdeks {
+  background-image: url("../image/slide.png");
   background-repeat: no-repeat;
   background-color: var(--thm-black);
   background-size: cover;
