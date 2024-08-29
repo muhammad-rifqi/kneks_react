@@ -134,7 +134,7 @@ const Footer = () => {
         </div>
       </div>
       {/* <a href="#test2" className="scroll-to-top-x" onClick={ refreshPage }><i className="fa-solid fa-arrow-up"></i></a> */}
-      <a href="#test2" className="scroll-to-top-x" onClick={ refreshPage }>
+      <a href="#test2" className="scroll-to-top-x" data-bs-toggle="tooltip" title="Refresh" onClick={ refreshPage }>
                                             <i className="fa-solid fa-refresh"></i>
                                         </a>
       <a href="#test2" className="scroll-to-top scroll-to-target" data-target="html"><i className="fa-solid fa-arrow-up"></i></a>
