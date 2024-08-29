@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import Kota from "../component/dumy/dataKota";
 const Header = () => {
   const [cookies] = useCookies(['user']);
 
@@ -14,25 +13,13 @@ const Header = () => {
   const handleMenuClick = (menu) => {
     setActiveMenu(menu);
   };
-  const [kota, setKota] = useState([]);
-  useEffect(() => {
-    const isian = Kota();
-    setKota(isian);
-    // alert(items.length);
-
-
-  }, []);
+ 
 
   useEffect(() => {
     // Update activeMenu whenever the location changes
     setActiveMenu(location.pathname);
   }, [location]);
 
-  const getLogo = () => {
-    const citySlug = activeMenu.split("/")[2]; // Get the city slug from the URL
-    const city = kota.find((k) => k.title || isKdeksPage === citySlug);
-    return city ? "/assets/image/logoKdeks.png" : "/assets/image/logo.svg";
-  };
 
   return (
     <>
@@ -50,7 +37,7 @@ const Header = () => {
 
                 <a href={isKdeksPage || activeMenu.split("/")[2] ? "/kdeks" : "/"}>
                   <img
-                    src={getLogo()}
+                    src={isKdeksPage || activeMenu.split("/")[2] ? "/assets/image/logoKdeks.png" : "/assets/image/logo.svg"}
                     alt="logo"
                     width="130"
                   />
