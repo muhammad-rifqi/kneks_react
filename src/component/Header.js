@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
+import Kota from "../component/dumy/dataKota";
 const Header = () => {
   const [cookies] = useCookies(['user']);
 
   const location = useLocation();
   const isKdeksPage = location.pathname === '/kdeks';
+
+  const [activeMenu, setActiveMenu] = useState(location.pathname); // Initial state
+
+  // Function to handle menu click
+  const handleMenuClick = (menu) => {
+    setActiveMenu(menu);
+  };
+  const [kota, setKota] = useState([]);
+  useEffect(() => {
+    const isian = Kota();
+    setKota(isian);
+    // alert(items.length);
+
+
+  }, []);
+
+  useEffect(() => {
+    // Update activeMenu whenever the location changes
+    setActiveMenu(location.pathname);
+  }, [location]);
+
+  const getLogo = () => {
+    const citySlug = activeMenu.split("/")[2]; // Get the city slug from the URL
+    const city = kota.find((k) => k.title || isKdeksPage === citySlug);
+    return city ? "/assets/image/logoKdeks.png" : "/assets/image/logo.svg";
+  };
+
   return (
     <>
       <div id="pre-loader">
@@ -20,13 +48,15 @@ const Header = () => {
             <div className="main-menu-left">
               <div className="main-menu-logo">
 
-                {isKdeksPage ? (
-                  <a href="/kdeks"><img src="/assets/image/logoKdeks.png" alt="logo" width="130" /></a>
-                ) : (
-                  <a href="/"><img src="/assets/image/logo.svg" alt="logo" width="130" /></a>
-                )}
+                <a href={isKdeksPage || activeMenu.split("/")[2] ? "/kdeks" : "/"}>
+                  <img
+                    src={getLogo()}
+                    alt="logo"
+                    width="130"
+                  />
+                </a>
               </div>
-              {isKdeksPage ? (
+              {isKdeksPage || activeMenu.split("/")[2] ? (
                 <div className="navigation">
                   <ul className="main-menu-list list-unstyled">
 
@@ -35,7 +65,7 @@ const Header = () => {
               ) : (
                 <div className="navigation">
                   <ul className="main-menu-list list-unstyled">
-                    <li className="active"><a href="/">Beranda</a>
+                    <li className={` ${activeMenu === '/' ? 'active' : ''}`}><a onClick={() => handleMenuClick('/')} href="/">Beranda</a>
                     </li>
                     <li className="has-dropdown">
                       <a href="#t">Profile</a>
@@ -66,11 +96,11 @@ const Header = () => {
                         <li ><a href="/opini">Opini</a></li>
                       </ul>
                     </li>
-                    <li ><a href="/agenda">Agenda</a></li>
-                    <li ><a href="/e-pustaka">E-Pustaka</a></li>
-                    <li ><a href="/data">DATA</a></li>
+                    <li className={` ${activeMenu === '/agenda' ? 'active' : ''}`} ><a onClick={() => handleMenuClick('/agenda')} href="/agenda">Agenda</a></li>
+                    <li className={` ${activeMenu === '/e-pustaka' ? 'active' : ''}`} ><a onClick={() => handleMenuClick('/e-pustaka')} href="/e-pustaka">E-Pustaka</a></li>
+                    <li className={` ${activeMenu === '/data' ? 'active' : ''}`} ><a onClick={() => handleMenuClick('/data')} href="/data">DATA</a></li>
                     <li ><a href="/kdeks" >KDEKS</a></li>
-                    <li ><a href="/kontak">Kontak</a>
+                    <li className={` ${activeMenu === '/kontak' ? 'active' : ''}`} ><a onClick={() => handleMenuClick('/kontak')} href="/kontak">Kontak</a>
                     </li>
                   </ul>
                 </div>

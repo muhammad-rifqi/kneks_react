@@ -31,6 +31,7 @@ import ElibraryDetail from './component/ElibraryDetail';
 import Agenda from './component/Agenda';
 import Kontak from './component/Kontak';
 import Kdeks from './component/Kdeks';
+import KdeksDetail from './component/KdeksDetail';
 import Data from './component/Data';
 import DataDetail from './component/DataDetail';
 import Opini from './component/Opini';
@@ -78,6 +79,7 @@ function AppContent() {
         <Route path="/e-pustaka" element={<Elibrary />} />
         <Route path="/e-pustaka/detail" element={<ElibraryDetail />} />
         <Route path="/kdeks" element={<Kdeks />} />
+        <Route path="/kdeks/:slug" element={<KdeksDetail />} />
         <Route path="/data" element={<Data />} />
         <Route path="/data/detail" element={<DataDetail />} />
         <Route path="/opini" element={<Opini />} />
