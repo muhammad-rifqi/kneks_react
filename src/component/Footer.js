@@ -1,6 +1,9 @@
 import React from "react";
 
 const Footer = () => {
+  function refreshPage(){ 
+    window.location.reload(); 
+  }
   return (
 
     <div>
@@ -130,6 +133,10 @@ const Footer = () => {
           </form>
         </div>
       </div>
+      {/* <a href="#test2" className="scroll-to-top-x" onClick={ refreshPage }><i className="fa-solid fa-arrow-up"></i></a> */}
+      <a href="#test2" className="scroll-to-top-x" onClick={ refreshPage }>
+                                            <i className="fa-solid fa-refresh"></i>
+                                        </a>
       <a href="#test2" className="scroll-to-top scroll-to-target" data-target="html"><i className="fa-solid fa-arrow-up"></i></a>
     </div>
   )
