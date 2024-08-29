@@ -112,14 +112,14 @@ const KdeksDetail = () => {
 
 
     }, []);
-    const convertToSlug = (title) => {
-        return title
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/\s+/g, '-')
-            .replace(/-+/g, '-');
-    };
+    // const convertToSlug = (title) => {
+    //     return title
+    //         .toLowerCase()
+    //         .trim()
+    //         .replace(/[^\w\s-]/g, '')
+    //         .replace(/\s+/g, '-')
+    //         .replace(/-+/g, '-');
+    // };
 
     return (
         <>
