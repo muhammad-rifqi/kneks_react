@@ -1,6 +1,11 @@
-// import React, { useEffect } from "react";
+import React from "react";
 // import html2canvas from 'html2canvas';
 // import jsPDF from 'jspdf';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import Card from 'react-bootstrap/Card';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 const DataDetail = () => {
 
     // const downloadJPG = () => {
@@ -43,95 +48,89 @@ const DataDetail = () => {
                     </div>
                 </section>
                 <section className="department-all" >
-                    <div className="container-sm">
+                    <div className="container">
+
+                        <Card className="mb-3">
+                            <Card.Body>
+                                <Row >
+                                    <Breadcrumb as={Col} className="mb-0 ">
+                                        <Breadcrumb.Item href="#">IPH</Breadcrumb.Item>
+                                        <Breadcrumb.Item active>Sertifikasi Halal UMK</Breadcrumb.Item>
+                                    </Breadcrumb>
+
+                                    <Form.Group as={Col} className="align-self-center">
+                                        <Form.Select defaultValue="Choose...">
+                                            <option>- Pilih -</option>
+                                            <option>PDF</option>
+                                            <option>CSV</option>
+                                        </Form.Select>
+                                    </Form.Group>
+                                </Row>
+                            </Card.Body>
+                        </Card>
+                        <div className="row mb-3">
+                            <div className="col-lg-12">
+                                <div className="card ">
+                                    <div className="card-header ">
+                                        <h3 className="fw-bold mb-0 text-primary" >Dataset A</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div className="row g-0 mb-4">
+                                            <div className="col-sm-6 fw-semibold">Judul:</div>
+                                            <div className="col-sm-6 text-primary">Alexandra Della</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div className="row">
-                            <div className="topbar pb-3">
-                                <div className="topbar-inner">
-                                    <div className="topbar-left-x">
-                                        <ul>
-                                            <li><a href="department-details.html">IPH</a></li>
-                                            <li className="active"><a href="departments.html">Sertifikasi Halal UMK</a></li>
-                                        </ul>
-
-
+                            <div className="col-lg-12">
+                                <div className="card ">
+                                    <div className="card-header p-3">
+                                        <h3 className="fw-bold  text-primary" >Dataset A</h3>
                                     </div>
-                                    <div className="topbar-right">
+                                    <div class="card-body">
+                                        <div className="row mb-4">
+                                            <div className="col-sm-6 fw-semibold">Judul:</div>
+                                            <div className="col-sm-6 text-primary">Alexandra Della</div>
+                                        </div>
+                                        <div className="row mb-4">
+                                            <div className="col-sm-6 fw-semibold">Kategori:</div>
+                                            <div className="col-sm-6 text-primary">Della</div>
+                                        </div>
+                                        <div className="row mb-4">
+                                            <div className="col-sm-6 fw-semibold">Tanggal:</div>
+                                            <div className="col-sm-6 text-primary">theme_ocean</div>
+                                        </div>
+                                        <div className="row mb-4">
+                                            <div className="col-sm-6 fw-semibold">Penulis:</div>
+                                            <div className="col-sm-6 text-primary">26 May, 2000</div>
+                                        </div>
+                                        <div className="row mb-4">
+                                            <div className="col-sm-6 fw-semibold">Penerbit:</div>
+                                            <div className="col-sm-6 text-primary">+01 (375) 5896 3214</div>
+                                        </div>
+                                        <div className="row mb-4">
+                                            <div className="col-sm-6 fw-semibold">Sinopsis:</div>
+                                            <div className="col-sm-6 text-primary">alex.della@outlook.com</div>
+                                        </div>
+                                        <div className="row mb-4">
+                                            <div className="col-sm-6 fw-semibold">ISBN:</div>
+                                            <div className="col-sm-6 text-primary">California, United States</div>
+                                        </div>
+                                        <div className="row mb-4">
+                                            <div className="col-sm-6 fw-semibold">Jumlah Halaman:</div>
+                                            <div className="col-sm-6 text-primary">20 Dec, 2023</div>
+                                        </div>
+                                        <div className="row mb-4">
+                                            <div className="col-sm-6 fw-semibold">Lebar:</div>
+                                            <div className="col-sm-6 text-primary">United States</div>
+                                        </div>
+                                        <div className="row mb-4">
+                                            <div className="col-sm-6 fw-semibold">Panjang:</div>
+                                            <div className="col-sm-6 text-primary">Email, Phone</div>
+                                        </div>
 
-                                        <form>
-
-                                            <select className="" style={{ borderColor: `1px solid blue !importand` }} id="exampleFormControlSelect1">
-                                                <option>Unduh</option>
-                                                <option>PDF</option>
-                                                <option>CSV</option>
-                                            </select>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row pb-3">
-                                <div className="col-lg-12">
-                                    <div className="card ">
-                                        <div className="card-header p-3">
-                                            <h3 className="fw-bold mb-0 text-primary" >Dataset A</h3>
-                                        </div>
-                                        <div class="card-body">
-                                            <div className="row g-0 mb-4">
-                                                <div className="col-sm-6 fw-semibold">Judul:</div>
-                                                <div className="col-sm-6 text-primary">Alexandra Della</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-lg-12">
-                                    <div className="card ">
-                                        <div className="card-header p-3">
-                                            <h3 className="fw-bold mb-0 text-primary" >Dataset A</h3>
-                                        </div>
-                                        <div class="card-body">
-                                            <div className="row g-0 mb-4">
-                                                <div className="col-sm-6 fw-semibold">Judul:</div>
-                                                <div className="col-sm-6 text-primary">Alexandra Della</div>
-                                            </div>
-                                            <div className="row g-0 mb-4">
-                                                <div className="col-sm-6 fw-semibold">Kategori:</div>
-                                                <div className="col-sm-6 text-primary">Della</div>
-                                            </div>
-                                            <div className="row g-0 mb-4">
-                                                <div className="col-sm-6 fw-semibold">Tanggal:</div>
-                                                <div className="col-sm-6 text-primary">theme_ocean</div>
-                                            </div>
-                                            <div className="row g-0 mb-4">
-                                                <div className="col-sm-6 fw-semibold">Penulis:</div>
-                                                <div className="col-sm-6 text-primary">26 May, 2000</div>
-                                            </div>
-                                            <div className="row g-0 mb-4">
-                                                <div className="col-sm-6 fw-semibold">Penerbit:</div>
-                                                <div className="col-sm-6 text-primary">+01 (375) 5896 3214</div>
-                                            </div>
-                                            <div className="row g-0 mb-4">
-                                                <div className="col-sm-6 fw-semibold">Sinopsis:</div>
-                                                <div className="col-sm-6 text-primary">alex.della@outlook.com</div>
-                                            </div>
-                                            <div className="row g-0 mb-4">
-                                                <div className="col-sm-6 fw-semibold">ISBN:</div>
-                                                <div className="col-sm-6 text-primary">California, United States</div>
-                                            </div>
-                                            <div className="row g-0 mb-4">
-                                                <div className="col-sm-6 fw-semibold">Jumlah Halaman:</div>
-                                                <div className="col-sm-6 text-primary">20 Dec, 2023</div>
-                                            </div>
-                                            <div className="row g-0 mb-4">
-                                                <div className="col-sm-6 fw-semibold">Lebar:</div>
-                                                <div className="col-sm-6 text-primary">United States</div>
-                                            </div>
-                                            <div className="row g-0 mb-4">
-                                                <div className="col-sm-6 fw-semibold">Panjang:</div>
-                                                <div className="col-sm-6 text-primary">Email, Phone</div>
-                                            </div>
-
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -141,8 +140,8 @@ const DataDetail = () => {
                     </div>
 
 
-                </section>
-            </div>
+                </section >
+            </div >
         </>
     )
 }

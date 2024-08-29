@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
 import html2canvas from 'html2canvas';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import Card from 'react-bootstrap/Card';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 // import jsPDF from 'jspdf';
 const Data = () => {
     useEffect(() => {
@@ -217,32 +222,24 @@ const Data = () => {
                                 </div>
                             </div>
                             <div className="col-lg-9" id="dwnjpg">
-                               
-                                <div className="topbar pb-3">
-                                    <div className="topbar-inner">
-                                        <div className="topbar-left-x">
-                                            <ul>
-                                                <li><a href="department-details.html">IPH</a></li>
-                                                <li className="active"><a href="departments.html">Sertifikasi Halal UMK</a></li>
-                                            </ul>
-                                            
 
-                                        </div>
-                                        <div className="topbar-right">
+                                <Card className="mb-3">
+                                    <Card.Body>
+                                        <Row >
+                                            <Breadcrumb as={Col} className="mb-0 ">
+                                                <Breadcrumb.Item href="#">IPH</Breadcrumb.Item>
+                                                <Breadcrumb.Item active>Sertifikasi Halal UMK</Breadcrumb.Item>
+                                            </Breadcrumb>
 
-                                            <form>
-
-                                                <select className="" style={{ borderColor: `1px solid blue !importand` }} id="exampleFormControlSelect1">
+                                            <Form.Group as={Col} className="align-self-center">
+                                                <Form.Select defaultValue="Choose...">
+                                                    <option>- Pilih -</option>
                                                     <option>Sertifikat Halal Umk</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                                                </Form.Select>
+                                            </Form.Group>
+                                        </Row>
+                                    </Card.Body>
+                                </Card>
                                 <div className="card stretch stretch-full">
                                     <div className="card-header d-flex justify-content-between align-items-center">
                                         <h5 className="card-title">Sertifikat Halal UMK</h5>
