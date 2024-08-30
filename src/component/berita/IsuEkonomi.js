@@ -84,7 +84,7 @@ const IsuEkonomi = () => {
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/info-terkini/${convertToSlug(item.title)}`}>
-                                                    <img src="assets/image/berita3.svg" className="img-fluid" alt={item.title} />
+                                                    <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} />
                                                 </a>
                                             </div>
                                             <div className="berita-content ">

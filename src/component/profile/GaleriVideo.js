@@ -49,7 +49,7 @@ const GaleriVideo = () => {
     useEffect(() => {
         if (!loading) {
           // Initialize VenoBox after data is fetched and component is rendered
-          const venobox = new VenoBox({
+         new VenoBox({
             selector: '.my-image-links',
             numeration: true,
             infinigall: true,
