@@ -7,10 +7,6 @@ import 'dayjs/locale/id';
 
 import VenoBox from 'venobox';
 
-import Lightbox from "yet-another-react-lightbox";
-import Video from "yet-another-react-lightbox/plugins/video";
-import "yet-another-react-lightbox/styles.css";
-
 const GaleriVideo = () => {
     const [visible, setVisible] = useState(9)
 
@@ -18,11 +14,6 @@ const GaleriVideo = () => {
 
     const [loadingMore, setLoadingMore] = useState(false);
     const [posts, setPosts] = useState([]);
-
-    const [isOpen, setIsOpen] = useState(false);
-
-
-    useEffect(() => {
 
         new VenoBox({
             selector: '.my-image-links',
@@ -36,9 +27,6 @@ const GaleriVideo = () => {
             titleattr: 'data-title',
             titleStyle: 'block'
         });
-
-
-    }, []);
 
 
     useEffect(() => {
@@ -159,14 +147,6 @@ const GaleriVideo = () => {
                         </div>
                     </div>
                 </section >
-                {isOpen && (
-                    <Lightbox
-                        open={isOpen}
-                        close={() => setIsOpen(false)}
-                        slides={slides}
-                        plugins={[Video]} // Menambahkan plugin video
-                    />
-                )}
             </div >
         </>
     )

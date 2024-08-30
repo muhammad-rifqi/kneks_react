@@ -15,6 +15,18 @@ const InfrastrukturEkosistemSyariah = () => {
         titleattr: 'data-title',
         titleStyle: 'block'
     });
+    new VenoBox({
+        selector: '.my-video-links',
+        numeration: true,
+        infinigall: true,
+        share: true,
+        spinner: 'swing',
+        spinColor: '#5A8DEE',
+        titlePosition: 'bottom',
+        toolsColor: '#ffffff',
+        titleattr: 'data-title',
+        titleStyle: 'block'
+    });
 
     // untukmengeloladatasebelumdiloop
     useEffect(() => {
@@ -44,7 +56,7 @@ const InfrastrukturEkosistemSyariah = () => {
 
                                 </div>
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title text-center">Direktorat Infrastruktur Ekosistem Syariah</h2>
+                                    <h2 className="section-title text-center">Direktorat Bisnis Dan Kewirausahaan Syariah</h2>
                                     <p>Deskripsi dari direktorat Industri Produk Halal itu apa (Sementara masih menggunakan lorem ipsum) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                                     <h5 className="about-one-inner-text-x">Divisi</h5>
                                     <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -269,8 +281,9 @@ const InfrastrukturEkosistemSyariah = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">
+                      { items.slice(0, 4).map((item) => (
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita2.jpeg" className="my-image-links-foto" data-gall="gallery01">
+                                <a href="/assets/image/berita2.jpeg" className="my-image-links" data-gall="gallery01">
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b " data-gall="gallery01">
                                             <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
@@ -292,75 +305,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                     </div>
                                 </a>
                             </div>
-                            <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b-x">
-
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2-x">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b-x">
-
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2-x">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b-x">
-
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2-x">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                      ))}
 
                         </div>
                         <div className="funfact-box pt-5">
@@ -373,7 +318,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                 <div className="container">
                                     <div className="row row-gutter-y-40">
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-links" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
@@ -401,7 +346,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-links" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -429,7 +374,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-links" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -457,7 +402,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-links" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />

@@ -19,6 +19,18 @@ const KdeksDetail = () => {
         titleattr: 'data-title',
         titleStyle: 'block'
     });
+    new VenoBox({
+        selector: '.my-video-as',
+        numeration: true,
+        infinigall: true,
+        share: true,
+        spinner: 'swing',
+        spinColor: '#5A8DEE',
+        titlePosition: 'bottom',
+        toolsColor: '#ffffff',
+        titleattr: 'data-title',
+        titleStyle: 'block'
+    });
     // untukmengeloladatasebelumdiloop
     useEffect(() => {
         if (document.querySelector('.swiper-kdeks-agenda')) {
@@ -473,7 +485,7 @@ const KdeksDetail = () => {
                         </div>
                         <div className="row row-gutter-y-40">
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita2.jpeg" className="my-image-as-foto" data-gall="gallery01">
+                                <a href="/assets/image/berita2.jpeg" className="my-image-as" data-gall="gallery01">
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b " data-gall="gallery01">
                                             <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
@@ -496,7 +508,7 @@ const KdeksDetail = () => {
                                 </a>
                             </div>
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-as-foto" data-gall="gallery01">
+                                <a href="/assets/image/berita.jpg" className="my-image-as" data-gall="gallery01">
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b">
                                             <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -542,7 +554,7 @@ const KdeksDetail = () => {
                                 </a>
                             </div>
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-as-foto" data-gall="gallery01">
+                                <a href="/assets/image/berita.jpg" className="my-image-as" data-gall="gallery01">
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b">
                                             <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -576,7 +588,7 @@ const KdeksDetail = () => {
                                 <div className="container">
                                     <div className="row row-gutter-y-40">
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-as" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-as" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
@@ -604,7 +616,7 @@ const KdeksDetail = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-as" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-as" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -632,7 +644,7 @@ const KdeksDetail = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-as" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-as" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -660,7 +672,7 @@ const KdeksDetail = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-as" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-as" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />

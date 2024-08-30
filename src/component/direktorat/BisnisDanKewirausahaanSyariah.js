@@ -15,6 +15,18 @@ const BisnisDanKewirausahaanSyariah = () => {
         titleattr: 'data-title',
         titleStyle: 'block'
     });
+    new VenoBox({
+        selector: '.my-video-links',
+        numeration: true,
+        infinigall: true,
+        share: true,
+        spinner: 'swing',
+        spinColor: '#5A8DEE',
+        titlePosition: 'bottom',
+        toolsColor: '#ffffff',
+        titleattr: 'data-title',
+        titleStyle: 'block'
+    });
 
     // untukmengeloladatasebelumdiloop
     useEffect(() => {
@@ -269,8 +281,9 @@ const BisnisDanKewirausahaanSyariah = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">
+                      { items.slice(0, 4).map((item) => (
                             <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita2.jpeg" className="my-image-links-foto" data-gall="gallery01">
+                                <a href="/assets/image/berita2.jpeg" className="my-image-links" data-gall="gallery01">
                                     <div className="card-box-b card-shadow news-box">
                                         <div className="img-box-b " data-gall="gallery01">
                                             <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
@@ -292,75 +305,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                     </div>
                                 </a>
                             </div>
-                            <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b-x">
-
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2-x">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b-x">
-
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2-x">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-links-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b-x">
-
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2-x">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                      ))}
 
                         </div>
                         <div className="funfact-box pt-5">
@@ -373,7 +318,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                 <div className="container">
                                     <div className="row row-gutter-y-40">
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-links" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
@@ -401,7 +346,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-links" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -429,7 +374,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-links" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
@@ -457,7 +402,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                             </a>
                                         </div>
                                         <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-links" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />

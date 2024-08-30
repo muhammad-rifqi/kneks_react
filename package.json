@@ -27,8 +27,7 @@
     "sweetalert2": "^11.12.4",
     "swiper": "^11.1.9",
     "venobox": "^2.1.8",
-    "web-vitals": "^2.1.4",
-    "yet-another-react-lightbox": "^3.21.4"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

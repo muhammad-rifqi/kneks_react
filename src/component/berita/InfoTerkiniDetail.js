@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import axios from 'axios';
-
+import VenoBox from 'venobox';
 
 
 const InfoTerkiniDetail = () => {
@@ -23,6 +23,20 @@ const InfoTerkiniDetail = () => {
             .replace(/\s+/g, '-')
             .replace(/-+/g, '-');
     };
+
+    new VenoBox({
+        selector: '.beritaDetail',
+        numeration: true,
+        infinigall: true,
+        share: true,
+        spinner: 'swing',
+        spinColor: '#5A8DEE',
+        titlePosition: 'bottom',
+        toolsColor: '#ffffff',
+        titleattr: 'data-title',
+        titleStyle: 'block'
+    });
+
 
     const effectrun = useRef(false);
     useEffect(() => {
