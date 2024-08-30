@@ -487,7 +487,7 @@ const KdeksDetail = () => {
                             <div className="col-md-3 col-lg-3">
                                 <a href="/assets/image/berita2.jpeg" className="my-image-as" data-gall="gallery01">
                                     <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b " data-gall="gallery01">
+                                        <div className="img-box-b">
                                             <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
                                         </div>
                                         <div className="card-overlay">

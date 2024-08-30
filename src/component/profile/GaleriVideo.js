@@ -15,18 +15,7 @@ const GaleriVideo = () => {
     const [loadingMore, setLoadingMore] = useState(false);
     const [posts, setPosts] = useState([]);
 
-        new VenoBox({
-            selector: '.my-image-links',
-            numeration: true,
-            infinigall: true,
-            share: true,
-            spinner: 'swing',
-            spinColor: '#5A8DEE',
-            titlePosition: 'bottom',
-            toolsColor: '#ffffff',
-            titleattr: 'data-title',
-            titleStyle: 'block'
-        });
+      
 
 
     useEffect(() => {
@@ -52,7 +41,36 @@ const GaleriVideo = () => {
         };
 
         fetchPosts(); // Call fetchPosts function when component mounts
+
+        
+
     }, []);
+
+    useEffect(() => {
+        if (!loading) {
+          // Initialize VenoBox after data is fetched and component is rendered
+          const venobox = new VenoBox({
+            selector: '.my-image-links',
+            numeration: true,
+            infinigall: true,
+            share: true,
+            spinner: 'swing',
+            spinColor: '#5A8DEE',
+            titlePosition: 'bottom',
+            toolsColor: '#ffffff',
+            titleattr: 'data-title',
+            titleStyle: 'block',
+          });
+    
+          return () => {
+            // Manually reset the Venobox initialization
+            const elements = document.querySelectorAll(".my-image-links");
+            elements.forEach((el) => {
+              el.removeAttribute("data-venobox-initialized");
+            });
+          };
+        }
+      }, [loading, posts]); // Re-run effect if loading or posts change
 
     const showMore = () => {
         setLoadingMore(true);
