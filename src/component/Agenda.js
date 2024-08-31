@@ -30,7 +30,7 @@ const Agenda = () => {
         setShowDetailModal(true);
     };
 
-    
+
 
     return (
         <>
@@ -47,13 +47,13 @@ const Agenda = () => {
                         <div className="row">
                             <div className="col-lg-4">
                                 <Card>
-                                    <Card.Body  className="d-flex justify-content-center">
+                                    <Card.Body className="d-flex justify-content-center">
                                         <DayPicker
                                             mode="single"
                                             required selected={[new Date()]}
                                             disabled={{ dayOfWeek: [0, 6] }}
                                         />
-                                    </Card.Body>"
+                                    </Card.Body>
                                 </Card>
                             </div>
                             <div className="col-lg-8">
