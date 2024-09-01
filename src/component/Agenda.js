@@ -7,8 +7,12 @@ import listPlugin from "@fullcalendar/list";
 import EventDetailModal from "../component/modal/AgendaModal"; // Event detail modal
 import Card from 'react-bootstrap/Card';
 
-import { DayPicker } from "react-day-picker";
-import "react-day-picker/style.css";
+
+import { Calendar } from "react-multi-date-picker"
+
+
+import DatePicker2 from "react-multi-date-picker"
+import transition from "react-element-popper/animations/transition"
 
 const Agenda = () => {
 
@@ -45,14 +49,20 @@ const Agenda = () => {
                 <section className="about-one-section">
                     <div className="container-sm">
                         <div className="row">
+                            <div className="col-lg-12">
+                                <DatePicker2
+                                    animations={[
+                                        transition({
+                                            from: 35,
+                                            transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)",
+                                        }),
+                                    ]}
+                                />
+                            </div>
                             <div className="col-lg-4">
                                 <Card>
                                     <Card.Body className="d-flex justify-content-center">
-                                        <DayPicker
-                                            mode="single"
-                                            required selected={[new Date()]}
-                                            disabled={{ dayOfWeek: [0, 6] }}
-                                        />
+                                        <Calendar />
                                     </Card.Body>
                                 </Card>
                             </div>
