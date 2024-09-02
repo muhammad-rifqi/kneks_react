@@ -98,7 +98,7 @@ const Header = () => {
             <div className="main-menu-right">
               <div className="topNav-right ">
                 <ul>
-                  <li><a href="#t">{cookies?.username}</a></li>
+                  <li><a href="#t">EN | ID</a></li>
                   {/* <li><a href="#t">Logout</a></li> */}
                 </ul>
               </div>
