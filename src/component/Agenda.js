@@ -14,6 +14,9 @@ import { Calendar } from "react-multi-date-picker"
 import DatePicker2 from "react-multi-date-picker"
 import transition from "react-element-popper/animations/transition"
 
+
+import { Form, Button, Container } from "react-bootstrap";
+import "react-multi-date-picker/styles/colors/red.css";
 const Agenda = () => {
 
 
@@ -34,7 +37,7 @@ const Agenda = () => {
         setShowDetailModal(true);
     };
 
-
+    const [selectedDates, setSelectedDates] = useState([]);
 
     return (
         <>
@@ -47,6 +50,24 @@ const Agenda = () => {
                     </div>
                 </section>
                 <section className="about-one-section">
+                <Container className="mt-5">
+      <Form>
+        <Form.Group controlId="formDatePicker">
+          <Form.Label>Select Dates:</Form.Label>
+          <DatePicker2
+            value={selectedDates}
+            onChange={setSelectedDates}
+            multiple
+            className="form-control" // Applying Bootstrap's form control class
+            format="YYYY/MM/DD"
+            style={{ height: "38px", width: "100%" }}
+            inputClass="form-control"
+          />
+        </Form.Group>
+
+       
+      </Form>
+    </Container>
                     <div className="container-sm">
                         <div className="row">
                             <div className="col-lg-12">
