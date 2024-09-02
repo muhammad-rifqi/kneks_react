@@ -99,7 +99,7 @@ const Header = () => {
               <div className="topNav-right ">
                 <ul>
                   <li><a href="#t">EN</a></li>
-                  <li>ID</li>
+                  <li><a href="#t">ID</a></li>
                 </ul>
               </div>
               <div className="mobile-menu-button mobile-nav-toggler">
