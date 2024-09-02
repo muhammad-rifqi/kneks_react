@@ -98,8 +98,8 @@ const Header = () => {
             <div className="main-menu-right">
               <div className="topNav-right ">
                 <ul>
-                  <li><a href="#t">EN | ID</a></li>
-                  {/* <li><a href="#t">Logout</a></li> */}
+                  <li><a href="#t">EN</a></li>
+                  <li>ID</li>
                 </ul>
               </div>
               <div className="mobile-menu-button mobile-nav-toggler">
