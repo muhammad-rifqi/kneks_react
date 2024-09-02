@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
-import { useCookies } from 'react-cookie';
 const Header = () => {
-  const [cookies] = useCookies(['user']);
+
 
   const location = useLocation();
   const isKdeksPage = location.pathname === '/kdeks';
