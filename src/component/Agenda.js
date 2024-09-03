@@ -78,7 +78,7 @@ const Agenda = () => {
                                 </div>
                                 <Card>
                                     <Card.Body className="d-flex justify-content-center">
-                                        <Calendar />
+                                        <Calendar style={{zIndex:"99"}}/>
                                     </Card.Body>
                                 </Card>
                             </div>
