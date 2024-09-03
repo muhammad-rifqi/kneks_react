@@ -11,11 +11,10 @@ import Card from 'react-bootstrap/Card';
 import { Calendar } from "react-multi-date-picker"
 
 
-import DatePicker2 from "react-multi-date-picker"
+import DatePicker from "react-multi-date-picker"
 import transition from "react-element-popper/animations/transition"
 
 
-import { Form, Button, Container } from "react-bootstrap";
 import "react-multi-date-picker/styles/colors/red.css";
 const Agenda = () => {
 
@@ -37,7 +36,7 @@ const Agenda = () => {
         setShowDetailModal(true);
     };
 
-    const [selectedDates, setSelectedDates] = useState([]);
+    const [selectedDates, setSelectedDates] = useState();
 
     return (
         <>
@@ -50,37 +49,33 @@ const Agenda = () => {
                     </div>
                 </section>
                 <section className="about-one-section">
-                <Container className="mt-5">
-      <Form>
-        <Form.Group controlId="formDatePicker">
-          <Form.Label>Select Dates:</Form.Label>
-          <DatePicker2
-            value={selectedDates}
-            onChange={setSelectedDates}
-            multiple
-            className="form-control" // Applying Bootstrap's form control class
-            format="YYYY/MM/DD"
-            style={{ height: "38px", width: "100%" }}
-            inputClass="form-control"
-          />
-        </Form.Group>
-
-       
-      </Form>
-    </Container>
                     <div className="container-sm">
                         <div className="row">
-                            <div className="col-lg-12">
-                                <DatePicker2
-                                    animations={[
-                                        transition({
-                                            from: 35,
-                                            transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)",
-                                        }),
-                                    ]}
-                                />
-                            </div>
+
+
                             <div className="col-lg-4">
+                                <div className="sidebar-form-content">
+                                    <div className="sidebar__item sidebar__item--search">
+                                        <form action="#" className="sidebar__search">
+                                        <label for="search" className="sr-only">Filter Tanggal</label>
+                                            <DatePicker
+                                                value={selectedDates}
+                                                onChange={setSelectedDates}
+                                                format="DD-MM-YYYY"
+                                                placeholder="Filter Tanggal"
+                                                animations={[
+                                                    transition({
+                                                        from: 35,
+                                                        transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)",
+                                                    }),
+                                                ]}
+                                            />
+                                            <button type="submit" aria-label="search submit" className="thm-btn">
+                                            <i class="fa-solid fa-calendar-days"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                                 <Card>
                                     <Card.Body className="d-flex justify-content-center">
                                         <Calendar />
@@ -88,6 +83,17 @@ const Agenda = () => {
                                 </Card>
                             </div>
                             <div className="col-lg-8">
+                                <div className="sidebar-form-content">
+                                    <div className="sidebar__item sidebar__item--search">
+                                        <form action="#" className="sidebar__search">
+                                            <label for="search" className="sr-only">search here</label>
+                                            <input type="text" placeholder="Search Here" />
+                                            <button type="submit" aria-label="search submit" className="thm-btn">
+                                                <i className="flaticon-search-interface-symbol"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                                 <Card className="p-2 border-radius" >
                                     <Card.Body>
 
