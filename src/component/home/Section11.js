@@ -45,14 +45,9 @@ const Section11 = () => {
 							<div className="section-text-b "><p className="text-white ">
 								KNEKS beranggotakan 3 Menteri Koordinator, 7 Menteri, 3 Ketua lembaga pemerintah, <br /> Ketua Umum MUI dan Ketua Umum KADIN, dengan Menteri Keuangan merangkap sebagai Sekretaris.
 							</p>
-
 							</div>
 						</div>
 					</div>
-
-
-
-
 				</div >
 			</section >
 
