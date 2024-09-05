@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 
 import Section1 from '../component/home/Section1';
 import Section2 from '../component/home/Section2';
@@ -74,7 +74,7 @@ const Home = () => {
               alt="Iklan"
             />
             <div className="selengkapnya">
-              <a href="/" className="btn btn-primary">
+              <a href="/agenda/detail" className="btn btn-primary">
                 Lihat Selengkap
               </a>
             </div>
