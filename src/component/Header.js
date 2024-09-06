@@ -34,15 +34,15 @@ const Header = () => {
             <div className="main-menu-left">
               <div className="main-menu-logo">
 
-                <a href={isKdeksPage || activeMenu.split("/")[2] ? "/kdeks" : "/"}>
+                <a href={isKdeksPage || activeMenu.split("/")[2] === "detail" ? "/kdeks" : "/"}>
                   <img
-                    src={isKdeksPage || activeMenu.split("/")[2] ? "/assets/image/logoKdeks.png" : "/assets/image/logo.svg"}
+                    src={isKdeksPage || activeMenu.split("/")[2]   === "detail" ? "/assets/image/logoKdeks.png" : "/assets/image/logo.svg"}
                     alt="logo"
                     width="130"
                   />
                 </a>
               </div>
-              {isKdeksPage || activeMenu.split("/")[2] ? (
+              {isKdeksPage || activeMenu.split("/")[2]  === "detail" ? (
                 <div className="navigation">
                   <ul className="main-menu-list list-unstyled">
 
