@@ -19,7 +19,7 @@ const LiputanMedia = () => {
             setLoading(true);
             try {
                 const url = process.env.REACT_APP_API_URL;
-                const endpoint = process.env.REACT_APP_API_POST;
+                const endpoint = process.env.REACT_APP_API_LIPUTAN_MEDIA;
                 const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
             } catch (err) {
@@ -81,7 +81,7 @@ const LiputanMedia = () => {
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/liputan-media/${convertToSlug(item.title)}`}>
-                                                    <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} />
+                                                    <img src={`${process.env.REACT_APP_API_NEWS}` + item?.image} className="img-fluid" alt={item.title} />
                                                 </a>
                                             </div>
                                             <div className="berita-content ">

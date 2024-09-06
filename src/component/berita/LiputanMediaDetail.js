@@ -43,7 +43,7 @@ const LiputanMediaDetail = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_POST;
+                    const endpoint = process.env.REACT_APP_API_LIPUTAN_MEDIA;
                     const responsei = await axios.get(`${url}${endpoint}`);
                     const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 

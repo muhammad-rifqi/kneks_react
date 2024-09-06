@@ -41,7 +41,7 @@ const SiaranPersDetail = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_POST;
+                    const endpoint = process.env.REACT_APP_API_PERS;
                     const responsei = await axios.get(`${url}${endpoint}`);
                     const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 
@@ -95,7 +95,7 @@ const SiaranPersDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} width={`100%`} className="img-fluid" alt={rows?.title} />
+                                    <img src={`${process.env.REACT_APP_API_NEWS}` + rows?.image} width={`100%`} className="img-fluid" alt={rows?.title} />
                                 </div>
                             </div>
                             <div className="row">

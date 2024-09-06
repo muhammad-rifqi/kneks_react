@@ -44,12 +44,12 @@ const InfoTerkiniDetail = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_POST;
+                    const endpoint = process.env.REACT_APP_API_INFO_TERKINI;
                     const responsei = await axios.get(`${url}${endpoint}`);
                     const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 
                     // throw new Error("Error!");
-
+                    console.log(responsei)
                     if (responsei) {
                         setItemx(responsei.data);
                         setItem(foundItem);
@@ -96,7 +96,7 @@ const InfoTerkiniDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src={`${process.env.REACT_APP_API_NEWS}` + rows.image} width={`100%`} className="img-fluid" alt={rows?.title} />
+                                    <img src={`${process.env.REACT_APP_API_NEWS}` + rows?.image} width={`100%`} className="img-fluid" alt={rows?.title} />
                                 </div>
                             </div>
                             <div className="row">
