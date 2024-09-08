@@ -24,8 +24,8 @@ const Kdeks = () => {
 
     const divStyle = {
         overflowY: 'scroll',
-        padding:'20px',
-        height: '500px',
+        padding: '20px',
+        Height: '500px',
         position: 'relative'
     };
 
@@ -85,7 +85,7 @@ const Kdeks = () => {
                                         <i className="flaticon-pdf"></i>
                                     </div> */}
                                     <div className="sidebar-widget-box-content">
-                                        <h3>Surat Keputusan Kdeks Jawa Tengah</h3>
+                                        <h3>Surat Keputusan Kdeks</h3>
                                         <a href="#tt" className="btn btn-primary">View</a>
                                     </div>
                                 </div>

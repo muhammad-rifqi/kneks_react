@@ -6,6 +6,8 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 
 
+import DatePicker from "react-multi-date-picker"
+import transition from "react-element-popper/animations/transition"
 const SiaranPers = () => {
 
 
@@ -59,6 +61,8 @@ const SiaranPers = () => {
             .replace(/-+/g, '-');
     };
 
+    const [selectedDates, setSelectedDates] = useState();
+
 
     return (
         <>
@@ -74,6 +78,33 @@ const SiaranPers = () => {
                 <section className="berita-section">
                     <div className="container">
                         <div className="row row-gutter-30">
+                            <div className="col-lg-12 col-xl-12 d-flex justify-content-end">
+                                <div className="sidebar-form-content">
+                                    <div className="sidebar__item sidebar__item--search">
+                                        <form action="#" className="sidebar__search">
+                                            <label for="search" className="sr-only">Filter Tanggal</label>
+                                            <DatePicker
+                                                value={selectedDates}
+                                                onChange={setSelectedDates}
+                                                format="DD-MM-YYYY"
+                                                placeholder="Filter Tanggal"
+                                                animations={[
+                                                    transition({
+                                                        from: 35,
+                                                        transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)",
+                                                    }),
+                                                ]}
+                                            />
+                                            <button type="submit" aria-label="search submit" className="thm-btn">
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row row-gutter-30">
+
                             {loading ? (
                                 Array(visible).fill().map((_, index) => (
                                     <div className="col-lg-4 col-xl-4" key={index}>

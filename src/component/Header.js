@@ -4,7 +4,7 @@ const Header = () => {
 
 
   const location = useLocation();
-  const isKdeksPage = location.pathname === '/kdeks';
+  const isKdeksPage = location.pathname === '/kdeks/';
 
   const [activeMenu, setActiveMenu] = useState(location.pathname); // Initial state
 
@@ -12,7 +12,7 @@ const Header = () => {
   const handleMenuClick = (menu) => {
     setActiveMenu(menu);
   };
- 
+
 
   useEffect(() => {
     // Update activeMenu whenever the location changes
@@ -34,15 +34,15 @@ const Header = () => {
             <div className="main-menu-left">
               <div className="main-menu-logo">
 
-                <a href={isKdeksPage || activeMenu.split("/")[2] === "detail" ? "/kdeks" : "/"}>
+                <a href={isKdeksPage ? "/kdeks" : "/"}>
                   <img
-                    src={isKdeksPage || activeMenu.split("/")[2]   === "detail" ? "/assets/image/logoKdeks.png" : "/assets/image/logo.svg"}
+                    src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/logo.svg"}
                     alt="logo"
                     width="130"
                   />
                 </a>
               </div>
-              {isKdeksPage || activeMenu.split("/")[2]  === "detail" ? (
+              {isKdeksPage ? (
                 <div className="navigation">
                   <ul className="main-menu-list list-unstyled">
 
