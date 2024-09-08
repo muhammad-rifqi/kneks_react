@@ -100,7 +100,7 @@ const Kdeks = () => {
                             {
                                 rows.map((item) => (
                                     <div className="col-6 col-md-4 col-lg-2 pb-3" key={item.id} >
-                                        <a rel="noreferrer" href={`/kdeks/${convertToSlug(item.title)}`} data-bs-toggle="tooltip" title={item.title} className="component-service d-block ">
+                                        <a rel="noreferrer" target="_blank" href={`/kdeks/${convertToSlug(item.title)}`} data-bs-toggle="tooltip" title={item.title} className="component-service d-block ">
                                             <div className="service-image ">
                                                 <img src={item.foto} className="img-fluid " alt={item.title} />
                                             </div>

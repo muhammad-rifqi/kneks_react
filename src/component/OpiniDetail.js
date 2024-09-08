@@ -39,8 +39,7 @@ const OpiniDetail = () => {
                         setItemx(responsei.data);
                         setItem(foundItem);
                     }
-                    console.log(responsei.data)
-                    console.log(foundItem)
+
                 } catch (err) {
                     Swal.fire({
                         icon: "error",

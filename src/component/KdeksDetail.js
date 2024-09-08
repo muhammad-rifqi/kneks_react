@@ -4,8 +4,13 @@ import isiItemsBerita from "./dumy/dataBerita";
 // import OwlCarousel from 'react-owl-carousel';
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
+
+// import { useParams } from "react-router-dom";
 const KdeksDetail = () => {
     const [rows, setItems] = useState([]);
+
+    // const { slug } = useParams();
+    // console.log(slug)
 
     new VenoBox({
         selector: '.my-image-as',
@@ -34,7 +39,7 @@ const KdeksDetail = () => {
     // untukmengeloladatasebelumdiloop
     useEffect(() => {
         if (document.querySelector('.swiper-kdeks-agenda')) {
-            
+
             const swipers = new Swiper('.swiper-kdeks-agenda', {
                 // pengaturan Swiper
                 loop: true,
@@ -216,7 +221,7 @@ const KdeksDetail = () => {
                                             <div className="col-lg-3 col-xl-3 swiper-slide" key={item.id}>
                                                 <div className="berita-card-kdeks shadow">
                                                     <div className="berita-card-imgbox-direktorat ">
-                                                        <a href={`/berita-terkait/${item.slug}`}><img src={`${process.env.PUBLIC_URL}/`+item.foto} className="img-fluid" alt={item.title} /></a>
+                                                        <a href={`/berita-terkait/${item.slug}`}><img src={`${process.env.PUBLIC_URL}/` + item.foto} className="img-fluid" alt={item.title} /></a>
                                                     </div>
                                                     <div className="berita-content-direktorat">
 
@@ -321,7 +326,7 @@ const KdeksDetail = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
