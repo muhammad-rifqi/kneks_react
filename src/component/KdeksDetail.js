@@ -5,12 +5,23 @@ import isiItemsBerita from "./dumy/dataBerita";
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 
-// import { useParams } from "react-router-dom";
+import Kota from "../component/dumy/dataKota";
+import { useParams } from "react-router-dom";
 const KdeksDetail = () => {
     const [rows, setItems] = useState([]);
+    const [dataKota, setDataKota] = useState([]);
+    const [listdataKota, setListDataKota] = useState([]);
 
-    // const { slug } = useParams();
-    // console.log(slug)
+    const { slug } = useParams();
+
+    const convertToSlug = (title) => {
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    };
 
     new VenoBox({
         selector: '.my-image-as',
@@ -79,6 +90,17 @@ const KdeksDetail = () => {
         }
     }, [])
     useEffect(() => {
+        if (Kota) { // Make sure Kota is defined
+            setDataKota(Kota);
+        }
+
+        if (dataKota && dataKota.length > 0) {
+            const foundItem = dataKota.find(kneks => convertToSlug(kneks.title) === slug);
+            setListDataKota(foundItem);
+            // const isKdeksPage = location.pathname === '/kdeks/'
+        }
+
+
         const isian = isiItemsBerita();
         setItems(isian);
         // alert(items.length);
@@ -128,7 +150,7 @@ const KdeksDetail = () => {
 
 
 
-    }, []);
+    }, [dataKota, slug]);
     // const convertToSlug = (title) => {
     //     return title
     //         .toLowerCase()
@@ -199,7 +221,7 @@ const KdeksDetail = () => {
                                         <i className="flaticon-pdf"></i>
                                     </div> */}
                                     <div className="sidebar-widget-box-content">
-                                        <h3>Surat Keputusan Kdeks Jawa Tengah</h3>
+                                        <h3>Surat Keputusan Kdeks {listdataKota?.title}</h3>
                                         <a href="#tt" className="btn btn-primary">View</a>
                                     </div>
                                 </div>

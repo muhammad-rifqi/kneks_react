@@ -2,7 +2,7 @@ const dataKota = () => {
     return [
         {
             id: "1",
-            title: "aceh",
+            title: "Aceh",
             tanggal: "20 Juni 2024",
             foto: "assets/image/logoKdeks.png",
         },

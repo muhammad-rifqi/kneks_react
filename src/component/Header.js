@@ -65,7 +65,7 @@ const Header = () => {
             <div className="main-menu-left">
               <div className="main-menu-logo">
 
-                <a href={isKdeksPage ? "/kdeks" : "/"}>
+                <a href={isKdeksPage ? "#t" : "/"}>
                   <img
                     src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/logo.svg"}
                     alt="logo"
