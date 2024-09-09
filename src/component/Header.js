@@ -35,7 +35,7 @@ const Header = () => {
 
   const [locationsx, setLocation] = useState();
   const splita = location.pathname.split('/')
-  const isKdeksPage = splita[2] === locationsx?.title;
+  const isKdeksPage = locationsx && splita[2] === convertToSlug(locationsx.title);
 
   useEffect(() => {
 
@@ -65,15 +65,15 @@ const Header = () => {
             <div className="main-menu-left">
               <div className="main-menu-logo">
 
-                <a href={isKdeksPage === false ? "/kdeks" : "/"}>
+                <a href={isKdeksPage ? "/kdeks" : "/"}>
                   <img
-                    src={isKdeksPage === false ? "/assets/image/logoKdeks.png" : "/assets/image/logo.svg"}
+                    src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/logo.svg"}
                     alt="logo"
                     width="130"
                   />
                 </a>
               </div>
-              {isKdeksPage === false ? (
+              {isKdeksPage ? (
                 <div className="navigation">
                   <ul className="main-menu-list list-unstyled">
 
