@@ -3393,7 +3393,7 @@ a.search-toggler {
 .funfact-section-post {
   padding-top: 80px;
   padding-bottom: 80px;
-  background-image: url(../image/bg/post.jpg);
+  background-image: url(../image/post.jpg);
   height: 100%; 
   background-position: center;
   background-repeat: no-repeat;
@@ -5087,7 +5087,14 @@ a.search-toggler {
 }
 
 .event-card-title h4 {
+
   margin-bottom: 0;
+  padding: 0.6rem 0;
+  font-size: 2.5rem;
+  /* white-space: nowrap;
+  width: 410px;
+  overflow: hidden;
+  text-overflow: ellipsis; */
 }
 
 .event-card-title h4 > a {
@@ -8601,9 +8608,9 @@ label {
   .card-header-b .title-2 {
     font-size: 1rem;
     white-space: nowrap;
-    width: 300px;
+    /* width: 300px;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
   }
 }
 
@@ -8611,9 +8618,9 @@ label {
   .card-header-b .title-2 {
     font-size: 1rem;
     white-space: nowrap;
-    width: 300px;
+    /* width: 300px;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
   }
 }
 
@@ -8621,9 +8628,9 @@ label {
   .card-header-b .title-2 {
     font-size: 1.6rem;
     white-space: nowrap;
-    width: 500px;
+    /* width: 500px;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
   }
 }
 
@@ -8634,9 +8641,9 @@ label {
 .card-header-b .title-2 {
   font-size: 20px;
   color: #ffffff;
-  width: 350px;
+  /* width: 450px;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 }
 .card-header-b-x .title-2-x {
   margin-bottom: 0;
