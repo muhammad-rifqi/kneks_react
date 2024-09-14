@@ -35,14 +35,14 @@ const Elibrabry = () => {
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
                                             <div className="team-card-img-x">
-                                            <a href="/e-pustaka/detail"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
+                                                <a href="/e-pustaka/detail"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
 
                                             </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
                                                     <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                    <a href="#t" data-bs-toggle="tooltip" title="Downloadable">
                                                         <i className="fa-solid fa-download" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
@@ -52,14 +52,14 @@ const Elibrabry = () => {
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
                                             <div className="team-card-img-x">
-                                            <a href="/e-pustaka/detail"> <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" /></a>
+                                                <a href="/e-pustaka/detail"> <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" /></a>
 
                                             </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
                                                     <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                    <a href="#t" data-bs-toggle="tooltip" title="Non Downloadable">
                                                         <i className="fa-solid fa-download" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
@@ -69,14 +69,14 @@ const Elibrabry = () => {
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
                                             <div className="team-card-img-x">
-                                            <a href="/e-pustaka/detail"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
+                                                <a href="/e-pustaka/detail"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
 
                                             </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
                                                     <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                    <a href="#t" data-bs-toggle="tooltip" title="Non Downloadable ">
                                                         <i className="fa-solid fa-download" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
@@ -86,14 +86,14 @@ const Elibrabry = () => {
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
                                             <div className="team-card-img-x">
-                                            <a href="/e-pustaka/detail"> <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" /></a>
+                                                <a href="/e-pustaka/detail"> <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" /></a>
 
                                             </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
                                                     <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                    <a href="#t" data-bs-toggle="tooltip" title="Downloadable ">
                                                         <i className="fa-solid fa-download" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
@@ -103,14 +103,14 @@ const Elibrabry = () => {
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
                                             <div className="team-card-img-x">
-                                            <a href="/e-pustaka/detail"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
+                                                <a href="/e-pustaka/detail"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
 
                                             </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
                                                     <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                    <a href="#t" data-bs-toggle="tooltip" title="Downloadable ">
                                                         <i className="fa-solid fa-download" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
@@ -120,14 +120,14 @@ const Elibrabry = () => {
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
                                             <div className="team-card-img-x">
-                                            <a href="/e-pustaka/detail"> <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" /></a>
+                                                <a href="/e-pustaka/detail"> <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" /></a>
 
                                             </div>
                                             <div className="team-card-content-x">
-                                                <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
+                                                <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019a</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
                                                     <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                    <a href="#t" data-bs-toggle="tooltip" title="Downloadable " target="_blank">
                                                         <i className="fa-solid fa-download" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
@@ -137,14 +137,14 @@ const Elibrabry = () => {
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
                                             <div className="team-card-img-x">
-                                            <a href="/e-pustaka/detail"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
+                                                <a href="/e-pustaka/detail"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
 
                                             </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
                                                     <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                    <a href="#t" data-bs-toggle="tooltip" title="Downloadable">
                                                         <i className="fa-solid fa-download" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
@@ -154,21 +154,21 @@ const Elibrabry = () => {
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
                                             <div className="team-card-img-x">
-                                            <a href="/e-pustaka/detail"> <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" /></a>
+                                                <a href="/e-pustaka/detail"> <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" /></a>
 
                                             </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
                                                     <p>21 Mei 2024</p>
-                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                    <a href="#t" data-bs-toggle="tooltip" title="Downloadable">
                                                         <i className="fa-solid fa-download" aria-hidden="true"></i>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                         </div>
