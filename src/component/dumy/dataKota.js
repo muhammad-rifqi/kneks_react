@@ -48,7 +48,7 @@ const dataKota = () => {
             title: "Lampung",
             tanggal: "20 Juni 2024",
             foto: "assets/image/logoKdeks/KDEKS_Lampung_Logo.jpg",
-            skFile: "assets/image/SkKdeks/SK_KDEKS_LAMPUNG.pdf",
+            skFile: "assets/image/SkKdeks/SK_KDEKS_Lampung.pdf",
         },
 
     ]
