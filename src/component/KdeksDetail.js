@@ -47,6 +47,18 @@ const KdeksDetail = () => {
         titleattr: 'data-title',
         titleStyle: 'block'
     });
+    new VenoBox({
+        selector: '.skfile',
+        numeration: true,
+        infinigall: true,
+        share: true,
+        spinner: 'swing',
+        spinColor: '#5A8DEE',
+        titlePosition: 'bottom',
+        toolsColor: '#ffffff',
+        titleattr: 'data-title',
+        titleStyle: 'block'
+    });
     // untukmengeloladatasebelumdiloop
     useEffect(() => {
         if (document.querySelector('.swiper-kdeks-agenda')) {
@@ -167,7 +179,7 @@ const KdeksDetail = () => {
                 <section className="page-banner-kdeks ">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>KDEKS</h3>
+                            <h3>{listdataKota?.title}</h3>
                         </div>
                     </div>
                 </section>
@@ -178,7 +190,7 @@ const KdeksDetail = () => {
                             {/* konten sebelah kiri */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
-                                    <img src={`${process.env.PUBLIC_URL}/assets/image/logoKdeks.png`} alt="logo" width={300} className="img-fluid" />
+                                    <img src={`${process.env.PUBLIC_URL}/${listdataKota?.foto}`} alt="logo" width={300} className="img-fluid" />
                                 </div>
                             </div>
 
@@ -222,7 +234,7 @@ const KdeksDetail = () => {
                                     </div> */}
                                     <div className="sidebar-widget-box-content">
                                         <h3>Surat Keputusan Kdeks {listdataKota?.title}</h3>
-                                        <a href="#tt" className="btn btn-primary">View</a>
+                                        <a href={`${process.env.PUBLIC_URL}/${listdataKota?.skFile}`} className="btn btn-primary skfile" data-vbtype="iframe">View</a>
                                     </div>
                                 </div>
                             </div>
