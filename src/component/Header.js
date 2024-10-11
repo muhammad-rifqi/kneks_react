@@ -3,6 +3,9 @@ import { useLocation } from 'react-router-dom';
 
 import Kota from "../component/dumy/dataKota";
 
+import { useTranslation } from 'react-i18next';
+import { useCookies } from 'react-cookie';
+
 const Header = () => {
 
   const location = useLocation();
@@ -51,6 +54,13 @@ const Header = () => {
   }, [location, dataKota]);
 
 
+  const { t, i18n } = useTranslation();
+  const [cookies, setCookie] = useCookies(['i18next']);
+  console.log(cookies.i18next)
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setCookie('i18next', lng, { path: '/' }); // Set cookie bahasa
+  };
   return (
     <>
       <div id="pre-loader">
@@ -82,42 +92,52 @@ const Header = () => {
               ) : (
                 <div className="navigation">
                   <ul className="main-menu-list list-unstyled">
-                    <li className={` ${activeMenu === '/' ? 'active' : ''}`}><a onClick={() => handleMenuClick('/')} href="/">Beranda</a>
+                    <li className={` ${activeMenu === '/' ? 'active' : ''}`}>
+                      <a onClick={() => handleMenuClick('/')} href="/">{t('menu.home')}</a>
                     </li>
                     <li className="has-dropdown">
-                      <a href="#t">Profile</a>
+                      <a href="#t">{t('menu.profile')}</a>
                       <ul className="list-unstyled">
-                        <li><a href="/tentang-kami">Tentang Kami</a></li>
-                        <li><a href="/tentang-ekonomi-syariah">Tentang Ekonomi Syariah</a></li>
-                        <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
-                        <li><a href="/galeri-foto">Galeri Foto</a></li>
-                        <li><a href="/galeri-video">Galeri Video</a></li>
+                        <li><a href="/tentang-kami">{t('menu.tentangKami')}</a></li>
+                        <li><a href="/tentang-ekonomi-syariah">{t('menu.tentangEkonomiSyariah')}</a></li>
+                        <li><a href="/struktur-organisasi">{t('menu.strukturOrganisasi')}</a></li>
+                        <li><a href="/galeri-foto">{t('menu.galeriFoto')}</a></li>
+                        <li><a href="/galeri-video">{t('menu.galeriVideo')}</a></li>
                       </ul>
                     </li>
                     <li className="has-dropdown">
-                      <a href="#t">Direktorat</a>
+                      <a href="#t">{t('menu.direktorat')}</a>
                       <ul className="list-unstyled">
-                        <li><a href="/industri-produk-halal">Industri Produk Halal</a></li>
-                        <li><a href="/jasa-keuangan-syariah">Jasa Keuangan Syariah</a></li>
-                        <li><a href="/keuangan-sosial-syariah">Keuangan Sosial Syariah</a></li>
-                        <li><a href="/bisnis-dan-kewiraushaan-syariah">Bisnis dan Kewirausahaan Syariah</a></li>
-                        <li><a href="/infrastruktur-ekosistem-syariah">Infrastruktur Ekosistem Syariah</a></li>
+                        <li><a href="/industri-produk-halal">{t('menu.industriProdukHalal')}</a></li>
+                        <li><a href="/jasa-keuangan-syariah">{t('menu.jasaKeuanganSyariah')}</a></li>
+                        <li><a href="/keuangan-sosial-syariah">{t('menu.keuanganSosialSyariah')}</a></li>
+                        <li><a href="/bisnis-dan-kewiraushaan-syariah">{t('menu.bisnisDanKewirausahaan')}</a></li>
+                        <li><a href="/infrastruktur-ekosistem-syariah">{t('menu.infrastrukturEkosistem')}</a></li>
                       </ul>
                     </li>
                     <li className="has-dropdown">
-                      <a href="#t">Berita & Kegitan</a>
+                      <a href="#t">{t('menu.beritaKegiatan')}</a>
                       <ul className="list-unstyled">
-                        <li><a href="/siaran-pers">Siaran Pers</a></li>
-                        <li><a href="/liputan-media">Liputan Media</a></li>
-                        <li><a href="/info-terkini">Info Terkini</a></li>
-                        <li ><a href="/opini">Opini</a></li>
+                        <li><a href="/siaran-pers">{t('menu.siaranPers')}</a></li>
+                        <li><a href="/liputan-media">{t('menu.liputanMedia')}</a></li>
+                        <li><a href="/info-terkini">{t('menu.infoTerkini')}</a></li>
+                        <li><a href="/opini">{t('menu.opini')}</a></li>
                       </ul>
                     </li>
-                    <li className={` ${activeMenu === '/agenda' ? 'active' : ''}`} ><a onClick={() => handleMenuClick('/agenda')} href="/agenda">Agenda</a></li>
-                    <li className={` ${activeMenu === '/e-pustaka' ? 'active' : ''}`} ><a onClick={() => handleMenuClick('/e-pustaka')} href="/e-pustaka">E-Pustaka</a></li>
-                    <li className={` ${activeMenu === '/data' ? 'active' : ''}`} ><a onClick={() => handleMenuClick('/data')} href="/data">DATA</a></li>
-                    <li className={` ${activeMenu === '/kdeks' ? 'active' : ''}`} ><a onClick={() => handleMenuClick('/kdeks')} href="/kdeks"> KDEKS</a></li>
-                    <li className={` ${activeMenu === '/kontak' ? 'active' : ''}`} ><a onClick={() => handleMenuClick('/kontak')} href="/kontak">Kontak</a>
+                    <li className={` ${activeMenu === '/agenda' ? 'active' : ''}`}>
+                      <a onClick={() => handleMenuClick('/agenda')} href="/agenda">{t('menu.agenda')}</a>
+                    </li>
+                    <li className={` ${activeMenu === '/e-pustaka' ? 'active' : ''}`}>
+                      <a onClick={() => handleMenuClick('/e-pustaka')} href="/e-pustaka">{t('menu.ePustaka')}</a>
+                    </li>
+                    <li className={` ${activeMenu === '/data' ? 'active' : ''}`}>
+                      <a onClick={() => handleMenuClick('/data')} href="/data">{t('menu.data')}</a>
+                    </li>
+                    <li className={` ${activeMenu === '/kdeks' ? 'active' : ''}`}>
+                      <a onClick={() => handleMenuClick('/kdeks')} href="/kdeks">{t('menu.kdeks')}</a>
+                    </li>
+                    <li className={` ${activeMenu === '/kontak' ? 'active' : ''}`}>
+                      <a onClick={() => handleMenuClick('/kontak')} href="/kontak">{t('menu.kontak')}</a>
                     </li>
                   </ul>
                 </div>
@@ -128,8 +148,8 @@ const Header = () => {
             <div className="main-menu-right">
               <div className="topNav-right ">
                 <ul>
-                  <li><a href="#t">EN</a></li>
-                  <li><a href="#t">ID</a></li>
+                  <li><a href="#t" onClick={() => changeLanguage('en')} className={cookies.i18next === 'en' ? 'text-primary' : ''}>EN</a></li>
+                  <li><a href="#t" onClick={() => changeLanguage('id')} className={cookies.i18next === 'id' ? 'text-primary' : ''}>ID</a></li>
                 </ul>
               </div>
               <div className="mobile-menu-button mobile-nav-toggler">
