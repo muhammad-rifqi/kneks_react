@@ -44,6 +44,7 @@ const Footer = () => {
                       <li><a href="#t">{t('menu.kdeks')}</a></li>
                       <li><a href="#t">{t('menu.kontak')}</a></li>
                     </ul>
+                    
                   </div>
                 </div>
               </div>
