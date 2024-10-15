@@ -1,9 +1,14 @@
 import React from "react";
 
+import { useTranslation } from 'react-i18next';
+
 const Footer = () => {
   function refreshPage(){ 
     window.location.reload(); 
   }
+
+  const { t, i18n } = useTranslation();
+  
   return (
 
     <div>
@@ -29,7 +34,7 @@ const Footer = () => {
                   <div className="footer-widget-explore">
                     <h4 className="footer-widget-title">Menu</h4>
                     <ul className="list-unstyled">
-                      <li><a href="#t">Beranda</a></li>
+                      <li><a href="#t">{t('menu.home')}</a></li>
                       <li><a href="#t">Profil</a></li>
                       <li><a href="#t">Berita & Kegiatan</a></li>
                       <li><a href="#t">One Data Center</a></li>

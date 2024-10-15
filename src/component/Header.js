@@ -56,7 +56,6 @@ const Header = () => {
 
   const { t, i18n } = useTranslation();
   const [cookies, setCookie] = useCookies(['i18next']);
-  console.log(cookies.i18next)
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     setCookie('i18next', lng, { path: '/' }); // Set cookie bahasa
