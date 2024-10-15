@@ -28,8 +28,9 @@ const resources = {
                 "ePustaka": "E-Library",
                 "data": "Data",
                 "kdeks": "KDEKS",
-                "kontak": "Contact"
-            }
+                "kontak": "Contact",
+            },
+             "alamat" : "Address"
         }
     },
     id: {
@@ -57,8 +58,9 @@ const resources = {
                 "ePustaka": "E-Pustaka",
                 "data": "Data",
                 "kdeks": "KDEKS",
-                "kontak": "Kontak"
-            }
+                "kontak": "Kontak",
+            },
+            "alamat" :"Alamat"
         }
     }
 };

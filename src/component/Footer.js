@@ -34,12 +34,15 @@ const Footer = () => {
                   <div className="footer-widget-explore">
                     <h4 className="footer-widget-title">Menu</h4>
                     <ul className="list-unstyled">
-                      <li><a href="#t">{t('menu.home')}</a></li>
-                      <li><a href="#t">Profil</a></li>
-                      <li><a href="#t">Berita & Kegiatan</a></li>
-                      <li><a href="#t">One Data Center</a></li>
-                      <li><a href="#t">Agenda</a></li>
-                      <li><a href="#t">Kontak</a></li>
+                      <li><a href="/">{t('menu.home')}</a></li>
+                      <li><a href="#t">{t('menu.profile')}</a></li>
+                      <li><a href="#t">{t('menu.direktorat')}</a></li>
+                      <li><a href="#t">{t('menu.beritaKegiatan')}</a></li>
+                      <li><a href="#t">{t('menu.agenda')}</a></li>
+                      <li><a href="#t">{t('menu.ePustaka')}</a></li>
+                      <li><a href="#t">{t('menu.data')}</a></li>
+                      <li><a href="#t">{t('menu.kdeks')}</a></li>
+                      <li><a href="#t">{t('menu.kontak')}</a></li>
                     </ul>
                   </div>
                 </div>
@@ -47,7 +50,7 @@ const Footer = () => {
               <div className="col-lg-2">
                 <div className="footer-widget">
                   <div className="footer-widget-department">
-                    <h4 className="footer-widget-title">Alamat</h4>
+                    <h4 className="footer-widget-title">{t('alamat')}</h4>
                     <p>Gedung Djuanda II Lantai 17 Jalan Wahidin Nomor 1,
                       Jakarta, Indonesia</p>
 
@@ -57,7 +60,7 @@ const Footer = () => {
               <div className="col-lg-2">
                 <div className="footer-widget">
                   <div className="footer-widget-contact">
-                    <h4 className="footer-widget-title">Kontak</h4>
+                    <h4 className="footer-widget-title">{t('menu.kontak')}</h4>
 
                   </div>
                   <div className="footer-widget-contact-list">
