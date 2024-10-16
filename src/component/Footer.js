@@ -29,6 +29,7 @@ const Footer = () => {
     minWidth: '250px',
     backgroundColor: '#f9f9f9',
     boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)',
+    padding:'5px 1px 5px 10px',
     zIndex: 1,
   };
 
@@ -76,7 +77,7 @@ const Footer = () => {
                       <li
                         onMouseEnter={() => setHoveredItem('profile')}
                         onMouseLeave={() => setHoveredItem(null)}
-                        style={{ position: 'relative' }}
+                        style={{ position: 'relative'}}
                       >
                         <a href="#profil" style={menuItemStyle}>{t('menu.profile')}</a>
                         <ul style={hoveredItem === 'profile' ? showSubmenuStyle : submenuStyle}>
@@ -84,7 +85,7 @@ const Footer = () => {
                             onMouseEnter={() => setHoveredSubItem('subItem1')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/tentang-kami" style={submenuItemStyle(hoveredSubItem === 'subItem1')}>
+                            <a href="/tentang-kami" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem1')}>
                               {t('menu.tentangKami')}
                             </a>
                           </li>
@@ -129,31 +130,93 @@ const Footer = () => {
                         onMouseLeave={() => setHoveredItem(null)}
                         style={{ position: 'relative' }}
                       >
-                        <a href="#t" style={menuItemStyle}>{t('menu.direktorat')}</a>
+                        <a href="#direktorat" style={menuItemStyle}>{t('menu.direktorat')}</a>
                         <ul style={hoveredItem === 'direktorat' ? showSubmenuStyle : submenuStyle}>
                           <li
-                            onMouseEnter={() => setHoveredSubItem('subItem3')}
+                            onMouseEnter={() => setHoveredSubItem('subItem6')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="#t" style={submenuItemStyle(hoveredSubItem === 'subItem3')}>
-                              {t('menu.subItem3')}
+                            <a href="/industri-produk-halal" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem6')}>
+                              {t('menu.industriProdukHalal')}
                             </a>
                           </li>
                           <li
-                            onMouseEnter={() => setHoveredSubItem('subItem4')}
+                            onMouseEnter={() => setHoveredSubItem('subItem7')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="#t" style={submenuItemStyle(hoveredSubItem === 'subItem4')}>
-                              {t('menu.subItem4')}
+                            <a href="/jasa-keuangan-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem7')}>
+                              {t('menu.jasaKeuanganSyariah')}
+                            </a>
+                          </li>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem8')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/keuangan-sosial-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem8')}>
+                              {t('menu.keuanganSosialSyariah')}
+                            </a>
+                          </li>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem9')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/bisnis-dan-kewiraushaan-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem9')}>
+                              {t('menu.bisnisDanKewirausahaan')}
+                            </a>
+                          </li>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem10')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/infrastruktur-ekosistem-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem10')}>
+                              {t('menu.infrastrukturEkosistem')}
                             </a>
                           </li>
                         </ul>
                       </li>
 
-                      <li>
-                        <a href="#t" style={menuItemStyle}>{t('menu.beritaKegiatan')}</a>
+                      <li
+                        onMouseEnter={() => setHoveredItem('berita')}
+                        onMouseLeave={() => setHoveredItem(null)}
+                        style={{ position: 'relative' }}
+                      >
+                        <a href="#berita-kegiatan" style={menuItemStyle}>{t('menu.beritaKegiatan')}</a>
+                        <ul style={hoveredItem === 'berita' ? showSubmenuStyle : submenuStyle}>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem11')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/siaran-pers" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem11')}>
+                              {t('menu.siaranPers')}
+                            </a>
+                          </li>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem12')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/liputan-media" style={submenuItemStyle(hoveredSubItem === 'subItem12')}>
+                              {t('menu.liputanMedia')}
+                            </a>
+                          </li>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem13')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/info-terkini" style={submenuItemStyle(hoveredSubItem === 'subItem13')}>
+                              {t('menu.infoTerkini')}
+                            </a>
+                          </li>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem14')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/opini" style={submenuItemStyle(hoveredSubItem === 'subItem14')}>
+                              {t('menu.opini')}
+                            </a>
+                          </li>
+                         
+                        </ul>
                       </li>
-
                       <li>
                         <a href="/agenda" style={menuItemStyle}>{t('menu.agenda')}</a>
                       </li>
