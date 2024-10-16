@@ -1,14 +1,48 @@
-import React from "react";
-
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
-  function refreshPage(){ 
-    window.location.reload(); 
+  function refreshPage() {
+    window.location.reload();
   }
 
   const { t, i18n } = useTranslation();
-  
+
+  // State to track hover for menu items
+  const [hoveredItem, setHoveredItem] = useState(null);
+  const [hoveredSubItem, setHoveredSubItem] = useState(null); // State to track hover for sub-items
+
+  // Inline styles for the dropdown menu
+  const menuItemStyle = {
+    padding: '1px 0 0 0 ',
+    textDecoration: 'none',
+    color: '#000',
+    // backgroundColor: '#f1f1f1',
+    display: 'block',
+  };
+
+  const submenuStyle = {
+    display: 'none', // Default hidden
+    position: 'absolute',
+    left: '100%',
+    top: '0',
+    minWidth: '250px',
+    backgroundColor: '#f9f9f9',
+    boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)',
+    zIndex: 1,
+  };
+
+  const showSubmenuStyle = {
+    ...submenuStyle,
+    display: 'block',
+  };
+
+  // Submenu item hover style
+  const submenuItemStyle = (isHovered) => ({
+    ...menuItemStyle,
+    backgroundColor: isHovered ? '#ddd' : '#f9f9f9', // Change background on hover
+  });
+
   return (
 
     <div>
@@ -33,18 +67,113 @@ const Footer = () => {
                 <div className="footer-widget">
                   <div className="footer-widget-explore">
                     <h4 className="footer-widget-title">Menu</h4>
-                    <ul className="list-unstyled">
-                      <li><a href="/">{t('menu.home')}</a></li>
-                      <li><a href="#t">{t('menu.profile')}</a></li>
-                      <li><a href="#t">{t('menu.direktorat')}</a></li>
-                      <li><a href="#t">{t('menu.beritaKegiatan')}</a></li>
-                      <li><a href="#t">{t('menu.agenda')}</a></li>
-                      <li><a href="#t">{t('menu.ePustaka')}</a></li>
-                      <li><a href="#t">{t('menu.data')}</a></li>
-                      <li><a href="#t">{t('menu.kdeks')}</a></li>
-                      <li><a href="#t">{t('menu.kontak')}</a></li>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                      <li>
+                        <a href="/" style={menuItemStyle}>{t('menu.home')}</a>
+                      </li>
+
+                      {/* Profile menu with hover */}
+                      <li
+                        onMouseEnter={() => setHoveredItem('profile')}
+                        onMouseLeave={() => setHoveredItem(null)}
+                        style={{ position: 'relative' }}
+                      >
+                        <a href="#profil" style={menuItemStyle}>{t('menu.profile')}</a>
+                        <ul style={hoveredItem === 'profile' ? showSubmenuStyle : submenuStyle}>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem1')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/tentang-kami" style={submenuItemStyle(hoveredSubItem === 'subItem1')}>
+                              {t('menu.tentangKami')}
+                            </a>
+                          </li>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem2')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/tentang-ekonomi-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem2')}>
+                              {t('menu.tentangEkonomiSyariah')}
+                            </a>
+                          </li>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem3')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/struktur-organisasi" style={submenuItemStyle(hoveredSubItem === 'subItem3')}>
+                              {t('menu.strukturOrganisasi')}
+                            </a>
+                          </li>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem4')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/galeri-foto" style={submenuItemStyle(hoveredSubItem === 'subItem4')}>
+                              {t('menu.galeriFoto')}
+                            </a>
+                          </li>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem5')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="/galeri-video" style={submenuItemStyle(hoveredSubItem === 'subItem5')}>
+                              {t('menu.galeriVideo')}
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      {/* Direktorat menu with hover */}
+                      <li
+                        onMouseEnter={() => setHoveredItem('direktorat')}
+                        onMouseLeave={() => setHoveredItem(null)}
+                        style={{ position: 'relative' }}
+                      >
+                        <a href="#t" style={menuItemStyle}>{t('menu.direktorat')}</a>
+                        <ul style={hoveredItem === 'direktorat' ? showSubmenuStyle : submenuStyle}>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem3')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="#t" style={submenuItemStyle(hoveredSubItem === 'subItem3')}>
+                              {t('menu.subItem3')}
+                            </a>
+                          </li>
+                          <li
+                            onMouseEnter={() => setHoveredSubItem('subItem4')}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                          >
+                            <a href="#t" style={submenuItemStyle(hoveredSubItem === 'subItem4')}>
+                              {t('menu.subItem4')}
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#t" style={menuItemStyle}>{t('menu.beritaKegiatan')}</a>
+                      </li>
+
+                      <li>
+                        <a href="/agenda" style={menuItemStyle}>{t('menu.agenda')}</a>
+                      </li>
+
+                      <li>
+                        <a href="/e-pustaka" style={menuItemStyle}>{t('menu.ePustaka')}</a>
+                      </li>
+
+                      <li>
+                        <a href="/data" style={menuItemStyle}>{t('menu.data')}</a>
+                      </li>
+
+                      <li>
+                        <a href="/kdeks" style={menuItemStyle}>{t('menu.kdeks')}</a>
+                      </li>
+
+                      <li>
+                        <a href="/kontak" style={menuItemStyle}>{t('menu.kontak')}</a>
+                      </li>
                     </ul>
-                    
                   </div>
                 </div>
               </div>
@@ -143,9 +272,9 @@ const Footer = () => {
         </div>
       </div>
       {/* <a href="#test2" className="scroll-to-top-x" onClick={ refreshPage }><i className="fa-solid fa-arrow-up"></i></a> */}
-      <a href="#test2" className="scroll-to-top-x" data-bs-toggle="tooltip" title="Refresh" onClick={ refreshPage }>
-                                            <i className="fa-solid fa-refresh"></i>
-                                        </a>
+      <a href="#test2" className="scroll-to-top-x" data-bs-toggle="tooltip" title="Refresh" onClick={refreshPage}>
+        <i className="fa-solid fa-refresh"></i>
+      </a>
       <a href="#test2" className="scroll-to-top scroll-to-target" data-target="html"><i className="fa-solid fa-arrow-up"></i></a>
     </div>
   )
