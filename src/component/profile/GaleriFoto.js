@@ -90,7 +90,7 @@ const GaleriFoto = () => {
 
                                                         <div className="card-title-b">
                                                             <h2 className="title-2">
-                                                                {item.title}
+                                                                {item.title}{item.is_publish}
                                                             </h2>
                                                         </div>
                                                         <div className="card-date">

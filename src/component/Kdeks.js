@@ -1,14 +1,66 @@
 import React, { useState, useEffect } from "react";
 import Kota from "../component/dumy/dataKota";
-
+import axios from 'axios';
+import Swal from "sweetalert2";
 const Kdeks = () => {
     const [rows, setItems] = useState([]);
-
+    const [postSejarah, setPostSejarah] = useState(null);
+    const [postTentang, setPostTentang] = useState(null);
     useEffect(() => {
         const isian = Kota();
         setItems(isian);
         // alert(items.length);
 
+
+    }, []);
+
+
+
+    useEffect(() => {
+        // Function to fetch posts
+        const fetchPosts = async () => {
+            try {
+                const url = process.env.REACT_APP_API_URLKDEKS;
+                const endpoint = process.env.REACT_APP_API_KDEKSSEJARAH;
+                const response = await axios.get(`${url}${endpoint}`);
+                if (response.data && response.data.length > 0) {
+                    setPostSejarah(response.data[0]); // Set data ke state
+                } else {
+                    throw new Error("Data kosong atau tidak ditemukan.");
+                }
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            } 
+        };
+
+        fetchPosts(); // Call fetchPosts function when component mounts
+
+        const fetchPostsTentang = async () => {
+            try {
+                const url = process.env.REACT_APP_API_URLKDEKS;
+                const endpoint = process.env.REACT_APP_API_KDEKSTENTANGKAMI;
+                const response = await axios.get(`${url}${endpoint}`);
+                if (response.data && response.data.length > 0) {
+                    setPostTentang(response.data[0]); // Set data ke state
+                } else {
+                    throw new Error("Data kosong atau tidak ditemukan.");
+                }
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            } 
+        };
+
+        fetchPostsTentang()
 
     }, []);
 
@@ -54,9 +106,8 @@ const Kdeks = () => {
                             {/* konten sebelah kanan */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title">Tentang Kami</h2>
-                                    <p>Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) merupakan perubahan dari KNKS untuk peningkatan pembangunan ekosistem ekonomi dan keuangan syariah serta menjadikan Indonesia sebagai Pusat Halal Dunia.</p>
-                                    <p>Pencanangan titik awal untuk memposisikan Indonesia sebagai salah satu pelaku utama dan hub ekonomi syariah dunia dilakukan seiring dengan peluncuran Masterplan Ekonomi Syariah Indonesia pada bulan Mei 2019.</p>
+                                    <h2 className="section-title">{postTentang ?postTentang.title:''}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: postTentang?postTentang.content:'' }} />
                                 </div>
                             </div>
                         </div>
@@ -65,8 +116,9 @@ const Kdeks = () => {
                             {/* konten sejarah deskripsi */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title">Sejarah KDEKS</h2>
-                                    <p>Dalam rangka mendukung pembangunan ekonomi nasional dan mendorong percepatan pengembangan sektor keuangan syariah, pemerintah secara khusus mendirikan KNKS pada tanggal 8 November 2016 agar dapat meningkatkan efektifitas, efisiensi pelaksanaan rencana pembangunan nasional bidang keuangan dan ekonomi Syariah. Selanjutnya sejak diundangkan tanggal 10 Februari 2020, pemerintah melakukan perubahan Komite Nasional Keuangan Syariah menjadi Komite Nasional Ekonomi dan Keuangan Syariah yang bertujuan meningkatkan pembangunan ekosistem ekonomi dan keuangan syariah guna mendukung pembangunan ekonomi nasional.</p>
+                                    <h2 className="section-title">{postSejarah ?postSejarah.title:''}</h2>
+                                    {/* <p></p> */}
+                                    <div dangerouslySetInnerHTML={{ __html: postSejarah?postSejarah.content:'' }} />
                                 </div>
                             </div>
 
