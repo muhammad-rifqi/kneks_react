@@ -248,6 +248,24 @@ a {
   top: -13px;
   background-color: var(--thm-dark-black);
 }
+.section-tagline-b-x {
+  position: relative;
+  font-size: 14px;
+  color: #F4EE5C;
+  font-family: var(--thm-font);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.section-tagline-b-x:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 35px;
+  top: -13px;
+  background-color: #F4EE5C;
+}
 
 .section-title-box.text-center .section-tagline:before {
   left: 50%;
