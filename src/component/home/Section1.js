@@ -92,7 +92,7 @@ const Section1 = () => {
 									<div className="slider-content-two">
 										<h1 className="section-title">"{t('bannerJudul')}"</h1>
 										<div className="slider-tagline">{t('bannerIsi')}</div>
-										<a href="#t" class="btn btn-primary mt-3">{t('tombol')}</a>
+										<a href="banner/detail" class="btn btn-primary mt-3">{t('tombol')}</a>
 									</div>
 								</div>
 							</div>

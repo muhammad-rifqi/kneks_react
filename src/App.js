@@ -43,6 +43,8 @@ import { Test } from './component/Test';
 import AgendaDetail from './component/AgendaDetails';
 import OpiniDetail from './component/OpiniDetail';
 
+import BannerDetail from './component/bannerDetail';
+
 
 
 function AppContent() {
@@ -87,6 +89,7 @@ function AppContent() {
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/agenda/detail" element={<AgendaDetail />} />
         <Route path="/kontak" element={<Kontak />} />
+        <Route path="/banner/detail" element={<BannerDetail />} />
         {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/isu-ekonomi" element={<IsuEkonomi />} />

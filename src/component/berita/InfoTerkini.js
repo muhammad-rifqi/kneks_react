@@ -25,6 +25,7 @@ const InfoTerkini = () => {
                 const endpoint = process.env.REACT_APP_API_INFO_TERKINI;
                 const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
+                console.log(response.data)
             } catch (err) {
                 Swal.fire({
                     icon: "error",

@@ -22,9 +22,10 @@ const IsuEkonomi = () => {
             setLoading(true);
             try {
                 const url = process.env.REACT_APP_API_URL;
-                const endpoint = process.env.REACT_APP_API_POST;
+                const endpoint = process.env.REACT_APP_API_INFO_TERKINI;
                 const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
+                console.log(response.data)
             } catch (err) {
                 Swal.fire({
                     icon: "error",

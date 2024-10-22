@@ -45,7 +45,7 @@ const InfrastrukturEkosistemSyariah = () => {
 
     }, [items]);
     useEffect(() => {
-        
+
 
         new VenoBox({
             selector: '.my-video-links',
@@ -90,7 +90,7 @@ const InfrastrukturEkosistemSyariah = () => {
 
                                 </div>
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title text-center">Direktorat Bisnis Dan Kewirausahaan Syariah</h2>
+                                    <h2 className="section-title text-center">Direktorat Infrastruktur Ekosistem Syariah</h2>
                                     <p>Deskripsi dari direktorat Industri Produk Halal itu apa (Sementara masih menggunakan lorem ipsum) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                                     <h5 className="about-one-inner-text-x">Divisi</h5>
                                     <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
