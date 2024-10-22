@@ -7,6 +7,7 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+
 const Section7 = () => {
 	const [posts, setPosts] = useState([]);
 	useEffect(() => {
@@ -86,7 +87,6 @@ const Section7 = () => {
 		<section className="portfolio-section ">
 
 			<div className="portfolio-content">
-				{/* <div className=" conatainer"> */}
 				<div className="row">
 					<div className="swiper swiper-berita">
 						<div className="swiper-wrapper">
@@ -120,7 +120,6 @@ const Section7 = () => {
 						</div>
 					</div >
 				</div >
-				{/* </div > */}
 			</div>
 		</section>
 	)

@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import EventDetailModal from "../modal/MapsModal"
+import { useTranslation } from 'react-i18next';
 const Section6 = () => {
+	const {t} = useTranslation();
 	// const [currentEvents, setCurrentEvents] = useState([]);
 	const [showDetailModal, setShowDetailModal] = useState(false);
 	// const [selectedEvent, setSelectedEvent] = useState(null);
@@ -18,7 +20,7 @@ const Section6 = () => {
 				<div className="container">
 					<div className="blog-box-x">
 						<div className="section-title-box text-center">
-							<h2 className="section-title">Rekomendasi Agenda Lainnya</h2>
+							<h2 className="section-title">{t('rekomendasi')}</h2>
 						</div>
 					</div>
 					<div className="row ">

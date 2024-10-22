@@ -1,12 +1,13 @@
 import React from "react"
+import { useTranslation } from 'react-i18next';
 const News = () => {
+	const { t } = useTranslation();
 	return (
 		<section className="news-section">
 			<div className="portfolio-content conatainer-fluid">
 				<div className="blog-box">
 					<div className="section-title-box text-center">
-						<div className="section-tagline">News</div>
-						<h2 className="section-title">Berita Dan Kegiatan</h2>
+						<h2 className="section-title" style={{color:'#146AA4'}}>{t('menu.beritaKegiatan')}</h2>
 					</div>
 				</div>
 				<div className="row row-gutter-30">

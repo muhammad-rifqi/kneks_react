@@ -1,12 +1,14 @@
 import React from "react"
+import { useTranslation } from 'react-i18next';
 const Section11 = () => {
+	const {t} = useTranslation();
 	return (
 		<>
 			<section className="sm-section funfact-section-post">
 				<div className="container">
 					<div className="sm-box">
 						<div className="section-title-box text-center">
-							<div className="section-tagline-b">Media Social</div>
+							<div className="section-tagline-b">{t('sosialMedia')}</div>
 							<h2 className="section-title">Instagram Post</h2>
 						</div>
 					</div>
@@ -41,10 +43,9 @@ const Section11 = () => {
 					<div className="sm-box" style={{ marginTop: `100px` }}>
 						<div className="section-title-box text-center">
 
-							<h2 className="section-title">Instansi Terkait</h2>
+							<h2 className="section-title">{t('instansi')}</h2>
 							<div className="section-text-b "><p className="text-white ">
-								KNEKS beranggotakan 3 Menteri Koordinator, 7 Menteri, 3 Ketua lembaga pemerintah, <br /> Ketua Umum MUI dan Ketua Umum KADIN, dengan Menteri Keuangan merangkap sebagai Sekretaris.
-							</p>
+							{t('instansiIsi')} <br /> {t('instansiIsi2')}	</p>
 							</div>
 						</div>
 					</div>

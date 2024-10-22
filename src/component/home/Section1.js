@@ -6,7 +6,9 @@ import Carousel from 'react-bootstrap/Carousel';
 
 import axios from 'axios';
 import Swal from "sweetalert2";
+import { useTranslation } from 'react-i18next';
 const Section1 = () => {
+	const { t } = useTranslation();
 	useEffect(() => {
 
 		if (document.querySelector('.swiper-banner')) {
@@ -88,9 +90,9 @@ const Section1 = () => {
 							<div className="row">
 								<div className="col-md-12">
 									<div className="slider-content-two">
-										<h1 className="section-title">"Menyatukan langkah, Memajukan Negeri"</h1>
-										<div className="slider-tagline">Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional </div>
-										<a href="#t" class="btn btn-primary mt-3">Lihat Selengkapnya</a>
+										<h1 className="section-title">"{t('bannerJudul')}"</h1>
+										<div className="slider-tagline">{t('bannerIsi')}</div>
+										<a href="#t" class="btn btn-primary mt-3">{t('tombol')}</a>
 									</div>
 								</div>
 							</div>

@@ -1,5 +1,7 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 const Section2 = () => {
+    const { t} = useTranslation();
     return (
         <section className="department-section-x">
             <div className="row justify-content-center">
@@ -7,35 +9,23 @@ const Section2 = () => {
                     <div className="card">
                         <div className="card-body text-center">
                             <div className="department-card-gambar">
-                                <a href="/industri-produk-halal"><img src="/assets/image/halal.svg" alt="Industri Produksi Halal" className="img-b img-fluid" /></a>
+                                <a href="/industri-produk-halal"><img src="/assets/image/halal.svg" alt={t('menu.industriProdukHalal')} className="img-b img-fluid" /></a>
                             </div>
                             <div className="department-card-content">
-                                <h5><a href="/industri-produk-halal">Industri Produksi Halal</a></h5>
+                                <h5><a href="/industri-produk-halal">{t('menu.industriProdukHalal')}</a></h5>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                
                 <div className="col-lg-2 col-md-2">
                     <div className="card">
                         <div className="card-body text-center">
                             <div className="department-card-gambar">
-                                <a href="/jasa-keuangan-syariah"><img src="/assets/image/jasa.svg" alt="Jasa Keuangan Syariah" className="img-b img-fluid" /></a>
+                                <a href="/jasa-keuangan-syariah"><img src="/assets/image/jasa.svg" alt={t('menu.jasaKeuanganSyariah')} className="img-b img-fluid" /></a>
                             </div>
                             <div className="department-card-content">
-                                <h5><a href="/jasa-keuangan-syariah">Jasa Keuangan Syariah</a></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-2 col-md-2">
-                    <div className="card">
-                        <div className="card-body text-center">
-                            <div className="department-card-gambar">
-                                <a href="/keuangan-sosial-syariah"><img src="/assets/image/sosial.svg" alt="Keuangan Sosial Syariah" className="img-b img-fluid" /></a>
-                            </div>
-                            <div className="department-card-content">
-                                <h5><a href="/keuangan-sosial-syariah">Keuangan Sosial Syariah</a></h5>
+                                <h5><a href="/jasa-keuangan-syariah">{t('menu.jasaKeuanganSyariah')}</a></h5>
                             </div>
                         </div>
                     </div>
@@ -44,10 +34,10 @@ const Section2 = () => {
                     <div className="card">
                         <div className="card-body text-center">
                             <div className="department-card-gambar">
-                                <a href="/bisnis-dan-kewiraushaan-syariah"><img src="/assets/image/sme.svg" alt="Bisnis Dan Kewirausahaan Syariah" className="img-b img-fluid" /></a>
+                                <a href="/keuangan-sosial-syariah"><img src="/assets/image/sosial.svg" alt={t('menu.keuanganSosialSyariah')} className="img-b img-fluid" /></a>
                             </div>
                             <div className="department-card-content">
-                                <h5><a href="/bisnis-dan-kewiraushaan-syariah">Bisnis Dan Kewirausahaan Syariah</a></h5>
+                                <h5><a href="/keuangan-sosial-syariah">{t('menu.keuanganSosialSyariah')}</a></h5>
                             </div>
                         </div>
                     </div>
@@ -56,10 +46,22 @@ const Section2 = () => {
                     <div className="card">
                         <div className="card-body text-center">
                             <div className="department-card-gambar">
-                                <a href="/infrastruktur-ekosistem-syariah"><img src="/assets/image/infra.svg" alt="Bisnis Dan Kewirausahaan Syariah" className="img-b img-fluid" /></a>
+                                <a href="/bisnis-dan-kewiraushaan-syariah"><img src="/assets/image/sme.svg" alt={t('menu.bisnisDanKewirausahaan')} className="img-b img-fluid" /></a>
                             </div>
                             <div className="department-card-content">
-                                <h5><a href="/infrastruktur-ekosistem-syariah">Infrastruktur Ekosistem Syariah </a></h5>
+                                <h5><a href="/bisnis-dan-kewiraushaan-syariah">{t('menu.bisnisDanKewirausahaan')}</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-lg-2 col-md-2">
+                    <div className="card">
+                        <div className="card-body text-center">
+                            <div className="department-card-gambar">
+                                <a href="/infrastruktur-ekosistem-syariah"><img src="/assets/image/infra.svg" alt={t('menu.infrastrukturEkosistem')} className="img-b img-fluid" /></a>
+                            </div>
+                            <div className="department-card-content">
+                                <h5><a href="/infrastruktur-ekosistem-syariah">{t('menu.infrastrukturEkosistem')}</a></h5>
                             </div>
                         </div>
                     </div>
