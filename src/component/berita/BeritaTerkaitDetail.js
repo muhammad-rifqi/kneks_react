@@ -80,11 +80,11 @@ const BeritaTerkaitDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src={`${process.env.REACT_APP_API_NEWS}` + rows.image} width={`100%`} className="img-fluid" alt={rows?.title} />
+                                    <img src="/assets/image/berita.jpg" width={`100%`} className="img-fluid" alt={rows?.title} />
                                 </div>
                             </div>
                             <div className="row">
-                                {rows?.foto_gallery && rows?.foto_gallery.length > 0 ? (
+                                {/* {rows?.foto_gallery && rows?.foto_gallery.length > 0 ? (
                                     rows?.foto_gallery.map((result, index) => (
                                         <div className="col-lg-3 pb-3" key={index}>
                                             <a href={`${process.env.PUBLIC_URL}/${result.foto}`} className="beritaDetail" data-gall="gallery01">
@@ -98,11 +98,11 @@ const BeritaTerkaitDetail = () => {
                                             </a>
                                         </div>
                                     ))
-                                ) : (
-                                    <div className="col-lg-12 text-center ">
-                                        <p className="text-white bg-danger p-2">Tidak ada foto</p>
-                                    </div>
-                                )}
+                                ) : ( */}
+                                <div className="col-lg-12 text-center ">
+                                    <p className="text-white bg-danger p-2">Tidak ada foto</p>
+                                </div>
+                                {/* )} */}
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
@@ -148,7 +148,10 @@ const BeritaTerkaitDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/liputan-media/${convertToSlug(item.title)}`}> <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /></a>
+                                                <a href={`/liputan-media/${convertToSlug(item.title)}`}>
+                                                    <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} />
+                                                    {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
+                                                </a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>

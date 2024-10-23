@@ -45,6 +45,8 @@ import OpiniDetail from './component/OpiniDetail';
 
 import BannerDetail from './component/bannerDetail';
 
+import InfoTerkiniDumiDetail from './component/InfoTerkiniDumiDetail';
+
 
 
 function AppContent() {
@@ -95,6 +97,8 @@ function AppContent() {
         <Route path="/isu-ekonomi" element={<IsuEkonomi />} />
         <Route path="/test" element={<Test />} />
         <Route path="*" element={<Error404 />} />
+
+        <Route path="/info-terkini/detail" element={<InfoTerkiniDumiDetail />} />
       </Routes>
       <Footer />
       {/* {!isLoginPage && <Footer />} */}

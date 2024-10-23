@@ -7,7 +7,7 @@ import 'dayjs/locale/id';
 import VenoBox from 'venobox';
 
 
-const bannerDetail = () => {
+const InfoTerkiniDumiDetail = () => {
     dayjs.locale('id');
 
     // const { slug } = useParams();
@@ -81,7 +81,7 @@ const bannerDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Banner Info</h3>
+                            <h3>Info Terkini</h3>
                         </div>
                     </div>
                 </section>
@@ -231,4 +231,4 @@ const bannerDetail = () => {
     )
 }
 
-export default bannerDetail
+export default InfoTerkiniDumiDetail

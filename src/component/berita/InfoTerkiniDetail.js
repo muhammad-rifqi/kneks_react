@@ -96,29 +96,32 @@ const InfoTerkiniDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src={`${process.env.REACT_APP_API_NEWS}` + rows?.image} width={`100%`} className="img-fluid" alt={rows?.title} />
+                                    <img src="/assets/image/berita.jpg" width={`100%`} className="img-fluid" alt={rows?.title} />
+                                    {/* <img src={`${process.env.REACT_APP_API_NEWS}` + rows?.image} width={`100%`} className="img-fluid" alt={rows?.title} /> */}
                                 </div>
                             </div>
                             <div className="row">
-                                {rows?.foto_gallery && rows?.foto_gallery.length > 0 ? (
-                                    rows?.foto_gallery.map((result, index) => (
-                                        <div className="col-lg-3 pb-3" key={index}>
-                                            <a href={`${process.env.PUBLIC_URL}/${result.foto}`} className="beritaDetail" data-gall="gallery01">
-                                                <img
-                                                    src={`${process.env.PUBLIC_URL}/${result.foto}`}
-                                                    width="100%"
-                                                    style={{ height: "195px" }}
-                                                    className="img-fluid"
-                                                    alt={rows?.title}
-                                                />
-                                            </a>
-                                        </div>
-                                    ))
+                                {/* {rows?.foto_gallery && rows?.foto_gallery.length > 0 ? (
+                                    rows?.foto_gallery.map((result, index) => ( */}
+                                <div className="col-lg-3 pb-3" >
+                                    <a href="/assets/image/berita.jpg" className="beritaDetail" data-gall="gallery01">
+                                        {/* <a href={`${process.env.PUBLIC_URL}/${result.foto}`} className="beritaDetail" data-gall="gallery01"> */}
+                                        <img
+                                            src="/assets/image/berita.jpg"
+                                            // src={`${process.env.PUBLIC_URL}/${result.foto}`}
+                                            width="100%"
+                                            style={{ height: "195px" }}
+                                            className="img-fluid"
+                                            alt={rows?.title}
+                                        />
+                                    </a>
+                                </div>
+                                {/* ))
                                 ) : (
                                     <div className="col-lg-12 text-center ">
                                         <p className="text-white bg-danger p-2">Tidak ada foto</p>
                                     </div>
-                                )}
+                                )} */}
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
@@ -164,7 +167,10 @@ const InfoTerkiniDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/liputan-media/${convertToSlug(item.title)}`}> <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /></a>
+                                                <a href={`/info-terikini/${convertToSlug(item.title)}`}>
+                                                    <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} />
+                                                    {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
+                                                </a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
@@ -172,7 +178,7 @@ const InfoTerkiniDetail = () => {
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/liputan-media/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/info-terkini/${convertToSlug(item.title)}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">

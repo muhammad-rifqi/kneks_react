@@ -7,7 +7,7 @@ const News = () => {
 			<div className="portfolio-content conatainer-fluid">
 				<div className="blog-box">
 					<div className="section-title-box text-center">
-						<h2 className="section-title" style={{color:'#146AA4'}}>{t('menu.beritaKegiatan')}</h2>
+						<h2 className="section-title" style={{ color: '#146AA4' }}>{t('menu.beritaKegiatan')}</h2>
 					</div>
 				</div>
 				<div className="row row-gutter-30">
@@ -19,11 +19,11 @@ const News = () => {
 							<div className="card-overlay">
 								<div className="card-header-b">
 									<div className="card-category-b">
-										<a href="#test" className="category-b-x">#BERITABARU</a>
+										<a href="#Beritabaru" className="category-b-x">#BERITABARU</a>
 									</div>
 									<div className="card-title-b">
 										<h2 className="title-2">
-											<a href="blog-single.html">Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah</a>
+											<a href="/info-terkini/detail">Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah</a>
 										</h2>
 									</div>
 									<div className="card-date">
@@ -45,7 +45,7 @@ const News = () => {
 									</div>
 									<div className="card-title-b">
 										<h2 className="title-2">
-											<a href="blog-single.html">Pengukuhan KDEKS Provinsi Sulawesi Tengah</a>
+											<a href="/info-terkini/detail">Pengukuhan KDEKS Provinsi Sulawesi Tengah</a>
 										</h2>
 									</div>
 									<div className="card-date">
