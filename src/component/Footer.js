@@ -6,7 +6,7 @@ const Footer = () => {
     window.location.reload();
   }
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   // State to track hover for menu items
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -58,10 +58,10 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-widget-socials ">
-                  <a href="/twitter"><i className="fa-brands fa-x-twitter"></i></a>
-                  <a href="/twitter"><i className="fa-brands fa-facebook"></i></a>
-                  <a href="/twitter"><i className="fa-brands fa-pinterest-p"></i></a>
-                  <a href="/twitter"><i className="fa-brands fa-instagram"></i></a>
+                  <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
+                  <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
+                  <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
               <div className="col-lg-2">
@@ -317,7 +317,7 @@ const Footer = () => {
           <ul className="mobile-nav-social list-unstyled">
             <li><a href="/twitter"><i className="fa-brands fa-twitter"></i></a></li>
             <li><a href="/facebook"><i className="fa-brands fa-facebook"></i></a></li>
-            <li><a href="/pinterest"><i className="fa-brands fa-pinterest-p"></i></a></li>
+            <li><a href="/linkedin"><i className="fa-brands fa-linkedin"></i></a></li>
             <li><a href="/instagram"><i className="fa-brands fa-instagram"></i></a></li>
           </ul>
         </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Kota from "../component/dumy/dataKota";
 import axios from 'axios';
 import Swal from "sweetalert2";
+import MapsKdeks from "./MapsKdeks";
 const Kdeks = () => {
     const [rows, setItems] = useState([]);
     const [postSejarah, setPostSejarah] = useState(null);
@@ -145,8 +146,9 @@ const Kdeks = () => {
                         </div>
                     </div>
                 </section>
-
-                <section className="about-one-section-kdeks ">
+                
+                <MapsKdeks/>
+                {/* <section className="about-one-section-kdeks ">
                     <div className="container">
                         <div className="row" style={divStyle}>
                             {
@@ -162,7 +164,8 @@ const Kdeks = () => {
                             }
                         </div>
                     </div>
-                </section>
+                </section> */}
+               
 
             </div>
         </>
