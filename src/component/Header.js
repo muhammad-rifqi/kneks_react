@@ -148,6 +148,13 @@ const Header = () => {
             </div>
 
             <div className="main-menu-right">
+              <input
+                type="text"
+                // value={searchTerm}
+                // onChange={handleChange}
+                placeholder="Cari..."
+                style={{ width: '180px', padding: '4px', marginRight:'2px', borderRadius: '4px', border: '1px solid #ccc' }}
+              />
               <div className="topNav-right ">
                 <ul>
                   <li><a href="#t" onClick={() => changeLanguage('en')} className={cookies.i18next === 'en' ? 'text-primary' : ''}>EN</a></li>
