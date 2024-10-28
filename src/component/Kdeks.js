@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import Kota from "../component/dumy/dataKota";
+
 import axios from 'axios';
 import Swal from "sweetalert2";
 import MapsKdeks from "./MapsKdeks";
 const Kdeks = () => {
-    const [rows, setItems] = useState([]);
+    // const [rows, setItems] = useState([]);
     const [postSejarah, setPostSejarah] = useState(null);
     const [postTentang, setPostTentang] = useState(null);
     useEffect(() => {
-        const isian = Kota();
-        setItems(isian);
+        // const isian = Kota();
+        // setItems(isian);
         // alert(items.length);
 
 
@@ -36,7 +36,7 @@ const Kdeks = () => {
                     text: err,
 
                 });
-            } 
+            }
         };
 
         fetchPosts(); // Call fetchPosts function when component mounts
@@ -58,29 +58,22 @@ const Kdeks = () => {
                     text: err,
 
                 });
-            } 
+            }
         };
 
         fetchPostsTentang()
 
     }, []);
 
-    const convertToSlug = (title) => {
-        return title
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/\s+/g, '-')
-            .replace(/-+/g, '-');
-    };
 
 
-    const divStyle = {
-        overflowY: 'scroll',
-        padding: '20px',
-        Height: '500px',
-        position: 'relative'
-    };
+
+    // const divStyle = {
+    //     overflowY: 'scroll',
+    //     padding: '20px',
+    //     Height: '500px',
+    //     position: 'relative'
+    // };
 
     return (
         <>
@@ -107,8 +100,8 @@ const Kdeks = () => {
                             {/* konten sebelah kanan */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title">{postTentang ?postTentang.title:''}</h2>
-                                    <div dangerouslySetInnerHTML={{ __html: postTentang?postTentang.content:'' }} />
+                                    <h2 className="section-title">{postTentang ? postTentang.title : ''}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.content : '' }} />
                                 </div>
                             </div>
                         </div>
@@ -117,9 +110,9 @@ const Kdeks = () => {
                             {/* konten sejarah deskripsi */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title">{postSejarah ?postSejarah.title:''}</h2>
+                                    <h2 className="section-title">{postSejarah ? postSejarah.title : ''}</h2>
                                     {/* <p></p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: postSejarah?postSejarah.content:'' }} />
+                                    <div dangerouslySetInnerHTML={{ __html: postSejarah ? postSejarah.content : '' }} />
                                 </div>
                             </div>
 
@@ -146,8 +139,8 @@ const Kdeks = () => {
                         </div>
                     </div>
                 </section>
-                
-                <MapsKdeks/>
+
+                <MapsKdeks />
                 {/* <section className="about-one-section-kdeks ">
                     <div className="container">
                         <div className="row" style={divStyle}>
@@ -165,7 +158,7 @@ const Kdeks = () => {
                         </div>
                     </div>
                 </section> */}
-               
+
 
             </div>
         </>
