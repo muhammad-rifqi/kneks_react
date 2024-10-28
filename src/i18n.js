@@ -37,6 +37,8 @@ const resources = {
             "bannerIsi": "By accelerating, expanding and advancing the development of Islamic economics and finance in order to strengthen national economic resilience.",
             "tombol": "See More",
 
+            "beritaTerkait": "Related News",
+
             "pernekalkan": "About Us",
             "pernekalkanJudul": "National Committee for Sharia Economics and Finance (KNEKS)",
             "pernekalkanIsi": "It is a change from KNKS to improve the development of the sharia economic and financial ecosystem and make Indonesia the World Halal Center. The launch of the starting point to position Indonesia as one of the main players and hubs of the world's sharia economy was carried out in line with the launch of the Indonesian Sharia Economic Masterplan in May 2019.",
@@ -95,6 +97,8 @@ const resources = {
             "bannerIsi": "Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional ",
             "tombol": "Lihat Selengkap",
 
+
+            "beritaTerkait": "Berita Terkait",
 
             "pernekalkan": "Perkenalkan",
             "pernekalkanJudul": "Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS)",

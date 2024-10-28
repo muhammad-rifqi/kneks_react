@@ -3439,6 +3439,12 @@ a.search-toggler {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.funfact-section-direktorat {
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .funfact-section-struktur-x {
   background-image: url(../image/bg/struktur.svg);
   height: 100%; 
@@ -5117,6 +5123,23 @@ a.search-toggler {
   width: 410px;
   overflow: hidden;
   text-overflow: ellipsis; */
+}
+.event-card-title-direktorat-home h4 {
+
+  margin-bottom: 0;
+  padding: 0.2rem 0;
+  font-size: 15px !important;
+  /* white-space: nowrap;
+  width: 410px;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis */
+  width: 210px; 
+  white-space: normal; /* Allow text to wrap */
 }
 
 .event-card-title h4 > a {
@@ -8590,6 +8613,14 @@ label {
   }
 }
 
+.direktorat-tag-home {
+  font-size: 13px;
+  color: #f2994a;
+  letter-spacing: 0.03em;
+  border-radius: 50px;
+  /* text-decoration: none; */
+}
+
 .card-header-b .category-b-x {
   font-size: 0.9rem;
   color: #f2994a;
@@ -9311,9 +9342,18 @@ SOCIAL MEDIA
   height: 200px;
   object-fit: cover;
 }
+.berita-card-imgbox-direktorat-home img {
+  height: 170px;
+  object-fit: cover;
+}
 
 .event-card-info-direktorat {
   margin-bottom: 5px;
+}
+.event-card-info-direktorat-home {
+  margin-bottom: 5px;
+  font-size: 12px;
+
 }
 
 @media (max-width: 1199px) {
