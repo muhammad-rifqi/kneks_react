@@ -74,9 +74,9 @@ const Header = () => {
             <div className="main-menu-left">
               <div className="main-menu-logo">
 
-                <a href={isKdeksPage ? "#t" : "/"}>
+                <a href={isKdeksPage ? "#kdeks" : "/"}>
                   <img
-                    src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/logo.svg"}
+                    src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/logoKneks.png"}
                     alt="logo"
                     width="130"
                   />
@@ -114,7 +114,7 @@ const Header = () => {
                         <li><a href="/infrastruktur-ekosistem-syariah">{t('menu.infrastrukturEkosistem')}</a></li>
                       </ul>
                     </li>
-                    <li className="has-dropdown">
+                    {/* <li className="has-dropdown">
                       <a href="#t">{t('menu.beritaKegiatan')}</a>
                       <ul className="list-unstyled">
                         <li><a href="/siaran-pers">{t('menu.siaranPers')}</a></li>
@@ -122,6 +122,9 @@ const Header = () => {
                         <li><a href="/info-terkini">{t('menu.infoTerkini')}</a></li>
                         <li><a href="/opini">{t('menu.opini')}</a></li>
                       </ul>
+                    </li> */}
+                    <li className={` ${activeMenu === '/berita-kegiatan' ? 'active' : ''}`}>
+                      <a onClick={() => handleMenuClick('/berita-kegiatan')} href="/berita-kegiatan">{t('menu.beritaKegiatan')}</a>
                     </li>
                     <li className={` ${activeMenu === '/agenda' ? 'active' : ''}`}>
                       <a onClick={() => handleMenuClick('/agenda')} href="/agenda">{t('menu.agenda')}</a>

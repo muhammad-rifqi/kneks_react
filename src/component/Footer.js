@@ -54,7 +54,7 @@ const Footer = () => {
             <div className="row">
               <div className="col-lg-3 ">
                 <div className="footer-widget-logo pb-3">
-                  <a href="/"><img src="/assets/image/img-knks-2.png" className="img-fluid " alt="img-25" /></a>
+                  <a href="/"><img src="/assets/image/logoKneksFooter.png" className="img-fluid " alt="img-25" /></a>
                 </div>
 
                 <div className="footer-widget-socials ">

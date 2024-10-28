@@ -85,7 +85,7 @@ const Section1 = () => {
 			<Carousel data-bs-theme="dark">
 				{posts.slice(0, 2).map((item) => (
 					<Carousel.Item>
-						<div className="item-slider-bg" style={{ backgroundImage: `url("/assets/image/slide.png")` }}></div>
+						<div className="item-slider-bg" style={{ backgroundImage: `url("/assets/image/slide2.png")` }}></div>
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12">

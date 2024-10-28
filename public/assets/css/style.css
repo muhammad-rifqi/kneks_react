@@ -1008,11 +1008,15 @@ a {
   transform-origin: right;
 }
 
-.main-menu .main-menu-list > li.active > a:before,
-.main-menu .main-menu-list > li:hover > a:before {
+.main-menu .main-menu-list > li.active > a:before{
   transform: scale(1, 1);
   transform-origin: left;
+  background-color: var(--thm-primary);
 }
+/* .main-menu .main-menu-list > li:hover > a:before {
+  transform: scale(1, 1);
+  transform-origin: left;
+} */
 
 .main-menu .main-menu-list > li.active > a,
 .main-menu .main-menu-list > li > a:hover {
