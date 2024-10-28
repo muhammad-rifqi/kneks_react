@@ -153,7 +153,7 @@ const Header = () => {
                 // value={searchTerm}
                 // onChange={handleChange}
                 placeholder="Cari..."
-                style={{ width: '180px', padding: '4px', marginRight:'2px', borderRadius: '4px', border: '1px solid #ccc' }}
+                style={{ width: '180px', padding: '4px', marginRight:'8px', borderRadius: '4px', border: '1px solid #ccc' }}
               />
               <div className="topNav-right ">
                 <ul>
