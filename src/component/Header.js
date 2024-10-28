@@ -163,7 +163,7 @@ const Header = () => {
                 type="text"
                 value={searchTerm}
                 onChange={handleChange}
-                placeholder="Cari..."
+                placeholder={t('pencarian')}
                 style={{ width: '180px', padding: '4px', marginRight:'8px', borderRadius: '4px', border: '1px solid #ccc' }}
               />
               <div className="topNav-right ">

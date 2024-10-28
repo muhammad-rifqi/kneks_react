@@ -30,6 +30,7 @@ const resources = {
                 "kdeks": "KDEKS",
                 "kontak": "Contact",
             },
+            "pencarian": "Search...",
             "alamat": "Address",
 
 
@@ -90,6 +91,8 @@ const resources = {
                 "kdeks": "KDEKS",
                 "kontak": "Kontak",
             },
+            "pencarian": "Cari...",
+
             "alamat": "Alamat",
 
 
