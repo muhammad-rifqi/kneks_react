@@ -40,6 +40,8 @@ const Header = () => {
   const splita = location.pathname.split('/')
   const isKdeksPage = locationsx && splita[2] === convertToSlug(locationsx.title);
 
+  
+
   useEffect(() => {
 
     const locati = location.pathname.split("/")
@@ -59,6 +61,15 @@ const Header = () => {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     setCookie('i18next', lng, { path: '/' }); // Set cookie bahasa
+  };
+
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setSearchTerm(value);
+    // Implement search logic if needed
+    console.log('Cari apa'+searchTerm)
   };
   return (
     <>
@@ -150,8 +161,8 @@ const Header = () => {
             <div className="main-menu-right">
               <input
                 type="text"
-                // value={searchTerm}
-                // onChange={handleChange}
+                value={searchTerm}
+                onChange={handleChange}
                 placeholder="Cari..."
                 style={{ width: '180px', padding: '4px', marginRight:'8px', borderRadius: '4px', border: '1px solid #ccc' }}
               />
