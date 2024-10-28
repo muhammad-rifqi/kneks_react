@@ -191,6 +191,7 @@ const KdeksDetail = () => {
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
                                     <img src={`${process.env.PUBLIC_URL}/${listdataKota?.foto}`} alt="logo" width={300} className="img-fluid" />
+                                    {/* <img src={`${process.env.PUBLIC_URL}/${listdataKota?.foto}`} alt="logo" width={300} className="img-fluid" /> */}
                                 </div>
                             </div>
 
