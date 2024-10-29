@@ -22,16 +22,48 @@ const Section5 = () => {
             <div className="container-fluid">
                 <div className="row">
 
-                    <div className="col-lg-3">
-                        <Card className="bg-dark text-white mb-2 text-center">
+                    <div className="col-lg-8 offset-2">
+                        {/* <Card className="bg-dark text-white mb-2 text-center">
                             <Card.Body>
                                 <h3 className="text-white">DASHBOARD</h3>
                                 <Card.Text style={{ fontSize: `14px` }}>
                                     Event Ekonomi dan Keuangan Syariah 2024
                                 </Card.Text>
                             </Card.Body>
-                        </Card>
-                        <Card >
+                        </Card> */}
+                        <div className="row pb-2">
+                            <div className="col-lg-4">
+                                <Card className="text-center">
+                                    <Card.Body>
+                                        <Card.Title>Total Kegiatan</Card.Title>
+                                        <h1>
+                                            12
+                                        </h1>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="col-lg-4">
+                                <Card className="text-center">
+                                    <Card.Body>
+                                        <Card.Title>Total Peserta</Card.Title>
+                                        <h1>
+                                            2.1K
+                                        </h1>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                            <div className="col-lg-4">
+                                <Card className="text-center">
+                                    <Card.Body>
+                                        <Card.Title>TotaL wilayah</Card.Title>
+                                        <h1>
+                                            23
+                                        </h1>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                        </div>
+                        {/* <Card >
                             <Card.Header className="p-3">
                                 Pengelola
                             </Card.Header>
@@ -47,15 +79,16 @@ const Section5 = () => {
                                         </ul>
                                     </div>
                                 </div>
+                                
                             </Card.Body>
-                        </Card>
+                        </Card> */}
                     </div>
-                    {isActive === "BI" && <Bi />}
+                    {/* {isActive === "BI" && <Bi />}
                     {isActive === "BPJPH" && <Bpjph />}
                     {isActive === "KemenkoPMK" && <KemenkoPmk />}
                     {isActive === "KNEKS" && <Kneks />}
                     {isActive === "OJK" && <Ojk />}
-                    {isActive === "(blank)" && <Blank />}
+                    {isActive === "(blank)" && <Blank />} */}
                 </div>
             </div>
         </section >
