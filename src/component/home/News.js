@@ -13,7 +13,7 @@ const News = () => {
 				<div className="row row-gutter-30">
 					<div className="col-md-6 col-lg-6">
 						<div className="card-box-b card-shadow news-box">
-							<div className="img-box-b">
+							<div className="img-box-b-home">
 								<img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
 							</div>
 							<div className="card-overlay">
@@ -35,7 +35,7 @@ const News = () => {
 					</div>
 					<div className="col-md-6 col-lg-6">
 						<div className="card-box-b card-shadow news-box">
-							<div className="img-box-b">
+							<div className="img-box-b-home">
 								<img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
 							</div>
 							<div className="card-overlay">

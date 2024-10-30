@@ -10037,6 +10037,11 @@ SOCIAL MEDIA
   overflow: hidden;
   height: 200px;
 }
+.img-box-b-home {
+  position: relative;
+  overflow: hidden;
+  height: 490px;
+}
 
 .cover-image {
   width: 100%;        
