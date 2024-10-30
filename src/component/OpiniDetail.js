@@ -15,6 +15,7 @@ const OpiniDetail = () => {
     const [itemx, setItemx] = useState([]);
 
     const convertToSlug = (title) => {
+        if (!title) return ""; // Handle null or undefined title
         return title
             .toLowerCase()
             .trim()

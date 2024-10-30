@@ -5128,17 +5128,14 @@ a.search-toggler {
 
   margin-bottom: 0;
   padding: 0.2rem 0;
-  font-size: 15px !important;
-  /* white-space: nowrap;
-  width: 410px;
-  overflow: hidden;
-  text-overflow: ellipsis; */
+  font-size: 18px !important;
+
   display: -webkit-box; /* Use flexbox */
   -webkit-box-orient: vertical; /* Set the orientation to vertical */
   -webkit-line-clamp: 2; /* Limit to 2 lines */
   overflow: hidden; /* Hide overflow */
   text-overflow: ellipsis; /* Show ellipsis */
-  width: 210px; 
+  width: 290px; 
   white-space: normal; /* Allow text to wrap */
 }
 
@@ -5148,6 +5145,15 @@ a.search-toggler {
 }
 
 .event-card-title h4 > a:hover {
+  color: var(--thm-primary);
+}
+.event-card-title-detail h4 > a {
+  font-size: 18px ;
+  color: inherit;
+  transition: all 500ms ease;
+}
+
+.event-card-title-detail h4 > a:hover {
   color: var(--thm-primary);
 }
 
@@ -8614,7 +8620,7 @@ label {
 }
 
 .direktorat-tag-home {
-  font-size: 13px;
+  font-size: 14px;
   color: #f2994a;
   letter-spacing: 0.03em;
   border-radius: 50px;
@@ -9343,7 +9349,7 @@ SOCIAL MEDIA
   object-fit: cover;
 }
 .berita-card-imgbox-direktorat-home img {
-  height: 170px;
+  height: 100%;
   object-fit: cover;
 }
 

@@ -33,7 +33,7 @@ const resources = {
             "pencarian": "Search...",
             "alamat": "Address",
 
-
+            "event": "Islamic Economics and Finance Events",
             "bannerJudul": "Uniting steps, advancing the country",
             "bannerIsi": "By accelerating, expanding and advancing the development of Islamic economics and finance in order to strengthen national economic resilience.",
             "tombol": "See More",
@@ -43,12 +43,12 @@ const resources = {
             "pernekalkan": "About Us",
             "pernekalkanJudul": "National Committee for Sharia Economics and Finance (KNEKS)",
             "pernekalkanIsi": "It is a change from KNKS to improve the development of the sharia economic and financial ecosystem and make Indonesia the World Halal Center. The launch of the starting point to position Indonesia as one of the main players and hubs of the world's sharia economy was carried out in line with the launch of the Indonesian Sharia Economic Masterplan in May 2019.",
-       
+
             "isuUtama": "The main issue",
             "isuJudul": "Economy & Finance",
             "isuJudul2": "Sharia",
             "isuIsi": "Indonesia is a country with the largest Muslim majority and the largest number of Islamic financial institutions in the world. KNKS is present as a catalyst in efforts to accelerate, expand and advance the development of Islamic economics and finance in order to strengthen national economic resilience.",
-            
+
             "isuPengembanganProdukIndustriHalal": "Halal Industrial Product Development",
             "isuPengembanganJasaKeuanganSyariah": "Development of Islamic Financial Services",
             "isuPengembanganKeuanganSosialSyariah": "Development of Sharia Social Finance",
@@ -57,11 +57,11 @@ const resources = {
 
             "rekomendasi": "Other Agenda Recommendations",
 
-            "sosialMedia" : "Social Media",
+            "sosialMedia": "Social Media",
 
-            "instansi" : "KNEKS Member",
-            "instansiIsi" : "KNEKS consists of 3 Coordinating Ministers, 7 Ministers, 3 Chairmen of government institutions,",
-            "instansiIsi2" : "Chairman of the MUI and Chairman of KADIN, with the Minister of Finance also serving as Secretary.",
+            "instansi": "KNEKS Member",
+            "instansiIsi": "KNEKS consists of 3 Coordinating Ministers, 7 Ministers, 3 Chairmen of government institutions,",
+            "instansiIsi2": "Chairman of the MUI and Chairman of KADIN, with the Minister of Finance also serving as Secretary.",
         }
     },
     id: {
@@ -95,6 +95,8 @@ const resources = {
 
             "alamat": "Alamat",
 
+            "event": "Event Ekonomi dan Keuangan Syariah",
+
 
             "bannerJudul": "Menyatukan langkah, Memajukan Negeri",
             "bannerIsi": "Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional ",
@@ -106,12 +108,12 @@ const resources = {
             "pernekalkan": "Perkenalkan",
             "pernekalkanJudul": "Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS)",
             "pernekalkanIsi": "Merupakan perubahan dari KNKS untuk peningkatan pembangunan ekosistem ekonomi dan keuangan syariah serta menjadikan Indonesia sebagai Pusat Halal Dunia. Pencanangan titik awal untuk memposisikan Indonesia sebagai salah satu pelaku utama dan hub ekonomi syariah dunia dilakukan seiring dengan peluncuran Masterplan Ekonomi Syariah Indonesia pada bulan Mei 2019.",
-            
+
             "isuUtama": "Isu Utama",
             "isuJudul": "Ekonomi & Keuangan",
             "isuJudul2": "Syariah",
             "isuIsi": "Indonesia merupakan negara dengan mayoritas muslim terbesar dan jumlah institusi keuangan syariah terbanyak di dunia. KNKS hadir sebagai katalisator dalam upaya mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional.",
-            
+
             "isuPengembanganProdukIndustriHalal": "Pengembangan Produk Industri Halal",
             "isuPengembanganJasaKeuanganSyariah": "Pengembangan Jasa Keuangan Syariah",
             "isuPengembanganKeuanganSosialSyariah": "Pengembangan Keuangan Sosial Syariah",
@@ -119,11 +121,11 @@ const resources = {
             "isuPengembanganInfrastrukturEkosistemSyariah": "Pengembangan Infrastruktur Ekosistem Syariah",
 
             "rekomendasi": "Rekomendasi Agenda Lainnya",
-            "sosialMedia" : "Media Sosial",
+            "sosialMedia": "Media Sosial",
 
-            "instansi" : "Anggota KNEKS",
-            "instansiIsi" : "KNEKS beranggotakan 3 Menteri Koordinator, 7 Menteri, 3 Ketua lembaga pemerintah,",
-            "instansiIsi2" : "Ketua Umum MUI dan Ketua Umum KADIN, dengan Menteri Keuangan merangkap sebagai Sekretaris.",
+            "instansi": "Anggota KNEKS",
+            "instansiIsi": "KNEKS beranggotakan 3 Menteri Koordinator, 7 Menteri, 3 Ketua lembaga pemerintah,",
+            "instansiIsi2": "Ketua Umum MUI dan Ketua Umum KADIN, dengan Menteri Keuangan merangkap sebagai Sekretaris.",
         }
     }
 };
