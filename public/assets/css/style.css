@@ -5135,7 +5135,7 @@ a.search-toggler {
   -webkit-line-clamp: 2; /* Limit to 2 lines */
   overflow: hidden; /* Hide overflow */
   text-overflow: ellipsis; /* Show ellipsis */
-  width: 290px; 
+  width: 250px; 
   white-space: normal; /* Allow text to wrap */
 }
 
