@@ -1,98 +1,59 @@
-import React, { useState } from "react"
-import Card from 'react-bootstrap/Card';
-import Bi from './dashboard/Bi'
-import Bpjph from './dashboard/Bpjph'
-import KemenkoPmk from './dashboard/KemenkoPmk'
-import Kneks from './dashboard/Kneks'
-import Ojk from './dashboard/Ojk'
-import Blank from './dashboard/Blank'
+import React, { useState } from "react";
+import { Tabs, Tab } from "react-bootstrap";
+import Bi from "./dashboard/Bi";
+import Bpjph from "./dashboard/Bpjph";
+import KemenkoPmk from "./dashboard/KemenkoPmk";
+import Kneks from "./dashboard/Kneks";
+import Ojk from "./dashboard/Ojk";
+import Blank from "./dashboard/Blank";
+
+const dataTabs = [
+    {
+        key: "BI",
+        contents: <Bi />,
+    },
+    {
+        key: "BPJPH",
+        contents: <Bpjph />,
+    },
+    {
+        key: "KemenkoPMK",
+        contents: <KemenkoPmk />,
+    },
+    {
+        key: "KNEKS",
+        contents: <Kneks />,
+    },
+    {
+        key: "OJK",
+        contents: <Ojk />,
+    },
+    {
+        key: "(blank)",
+        contents: <Blank />,
+    },
+];
 
 const Section5 = () => {
-
-
-    const [isActive, setIsActive] = useState("BI");
-
-    // Step 2: Fungsi untuk menangani klik dan mengubah status aktif
-    const handleClick = (index) => {
-        setIsActive(index);
-    };
+    const [activeTab, setActiveTab] = useState("BI");
 
     return (
-        <section className="funfact-section" >
-            <div className="container-fluid">
-                <div className="row">
-
-                    <div className="col-lg-8 offset-2">
-                        {/* <Card className="bg-dark text-white mb-2 text-center">
-                            <Card.Body>
-                                <h3 className="text-white">DASHBOARD</h3>
-                                <Card.Text style={{ fontSize: `14px` }}>
-                                    Event Ekonomi dan Keuangan Syariah 2024
-                                </Card.Text>
-                            </Card.Body>
-                        </Card> */}
-                        <div className="row pb-2">
-                            <div className="col-lg-4">
-                                <Card className="text-center">
-                                    <Card.Body>
-                                        <Card.Title>Total Kegiatan</Card.Title>
-                                        <h1>
-                                            12
-                                        </h1>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                            <div className="col-lg-4">
-                                <Card className="text-center">
-                                    <Card.Body>
-                                        <Card.Title>Total Peserta</Card.Title>
-                                        <h1>
-                                            2.1K
-                                        </h1>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                            <div className="col-lg-4">
-                                <Card className="text-center">
-                                    <Card.Body>
-                                        <Card.Title>TotaL wilayah</Card.Title>
-                                        <h1>
-                                            23
-                                        </h1>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                        </div>
-                        {/* <Card >
-                            <Card.Header className="p-3">
-                                Pengelola
-                            </Card.Header>
-                            <Card.Body>
-                                <div className="sidebar">
-                                    <div className="sidebar-widget-list-inner">
-                                        <ul>
-                                            {['BI', 'BPJPH', 'KemenkoPMK', 'KNEKS', 'OJK', '(blank)'].map((item, index) => (
-                                                <li key={index} onClick={() => handleClick(item)} className={isActive === item ? 'active' : ''}>
-                                                    <a href="#t">{item}</a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                                
-                            </Card.Body>
-                        </Card> */}
-                    </div>
-                    {/* {isActive === "BI" && <Bi />}
-                    {isActive === "BPJPH" && <Bpjph />}
-                    {isActive === "KemenkoPMK" && <KemenkoPmk />}
-                    {isActive === "KNEKS" && <Kneks />}
-                    {isActive === "OJK" && <Ojk />}
-                    {isActive === "(blank)" && <Blank />} */}
-                </div>
+        <section className='funfact-section'>
+            <div className='container-fluid'>
+                <Tabs
+                    activeKey={activeTab}
+                    onSelect={setActiveTab}
+                    className="mb-3 justify-content-center"
+                  >
+                    {dataTabs.map((tab) => (
+                        <Tab eventKey={tab.key} title={tab.key} key={tab.key}>
+                            {tab.contents}
+                        </Tab>
+                    ))}
+                </Tabs>
             </div>
-        </section >
-    )
-}
+        </section>
+    );
+};
 
-export default Section5
+export default Section5;
