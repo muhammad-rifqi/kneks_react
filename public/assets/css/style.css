@@ -9974,3 +9974,34 @@ SOCIAL MEDIA
 .swiper-button-next i {
   right: -1rem !important;
 }
+
+.chart-container {
+  width: 500px; 
+  height: 350px; 
+  position: relative;
+}
+
+.custom-carousel {
+  padding: 80px 240px;
+}
+
+/* Warna teks tab tidak aktif */
+.nav-tabs .nav-link {
+  color: white !important;
+  background-color: transparent;
+  border: none;
+  transition: color 0.3s;
+}
+
+/* Warna teks dan background tab aktif */
+.nav-tabs .nav-link.active {
+  color: black !important;
+  background-color: #f8f9fa; /* Warna background tab aktif */
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+}
+
+/* Tambahan: Hover effect untuk tab tidak aktif */
+.nav-tabs .nav-link:not(.active):hover {
+  color: #ddd;
+}
