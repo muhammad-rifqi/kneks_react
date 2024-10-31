@@ -94,23 +94,24 @@ const JasakeuanganSyariah = () => {
                                     <p>Deskripsi dari direktorat Industri Produk Halal itu apa (Sementara masih menggunakan lorem ipsum) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                                     <h5 className="about-one-inner-text-x">Divisi</h5>
                                     <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                   
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <a href={`https://www.kemenkeu.go.id/`} target="_blank" rel="noreferrer" className="component-service d-block ">
+                                            <a href="#t"  className="component-service d-block ">
                                                 <div className="service-image ">
                                                     <img src="assets/image/kemenkeu.png" className="img-fluid " alt="kemenkeu" />
                                                 </div>
                                             </a>
                                         </div>
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <a href={`https://www.ekon.go.id/`} target="_blank" rel="noreferrer" className="component-service  d-block">
+                                            <a href="#t"  className="component-service  d-block">
                                                 <div className="service-image">
                                                     <img src="assets/image/instansi2.png" className="img-fluid" alt="kementriang bidang perekonomian republik indonesia" />
                                                 </div>
                                             </a>
                                         </div>
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <a href={`https://www.kemenkopmk.go.id/`} target="_blank" rel="noreferrer" className="component-service  d-block">
+                                            <a href="#t"  className="component-service  d-block">
                                                 <div className="service-image">
                                                     <img src="assets/image/instansi32.png" className="img-fluid" alt="kemenko pmk" />
                                                 </div>
