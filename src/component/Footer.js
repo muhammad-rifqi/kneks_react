@@ -1,7 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
+
+import Kota from "../component/dumy/dataKota";
+
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const location = useLocation();
+  // const [activeMenu, setActiveMenu] = useState(location.pathname); // Initial state
+  const [dataKota, setDataKota] = useState([]); // Initial state
+
+  const convertToSlug = (title) => {
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  };
+
+  useEffect(() => {
+    if (Kota) { // Make sure Kota is defined
+      setDataKota(Kota);
+    }
+  }, []);
+
+  const [locationsx, setLocation] = useState();
+  const splita = location.pathname.split('/')
+  const isKdeksPage = locationsx && splita[2] === convertToSlug(locationsx.title);
+
+  
+
+  useEffect(() => {
+
+    const locati = location.pathname.split("/")
+
+    if (dataKota && dataKota.length > 0) {
+      const foundItem = dataKota.find(kneks => convertToSlug(kneks.title) === locati[2]);
+      setLocation(foundItem);
+      // const isKdeksPage = location.pathname === '/kdeks/'
+    }
+
+    // setActiveMenu(location.pathname);
+  }, [location, dataKota]);
+
   function refreshPage() {
     window.location.reload();
   }
@@ -54,7 +96,7 @@ const Footer = () => {
             <div className="row">
               <div className="col-lg-3 ">
                 <div className="footer-widget-logo pb-3">
-                  <a href="/"><img src="/assets/image/logoKneksFooter.png" className="img-fluid " alt="img-25" /></a>
+                  <a href={isKdeksPage ? "#kdeks" : "/"}><img src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/logoKneks.png"} className="img-fluid " alt="img-25" /></a>
                 </div>
 
                 <div className="footer-widget-socials ">
