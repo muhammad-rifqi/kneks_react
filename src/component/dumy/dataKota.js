@@ -121,6 +121,20 @@ const dataKota = () => {
             skFile: "assets/image/SkKdeks/SK_KDEKS_Lampung.pdf",
             kode: "ntb"
         },
+        {
+            title: "Sulawesi Selatan",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/logoKdeks/KDEKS_Sulawesi_Selatan_Logo.jpg",
+            skFile: "assets/image/SkKdeks/SK_KDEKS_Lampung.pdf",
+            kode: "sulsel"
+        },
+        {
+            title: "Sulawesi Tengah",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/logoKdeks/KDEKS_Sulawesi_Tengah_Logo.jpg",
+            skFile: "assets/image/SkKdeks/SK_KDEKS_Lampung.pdf",
+            kode: "sulteng"
+        },
 
     ]
 };
