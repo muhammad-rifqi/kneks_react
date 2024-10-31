@@ -4,18 +4,45 @@ import isiItemsBerita from "../dumy/dataBerita"
 import "venobox/dist/venobox.css";
 import "venobox/dist/venobox.min.js";
 import VenoBox from 'venobox';
+
+import axios from 'axios';
+import Swal from "sweetalert2";
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 const InfrastrukturEkosistemSyariah = () => {
     const [items, setItems] = useState([]);
-    // new VenoBox({
-    //     selector: '.my-image-links',
+    const [posts, setPosts] = useState([]);
+    const convertToSlug = (title) => {
+        if (!title) return ""; // Handle null or undefined title
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    };
 
-    // });
-    // new VenoBox({
-    //     selector: '.my-video-links',
+    useEffect(() => {
 
-    // });
+        // Function to fetch posts
+        const fetchPosts = async () => {
+            try {
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_POST;
+                const response = await axios.get(`${url}${endpoint}`);
+                setPosts(response.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
 
-    // untukmengeloladatasebelumdiloop
+                });
+            }
+        };
+
+        fetchPosts(); // Call fetchPosts function when component mounts
+    }, []);
     useEffect(() => {
         const isian = isiItemsBerita();
         setItems(isian);
@@ -133,27 +160,29 @@ const InfrastrukturEkosistemSyariah = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-30">
-                            {
-                                items.slice(0, 4).map((item) => (
-                                    <div className="col-lg-3 col-xl-3" key={item.id}>
-                                        <div className="berita-card">
-                                            <div className="berita-card-imgbox-direktorat ">
-                                                <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
+                        {posts.slice(0, 4).map((item) => (
+                                <div className="col-lg-3" key={item.id}>
+                                    <div className="berita-card">
+                                        <div className="berita-card-imgbox-direktorat-home ">
+                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title} /></a>
+                                        </div>
+                                        <div className="berita-content-direktorat">
+                                            <div className="direktorat-tag-home">
+                                                <span>#BERITABARU</span>
                                             </div>
-                                            <div className="berita-content-direktorat">
-
-                                                <div className="event-card-title pb-2">
-                                                    <h4>
-                                                        <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
-                                                    </h4>
-                                                </div>
-                                                <div className="event-card-info-direktorat">
-                                                    <span>{item.tanggal}</span>
-                                                </div>
+                                            <div className="event-card-title-direktorat pb-2">
+                                                <h4>
+                                                    <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                </h4>
+                                            </div>
+                                            <div className="event-card-info-direktorat">
+                                                <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
                                             </div>
                                         </div>
                                     </div>
-                                ))}
+                                </div>
+                            ))
+                            }
                         </div >
                     </div>
                 </section>

@@ -4,9 +4,45 @@ import isiItemsBerita from "../dumy/dataBerita"
 import "venobox/dist/venobox.css";
 import "venobox/dist/venobox.min.js";
 import VenoBox from 'venobox';
+import axios from 'axios';
+import Swal from "sweetalert2";
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 const KeuanganSosialSyariah = () => {
     const [items, setItems] = useState([]);
 
+    const [posts, setPosts] = useState([]);
+    const convertToSlug = (title) => {
+        if (!title) return ""; // Handle null or undefined title
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    };
+
+    useEffect(() => {
+
+        // Function to fetch posts
+        const fetchPosts = async () => {
+            try {
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_POST;
+                const response = await axios.get(`${url}${endpoint}`);
+                setPosts(response.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            }
+        };
+
+        fetchPosts(); // Call fetchPosts function when component mounts
+    }, []);
     useEffect(() => {
         const isian = isiItemsBerita();
         setItems(isian);
@@ -85,24 +121,24 @@ const KeuanganSosialSyariah = () => {
                                     <p>Deskripsi dari direktorat Industri Produk Halal itu apa (Sementara masih menggunakan lorem ipsum) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                                     <h5 className="about-one-inner-text-x">Divisi</h5>
                                     <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                   
+
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <a href="#t"  className="component-service d-block ">
+                                            <a href="#t" className="component-service d-block ">
                                                 <div className="service-image ">
                                                     <img src="assets/image/kemenkeu.png" className="img-fluid " alt="kemenkeu" />
                                                 </div>
                                             </a>
                                         </div>
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <a href="#t"  className="component-service  d-block">
+                                            <a href="#t" className="component-service  d-block">
                                                 <div className="service-image">
                                                     <img src="assets/image/instansi2.png" className="img-fluid" alt="kementriang bidang perekonomian republik indonesia" />
                                                 </div>
                                             </a>
                                         </div>
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <a href="#t"  className="component-service  d-block">
+                                            <a href="#t" className="component-service  d-block">
                                                 <div className="service-image">
                                                     <img src="assets/image/instansi32.png" className="img-fluid" alt="kemenko pmk" />
                                                 </div>
@@ -124,27 +160,29 @@ const KeuanganSosialSyariah = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-30">
-                            {
-                                items.slice(0, 4).map((item) => (
-                                    <div className="col-lg-3 col-xl-3" key={item.id}>
-                                        <div className="berita-card">
-                                            <div className="berita-card-imgbox-direktorat ">
-                                                <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
+                            {posts.slice(0, 4).map((item) => (
+                                <div className="col-lg-3" key={item.id}>
+                                    <div className="berita-card">
+                                        <div className="berita-card-imgbox-direktorat-home ">
+                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title} /></a>
+                                        </div>
+                                        <div className="berita-content-direktorat">
+                                            <div className="direktorat-tag-home">
+                                                <span>#BERITABARU</span>
                                             </div>
-                                            <div className="berita-content-direktorat">
-
-                                                <div className="event-card-title pb-2">
-                                                    <h4>
-                                                        <a href={`/berita-terkait/${item.slug}`}>{item.title}</a>
-                                                    </h4>
-                                                </div>
-                                                <div className="event-card-info-direktorat">
-                                                    <span>{item.tanggal}</span>
-                                                </div>
+                                            <div className="event-card-title-direktorat pb-2">
+                                                <h4>
+                                                    <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                </h4>
+                                            </div>
+                                            <div className="event-card-info-direktorat">
+                                                <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
                                             </div>
                                         </div>
                                     </div>
-                                ))}
+                                </div>
+                            ))
+                            }
                         </div >
                     </div>
                 </section>
