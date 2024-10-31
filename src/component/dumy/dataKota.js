@@ -93,6 +93,34 @@ const dataKota = () => {
             skFile: "assets/image/SkKdeks/SK_KDEKS_Lampung.pdf",
             kode: "kaltim"
         },
+        {
+            title: "Kalimantan Selatan",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/logoKdeks/KDEKS_Kalimantan_Selatan_Logo.png",
+            skFile: "assets/image/SkKdeks/SK_KDEKS_Lampung.pdf",
+            kode: "kalsel"
+        },
+        {
+            title: "Kalimantan Utara",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/logoKdeks/KDEKS_Kaltara_Logo.png",
+            skFile: "assets/image/SkKdeks/SK_KDEKS_Lampung.pdf",
+            kode: "kaltra"
+        },
+        {
+            title: "Maluku Utara",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/logoKdeks/KDEKS_Maluku_Utara_Logo.jpg",
+            skFile: "assets/image/SkKdeks/SK_KDEKS_Lampung.pdf",
+            kode: "malut"
+        },
+        {
+            title: "Nusa Tenggara Barat",
+            tanggal: "20 Juni 2024",
+            foto: "assets/image/logoKdeks/KDEKS_NTB_Logo.jpg",
+            skFile: "assets/image/SkKdeks/SK_KDEKS_Lampung.pdf",
+            kode: "ntb"
+        },
 
     ]
 };
