@@ -22,7 +22,7 @@ const News = () => {
 										<a href="#Beritabaru" className="category-b-x">#BERITABARU</a>
 									</div>
 									<div className="card-title-b">
-										<h2 className="title-2">
+										<h2>
 											<a href="/info-terkini/detail">Anugerah Adinata Syariah 2024: Mendukung Transformasi Ekonomi Syariah Daerah</a>
 										</h2>
 									</div>
@@ -44,7 +44,7 @@ const News = () => {
 										<a href="/" className="category-b-x">#BERITABARU</a>
 									</div>
 									<div className="card-title-b">
-										<h2 className="title-2">
+										<h2>
 											<a href="/info-terkini/detail">Pengukuhan KDEKS Provinsi Sulawesi Tengah</a>
 										</h2>
 									</div>

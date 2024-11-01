@@ -10096,3 +10096,26 @@ SOCIAL MEDIA
 .berita-card-kdeks:hover h4 > a {
   color: var(--thm-primary);
 }
+.news-box:hover h2 > a {
+  color: var(--thm-primary) !important;
+}
+
+.news-box{
+  cursor: pointer;
+}
+
+.news-box h2 > a{
+  margin-bottom: 0;
+  padding: 0.4rem 0;
+  font-size: 20px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 600px; 
+  white-space: normal; /* Allow text to wrap */
+  color: #ffffff !important;
+}
+

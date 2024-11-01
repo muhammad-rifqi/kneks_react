@@ -53,28 +53,37 @@ const Section2 = () => {
                     </div>
                 </div>
                 <div className="row row-gutter-30 justify-content-center">
-                    {posts.slice(0, visible).map((item) => (
-                        <div className="col-lg-2" key={item.id}>
-                            <div className="berita-card">
-                                <div className="berita-card-imgbox-direktorat-home ">
-                                    <a href={`/berita-terkait/${convertToSlug(item.title)}`}><img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title} /></a>
+                    {
+                        posts.length > 0 ? (
+                            posts.slice(0, visible).map((item) => (
+                                <div className="col-lg-2" key={item.id}>
+                                    <div className="berita-card">
+                                        <div className="berita-card-imgbox-direktorat-home ">
+                                            <a href={`/berita-terkait/${convertToSlug(item.title)}`}><img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title} /></a>
+                                        </div>
+                                        <div className="berita-content-direktorat">
+                                            <div className="direktorat-tag-home">
+                                                <span>#BERITABARU</span>
+                                            </div>
+                                            <div className="event-card-title-direktorat-home-x pb-2">
+                                                <h4>
+                                                    <a href={`/berita-terkait/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                </h4>
+                                            </div>
+                                            <div className="event-card-info-direktorat-home">
+                                                <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="berita-content-direktorat">
-                                    <div className="direktorat-tag-home">
-                                        <span>#BERITABARU</span>
-                                    </div>
-                                    <div className="event-card-title-direktorat-home-x pb-2">
-                                        <h4>
-                                            <a href={`/berita-terkait/${convertToSlug(item.title)}`}>{item.title}</a>
-                                        </h4>
-                                    </div>
-                                    <div className="event-card-info-direktorat-home">
-                                        <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
-                                    </div>
+                            ))
+                        ) : (
+                            <div className="col-12">
+                                <div className="no-posts-message">
+                                    <p className="text-center">No posts available</p>
                                 </div>
                             </div>
-                        </div>
-                    ))
+                        )
                     }
 
                 </div >
