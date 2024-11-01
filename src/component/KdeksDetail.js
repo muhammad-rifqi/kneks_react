@@ -44,47 +44,47 @@ const KdeksDetail = () => {
         fetchPosts(); // Call fetchPosts function when component mounts
 
         if (document.querySelector('.swiper-kdeks')) {
-			const swipers = new Swiper('.swiper-kdeks', {
-				// pengaturan Swiper
-				loop: true,
-				// pagination: {
-				// 	el: '.swiper-pagination',
-				// 	clickable: true,
-				// 	dynamicMainBullets: true
-				// },
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-				autoplay: {
-					delay: 2500,
-					disableOnInteraction: false,
-				},
-				breakpoints: {
-					640: {
-						slidesPerView: 2,
-						spaceBetween: 20,
-					},
-					768: {
-						slidesPerView: 3,
-						spaceBetween: 30,
-					},
-					1024: {
-						slidesPerView: 4,
-						spaceBetween: 20,
-					},
-				},
-			});
-			// Cleanup function to destroy Swiper instance
-			return () => {
-				if (swipers) {
-					swipers.destroy(true, true);
-				}
-			};
-		}
+            const swipers = new Swiper('.swiper-kdeks', {
+                // pengaturan Swiper
+                loop: true,
+                // pagination: {
+                // 	el: '.swiper-pagination',
+                // 	clickable: true,
+                // 	dynamicMainBullets: true
+                // },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                },
+            });
+            // Cleanup function to destroy Swiper instance
+            return () => {
+                if (swipers) {
+                    swipers.destroy(true, true);
+                }
+            };
+        }
 
     }, [posts]);
-    
+
     new VenoBox({
         selector: '.my-image-as',
         numeration: true,
@@ -268,12 +268,12 @@ const KdeksDetail = () => {
                             {posts.length > 0 ? (
                                 <div className="swiper swiper-kdeks">
                                     <div className="swiper-wrapper">
-                                        {posts.slice(0, 9).map((item) => (
+                                        {posts.slice(0, 5).map((item) => (
                                             <div className="col-lg-3 swiper-slide" key={item.id}>
                                                 <div className="berita-card">
                                                     <div className="berita-card-imgbox-direktorat-home">
-                                                        <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>
-                                                            <img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title} />
+                                                        <a href={item.title ? `/berita-kegiatan/${convertToSlug(item.title)}` : ''}>
+                                                            <img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title ? item.title : ''} />
                                                         </a>
                                                     </div>
                                                     <div className="berita-content-direktorat">
@@ -282,11 +282,11 @@ const KdeksDetail = () => {
                                                         </div>
                                                         <div className="event-card-title-direktorat pb-2">
                                                             <h4>
-                                                                <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                                <a href={item.title ? `/berita-kegiatan/${convertToSlug(item.title)}` : ''}>{item.title ? item.title : ''}</a>
                                                             </h4>
                                                         </div>
                                                         <div className="event-card-info-direktorat">
-                                                            <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                                            <span>{item.news_datetime ? dayjs(item.news_datetime).format('DD MMMM YYYY') : ''}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -408,26 +408,33 @@ const KdeksDetail = () => {
                             </div>
                             <div className="row row-gutter-30">
                                 {
-                                    posts.slice(0, 4).map((item) => (
-                                        <div className="col-lg-3 col-xl-3" key={item.id}>
-                                            <div className="berita-card">
-                                                {/* <div className="berita-card-imgbox-direktorat ">
-                                                <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
-                                            </div> */}
-                                                <div className="berita-content-direktorat">
-
-                                                    <div className="event-card-title pb-2">
-                                                        <h4>
-                                                            <a href={`/opini/${convertToSlug(item.title)}`} >{item.title}</a>
-                                                        </h4>
-                                                    </div>
-                                                    <div className="event-card-info-direktorat">
-                                                        <span>{item.tanggal}</span>
+                                    posts.length > 0 ? (
+                                        posts.slice(0, 4).map((item) => (
+                                            <div className="col-lg-3 col-xl-3" key={item.id}>
+                                                <div className="berita-card">
+                                                   
+                                                    <div className="berita-content-direktorat">
+                                                        <div className="event-card-title pb-2">
+                                                            <h4>
+                                                                <a href={`/opini/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                            </h4>
+                                                        </div>
+                                                        <div className="event-card-info-direktorat">
+                                                            <span>{item.tanggal}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        ))
+                                    ) : (
+                                        <div className="col-12">
+                                            <div className="no-posts-message">
+                                                <p className="text-center">No posts available</p>
+                                            </div>
                                         </div>
-                                    ))}
+                                    )
+                                }
+
                             </div >
                         </div>
                     </section>
