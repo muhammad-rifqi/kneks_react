@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from 'react';
+
 import VenoBox from 'venobox';
 // import isiItemsBerita from "./dumy/dataBerita";
 // import OwlCarousel from 'react-owl-carousel';
@@ -21,7 +22,6 @@ const KdeksDetail = () => {
     const [posts, setPosts] = useState([]);
 
 
-
     useEffect(() => {
 
         // Function to fetch posts
@@ -42,12 +42,14 @@ const KdeksDetail = () => {
         };
 
         fetchPosts(); // Call fetchPosts function when component mounts
-
+    }, []);
+    useEffect(() => {
+        if (posts.length > 0) {
         if (document.querySelector('.swiper-kdeks')) {
             const swipers = new Swiper('.swiper-kdeks', {
                 // pengaturan Swiper
                 loop: true,
-              
+
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -77,6 +79,7 @@ const KdeksDetail = () => {
                 }
             };
         }
+    }
 
     }, [posts]);
 
@@ -120,42 +123,42 @@ const KdeksDetail = () => {
     useEffect(() => {
         // if (document.querySelector('.swiper-kdeks-agenda')) {
 
-            const swipers = new Swiper('.swiper-kdeks-agenda', {
-                // pengaturan Swiper
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
+        const swipers = new Swiper('.swiper-kdeks-agenda', {
+            // pengaturan Swiper
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
                 },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
                 },
-                autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false,
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
                 },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-                    1024: {
-                        slidesPerView: 4,
-                        spaceBetween: 20,
-                    },
-                },
-            });
-            // Cleanup function to destroy Swiper instance
-            return () => {
-                if (swipers) {
-                    swipers.destroy(true, true);
-                }
-            };
+            },
+        });
+        // Cleanup function to destroy Swiper instance
+        return () => {
+            if (swipers) {
+                swipers.destroy(true, true);
+            }
+        };
         // }
     }, [])
     useEffect(() => {
@@ -407,7 +410,7 @@ const KdeksDetail = () => {
                                         posts.slice(0, 4).map((item) => (
                                             <div className="col-lg-3 col-xl-3" key={item.id}>
                                                 <div className="berita-card">
-                                                   
+
                                                     <div className="berita-content-direktorat">
                                                         <div className="event-card-title pb-2">
                                                             <h4>

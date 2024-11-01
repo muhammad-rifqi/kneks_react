@@ -5124,6 +5124,20 @@ a.search-toggler {
   overflow: hidden;
   text-overflow: ellipsis; */
 }
+.event-card-title-direktorat-kdek h4 {
+
+  margin-bottom: 0;
+  padding: 0.2rem 0;
+  font-size: 16px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis */
+  width: 250px; 
+  white-space: normal; /* Allow text to wrap */
+}
 .event-card-title-direktorat-home-kdek h4 {
 
   margin-bottom: 0;
@@ -9403,6 +9417,7 @@ SOCIAL MEDIA
 }
 .event-card-info-direktorat {
   margin-bottom: 5px;
+  font-size: 12px;
 }
 .event-card-info-direktorat-home {
   margin-bottom: 5px;
