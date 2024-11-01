@@ -5138,6 +5138,34 @@ a.search-toggler {
   width: 250px; 
   white-space: normal; /* Allow text to wrap */
 }
+.event-card-title-direktorat-home-x h4 {
+
+  margin-bottom: 0;
+  padding: 0.2rem 0;
+  font-size: 16px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis */
+  width: 200px; 
+  white-space: normal; /* Allow text to wrap */
+}
+.event-card-title-kdeks-x h4 {
+
+  margin-bottom: 0;
+  padding: 0.2rem 0;
+  font-size: 16px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis */
+  width: 250px; 
+  white-space: normal; /* Allow text to wrap */
+}
 
 .event-card-title h4 > a {
   color: inherit;
@@ -9328,6 +9356,7 @@ SOCIAL MEDIA
 .berita-card {
   box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
 }
+
 .berita-card-imgbox img {
   height: 270px;
   object-fit: cover;
@@ -9353,6 +9382,11 @@ SOCIAL MEDIA
   object-fit: cover;
 }
 
+.event-card-info-direktorat-kdeks {
+  /* margin-bottom: 5px; */
+  font-size: 10px;
+  margin-bottom: 0;
+}
 .event-card-info-direktorat {
   margin-bottom: 5px;
 }
@@ -10048,4 +10082,14 @@ SOCIAL MEDIA
   height: 100%;      
   object-fit: cover;  
   object-position: center;
+}
+
+
+.portfolio-section .carousel-indicators{
+  display: none;
+}
+
+
+.berita-card:hover h4 > a {
+  color: var(--thm-primary);
 }

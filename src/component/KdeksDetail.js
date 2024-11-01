@@ -42,7 +42,49 @@ const KdeksDetail = () => {
         };
 
         fetchPosts(); // Call fetchPosts function when component mounts
-    }, []);
+
+        if (document.querySelector('.swiper-kdeks')) {
+			const swipers = new Swiper('.swiper-kdeks', {
+				// pengaturan Swiper
+				loop: true,
+				// pagination: {
+				// 	el: '.swiper-pagination',
+				// 	clickable: true,
+				// 	dynamicMainBullets: true
+				// },
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				autoplay: {
+					delay: 2500,
+					disableOnInteraction: false,
+				},
+				breakpoints: {
+					640: {
+						slidesPerView: 2,
+						spaceBetween: 20,
+					},
+					768: {
+						slidesPerView: 3,
+						spaceBetween: 30,
+					},
+					1024: {
+						slidesPerView: 4,
+						spaceBetween: 20,
+					},
+				},
+			});
+			// Cleanup function to destroy Swiper instance
+			return () => {
+				if (swipers) {
+					swipers.destroy(true, true);
+				}
+			};
+		}
+
+    }, [posts]);
+    
     new VenoBox({
         selector: '.my-image-as',
         numeration: true,
@@ -131,54 +173,6 @@ const KdeksDetail = () => {
             setListDataKota(foundItem);
             // const isKdeksPage = location.pathname === '/kdeks/'
         }
-
-
-        // const isian = isiItemsBerita();
-        // setItems(isian);
-        // alert(items.length);
-        if (document.querySelector('.swiper-kdeks')) {
-            // var mySwiper = new Swiper('.swiper-kdeks', {
-            // pengaturan Swiper
-
-            const swiper = new Swiper('.swiper-kdeks', {
-                // pengaturan Swiper
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                    dynamicBullets: true
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false,
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-                    1024: {
-                        slidesPerView: 4,
-                        spaceBetween: 20,
-                    },
-                },
-            });
-            // Cleanup function to destroy Swiper instance
-            return () => {
-                if (swiper) {
-                    swiper.destroy(true, true);
-                }
-            };
-        }
-
 
 
 
@@ -271,41 +265,44 @@ const KdeksDetail = () => {
                             <h2 className="section-title">Berita Dan Kegiatan</h2>
                         </div>
                         <div className="row row-gutter-30">
-                            {/* <div className="swiper swiper-kdeks">
-                                <div className="swiper-wrapper"> */}
-
-
-                            {posts.slice(0, 4).map((item) => (
-                                <div className="col-lg-3" key={item.id}>
-                                    <div className="berita-card">
-                                        <div className="berita-card-imgbox-direktorat-home ">
-                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title} /></a>
-                                        </div>
-                                        <div className="berita-content-direktorat">
-                                            <div className="direktorat-tag-home">
-                                                <span>#BERITABARU</span>
+                            {posts.length > 0 ? (
+                                <div className="swiper swiper-kdeks">
+                                    <div className="swiper-wrapper">
+                                        {posts.slice(0, 9).map((item) => (
+                                            <div className="col-lg-3 swiper-slide" key={item.id}>
+                                                <div className="berita-card">
+                                                    <div className="berita-card-imgbox-direktorat-home">
+                                                        <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>
+                                                            <img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title} />
+                                                        </a>
+                                                    </div>
+                                                    <div className="berita-content-direktorat">
+                                                        <div className="direktorat-tag-home">
+                                                            <span>#BERITABARU</span>
+                                                        </div>
+                                                        <div className="event-card-title-direktorat pb-2">
+                                                            <h4>
+                                                                <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                            </h4>
+                                                        </div>
+                                                        <div className="event-card-info-direktorat">
+                                                            <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="event-card-title-direktorat pb-2">
-                                                <h4>
-                                                    <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>{item.title}</a>
-                                                </h4>
-                                            </div>
-                                            <div className="event-card-info-direktorat">
-                                                <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
-                                            </div>
-                                        </div>
+                                        ))}
+                                    </div>
+                                    <div className="swiper-button-prev">
+                                        <i className="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div className="swiper-button-next">
+                                        <i className="fa-solid fa-chevron-right"></i>
                                     </div>
                                 </div>
-                            ))
-                            }
-                            {/* </div >
-                                <div className="swiper-button-prev">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </div>
-                                <div className="swiper-button-next">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </div>
-                            </div > */}
+                            ) : (
+                                <p className="text-center">No posts available.</p>
+                            )}
                         </div >
                     </div >
 

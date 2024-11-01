@@ -63,7 +63,7 @@ const Section2 = () => {
                                     <div className="direktorat-tag-home">
                                         <span>#BERITABARU</span>
                                     </div>
-                                    <div className="event-card-title-direktorat-home pb-2">
+                                    <div className="event-card-title-direktorat-home-x pb-2">
                                         <h4>
                                             <a href={`/berita-terkait/${convertToSlug(item.title)}`}>{item.title}</a>
                                         </h4>

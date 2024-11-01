@@ -40,7 +40,7 @@ const Section7 = () => {
 				pagination: {
 					el: '.swiper-pagination',
 					clickable: true,
-					dynamicMainBullets: true
+					// dynamicMainBullets: true
 				},
 				navigation: {
 					nextEl: '.swiper-button-next',
@@ -73,7 +73,7 @@ const Section7 = () => {
 			};
 		}
 
-	}, []);
+	}, [posts]);
 
 	const convertToSlug = (title) => {
 		return title
@@ -88,17 +88,18 @@ const Section7 = () => {
 
 			<div className="portfolio-content">
 				<div className="row">
-					<div className="swiper swiper-berita">
-						<div className="swiper-wrapper">
-							{
-								posts.slice(0, 5).map((item) => (
+					{posts.length > 0 ? (
+						<div className="swiper swiper-berita">
+							<div className="swiper-wrapper">
+								{posts.slice(0, 5).map((item) => (
 									<div className="col-lg-3 col-xl-3 swiper-slide" key={item.id}>
 										<div className="berita-card-kdeks shadow">
-											<div className="berita-card-imgbox-berita ">
-												<a href={`/berita-terkait/${convertToSlug(item.title)}`}><img src="assets/image/berita3.svg" className="img-fluid" alt={item.title} /></a>
+											<div className="berita-card-imgbox-berita">
+												<a href={`/berita-terkait/${convertToSlug(item.title)}`}>
+													<img src="assets/image/berita3.svg" className="img-fluid" alt={item.title} />
+												</a>
 											</div>
 											<div className="berita-content-direktorat">
-
 												<div className="event-card-title pb-2">
 													<h4>
 														<a href={`/berita-terkait/${convertToSlug(item.title)}`}>{item.title}</a>
@@ -111,14 +112,17 @@ const Section7 = () => {
 										</div>
 									</div>
 								))}
-						</div >
-						<div className="swiper-button-prev">
-							<i class="fa-solid fa-chevron-left"></i>
+							</div>
+							<div className="swiper-button-prev">
+								<i className="fa-solid fa-chevron-left"></i>
+							</div>
+							<div className="swiper-button-next">
+								<i className="fa-solid fa-chevron-right"></i>
+							</div>
 						</div>
-						<div className="swiper-button-next">
-							<i class="fa-solid fa-chevron-right"></i>
-						</div>
-					</div >
+					) : (
+						<p className="text-center">No posts available.</p>
+					)}
 				</div >
 			</div>
 		</section>
