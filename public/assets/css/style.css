@@ -10093,3 +10093,6 @@ SOCIAL MEDIA
 .berita-card:hover h4 > a {
   color: var(--thm-primary);
 }
+.berita-card-kdeks:hover h4 > a {
+  color: var(--thm-primary);
+}
