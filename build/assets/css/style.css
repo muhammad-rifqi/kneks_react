@@ -5124,21 +5124,74 @@ a.search-toggler {
   overflow: hidden;
   text-overflow: ellipsis; */
 }
-.event-card-title-direktorat-home h4 {
+.event-card-title-direktorat-kdek h4 {
 
   margin-bottom: 0;
   padding: 0.2rem 0;
-  font-size: 15px !important;
-  /* white-space: nowrap;
-  width: 410px;
-  overflow: hidden;
-  text-overflow: ellipsis; */
+  font-size: 16px !important;
+
   display: -webkit-box; /* Use flexbox */
   -webkit-box-orient: vertical; /* Set the orientation to vertical */
   -webkit-line-clamp: 2; /* Limit to 2 lines */
   overflow: hidden; /* Hide overflow */
   text-overflow: ellipsis; /* Show ellipsis */
-  width: 210px; 
+  width: 250px; 
+  white-space: normal; /* Allow text to wrap */
+}
+.event-card-title-direktorat-home-kdek h4 {
+
+  margin-bottom: 0;
+  padding: 0.2rem 0;
+  font-size: 16px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis */
+  width: 250px; 
+  white-space: normal; /* Allow text to wrap */
+}
+.event-card-title-direktorat-home h4 {
+
+  margin-bottom: 0;
+  padding: 0.2rem 0;
+  font-size: 18px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis */
+  width: 250px; 
+  white-space: normal; /* Allow text to wrap */
+}
+.event-card-title-direktorat-home-x h4 {
+
+  margin-bottom: 0;
+  padding: 0.2rem 0;
+  font-size: 16px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis */
+  width: 200px; 
+  white-space: normal; /* Allow text to wrap */
+}
+.event-card-title-kdeks-x h4 {
+
+  margin-bottom: 0;
+  padding: 0.2rem 0;
+  font-size: 16px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis */
+  width: 250px; 
   white-space: normal; /* Allow text to wrap */
 }
 
@@ -5148,6 +5201,15 @@ a.search-toggler {
 }
 
 .event-card-title h4 > a:hover {
+  color: var(--thm-primary);
+}
+.event-card-title-detail h4 > a {
+  font-size: 18px ;
+  color: inherit;
+  transition: all 500ms ease;
+}
+
+.event-card-title-detail h4 > a:hover {
   color: var(--thm-primary);
 }
 
@@ -8614,7 +8676,7 @@ label {
 }
 
 .direktorat-tag-home {
-  font-size: 13px;
+  font-size: 14px;
   color: #f2994a;
   letter-spacing: 0.03em;
   border-radius: 50px;
@@ -8643,7 +8705,7 @@ label {
   padding: 0.6rem 0;
   font-size: 1.5rem;
   white-space: nowrap;
-  width: 500px;
+  maxWidth: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -8798,7 +8860,7 @@ label {
   padding: 1rem;
   color: #ffffff;
   position: absolute;
-
+  width: 100%;
   z-index: 2;
 }
 
@@ -9322,6 +9384,7 @@ SOCIAL MEDIA
 .berita-card {
   box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
 }
+
 .berita-card-imgbox img {
   height: 270px;
   object-fit: cover;
@@ -9343,12 +9406,18 @@ SOCIAL MEDIA
   object-fit: cover;
 }
 .berita-card-imgbox-direktorat-home img {
-  height: 170px;
+  height: 100%;
   object-fit: cover;
 }
 
+.event-card-info-direktorat-kdeks {
+  /* margin-bottom: 5px; */
+  font-size: 10px;
+  margin-bottom: 0;
+}
 .event-card-info-direktorat {
   margin-bottom: 5px;
+  font-size: 12px;
 }
 .event-card-info-direktorat-home {
   margin-bottom: 5px;
@@ -9974,3 +10043,108 @@ SOCIAL MEDIA
 .swiper-button-next i {
   right: -1rem !important;
 }
+
+.chart-container {
+  width: 500px; 
+  height: 350px; 
+  position: relative;
+}
+
+.custom-carousel {
+  padding: 80px 240px;
+}
+
+.nav-tabs .nav-link {
+  color: white !important;
+  background-color: transparent;
+  border: none;
+  transition: color 0.3s;
+}
+
+.nav-tabs .nav-link.active {
+  color: black !important;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+}
+
+.nav-tabs .nav-link:not(.active):hover {
+  color: #ddd;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination-btn {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-btn.active {
+  background-color: #2dcd7c;
+  color: white;
+}
+
+.pagination-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.img-box-b {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+.img-box-b-home {
+  position: relative;
+  overflow: hidden;
+  height: 490px;
+}
+
+.cover-image {
+  width: 100%;        
+  height: 100%;      
+  object-fit: cover;  
+  object-position: center;
+}
+
+
+.portfolio-section .carousel-indicators{
+  display: none;
+}
+
+
+.berita-card:hover h4 > a {
+  color: var(--thm-primary);
+}
+.berita-card-kdeks:hover h4 > a {
+  color: var(--thm-primary);
+}
+.news-box:hover h2 > a {
+  color: var(--thm-primary) !important;
+}
+
+.news-box{
+  cursor: pointer;
+}
+
+.news-box h2 > a{
+  margin-bottom: 0;
+  padding: 0.4rem 0;
+  font-size: 20px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 600px; 
+  white-space: normal; /* Allow text to wrap */
+  color: #ffffff !important;
+}
+
