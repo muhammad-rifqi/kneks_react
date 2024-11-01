@@ -47,18 +47,13 @@ const KdeksDetail = () => {
             const swipers = new Swiper('.swiper-kdeks', {
                 // pengaturan Swiper
                 loop: true,
-                // pagination: {
-                // 	el: '.swiper-pagination',
-                // 	clickable: true,
-                // 	dynamicMainBullets: true
-                // },
+              
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
                 autoplay: {
                     delay: 2500,
-                    disableOnInteraction: false,
                 },
                 breakpoints: {
                     640: {
@@ -123,7 +118,7 @@ const KdeksDetail = () => {
     });
     // untukmengeloladatasebelumdiloop
     useEffect(() => {
-        if (document.querySelector('.swiper-kdeks-agenda')) {
+        // if (document.querySelector('.swiper-kdeks-agenda')) {
 
             const swipers = new Swiper('.swiper-kdeks-agenda', {
                 // pengaturan Swiper
@@ -161,7 +156,7 @@ const KdeksDetail = () => {
                     swipers.destroy(true, true);
                 }
             };
-        }
+        // }
     }, [])
     useEffect(() => {
         if (Kota) { // Make sure Kota is defined
@@ -280,7 +275,7 @@ const KdeksDetail = () => {
                                                         <div className="direktorat-tag-home">
                                                             <span>#BERITABARU</span>
                                                         </div>
-                                                        <div className="event-card-title-direktorat pb-2">
+                                                        <div className="event-card-title-direktorat-kdek pb-2">
                                                             <h4>
                                                                 <a href={item.title ? `/berita-kegiatan/${convertToSlug(item.title)}` : ''}>{item.title ? item.title : ''}</a>
                                                             </h4>
