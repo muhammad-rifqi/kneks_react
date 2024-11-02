@@ -54,13 +54,13 @@ const MapsKdeks = () => {
 
 
 
-	
+
 	return (
 		<>
 			<section className="mayor-section-maps">
 				<div className="row" >
 					<div className="col-md-12 col-lg-12 text-center ">
-						<div className="maps-indo" style={{ transform: `scale(1.5)` }}>
+						<div className="maps-indo">
 
 							<svg width="792.54596" height="316.66394">
 								<a href={aceh.title ? `/kdeks/${convertToSlug(aceh.title)}` : '#aceh'} data-bs-toggle="tooltip" title={aceh.title ? aceh.title : ''} style={{ outline: 'none' }} rel="noreferrer" target={aceh.title ? '_black' : ''} >

@@ -157,7 +157,7 @@ const TentangKami = () => {
                             <div className="col-lg-12 col-xl-12">
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title" style={{ textAlign: 'center' }}>Fungsi KNEKS</h2>
-                                    <ol>
+                                    <ol style={{ fontSize: `16px !important` }} >
                                         <li>Pemberian rekomendasi arah kebijakan dan program strategis pembangunan nasional di sektor ekonomi dan keuangan syariah.</li>
                                         <li>Pelaksanaan koordinasi, sinkronisasi, sinergisitas penyusunan dan pelaksanaan rencana araha kebijakan dan program strategis pada sektor ekonomi dan keuangan syariah.</li>
                                         <li>Perumusan dan pemberian rekomendasi atas penyelesaian masalah di sektor ekonomi dan keuangan syariah.</li>
@@ -170,7 +170,7 @@ const TentangKami = () => {
                         {/* end row konten */}
 
                     </div>
-                </section>
+                </section >
                 {/* END SECTION FILOSOFI LOGO */}
 
             </div >

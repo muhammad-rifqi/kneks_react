@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 
 import Section1 from '../component/home/Section1';
 import Section2 from '../component/home/Section2';
+// import Section2backup from '../component/home/Section2backup ';
 import Section3 from '../component/home/Section3';
 import Section4 from '../component/home/Section4';
 import Section5 from '../component/home/Section5';
@@ -32,12 +33,13 @@ const Home = () => {
   return (
     <div className="page-wrapper">
       <Section1 />
-      <Section2 />
       <Section3 />
+      {/* <Section2backup /> */}
+      <Section2 />
       {/* <Section14 /> */}
-      <Section5 />
       <News />
       <Section7 />
+      <Section5 />
       <Section4 />
       {/* <Section12 /> */}
 

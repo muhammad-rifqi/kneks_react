@@ -58,6 +58,7 @@ const resources = {
             "rekomendasi": "Other Agenda Recommendations",
 
             "sosialMedia": "Social Media",
+            "instagram": "Instagram Post",
 
             "instansi": "KNEKS Member",
             "instansiIsi": "KNEKS consists of 3 Coordinating Ministers, 7 Ministers, 3 Chairmen of government institutions,",
@@ -94,6 +95,7 @@ const resources = {
             "pencarian": "Cari...",
 
             "alamat": "Alamat",
+            "instagram": "Postingan Instagram",
 
             "event": "Event Ekonomi dan Keuangan Syariah",
 

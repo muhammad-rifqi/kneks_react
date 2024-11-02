@@ -1,7 +1,8 @@
 import React from "react"
+import { InstagramEmbed } from 'react-social-media-embed';
 import { useTranslation } from 'react-i18next';
 const Section11 = () => {
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 	return (
 		<>
 			<section className="sm-section funfact-section-post">
@@ -9,34 +10,28 @@ const Section11 = () => {
 					<div className="sm-box">
 						<div className="section-title-box text-center">
 							<div className="section-tagline-b">{t('sosialMedia')}</div>
-							<h2 className="section-title">Instagram Post</h2>
+							<h2 className="section-title">{t('instagram')}</h2>
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-lg-3 col-md-3 pb-3">
+						<div className="col-lg-4 col-md-4 pb-3">
 							<div className="sm-card">
-								<img src="assets/image/sm.svg" className="img-fluid " alt="img-97" />
+								<InstagramEmbed url="https://www.instagram.com/p/C6pooCOBSOA" className="img-fluid" height={565} />
 
 							</div >
 						</div >
-						<div className="col-lg-3 col-md-3 pb-3">
+						<div className="col-lg-4 col-md-4 pb-3">
 							<div className="sm-card">
-								<img src="assets/image/berita2.jpeg" className="img-fluid " alt="img-97" />
+								<InstagramEmbed url="https://www.instagram.com/p/CtjUgOFrnVn/" className="img-fluid" height={565} />
+							</div >
+						</div >
+						<div className="col-lg-4 col-md-4 pb-3">
+							<div className="sm-card">
+								<InstagramEmbed url="https://www.instagram.com/p/DB2pOXjz09c/" className="img-fluid" height={565} />
 
 							</div >
 						</div >
-						<div className="col-lg-3 col-md-3 pb-3">
-							<div className="sm-card">
-								<img src="assets/image/berita2.jpeg" className="img-fluid " alt="img-97" />
 
-							</div >
-						</div >
-						<div className="col-lg-3 col-md-3 pb-3">
-							<div className="sm-card">
-								<img src="assets/image/berita2.jpeg" className="img-fluid " alt="img-97" />
-
-							</div >
-						</div >
 
 					</div>
 
@@ -45,7 +40,7 @@ const Section11 = () => {
 
 							<h2 className="section-title">{t('instansi')}</h2>
 							<div className="section-text-b "><p className="text-white ">
-							{t('instansiIsi')} <br /> {t('instansiIsi2')}	</p>
+								{t('instansiIsi')} <br /> {t('instansiIsi2')}	</p>
 							</div>
 						</div>
 					</div>

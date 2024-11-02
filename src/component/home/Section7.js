@@ -31,49 +31,49 @@ const Section7 = () => {
 		};
 
 		fetchPosts();
-		
+
 
 	}, []);
 
 	useEffect(() => {
-        if (posts.length > 0) {
-        if (document.querySelector('.swiper-berita')) {
-            const swipers = new Swiper('.swiper-berita', {
-                // pengaturan Swiper
-                loop: true,
+		if (posts.length > 0) {
+			if (document.querySelector('.swiper-berita')) {
+				const swipers = new Swiper('.swiper-berita', {
+					// pengaturan Swiper
+					loop: true,
 
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                autoplay: {
-                    delay: 2500,
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-                    1024: {
-                        slidesPerView: 4,
-                        spaceBetween: 20,
-                    },
-                },
-            });
-            // Cleanup function to destroy Swiper instance
-            return () => {
-                if (swipers) {
-                    swipers.destroy(true, true);
-                }
-            };
-        }
-    }
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+					autoplay: {
+						delay: 2500,
+					},
+					breakpoints: {
+						640: {
+							slidesPerView: 2,
+							spaceBetween: 20,
+						},
+						768: {
+							slidesPerView: 3,
+							spaceBetween: 30,
+						},
+						1024: {
+							slidesPerView: 4,
+							spaceBetween: 20,
+						},
+					},
+				});
+				// Cleanup function to destroy Swiper instance
+				return () => {
+					if (swipers) {
+						swipers.destroy(true, true);
+					}
+				};
+			}
+		}
 
-    }, [posts]);
+	}, [posts]);
 
 	const convertToSlug = (title) => {
 		return title
@@ -87,19 +87,23 @@ const Section7 = () => {
 		<section className="portfolio-section ">
 
 			<div className="portfolio-content">
-				<div className="row">
+				<div className="row m-0">
 					{posts.length > 0 ? (
 						<div className="swiper swiper-berita">
 							<div className="swiper-wrapper">
 								{posts.slice(0, 9).map((item) => (
 									<div className="col-lg-3 col-xl-3 swiper-slide" key={item.id}>
-										<div className="berita-card-kdeks shadow">
+										<div className="berita-card-kdeks">
 											<div className="berita-card-imgbox-berita">
 												<a href={`/berita-terkait/${convertToSlug(item.title)}`}>
 													<img src="assets/image/berita3.svg" className="img-fluid" alt={item.title} />
 												</a>
 											</div>
+
 											<div className="berita-content-direktorat">
+												<div className="direktorat-tag-home">
+													<span>#BERITABARU</span>
+												</div>
 												<div className="event-card-title pb-2">
 													<h4>
 														<a href={`/berita-terkait/${convertToSlug(item.title)}`}>{item.title}</a>

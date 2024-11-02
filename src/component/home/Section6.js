@@ -99,7 +99,7 @@ const Section6 = () => {
 			<section className="mayor-section-maps">
 				<div className="row" >
 					<div className="col-md-12 col-lg-12 text-center ">
-						<div className="maps-indo" style={{ transform: `scale(1.5)` }}>
+						<div className="maps-indo-x" >
 
 							<svg width="792.54596" height="316.66394">
 								<g data-bs-toggle="tooltip" title="5Aceh" fill="#dce2de" stroke="#bcc0be" onClick={(e) => { e.preventDefault(); handleShow('aceh'); }}>

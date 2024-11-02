@@ -124,19 +124,17 @@ const Kdeks = () => {
                             </div>
 
                         </div>
-                        <div className="row row-gutter-y-40 d-flex justify-content-center pt-5">
+                        {/* <div className="row row-gutter-y-40 d-flex justify-content-center pt-5">
                             <div className="col-lg-3 text-center">
                                 <div className="sidebar-widget">
-                                    {/* <div className="sidebar-widget-box-icon">
-                                        <i className="flaticon-pdf"></i>
-                                    </div> */}
+                                  
                                     <div className="sidebar-widget-box-content">
                                         <h3>Surat Keputusan Kdeks</h3>
                                         <a href="#tt" className="btn btn-primary">View</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
 
