@@ -19,16 +19,15 @@ const Pidato = () => {
         <>
             <Form>
                 <Row className="d-flex justify-content-end">
-                    <Col lg={{ offset: 1 }}>
-                    </Col>
                     <Col lg={{ span: 7 }}>
                         <Form.Control
                             value={searchTerm}
                             onChange={handleChange}
                             style={{ padding: '9px 20px', borderRadius: '4px', border: '1px solid #ccc', marginBottom: '12px', outline: 'none' }} placeholder="Cari Pidato/Paparan..." />
                     </Col>
-                    <Col lg={{ span: 1 }}>
-                        <Button variant="primary" type="submit" style={{ padding: '9px 20px', marginBottom: '10px', borderRadius: '4px', outline: 'none' }}><i className="flaticon-search-interface-symbol"></i></Button>
+                    <Col lg={{ span: 3 }} className="text-end">
+                        <Button variant="primary" type="submit" style={{ padding: '11px 30px', marginBottom: '10px', borderRadius: '4px', outline: 'none' }}>Cari</Button>
+                        <Button variant="danger" style={{ padding: '9px 30px', marginBottom: '10px', borderRadius: '4px', outline: 'none' }}>Reset</Button>
                     </Col>
                 </Row>
             </Form>

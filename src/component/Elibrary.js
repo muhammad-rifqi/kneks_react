@@ -18,7 +18,7 @@ const Elibrabry = () => {
                 return <Pidato />;
             case "kajian":
                 return <Kajian />;
-            case "publlikasi":
+            case "publikasi":
                 return <Publikasi />;
             case "regulasi":
                 return <Regulasi />;
