@@ -10035,9 +10035,7 @@ SOCIAL MEDIA
   transform: scale(1.5);
   
 }
-/* .maps-indo-x g{
-  transition: transform .2s;
-} */
+
 
 .maps-indo-x g:hover {
   cursor: pointer;
@@ -10055,6 +10053,8 @@ SOCIAL MEDIA
 
 .maps-indo g:hover {
   cursor: pointer;
+  stroke: #000000 !important;
+  fill:  var(--thm-primary);
 }
 
 .maps-indo g:focus {
