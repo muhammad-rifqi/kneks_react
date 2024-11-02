@@ -40,7 +40,7 @@ const Header = () => {
   const splita = location.pathname.split('/')
   const isKdeksPage = locationsx && splita[2] === convertToSlug(locationsx.title);
 
-  
+
 
   useEffect(() => {
 
@@ -69,7 +69,7 @@ const Header = () => {
     const value = event.target.value;
     setSearchTerm(value);
     // Implement search logic if needed
-    console.log('Cari apa'+searchTerm)
+    console.log('Cari apa' + searchTerm)
   };
   return (
     <>
@@ -164,7 +164,8 @@ const Header = () => {
                 value={searchTerm}
                 onChange={handleChange}
                 placeholder={t('pencarian')}
-                style={{ width: '180px', padding: '4px', marginRight:'8px', borderRadius: '4px', border: '1px solid #ccc' }}
+
+                style={{ width: '180px', padding: '4px', marginRight: '8px', borderRadius: '4px', border: '1px solid #ccc', outline: 'none' }}
               />
               <div className="topNav-right ">
                 <ul>

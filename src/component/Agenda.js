@@ -7,6 +7,13 @@ import listPlugin from "@fullcalendar/list";
 import EventDetailModal from "../component/modal/AgendaModal"; // Event detail modal
 import Card from 'react-bootstrap/Card';
 
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+import InputGroup from 'react-bootstrap/InputGroup';
+
+
 
 import { Calendar } from "react-multi-date-picker"
 
@@ -38,6 +45,15 @@ const Agenda = () => {
 
     const [selectedDates, setSelectedDates] = useState();
 
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleChange = (event) => {
+        const value = event.target.value;
+        setSearchTerm(value);
+        // Implement search logic if needed
+        console.log('Cari apa' + searchTerm)
+    };
+
     return (
         <>
             <div className="page-wrapper">
@@ -53,16 +69,17 @@ const Agenda = () => {
                         <div className="row">
 
 
-                            <div className="col-lg-4">
-                                <div className="sidebar-form-content">
-                                    <div className="sidebar__item sidebar__item--search">
-                                        <form action="#" className="sidebar__search">
-                                        <label for="search" className="sr-only">Filter Tanggal</label>
+                            <div className="col-lg-12">
+                                <Form>
+                                    <Row>
+
+                                        <Col lg={{ span: 4 }}>
                                             <DatePicker
                                                 value={selectedDates}
                                                 onChange={setSelectedDates}
                                                 format="DD-MM-YYYY"
                                                 placeholder="Filter Tanggal"
+                                                style={{ padding: '16px ', width: '415px' }}
                                                 animations={[
                                                     transition({
                                                         from: 35,
@@ -70,30 +87,30 @@ const Agenda = () => {
                                                     }),
                                                 ]}
                                             />
-                                            <button type="submit" aria-label="search submit" className="thm-btn">
-                                            <i class="fa-solid fa-calendar-days"></i>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
+
+                                        </Col>
+                                        <Col lg={{ span: 7 }}>
+                                            <Form.Control
+                                                value={searchTerm}
+                                                onChange={handleChange}
+                                                style={{ padding: '9px 20px', borderRadius: '4px', border: '1px solid #ccc', marginBottom: '12px', outline: 'none' }} placeholder="Cari Agenda..." />
+                                        </Col>
+                                        <Col lg={{ span: 1 }}>
+                                            <Button variant="primary" type="submit" style={{ padding: '9px 20px', marginBottom: '10px', borderRadius: '4px', outline: 'none' }}><i className="flaticon-search-interface-symbol"></i></Button>
+                                        </Col>
+                                    </Row>
+                                </Form>
+                            </div>
+                            <div className="col-lg-4">
+
                                 <Card>
                                     <Card.Body className="d-flex justify-content-center">
-                                        <Calendar style={{zIndex:"99"}}/>
+                                        <Calendar style={{ zIndex: "99" }} />
                                     </Card.Body>
                                 </Card>
                             </div>
                             <div className="col-lg-8">
-                                <div className="sidebar-form-content">
-                                    <div className="sidebar__item sidebar__item--search">
-                                        <form action="#" className="sidebar__search">
-                                            <label for="search" className="sr-only">search here</label>
-                                            <input type="text" placeholder="Search Here" />
-                                            <button type="submit" aria-label="search submit" className="thm-btn">
-                                                <i className="flaticon-search-interface-symbol"></i>
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
+
                                 <Card className="p-2 border-radius" >
                                     <Card.Body>
 
