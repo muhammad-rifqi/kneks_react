@@ -29,7 +29,7 @@ const Footer = () => {
   const splita = location.pathname.split('/')
   const isKdeksPage = locationsx && splita[2] === convertToSlug(locationsx.title);
 
-  
+
 
   useEffect(() => {
 
@@ -71,7 +71,7 @@ const Footer = () => {
     minWidth: '250px',
     backgroundColor: '#f9f9f9',
     boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)',
-    padding:'5px 1px 5px 10px',
+    padding: '5px 1px 5px 10px',
     zIndex: 1,
   };
 
@@ -104,6 +104,7 @@ const Footer = () => {
                   <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
                   <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
                   <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
                 </div>
               </div>
               <div className="col-lg-2">
@@ -119,7 +120,7 @@ const Footer = () => {
                       <li
                         onMouseEnter={() => setHoveredItem('profile')}
                         onMouseLeave={() => setHoveredItem(null)}
-                        style={{ position: 'relative'}}
+                        style={{ position: 'relative' }}
                       >
                         <a href="#profil" style={menuItemStyle}>{t('menu.profile')}</a>
                         <ul style={hoveredItem === 'profile' ? showSubmenuStyle : submenuStyle}>
@@ -256,7 +257,7 @@ const Footer = () => {
                               {t('menu.opini')}
                             </a>
                           </li>
-                         
+
                         </ul>
                       </li>
                       <li>
