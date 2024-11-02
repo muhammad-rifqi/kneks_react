@@ -325,7 +325,7 @@ const KdeksDetail = () => {
                                                             <img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title ? item.title : ''} />
                                                         </a>
                                                     </div>
-                                                    <div className="berita-content-direktorat">
+                                                    <div className="berita-content-direktorat-xs">
                                                         <div className="direktorat-tag-home">
                                                             <span>#BERITABARU</span>
                                                         </div>
@@ -448,7 +448,7 @@ const KdeksDetail = () => {
                             </div>
                         </div>
                     </section>
-                    <section className="news-section">
+                    <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
                                 <div className="section-title-box text-center">
@@ -462,7 +462,7 @@ const KdeksDetail = () => {
                                             <div className="col-lg-3 col-xl-3" key={item.id}>
                                                 <div className="berita-card">
 
-                                                    <div className="berita-content-direktorat">
+                                                    <div className="berita-content-direktorat-xs">
                                                         <div className="event-card-title pb-2">
                                                             <h4>
                                                                 <a href={`/opini/${convertToSlug(item.title)}`}>{item.title}</a>
@@ -577,7 +577,7 @@ const KdeksDetail = () => {
                             </div>
                         </div>
                     </section>
-                    <section className="news-section">
+                    <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
                                 <div className="section-title-box text-center">
@@ -589,7 +589,7 @@ const KdeksDetail = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>
@@ -606,7 +606,7 @@ const KdeksDetail = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>
@@ -623,7 +623,7 @@ const KdeksDetail = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>
@@ -640,7 +640,7 @@ const KdeksDetail = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>

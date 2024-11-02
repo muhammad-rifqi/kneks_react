@@ -166,7 +166,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                         <div className="berita-card-imgbox-direktorat-home ">
                                             <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title} /></a>
                                         </div>
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-x">
                                             <div className="direktorat-tag-home">
                                                 <span>#BERITABARU</span>
                                             </div>
@@ -187,7 +187,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                     </div>
                 </section>
                 <section className="funfact-section-struktur-x">
-                    <section className="news-section">
+                    <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
                                 <div className="section-title-box text-center">
@@ -202,7 +202,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                                 {/* <div className="berita-card-imgbox-direktorat ">
                                                 <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                             </div> */}
-                                                <div className="berita-content-direktorat">
+                                                <div className="berita-content-direktorat-xs">
 
                                                     <div className="event-card-title pb-2">
                                                         <h4>
@@ -309,7 +309,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                             </div>
                         </div>
                     </section>
-                    <section className="news-section">
+                    <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
                                 <div className="section-title-box text-center">
@@ -321,7 +321,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>
@@ -338,7 +338,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>
@@ -355,7 +355,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>
@@ -372,7 +372,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>

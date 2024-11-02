@@ -121,24 +121,24 @@ const InfrastrukturEkosistemSyariah = () => {
                                     <p>Deskripsi dari direktorat Industri Produk Halal itu apa (Sementara masih menggunakan lorem ipsum) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                                     <h5 className="about-one-inner-text-x">Divisi</h5>
                                     <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    
+
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <a href="#t"  className="component-service d-block ">
+                                            <a href="#t" className="component-service d-block ">
                                                 <div className="service-image ">
                                                     <img src="assets/image/kemenkeu.png" className="img-fluid " alt="kemenkeu" />
                                                 </div>
                                             </a>
                                         </div>
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <a href="#t"  className="component-service  d-block">
+                                            <a href="#t" className="component-service  d-block">
                                                 <div className="service-image">
                                                     <img src="assets/image/instansi2.png" className="img-fluid" alt="kementriang bidang perekonomian republik indonesia" />
                                                 </div>
                                             </a>
                                         </div>
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
-                                            <a href="#t"  className="component-service  d-block">
+                                            <a href="#t" className="component-service  d-block">
                                                 <div className="service-image">
                                                     <img src="assets/image/instansi32.png" className="img-fluid" alt="kemenko pmk" />
                                                 </div>
@@ -160,13 +160,13 @@ const InfrastrukturEkosistemSyariah = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-30">
-                        {posts.slice(0, 4).map((item) => (
+                            {posts.slice(0, 4).map((item) => (
                                 <div className="col-lg-3" key={item.id}>
                                     <div className="berita-card">
                                         <div className="berita-card-imgbox-direktorat-home ">
                                             <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title} /></a>
                                         </div>
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-x">
                                             <div className="direktorat-tag-home">
                                                 <span>#BERITABARU</span>
                                             </div>
@@ -187,7 +187,7 @@ const InfrastrukturEkosistemSyariah = () => {
                     </div>
                 </section>
                 <section className="funfact-section-struktur-x">
-                    <section className="news-section">
+                    <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
                                 <div className="section-title-box text-center">
@@ -195,14 +195,14 @@ const InfrastrukturEkosistemSyariah = () => {
                                 </div>
                             </div>
                             <div className="row row-gutter-30">
-                            {
+                                {
                                     posts.slice(0, 4).map((item) => (
                                         <div className="col-lg-3 col-xl-3" key={item.id}>
                                             <div className="berita-card">
                                                 {/* <div className="berita-card-imgbox-direktorat ">
                                                 <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                             </div> */}
-                                                <div className="berita-content-direktorat">
+                                                <div className="berita-content-direktorat-xs">
 
                                                     <div className="event-card-title pb-2">
                                                         <h4>
@@ -229,7 +229,7 @@ const InfrastrukturEkosistemSyariah = () => {
                             <div className="row row-gutter-y-30 d-flex justify-content-center">
 
                                 <div className="col-lg-9">
-                                <div className="row ">
+                                    <div className="row ">
                                         <div className="col-12 col-md-6 col-xl-3">
                                             <div className="team-card-x">
                                                 <div className="team-card-img-x">
@@ -309,7 +309,7 @@ const InfrastrukturEkosistemSyariah = () => {
                             </div>
                         </div>
                     </section>
-                    <section className="news-section">
+                    <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
                                 <div className="section-title-box text-center">
@@ -321,7 +321,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>
@@ -338,7 +338,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>
@@ -355,7 +355,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>
@@ -372,7 +372,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                 <div className="col-lg-3 col-xl-3">
                                     <div className="berita-card">
 
-                                        <div className="berita-content-direktorat">
+                                        <div className="berita-content-direktorat-xs">
 
                                             <div className="event-card-title-detail pb-2">
                                                 <h4>

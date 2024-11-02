@@ -114,9 +114,7 @@ const SiaranPersDetail = () => {
                                         </div>
                                     ))
                                 ) : (
-                                    <div className="col-lg-12 text-center ">
-                                        <p className="text-white bg-danger p-2">Tidak ada foto</p>
-                                    </div>
+                                    <></>
                                 )}
                             </div>
                             <div className="col-lg-12">

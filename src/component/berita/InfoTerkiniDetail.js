@@ -101,27 +101,23 @@ const InfoTerkiniDetail = () => {
                                 </div>
                             </div>
                             <div className="row">
-                                {/* {rows?.foto_gallery && rows?.foto_gallery.length > 0 ? (
-                                    rows?.foto_gallery.map((result, index) => ( */}
-                                <div className="col-lg-3 pb-3" >
-                                    <a href="/assets/image/berita.jpg" className="beritaDetail" data-gall="gallery01">
-                                        {/* <a href={`${process.env.PUBLIC_URL}/${result.foto}`} className="beritaDetail" data-gall="gallery01"> */}
-                                        <img
-                                            src="/assets/image/berita.jpg"
-                                            // src={`${process.env.PUBLIC_URL}/${result.foto}`}
-                                            width="100%"
-                                            style={{ height: "195px" }}
-                                            className="img-fluid"
-                                            alt={rows?.title}
-                                        />
-                                    </a>
-                                </div>
-                                {/* ))
+                                {rows?.foto_gallery && rows?.foto_gallery.length > 0 ? (
+                                    rows?.foto_gallery.map((result, index) => (
+                                        <div className="col-lg-3 pb-3" key={index}>
+                                            <a href={`${process.env.PUBLIC_URL}/${result.foto}`} className="beritaDetail" data-gall="gallery01">
+                                                <img
+                                                    src={`${process.env.PUBLIC_URL}/${result.foto}`}
+                                                    width="100%"
+                                                    style={{ height: "195px" }}
+                                                    className="img-fluid"
+                                                    alt={rows?.title}
+                                                />
+                                            </a>
+                                        </div>
+                                    ))
                                 ) : (
-                                    <div className="col-lg-12 text-center ">
-                                        <p className="text-white bg-danger p-2">Tidak ada foto</p>
-                                    </div>
-                                )} */}
+                                    <></>
+                                )}
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
