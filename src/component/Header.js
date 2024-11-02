@@ -63,14 +63,14 @@ const Header = () => {
     setCookie('i18next', lng, { path: '/' }); // Set cookie bahasa
   };
 
-  const [searchTerm, setSearchTerm] = useState('');
+  // const [searchTerm, setSearchTerm] = useState('');
 
-  const handleChange = (event) => {
-    const value = event.target.value;
-    setSearchTerm(value);
-    // Implement search logic if needed
-    console.log('Cari apa' + searchTerm)
-  };
+  // const handleChange = (event) => {
+  //   const value = event.target.value;
+  //   setSearchTerm(value);
+  //   // Implement search logic if needed
+  //   console.log('Cari apa' + searchTerm)
+  // };
   return (
     <>
       <div id="pre-loader">
