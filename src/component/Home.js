@@ -57,7 +57,7 @@ const Home = () => {
       {isPopupActive && (
         <div className={`information-popup ${isPopupActive ? 'active' : ''}`}>
           <div
-            className="information-popup-overlay search-toggler"
+            className="information-popup-overlay search-toggler-x"
             onClick={handleClose}
           ></div>
           <div className="information-popup-content">
@@ -76,7 +76,7 @@ const Home = () => {
               alt="Iklan"
             />
             <div className="selengkapnya">
-              <a href="/agenda/detail" className="btn btn-primary">
+              <a href="/agenda/detail" className="btn btn-primary btn-sm">
                 Lihat Selengkap
               </a>
             </div>

@@ -93,7 +93,7 @@ const TentangKami = () => {
                 <section className="filosofi-logo-section">
                     <div className="container">
                         {/* row untuk masing - masing konten */}
-                        <div className="row row-gutter-y-40" style={{ paddingBottom: '75pt' }}>
+                        <div className="row row-gutter-y-40" >
 
                             {/* konten sebelah kanan */}
                             <div className="col-lg-12 col-xl-12">
@@ -113,7 +113,7 @@ const TentangKami = () => {
                         {/* end row konten */}
 
                         {/* row untuk masing - masing konten */}
-                        <div className="row row-gutter-y-40" style={{ paddingBottom: '75pt' }}>
+                        <div className="row row-gutter-y-40" >
 
                             {/* konten sebelah kanan */}
                             <div className="col-lg-12 col-xl-12">
@@ -143,7 +143,7 @@ const TentangKami = () => {
                         <br />
 
                         {/* row untuk masing - masing konten */}
-                        <div className="row row-gutter-y-40" style={{ paddingBottom: '75pt' }}>
+                        <div className="row row-gutter-y-40" style={{ paddingBottom: '75px' }}>
 
                             {/* deskripsi landasan hukum */}
                             <div className="col-lg-12 col-xl-12">
@@ -157,11 +157,15 @@ const TentangKami = () => {
                             <div className="col-lg-12 col-xl-12">
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title" style={{ textAlign: 'center' }}>Fungsi KNEKS</h2>
-                                    <ol style={{ fontSize: `16px !important` }} >
-                                        <li>Pemberian rekomendasi arah kebijakan dan program strategis pembangunan nasional di sektor ekonomi dan keuangan syariah.</li>
-                                        <li>Pelaksanaan koordinasi, sinkronisasi, sinergisitas penyusunan dan pelaksanaan rencana araha kebijakan dan program strategis pada sektor ekonomi dan keuangan syariah.</li>
-                                        <li>Perumusan dan pemberian rekomendasi atas penyelesaian masalah di sektor ekonomi dan keuangan syariah.</li>
-                                        <li>Pemantauan dan evaluasi atas pelaksanaan arah kebijakan dan program strategis di sektor ekonomi dan keuangan syariah.</li>
+                                    <ol >
+                                        <li><p>Pemberian rekomendasi arah kebijakan dan program strategis pembangunan nasional di sektor ekonomi dan keuangan syariah.</p></li>
+                                        <li>
+                                            <p>
+                                                Pelaksanaan koordinasi, sinkronisasi, sinergisitas penyusunan dan pelaksanaan rencana araha kebijakan dan program strategis pada sektor ekonomi dan keuangan syariah.
+                                            </p>
+                                        </li>
+                                        <li><p>Perumusan dan pemberian rekomendasi atas penyelesaian masalah di sektor ekonomi dan keuangan syariah.</p></li>
+                                        <li><p>Pemantauan dan evaluasi atas pelaksanaan arah kebijakan dan program strategis di sektor ekonomi dan keuangan syariah.</p></li>
                                     </ol>
                                 </div>
                             </div>

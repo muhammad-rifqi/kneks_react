@@ -47,7 +47,7 @@ const TentangEkonomiSyariah = () => {
                             {/* konten sejarah deskripsi */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title">Sejarah KNEKS</h2>
+                                    <h2 className="section-title">Sejarah Ekonomi Syariah</h2>
                                     <p>Dalam rangka mendukung pembangunan ekonomi nasional dan mendorong percepatan pengembangan sektor keuangan syariah, pemerintah secara khusus mendirikan KNKS pada tanggal 8 November 2016 agar dapat meningkatkan efektifitas, efisiensi pelaksanaan rencana pembangunan nasional bidang keuangan dan ekonomi Syariah. Selanjutnya sejak diundangkan tanggal 10 Februari 2020, pemerintah melakukan perubahan Komite Nasional Keuangan Syariah menjadi Komite Nasional Ekonomi dan Keuangan Syariah yang bertujuan meningkatkan pembangunan ekosistem ekonomi dan keuangan syariah guna mendukung pembangunan ekonomi nasional.</p>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@ const TentangEkonomiSyariah = () => {
                 <section className="filosofi-logo-section">
                     <div className="container">
                         {/* row untuk masing - masing konten */}
-                        <div className="row row-gutter-y-40" style={{ paddingBottom: '75pt' }}>
+                        <div className="row row-gutter-y-40" >
 
                             {/* konten sebelah kanan */}
                             <div className="col-lg-12 col-xl-12">
@@ -113,7 +113,7 @@ const TentangEkonomiSyariah = () => {
                         {/* end row konten */}
 
                         {/* row untuk masing - masing konten */}
-                        <div className="row row-gutter-y-40" style={{ paddingBottom: '75pt' }}>
+                        <div className="row row-gutter-y-40" >
 
                             {/* konten sebelah kanan */}
                             <div className="col-lg-12 col-xl-12">
@@ -143,7 +143,7 @@ const TentangEkonomiSyariah = () => {
                         <br />
 
                         {/* row untuk masing - masing konten */}
-                        <div className="row row-gutter-y-40" style={{ paddingBottom: '75pt' }}>
+                        <div className="row row-gutter-y-40" style={{ paddingBottom: '75px' }}>
 
                             {/* deskripsi landasan hukum */}
                             <div className="col-lg-12 col-xl-12">
@@ -158,10 +158,10 @@ const TentangEkonomiSyariah = () => {
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title" style={{ textAlign: 'center' }}>Fungsi KNEKS</h2>
                                     <ol>
-                                        <li>Pemberian rekomendasi arah kebijakan dan program strategis pembangunan nasional di sektor ekonomi dan keuangan syariah.</li>
-                                        <li>Pelaksanaan koordinasi, sinkronisasi, sinergisitas penyusunan dan pelaksanaan rencana araha kebijakan dan program strategis pada sektor ekonomi dan keuangan syariah.</li>
-                                        <li>Perumusan dan pemberian rekomendasi atas penyelesaian masalah di sektor ekonomi dan keuangan syariah.</li>
-                                        <li>Pemantauan dan evaluasi atas pelaksanaan arah kebijakan dan program strategis di sektor ekonomi dan keuangan syariah.</li>
+                                        <li><p>Pemberian rekomendasi arah kebijakan dan program strategis pembangunan nasional di sektor ekonomi dan keuangan syariah.</p></li>
+                                        <li><p>Pelaksanaan koordinasi, sinkronisasi, sinergisitas penyusunan dan pelaksanaan rencana araha kebijakan dan program strategis pada sektor ekonomi dan keuangan syariah.</p></li>
+                                        <li><p>Perumusan dan pemberian rekomendasi atas penyelesaian masalah di sektor ekonomi dan keuangan syariah.</p></li>
+                                        <li><p>Pemantauan dan evaluasi atas pelaksanaan arah kebijakan dan program strategis di sektor ekonomi dan keuangan syariah.</p></li>
                                     </ol>
                                 </div>
                             </div>
