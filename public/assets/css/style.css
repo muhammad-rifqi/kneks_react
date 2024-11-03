@@ -8524,12 +8524,12 @@ label {
   padding-bottom: 120px;
 }
 
-@media (max-width: 1199px) {
+/* @media (max-width: 1199px) {
   .news-section {
     padding-top: 70px;
     padding-bottom: 70px;
   }
-}
+} */
 .news-section-kdeks img {
   height: 500px;
   width: 100%;
@@ -9429,7 +9429,7 @@ SOCIAL MEDIA
 }
 .event-card-info-direktorat {
   margin-bottom: 5px;
-  font-size: 12px;
+  /* font-size: 12px; */
 }
 .event-card-info-direktorat-home {
   margin-bottom: 5px;
@@ -10242,44 +10242,7 @@ SOCIAL MEDIA
   padding: 15px;
   height: 220px;
 }
-@media (min-width: 576px) {  
-  .card-dir{
-   
-    height: 180px;
-}
-}
 
-
-@media (min-width: 768px) { 
-  .card-dir{
-   
-    height: 240px;
-}
- }
-
-
-@media (min-width: 992px) { 
-  .card-dir{
-   
-    height: 220px;
-}
- }
-
-
-@media (min-width: 1200px) {  
-  .card-dir{
-   
-    height: 220px;
-}
-}
-
-
-@media (min-width: 1400px) { 
-  .card-dir{
-   
-    height: 220px;
-}
- }
 
 
 .card-dir:hover{
@@ -10305,6 +10268,87 @@ SOCIAL MEDIA
   cursor: pointer;
 }
 
+
+
+
+
+@media (min-width: 576px) {  
+  .card-dir{
+   
+    height: 180px;
+}
+.portfolio-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.news-section{
+  padding-top: 70px;
+    /* padding-bottom: 70px; */
+}
+
+.news-box h2 > a{
+  margin-bottom: 0;
+  padding: 0.4rem 0;
+  font-size: 16px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 200px; 
+  white-space: normal; /* Allow text to wrap */
+  color: #ffffff !important;
+}
+}
+
+
+@media (min-width: 768px) { 
+  .card-dir{
+   
+    height: 240px;
+}
+.portfolio-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.news-section{
+  padding-top: 70px;
+    /* padding-bottom: 70px; */
+}
+
+.news-box h2 > a{
+  margin-bottom: 0;
+  padding: 0.4rem 0;
+  font-size: 18px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 3; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 320px; 
+  white-space: normal; /* Allow text to wrap */
+  color: #ffffff !important;
+}
+
+ }
+
+
+@media (min-width: 992px) { 
+  .card-dir{
+   
+    height: 220px;
+}
+.portfolio-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.news-section{
+  padding-top: 70px;
+    /* padding-bottom: 70px; */
+}
+
 .news-box h2 > a{
   margin-bottom: 0;
   padding: 0.4rem 0;
@@ -10319,4 +10363,48 @@ SOCIAL MEDIA
   white-space: normal; /* Allow text to wrap */
   color: #ffffff !important;
 }
+ }
 
+
+@media (min-width: 1200px) {  
+  .card-dir{
+   
+    height: 220px;
+}
+.news-box h2 > a{
+  margin-bottom: 0;
+  padding: 0.4rem 0;
+  font-size: 20px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 600px; 
+  white-space: normal; /* Allow text to wrap */
+  color: #ffffff !important;
+}
+}
+
+
+@media (min-width: 1400px) { 
+  .card-dir{
+   
+    height: 220px;
+}
+.news-box h2 > a{
+  margin-bottom: 0;
+  padding: 0.4rem 0;
+  font-size: 20px !important;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 600px; 
+  white-space: normal; /* Allow text to wrap */
+  color: #ffffff !important;
+}
+ }

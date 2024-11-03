@@ -117,7 +117,7 @@ const IsuEkonomi = () => {
                                         </div>
                                     ))
                                 : currentPosts.map((item) => (
-                                    <div className="col-lg-4 col-md-4" key={item.id}>
+                                    <div className="col-lg-4 col-md-6" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/info-terkini/${convertToSlug(item.title)}`}>
