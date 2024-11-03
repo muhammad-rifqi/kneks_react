@@ -51,7 +51,7 @@ $(document).ready(function () {
 			time: 1000
 		});
 	}
-	
+
 	if ($(".daftar-toggler").length) {
 		$(".daftar-toggler").on("click", function (e) {
 			e.preventDefault();
@@ -70,6 +70,15 @@ $(document).ready(function () {
 			$("body").removeClass("locked");
 		});
 	}
+
+	if ($(".search-toggler").length) {
+		$(".search-toggler").on("click", function (e) {
+			e.preventDefault();
+			$(".search-popup").toggleClass("active");
+			$(".mobile-nav-wrapper").removeClass("expanded");
+			$("body").toggleClass("locked");
+		});
+	}
 	$(function () {
 		$('.video-popup, .video-popup').YouTubePopUp({
 			disableOn: 700,
@@ -80,8 +89,8 @@ $(document).ready(function () {
 			fixedContentPos: false
 		});
 	});
-	
-	
+
+
 	$(function () {
 		new VenoBox({
 			selector: '.beritaDetail',
@@ -148,30 +157,30 @@ $(document).ready(function () {
 	}
 	if ($(".portfolio-carousel-kdeks").length) {
 		var owl = $(".portfolio-carousel-kdeks");
-			owl.owlCarousel({
-				items: 4,
-				nav: false,
-				margin: 30,
-				loop: true,
-				autoplay: true,
-				smartSpeed: 2000,
-				responsive: {
-					0: {
-						items: 1,
-					},
-					575: {
-						items: 2,
-					},
-					767: {
-						items: 3,
-					},
-					991: {
-						items: 4,
-					}
+		owl.owlCarousel({
+			items: 4,
+			nav: false,
+			margin: 30,
+			loop: true,
+			autoplay: true,
+			smartSpeed: 2000,
+			responsive: {
+				0: {
+					items: 1,
+				},
+				575: {
+					items: 2,
+				},
+				767: {
+					items: 3,
+				},
+				991: {
+					items: 4,
 				}
-			});
+			}
+		});
 	}
-	
+
 	// Owl Carousel
 	if ($(".portfolio-two-carousel").length) {
 		var owl = $(".portfolio-two-carousel");
