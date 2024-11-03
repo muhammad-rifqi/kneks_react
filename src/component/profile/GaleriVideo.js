@@ -7,6 +7,11 @@ import 'dayjs/locale/id';
 
 import VenoBox from 'venobox';
 
+import Col from 'react-bootstrap/Col';
+import InputGroup from 'react-bootstrap/InputGroup';
+import DatePicker from "react-multi-date-picker"
+import transition from "react-element-popper/animations/transition"
+
 const GaleriVideo = () => {
     const [visible, setVisible] = useState(9)
 
@@ -82,7 +87,7 @@ const GaleriVideo = () => {
     }
 
 
-
+    const [selectedDates, setSelectedDates] = useState();
     return (
         <>
             <div className="page-wrapper">
@@ -97,6 +102,26 @@ const GaleriVideo = () => {
                 <section className="video-section">
                     <div className="container">
                         <div className="row row-gutter-y-40">
+                            <Col lg={{ span: 12 }} >
+
+                                <InputGroup className="justify-content-end d-flex ">
+                                    <DatePicker
+                                        value={selectedDates}
+                                        onChange={setSelectedDates}
+                                        format="DD-MM-YYYY"
+                                        placeholder="Filter Tanggal"
+                                        style={{ padding: '18px ', width: '100%' }}
+                                        animations={[
+                                            transition({
+                                                from: 35,
+                                                transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)",
+                                            }),
+                                        ]}
+                                    />
+                                    <InputGroup.Text id="basic-addon2" ><i className="fa fa-calendar"></i></InputGroup.Text>
+                                </InputGroup>
+
+                            </Col>
                             {loading ? (
                                 Array(visible).fill().map((_, index) => (
                                     <div className="col-md-4 col-lg-4" key={index}>

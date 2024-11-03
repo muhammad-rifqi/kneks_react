@@ -5,6 +5,11 @@ import Swal from "sweetalert2";
 import dayjs from "dayjs";
 import "dayjs/locale/id";
 
+
+import Col from 'react-bootstrap/Col';
+import InputGroup from 'react-bootstrap/InputGroup';
+import DatePicker from "react-multi-date-picker"
+import transition from "react-element-popper/animations/transition"
 const GaleriFoto = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -54,7 +59,7 @@ const GaleriFoto = () => {
 
     const generatePaginationItems = () => {
         const paginationItems = [];
-        const maxPageNumbersToShow = 10; 
+        const maxPageNumbersToShow = 10;
 
         let startPage, endPage;
 
@@ -88,6 +93,7 @@ const GaleriFoto = () => {
         return paginationItems;
     };
 
+    const [selectedDates, setSelectedDates] = useState();
     return (
         <div className='page-wrapper'>
             <section className='page-banner'>
@@ -101,54 +107,74 @@ const GaleriFoto = () => {
             <section className='foto-section'>
                 <div className='container'>
                     <div className='row row-gutter-y-40 d-flex flex-wrap'>
+                        <Col lg={{ span: 12 }} >
+
+                            <InputGroup className="justify-content-end d-flex ">
+                                <DatePicker
+                                    value={selectedDates}
+                                    onChange={setSelectedDates}
+                                    format="DD-MM-YYYY"
+                                    placeholder="Filter Tanggal"
+                                    style={{ padding: '18px ', width: '100%' }}
+                                    animations={[
+                                        transition({
+                                            from: 35,
+                                            transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)",
+                                        }),
+                                    ]}
+                                />
+                                <InputGroup.Text id="basic-addon2" ><i className="fa fa-calendar"></i></InputGroup.Text>
+                            </InputGroup>
+
+                        </Col>
                         {loading
                             ? Array(postsPerPage)
-                                  .fill()
-                                  .map((_, index) => (
-                                      <div
-                                          className='col-md-4 col-lg-4 d-flex'
-                                          key={index}>
-                                          <SkeletonCardBerita />
-                                      </div>
-                                  ))
+                                .fill()
+                                .map((_, index) => (
+                                    <div
+                                        className='col-md-4 col-lg-4 d-flex'
+                                        key={index}>
+                                        <SkeletonCardBerita />
+                                    </div>
+                                ))
                             : currentPosts.map((item) => (
-                                  <div
-                                      className='col-md-4 col-lg-4 d-flex'
-                                      key={item.id}>
-                                      <a
-                                          href={`/galeri-foto/${convertToSlug(
-                                              item.title
-                                          )}`}
-                                          className='card-box-b card-shadow news-box flex-grow-1'>
-                                          <div className='img-box-b'>
-                                              <img
-                                                  src={`${process.env.REACT_APP_API_IMAGE}${item.photo}`}
-                                                  className='img-fluid img-b cover-image'
-                                                  alt={item.title}
-                                              />
-                                          </div>
-                                          <div className='card-overlay'>
-                                              <div className='card-header-b'>
-                                                  <div className='card-title-b'>
-                                                      <h2 className='title-2'>
-                                                          {item.title}
-                                                          {item.is_publish}
-                                                      </h2>
-                                                  </div>
-                                                  <div className='card-date'>
-                                                      <span>
-                                                          {dayjs(
-                                                              item.news_datetime
-                                                          ).format(
-                                                              "DD MMMM YYYY"
-                                                          )}
-                                                      </span>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </a>
-                                  </div>
-                              ))}
+                                <div
+                                    className='col-md-4 col-lg-4 d-flex'
+                                    key={item.id}>
+                                    <a
+                                        href={`/galeri-foto/${convertToSlug(
+                                            item.title
+                                        )}`}
+                                        className='card-box-b card-shadow news-box flex-grow-1'>
+                                        <div className='img-box-b'>
+                                            <img
+                                                src={`${process.env.REACT_APP_API_IMAGE}${item.photo}`}
+                                                className='img-fluid img-b cover-image'
+                                                alt={item.title}
+                                            />
+                                        </div>
+                                        <div className='card-overlay'>
+                                            <div className='card-header-b'>
+                                                <div className='card-title-b'>
+                                                    <h2 className='title-2'>
+                                                        {item.title}
+                                                        {item.is_publish}
+                                                    </h2>
+                                                </div>
+                                                <div className='card-date'>
+                                                    <span>
+                                                        {dayjs(
+                                                            item.news_datetime
+                                                        ).format(
+                                                            "DD MMMM YYYY"
+                                                        )}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            ))}
                     </div>
 
                     {!loading && totalPages > 1 && (
@@ -156,11 +182,10 @@ const GaleriFoto = () => {
                             {generatePaginationItems().map((page, index) => (
                                 <button
                                     key={index}
-                                    className={`pagination-btn ${
-                                        page === currentPage
-                                            ? "active"
-                                            : ""
-                                    }`}
+                                    className={`pagination-btn ${page === currentPage
+                                        ? "active"
+                                        : ""
+                                        }`}
                                     onClick={() => {
                                         if (page !== '...') {
                                             handlePageChange(page);
