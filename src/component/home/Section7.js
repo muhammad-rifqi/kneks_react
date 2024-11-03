@@ -8,7 +8,19 @@ import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 
+import 'dayjs/locale/id';
+import 'dayjs/locale/en';
+
+import { useCookies } from 'react-cookie';
+
 const Section7 = () => {
+
+	const [cookies] = useCookies(['i18next']);
+	const formatDate = (date, locale = 'en') => {
+		dayjs.locale(locale); // Set the locale dynamically
+		return dayjs(date).format('DD MMMM YYYY'); // Format the date
+	};
+
 	const [posts, setPosts] = useState([]);
 	useEffect(() => {
 		const fetchPosts = async () => {
@@ -102,15 +114,15 @@ const Section7 = () => {
 
 											<div className="berita-content-direktorat">
 												<div className="direktorat-tag-home">
-													<span>#BERITABARU</span>
+													<span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
 												</div>
 												<div className="event-card-title pb-2">
 													<h4>
-														<a href={`/berita-terkait/${convertToSlug(item.title)}`}>{item.title}</a>
+														<a href={`/berita-terkait/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
 													</h4>
 												</div>
 												<div className="event-card-info-direktorat">
-													<span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+													<span>{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
 												</div>
 											</div>
 										</div>

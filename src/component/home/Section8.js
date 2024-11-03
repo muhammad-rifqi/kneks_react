@@ -11,7 +11,7 @@ const Section8 = () => {
 					</div>
 				</div>
 				<div className="row ">
-					<div className="col-lg-3 col-md-3">
+					<div className="col-lg-3 col-md-6">
 						<a href="/agenda/detail">
 							<div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
 								<div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
@@ -26,7 +26,7 @@ const Section8 = () => {
 							</div>
 						</a>
 					</div>
-					<div className="col-lg-3 col-md-3">
+					<div className="col-lg-3 col-md-6">
 						<a href="/agenda/detail">
 							<div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
 								<div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
@@ -41,7 +41,7 @@ const Section8 = () => {
 							</div>
 						</a>
 					</div>
-					<div className="col-lg-3 col-md-3">
+					<div className="col-lg-3 col-md-6">
 						<a href="/agenda/detail">
 							<div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
 								<div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
@@ -56,7 +56,7 @@ const Section8 = () => {
 							</div>
 						</a>
 					</div>
-					<div className="col-lg-3 col-md-3">
+					<div className="col-lg-3 col-md-6">
 						<a href="/agenda/detail">
 							<div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
 								<div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
