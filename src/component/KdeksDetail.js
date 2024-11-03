@@ -292,22 +292,36 @@ const KdeksDetail = () => {
                             </div>
 
                         </div>
-                        <div className="row row-gutter-y-40 d-flex justify-content-center pt-5">
+                        {/* <div className="row row-gutter-y-40 d-flex justify-content-center pt-5">
                             <div className="col-lg-3 text-center">
                                 <div className="sidebar-widget">
-                                    {/* <div className="sidebar-widget-box-icon">
+                                    <div className="sidebar-widget-box-icon">
                                         <i className="flaticon-pdf"></i>
-                                    </div> */}
+                                    </div>
                                     <div className="sidebar-widget-box-content">
                                         <h3>List Pengurus Kdeks {listdataKota?.title}</h3>
-                                        {/* <a href={`${process.env.PUBLIC_URL}/${listdataKota?.skFile}`} className="btn btn-primary skfile" data-vbtype="iframe">View</a> */}
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
 
+                <section className="portfolio-section">
+                    <div className="container">
+                        <div className="section-title-box text-center">
+                            <h2 className="section-title">Struktur Organisasi</h2>
+                        </div>
+                        <div className="row row-gutter-y-40 text-center">
+                            <div className="col-lg-12 col-xl-12">
+                                <div className="about-one-image">
+                                    <img src="/assets/image/image_28.jpg" alt="img-59" className="img-fluid" />
+                                </div>
+                            </div>
+                        </div>
+                    </div >
+
+                </section>
                 <section className="portfolio-section">
                     <div className="container">
                         <div className="section-title-box text-center">
@@ -459,7 +473,7 @@ const KdeksDetail = () => {
                                 {
                                     posts.length > 0 ? (
                                         posts.slice(0, 4).map((item) => (
-                                            <div className="col-lg-3 col-xl-3" key={item.id}>
+                                            <div className="col-lg-3 col-md-6" key={item.id}>
                                                 <div className="berita-card">
 
                                                     <div className="berita-content-direktorat-xs">
@@ -497,7 +511,7 @@ const KdeksDetail = () => {
                             <div className="row row-gutter-y-30 d-flex justify-content-center">
 
                                 <div className="col-lg-9">
-                                    <div className="row ">
+                                    <div className="row row-gutter-30">
                                         <div className="col-12 col-md-6 col-xl-3">
                                             <div className="team-card-x">
                                                 <div className="team-card-img-x">

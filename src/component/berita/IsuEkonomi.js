@@ -8,12 +8,10 @@ import 'dayjs/locale/id';
 const IsuEkonomi = () => {
 
 
-    const [visible, setVisible] = useState(9)
-
     const [loading, setLoading] = useState(true);
-
-    const [loadingMore, setLoadingMore] = useState(false);
-    const [posts, setPosts] = useState([]); // State to hold fetched posts
+    const [posts, setPosts] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const postsPerPage = 9;
 
 
     useEffect(() => {
@@ -41,14 +39,49 @@ const IsuEkonomi = () => {
         fetchPosts(); // Call fetchPosts function when component mounts
     }, []);
 
-    const showMore = () => {
-        setLoadingMore(true);
+    const lastPostIndex = currentPage * postsPerPage;
+    const firstPostIndex = lastPostIndex - postsPerPage;
+    const currentPosts = posts.slice(firstPostIndex, lastPostIndex);
 
-        setTimeout(() => {
-            setVisible((preValue) => preValue + 3);
-            setLoadingMore(false);
-        }, 2000); // Simulate network delay
-    }
+    const totalPages = Math.ceil(posts.length / postsPerPage);
+
+    const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
+
+    const generatePaginationItems = () => {
+        const paginationItems = [];
+        const maxPageNumbersToShow = 10;
+
+        let startPage, endPage;
+
+        if (totalPages <= maxPageNumbersToShow) {
+            startPage = 1;
+            endPage = totalPages;
+        } else {
+            if (currentPage <= 6) {
+                startPage = 1;
+                endPage = maxPageNumbersToShow;
+            } else if (currentPage + 4 >= totalPages) {
+                startPage = totalPages - maxPageNumbersToShow + 1;
+                endPage = totalPages;
+            } else {
+                startPage = currentPage - 5;
+                endPage = currentPage + 4;
+            }
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            paginationItems.push(i);
+        }
+
+        if (startPage > 1) {
+            paginationItems.unshift("...");
+        }
+        if (endPage < totalPages) {
+            paginationItems.push("...");
+        }
+
+        return paginationItems;
+    };
 
     const convertToSlug = (title) => {
         return title
@@ -73,15 +106,18 @@ const IsuEkonomi = () => {
                 <section className="berita-section">
                     <div className="container">
                         <div className="row row-gutter-30">
-                            {loading ? (
-                                Array(visible).fill().map((_, index) => (
-                                    <div className="col-lg-4 col-xl-4" key={index}>
-                                        <SkeletonCardBerita />
-                                    </div>
-                                ))
-                            ) : (
-                                posts.slice(0, visible).map((item) => (
-                                    <div className="col-lg-4 col-xl-4" key={item.id}>
+                            {loading
+                                ? Array(postsPerPage)
+                                    .fill()
+                                    .map((_, index) => (
+                                        <div
+                                            className='col-lg-4 col-md-6'
+                                            key={index}>
+                                            <SkeletonCardBerita />
+                                        </div>
+                                    ))
+                                : currentPosts.map((item) => (
+                                    <div className="col-lg-4 col-md-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/info-terkini/${convertToSlug(item.title)}`}>
@@ -105,24 +141,27 @@ const IsuEkonomi = () => {
                                             </div>
                                         </div>
                                     </div>
-                                ))
-                            )}
-
-                            {loadingMore && (
-                                Array(3).fill().map((_, index) => (
-                                    <div className="col-lg-4 col-xl-4" key={index + visible}>
-                                        <SkeletonCardBerita />
-                                    </div>
-                                ))
-                            )}
-
-                            {visible < posts.length && (
-                                <div className="col-12 pt-5">
-                                    <div className="block-box load-more-btn">
-                                        <div className="item-btn" onClick={showMore}>
-                                            <i className="fa-solid fa-refresh"></i>Load More
-                                        </div>
-                                    </div>
+                                ))}
+                            {!loading && totalPages > 1 && (
+                                <div className='pagination mt-4'>
+                                    {generatePaginationItems().map(
+                                        (page, index) => (
+                                            <button
+                                                key={index}
+                                                className={`pagination-btn ${page === currentPage
+                                                    ? "active"
+                                                    : ""
+                                                    }`}
+                                                onClick={() => {
+                                                    if (page !== "...") {
+                                                        handlePageChange(page);
+                                                    }
+                                                }}
+                                                disabled={page === "..."}>
+                                                {page}
+                                            </button>
+                                        )
+                                    )}
                                 </div>
                             )}
 

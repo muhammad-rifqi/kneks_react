@@ -15,7 +15,7 @@ const GaleriVideo = () => {
     const [loadingMore, setLoadingMore] = useState(false);
     const [posts, setPosts] = useState([]);
 
-      
+
 
 
     useEffect(() => {
@@ -42,35 +42,35 @@ const GaleriVideo = () => {
 
         fetchPosts(); // Call fetchPosts function when component mounts
 
-        
+
 
     }, []);
 
     useEffect(() => {
         if (!loading) {
-          // Initialize VenoBox after data is fetched and component is rendered
-         new VenoBox({
-            selector: '.my-image-links',
-            numeration: true,
-            infinigall: true,
-            share: true,
-            spinner: 'swing',
-            spinColor: '#5A8DEE',
-            titlePosition: 'bottom',
-            toolsColor: '#ffffff',
-            titleattr: 'data-title',
-            titleStyle: 'block',
-          });
-    
-          return () => {
-            // Manually reset the Venobox initialization
-            const elements = document.querySelectorAll(".my-image-links");
-            elements.forEach((el) => {
-              el.removeAttribute("data-venobox-initialized");
+            // Initialize VenoBox after data is fetched and component is rendered
+            new VenoBox({
+                selector: '.my-image-links',
+                numeration: true,
+                infinigall: true,
+                share: true,
+                spinner: 'swing',
+                spinColor: '#5A8DEE',
+                titlePosition: 'bottom',
+                toolsColor: '#ffffff',
+                titleattr: 'data-title',
+                titleStyle: 'block',
             });
-          };
+
+            return () => {
+                // Manually reset the Venobox initialization
+                const elements = document.querySelectorAll(".my-image-links");
+                elements.forEach((el) => {
+                    el.removeAttribute("data-venobox-initialized");
+                });
+            };
         }
-      }, [loading, posts]); // Re-run effect if loading or posts change
+    }, [loading, posts]); // Re-run effect if loading or posts change
 
     const showMore = () => {
         setLoadingMore(true);
@@ -105,7 +105,7 @@ const GaleriVideo = () => {
                                 ))
                             ) : (
                                 posts.slice(0, visible).map((item) => (
-                                    <div className="col-md-4 col-lg-4" key={item.id} >
+                                    <div className="col-md-6 col-lg-4" key={item.id} >
                                         <a href={`https://img.youtube.com/vi/m7QQctvbdEc/` +
                                             item.video
                                         } className="my-image-links" data-autoplay="true" data-vbtype="video">
@@ -147,7 +147,7 @@ const GaleriVideo = () => {
 
                             {loadingMore && (
                                 Array(3).fill().map((_, index) => (
-                                    <div className="col-md-4 col-lg-4" key={index + visible}>
+                                    <div className="col-md-6 col-lg-4" key={index + visible}>
                                         <SkeletonCardBerita />
                                     </div>
                                 ))
