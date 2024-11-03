@@ -3558,8 +3558,8 @@ a.search-toggler {
 }
 .mayor-section-maps {
   overflow: hidden;
-  padding-top: 70px;
-  padding-bottom: 120px;
+  padding-top: 170px;
+  padding-bottom: 170px;
 }
 
 @media (max-width: 1199px) {
@@ -10239,9 +10239,48 @@ SOCIAL MEDIA
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  height: 183px;
- 
+  padding: 15px;
+  height: 220px;
 }
+@media (min-width: 576px) {  
+  .card-dir{
+   
+    height: 180px;
+}
+}
+
+
+@media (min-width: 768px) { 
+  .card-dir{
+   
+    height: 240px;
+}
+ }
+
+
+@media (min-width: 992px) { 
+  .card-dir{
+   
+    height: 220px;
+}
+ }
+
+
+@media (min-width: 1200px) {  
+  .card-dir{
+   
+    height: 220px;
+}
+}
+
+
+@media (min-width: 1400px) { 
+  .card-dir{
+   
+    height: 220px;
+}
+ }
+
 
 .card-dir:hover{
   -webkit-transform: scale(1.05);
