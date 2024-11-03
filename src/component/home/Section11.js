@@ -13,24 +13,33 @@ const Section11 = () => {
 							<h2 className="section-title">{t('instagram')}</h2>
 						</div>
 					</div>
-					<div className="row">
-						<div className="col-lg-4 col-md-4 pb-3">
-							<div className="sm-card">
-								<InstagramEmbed url="https://www.instagram.com/p/C6pooCOBSOA" className="img-fluid" height={565} />
+					<div className="row m-0">
+						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
+							<InstagramEmbed url="https://www.instagram.com/p/C6pooCOBSOA"
+								width="100%"
 
-							</div >
-						</div >
-						<div className="col-lg-4 col-md-4 pb-3">
-							<div className="sm-card">
-								<InstagramEmbed url="https://www.instagram.com/p/CtjUgOFrnVn/" className="img-fluid" height={565} />
-							</div >
-						</div >
-						<div className="col-lg-4 col-md-4 pb-3">
-							<div className="sm-card">
-								<InstagramEmbed url="https://www.instagram.com/p/DB2pOXjz09c/" className="img-fluid" height={565} />
 
-							</div >
+							/>
+
 						</div >
+						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
+
+							<InstagramEmbed url="https://www.instagram.com/p/CtjUgOFrnVn/"
+								width="100%"
+
+							/>
+
+						</div >
+						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
+
+							<InstagramEmbed url="https://www.instagram.com/p/DB2pOXjz09c/"
+								width="100%"
+
+							/>
+
+
+						</div >
+
 
 
 					</div>

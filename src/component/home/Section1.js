@@ -1,68 +1,28 @@
 import React, { useState, useEffect } from "react";
-import Swiper from 'swiper/bundle';
-import 'swiper/swiper-bundle.css';
+// import Swiper from 'swiper/bundle';
+// import 'swiper/swiper-bundle.css';
 
 import Carousel from 'react-bootstrap/Carousel';
 
 import axios from 'axios';
 import Swal from "sweetalert2";
 import { useTranslation } from 'react-i18next';
+import { useCookies } from 'react-cookie';
+
 const Section1 = () => {
 	const { t } = useTranslation();
-	useEffect(() => {
-
-		if (document.querySelector('.swiper-banner')) {
-			// var mySwiper = new Swiper('.swiper-kdeks', {
-			// pengaturan Swiper
-
-			const swipers = new Swiper('.swiper-banner', {
-				// pengaturan Swiper
-				loop: true,
-				pagination: {
-					el: '.swiper-pagination',
-					clickable: true,
-				},
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-				autoplay: {
-					delay: 2500,
-					disableOnInteraction: false,
-				},
-				// breakpoints: {
-				// 	640: {
-				// 		slidesPerView: 2,
-				// 		spaceBetween: 20,
-				// 	},
-				// 	768: {
-				// 		slidesPerView: 3,
-				// 		spaceBetween: 30,
-				// 	},
-				// 	1024: {
-				// 		slidesPerView: 4,
-				// 		spaceBetween: 20,
-				// 	},
-				// },
-			});
-			// Cleanup function to destroy Swiper instance
-			return () => {
-				if (swipers) {
-					swipers.destroy(true, true);
-				}
-			};
-		}
-
-	}, []);
-
 	const [posts, setPosts] = useState([]);
+	const [cookies] = useCookies(['i18next']);
+
+
+
 	useEffect(() => {
 		// Function to fetch posts
 		const fetchPosts = async () => {
 			// setLoading(true);
 			try {
 				const url = process.env.REACT_APP_API_URL;
-				const endpoint = process.env.REACT_APP_API_POST;
+				const endpoint = process.env.REACT_APP_API_BANNER;
 				const response = await axios.get(`${url}${endpoint}`);
 				setPosts(response.data);
 			} catch (err) {
@@ -82,24 +42,33 @@ const Section1 = () => {
 
 	return (
 		<section className="main-slider main-slider">
-			<Carousel data-bs-theme="dark">
-				{posts.slice(0, 2).map((item) => (
-					<Carousel.Item>
-						<div className="item-slider-bg" style={{ backgroundImage: `url("/assets/image/slide2.png")` }}></div>
-						<div className="container">
-							<div className="row">
-								<div className="col-md-12">
-									<div className="slider-content-two">
-										<h1 className="section-title">"{t('bannerJudul')}"</h1>
-										<div className="slider-tagline">{t('bannerIsi')}</div>
-										<a href="banner/detail" class="btn btn-primary mt-3">{t('tombol')}</a>
+			{posts.length > 0 ? (
+				<Carousel data-bs-theme="dark">
+					{posts.map((item, index) => (
+						<Carousel.Item key={index} interval={1500}>
+							<div
+								className="item-slider-bg"
+								style={{ backgroundImage: `url("${item?.image}")` }}
+							></div>
+							<div className="container">
+								<div className="row">
+									<div className="col-md-12">
+										<div className="slider-content-two">
+											<h1 className="section-title">"{cookies.i18next === 'id' ? item?.title : item?.title_en}"</h1>
+											<div className="slider-tagline"><div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'id' ? item?.content : item?.content_en }} /></div>
+											<a href="banner/detail" className="btn btn-primary mt-3">
+												{t('tombol')}
+											</a>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</Carousel.Item>
-				))}
-			</Carousel>
+						</Carousel.Item>
+					))}
+				</Carousel>
+			) : (
+				<p className="text-center">No posts available.</p>
+			)}
 		</section>
 
 
