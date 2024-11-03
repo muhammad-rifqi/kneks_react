@@ -1,36 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 
 
 const Kajian = () => {
-    const [searchTerm, setSearchTerm] = useState('');
 
-    const handleChange = (event) => {
-        const value = event.target.value;
-        setSearchTerm(value);
-        // Implement search logic if needed
-        console.log('Cari apa' + searchTerm)
-    };
     return (
         <>
-            <Form>
-                <Row className="d-flex justify-content-end">
-                    <Col lg={{ span: 7 }}>
+
+            <Row className="d-flex justify-content-end">
+
+                <Col lg={{ span: 6 }} >
+
+                    <InputGroup className="mb-3">
                         <Form.Control
-                            value={searchTerm}
-                            onChange={handleChange}
-                            style={{ padding: '9px 20px', borderRadius: '4px', border: '1px solid #ccc', marginBottom: '12px', outline: 'none' }} placeholder="Cari Kajian/Penelitian..." />
-                    </Col>
-                    <Col lg={{ span: 3 }} className="text-end">
-                        <Button variant="primary" type="submit" style={{ padding: '11px 30px', marginBottom: '10px', borderRadius: '4px', outline: 'none' }}>Cari</Button>
-                        <Button variant="danger" style={{ padding: '9px 30px', marginBottom: '10px', borderRadius: '4px', outline: 'none' }}>Reset</Button>
-                    </Col>
-                </Row>
-            </Form>
+                            placeholder="Cari Kajian/Penelitian..."
+                            aria-label="Cari Kajian/Penelitian..."
+                            aria-describedby="basic-addon2"
+                            style={{ border: '1px solid #ccc', padding: '8px' }}
+                            size="sm"
+                        />
+                        <InputGroup.Text id="basic-addon2" ><i className="fa fa-search"></i></InputGroup.Text>
+                    </InputGroup>
+                </Col>
+
+
+            </Row>
             <div className="row row-gutter-y-30">
 
                 <div className="col-12 col-md-6 col-xl-3">

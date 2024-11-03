@@ -59,6 +59,10 @@ const AgendaDetails = () => {
                                                 <p>Kementerian Keuangan</p>
                                             </div>
                                             <div className="sidebar-widget-event-box">
+                                                <h6>Link:</h6>
+                                                <a href="https://app.zoom.us/wc" className="text-primary" target="_blank" rel="noreferrer">https://app.zoom.us/wc</a>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
                                                 <h6>Ketegori:</h6>
                                                 <span>Webinar</span>
                                             </div>

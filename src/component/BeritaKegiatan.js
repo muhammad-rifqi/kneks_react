@@ -5,6 +5,10 @@ import Swal from "sweetalert2";
 import dayjs from "dayjs";
 import "dayjs/locale/id";
 
+import Col from 'react-bootstrap/Col';
+import InputGroup from 'react-bootstrap/InputGroup';
+import DatePicker from "react-multi-date-picker"
+import transition from "react-element-popper/animations/transition"
 const BeritaKegiatan = () => {
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
@@ -88,6 +92,9 @@ const BeritaKegiatan = () => {
         return paginationItems;
     };
 
+    const [selectedDates, setSelectedDates] = useState();
+
+
     return (
         <>
             <div className='page-wrapper'>
@@ -101,6 +108,29 @@ const BeritaKegiatan = () => {
                 <section className='berita-section'>
                     <div className='container'>
                         <div className='row row-gutter-30'>
+                            {/* <Row> */}
+
+                            <Col lg={{ span: 12 }} >
+
+                                <InputGroup className="justify-content-end d-flex ">
+                                    <DatePicker
+                                        value={selectedDates}
+                                        onChange={setSelectedDates}
+                                        format="DD-MM-YYYY"
+                                        placeholder="Filter Tanggal"
+                                        style={{ padding: '18px ', width: '100%' }}
+                                        animations={[
+                                            transition({
+                                                from: 35,
+                                                transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)",
+                                            }),
+                                        ]}
+                                    />
+                                    <InputGroup.Text id="basic-addon2" ><i className="fa fa-calendar"></i></InputGroup.Text>
+                                </InputGroup>
+
+                            </Col>
+                            {/* </Row> */}
                             {loading
                                 ? Array(postsPerPage)
                                     .fill()
