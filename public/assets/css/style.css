@@ -10531,10 +10531,10 @@ SOCIAL MEDIA
 
   display: -webkit-box; /* Use flexbox */
   -webkit-box-orient: vertical; /* Set the orientation to vertical */
-  -webkit-line-clamp: 3; 
+  -webkit-line-clamp: 4; 
   overflow: hidden; /* Hide overflow */
   text-overflow: ellipsis !important; /* Show ellipsis */
-  width: 430px; 
+  width: 340px; 
   white-space: normal; /* Allow text to wrap */
 }
 
