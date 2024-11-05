@@ -3409,7 +3409,7 @@ a.search-toggler {
   padding-bottom: 80px;
   background-image: url(../image/bg/isu.jpg);
   height: 100%; 
-  background-position: center;
+  background-position: 25% center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -10136,7 +10136,10 @@ SOCIAL MEDIA
 }
 
 .custom-carousel {
-  padding: 80px 240px;
+  padding: 0 240px;
+  height: 50vh;
+  display: flex;
+  align-items: center;
 }
 
 .nav-tabs .nav-link {
@@ -10457,7 +10460,7 @@ SOCIAL MEDIA
 @media (min-width: 1200px) {  
   .card-dir{
    
-    height: 220px;
+    height: 240px;
 }
 .news-box h2 > a{
   margin-bottom: 0;

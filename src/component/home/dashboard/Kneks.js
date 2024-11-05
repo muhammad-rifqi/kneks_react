@@ -19,7 +19,7 @@ const Kneks = () => {
                     },
                 ],
                 chart: {
-                    height: 350,
+                    height: 300,
                     type: "bar", // This specifies that it's a line chart
 
                     zoom: {
@@ -177,7 +177,7 @@ const Kneks = () => {
                     },
                 ],
                 chart: {
-                    height: 350,
+                    height: 300,
                     type: "radar",
                     dropShadow: {
                         enabled: true,
@@ -241,7 +241,7 @@ const Kneks = () => {
                 ],
                 chart: {
                     type: "bar",
-                    height: 350,
+                    height: 300,
                 },
                 title: {
                     text: "Jumlah Kegiatan Berdasarkan Skala Usia",
@@ -308,7 +308,7 @@ const Kneks = () => {
                 ],
                 chart: {
                     type: "bar",
-                    height: 350,
+                    height: 300,
                 },
                 title: {
                     text: "Jumlah Kegiatan Berdasarkan Wilayah (Top 5)",
@@ -368,7 +368,10 @@ const Kneks = () => {
         <div className='col-lg-12'>
             <Carousel className='custom-carousel' interval={3000}>
                 <Carousel.Item>
-                    <div className='row'>
+                    <div className='row d-flex align-items-center'
+                      style={{
+                        height: 350
+                      }}>
                         <div className='col-lg-4'>
                             <Card className='text-center'>
                                 <Card.Body>
@@ -405,18 +408,22 @@ const Kneks = () => {
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <div className='d-flex justify-content-center'>
+                    <div className='d-flex justify-content-center align-items-center' 
+                    style={{
+                        height: 350
+                    }}
+                    >
                         <div className='col-lg-12'>
                             <div className='row'>
                                 <div className='col-lg-6'>
-                                    <Card className='text-center'>
+                                    <Card className="h-100">
                                         <Card.Body>
                                             <div id='kneks-payment-records-donat'></div>
                                         </Card.Body>
                                     </Card>
                                 </div>
                                 <div className='col-lg-6'>
-                                    <Card className='text-center'>
+                                    <Card className="h-100">
                                         <Card.Body>
                                             <div id='kneks-payment-records-pie'></div>
                                         </Card.Body>
