@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 import Section1 from '../component/home/Section1'
 import Section2 from '../component/home/Section2'
@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <div className="page-wrapper">
-      {/* <Section1 /> */}
+      <Section1 />
       <Section3 />
       {/* <Section2backup /> */}
       <Section2 />
