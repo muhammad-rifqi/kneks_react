@@ -39,13 +39,14 @@ const Section8 = () => {
 
 	}, []);
 	const convertToSlug = (title) => {
-		return title
-			.toLowerCase()
-			.trim()
-			.replace(/[^\w\s-]/g, '')
-			.replace(/\s+/g, '-')
-			.replace(/-+/g, '-');
-	};
+        if (!title) return ""; // Handle null or undefined title
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    };
 	return (
 		<section className="mayor-section">
 			<div className="container">

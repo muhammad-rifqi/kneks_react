@@ -119,6 +119,7 @@ const IsuEkonomi = () => {
     };
 
     const convertToSlug = (title) => {
+        if (!title) return ""; // Handle null or undefined title
         return title
             .toLowerCase()
             .trim()
