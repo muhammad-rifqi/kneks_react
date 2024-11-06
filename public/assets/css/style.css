@@ -5653,11 +5653,7 @@ a.search-toggler {
   transition: all 500ms ease;
 }
 
-.team-card-content-x h4 {
-  font-size: 14px;
-  margin-bottom: 0px;
-  font-weight: 600;
-}
+
 .team-card-content-x i {
   font-size: 12px;
   margin-bottom: 0px;
@@ -10332,6 +10328,24 @@ SOCIAL MEDIA
 
   
 }
+
+.team-card-content-x{
+  height: 110px;
+}
+
+.team-card-content-x h4 {
+  font-size: 12px;
+  margin-bottom: 0px;
+  font-weight: 600;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 290px; 
+  white-space: normal;
+}
 }
 
 
@@ -10393,6 +10407,24 @@ SOCIAL MEDIA
   
 }
 
+.team-card-content-x{
+  height: 110px;
+}
+
+.team-card-content-x h4 {
+  font-size: 14px;
+  margin-bottom: 0px;
+  font-weight: 600;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 290px; 
+  white-space: normal;
+}
+
  }
 
 
@@ -10451,6 +10483,24 @@ SOCIAL MEDIA
   width: 279px; 
   white-space: normal; /* Allow text to wrap */
 }
+
+.team-card-content-x{
+  height: 110px;
+}
+
+.team-card-content-x h4 {
+  font-size: 14px;
+  margin-bottom: 0px;
+  font-weight: 600;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 170px; 
+  white-space: normal;
+}
  }
 
 
@@ -10501,6 +10551,24 @@ SOCIAL MEDIA
   width: 279px; 
   white-space: normal; /* Allow text to wrap */
 }
+
+.team-card-content-x{
+  height: 110px;
+}
+
+.team-card-content-x h4 {
+  font-size: 14px;
+  margin-bottom: 0px;
+  font-weight: 600;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 170px; 
+  white-space: normal;
+}
 }
 
 
@@ -10550,5 +10618,23 @@ SOCIAL MEDIA
   text-overflow: ellipsis !important; /* Show ellipsis */
   width: 279px; 
   white-space: normal; /* Allow text to wrap */
+}
+
+.team-card-content-x{
+  height: 110px;
+}
+
+.team-card-content-x h4 {
+  font-size: 14px;
+  margin-bottom: 0px;
+  font-weight: 600;
+
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 170px; 
+  white-space: normal;
 }
  }

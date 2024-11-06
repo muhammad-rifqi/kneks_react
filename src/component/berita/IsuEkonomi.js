@@ -24,7 +24,7 @@ const IsuEkonomi = () => {
             setLoading(true);
             try {
                 const url = process.env.REACT_APP_API_URL;
-                const endpoint = process.env.REACT_APP_API_INFO_TERKINI;
+                const endpoint = process.env.REACT_APP_API_POST;
                 const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
                 setFilteredPosts(response.data); // Initialize filteredPosts with all posts
@@ -141,12 +141,14 @@ const IsuEkonomi = () => {
                     <div className="container">
                         <div className="row row-gutter-30">
                             <Col lg={{ span: 12 }} >
+                            
                                 <InputGroup className="justify-content-end d-flex ">
                                     <DatePicker
                                         ref={inputRef} // Use ref to capture input element
                                         format="DD-MM-YYYY"
                                         placeholder="Filter Tanggal"
                                         style={{ padding: '18px ', width: '100%' }}
+                                        autoFocus="on"
                                         animations={[
                                             transition({
                                                 from: 35,
@@ -170,7 +172,7 @@ const IsuEkonomi = () => {
                                         <div className="col-lg-4 col-md-6" key={item.id}>
                                             <div className="berita-card">
                                                 <div className="berita-card-imgbox ">
-                                                    <a href={`/info-terkini/${convertToSlug(item.title)}`}>
+                                                    <a href={`/isu-ekonomi/${convertToSlug(item.title)}`}>
                                                         <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} />
                                                     </a>
                                                 </div>
@@ -180,7 +182,7 @@ const IsuEkonomi = () => {
                                                     </div>
                                                     <div className="event-card-title pb-4">
                                                         <h4>
-                                                            <a href={`/info-terkini/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                            <a href={`/isu-ekonomi/${convertToSlug(item.title)}`}>{item.title}</a>
                                                         </h4>
                                                     </div>
                                                     <div className="event-card-info">

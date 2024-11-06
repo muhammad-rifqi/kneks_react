@@ -26,8 +26,10 @@ import LiputanMediaDetail from './component/berita/LiputanMediaDetail';
 import InfoTerkini from './component/berita/InfoTerkini';
 import InfoTerkiniDetail from './component/berita/InfoTerkiniDetail';
 import IsuEkonomi from './component/berita/IsuEkonomi';
+import IsuEkonomiDetail from './component/berita/IsuEkonomiDetail';
 import Elibrary from './component/Elibrary';
 import ElibraryDetail from './component/ElibraryDetail';
+import ElibraryDetailx from './component/ElibraryDetailx';
 import Agenda from './component/Agenda';
 import Kontak from './component/Kontak';
 import Kdeks from './component/Kdeks';
@@ -83,7 +85,8 @@ function AppContent() {
         <Route path="/info-terkini/:slug" element={<InfoTerkiniDetail />} />
         <Route path="/berita-terkait/:slug" element={<BeritaTerkaitDetail />} />
         <Route path="/e-pustaka" element={<Elibrary />} />
-        <Route path="/e-pustaka/detail" element={<ElibraryDetail />} />
+        <Route path="/e-pustaka/:slug" element={<ElibraryDetail />} />
+        <Route path="/e-pustaka/detail" element={<ElibraryDetailx />} />
         <Route path="/kdeks" element={<Kdeks />} />
         <Route path="/kdeks/:slug" element={<KdeksDetail />} />
         <Route path="/data" element={<Data />} />
@@ -97,6 +100,7 @@ function AppContent() {
         {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/isu-ekonomi" element={<IsuEkonomi />} />
+        <Route path="/isu-ekonomi/:slug" element={<IsuEkonomiDetail />} />
         <Route path="/test" element={<Test />} />
         <Route path="*" element={<Error404 />} />
 

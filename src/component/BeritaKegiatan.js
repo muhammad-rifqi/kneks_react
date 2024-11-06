@@ -141,55 +141,62 @@ const BeritaKegiatan = () => {
                                             <SkeletonCardBerita />
                                         </div>
                                     ))
-                                : currentPosts.map((item) => (
-                                    <div
-                                        className='col-lg-4 col-md-6'
-                                        key={item.id}>
-                                        <div className='berita-card'>
-                                            <div className='berita-card-imgbox '>
-                                                <a
-                                                    href={`/berita-kegiatan/${convertToSlug(
-                                                        item.title
-                                                    )}`}>
-                                                    {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item?.image} className="img-fluid" alt={item.title} /> */}
-                                                    <img
-                                                        src='/assets/image/berita.jpg'
-                                                        className='img-fluid'
-                                                        alt={item.title}
-                                                    />
-                                                </a>
-                                            </div>
-                                            <div className='berita-content '>
-                                                <div
-                                                    className='event-card-info-x '
-                                                    style={{
-                                                        color: `#F2994A`,
-                                                    }}>
-                                                    <span>#BERITABARU</span>
+                                :
+                                currentPosts.length > 0 ? (
+                                    currentPosts.map((item) => (
+                                        <div
+                                            className='col-lg-4 col-md-6'
+                                            key={item.id}>
+                                            <div className='berita-card'>
+                                                <div className='berita-card-imgbox '>
+                                                    <a
+                                                        href={`/berita-kegiatan/${convertToSlug(
+                                                            item.title
+                                                        )}`}>
+                                                        {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item?.image} className="img-fluid" alt={item.title} /> */}
+                                                        <img
+                                                            src='/assets/image/berita.jpg'
+                                                            className='img-fluid'
+                                                            alt={item.title}
+                                                        />
+                                                    </a>
                                                 </div>
-                                                <div className='event-card-title pb-4'>
-                                                    <h4>
-                                                        <a
-                                                            href={`/berita-kegiatan/${convertToSlug(
-                                                                item.title
-                                                            )}`}>
-                                                            {item.title}
-                                                        </a>
-                                                    </h4>
-                                                </div>
-                                                <div className='event-card-info'>
-                                                    <span>
-                                                        {dayjs(
-                                                            item.news_datetime
-                                                        ).format(
-                                                            "DD MMMM YYYY"
-                                                        )}
-                                                    </span>
+                                                <div className='berita-content '>
+                                                    <div
+                                                        className='event-card-info-x '
+                                                        style={{
+                                                            color: `#F2994A`,
+                                                        }}>
+                                                        <span>#BERITABARU</span>
+                                                    </div>
+                                                    <div className='event-card-title pb-4'>
+                                                        <h4>
+                                                            <a
+                                                                href={`/berita-kegiatan/${convertToSlug(
+                                                                    item.title
+                                                                )}`}>
+                                                                {item.title}
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div className='event-card-info'>
+                                                        <span>
+                                                            {dayjs(
+                                                                item.news_datetime
+                                                            ).format(
+                                                                "DD MMMM YYYY"
+                                                            )}
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    ))
+                                ) : (
+                                    <div className="col-lg-12 col-md-12" style={{ marginBottom: '200px' }}>
+                                        <p className="text-center">No posts available</p>
                                     </div>
-                                ))}
+                                )}
 
                             {!loading && totalPages > 1 && (
                                 <div className='pagination mt-4'>

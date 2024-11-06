@@ -6,7 +6,7 @@ import 'dayjs/locale/id';
 import axios from 'axios';
 
 
-const BeritaKegiatanDetail = () => {
+const IsuEkonomiDetail = () => {
     dayjs.locale('id');
 
     const { slug } = useParams();
@@ -39,7 +39,8 @@ const BeritaKegiatanDetail = () => {
                         setItemx(responsei.data);
                         setItem(foundItem);
                     }
-                    
+                    console.log(responsei.data)
+                    console.log(foundItem)
                 } catch (err) {
                     Swal.fire({
                         icon: "error",
@@ -64,7 +65,7 @@ const BeritaKegiatanDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Berita Dan Kegiatan</h3>
+                            <h3>Isu Ekonomi</h3>
                         </div>
                     </div>
                 </section>
@@ -124,8 +125,8 @@ const BeritaKegiatanDetail = () => {
                                 <a href="#t" className="btn btn-primary">Government</a>
                                 <a href="#t" className="btn btn-primary">Government</a>
                                 <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
+                                {/* <a href="#t" className="btn btn-primary">Government</a>
+                                <a href="#t" className="btn btn-primary">Government</a> */}
                             </div>
                         </div>
                     </div>
@@ -179,4 +180,4 @@ const BeritaKegiatanDetail = () => {
     )
 }
 
-export default BeritaKegiatanDetail
+export default IsuEkonomiDetail
