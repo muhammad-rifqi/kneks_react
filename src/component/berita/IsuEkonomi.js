@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import SkeletonCardBerita from "../skeleton/CardBerita";
 import axios from 'axios';
 import Swal from "sweetalert2";
@@ -9,18 +9,14 @@ import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import DatePicker from "react-multi-date-picker";
 import transition from "react-element-popper/animations/transition";
-// import localeID from "react-multi-date-picker/locales/id";
 
 const IsuEkonomi = () => {
-
     dayjs.locale('id');
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
-
-    const inputRef = useRef(null);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -35,7 +31,7 @@ const IsuEkonomi = () => {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: err,
+                    text: err.message,
                 });
             } finally {
                 setLoading(false);
@@ -45,44 +41,24 @@ const IsuEkonomi = () => {
         fetchPosts();
     }, []);
 
-    // Attach the keydown event listener to the input element
-    useEffect(() => {
-        const handleKeyDown = (event) => {
-            if (event.key === "Enter") {
-                const selectedDate = event.target.value;
-                
-                if (selectedDate) {
-                    // const formattedDate = dayjs(selectedDate, "DD-MM-YYYY").format('DD-MM-YYYY');
-                    // console.log(formattedDate)
-                    const filtered = posts.filter(post =>
-                        dayjs(post.news_datetime).format('DD-MM-YYYY') === selectedDate
-                    );
-                    setFilteredPosts(filtered);
-                    setCurrentPage(1); // Reset to the first page after filtering
-                } else {
-                    setFilteredPosts(posts); // Show all posts if no date is selected
-                }
-            }
-        };
-
-        const inputElement = inputRef.current;
-        if (inputElement) {
-            inputElement.addEventListener("keydown", handleKeyDown);
+    const handleDateChange = (selectedDate) => {
+        if (selectedDate) {
+            const formattedDate = selectedDate.format('YYYY-MM-DD');
+            const filtered = posts.filter(post =>
+                dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
+            );
+            setFilteredPosts(filtered);
+            setCurrentPage(1);
+        } else {
+            setFilteredPosts(posts);
         }
-
-        return () => {
-            if (inputElement) {
-                inputElement.removeEventListener("keydown", handleKeyDown);
-            }
-        };
-    }, [posts]);
+    };
 
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
     const currentPosts = filteredPosts.slice(firstPostIndex, lastPostIndex);
 
     const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-
     const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
 
     const generatePaginationItems = () => {
@@ -122,7 +98,7 @@ const IsuEkonomi = () => {
     };
 
     const convertToSlug = (title) => {
-        if (!title) return ""; // Handle null or undefined title
+        if (!title) return "";
         return title
             .toLowerCase()
             .trim()
@@ -153,15 +129,13 @@ const IsuEkonomi = () => {
                 <section className="berita-section">
                     <div className="container">
                         <div className="row row-gutter-30">
-                            <Col lg={{ span: 12 }} >
-                            
-                                <InputGroup className="justify-content-end d-flex ">
+                            <Col lg={{ span: 12 }}>
+                                <InputGroup className="justify-content-end d-flex">
                                     <DatePicker
-                                        ref={inputRef} // Use ref to capture input element
                                         format="DD-MM-YYYY"
                                         placeholder="Filter Tanggal"
                                         style={{ padding: '18px ', width: '100%' }}
-                                        autoFocus="on"
+                                        onChange={handleDateChange}
                                         months={months}
                                         weekDays={weekDays}
                                         animations={[
