@@ -9,8 +9,11 @@ import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import DatePicker from "react-multi-date-picker";
 import transition from "react-element-popper/animations/transition";
+// import localeID from "react-multi-date-picker/locales/id";
 
 const IsuEkonomi = () => {
+
+    dayjs.locale('id');
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -127,7 +130,16 @@ const IsuEkonomi = () => {
             .replace(/\s+/g, '-')
             .replace(/-+/g, '-');
     };
-
+    const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+    const weekDays =  [
+        ["sun", "min"], //[["name","shortName"], ... ]
+        ["mon", "sen"],
+        ["tue", "sel"],
+        ["wed", "rab"],
+        ["thu", "kam"],
+        ["fri", "jum"],
+        ["sat", "sab"],
+      ]
     return (
         <>
             <div className="page-wrapper">
@@ -150,6 +162,8 @@ const IsuEkonomi = () => {
                                         placeholder="Filter Tanggal"
                                         style={{ padding: '18px ', width: '100%' }}
                                         autoFocus="on"
+                                        months={months}
+                                        weekDays={weekDays}
                                         animations={[
                                             transition({
                                                 from: 35,
