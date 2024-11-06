@@ -103,8 +103,8 @@ const AgendaDetailsFix = () => {
                                         <div className="sidebar-widget-event-meta-details">
                                             <div className="sidebar-widget-event-box">
                                                 <h6>Waktu:</h6>
-                                                <p className="m-0">{ dayjs(rows.agenda_datetime).locale('id').format('h:mm')} WIB</p>
-                                                <p className="m-0">{ dayjs(rows.agenda_datetime).locale('id').format('DD MMMM YYYY')}</p>
+                                                <p className="m-0">{ dayjs(rows?.agenda_datetime).locale('id').format('h:mm')} WIB</p>
+                                                <p className="m-0">{ dayjs(rows?.agenda_datetime).locale('id').format('DD MMMM YYYY')}</p>
                                             </div>
                                             <div className="sidebar-widget-event-box">
                                                 <h6>Penyelenggara:</h6>
