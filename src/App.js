@@ -43,6 +43,7 @@ import Dashboard from './component/Dashboard';
 import BeritaTerkaitDetail from './component/berita/BeritaTerkaitDetail';
 import { Test } from './component/Test';
 import AgendaDetail from './component/AgendaDetails';
+import AgendaDetailsFix from './component/AgendaDetailsFix';
 import OpiniDetail from './component/OpiniDetail';
 
 import BannerDetail from './component/bannerDetail';
@@ -94,6 +95,7 @@ function AppContent() {
         <Route path="/opini" element={<Opini />} />
         <Route path="/opini/:slug" element={<OpiniDetail />} />
         <Route path="/agenda" element={<Agenda />} />
+        <Route path="/agenda/:slug" element={<AgendaDetailsFix />} />
         <Route path="/agenda/detail" element={<AgendaDetail />} />
         <Route path="/kontak" element={<Kontak />} />
         <Route path="/banner/detail" element={<BannerDetail />} />

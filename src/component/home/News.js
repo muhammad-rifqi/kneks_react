@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
-
-
-
 import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import 'dayjs/locale/en';
 import { useTranslation } from 'react-i18next';
-
 import { useCookies } from 'react-cookie';
 
 const News = () => {

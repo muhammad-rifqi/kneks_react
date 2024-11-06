@@ -10273,6 +10273,19 @@ SOCIAL MEDIA
   
     
   }
+  .card-agendas h4{
+    font-size: 18px;
+    color: #ffffff;
+    display: -webkit-box; /* Use flexbox */
+    -webkit-box-orient: vertical; /* Set the orientation to vertical */
+    -webkit-line-clamp: 2; 
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis !important; /* Show ellipsis */
+    width: 280px; 
+    white-space: normal;
+  
+    
+  }
 }
 @media (min-width: 576px) {  
 
@@ -10348,6 +10361,19 @@ SOCIAL MEDIA
   text-overflow: ellipsis !important; /* Show ellipsis */
   width: 290px; 
   white-space: normal;
+}
+.card-agendas h4{
+  font-size: 18px;
+  color: #ffffff;
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 190px; 
+  white-space: normal;
+
+  
 }
 }
 
@@ -10427,6 +10453,19 @@ SOCIAL MEDIA
   width: 290px; 
   white-space: normal;
 }
+.card-agendas h4{
+  font-size: 18px;
+  color: #ffffff;
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 250px; 
+  white-space: normal;
+
+  
+}
 
  }
 
@@ -10504,6 +10543,19 @@ SOCIAL MEDIA
   width: 170px; 
   white-space: normal;
 }
+.card-agendas h4{
+  font-size: 18px;
+  color: #ffffff;
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 190px; 
+  white-space: normal;
+
+  
+}
  }
 
 
@@ -10572,6 +10624,19 @@ SOCIAL MEDIA
   width: 170px; 
   white-space: normal;
 }
+.card-agendas h4{
+  font-size: 18px;
+  color: #ffffff;
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 190px; 
+  white-space: normal;
+
+  
+}
 }
 
 
@@ -10639,5 +10704,19 @@ SOCIAL MEDIA
   text-overflow: ellipsis !important; /* Show ellipsis */
   width: 170px; 
   white-space: normal;
+}
+
+.card-agendas h4{
+  font-size: 18px;
+  color: #ffffff;
+  display: -webkit-box; /* Use flexbox */
+  -webkit-box-orient: vertical; /* Set the orientation to vertical */
+  -webkit-line-clamp: 2; 
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis !important; /* Show ellipsis */
+  width: 190px; 
+  white-space: normal;
+
+  
 }
  }
