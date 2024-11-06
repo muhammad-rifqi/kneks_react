@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import Swal from "sweetalert2";
+
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -22,6 +25,8 @@ import transition from "react-element-popper/animations/transition"
 
 
 import "react-multi-date-picker/styles/colors/red.css";
+
+
 const Agenda = () => {
 
 
@@ -43,9 +48,37 @@ const Agenda = () => {
     };
 
     const [selectedDates, setSelectedDates] = useState();
+    const [posts, setPosts] = useState([]);
+console.log(posts)
+    useEffect(() => {
+		const fetchPosts = async () => {
+			// setLoading(true);
+			try {
+				const url = process.env.REACT_APP_API_URL;
+				const endpoint = process.env.REACT_APP_API_AGENDA;
+				const response = await axios.get(`${url}${endpoint}`);
+                const fetchedEvents = response.data.map(event => ({
+                    id: event.id,
+                    title: event.title,
+                    date: event.agenda_datetime, // Adjust this field based on your API data structure
+                }));
+				setPosts(fetchedEvents);
+			} catch (err) {
+				Swal.fire({
+					icon: "error",
+					title: "Oops...",
+					text: err,
+
+				});
+			} finally {
+				// setLoading(false);
+			}
+		};
+
+		fetchPosts();
 
 
-
+	}, []);
     return (
         <>
             <div className="page-wrapper">
