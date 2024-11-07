@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from 'axios';
 import Swal from "sweetalert2";
 
@@ -15,77 +15,66 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-
-
 import { Calendar } from "react-multi-date-picker"
-
-
 import DatePicker from "react-multi-date-picker"
 import transition from "react-element-popper/animations/transition"
-
-
 import "react-multi-date-picker/styles/colors/red.css";
 
-
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 const Agenda = () => {
-
-
-    // const [currentEvents, setCurrentEvents] = useState([]);
     const [showDetailModal, setShowDetailModal] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState(null);
-
     const [selectedDates, setSelectedDates] = useState();
     const [posts, setPosts] = useState([]);
-    const handleDateClick = (selected) => {
-        // Handle date click to add events (if necessary)
-        
-    };
-    
+    const [searchQuery, setSearchQuery] = useState("");
+    const calendarRef = useRef(null); // Reference for FullCalendar
+    dayjs.locale('id');
     const handleEventClick = (selected) => {
         const eventId = selected.event.id;
         const event = posts.find(evt => String(evt.id) === eventId);
-       
         setSelectedEvent(event);
         setShowDetailModal(true);
     };
 
+    // Fetch events data on initial render
     useEffect(() => {
         const fetchPosts = async () => {
-            // setLoading(true);
             try {
                 const url = process.env.REACT_APP_API_URL;
                 const endpoint = process.env.REACT_APP_API_AGENDA;
                 const response = await axios.get(`${url}${endpoint}`);
-
-
                 setPosts(response.data);
             } catch (err) {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
                     text: err,
-
                 });
-            } finally {
-                // setLoading(false);
             }
         };
-
         fetchPosts();
-
-
     }, []);
 
-    const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
-    const weekDays = [
-        ["sun", "min"], //[["name","shortName"], ... ]
-        ["mon", "sen"],
-        ["tue", "sel"],
-        ["wed", "rab"],
-        ["thu", "kam"],
-        ["fri", "jum"],
-        ["sat", "sab"],
-    ]
+    // Filter events based on search query
+    const filteredEvents = posts.filter(event => 
+        event.title.toLowerCase().includes((searchQuery || "").toLowerCase())
+    );
+
+    // Automatically navigate to the first filtered event’s date if there are matches
+    useEffect(() => {
+        if (calendarRef.current) {
+            const calendarApi = calendarRef.current.getApi();
+            
+            // If there's a search query and filtered events, jump to the date of the first filtered event
+            if (searchQuery.length > 0 && filteredEvents.length > 0) {
+                calendarApi.gotoDate(filteredEvents[0].agenda_datetime);
+            } else {
+                // Otherwise, focus on the current date
+                calendarApi.gotoDate(new Date());
+            }
+        }
+    }, [searchQuery, filteredEvents]); 
     return (
         <>
             <div className="page-wrapper">
@@ -98,99 +87,69 @@ const Agenda = () => {
                 </section>
                 <section className="about-one-section">
                     <div className="container-md">
-                        <div className="row">
-
-
-                            <div className="col-lg-12 ">
-
-                                <Row>
-
-                                    <Col lg={{ span: 4 }} >
-
-                                        <InputGroup className="justify-content-end d-flex mb-3">
-                                            <DatePicker
-                                                value={selectedDates}
-                                                onChange={setSelectedDates}
-                                                format="DD-MM-YYYY"
-                                                placeholder="Filter Tanggal"
-                                                style={{ padding: '18px ', width: '100%' }}
-                                                months={months}
-                                                weekDays={weekDays}
-                                                animations={[
-                                                    transition({
-                                                        from: 35,
-                                                        transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)",
-                                                    }),
-                                                ]}
-                                            />
-                                            <InputGroup.Text id="basic-addon2" ><i className="fa fa-calendar"></i></InputGroup.Text>
-                                        </InputGroup>
-
-                                    </Col>
-                                    <Col lg={{ offset: 1 }} >
-                                    </Col>
-                                    <Col lg={{ span: 6 }} >
-
-                                        <InputGroup className="mb-3">
-                                            <Form.Control
-                                                placeholder="Cari Agenda..."
-                                                aria-label="Cari Agenda..."
-                                                aria-describedby="basic-addon2"
-                                                style={{ border: '1px solid #ccc', padding: '8px' }}
-                                                size="sm"
-                                            />
-                                            <InputGroup.Text id="basic-addon2" ><i className="fa fa-search"></i></InputGroup.Text>
-                                        </InputGroup>
-                                    </Col>
-
-                                </Row>
-
-
-                            </div>
-                            <div className="col-lg-4">
-
+                        <Row>
+                            <Col lg={4}>
+                                <InputGroup className="mb-3">
+                                    <DatePicker
+                                        value={selectedDates}
+                                        onChange={setSelectedDates}
+                                        format="DD-MM-YYYY"
+                                        placeholder="Filter Tanggal"
+                                        style={{ padding: '18px ', width: '100%' }}
+                                        animations={[transition({ from: 35, transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)" })]}
+                                    />
+                                    <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
+                                </InputGroup>
+                            </Col>
+                            <Col lg={6}>
+                                <InputGroup className="mb-3">
+                                    <Form.Control
+                                        placeholder="Cari Agenda..."
+                                        aria-label="Cari Agenda..."
+                                        style={{ border: '1px solid #ccc', padding: '8px' }}
+                                        size="sm"
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                    />
+                                    <InputGroup.Text id="basic-addon2"><i className="fa fa-search"></i></InputGroup.Text>
+                                </InputGroup>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col lg={4}>
                                 <Card>
                                     <Card.Body className="d-flex justify-content-center">
-                                        <Calendar style={{ zIndex: "99" }} months={months}
-                                            weekDays={weekDays} />
+                                        <Calendar months={["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]}
+                                            weekDays={[["sun", "min"], ["mon", "sen"], ["tue", "sel"], ["wed", "rab"], ["thu", "kam"], ["fri", "jum"], ["sat", "sab"]]}
+                                        />
                                     </Card.Body>
                                 </Card>
-                            </div>
-                            <div className="col-lg-8">
-
-                                <Card className="p-2 border-radius" >
+                            </Col>
+                            <Col lg={8}>
+                                <Card className="p-2 border-radius">
                                     <Card.Body>
-
                                         <FullCalendar
+                                            ref={calendarRef} // Attach reference
                                             height="75vh"
                                             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
-                                            headerToolbar={{
-                                                left: "title",
-                                                right: "prev,dayGridMonth,next",
-                                            }}
-
+                                            headerToolbar={{ left: "title", right: "prev,dayGridMonth,next" }}
                                             initialView="dayGridMonth"
                                             locale="id"
                                             editable={true}
                                             selectable={true}
                                             selectMirror={true}
                                             dayMaxEvents={true}
-                                            select={handleDateClick}
                                             eventClick={handleEventClick}
-                                            // eventsSet={(events) => setCurrentEvents(events)}
-                                            events={posts.map(i => ({
-                                                id: String(i.id),
-                                                title: i.title,
-                                                date: i.agenda_datetime
-                                            }))} // Make sure data is valid and formatted correctly
-
-
-
+                                            events={filteredEvents.map(event => ({
+                                                id: String(event.id),
+                                                title: event.title,
+                                                date: event.agenda_datetime,
+                                            }))}
                                         />
                                     </Card.Body>
                                 </Card>
-                            </div>
-                        </div>
+                            </Col>
+                        </Row>
                     </div>
                 </section>
                 <EventDetailModal
