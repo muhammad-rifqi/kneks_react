@@ -49,36 +49,47 @@ const Agenda = () => {
 
     const [selectedDates, setSelectedDates] = useState();
     const [posts, setPosts] = useState([]);
-console.log(posts)
+    console.log(posts)
     useEffect(() => {
-		const fetchPosts = async () => {
-			// setLoading(true);
-			try {
-				const url = process.env.REACT_APP_API_URL;
-				const endpoint = process.env.REACT_APP_API_AGENDA;
-				const response = await axios.get(`${url}${endpoint}`);
+        const fetchPosts = async () => {
+            // setLoading(true);
+            try {
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_AGENDA;
+                const response = await axios.get(`${url}${endpoint}`);
                 const fetchedEvents = response.data.map(event => ({
                     id: event.id,
                     title: event.title,
                     date: event.agenda_datetime, // Adjust this field based on your API data structure
                 }));
-				setPosts(fetchedEvents);
-			} catch (err) {
-				Swal.fire({
-					icon: "error",
-					title: "Oops...",
-					text: err,
+                setPosts(fetchedEvents);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
 
-				});
-			} finally {
-				// setLoading(false);
-			}
-		};
+                });
+            } finally {
+                // setLoading(false);
+            }
+        };
 
-		fetchPosts();
+        fetchPosts();
 
 
-	}, []);
+    }, []);
+
+    const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+    const weekDays = [
+        ["sun", "min"], //[["name","shortName"], ... ]
+        ["mon", "sen"],
+        ["tue", "sel"],
+        ["wed", "rab"],
+        ["thu", "kam"],
+        ["fri", "jum"],
+        ["sat", "sab"],
+    ]
     return (
         <>
             <div className="page-wrapper">
@@ -107,6 +118,8 @@ console.log(posts)
                                                 format="DD-MM-YYYY"
                                                 placeholder="Filter Tanggal"
                                                 style={{ padding: '18px ', width: '100%' }}
+                                                months={months}
+                                                weekDays={weekDays}
                                                 animations={[
                                                     transition({
                                                         from: 35,
@@ -142,7 +155,8 @@ console.log(posts)
 
                                 <Card>
                                     <Card.Body className="d-flex justify-content-center">
-                                        <Calendar style={{ zIndex: "99" }} />
+                                        <Calendar style={{ zIndex: "99" }} months={months}
+                                        weekDays={weekDays}/>
                                     </Card.Body>
                                 </Card>
                             </div>
@@ -160,19 +174,14 @@ console.log(posts)
                                             }}
                                             initialView="dayGridMonth"
                                             editable={true}
+                                            locale='id'
                                             selectable={true}
                                             selectMirror={true}
                                             dayMaxEvents={true}
                                             select={handleDateClick}
                                             eventClick={handleEventClick}
                                             eventsSet={(events) => setCurrentEvents(events)}
-                                            initialEvents={[
-                                                { id: "12315", title: "All-day event", date: "2024-08-23" },
-                                                { id: "5123", title: "Timed event", date: "2024-08-21" },
-                                                { id: "5124", title: "Timed event", date: "2024-08-25" },
-                                                { id: "5125", title: "Timed evendt", date: "2024-08-25" },
-                                                { id: "5126", title: "Timed evenddt", date: "2024-08-25" },
-                                            ]}
+                                            initialEvents={posts}
                                         />
                                     </Card.Body>
                                 </Card>
