@@ -96,7 +96,7 @@ const SiaranPers = () => {
                                                 ]}
                                             />
                                             <button type="submit" aria-label="search submit" className="thm-btn">
-                                                <i class="fa-solid fa-calendar-days"></i>
+                                                <i className="fa-solid fa-calendar-days"></i>
                                             </button>
                                         </form>
                                     </div>

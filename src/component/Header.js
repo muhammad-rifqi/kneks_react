@@ -168,9 +168,9 @@ const Header = () => {
                 style={{ width: '180px', padding: '4px', marginRight: '8px', borderRadius: '4px', border: '1px solid #ccc', outline: 'none' }}
               /> */}
 
-              <div class="search-box">
-                <a href="#t" class="search-toggler">
-                  <i class="flaticon-search-interface-symbol"></i>
+              <div className="search-box">
+                <a href="#t" className="search-toggler">
+                  <i className="flaticon-search-interface-symbol"></i>
                 </a>
               </div>
               <div className="topNav-right pr-2">

@@ -74,7 +74,7 @@ const DataDetail = () => {
                                     <div className="card-header ">
                                         <h3 className="fw-bold mb-0 text-primary" >Dataset A</h3>
                                     </div>
-                                    <div class="card-body">
+                                    <div className="card-body">
                                         <div className="row g-0 mb-4">
                                             <div className="col-sm-6 fw-semibold">Judul:</div>
                                             <div className="col-sm-6 text-primary">Alexandra Della</div>
@@ -89,7 +89,7 @@ const DataDetail = () => {
                                     <div className="card-header p-3">
                                         <h3 className="fw-bold  text-primary" >Dataset A</h3>
                                     </div>
-                                    <div class="card-body">
+                                    <div className="card-body">
                                         <div className="row mb-4">
                                             <div className="col-sm-6 fw-semibold">Judul:</div>
                                             <div className="col-sm-6 text-primary">Alexandra Della</div>

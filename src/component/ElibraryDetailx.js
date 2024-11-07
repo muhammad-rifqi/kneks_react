@@ -38,7 +38,7 @@ const ElibrabryDetailx = () => {
                                         <div className="card-header p-3">
                                             <h3 className="fw-bold mb-0 text-primary" >Ekonomi Syariah Indonesia</h3>
                                         </div>
-                                        <div class="card-body">
+                                        <div className="card-body">
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-6 fw-semibold">Judul:</div>
                                                 <div className="col-sm-6 text-primary">Alexandra Della</div>
@@ -79,7 +79,7 @@ const ElibrabryDetailx = () => {
                                                 <div className="col-sm-6 fw-semibold">Panjang:</div>
                                                 <div className="col-sm-6 text-primary">Email, Phone</div>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>

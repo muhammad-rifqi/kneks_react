@@ -12,7 +12,6 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
 const IsuEkonomi = () => {
     dayjs.locale('id');
     const [loading, setLoading] = useState(true);
@@ -20,7 +19,7 @@ const IsuEkonomi = () => {
     const [filteredPosts, setFilteredPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
-
+    const [startDate, setStartDate] = useState("");
     useEffect(() => {
         const fetchPosts = async () => {
             setLoading(true);
@@ -44,19 +43,19 @@ const IsuEkonomi = () => {
         fetchPosts();
     }, []);
 
-    const handleDateChange = (selectedDate) => {
-        console.log(selectedDate)
-        // if (selectedDate) {
-        //     const formattedDate = selectedDate.format('YYYY-MM-DD');
-        //     const filtered = posts.filter(post =>
-        //         dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
-        //     );
-        //     setFilteredPosts(filtered);
-        //     setCurrentPage(1);
-        // } else {
-        //     setFilteredPosts(posts);
-        // }
-    };
+
+    useEffect(() => {
+        if (startDate) {
+            const formattedDate = dayjs(startDate).format('yyyy-MM-DD'); // Lowercase 'yyyy'
+            const filtered = posts.filter(post =>
+                dayjs(post.news_datetime).format('yyyy-MM-DD') === formattedDate
+            );
+            setFilteredPosts(filtered);
+            setCurrentPage(1); // Reset to the first page after filtering
+        } else {
+            setFilteredPosts(posts);
+        }
+    }, [startDate, posts]);
 
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
@@ -110,18 +109,7 @@ const IsuEkonomi = () => {
             .replace(/\s+/g, '-')
             .replace(/-+/g, '-');
     };
-    const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
-    const weekDays =  [
-        ["sun", "min"], //[["name","shortName"], ... ]
-        ["mon", "sen"],
-        ["tue", "sel"],
-        ["wed", "rab"],
-        ["thu", "kam"],
-        ["fri", "jum"],
-        ["sat", "sab"],
-      ]
 
-      const [startDate, setStartDate] = useState(new Date());
     return (
         <>
             <div className="page-wrapper">
@@ -138,16 +126,18 @@ const IsuEkonomi = () => {
                             <Col lg={{ span: 12 }}>
                                 <InputGroup className="justify-content-end d-flex">
                                     <DatePicker
-                                         dateFormat="dd-MM-YYYY"
-                                         placeholderText="Filter Tanggal"
-                                        style={{ padding: '18px ', width: '100%' }}
-                                        // onChange={handleDateChange}
+
+                                        dateFormat="dd-MM-yyyy"
+                                        placeholderText="Filter Tanggal"
                                         onChange={(date) => setStartDate(date)}
                                         selected={startDate}
-                                        months={months}
-                                        weekDays={weekDays}
-                                        isClearable={true}
-                                        
+                                        locale="id"
+                                        peekNextMonth
+                                        showMonthDropdown
+                                        showYearDropdown
+                                        dropdownMode="select"
+                                        isClearable
+                                        weekDays={[["sun", "min"], ["mon", "sen"], ["tue", "sel"], ["wed", "rab"], ["thu", "kam"], ["fri", "jum"], ["sat", "sab"]]}
                                     />
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
@@ -186,7 +176,7 @@ const IsuEkonomi = () => {
                                         </div>
                                     ))
                                 ) : (
-                                    <div className="col-lg-12 col-md-12" style={{marginBottom:'200px'}}>
+                                    <div className="col-lg-12 col-md-12" style={{ marginBottom: '200px' }}>
                                         <p className="text-center">No posts available</p>
                                     </div>
                                 )}

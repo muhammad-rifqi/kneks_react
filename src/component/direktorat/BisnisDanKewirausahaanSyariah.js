@@ -70,7 +70,7 @@ const BisnisDanKewirausahaanSyariah = () => {
             });
         };
 
-    }, [items]);
+    }, []);
     useEffect(() => {
 
 
@@ -400,7 +400,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                         </div>
                         <div className="row row-gutter-y-40">
                             {items.slice(0, 4).map((item, idx) => (
-                                <div className="col-md-3 col-lg-3" key={idx}>
+                                <div className="col-md-3 col-lg-3" key={item.id}>
                                     <a href="/assets/image/berita2.jpeg" className="my-image-links" data-gall="gallery10">
                                         <div className="card-box-b card-shadow news-box">
                                             <div className="img-box-b ">
@@ -410,9 +410,9 @@ const BisnisDanKewirausahaanSyariah = () => {
                                                 <div className="card-header-b-x">
 
                                                     <div className="card-title-b">
-                                                        <h2 className="title-2-x">
-                                                            <a href="#t">Travel is comming
-                                                                new</a>
+                                                        <h2 className="title-2-x text-white">
+                                                            Travel is comming
+                                                            new
                                                         </h2>
                                                     </div>
                                                     <div className="card-date">
@@ -436,7 +436,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                                 <div className="container">
                                     <div className="row row-gutter-y-40">
                                         {items.slice(0, 4).map((item) => (
-                                            <div className="col-md-3 col-lg-3">
+                                            <div className="col-md-3 col-lg-3" key={item.id}>
                                                 <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-links" data-autoplay="true" data-vbtype="video">
                                                     <div className="card-box-b card-shadow news-box">
                                                         <div className="img-box-bc">

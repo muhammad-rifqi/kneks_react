@@ -8480,11 +8480,6 @@ label {
   margin: 12px 12px;
 }
 
-.information-popup-content .selengkapnya {
-  position: absolute;
-  bottom: 70px;
-  left: 85px;
-}
 
 .news-section img {
   height: 500px;
@@ -8713,7 +8708,7 @@ label {
   padding: 0.6rem 0;
   font-size: 1.5rem;
   white-space: nowrap;
-  maxWidth: 100%;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -10233,7 +10228,7 @@ SOCIAL MEDIA
 .berita-card-kdeks:hover h4 > a {
   color: var(--thm-primary);
 }
-.news-box:hover h2 > a {
+.news-box:hover h2  {
   color: var(--thm-primary) !important;
 }
 
@@ -10286,6 +10281,12 @@ SOCIAL MEDIA
   
     
   }
+  .information-popup-content .selengkapnya {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    
+  }
 }
 @media (min-width: 576px) {  
 
@@ -10302,7 +10303,7 @@ SOCIAL MEDIA
     /* padding-bottom: 70px; */
 }
 
-.news-box h2 > a{
+.news-box h2 {
   margin-bottom: 0;
   padding: 0.4rem 0;
   font-size: 16px !important;
@@ -10375,6 +10376,12 @@ SOCIAL MEDIA
 
   
 }
+.information-popup-content .selengkapnya {
+  position: absolute;
+  bottom: 70px;
+  left: 85px;
+}
+
 }
 
 
@@ -10392,7 +10399,7 @@ SOCIAL MEDIA
     /* padding-bottom: 70px; */
 }
 
-.news-box h2 > a{
+.news-box h2 {
   margin-bottom: 0;
   padding: 0.4rem 0;
   font-size: 18px !important;
@@ -10466,6 +10473,12 @@ SOCIAL MEDIA
 
   
 }
+.information-popup-content .selengkapnya {
+  position: absolute;
+  bottom: 70px;
+  left: 85px;
+}
+
 
  }
 
@@ -10484,7 +10497,7 @@ SOCIAL MEDIA
     /* padding-bottom: 70px; */
 }
 
-.news-box h2 > a{
+.news-box h2 {
   margin-bottom: 0;
   padding: 0.4rem 0;
   font-size: 20px !important;
@@ -10556,6 +10569,12 @@ SOCIAL MEDIA
 
   
 }
+.information-popup-content .selengkapnya {
+  position: absolute;
+  bottom: 70px;
+  left: 85px;
+}
+
  }
 
 
@@ -10564,7 +10583,7 @@ SOCIAL MEDIA
    
     height: 240px;
 }
-.news-box h2 > a{
+.news-box h2 {
   margin-bottom: 0;
   padding: 0.4rem 0;
   font-size: 20px !important;
@@ -10637,6 +10656,12 @@ SOCIAL MEDIA
 
   
 }
+.information-popup-content .selengkapnya {
+  position: absolute;
+  bottom: 70px;
+  left: 85px;
+}
+
 }
 
 
@@ -10645,7 +10670,7 @@ SOCIAL MEDIA
    
     height: 240px;
 }
-.news-box h2 > a{
+.news-box h2 {
   margin-bottom: 0;
   padding: 0.4rem 0;
   font-size: 20px !important;
@@ -10719,4 +10744,10 @@ SOCIAL MEDIA
 
   
 }
+.information-popup-content .selengkapnya {
+  position: absolute;
+  bottom: 70px;
+  left: 85px;
+}
+
  }

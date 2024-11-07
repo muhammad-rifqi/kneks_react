@@ -91,7 +91,7 @@ const Elibrabry = () => {
                                         <div className="card-header p-3">
                                             <h3 className="fw-bold mb-0 text-primary" >List Pustaka</h3>
                                         </div>
-                                        <div class="card-body">
+                                        <div className="card-body">
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-6 fw-semibold">Judul:</div>
                                                 <div className="col-sm-6 text-primary">{rows?.title || '-'}</div>

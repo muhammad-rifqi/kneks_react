@@ -68,11 +68,11 @@ const News = () => {
 										<div className="card-overlay">
 											<div className="card-header-b">
 												<div className="card-category-b">
-													<a href="#BERITABARU" className="category-b-x">{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</a>
+													<span className="category-b-x">{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
 												</div>
 												<div className="card-title-b">
-													<h2>
-														<a href={`/berita-terkait/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
+													<h2 className="text-white">
+														{cookies.i18next === 'id' ? item.title : item.title_en}
 													</h2>
 												</div>
 												<div className="card-date">
