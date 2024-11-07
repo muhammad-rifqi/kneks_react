@@ -7,8 +7,11 @@ import 'dayjs/locale/id';
 
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
-import DatePicker from "react-multi-date-picker";
-import transition from "react-element-popper/animations/transition";
+// import DatePicker from "react-multi-date-picker";
+// import transition from "react-element-popper/animations/transition";
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const IsuEkonomi = () => {
     dayjs.locale('id');
@@ -42,16 +45,17 @@ const IsuEkonomi = () => {
     }, []);
 
     const handleDateChange = (selectedDate) => {
-        if (selectedDate) {
-            const formattedDate = selectedDate.format('YYYY-MM-DD');
-            const filtered = posts.filter(post =>
-                dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
-            );
-            setFilteredPosts(filtered);
-            setCurrentPage(1);
-        } else {
-            setFilteredPosts(posts);
-        }
+        console.log(selectedDate)
+        // if (selectedDate) {
+        //     const formattedDate = selectedDate.format('YYYY-MM-DD');
+        //     const filtered = posts.filter(post =>
+        //         dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
+        //     );
+        //     setFilteredPosts(filtered);
+        //     setCurrentPage(1);
+        // } else {
+        //     setFilteredPosts(posts);
+        // }
     };
 
     const lastPostIndex = currentPage * postsPerPage;
@@ -116,6 +120,8 @@ const IsuEkonomi = () => {
         ["fri", "jum"],
         ["sat", "sab"],
       ]
+
+      const [startDate, setStartDate] = useState(new Date());
     return (
         <>
             <div className="page-wrapper">
@@ -132,18 +138,16 @@ const IsuEkonomi = () => {
                             <Col lg={{ span: 12 }}>
                                 <InputGroup className="justify-content-end d-flex">
                                     <DatePicker
-                                        format="DD-MM-YYYY"
-                                        placeholder="Filter Tanggal"
+                                         dateFormat="dd-MM-YYYY"
+                                         placeholderText="Filter Tanggal"
                                         style={{ padding: '18px ', width: '100%' }}
-                                        onChange={handleDateChange}
+                                        // onChange={handleDateChange}
+                                        onChange={(date) => setStartDate(date)}
+                                        selected={startDate}
                                         months={months}
                                         weekDays={weekDays}
-                                        animations={[
-                                            transition({
-                                                from: 35,
-                                                transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)",
-                                            }),
-                                        ]}
+                                        isClearable={true}
+                                        
                                     />
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
