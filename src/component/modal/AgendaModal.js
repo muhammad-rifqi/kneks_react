@@ -1,8 +1,20 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 const AgendaModal = ({ show, handleClose, event }) => {
+
     if (!event) return null;
+    dayjs.locale('id');
+    const convertToSlug = (title) => {
+        if (!title) return "";
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    };
 
     return (
         <Modal show={show} onHide={handleClose}>
@@ -10,12 +22,10 @@ const AgendaModal = ({ show, handleClose, event }) => {
                 <Modal.Title>Agenda Detail</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h5>{event.id}</h5>
-                <h5>{event.id}</h5>
-                <p><strong>Start:</strong> {event.id}</p>
-                <p><strong>End:</strong> {event.endStr || "N/A"}</p>
-                <p><strong>All Day:</strong> {event.allDay ? "Yes" : "No"}</p>
-                <a className="btn btn-primary" href="/agenda/detail">
+                <h5>{event.title}</h5>
+                <p><strong>Tanggal:</strong> {dayjs(event.agenda_datetime).format('DD MMMM YYYY') || "N/A"}</p>
+                <p><strong>Jam:</strong> {dayjs(event.agenda_datetime).format('hh:mm') || "N/A"}</p>
+                <a className="btn btn-primary" href={`/agenda/${convertToSlug(event.title)}`}>
                     Detail
                 </a>
             </Modal.Body>
