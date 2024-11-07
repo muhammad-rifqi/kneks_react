@@ -10,8 +10,10 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import DatePicker from "react-multi-date-picker"
 import transition from "react-element-popper/animations/transition"
 const BeritaKegiatan = () => {
+    dayjs.locale('id');
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
+    const [filteredPosts, setFilteredPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
 
@@ -34,6 +36,7 @@ const BeritaKegiatan = () => {
                 const endpoint = process.env.REACT_APP_API_POST;
                 const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
+                setFilteredPosts(response.data);
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -48,11 +51,24 @@ const BeritaKegiatan = () => {
         fetchPosts(); // Call fetchPosts function when component mounts
     }, []);
 
+    const handleDateChange = (selectedDate) => {
+        if (selectedDate) {
+            const formattedDate = selectedDate.format('YYYY-MM-DD');
+            const filtered = posts.filter(post =>
+                dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
+            );
+            setFilteredPosts(filtered);
+            setCurrentPage(1);
+        } else {
+            setFilteredPosts(posts);
+        }
+    };
+
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
-    const currentPosts = posts.slice(firstPostIndex, lastPostIndex);
+    const currentPosts = filteredPosts.slice(firstPostIndex, lastPostIndex);
 
-    const totalPages = Math.ceil(posts.length / postsPerPage);
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
     const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -92,9 +108,17 @@ const BeritaKegiatan = () => {
         return paginationItems;
     };
 
-    const [selectedDates, setSelectedDates] = useState();
 
-
+    const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+    const weekDays =  [
+        ["sun", "min"], //[["name","shortName"], ... ]
+        ["mon", "sen"],
+        ["tue", "sel"],
+        ["wed", "rab"],
+        ["thu", "kam"],
+        ["fri", "jum"],
+        ["sat", "sab"],
+      ]
     return (
         <>
             <div className='page-wrapper'>
@@ -114,11 +138,13 @@ const BeritaKegiatan = () => {
 
                                 <InputGroup className="justify-content-end d-flex ">
                                     <DatePicker
-                                        value={selectedDates}
-                                        onChange={setSelectedDates}
+                                       
                                         format="DD-MM-YYYY"
                                         placeholder="Filter Tanggal"
                                         style={{ padding: '18px ', width: '100%' }}
+                                        onChange={handleDateChange}
+                                        months={months}
+                                        weekDays={weekDays}
                                         animations={[
                                             transition({
                                                 from: 35,
