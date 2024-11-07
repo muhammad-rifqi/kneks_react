@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import SkeletonCardBerita from "../../component/skeleton/CardBerita";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -53,9 +53,11 @@ const Roadmap = () => {
     }, []);
 
     // Filter posts based on the search query
-    const filteredPosts = posts.filter(post =>
-        post.title && post.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const filteredPosts = useMemo(() => {
+        return posts.filter(post =>
+            post.title && post.title.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+    }, [posts, searchQuery]);
 
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
@@ -63,9 +65,11 @@ const Roadmap = () => {
 
     const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
-    const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
+    const handlePageChange = (pageNumber) => {
+        if (pageNumber !== "...") setCurrentPage(pageNumber);
+    };
 
-    const generatePaginationItems = () => {
+    const generatePaginationItems = useMemo(() => {
         const paginationItems = [];
         const maxPageNumbersToShow = 10;
         let startPage, endPage;
@@ -90,15 +94,12 @@ const Roadmap = () => {
             paginationItems.push(i);
         }
 
-        if (startPage > 1) {
-            paginationItems.unshift("...");
-        }
-        if (endPage < totalPages) {
-            paginationItems.push("...");
-        }
+        if (startPage > 1) paginationItems.unshift("...");
+        if (endPage < totalPages) paginationItems.push("...");
 
         return paginationItems;
-    };
+    }, [currentPage, totalPages]);
+
 
     return (
         <>
@@ -106,13 +107,16 @@ const Roadmap = () => {
                 <Col lg={{ span: 6 }}>
                     <InputGroup className="mb-3">
                         <Form.Control
-                            placeholder="Cari Roadmap/Masterplan..."
-                            aria-label="Cari Roadmap/Masterplan..."
+                            placeholder="Cari Roadmap/Masterplan"
+                            aria-label="Cari Roadmap/Masterplan"
                             aria-describedby="basic-addon2"
                             style={{ border: '1px solid #ccc', padding: '8px' }}
                             size="sm"
                             value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onChange={(e) => {
+                                setSearchQuery(e.target.value);
+                                setCurrentPage(1);
+                            }}
                         />
                         <InputGroup.Text id="basic-addon2"><i className="fa fa-search"></i></InputGroup.Text>
                     </InputGroup>
@@ -160,11 +164,12 @@ const Roadmap = () => {
 
                 {!loading && totalPages > 1 && (
                     <div className='pagination mt-4'>
-                        {generatePaginationItems().map((page, index) => (
+                        {generatePaginationItems.map((page, index) => (
                             <button
                                 key={index}
                                 className={`pagination-btn ${page === currentPage ? "active" : ""}`}
-                                onClick={() => { if (page !== "...") handlePageChange(page); }}
+                                onClick={() => handlePageChange(page)}
+                                aria-label={`Page ${page}`}
                                 disabled={page === "..."}
                             >
                                 {page}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import SkeletonCardBerita from "../../component/skeleton/CardBerita";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -35,7 +35,6 @@ const Siaran = () => {
                 const url = process.env.REACT_APP_API_URL;
                 const endpoint = process.env.REACT_APP_API_PUSTAKA;
                 const response = await axios.get(`${url}${endpoint}`);
-
                 const res = response.data.filter(post => post.report_category_id === 6);
                 setPosts(res);
             } catch (err) {
@@ -52,21 +51,22 @@ const Siaran = () => {
         fetchPosts();
     }, []);
 
-    // Filter posts based on the search query
-    const filteredPosts = posts.filter(post =>
-        post.title && post.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-
+    const filteredPosts = useMemo(() => {
+        return posts.filter(post =>
+            post.title && post.title.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+    }, [posts, searchQuery]);
 
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
     const currentPosts = filteredPosts.slice(firstPostIndex, lastPostIndex);
-   
     const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
-    const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
+    const handlePageChange = (pageNumber) => {
+        if (pageNumber !== "...") setCurrentPage(pageNumber);
+    };
 
-    const generatePaginationItems = () => {
+    const generatePaginationItems = useMemo(() => {
         const paginationItems = [];
         const maxPageNumbersToShow = 10;
         let startPage, endPage;
@@ -91,15 +91,11 @@ const Siaran = () => {
             paginationItems.push(i);
         }
 
-        if (startPage > 1) {
-            paginationItems.unshift("...");
-        }
-        if (endPage < totalPages) {
-            paginationItems.push("...");
-        }
+        if (startPage > 1) paginationItems.unshift("...");
+        if (endPage < totalPages) paginationItems.push("...");
 
         return paginationItems;
-    };
+    }, [currentPage, totalPages]);
 
     return (
         <>
@@ -113,16 +109,21 @@ const Siaran = () => {
                             style={{ border: '1px solid #ccc', padding: '8px' }}
                             size="sm"
                             value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onChange={(e) => {
+                                setSearchQuery(e.target.value);
+                                setCurrentPage(1);
+                            }}
                         />
-                        <InputGroup.Text id="basic-addon2"><i className="fa fa-search"></i></InputGroup.Text>
+                        <InputGroup.Text id="basic-addon2">
+                            <i className="fa fa-search"></i>
+                        </InputGroup.Text>
                     </InputGroup>
                 </Col>
             </Row>
 
             <div className="row row-gutter-y-30 mt-3">
                 {loading
-                    ? Array(postsPerPage).fill().map((_, index) => (
+                    ? Array.from({ length: postsPerPage }).map((_, index) => (
                         <div className='col-12 col-md-6 col-xl-3' key={index}>
                             <SkeletonCardBerita />
                         </div>
@@ -132,16 +133,12 @@ const Siaran = () => {
                             <div className="col-12 col-md-6 col-xl-3" key={item?.id}>
                                 <div className="team-card-x">
                                     <div className="team-card-img-x">
-                                        <a href={`/e-pustaka/${convertToSlug(
-                                            item?.title
-                                        )}`}>
+                                        <a href={`/e-pustaka/${convertToSlug(item?.title)}`}>
                                             <img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" />
                                         </a>
                                     </div>
                                     <div className="team-card-content-x">
-                                        <h4><a href={`/e-pustaka/${convertToSlug(
-                                            item?.title
-                                        )}`}>{item?.title}</a></h4>
+                                        <h4><a href={`/e-pustaka/${convertToSlug(item?.title)}`}>{item?.title}</a></h4>
                                         <div className="d-flex justify-content-between align-items-end">
                                             <p>{dayjs(item?.date).format("DD MMMM YYYY")}</p>
                                             <a href="#t" data-bs-toggle="tooltip" title="Downloadable">
@@ -161,11 +158,12 @@ const Siaran = () => {
 
                 {!loading && totalPages > 1 && (
                     <div className='pagination mt-4'>
-                        {generatePaginationItems().map((page, index) => (
+                        {generatePaginationItems.map((page, index) => (
                             <button
                                 key={index}
                                 className={`pagination-btn ${page === currentPage ? "active" : ""}`}
-                                onClick={() => { if (page !== "...") handlePageChange(page); }}
+                                onClick={() => handlePageChange(page)}
+                                aria-label={`Page ${page}`}
                                 disabled={page === "..."}
                             >
                                 {page}
