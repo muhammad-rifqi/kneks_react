@@ -30,26 +30,25 @@ import "react-multi-date-picker/styles/colors/red.css";
 const Agenda = () => {
 
 
-    const [currentEvents, setCurrentEvents] = useState([]);
+    // const [currentEvents, setCurrentEvents] = useState([]);
     const [showDetailModal, setShowDetailModal] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState(null);
 
-
+    const [selectedDates, setSelectedDates] = useState();
+    const [posts, setPosts] = useState([]);
     const handleDateClick = (selected) => {
         // Handle date click to add events (if necessary)
-
+        
     };
-
+    
     const handleEventClick = (selected) => {
         const eventId = selected.event.id;
-        const event = currentEvents.find(evt => evt.id === eventId);
+        const event = posts.find(evt => String(evt.id) === eventId);
+       
         setSelectedEvent(event);
         setShowDetailModal(true);
     };
 
-    const [selectedDates, setSelectedDates] = useState();
-    const [posts, setPosts] = useState([]);
-    console.log(posts)
     useEffect(() => {
         const fetchPosts = async () => {
             // setLoading(true);
@@ -57,12 +56,9 @@ const Agenda = () => {
                 const url = process.env.REACT_APP_API_URL;
                 const endpoint = process.env.REACT_APP_API_AGENDA;
                 const response = await axios.get(`${url}${endpoint}`);
-                const fetchedEvents = response.data.map(event => ({
-                    id: event.id,
-                    title: event.title,
-                    date: event.agenda_datetime, // Adjust this field based on your API data structure
-                }));
-                setPosts(fetchedEvents);
+
+
+                setPosts(response.data);
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -156,7 +152,7 @@ const Agenda = () => {
                                 <Card>
                                     <Card.Body className="d-flex justify-content-center">
                                         <Calendar style={{ zIndex: "99" }} months={months}
-                                        weekDays={weekDays}/>
+                                            weekDays={weekDays} />
                                     </Card.Body>
                                 </Card>
                             </div>
@@ -172,16 +168,24 @@ const Agenda = () => {
                                                 left: "title",
                                                 right: "prev,dayGridMonth,next",
                                             }}
+
                                             initialView="dayGridMonth"
+                                            locale="id"
                                             editable={true}
-                                            locale='id'
                                             selectable={true}
                                             selectMirror={true}
                                             dayMaxEvents={true}
                                             select={handleDateClick}
                                             eventClick={handleEventClick}
-                                            eventsSet={(events) => setCurrentEvents(events)}
-                                            initialEvents={posts}
+                                            // eventsSet={(events) => setCurrentEvents(events)}
+                                            events={posts.map(i => ({
+                                                id: String(i.id),
+                                                title: i.title,
+                                                date: i.agenda_datetime
+                                            }))} // Make sure data is valid and formatted correctly
+
+
+
                                         />
                                     </Card.Body>
                                 </Card>
