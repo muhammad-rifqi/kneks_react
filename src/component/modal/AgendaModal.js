@@ -24,7 +24,7 @@ const AgendaModal = ({ show, handleClose, event }) => {
             <Modal.Body>
                 <h5>{event.title}</h5>
                 <p><strong>Tanggal:</strong> {dayjs(event.agenda_datetime).format('DD MMMM YYYY') || "N/A"}</p>
-                <p><strong>Jam:</strong> {dayjs(event.agenda_datetime).format('hh:mm') || "N/A"}</p>
+                <p><strong>Jam:</strong> {dayjs(event.agenda_datetime).format('hh:mm') || "N/A"} WIB</p>
                 <a className="btn btn-primary" href={`/agenda/${convertToSlug(event.title)}`}>
                     Detail
                 </a>
