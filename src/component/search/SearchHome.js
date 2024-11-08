@@ -41,8 +41,7 @@ const SearchHome = () => {
                     `${url}${endpoint}?cari=${query}`
                 );
                 setPosts(response.data);
-                console.log(response.data)
-                console.log(query)
+              
             } catch (err) {
                 Swal.fire({
                     icon: "error",
