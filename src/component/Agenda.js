@@ -62,7 +62,7 @@ const Agenda = () => {
     const filteredEvents = posts.filter(event =>
         event.title.toLowerCase().includes((searchQuery || "").toLowerCase())
     );
-console.log(filteredEvents)
+// console.log(filteredEvents)
     // const filteredEvents = posts.filter(event => {
     //     const matchesSearch = event.title.toLowerCase().includes((searchQuery || "").toLowerCase());
     //     const matchesDate = startDate ? dayjs(event.agenda_datetime).isSame(dayjs(startDate), 'day') : true;
