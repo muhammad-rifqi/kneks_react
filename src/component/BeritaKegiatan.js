@@ -54,10 +54,11 @@ const BeritaKegiatan = () => {
 
     useEffect(() => {
         if (startDate) {
-            const formattedDate = dayjs(startDate).format('yyyy-MM-DD'); // Lowercase 'yyyy'
+            const formattedDate = dayjs(startDate).format('YYYY-MM-DD'); // Lowercase 'yyyy'
             const filtered = posts.filter(post =>
-                dayjs(post.news_datetime).format('yyyy-MM-DD') === formattedDate
+                dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
             );
+          
             setFilteredPosts(filtered);
             setCurrentPage(1); // Reset to the first page after filtering
         } else {
