@@ -7,8 +7,9 @@ import "dayjs/locale/id";
 
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
-import DatePicker from "react-multi-date-picker"
-import transition from "react-element-popper/animations/transition"
+import FormControl from 'react-bootstrap/FormControl';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 const BeritaKegiatan = () => {
     dayjs.locale('id');
     const [loading, setLoading] = useState(true);
@@ -16,7 +17,7 @@ const BeritaKegiatan = () => {
     const [filteredPosts, setFilteredPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
-
+    const [startDate, setStartDate] = useState("");
     const convertToSlug = (title) => {
         if (!title) return ""; // Handle null or undefined title
         return title
@@ -51,18 +52,19 @@ const BeritaKegiatan = () => {
         fetchPosts(); // Call fetchPosts function when component mounts
     }, []);
 
-    const handleDateChange = (selectedDate) => {
-        if (selectedDate) {
-            const formattedDate = selectedDate.format('YYYY-MM-DD');
+    useEffect(() => {
+        if (startDate) {
+            const formattedDate = dayjs(startDate).format('yyyy-MM-DD'); // Lowercase 'yyyy'
             const filtered = posts.filter(post =>
-                dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
+                dayjs(post.news_datetime).format('yyyy-MM-DD') === formattedDate
             );
             setFilteredPosts(filtered);
-            setCurrentPage(1);
+            setCurrentPage(1); // Reset to the first page after filtering
         } else {
             setFilteredPosts(posts);
         }
-    };
+    }, [startDate, posts]);
+
 
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
@@ -109,16 +111,16 @@ const BeritaKegiatan = () => {
     };
 
 
-    const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
-    const weekDays =  [
-        ["sun", "min"], //[["name","shortName"], ... ]
-        ["mon", "sen"],
-        ["tue", "sel"],
-        ["wed", "rab"],
-        ["thu", "kam"],
-        ["fri", "jum"],
-        ["sat", "sab"],
-      ]
+    const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
+        <FormControl
+            value={value}
+            onClick={onClick}
+            ref={ref}
+            placeholder="Filter Tanggal"
+            readOnly // Makes the input read-only
+            size="sm"
+        />
+    ));
     return (
         <>
             <div className='page-wrapper'>
@@ -138,19 +140,17 @@ const BeritaKegiatan = () => {
 
                                 <InputGroup className="justify-content-end d-flex ">
                                     <DatePicker
-                                       
-                                        format="DD-MM-YYYY"
-                                        placeholder="Filter Tanggal"
-                                        style={{ padding: '18px ', width: '100%' }}
-                                        onChange={handleDateChange}
-                                        months={months}
-                                        weekDays={weekDays}
-                                        animations={[
-                                            transition({
-                                                from: 35,
-                                                transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)",
-                                            }),
-                                        ]}
+
+                                        dateFormat="dd-MM-yyyy"
+                                        // placeholderText="Filter Tanggal"
+                                        onChange={(date) => setStartDate(date)}
+                                        selected={startDate}
+                                        peekNextMonth
+                                        showMonthDropdown
+                                        showYearDropdown
+                                        dropdownMode="select"
+                                        isClearable={!!startDate}
+                                        customInput={<CustomInput />}
                                     />
                                     <InputGroup.Text id="basic-addon2" ><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>

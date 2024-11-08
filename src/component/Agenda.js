@@ -14,12 +14,14 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
 
 import { Calendar } from "react-multi-date-picker"
-import DatePicker from "react-multi-date-picker"
-import transition from "react-element-popper/animations/transition"
+// import DatePicker from "react-multi-date-picker"
 import "react-multi-date-picker/styles/colors/red.css";
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 const Agenda = () => {
@@ -28,6 +30,7 @@ const Agenda = () => {
     const [selectedDates, setSelectedDates] = useState();
     const [posts, setPosts] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
+    const [startDate, setStartDate] = useState("");
     const calendarRef = useRef(null); // Reference for FullCalendar
     dayjs.locale('id');
     const handleEventClick = (selected) => {
@@ -57,7 +60,7 @@ const Agenda = () => {
     }, []);
 
     // Filter events based on search query
-    const filteredEvents = posts.filter(event => 
+    const filteredEvents = posts.filter(event =>
         event.title.toLowerCase().includes((searchQuery || "").toLowerCase())
     );
 
@@ -65,7 +68,7 @@ const Agenda = () => {
     useEffect(() => {
         if (calendarRef.current) {
             const calendarApi = calendarRef.current.getApi();
-            
+
             // If there's a search query and filtered events, jump to the date of the first filtered event
             if (searchQuery.length > 0 && filteredEvents.length > 0) {
                 calendarApi.gotoDate(filteredEvents[0].agenda_datetime);
@@ -74,7 +77,18 @@ const Agenda = () => {
                 calendarApi.gotoDate(new Date());
             }
         }
-    }, [searchQuery, filteredEvents]); 
+    }, [searchQuery, filteredEvents]);
+
+    const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
+        <FormControl
+            value={value}
+            onClick={onClick}
+            ref={ref}
+            placeholder="Filter Tanggal"
+            readOnly // Makes the input read-only
+            style={{ border: '1px solid #ccc', padding: '8px' }}
+        />
+    ));
     return (
         <>
             <div className="page-wrapper">
@@ -91,23 +105,28 @@ const Agenda = () => {
                             <Col lg={4}>
                                 <InputGroup className="mb-3">
                                     <DatePicker
-                                        value={selectedDates}
-                                        onChange={setSelectedDates}
-                                        format="DD-MM-YYYY"
-                                        placeholder="Filter Tanggal"
-                                        style={{ padding: '18px ', width: '100%' }}
-                                        animations={[transition({ from: 35, transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)" })]}
+
+                                        dateFormat="dd-MM-yyyy"
+                                        // placeholderText="Filter Tanggal"
+                                        onChange={(date) => setStartDate(date)}
+                                        selected={startDate}
+                                        peekNextMonth
+                                        showMonthDropdown
+                                        showYearDropdown
+                                        dropdownMode="select"
+                                        isClearable={!!startDate}
+                                        customInput={<CustomInput />}
                                     />
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
                             </Col>
-                            <Col lg={6}>
+                            <Col lg={6} >
                                 <InputGroup className="mb-3">
                                     <Form.Control
                                         placeholder="Cari Agenda..."
                                         aria-label="Cari Agenda..."
                                         style={{ border: '1px solid #ccc', padding: '8px' }}
-                                        size="sm"
+                                        // size="sm"
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
                                     />
@@ -116,16 +135,17 @@ const Agenda = () => {
                             </Col>
                         </Row>
                         <Row>
-                            <Col lg={4}>
+                            <Col lg={4} >
                                 <Card>
                                     <Card.Body className="d-flex justify-content-center">
                                         <Calendar months={["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]}
                                             weekDays={[["sun", "min"], ["mon", "sen"], ["tue", "sel"], ["wed", "rab"], ["thu", "kam"], ["fri", "jum"], ["sat", "sab"]]}
+                                        style={{zIndex:`0`}}
                                         />
                                     </Card.Body>
                                 </Card>
                             </Col>
-                            <Col lg={8}>
+                            <Col lg={8} >
                                 <Card className="p-2 border-radius">
                                     <Card.Body>
                                         <FullCalendar

@@ -4,7 +4,7 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
-
+import FormControl from 'react-bootstrap/FormControl';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 // import DatePicker from "react-multi-date-picker";
@@ -109,7 +109,16 @@ const IsuEkonomi = () => {
             .replace(/\s+/g, '-')
             .replace(/-+/g, '-');
     };
-
+    const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
+        <FormControl
+            value={value}
+            onClick={onClick}
+            ref={ref}
+            placeholder="Filter Tanggal"
+            readOnly // Makes the input read-only
+            size="sm"
+        />
+    ));
     return (
         <>
             <div className="page-wrapper">
@@ -128,16 +137,15 @@ const IsuEkonomi = () => {
                                     <DatePicker
 
                                         dateFormat="dd-MM-yyyy"
-                                        placeholderText="Filter Tanggal"
+                                        // placeholderText="Filter Tanggal"
                                         onChange={(date) => setStartDate(date)}
                                         selected={startDate}
-                                        locale="id"
                                         peekNextMonth
                                         showMonthDropdown
                                         showYearDropdown
                                         dropdownMode="select"
-                                        isClearable
-                                        weekDays={[["sun", "min"], ["mon", "sen"], ["tue", "sel"], ["wed", "rab"], ["thu", "kam"], ["fri", "jum"], ["sat", "sab"]]}
+                                        isClearable={!!startDate}
+                                        customInput={<CustomInput />}
                                     />
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
