@@ -31,7 +31,7 @@ const Section6 = () => {
 
 								<defs>
 									<filter id="f1" x="0" y="0" width="150%" height="150%">
-									<feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="gray"/>
+									<feDropShadow dx="2" dy="2" stdDeviation="4" floodColor="gray"/>
 									</filter>
 								</defs>
 								
