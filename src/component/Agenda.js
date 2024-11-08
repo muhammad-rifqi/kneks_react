@@ -27,7 +27,7 @@ import 'dayjs/locale/id';
 const Agenda = () => {
     const [showDetailModal, setShowDetailModal] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState(null);
-    const [selectedDates, setSelectedDates] = useState();
+    // const [selectedDates, setSelectedDates] = useState();
     const [posts, setPosts] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [startDate, setStartDate] = useState("");
@@ -59,21 +59,43 @@ const Agenda = () => {
         fetchPosts();
     }, []);
 
-    // Filter events based on search query
     const filteredEvents = posts.filter(event =>
         event.title.toLowerCase().includes((searchQuery || "").toLowerCase())
     );
+console.log(filteredEvents)
+    // const filteredEvents = posts.filter(event => {
+    //     const matchesSearch = event.title.toLowerCase().includes((searchQuery || "").toLowerCase());
+    //     const matchesDate = startDate ? dayjs(event.agenda_datetime).isSame(dayjs(startDate), 'day') : true;
 
-    // Automatically navigate to the first filtered event’s date if there are matches
+    //     // console.log(event.title)
+    //     // console.log(matchesDate)
+    //     // If searchQuery has matches, only filter by searchQuery
+    //     if ( matchesSearch) {
+    //         return matchesSearch;
+    //     }
+    //    else if ( matchesDate) {
+    //         return matchesDate;
+    //     }
+    //     else if (matchesSearch && matchesDate) {
+    //         return matchesDate;
+    //     }
+    //     else {
+    //         return true;
+    //     }
+    // });
+
+    // console.log(filteredEvents)
     useEffect(() => {
         if (calendarRef.current) {
             const calendarApi = calendarRef.current.getApi();
 
-            // If there's a search query and filtered events, jump to the date of the first filtered event
             if (searchQuery.length > 0 && filteredEvents.length > 0) {
-                calendarApi.gotoDate(filteredEvents[0].agenda_datetime);
+                
+                filteredEvents.forEach(event => {
+                    calendarApi.gotoDate(event.agenda_datetime);
+                 
+                });
             } else {
-                // Otherwise, focus on the current date
                 calendarApi.gotoDate(new Date());
             }
         }
@@ -102,7 +124,7 @@ const Agenda = () => {
                 <section className="about-one-section">
                     <div className="container-md">
                         <Row>
-                            <Col lg={4}>
+                            <Col lg={4} sm={12}>
                                 <InputGroup className="mb-3">
                                     <DatePicker
 
@@ -120,7 +142,7 @@ const Agenda = () => {
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
                             </Col>
-                            <Col lg={6} >
+                            <Col lg={6} sm={12}>
                                 <InputGroup className="mb-3">
                                     <Form.Control
                                         placeholder="Cari Agenda..."
@@ -140,7 +162,7 @@ const Agenda = () => {
                                     <Card.Body className="d-flex justify-content-center">
                                         <Calendar months={["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]}
                                             weekDays={[["sun", "min"], ["mon", "sen"], ["tue", "sel"], ["wed", "rab"], ["thu", "kam"], ["fri", "jum"], ["sat", "sab"]]}
-                                        style={{zIndex:`0`}}
+                                            style={{ zIndex: `0` }}
                                         />
                                     </Card.Body>
                                 </Card>
