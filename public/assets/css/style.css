@@ -2409,6 +2409,8 @@ a.search-toggler {
   .about-inner {
     padding-top: 50px;
     padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 10px;
   }
 }
 
@@ -2864,6 +2866,13 @@ a.search-toggler {
 .service-section .section-title-box {
   margin-bottom: 40px;
   margin-top: 13px;
+  padding-left: 80px
+}
+
+@media (max-width: 575px) {
+  .service-section .section-title-box {
+    padding-left: 30px
+  }
 }
 
 .service-section .section-tagline {
@@ -9386,6 +9395,7 @@ SOCIAL MEDIA
 }
 .berita-card {
   box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
+  height: 100%;
 }
 
 .berita-card-imgbox img {
@@ -10133,6 +10143,12 @@ SOCIAL MEDIA
   align-items: center;
 }
 
+@media (max-width: 575px) {
+  .custom-carousel {
+    padding: 0;
+  }
+}
+
 .nav-tabs .nav-link {
   color: white !important;
   background-color: transparent;
@@ -10668,7 +10684,7 @@ SOCIAL MEDIA
 @media (min-width: 1400px) { 
   .card-dir{
    
-    height: 240px;
+    height: 250px;
 }
 .news-box h2 {
   margin-bottom: 0;
@@ -10748,6 +10764,12 @@ SOCIAL MEDIA
   position: absolute;
   bottom: 70px;
   left: 85px;
+}
+
+@media (max-width: 768px) {
+  .h-md-50 {
+      height: 50% !important;
+  }
 }
 
  }

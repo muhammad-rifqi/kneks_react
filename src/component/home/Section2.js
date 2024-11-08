@@ -134,7 +134,7 @@ const Section2 = () => {
                     <div className="col-lg-2 col-md-4 mb-3">
                         <a href="/bisnis-dan-kewiraushaan-syariah">
                             <div className="card card-dir">
-                                <div className="card-body text-center">
+                                <div className="card-body text-center px-2">
                                     <div className="department-card-gambar">
                                         <img src="/assets/image/sme.svg" alt={t('menu.bisnisDanKewirausahaan')} className="img-b img-fluid" />
                                     </div>

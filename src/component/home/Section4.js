@@ -6,7 +6,7 @@ const Section4 = () => {
 		<section className="service-section funfact-section-isu">
 			<div className="container">
 				<div className="row justify-content-between">
-					<div className="col-lg-6" style={{paddingLeft: 80}}>
+					<div className="col-lg-6">
 						<div className="section-title-box">
 							<div className="section-tagline-b-x" style={{color:'#F4EE5C'}}>{t('isuUtama')}</div>
 							<h2 className="section-title text-white">{t('isuJudul')}
@@ -37,4 +37,3 @@ const Section4 = () => {
 	)
 }
 export default Section4
-
