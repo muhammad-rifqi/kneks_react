@@ -45,7 +45,7 @@ const Section1 = () => {
 			{posts.length > 0 ? (
 				<Carousel data-bs-theme="dark">
 					{posts.map((item, index) => (
-						<Carousel.Item key={index} interval={1500}>
+						<Carousel.Item key={index} interval={5000}>
 							<div
 								className="item-slider-bg"
 								style={{ backgroundImage: `url("${item?.image}")` }}
