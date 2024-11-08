@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import Kota from "../component/dumy/dataKota";
 
@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
   // const [activeMenu, setActiveMenu] = useState(location.pathname); // Initial state
   const [dataKota, setDataKota] = useState([]); // Initial state
 
@@ -53,6 +55,7 @@ const Footer = () => {
   // State to track hover for menu items
   const [hoveredItem, setHoveredItem] = useState(null);
   const [hoveredSubItem, setHoveredSubItem] = useState(null); // State to track hover for sub-items
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Inline styles for the dropdown menu
   const menuItemStyle = {
@@ -85,6 +88,20 @@ const Footer = () => {
     ...menuItemStyle,
     backgroundColor: isHovered ? '#ddd' : '#f9f9f9', // Change background on hover
   });
+
+  const onSearch = (e) =>{
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?query=${searchQuery}`);
+      
+      const searchPopup = document.querySelector(".search-popup");
+      if (searchPopup) {
+        searchPopup.classList.remove("active");
+      }
+      
+      document.body.classList.remove("locked");
+    }
+  }
 
   return (
 
@@ -368,9 +385,15 @@ const Footer = () => {
       <div className="search-popup">
         <div className="search-popup-overlay search-toggler"></div>
         <div className="search-popup-content">
-          <form>
+          <form onSubmit={onSearch}>
             <label htmlFor="search" className="sr-only">{t('pencarian')}</label>
-            <input type="text" id="search" placeholder={t('pencarian')} />
+            <input
+              type="text"
+              id="search"
+              placeholder={t('pencarian')}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
             <button type="submit" aria-label="search submit" className="search-btn">
               <span><i className="flaticon-search-interface-symbol"></i></span>
             </button>

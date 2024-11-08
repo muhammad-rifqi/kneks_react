@@ -60,7 +60,7 @@ const resources = {
             "sosialMedia": "Social Media",
             "instagram": "Instagram Post",
 
-            "instansi": "KNEKS Member",
+            "instansi": "KNEKS Members",
             "instansiIsi": "KNEKS consists of 3 Coordinating Ministers, 7 Ministers, 3 Chairmen of government institutions,",
             "instansiIsi2": "Chairman of the MUI and Chairman of KADIN, with the Minister of Finance also serving as Secretary.",
         }

@@ -366,7 +366,7 @@ const Bi = () => {
     }, []);
     return (
         <div className='col-lg-12'>
-            <Carousel className='custom-carousel' interval={3000}>
+            <Carousel className='custom-carousel' interval={99999999}>
                 <Carousel.Item>
                     <div className='row d-flex align-items-center'
                       style={{
@@ -415,8 +415,8 @@ const Bi = () => {
                     >
                         <div className='col-lg-12'>
                             <div className='row'>
-                                <div className='col-lg-6'>
-                                    <Card className="h-100">
+                                <div className='col-lg-6 col-md-12'>
+                                    <Card className="h-100 h-md-50">
                                         <Card.Body>
                                             <div id='bi-payment-records-donat'></div>
                                         </Card.Body>
