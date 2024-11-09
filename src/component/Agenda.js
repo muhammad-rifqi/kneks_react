@@ -59,47 +59,34 @@ const Agenda = () => {
         fetchPosts();
     }, []);
 
-    const filteredEvents = posts.filter(event =>
-        event.title.toLowerCase().includes((searchQuery || "").toLowerCase())
-    );
-// console.log(filteredEvents)
-    // const filteredEvents = posts.filter(event => {
-    //     const matchesSearch = event.title.toLowerCase().includes((searchQuery || "").toLowerCase());
-    //     const matchesDate = startDate ? dayjs(event.agenda_datetime).isSame(dayjs(startDate), 'day') : true;
+    // const filteredEvents = posts.filter(event =>
+    //     event.title.toLowerCase().includes((searchQuery || "").toLowerCase())
+    // );
 
-    //     // console.log(event.title)
-    //     // console.log(matchesDate)
-    //     // If searchQuery has matches, only filter by searchQuery
-    //     if ( matchesSearch) {
-    //         return matchesSearch;
-    //     }
-    //    else if ( matchesDate) {
-    //         return matchesDate;
-    //     }
-    //     else if (matchesSearch && matchesDate) {
-    //         return matchesDate;
-    //     }
-    //     else {
-    //         return true;
-    //     }
-    // });
+    const filteredEvents = posts.filter(event => {
+        const matchesSearch = searchQuery ? event.title.toLowerCase().includes(searchQuery.toLowerCase()) : true;
+        const matchesDate = startDate ? dayjs(event.agenda_datetime).isSame(dayjs(startDate), 'day') : true;
 
-    // console.log(filteredEvents)
+        // Only include events that match both search and date filters
+        return matchesSearch && matchesDate;
+    });
+
+
     useEffect(() => {
         if (calendarRef.current) {
             const calendarApi = calendarRef.current.getApi();
 
-            if (searchQuery.length > 0 && filteredEvents.length > 0) {
-                
+            if ((searchQuery.length > 0 || startDate) && filteredEvents.length > 0) {
+
                 filteredEvents.forEach(event => {
                     calendarApi.gotoDate(event.agenda_datetime);
-                 
+
                 });
             } else {
                 calendarApi.gotoDate(new Date());
             }
         }
-    }, [searchQuery, filteredEvents]);
+    }, [searchQuery, filteredEvents, startDate]);
 
     const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
         <FormControl
