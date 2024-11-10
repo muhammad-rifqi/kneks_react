@@ -1,48 +1,87 @@
 import React, { useState } from "react";
-
+import Swal from "sweetalert2";
+import axios from 'axios';
 const Kontak = () => {
     const [formValues, setFormValues] = useState({
-        name: '',
+        nama: '',
         email: '',
         phone: '',
-        subject: '',
+        subjek: '',
         inputText: ''
     });
 
-    const [fieldErrors, setFieldErrors] = useState({
-        name: false,
-        email: false,
-        phone: false,
-        subject: false,
-        inputText: false
-    });
+    const [fieldErrors, setFieldErrors] = useState({});
+
+    const validateField = (name, value) => {
+        switch (name) {
+            case "nama":
+            case "subjek":
+            case "inputText":
+                return value.trim() === '' ? "*Wajib diisi" : null;
+            case "email":
+                return !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value) ? "*Email tidak valid" : null;
+            case "phone":
+                return !/^[0-9]{10,15}$/.test(value) ? "*Nomor telepon tidak valid" : null;
+            default:
+                return null;
+        }
+    };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setFormValues({
-            ...formValues,
-            [name]: value
-        });
+        setFormValues({ ...formValues, [name]: value });
+
+        setFieldErrors({ ...fieldErrors, [name]: validateField(name, value) });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const newFieldErrors = {
-            name: formValues.name.trim() === '',
-            email: formValues.email.trim() === '',
-            phone: formValues.phone.trim() === '',
-            subject: formValues.subject.trim() === '',
-            inputText: formValues.inputText.trim() === ''
-        };
+        const newFieldErrors = {};
+        Object.keys(formValues).forEach((key) => {
+            newFieldErrors[key] = validateField(key, formValues[key]);
+        });
 
         setFieldErrors(newFieldErrors);
 
-        const allValid = Object.values(newFieldErrors).every(error => !error);
-
+        const allValid = Object.values(newFieldErrors).every(error => error === null);
         if (allValid) {
-            // Proceed with form submission
-            console.log('Form submitted:', formValues);
+
+            const url = process.env.REACT_APP_API_URL;
+            const endpoint = process.env.REACT_APP_API_INPUT_KONTAK;
+            try {
+                const response = await axios.post(`${url}${endpoint}`, {
+                    name: formValues.nama,
+                    email: formValues.email,
+                    phone_number: parseInt(formValues.phone, 10),  // Convert phone to a number
+                    subjek: formValues.subjek,
+                    pesan: formValues.inputText
+                });
+                if (response.data.success) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Berhasil",
+                        text: "Pesan Terkirim"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Reload the page
+                            window.location.reload();
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Gagal Mengirim Pesan.",
+                    });
+                }
+            } catch (error) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: error,
+                });
+            }
         }
     };
 
@@ -61,75 +100,32 @@ const Kontak = () => {
                         <div className="col-lg-8 offset-lg-2">
                             <form className="contact-form contact-form-validated" onSubmit={handleSubmit}>
                                 <div className="row row-gutter-10">
-                                    <div className="col-12 col-lg-6">
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            className="input-text"
-                                            placeholder="Nama"
-                                            name="name"
-                                            value={formValues.name}
-                                            onChange={handleInputChange}
-                                            style={{ border: fieldErrors.name ? '1px solid #EE8282' : '' }}
+                                    {["nama", "email", "phone", "subjek"].map((field, index) => (
+                                        <div key={index} className="col-12 col-lg-6">
+                                            <input
+                                                type={field === "email" ? "email" : "text"}
+                                                id={field}
+                                                placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                                                name={field}
+                                                value={formValues[field]}
+                                                onChange={handleInputChange}
+                                                className={`input-text ${fieldErrors[field] ? "border-error" : ""}`}
+                                            />
+                                            {fieldErrors[field] && <small className="text-danger">{fieldErrors[field]}</small>}
+                                        </div>
+                                    ))}
 
-                                        />
-                                        {fieldErrors.name && <small className="text-danger">*Wajib diisi</small>}
-                                    </div>
-                                    <div className="col-12 col-lg-6">
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            className="input-text"
-                                            placeholder="Email"
-                                            name="email"
-                                            value={formValues.email}
-                                            onChange={handleInputChange}
-                                            style={{ border: fieldErrors.email ? '1px solid #EE8282' : '' }}
-
-                                        />
-                                        {fieldErrors.email && <small className="text-danger">*Wajib diisi</small>}
-                                    </div>
-                                    <div className="col-12 col-lg-6">
-                                        <input
-                                            type="text"
-                                            id="phone"
-                                            className="input-text"
-                                            placeholder="Phone number"
-                                            name="phone"
-                                            value={formValues.phone}
-                                            onChange={handleInputChange}
-                                            style={{ border: fieldErrors.phone ? '1px solid #EE8282' : '' }}
-
-                                        />
-                                        {fieldErrors.phone && <small className="text-danger">*Wajib diisi</small>}
-                                    </div>
-                                    <div className="col-12 col-lg-6">
-                                        <input
-                                            type="text"
-                                            id="subject"
-                                            className="input-text"
-                                            placeholder="Subjek"
-                                            name="subject"
-                                            value={formValues.subject}
-                                            onChange={handleInputChange}
-                                            style={{ border: fieldErrors.subject ? '1px solid #EE8282' : '' }}
-
-                                        />
-                                        {fieldErrors.subject && <small className="text-danger">*Wajib diisi</small>}
-                                    </div>
-                                    <div className="col-12 col-lg-12">
+                                    <div className="col-12">
                                         <textarea
                                             name="inputText"
                                             placeholder="Tulis Pesan"
-                                            className="input-text"
+                                            className={`input-text ${fieldErrors.inputText ? "border-error" : ""}`}
                                             value={formValues.inputText}
                                             onChange={handleInputChange}
-                                            style={{ border: fieldErrors.inputText ? '1px solid #EE8282' : '', color: fieldErrors.inputText ? '#ffffff' : '' }}
-
                                         ></textarea>
-                                        {fieldErrors.inputText && <small className="text-danger">*Wajib diisi</small>}
+                                        {fieldErrors.inputText && <small className="text-danger">{fieldErrors.inputText}</small>}
                                     </div>
-                                    <div className="col-12 col-lg-12">
+                                    <div className="col-12">
                                         <button className="btn btn-primary" type="submit">Kirim</button>
                                     </div>
                                 </div>
