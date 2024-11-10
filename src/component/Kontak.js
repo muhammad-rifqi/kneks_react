@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import axios from 'axios';
 const Kontak = () => {
     const [formValues, setFormValues] = useState({
         nama: '',
@@ -49,39 +48,52 @@ const Kontak = () => {
 
             const url = process.env.REACT_APP_API_URL;
             const endpoint = process.env.REACT_APP_API_INPUT_KONTAK;
-            try {
-                const response = await axios.post(`${url}${endpoint}`, {
+            fetch(`${url}${endpoint}`, {
+                method: 'POST', // Specify the request method
+                headers: {
+                    'Content-Type': 'application/json', // Specify the content type as JSON
+                },
+                body: JSON.stringify({
                     name: formValues.nama,
                     email: formValues.email,
-                    phone_number: parseInt(formValues.phone, 10),  // Convert phone to a number
+                    phone_number: parseInt(formValues.phone, 10), // Convert phone to a number
                     subjek: formValues.subjek,
                     pesan: formValues.inputText
-                });
-                if (response.data.success) {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Berhasil",
-                        text: "Pesan Terkirim"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            // Reload the page
-                            window.location.reload();
-                        }
-                    });
-                } else {
+                }) // Convert the form data to a JSON string
+            })
+                .then(response => {
+                    // Check if the response is OK (status 200-299)
+                    if (!response.ok) {
+                        throw new Error("Failed to send message");
+                    }
+                    return response.json(); // Parse the response as JSON
+                })
+                .then(data => {
+                    if (data.success) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Berhasil",
+                            text: "Pesan Terkirim"
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.reload();
+                            }
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Oops...",
+                            text: "Gagal Mengirim Pesan."
+                        });
+                    }
+                })
+                .catch(error => {
                     Swal.fire({
                         icon: "error",
                         title: "Oops...",
-                        text: "Gagal Mengirim Pesan.",
+                        text: error.message || "Something went wrong. Please try again later."
                     });
-                }
-            } catch (error) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: error,
                 });
-            }
         }
     };
 
