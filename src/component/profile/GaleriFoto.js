@@ -160,7 +160,7 @@ const GaleriFoto = () => {
                                                     <h2 className='title-2'>
                                                         {item.title}
                                                         {item.is_publish}
-                                                        {item.photo}
+                                                       
                                                     </h2>
                                                 </div>
                                                 <div className='card-date'>
