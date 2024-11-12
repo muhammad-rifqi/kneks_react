@@ -148,7 +148,8 @@ const GaleriFoto = () => {
                                         className='card-box-b card-shadow news-box flex-grow-1'>
                                         <div className='img-box-b'>
                                             <img
-                                                src={`${process.env.REACT_APP_API_IMAGE}${item.photo}`}
+                                                src={item.photo ? `${process.env.REACT_APP_API_IMAGE}${item.photo}` : "assets/image/defaulttumbnail.jpeg"}
+
                                                 className='img-fluid img-b cover-image'
                                                 alt={item.title}
                                             />
@@ -159,6 +160,7 @@ const GaleriFoto = () => {
                                                     <h2 className='title-2'>
                                                         {item.title}
                                                         {item.is_publish}
+                                                        {item.photo}
                                                     </h2>
                                                 </div>
                                                 <div className='card-date'>
