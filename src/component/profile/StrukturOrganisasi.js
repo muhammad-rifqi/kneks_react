@@ -1,9 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import SkeletonCardBerita from "../skeleton/CardBerita";
+import axios from "axios";
+import Swal from "sweetalert2";
+
 const StrukturOrganisasi = () => {
+	const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+        const fetchPosts = async () => {
+            setLoading(true);
+            try {
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_STUKTUR_ORGANISASI;
+                const response = await axios.get(`${url}${endpoint}`);
+                setPosts(response.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+                });
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPosts(); // Call fetchPosts function when component mounts
+
+    }, []);
+
+	const convertToSlug = (title) => {
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, "")
+            .replace(/\s+/g, "-")
+            .replace(/-+/g, "-");
+    };
+
 	return (
 		<>
 			<div className="page-wrapper">
-
 				<section className="page-banner">
 					<div className="container">
 						<div className="page-banner-title">
@@ -20,146 +58,42 @@ const StrukturOrganisasi = () => {
 								</div>
 							</div>
 						</div>
-						<div className="row row-gutter-y-30">
+						<div className="row row-gutter-y-30 d-flex justify-content-center">
 							<div className="blog-box-manajemen">
 								<div className="section-title-box text-center">
 									<h2 className="section-title">Manajemen Eksekutif</h2>
 								</div>
 							</div>
-							<div className="col-12 col-md-6 col-xl-3">
-								<div className="team-card">
-									<div className="team-card-img">
-										<a href="/struktur-organisasi/detail"><img src="assets/image/profilKosong.png" className="img-fluid" alt="img-40" /></a>
-										<div className="team-card-icon">
-											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
-											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
-										</div>
-									</div>
-									<div className="team-card-content">
-										<h4><a href="/struktur-organisasi/detail">Sarah Albert</a></h4>
-										<p>Consultant</p>
-									</div>
-								</div>
-							</div>
-							<div className="col-12 col-md-6 col-xl-3">
-								<div className="team-card">
-									<div className="team-card-img">
-										<a href="/struktur-organisasi/detail"><img src="assets/image/profilKosong.png" className="img-fluid" alt="img-41" /></a>
-										<div className="team-card-icon">
-											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
-											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
-										</div>
-									</div>
-									<div className="team-card-content">
-										<h4><a href="/struktur-organisasi/detail">Mike Hardson</a></h4>
-										<p>Consultant</p>
-									</div>
-								</div>
-							</div>
-							<div className="col-12 col-md-6 col-xl-3">
-								<div className="team-card">
-									<div className="team-card-img">
-										<a href="/struktur-organisasi/detail"><img src="assets/image/profilKosong.png" className="img-fluid" alt="img-42" /></a>
-										<div className="team-card-icon">
-											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
-											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
-										</div>
-									</div>
-									<div className="team-card-content">
-										<h4><a href="/struktur-organisasi/detail">Christine Eve</a></h4>
-										<p>Consultant</p>
-									</div>
-								</div>
-							</div>
-							<div className="col-12 col-md-6 col-xl-3">
-								<div className="team-card">
-									<div className="team-card-img">
-										<a href="/struktur-organisasi/detail"><img src="assets/image/profilKosong.png" className="img-fluid" alt="img-43" /></a>
-										<div className="team-card-icon">
-											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
-											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
-										</div>
-									</div>
-									<div className="team-card-content">
-										<h4><a href="/struktur-organisasi/detail">John Martin</a></h4>
-										<p>Consultant</p>
-									</div>
-								</div>
-							</div>
-							<div className="col-12 col-md-6 col-xl-3">
-								<div className="team-card">
-									<div className="team-card-img">
-										<a href="/struktur-organisasi/detail"><img src="assets/image/profilKosong.png" className="img-fluid" alt="img-43" /></a>
-										<div className="team-card-icon">
-											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
-											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
-										</div>
-									</div>
-									<div className="team-card-content">
-										<h4><a href="/struktur-organisasi/detail">John Martin</a></h4>
-										<p>Consultant</p>
-									</div>
-								</div>
-							</div>
-							<div className="col-12 col-md-6 col-xl-3">
-								<div className="team-card">
-									<div className="team-card-img">
-										<a href="/struktur-organisasi/detail"><img src="assets/image/profilKosong.png" className="img-fluid" alt="img-43" /></a>
-										<div className="team-card-icon">
-											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
-											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
-										</div>
-									</div>
-									<div className="team-card-content">
-										<h4><a href="/struktur-organisasi/detail">John Martin</a></h4>
-										<p>Consultant</p>
-									</div>
-								</div>
-							</div>
-							<div className="col-12 col-md-6 col-xl-3">
-								<div className="team-card">
-									<div className="team-card-img">
-										<a href="/struktur-organisasi/detail"><img src="assets/image/profilKosong.png" className="img-fluid" alt="img-43" /></a>
-										<div className="team-card-icon">
-											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
-											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
-										</div>
-									</div>
-									<div className="team-card-content">
-										<h4><a href="/struktur-organisasi/detail">John Martin</a></h4>
-										<p>Consultant</p>
-									</div>
-								</div>
-							</div>
-							<div className="col-12 col-md-6 col-xl-3">
-								<div className="team-card">
-									<div className="team-card-img">
-										<a href="/struktur-organisasi/detail"><img src="assets/image/profilKosong.png" className="img-fluid" alt="img-43" /></a>
-										<div className="team-card-icon">
-											<a href="#t" className="pinterest"><i className="fa-brands fa-instagram"></i></a>
-											<a href="#t" className="twitter"><i className="fa-brands fa-x-twitter"></i></a>
-											<a href="#t" className="facebook"><i className="fa-brands fa-facebook"></i></a>
-										</div>
-									</div>
-									<div className="team-card-content">
-										<h4><a href="/struktur-organisasi/detail">John Martin</a></h4>
-										<p>Consultant</p>
-									</div>
-								</div>
-							</div>
+							{loading ? (
+                                Array(4).fill().map((_, index) => (
+                                    <div className="col-12 col-md-6 col-xl-3" key={index}>
+                                        <SkeletonCardBerita />
+                                    </div>
+                                ))
+                            ) : (
+                                posts.slice(0,6).map((item) => (
+								    <div className="col-12 col-md-6 col-xl-3" key={item.id}>
+									    <div className="team-card">
+										    <div className="team-card-img">
+											    <a href="/struktur-organisasi/detail"><img src={item.photo ? `${process.env.REACT_APP_API_IMAGE}${item.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
+											    <div className="team-card-icon">
+												    {/* Social Media Icons */}
+											    </div>
+										    </div>
+										    <div className="team-card-content">
+											    <h4><a href="/struktur-organisasi/detail">{item.name}</a></h4>
+											    <p>{item.position}</p>
+										    </div>
+									    </div>
+								    </div>
+							    ))
+                            )}
 						</div>
 					</div>
 				</section>
 			</div>
 		</>
-	)
-}
+	);
+};
 
-export default StrukturOrganisasi
+export default StrukturOrganisasi;
