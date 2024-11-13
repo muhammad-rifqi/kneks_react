@@ -31,6 +31,7 @@ const StrukturOrganisasi = () => {
     }, []);
 
 	const convertToSlug = (title) => {
+        if (!title) return ""; // Handle null or undefined title
         return title
             .toLowerCase()
             .trim()
@@ -38,7 +39,6 @@ const StrukturOrganisasi = () => {
             .replace(/\s+/g, "-")
             .replace(/-+/g, "-");
     };
-
 	return (
 		<>
 			<div className="page-wrapper">
@@ -75,13 +75,13 @@ const StrukturOrganisasi = () => {
 								    <div className="col-12 col-md-6 col-xl-3" key={item.id}>
 									    <div className="team-card">
 										    <div className="team-card-img">
-											    <a href="/struktur-organisasi/detail"><img src={item.photo ? `${process.env.REACT_APP_API_IMAGE}${item.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
+											    <a href={`/struktur-organisasi/${convertToSlug(item.name)}`}><img src={item.photo ? `${process.env.REACT_APP_API_IMAGE}${item.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
 											    <div className="team-card-icon">
 												    {/* Social Media Icons */}
 											    </div>
 										    </div>
 										    <div className="team-card-content">
-											    <h4><a href="/struktur-organisasi/detail">{item.name}</a></h4>
+											    <h4><a href={`/struktur-organisasi/${convertToSlug(item.name)}`}>{item.name}</a></h4>
 											    <p>{item.position}</p>
 										    </div>
 									    </div>

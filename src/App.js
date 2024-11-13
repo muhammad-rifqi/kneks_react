@@ -70,7 +70,7 @@ function AppContent() {
         <Route path="/tentang-kami" element={<TentangKami />} />
         <Route path="/tentang-ekonomi-syariah" element={<TentangEkonomiSyariah />} />
         <Route path="/struktur-organisasi" element={<StrukturOrganisasi />} />
-        <Route path="/struktur-organisasi/detail" element={<StrukturOrganisasiDetail />} />
+        <Route path="/struktur-organisasi/:slug" element={<StrukturOrganisasiDetail />} />
         <Route path="/galeri-foto" element={<GaleriFoto />} />
         <Route path="/galeri-foto/:slug" element={<GaleriFotoDetail />} />
         <Route path="/galeri-video" element={<GaleriVideo />} />

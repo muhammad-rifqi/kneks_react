@@ -78,7 +78,7 @@ const LiputanMediaDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Liputan Mediq</h3>
+                            <h3>Liputan Media</h3>
                         </div>
                     </div>
                 </section>
