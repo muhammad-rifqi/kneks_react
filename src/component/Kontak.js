@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Swal from "sweetalert2";
 const Kontak = () => {
+  const { t } = useTranslation();
+
     const [formValues, setFormValues] = useState({
         nama: '',
         email: '',
@@ -102,7 +105,7 @@ const Kontak = () => {
             <section className="page-banner">
                 <div className="container">
                     <div className="page-banner-title">
-                        <h3>Kontak</h3>
+                        <h3>{t('menu.kontak')}</h3>
                     </div>
                 </div>
             </section>
@@ -112,7 +115,7 @@ const Kontak = () => {
                         <div className="col-lg-8 offset-lg-2">
                             <form className="contact-form contact-form-validated" onSubmit={handleSubmit}>
                                 <div className="row row-gutter-10">
-                                    {["nama", "email", "phone", "subjek"].map((field, index) => (
+                                    {[t('nama'), t('email'), t('phone'), t('subjek')].map((field, index) => (
                                         <div key={index} className="col-12 col-lg-6">
                                             <input
                                                 type={field === "email" ? "email" : "text"}
@@ -130,7 +133,7 @@ const Kontak = () => {
                                     <div className="col-12">
                                         <textarea
                                             name="inputText"
-                                            placeholder="Tulis Pesan"
+                                            placeholder={t('tulisPesan')}
                                             className={`input-text ${fieldErrors.inputText ? "border-error" : ""}`}
                                             value={formValues.inputText}
                                             onChange={handleInputChange}
@@ -138,7 +141,7 @@ const Kontak = () => {
                                         {fieldErrors.inputText && <small className="text-danger">{fieldErrors.inputText}</small>}
                                     </div>
                                     <div className="col-12">
-                                        <button className="btn btn-primary" type="submit">Kirim</button>
+                                        <button className="btn btn-primary" type="submit">{t('kirim')}</button>
                                     </div>
                                 </div>
                             </form>

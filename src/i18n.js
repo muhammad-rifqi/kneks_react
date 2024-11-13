@@ -63,6 +63,13 @@ const resources = {
             "instansi": "KNEKS Members",
             "instansiIsi": "KNEKS consists of 3 Coordinating Ministers, 7 Ministers, 3 Chairmen of government institutions,",
             "instansiIsi2": "Chairman of the MUI and Chairman of KADIN, with the Minister of Finance also serving as Secretary.",
+            "nama": 'name',
+            "email": 'email',
+            "phone": 'phone',
+            "subjek": 'subject',
+            "tulisPesan": 'Write Message',
+            "kirim": 'Send',
+
         }
     },
     id: {
@@ -128,6 +135,12 @@ const resources = {
             "instansi": "Anggota KNEKS",
             "instansiIsi": "KNEKS beranggotakan 3 Menteri Koordinator, 7 Menteri, 3 Ketua lembaga pemerintah,",
             "instansiIsi2": "Ketua Umum MUI dan Ketua Umum KADIN, dengan Menteri Keuangan merangkap sebagai Sekretaris.",
+            "nama": 'nama',
+            "email": 'email',
+            "phone": 'nomor telepon',
+            "subjek": 'subjek',
+            "tulisPesan": 'Tulis Pesan',
+            "kirim": 'Kirim',
         }
     }
 };

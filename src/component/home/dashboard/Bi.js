@@ -79,6 +79,7 @@ const Bi = () => {
                 labels: ["Internasional", "Nasional", "Regional"],
                 chart: {
                     type: "donut",
+                    height: 300,
                 },
                 title: {
                     text: "Jumlah Dan Persentase Kegiatan Berdasarkan Area",
@@ -92,7 +93,7 @@ const Bi = () => {
                         breakpoint: 480,
                         options: {
                             chart: {
-                                width: 200,
+                                height: 150,
                             },
                             legend: {
                                 position: "bottom",
@@ -123,6 +124,7 @@ const Bi = () => {
                 labels: ["Semua", "(blank)", "Perempuan"],
                 chart: {
                     type: "pie",
+                    height: 300,
                 },
                 title: {
                     text: "Jumlah Dan Persentase Kegiatan Berdasarkan Gender Audiens",
@@ -136,7 +138,7 @@ const Bi = () => {
                         breakpoint: 480,
                         options: {
                             chart: {
-                                width: 200,
+                                height: 150,
                             },
                             legend: {
                                 position: "bottom",
@@ -366,12 +368,9 @@ const Bi = () => {
     }, []);
     return (
         <div className='col-lg-12'>
-            <Carousel className='custom-carousel' interval={99999999}>
+            <Carousel className='custom-carousel' interval={3000}>
                 <Carousel.Item>
-                    <div className='row d-flex align-items-center'
-                      style={{
-                        height: 350
-                      }}>
+                    <div className='row d-flex align-items-center chart-container'>
                         <div className='col-lg-4'>
                             <Card className='text-center'>
                                 <Card.Body>
@@ -380,7 +379,7 @@ const Bi = () => {
                                 </Card.Body>
                             </Card>
                         </div>
-                        <div className='col-lg-4'>
+                        <div className='col-lg-4 my-1'>
                             <Card className='text-center'>
                                 <Card.Body>
                                     <Card.Title>Total Peserta</Card.Title>
@@ -399,8 +398,8 @@ const Bi = () => {
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <div className='col-lg-12'>
-                        <Card className='text-center'>
+                    <div className='col-lg-12 chart-container'>
+                        <Card className='d-flex justify-content-center'>
                             <Card.Body>
                                 <div id='bi-payment-records-chart'></div>
                             </Card.Body>
@@ -408,33 +407,21 @@ const Bi = () => {
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <div className='d-flex justify-content-center align-items-center' 
-                    style={{
-                        height: 350
-                    }}
-                    >
-                        <div className='col-lg-12'>
-                            <div className='row'>
-                                <div className='col-lg-6 col-md-12'>
-                                    <Card className="h-100 h-md-50">
-                                        <Card.Body>
-                                            <div id='bi-payment-records-donat'></div>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                                <div className='col-lg-6'>
-                                <Card className="h-100">
-                                        <Card.Body>
-                                            <div id='bi-payment-records-pie'></div>
-                                        </Card.Body>
-                                    </Card>
-                                </div>
-                            </div>
-                        </div>
+                    <div className='row col-lg-12 chart-container'>
+                        <Card className='col-md-12 col-lg-6'>
+                            <Card.Body className='p-0 p-lg-3'>
+                                <div id='bi-payment-records-donat'></div>
+                            </Card.Body>
+                        </Card>
+                        <Card className='col-md-12 col-lg-6'>
+                            <Card.Body className='p-0 p-lg-3'>
+                                <div id='bi-payment-records-pie'></div>
+                            </Card.Body>
+                        </Card>
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <div className='col-lg-12'>
+                    <div className='col-lg-12 chart-container'>
                         <Card>
                             <Card.Body>
                                 <div id='bi-payment-records-piramid'></div>
@@ -443,7 +430,7 @@ const Bi = () => {
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <div className='col-lg-12'>
+                    <div className='col-lg-12 chart-container'>
                         <Card>
                             <Card.Body>
                                 <div id='bi-payment-records-barsatu'></div>
@@ -452,7 +439,7 @@ const Bi = () => {
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <div className='col-lg-12'>
+                    <div className='col-lg-12 chart-container'>
                         <Card>
                             <Card.Body>
                                 <div id='bi-payment-records-bardua'></div>
