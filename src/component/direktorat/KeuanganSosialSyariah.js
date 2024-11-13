@@ -118,10 +118,9 @@ const KeuanganSosialSyariah = () => {
                                 </div>
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title text-center">Direktorat Keuangan Sosial Syariah</h2>
-                                    <p>Deskripsi dari direktorat Industri Produk Halal itu apa (Sementara masih menggunakan lorem ipsum) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                    <p>Direktorat Keuangan Sosial Syariah di Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) berfokus pada pengembangan sektor keuangan sosial berbasis prinsip syariah di Indonesia. Direktorat ini memiliki peran dalam mengelola dan mengoptimalkan potensi keuangan sosial syariah, termasuk zakat, infak, sedekah, dan wakaf (ZISWAF). </p>
                                     <h5 className="about-one-inner-text-x">Divisi</h5>
-                                    <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
+                                    <p>Direktorat ini bertujuan untuk memperkuat ekosistem keuangan sosial syariah di Indonesia agar dapat berkontribusi lebih signifikan dalam mengatasi ketimpangan ekonomi serta mendukung pembangunan berkelanjutan sesuai prinsip-prinsip syariah.</p>
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
                                             <a href="#t" className="component-service d-block ">

@@ -118,9 +118,9 @@ const InfrastrukturEkosistemSyariah = () => {
                                 </div>
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title text-center">Direktorat Infrastruktur Ekosistem Syariah</h2>
-                                    <p>Deskripsi dari direktorat Industri Produk Halal itu apa (Sementara masih menggunakan lorem ipsum) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                    <p>Direktorat Infrastruktur Ekosistem Syariah di Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) bertugas untuk membangun dan memperkuat infrastruktur yang mendukung pengembangan ekonomi syariah di Indonesia. Direktorat ini bertujuan menciptakan ekosistem yang solid dan berkelanjutan agar ekonomi syariah dapat tumbuh lebih cepat dan berkontribusi signifikan terhadap perekonomian nasional.</p>
                                     <h5 className="about-one-inner-text-x">Divisi</h5>
-                                    <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Dengan berfokus pada infrastruktur yang mendukung perkembangan berbagai sektor, Direktorat Infrastruktur Ekosistem Syariah KNEKS berupaya untuk menjadikan Indonesia sebagai salah satu pusat ekonomi syariah terkemuka di dunia dan meningkatkan daya saing industri syariah di tingkat global.</p>
 
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">

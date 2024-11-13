@@ -117,9 +117,9 @@ const JasakeuanganSyariah = () => {
                                 </div>
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title text-center">Direktorat Jasa Keuangan Syariah</h2>
-                                    <p>Deskripsi dari direktorat Industri Produk Halal itu apa (Sementara masih menggunakan lorem ipsum) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                    <p>Direktorat Jasa Keuangan Syariah di bawah KNEKS (Komite Nasional Ekonomi dan Keuangan Syariah) bertugas untuk mengembangkan dan memperkuat sektor jasa keuangan syariah di Indonesia. KNEKS sebagai lembaga yang memiliki peran strategis dalam mempercepat pengembangan ekonomi dan keuangan syariah, memiliki Direktorat Jasa Keuangan Syariah untuk fokus pada sektor keuangan yang sesuai dengan prinsip-prinsip syariah Islam, termasuk perbankan syariah, asuransi syariah, pasar modal syariah, dan sektor keuangan lainnya yang berbasis syariah.</p>
                                     <h5 className="about-one-inner-text-x">Divisi</h5>
-                                    <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Direktorat Jasa Keuangan Syariah memiliki peran yang sangat penting dalam menciptakan ekosistem keuangan yang inklusif, berkelanjutan, dan sesuai dengan nilai-nilai syariah, sehingga Indonesia dapat menjadi pusat ekonomi dan keuangan syariah global.</p>
 
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
