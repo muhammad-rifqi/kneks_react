@@ -69,6 +69,24 @@ const resources = {
             "subjek": 'subject',
             "tulisPesan": 'Write Message',
             "kirim": 'Send',
+            'divisi':'Division',
+            "direktorat": {
+                'direktoratIndustriProdukHalal': 'Directorate of Halal Product Industry',
+                'direktoratIndustriProdukHalalAdalah': 'The Directorate of Halal Product Industry is a directorate under the National Committee for Islamic Economy and Finance (KNEKS) focused on the development and empowerment of the halal product industry in Indonesia.',
+                'kneksSendiriAdalah': 'KNEKS is an institution established to promote the development of Islamic economy and finance in Indonesia, with the Directorate of Halal Product Industry playing a key role in enhancing the competitiveness of Indonesian halal products in both domestic and international markets. By focusing on improving the quality and quantity of halal products, this Directorate plays an important role in supporting Indonesia as a leading player in the global halal product industry.',
+                'direktoratJasaKeuanganSyariah': 'Directorate of Islamic Financial Services',
+                'direktoratJasaKeuanganSyariahDibawahKneks': 'The Directorate of Islamic Financial Services under the National Committee for Islamic Economy and Finance (KNEKS) is responsible for developing and strengthening the Islamic financial services sector in Indonesia. As an institution with a strategic role in accelerating the development of the Islamic economy and finance, KNEKS has established the Directorate of Islamic Financial Services to focus on financial sectors that adhere to Islamic principles, including Islamic banking, Islamic insurance, Islamic capital markets, and other Sharia-compliant financial sectors.',
+                'direktoratJasaKeuanganSyariahMemiliki': 'The Directorate of Islamic Financial Services plays a crucial role in creating an inclusive, sustainable financial ecosystem that aligns with Sharia values, enabling Indonesia to become a global hub for Islamic economy and finance.',
+                'direktoratKeuanganSosialSyariah': 'Directorate of Islamic Social Finance',
+                'direktoratKeuanganSosialSyariahDiKneks': 'The Directorate of Islamic Social Finance within the National Committee for Islamic Economy and Finance (KNEKS) focuses on developing the Sharia-based social finance sector in Indonesia. This directorate plays a role in managing and optimizing the potential of Islamic social finance, including zakat (almsgiving), infak (voluntary charity), sedekah (donations), and waqf (endowments), collectively known as ZISWAF.',
+                'direktoratIniBertujuanUntuk':'This directorate aims to strengthen the Islamic social finance ecosystem in Indonesia to make a more significant contribution in addressing economic inequality and supporting sustainable development in accordance with Sharia principles.',
+                'direktoratBisnisDanKewirausahaanSyariah': 'Directorate of Islamic Business and Entrepreneurship',
+                'direktoratBisnisDanKewirausahaanSyariahDiKneks': 'The Directorate of Islamic Business and Entrepreneurship within the National Committee for Islamic Economy and Finance (KNEKS) is responsible for driving economic growth through the development of businesses and entrepreneurship based on Sharia principles. The main focus of this directorate is to strengthen the Islamic business ecosystem and create opportunities for entrepreneurs and micro, small, and medium enterprises (MSMEs) that wish to operate in accordance with Sharia principles.',
+                'denganPeranIniDirektoratBisnisDanKewirausahaanSyariah': 'With this role, the Directorate of Islamic Business and Entrepreneurship at KNEKS aims to foster the creation of an inclusive and sustainable business climate in line with Sharia values, while positioning Indonesia as a competitive global hub for Islamic business.',
+                'direktoratInfrastrukturEkosistemSyariah': 'Directorate of Islamic Ecosystem Infrastructure',
+                'direktoratInfrastrukturEkosistemSyariahDiKneks': 'The Directorate of Islamic Ecosystem Infrastructure within the National Committee for Islamic Economy and Finance (KNEKS) is responsible for building and strengthening the infrastructure that supports the development of the Islamic economy in Indonesia. This directorate aims to create a solid and sustainable ecosystem to enable the faster growth of the Islamic economy and make a significant contribution to the national economy.',
+                'denganBerfokusPadaInfrastrukturYangMendukung': 'By focusing on infrastructure that supports the development of various sectors, the Directorate of Islamic Ecosystem Infrastructure at KNEKS strives to position Indonesia as one of the leading centers for Islamic economy in the world and enhance the global competitiveness of the Islamic industry.'
+            }
 
         }
     },
@@ -141,6 +159,24 @@ const resources = {
             "subjek": 'subjek',
             "tulisPesan": 'Tulis Pesan',
             "kirim": 'Kirim',
+            'divisi':'Divisi',
+            "direktorat": {
+                'direktoratIndustriProdukHalal': 'Direktorat Industri Produk Halal',
+                'direktoratIndustriProdukHalalAdalah': 'Direktorat Industri Produk Halal adalah salah satu direktorat di bawah KNEKS (Komite Nasional Ekonomi dan Keuangan Syariah) yang berfokus pada pengembangan dan pemberdayaan industri produk halal di Indonesia.',
+                'kneksSendiriAdalah': 'KNEKS sendiri adalah lembaga yang dibentuk untuk mendorong pengembangan ekonomi dan keuangan syariah di Indonesia, dan Direktorat Industri Produk Halal memiliki peran penting dalam meningkatkan daya saing produk halal Indonesia di pasar domestik maupun internasional. Dengan fokus pada peningkatan kualitas dan kuantitas produk halal, Direktorat ini berperan penting dalam mendukung Indonesia sebagai salah satu pemain utama dalam industri produk halal global.',
+                'direktoratJasaKeuanganSyariah': 'Direktorat Jasa Keuangan Syariah',
+                'direktoratJasaKeuanganSyariahDibawahKneks': 'Direktorat Jasa Keuangan Syariah di bawah KNEKS (Komite Nasional Ekonomi dan Keuangan Syariah) bertugas untuk mengembangkan dan memperkuat sektor jasa keuangan syariah di Indonesia. KNEKS sebagai lembaga yang memiliki peran strategis dalam mempercepat pengembangan ekonomi dan keuangan syariah, memiliki Direktorat Jasa Keuangan Syariah untuk fokus pada sektor keuangan yang sesuai dengan prinsip-prinsip syariah Islam, termasuk perbankan syariah, asuransi syariah, pasar modal syariah, dan sektor keuangan lainnya yang berbasis syariah.',
+                'direktoratJasaKeuanganSyariahMemiliki': 'Direktorat Jasa Keuangan Syariah memiliki peran yang sangat penting dalam menciptakan ekosistem keuangan yang inklusif, berkelanjutan, dan sesuai dengan nilai-nilai syariah, sehingga Indonesia dapat menjadi pusat ekonomi dan keuangan syariah global.',
+                'direktoratKeuanganSosialSyariah': 'Direktorat Keuangan Sosial Syariah',
+                'direktoratKeuanganSosialSyariahDiKneks': 'Direktorat Keuangan Sosial Syariah di Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) berfokus pada pengembangan sektor keuangan sosial berbasis prinsip syariah di Indonesia. Direktorat ini memiliki peran dalam mengelola dan mengoptimalkan potensi keuangan sosial syariah, termasuk zakat, infak, sedekah, dan wakaf (ZISWAF).',
+                'direktoratIniBertujuanUntuk':'Direktorat ini bertujuan untuk memperkuat ekosistem keuangan sosial syariah di Indonesia agar dapat berkontribusi lebih signifikan dalam mengatasi ketimpangan ekonomi serta mendukung pembangunan berkelanjutan sesuai prinsip-prinsip syariah.',
+                'direktoratBisnisDanKewirausahaanSyariah': 'Direktorat Bisnis Dan Kewirausahaan Syariah',
+                'direktoratBisnisDanKewirausahaanSyariahDiKneks': 'Direktorat Bisnis dan Kewirausahaan Syariah di Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) bertanggung jawab untuk mendorong pertumbuhan ekonomi melalui pengembangan bisnis dan kewirausahaan yang berlandaskan prinsip syariah. Fokus utama dari direktorat ini adalah memperkuat ekosistem bisnis syariah dan menciptakan peluang bagi para pengusaha dan pelaku usaha mikro, kecil, dan menengah (UMKM) yang ingin menjalankan usahanya sesuai dengan prinsip syariah.',
+                'denganPeranIniDirektoratBisnisDanKewirausahaanSyariah': 'Dengan peran ini, Direktorat Bisnis dan Kewirausahaan Syariah KNEKS berupaya mendorong terciptanya iklim usaha yang inklusif dan berkelanjutan sesuai dengan nilai-nilai syariah, serta menjadikan Indonesia sebagai pusat bisnis syariah yang kompetitif di tingkat global.',
+                'direktoratInfrastrukturEkosistemSyariah': 'Direktorat Infrastruktur Ekosistem Syariah',
+                'direktoratInfrastrukturEkosistemSyariahDiKneks': 'Direktorat Infrastruktur Ekosistem Syariah di Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) bertugas untuk membangun dan memperkuat infrastruktur yang mendukung pengembangan ekonomi syariah di Indonesia. Direktorat ini bertujuan menciptakan ekosistem yang solid dan berkelanjutan agar ekonomi syariah dapat tumbuh lebih cepat dan berkontribusi signifikan terhadap perekonomian nasional.',
+                'denganBerfokusPadaInfrastrukturYangMendukung': 'Dengan berfokus pada infrastruktur yang mendukung perkembangan berbagai sektor, Direktorat Infrastruktur Ekosistem Syariah KNEKS berupaya untuk menjadikan Indonesia sebagai salah satu pusat ekonomi syariah terkemuka di dunia dan meningkatkan daya saing industri syariah di tingkat global.'
+            }
         }
     }
 };

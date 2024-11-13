@@ -9,7 +9,9 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import { useTranslation } from 'react-i18next';
 const IndustriProdukHalal = () => {
+    const { t } = useTranslation();
     const [items, setItems] = useState([]);
 
     const [posts, setPosts] = useState([]);
@@ -106,7 +108,7 @@ const IndustriProdukHalal = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Direktorat</h3>
+                        <h3>{t('menu.direktorat')}</h3>
                         </div>
                     </div>
                 </section>
@@ -119,10 +121,10 @@ const IndustriProdukHalal = () => {
 
                                 </div>
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title text-center">Direktorat Industri Produk Halal</h2>
-                                    <p>Direktorat Industri Produk Halal adalah salah satu direktorat di bawah KNEKS (Komite Nasional Ekonomi dan Keuangan Syariah) yang berfokus pada pengembangan dan pemberdayaan industri produk halal di Indonesia. </p>
-                                    <h5 className="about-one-inner-text-x">Divisi</h5>
-                                    <p>KNEKS sendiri adalah lembaga yang dibentuk untuk mendorong pengembangan ekonomi dan keuangan syariah di Indonesia, dan Direktorat Industri Produk Halal memiliki peran penting dalam meningkatkan daya saing produk halal Indonesia di pasar domestik maupun internasional. Dengan fokus pada peningkatan kualitas dan kuantitas produk halal, Direktorat ini berperan penting dalam mendukung Indonesia sebagai salah satu pemain utama dalam industri produk halal global.</p>
+                                    <h2 className="section-title text-center">{t('direktorat.direktoratIndustriProdukHalal')}</h2>
+                                    <p>{t('direktorat.direktoratIndustriProdukHalalAdalah')}</p>
+                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
+                                    <p>{t('direktorat.kneksSendiriAdalah')}</p>
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
                                             <a href="#t" className="component-service d-block ">

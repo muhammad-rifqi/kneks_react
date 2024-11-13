@@ -9,7 +9,9 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import { useTranslation } from "react-i18next";
 const BisnisDanKewirausahaanSyariah = () => {
+    const { t } = useTranslation()
     const [items, setItems] = useState([]);
     const [posts, setPosts] = useState([]);
     const convertToSlug = (title) => {
@@ -104,7 +106,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Direktorat</h3>
+                            <h3>{t('menu.direktorat')}</h3>
                         </div>
                     </div>
                 </section>
@@ -117,10 +119,10 @@ const BisnisDanKewirausahaanSyariah = () => {
 
                                 </div>
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title text-center">Direktorat Bisnis Dan Kewirausahaan Syariah</h2>
-                                    <p>Direktorat Bisnis dan Kewirausahaan Syariah di Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) bertanggung jawab untuk mendorong pertumbuhan ekonomi melalui pengembangan bisnis dan kewirausahaan yang berlandaskan prinsip syariah. Fokus utama dari direktorat ini adalah memperkuat ekosistem bisnis syariah dan menciptakan peluang bagi para pengusaha dan pelaku usaha mikro, kecil, dan menengah (UMKM) yang ingin menjalankan usahanya sesuai dengan prinsip syariah.</p>
-                                    <h5 className="about-one-inner-text-x">Divisi</h5>
-                                    <p>Dengan peran ini, Direktorat Bisnis dan Kewirausahaan Syariah KNEKS berupaya mendorong terciptanya iklim usaha yang inklusif dan berkelanjutan sesuai dengan nilai-nilai syariah, serta menjadikan Indonesia sebagai pusat bisnis syariah yang kompetitif di tingkat global.</p>
+                                    <h2 className="section-title text-center">{t('direktorat.direktoratBisnisDanKewirausahaanSyariah')}</h2>
+                                    <p>{t('direktorat.direktoratBisnisDanKewirausahaanSyariahDiKneks')}</p>
+                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
+                                    <p>{t('direktorat.denganPeranIniDirektoratBisnisDanKewirausahaanSyariah')}</p>
 
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">

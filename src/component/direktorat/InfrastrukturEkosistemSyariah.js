@@ -9,7 +9,9 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import { useTranslation } from "react-i18next";
 const InfrastrukturEkosistemSyariah = () => {
+    const { t } = useTranslation()
     const [items, setItems] = useState([]);
     const [posts, setPosts] = useState([]);
     const convertToSlug = (title) => {
@@ -104,7 +106,7 @@ const InfrastrukturEkosistemSyariah = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Direktorat</h3>
+                        <h3>{t('menu.direktorat')}</h3>
                         </div>
                     </div>
                 </section>
@@ -117,10 +119,10 @@ const InfrastrukturEkosistemSyariah = () => {
 
                                 </div>
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title text-center">Direktorat Infrastruktur Ekosistem Syariah</h2>
-                                    <p>Direktorat Infrastruktur Ekosistem Syariah di Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) bertugas untuk membangun dan memperkuat infrastruktur yang mendukung pengembangan ekonomi syariah di Indonesia. Direktorat ini bertujuan menciptakan ekosistem yang solid dan berkelanjutan agar ekonomi syariah dapat tumbuh lebih cepat dan berkontribusi signifikan terhadap perekonomian nasional.</p>
-                                    <h5 className="about-one-inner-text-x">Divisi</h5>
-                                    <p>Dengan berfokus pada infrastruktur yang mendukung perkembangan berbagai sektor, Direktorat Infrastruktur Ekosistem Syariah KNEKS berupaya untuk menjadikan Indonesia sebagai salah satu pusat ekonomi syariah terkemuka di dunia dan meningkatkan daya saing industri syariah di tingkat global.</p>
+                                    <h2 className="section-title text-center">{t('direktorat.direktoratInfrastrukturEkosistemSyariah')}</h2>
+                                    <p>{t('direktorat.direktoratInfrastrukturEkosistemSyariahDiKneks')}</p>
+                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
+                                    <p>{t('direktorat.denganBerfokusPadaInfrastrukturYangMendukung')}</p>
 
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">

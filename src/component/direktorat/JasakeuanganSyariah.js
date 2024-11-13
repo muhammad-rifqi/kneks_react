@@ -8,7 +8,10 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import { useTranslation } from "react-i18next";
+
 const JasakeuanganSyariah = () => {
+    const { t } = useTranslation()
     const [items, setItems] = useState([]);
     const [posts, setPosts] = useState([]);
     const convertToSlug = (title) => {
@@ -103,7 +106,7 @@ const JasakeuanganSyariah = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Direktorat</h3>
+                        <h3>{t('menu.direktorat')}</h3>
                         </div>
                     </div>
                 </section>
@@ -116,10 +119,10 @@ const JasakeuanganSyariah = () => {
 
                                 </div>
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title text-center">Direktorat Jasa Keuangan Syariah</h2>
-                                    <p>Direktorat Jasa Keuangan Syariah di bawah KNEKS (Komite Nasional Ekonomi dan Keuangan Syariah) bertugas untuk mengembangkan dan memperkuat sektor jasa keuangan syariah di Indonesia. KNEKS sebagai lembaga yang memiliki peran strategis dalam mempercepat pengembangan ekonomi dan keuangan syariah, memiliki Direktorat Jasa Keuangan Syariah untuk fokus pada sektor keuangan yang sesuai dengan prinsip-prinsip syariah Islam, termasuk perbankan syariah, asuransi syariah, pasar modal syariah, dan sektor keuangan lainnya yang berbasis syariah.</p>
-                                    <h5 className="about-one-inner-text-x">Divisi</h5>
-                                    <p>Direktorat Jasa Keuangan Syariah memiliki peran yang sangat penting dalam menciptakan ekosistem keuangan yang inklusif, berkelanjutan, dan sesuai dengan nilai-nilai syariah, sehingga Indonesia dapat menjadi pusat ekonomi dan keuangan syariah global.</p>
+                                    <h2 className="section-title text-center">{t('direktorat.direktoratJasaKeuanganSyariah')}</h2>
+                                    <p>{t('direktorat.direktoratJasaKeuanganSyariahDibawahKneks')}</p>
+                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
+                                    <p>{t('direktorat.direktoratJasaKeuanganSyariahMemiliki')}</p>
 
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">

@@ -8,7 +8,9 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import { useTranslation } from "react-i18next";
 const KeuanganSosialSyariah = () => {
+    const { t } = useTranslation()
     const [items, setItems] = useState([]);
 
     const [posts, setPosts] = useState([]);
@@ -104,7 +106,7 @@ const KeuanganSosialSyariah = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Direktorat</h3>
+                            <h3>{t('menu.direktorat')}</h3>
                         </div>
                     </div>
                 </section>
@@ -117,10 +119,10 @@ const KeuanganSosialSyariah = () => {
 
                                 </div>
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title text-center">Direktorat Keuangan Sosial Syariah</h2>
-                                    <p>Direktorat Keuangan Sosial Syariah di Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) berfokus pada pengembangan sektor keuangan sosial berbasis prinsip syariah di Indonesia. Direktorat ini memiliki peran dalam mengelola dan mengoptimalkan potensi keuangan sosial syariah, termasuk zakat, infak, sedekah, dan wakaf (ZISWAF). </p>
-                                    <h5 className="about-one-inner-text-x">Divisi</h5>
-                                    <p>Direktorat ini bertujuan untuk memperkuat ekosistem keuangan sosial syariah di Indonesia agar dapat berkontribusi lebih signifikan dalam mengatasi ketimpangan ekonomi serta mendukung pembangunan berkelanjutan sesuai prinsip-prinsip syariah.</p>
+                                    <h2 className="section-title text-center">{t('direktorat.direktoratKeuanganSosialSyariah')}</h2>
+                                    <p>{t('direktorat.direktoratKeuanganSosialSyariahDiKneks')}</p>
+                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
+                                    <p>{t('direktorat.direktoratIniBertujuanUntuk')}</p>
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
                                             <a href="#t" className="component-service d-block ">
