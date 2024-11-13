@@ -27,7 +27,7 @@ const Section6 = () => {
 					<div className="col-md-12 col-lg-12 text-center ">
 						<div className="maps-indo-x" >
 
-							<svg width="792.54596" height="316.66394" filter="url(#f1)">
+							<svg style={{ width: '100%', height: 'auto' }} viewBox="0 0 792.54596 316.66394" filter="url(#f1)">
 
 								<defs>
 									<filter id="f1" x="0" y="0" width="150%" height="150%">
