@@ -357,28 +357,29 @@ const Footer = () => {
             <span></span>
           </a>
           <div className="logo-box">
-            <a href="#tt"><img src="/assets/image/logo-light.png" width="160" height="40" alt="26" /></a>
+            <a href="#tt"><img src="/assets/image/logoKneks.png" width="160" height="40" alt="26" /></a>
           </div>
           <div className="mobile-nav-container"></div>
           <ul className="mobile-nav-contact list-unstyled">
             <li>
               <i className="fa-solid fa-phone"></i>
-              <a href="tel:+8898006802">+ 88 ( 9800 ) 6802</a>
+              <a href="tel:+021-3449230">+ (021) 3449230</a>
             </li>
             <li>
               <i className="fa-solid fa-envelope"></i>
-              <a href="mailto:needhelp@company.com">needhelp@company.com</a>
+              <a href="mailto:humas@kneks.go.id">humas@kneks.go.id</a>
             </li>
             <li>
               <i className="fa-solid fa-map-marker-alt"></i>
-              88 Broklyn Golden Road Street <br /> New York. USA
+              Gedung Djuanda II Lantai 17 Jalan Wahidin Nomor 1, <br /> Jakarta, Indonesia
             </li>
           </ul>
           <ul className="mobile-nav-social list-unstyled">
-            <li><a href="/twitter"><i className="fa-brands fa-twitter"></i></a></li>
-            <li><a href="/facebook"><i className="fa-brands fa-facebook"></i></a></li>
-            <li><a href="/linkedin"><i className="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="/instagram"><i className="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/kneks_id"><i className="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/kneks.id"><i className="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/kneks"><i className="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/kneks.id/"><i className="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber"><i className="fa-brands fa-youtube"></i></a></li>
           </ul>
         </div>
       </div>
