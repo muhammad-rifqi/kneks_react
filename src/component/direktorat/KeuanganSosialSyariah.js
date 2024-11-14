@@ -225,7 +225,7 @@ const KeuanganSosialSyariah = () => {
                         <div className="container">
                             <div className="funfact-box">
                                 <div className="section-title-box text-center">
-                                    <h2 className="section-title">E-pustaka</h2>
+                                    <h2 className="section-title">{t('menu.ePustaka')}</h2>
                                 </div>
                             </div>
                             <div className="row row-gutter-y-30 d-flex justify-content-center">
