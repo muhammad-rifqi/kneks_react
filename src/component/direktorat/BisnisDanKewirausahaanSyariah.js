@@ -121,8 +121,9 @@ const BisnisDanKewirausahaanSyariah = () => {
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title text-center">{t('direktorat.direktoratBisnisDanKewirausahaanSyariah')}</h2>
                                     <p>{t('direktorat.direktoratBisnisDanKewirausahaanSyariahDiKneks')}</p>
-                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
                                     <p>{t('direktorat.denganPeranIniDirektoratBisnisDanKewirausahaanSyariah')}</p>
+                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
+                                   
 
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">

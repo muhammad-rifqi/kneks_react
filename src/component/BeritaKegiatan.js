@@ -122,6 +122,8 @@ const BeritaKegiatan = () => {
             size="sm"
         />
     ));
+
+    console.log(posts)
     return (
         <>
             <div className='page-wrapper'>
@@ -180,12 +182,12 @@ const BeritaKegiatan = () => {
                                                         href={`/berita-kegiatan/${convertToSlug(
                                                             item.title
                                                         )}`}>
-                                                        {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item?.image} className="img-fluid" alt={item.title} /> */}
-                                                        <img
+                                                         <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} /> 
+                                                        {/* <img
                                                             src='/assets/image/berita.jpg'
-                                                            className='img-fluid'
+                                                            className='img-fluid w-100'
                                                             alt={item.title}
-                                                        />
+                                                        /> */}
                                                     </a>
                                                 </div>
                                                 <div className='berita-content '>

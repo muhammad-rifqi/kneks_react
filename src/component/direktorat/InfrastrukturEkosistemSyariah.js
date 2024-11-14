@@ -121,8 +121,9 @@ const InfrastrukturEkosistemSyariah = () => {
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title text-center">{t('direktorat.direktoratInfrastrukturEkosistemSyariah')}</h2>
                                     <p>{t('direktorat.direktoratInfrastrukturEkosistemSyariahDiKneks')}</p>
-                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
                                     <p>{t('direktorat.denganBerfokusPadaInfrastrukturYangMendukung')}</p>
+                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
+                                   
 
                                     <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
