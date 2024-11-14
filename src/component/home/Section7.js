@@ -112,7 +112,7 @@ const Section7 = () => {
 												</a>
 											</div>
 
-											<div className="berita-content-direktorat">
+											<div className="berita-content-direktorat-x">
 												<div className="direktorat-tag-home">
 													<span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
 												</div>
