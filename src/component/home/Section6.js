@@ -25,7 +25,7 @@ const Section6 = () => {
 			<section className="mayor-section-maps">
 				<div className="row" >
 					<div className="col-md-12 col-lg-12 text-center ">
-						<div className="maps-indo-x" >
+						<div className="container maps-indo-x" >
 
 							<svg style={{ width: '100%', height: 'auto' }} viewBox="0 0 792.54596 316.66394" filter="url(#f1)">
 

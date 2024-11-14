@@ -60,9 +60,14 @@ const MapsKdeks = () => {
 			<section className="mayor-section-maps">
 				<div className="row" >
 					<div className="col-md-12 col-lg-12 text-center ">
-						<div className="maps-indo">
+						<div className="container maps-indo">
 
-							<svg width="792.54596" height="316.66394">
+						<svg style={{ width: '100%', height: 'auto' }} viewBox="0 0 792.54596 316.66394" filter="url(#f1)">
+							<defs>
+								<filter id="f1" x="0" y="0" width="150%" height="150%">
+								<feDropShadow dx="2" dy="2" stdDeviation="4" floodColor="gray"/>
+								</filter>
+							</defs>
 								<a href={aceh.title ? `/kdeks/${convertToSlug(aceh.title)}` : '#aceh'} data-bs-toggle="tooltip" title={aceh.title ? aceh.title : ''} style={{ outline: 'none' }} rel="noreferrer" target={aceh.title ? '_black' : ''} >
 									<g fill={aceh.title ? '#e6ece8' : '#000000 '} stroke="#bcc0be">
 										<path
