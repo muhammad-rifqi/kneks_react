@@ -11,8 +11,10 @@ import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import DatePicker from "react-multi-date-picker"
 import transition from "react-element-popper/animations/transition"
+import { useTranslation } from "react-i18next";
 
 const GaleriVideo = () => {
+    const { t } = useTranslation()
     const [visible, setVisible] = useState(9)
 
     const [loading, setLoading] = useState(true);
@@ -95,7 +97,7 @@ const GaleriVideo = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Galeri Video</h3>
+                            <h3>{t('menu.galeriVideo')}</h3>
                         </div>
                     </div>
                 </section>

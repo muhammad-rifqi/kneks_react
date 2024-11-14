@@ -4,9 +4,11 @@ import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import axios from 'axios';
+import { useTranslation } from "react-i18next";
 
 
 const BeritaKegiatanDetail = () => {
+    const { t } = useTranslation()
     dayjs.locale('id');
 
     const { slug } = useParams();
@@ -64,7 +66,7 @@ const BeritaKegiatanDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Berita Dan Kegiatan</h3>
+                            <h3>{t('beritaDanKegiatan')}</h3>
                         </div>
                     </div>
                 </section>

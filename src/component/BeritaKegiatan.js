@@ -10,7 +10,9 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useTranslation } from "react-i18next";
 const BeritaKegiatan = () => {
+    const { t } = useTranslation()
     dayjs.locale('id');
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
@@ -130,7 +132,7 @@ const BeritaKegiatan = () => {
                 <section className='page-banner'>
                     <div className='container'>
                         <div className='page-banner-title'>
-                            <h3>Berita Dan Kegiatan</h3>
+                            <h3>{t('beritaDanKegiatan')}</h3>
                         </div>
                     </div>
                 </section>

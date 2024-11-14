@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import { useTranslation } from "react-i18next";
+
 const BisnisDanKewirausahaanSyariah = () => {
     const { t } = useTranslation()
     const [items, setItems] = useState([]);
@@ -159,7 +160,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                     <div className="container">
                         <div className="funfact-box">
                             <div className="section-title-box text-center">
-                                <h2 className="section-title">Berita Terkait</h2>
+                                <h2 className="section-title">{t('beritaTerkait')}</h2>
                             </div>
                         </div>
                         <div className="row row-gutter-30">
@@ -398,7 +399,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                     <div className="container">
                         <div className="funfact-box">
                             <div className="section-title-box text-center">
-                                <h2 className="section-title">Galeri Foto</h2>
+                                <h2 className="section-title">{t('menu.galeriFoto')}</h2>
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">
@@ -431,7 +432,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                         </div>
                         <div className="funfact-box pt-5">
                             <div className="section-title-box text-center">
-                                <h2 className="section-title">Galeri Video</h2>
+                                <h2 className="section-title">{t('menu.galeriVideo')}</h2>
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">

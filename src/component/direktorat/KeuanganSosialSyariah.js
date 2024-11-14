@@ -158,7 +158,7 @@ const KeuanganSosialSyariah = () => {
                     <div className="container">
                         <div className="funfact-box">
                             <div className="section-title-box text-center">
-                                <h2 className="section-title">Berita Terkait</h2>
+                                <h2 className="section-title">{t('beritaTerkait')}</h2>
                             </div>
                         </div>
                         <div className="row row-gutter-30">
@@ -397,7 +397,7 @@ const KeuanganSosialSyariah = () => {
                     <div className="container">
                         <div className="funfact-box">
                             <div className="section-title-box text-center">
-                                <h2 className="section-title">Galeri Foto</h2>
+                                <h2 className="section-title">{t('menu.galeriFoto')}</h2>
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">
@@ -430,7 +430,7 @@ const KeuanganSosialSyariah = () => {
                         </div>
                         <div className="funfact-box pt-5">
                             <div className="section-title-box text-center">
-                                <h2 className="section-title">Galeri Video</h2>
+                                <h2 className="section-title">{t('menu.galeriVideo')}</h2>
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">

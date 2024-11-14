@@ -58,6 +58,7 @@ const resources = {
             "rekomendasi": "Other Agenda Recommendations",
 
             "sosialMedia": "Social Media",
+            "ePustaka": "E-Library",
             "instagram": "Instagram Post",
 
             "instansi": "KNEKS Members",
@@ -86,8 +87,33 @@ const resources = {
                 'direktoratInfrastrukturEkosistemSyariah': 'Directorate of Islamic Ecosystem Infrastructure',
                 'direktoratInfrastrukturEkosistemSyariahDiKneks': 'The Directorate of Islamic Ecosystem Infrastructure within the National Committee for Islamic Economy and Finance (KNEKS) is responsible for building and strengthening the infrastructure that supports the development of the Islamic economy in Indonesia. This directorate aims to create a solid and sustainable ecosystem to enable the faster growth of the Islamic economy and make a significant contribution to the national economy.',
                 'denganBerfokusPadaInfrastrukturYangMendukung': 'By focusing on infrastructure that supports the development of various sectors, the Directorate of Islamic Ecosystem Infrastructure at KNEKS strives to position Indonesia as one of the leading centers for Islamic economy in the world and enhance the global competitiveness of the Islamic industry.'
-            }
-
+            },
+            "about": {
+                "kneksMerupakan" : "The National Committee for Islamic Economy and Finance (KNEKS) is a transformation from KNKS aimed at enhancing the development of the Islamic economic and financial ecosystem and positioning Indonesia as the Global Halal Hub.",
+                "pencananganTitikAwal": "The initial milestone to position Indonesia as one of the key players and a global hub for Islamic economy was marked by the launch of the Indonesia Sharia Economic Masterplan in May 2019."
+            },
+            "sejarahKneks": "History of KNEKS",
+            "dalamRangkaMendukung" : "In support of national economic development and to accelerate the growth of the Islamic finance sector, the government established KNKS on November 8, 2016, to enhance the effectiveness and efficiency of implementing national development plans in the field of Islamic finance and economy. Later, with the enactment on February 10, 2020, the government reformed the National Islamic Finance Committee into the National Committee for Islamic Economy and Finance (KNEKS) with the aim of strengthening the development of the Islamic economic and financial ecosystem to support national economic growth.",
+            "landasanHukum": "Legal Basis",
+            "peraturanPresiden": "Presidential Regulation of the Republic of Indonesia No. 28 of 2020",
+            "isiPerpres": "The National Committee for Islamic Economy and Finance. JDIH Marves – To enhance the development of the Islamic economy and finance ecosystem in support of national economic development, it was necessary to transform the National Committee for Islamic Finance into the National Committee for Islamic Economy and Finance.",
+            "filosofiLogo": "Logo Philosophy",
+            "hurufN": "Letter N",
+            "hurufNdariKneks": "The letter N in the KNEKS logo has been uniquely modified to become the logo's focal point. Its placement aligns with and integrates into the KNEKS letters, giving the logo a more streamlined appearance and directing the audience's focus directly to KNEKS. This design choice enhances immediate recognition of the KNEKS logo. The N is further modified into an angled line with three dots, symbolizing KNEKS’s three primary missions: to accelerate, expand, and advance the development of sharia economy and finance to strengthen national economic resilience.",
+            "pintuGerbang": "The Gateway",
+            "sengajaDirancangAgarMenyerupaiPintuGerbang": "Intentionally designed to resemble a gateway, symbolizing openness. KNEKS is open to stakeholders for the development of the sharia economy and finance. This gateway also represents openness to foreign investors looking to invest in Indonesia.",
+            "arah": "Direction",
+            "arahPanahKesampingKananAtas": "The upward-right arrow symbolizes progressiveness. This direction conveys a positive impression. Through this symbol, KNEKS communicates its progressive functions, such as providing policy direction recommendations and strategic national development programs, among other initiatives.",
+            "tugasKneks": "KNEKS Responsibilities",
+            "KneksBertugasMempercepat": "KNEKS is responsible for accelerating, expanding, and advancing the development of the sharia economy and finance to support national economic resilience.",
+            "fungsiKneks": "Functions of KNEKS",
+            "pemberianRekomendasiArahKebijakan": "Provision of recommendations for policy directions and strategic programs in the development of the national sharia economy and finance sector.",
+            "pelaksanaanKoordinasiSinkronisasi": "Implementation of coordination, synchronization, and synergy in the preparation and execution of policy direction plans and strategic programs in the sharia economy and finance sector.",
+            "perumusanDanPemberianRekomendasi": "Formulation and provision of recommendations for solving issues in the sharia economy and finance sector.",
+            "pemantauanDanEvaluasi": "Monitoring and evaluation of the implementation of policy directions and strategic programs in the sharia economy and finance sector.",
+            "sejarahEkonomiSyariah":"History of Islamic Economics",
+            "beritaDanKegiatan": "News and Activities",
+            "manajemenEksekutif": "Executive Management"
         }
     },
     id: {
@@ -149,6 +175,7 @@ const resources = {
 
             "rekomendasi": "Rekomendasi Agenda Lainnya",
             "sosialMedia": "Media Sosial",
+            "ePustaka": "E-Perpustaka",
 
             "instansi": "Anggota KNEKS",
             "instansiIsi": "KNEKS beranggotakan 3 Menteri Koordinator, 7 Menteri, 3 Ketua lembaga pemerintah,",
@@ -176,7 +203,34 @@ const resources = {
                 'direktoratInfrastrukturEkosistemSyariah': 'Direktorat Infrastruktur Ekosistem Syariah',
                 'direktoratInfrastrukturEkosistemSyariahDiKneks': 'Direktorat Infrastruktur Ekosistem Syariah di Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) bertugas untuk membangun dan memperkuat infrastruktur yang mendukung pengembangan ekonomi syariah di Indonesia. Direktorat ini bertujuan menciptakan ekosistem yang solid dan berkelanjutan agar ekonomi syariah dapat tumbuh lebih cepat dan berkontribusi signifikan terhadap perekonomian nasional.',
                 'denganBerfokusPadaInfrastrukturYangMendukung': 'Dengan berfokus pada infrastruktur yang mendukung perkembangan berbagai sektor, Direktorat Infrastruktur Ekosistem Syariah KNEKS berupaya untuk menjadikan Indonesia sebagai salah satu pusat ekonomi syariah terkemuka di dunia dan meningkatkan daya saing industri syariah di tingkat global.'
-            }
+            },
+            "about": {
+                "kneksMerupakan" : "Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS) merupakan perubahan dari KNKS untuk peningkatan pembangunan ekosistem ekonomi dan keuangan syariah serta menjadikan Indonesia sebagai Pusat Halal Dunia.",
+                "pencananganTitikAwal": "Pencanangan titik awal untuk memposisikan Indonesia sebagai salah satu pelaku utama dan hub ekonomi syariah dunia dilakukan seiring dengan peluncuran Masterplan Ekonomi Syariah Indonesia pada bulan Mei 2019."
+            },
+            "sejarahKneks": "Sejarah KNEKS",
+            "dalamRangkaMendukung" : "Dalam rangka mendukung pembangunan ekonomi nasional dan mendorong percepatan pengembangan sektor keuangan syariah, pemerintah secara khusus mendirikan KNKS pada tanggal 8 November 2016 agar dapat meningkatkan efektifitas, efisiensi pelaksanaan rencana pembangunan nasional bidang keuangan dan ekonomi Syariah. Selanjutnya sejak diundangkan tanggal 10 Februari 2020, pemerintah melakukan perubahan Komite Nasional Keuangan Syariah menjadi Komite Nasional Ekonomi dan Keuangan Syariah yang bertujuan meningkatkan pembangunan ekosistem ekonomi dan keuangan syariah guna mendukung pembangunan ekonomi nasional.",
+            "landasanHukum": "Landasan Hukum",
+            "peraturanPresiden": "Peraturan Presiden RI No.28 Tahun 2020",
+            "isiPerpres": "Komite Nasional Ekonomi dan Keuangan Syariah. JDIH Marves – Dalam rangka peningkatan pembangunan ekosistem ekonomi dan keuangan syariah guna mendukung pembangunan ekonomi nasional, perlu dilakukan perubahan Komite Nasionai Keuangan Syariah menjadi Komite Nasional Ekonomi dan Keuangan Syariah.",
+            "filosofiLogo": "Filosofi Logo",
+            "hurufN": "Huruf N",
+            "hurufNdariKneks": "Huruf N dari KNEKS ini dimodifikasi sedemikian rupa menjadi unique point dari logo. Penempatannya yang sejajar dengan dan menjadi kesatuan dalam huruf KNEKS dimaksudkan agar logo terlihat lebih sederhana. Agar perhatian atau point of view audience langsung tertuju pada KNEKS. Sehingga hal ini membuat audience mengenali logo KNEKS dengan tepat dan seketika. Huruf N ini kemudian dimodIfikasi menjadi garis bersudut dengan tiga titik, yang menggambarkan tiga tugas utama KNEKS, yaitu mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional.",
+            "pintuGerbang": "Pintu Gerbang",
+            "sengajaDirancangAgarMenyerupaiPintuGerbang": "Sengaja dirancang agar menyerupai pintu gerbang yang berarti keterbukaan. KNEKS terbuka terhadap pemangku kepentingan untuk pengembangan ekonomi dan keuangan syariah. Pintu gerbang ini juga melambangkan keterbukaan terhadap investor asing untuk menanamkan modalnya di Indonesia.",
+            "arah": "Arah",
+            "arahPanahKesampingKananAtas": "Arah panah ke samping kanan atas adalah simbol dari progresif. Arah panah ke samping kanan atas ini mampu memberikan kesan positif. Melalui simbol ini ingin dikomunikasikan fungsi-fungsi KNEKS yang progresif, seperti pemberian rekomendasi arah kebijakan dan program strategis pembangunan nasional, dan lain-lain.",
+            "tugasKneks": "Tugas KNEKS",
+            "KneksBertugasMempercepat": "KNEKS bertugas mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka mendukung ketahanan ekonomi nasional.",
+            "fungsiKneks": "Fungsi KNEKS",
+            "pemberianRekomendasiArahKebijakan": "Pemberian rekomendasi arah kebijakan dan program strategis pembangunan nasional di sektor ekonomi dan keuangan syariah.",
+            "pelaksanaanKoordinasiSinkronisasi": "Pelaksanaan koordinasi, sinkronisasi, sinergisitas penyusunan dan pelaksanaan rencana araha kebijakan dan program strategis pada sektor ekonomi dan keuangan syariah.",
+            "perumusanDanPemberianRekomendasi": "Perumusan dan pemberian rekomendasi atas penyelesaian masalah di sektor ekonomi dan keuangan syariah.",
+            "pemantauanDanEvaluasi": "Pemantauan dan evaluasi atas pelaksanaan arah kebijakan dan program strategis di sektor ekonomi dan keuangan syariah.",
+            "sejarahEkonomiSyariah":"Sejarah Ekonomi Syariah",
+            "beritaDanKegiatan": "Berita Dan Kegiatan",
+            "manajemenEksekutif": "Manajemen Eksekutif"
+
         }
     }
 };

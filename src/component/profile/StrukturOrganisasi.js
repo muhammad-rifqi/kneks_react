@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import SkeletonCardBerita from "../skeleton/CardBerita";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useTranslation } from "react-i18next";
 
 const StrukturOrganisasi = () => {
+	const { t } = useTranslation()
 	const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -45,7 +47,7 @@ const StrukturOrganisasi = () => {
 				<section className="page-banner">
 					<div className="container">
 						<div className="page-banner-title">
-							<h3>Struktur Organisasi</h3>
+							<h3>{t('menu.strukturOrganisasi')}</h3>
 						</div>
 					</div>
 				</section>
@@ -61,7 +63,7 @@ const StrukturOrganisasi = () => {
 						<div className="row row-gutter-y-30 d-flex justify-content-center">
 							<div className="blog-box-manajemen">
 								<div className="section-title-box text-center">
-									<h2 className="section-title">Manajemen Eksekutif</h2>
+									<h2 className="section-title">{t('manajemenEksekutif')}</h2>
 								</div>
 							</div>
 							{loading ? (

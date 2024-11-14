@@ -4,10 +4,11 @@ import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import axios from 'axios';
+import { useTranslation } from "react-i18next";
 
 
 const GaleriFotoDetail = () => {
-
+const { t } = useTranslation()
 
     dayjs.locale('id');
 
@@ -93,7 +94,7 @@ const GaleriFotoDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Galeri Foto</h3>
+                            <h3>{t('menu.galeriFoto')}</h3>
                         </div>
                     </div>
                 </section>

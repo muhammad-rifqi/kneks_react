@@ -13,7 +13,9 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import { useTranslation } from 'react-i18next';
 const KdeksDetail = () => {
+    const { t } = useTranslation()
     // const [rows, setItems] = useState([]);
     const [dataKota, setDataKota] = useState([]);
     const [listdataKota, setListDataKota] = useState([]);
@@ -310,7 +312,7 @@ const KdeksDetail = () => {
                 <section className="portfolio-section">
                     <div className="container">
                         <div className="section-title-box text-center">
-                            <h2 className="section-title">Struktur Organisasi</h2>
+                            <h2 className="section-title">{t('menu.strukturOrganisasi')}</h2>
                         </div>
                         <div className="row row-gutter-y-40 text-center">
                             <div className="col-lg-12 col-xl-12">
@@ -325,7 +327,7 @@ const KdeksDetail = () => {
                 <section className="portfolio-section">
                     <div className="container">
                         <div className="section-title-box text-center">
-                            <h2 className="section-title">Berita Dan Kegiatan</h2>
+                            <h2 className="section-title">{t('beritaDanKegiatan')}</h2>
                         </div>
                         <div className="row row-gutter-30">
                             {posts.length > 0 ? (
@@ -677,7 +679,7 @@ const KdeksDetail = () => {
                     <div className="container">
                         <div className="funfact-box">
                             <div className="section-title-box text-center">
-                                <h2 className="section-title">Galeri Foto</h2>
+                                <h2 className="section-title">{t('menu.galeriFoto')}</h2>
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">
@@ -777,7 +779,7 @@ const KdeksDetail = () => {
                         </div>
                         <div className="funfact-box pt-5">
                             <div className="section-title-box text-center">
-                                <h2 className="section-title">Galeri Video</h2>
+                                <h2 className="section-title">{t('menu.galeriVideo')}</h2>
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">

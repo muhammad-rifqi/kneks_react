@@ -10,7 +10,9 @@ import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import DatePicker from "react-multi-date-picker"
 import transition from "react-element-popper/animations/transition"
+import { useTranslation } from "react-i18next";
 const GaleriFoto = () => {
+    const { t } = useTranslation()
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
@@ -99,7 +101,7 @@ const GaleriFoto = () => {
             <section className='page-banner'>
                 <div className='container'>
                     <div className='page-banner-title'>
-                        <h3>Galeri Foto</h3>
+                        <h3>{t('menu.galeriFoto')}</h3>
                     </div>
                 </div>
             </section>

@@ -6,7 +6,10 @@ import Kajian from "./libraryTab/Kajian";
 import Publikasi from "./libraryTab/Publikasi";
 import Regulasi from "./libraryTab/Regulasi";
 import Siaran from "./libraryTab/Siaran";
+import { useTranslation } from "react-i18next";
 const Elibrabry = () => {
+
+    const { t } = useTranslation()
 
     const [selectedSection, setSelectedSection] = useState("roadmap");
 
@@ -36,7 +39,7 @@ const Elibrabry = () => {
                 <section className="page-banner-perpus">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>E-Perpustaka</h3>
+                            <h3>{t('ePustaka')}</h3>
                         </div>
                     </div>
                 </section>
