@@ -182,12 +182,12 @@ const BeritaKegiatan = () => {
                                                         href={`/berita-kegiatan/${convertToSlug(
                                                             item.title
                                                         )}`}>
-                                                         <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} /> 
-                                                        {/* <img
-                                                            src='/assets/image/berita.jpg'
+                                                         {/* <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} />  */}
+                                                        <img
+                                                            src='assets/image/foto-beritas.png'
                                                             className='img-fluid w-100'
                                                             alt={item.title}
-                                                        /> */}
+                                                        />
                                                     </a>
                                                 </div>
                                                 <div className='berita-content '>

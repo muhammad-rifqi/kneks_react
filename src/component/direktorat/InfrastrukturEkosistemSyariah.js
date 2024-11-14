@@ -167,7 +167,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                 <div className="col-lg-3" key={item.id}>
                                     <div className="berita-card">
                                         <div className="berita-card-imgbox-direktorat-home ">
-                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title} /></a>
+                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} /></a>
                                         </div>
                                         <div className="berita-content-direktorat-x">
                                             <div className="direktorat-tag-home">

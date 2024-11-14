@@ -336,7 +336,7 @@ const KdeksDetail = () => {
                                                 <div className="berita-card">
                                                     <div className="berita-card-imgbox-direktorat-home">
                                                         <a href={item.title ? `/berita-kegiatan/${convertToSlug(item.title)}` : ''}>
-                                                            <img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title ? item.title : ''} />
+                                                            <img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title ? item.title : ''} />
                                                         </a>
                                                     </div>
                                                     <div className="berita-content-direktorat-xs">

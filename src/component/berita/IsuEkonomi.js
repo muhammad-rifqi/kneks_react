@@ -164,7 +164,7 @@ const IsuEkonomi = () => {
                                             <div className="berita-card">
                                                 <div className="berita-card-imgbox ">
                                                     <a href={`/isu-ekonomi/${convertToSlug(item.title)}`}>
-                                                        <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} />
+                                                        <img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} />
                                                     </a>
                                                 </div>
                                                 <div className="berita-content ">

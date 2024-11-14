@@ -79,7 +79,7 @@ const BeritaKegiatanDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src="/assets/image/berita.jpg" width={`100%`} className="img-fluid" alt={rows?.title} />
+                                    <img src="/assets/image/foto-beritas.png" width={`100%`} className="img-fluid" alt={rows?.title} />
                                 </div>
                             </div>
                             <div className="row">
@@ -149,7 +149,7 @@ const BeritaKegiatanDetail = () => {
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>
-                                                    <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} />
+                                                    <img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} />
                                                     {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
                                                 </a>
                                             </div>
