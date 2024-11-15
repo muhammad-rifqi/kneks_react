@@ -82,7 +82,7 @@ const Elibrabry = () => {
                             </div>
                             <div className="row row-gutter-y-40">
                                 <div className="col-lg-12">
-                                    <button className="btn btn-primary ">Unduh <i className="fa-solid fa-download" aria-hidden="true"></i></button>
+                                    <button className="btn btn-primary " onClick={()=>{window.location.href=`${rows?.file}`;}}>Unduh <i className="fa-solid fa-download" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                             <div className="row row-gutter-y-40">
