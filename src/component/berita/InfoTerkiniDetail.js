@@ -96,7 +96,7 @@ const InfoTerkiniDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src="/assets/image/berita.jpg" width={`100%`} className="img-fluid" alt={rows?.title} />
+                                    <img src={rows?.image} width={`100%`} className="img-fluid" alt={rows?.title} />
                                     {/* <img src={`${process.env.REACT_APP_API_NEWS}` + rows?.image} width={`100%`} className="img-fluid" alt={rows?.title} /> */}
                                 </div>
                             </div>
