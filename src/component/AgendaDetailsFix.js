@@ -95,8 +95,9 @@ const AgendaDetailsFix = () => {
                                 <div className="event-details-content-box">
                                     <h4>{rows?.title}</h4>
                                     <div dangerouslySetInnerHTML={{ __html: rows?.description }} />
-                                    <p style={{ textAlign: `justify` }}>{rows?.area || '-'}</p>
                                 </div>
+                                <br />
+                                <p> <iframe src={rows?.area} width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </p>
                             </div>
                             <div className="col-lg-4">
                                 <div className="sidebar">
