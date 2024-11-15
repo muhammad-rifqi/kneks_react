@@ -108,7 +108,7 @@ const Section7 = () => {
 										<div className="berita-card-kdeks">
 											<div className="berita-card-imgbox-berita">
 												<a href={`/berita-terkait/${convertToSlug(item.title)}`}>
-													<img src="assets/image/foto-beritas.png" className="img-fluid" alt={item.title} />
+													<img src={item.image} className="img-fluid" alt={item.title} />
 												</a>
 											</div>
 

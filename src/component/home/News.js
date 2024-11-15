@@ -63,7 +63,7 @@ const News = () => {
 								<a href={`/berita-terkait/${convertToSlug(item.title)}`}>
 									<div className="card-box-b card-shadow news-box">
 										<div className="img-box-b-home">
-											<img src="/assets/image/foto-beritas.png" alt={item.title} className="img-b img-fluid" />
+											<img src={item.image} alt={item.title} className="img-b img-fluid" />
 										</div>
 										<div className="card-overlay">
 											<div className="card-header-b">
