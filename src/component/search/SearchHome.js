@@ -133,7 +133,7 @@ const SearchHome = () => {
                                                   )}`}>
                                                   <img
                                                       src={
-                                                          "/assets/image/berita.jpg"
+                                                          item?.image
                                                       }
                                                       className='img-fluid'
                                                       alt={item.title}
