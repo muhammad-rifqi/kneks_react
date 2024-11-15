@@ -94,8 +94,8 @@ const AgendaDetailsFix = () => {
                             <div className="col-lg-8">
                                 <div className="event-details-content-box">
                                     <h4>{rows?.title}</h4>
-                                    {/* <p style={{ textAlign: `justify` }}>{rows?.content || '-'}</p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: rows?.content }} />
+                                    <div dangerouslySetInnerHTML={{ __html: rows?.description }} />
+                                    <p style={{ textAlign: `justify` }}>{rows?.area || '-'}</p>
                                 </div>
                             </div>
                             <div className="col-lg-4">
