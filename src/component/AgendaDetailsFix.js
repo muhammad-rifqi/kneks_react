@@ -119,7 +119,6 @@ const AgendaDetailsFix = () => {
                                                 <p>{rows?.impact || '-'}</p>
                                                 <p>{rows?.opening || '-'}</p>
                                                 <p>{rows?.participants || '-'}</p>
-                                                <p>{rows?.area || '-'}</p>
                                                 <p>{rows?.loc || '-'}</p>
                                                 <p>{rows?.priority_participants || '-'}</p>
                                                 <p>{rows?.kbli || '-'}</p>
