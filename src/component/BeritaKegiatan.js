@@ -186,7 +186,7 @@ const BeritaKegiatan = () => {
                                                         )}`}>
                                                          {/* <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} />  */}
                                                         <img
-                                                            src='assets/image/foto-beritas.png'
+                                                            src={item?.image}
                                                             className='img-fluid w-100'
                                                             alt={item.title}
                                                         />
