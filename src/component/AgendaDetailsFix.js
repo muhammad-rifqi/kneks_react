@@ -110,6 +110,22 @@ const AgendaDetailsFix = () => {
                                             <div className="sidebar-widget-event-box">
                                                 <h6>Penyelenggara:</h6>
                                                 <p>{rows?.organizer || '-'}</p>
+                                                <p>{rows?.project || '-'}</p>
+                                                <p>{rows?.description || '-'}</p>
+                                                <p>{rows?.agenda_endtime || '-'}</p>
+                                                <p>{rows?.manager || '-'}</p>
+                                                <p>{rows?.contributor || '-'}</p>
+                                                <p>{rows?.indicator || '-'}</p>
+                                                <p>{rows?.impact || '-'}</p>
+                                                <p>{rows?.opening || '-'}</p>
+                                                <p>{rows?.participants || '-'}</p>
+                                                <p>{rows?.area || '-'}</p>
+                                                <p>{rows?.loc || '-'}</p>
+                                                <p>{rows?.priority_participants || '-'}</p>
+                                                <p>{rows?.kbli || '-'}</p>
+                                                <p>{rows?.age || '-'}</p>
+                                                <p>{rows?.gender || '-'}</p>
+                                                <p>{rows?.province || '-'}</p>
                                             </div>
                                             <div className="sidebar-widget-event-box">
                                                 <h6>Link:</h6>
