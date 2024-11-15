@@ -10095,7 +10095,7 @@ SOCIAL MEDIA
   border: none;
 }
 .maps-indo{
-  transform: scale(1.5);
+  /* transform: scale(1.5); */
 }
 
 .maps-indo g:hover {
