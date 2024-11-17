@@ -177,7 +177,7 @@ console.log(filteredEvents )
                                             events={filteredEvents.map(event => ({
                                                 id: String(event.id),
                                                 title: event.title,
-                                                date: event.agenda_datetime,
+                                                date: event.agenda_datetime ,
                                             }))}
                                         />
                                     </Card.Body>
