@@ -71,7 +71,7 @@ const Agenda = () => {
         return matchesSearch && matchesDate;
     });
 
-
+console.log(filteredEvents )
     useEffect(() => {
         if (calendarRef.current) {
             const calendarApi = calendarRef.current.getApi();
@@ -79,7 +79,12 @@ const Agenda = () => {
             if ((searchQuery.length > 0 || startDate) && filteredEvents.length > 0) {
 
                 filteredEvents.forEach(event => {
-                    calendarApi.gotoDate(event.agenda_datetime);
+                   
+                    if (event.agenda_datetime) {
+                        calendarApi.gotoDate(event.agenda_datetime);
+                    } else {
+                        console.warn("Invalid agenda_datetime:", event);
+                    }
 
                 });
             } else {
