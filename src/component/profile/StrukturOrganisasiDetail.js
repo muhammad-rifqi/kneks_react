@@ -83,8 +83,7 @@ const StrukturOrganisasiDetail = () => {
 						<div className="row">
 							<div className="col-lg-9">
 								<div className="event-details-content-box">
-									<p style={{ textAlign: `justify` }}>
-									{rows?.description}
+									<p style={{ textAlign: `justify` }} dangerouslySetInnerHTML={{ __html: rows?.description }}>
 									</p>
 								</div>
 							</div>
