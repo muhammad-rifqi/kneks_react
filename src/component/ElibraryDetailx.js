@@ -1,5 +1,8 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 const ElibrabryDetailx = () => {
+const { t } = useTranslation()
+
     return (
         <>
             <div className="page-wrapper">
@@ -7,7 +10,7 @@ const ElibrabryDetailx = () => {
                 <section className="page-banner-perpus">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>E-Pustaka</h3>
+                            <h3>{t('menu.ePustaka')}</h3>
                         </div>
                     </div>
                 </section>

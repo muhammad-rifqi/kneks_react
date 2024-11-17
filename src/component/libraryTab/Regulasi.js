@@ -147,7 +147,13 @@ const Regulasi = () => {
                                         )}`}>{item?.title}</a></h4>
                                         <div className="d-flex justify-content-between align-items-end">
                                             <p>{dayjs(item?.date).format("DD MMMM YYYY")}</p>
-                                            <a href="#t" data-bs-toggle="tooltip" title="Downloadable">
+                                            <a 
+                                                data-bs-toggle="tooltip" 
+                                                title="Downloadable"
+                                                href={item?.file} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                >
                                                 <i className="fa-solid fa-download" aria-hidden="true"></i>
                                             </a>
                                         </div>

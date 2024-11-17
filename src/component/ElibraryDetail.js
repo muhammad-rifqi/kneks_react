@@ -4,7 +4,10 @@ import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import axios from 'axios';
+import { useTranslation } from "react-i18next";
 const Elibrabry = () => {
+
+    const { t } = useTranslation()
 
     dayjs.locale('id');
 
@@ -60,7 +63,7 @@ const Elibrabry = () => {
                 <section className="page-banner-perpus">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>E-Pustaka</h3>
+                            <h3>{t('menu.ePustaka')}</h3>
                         </div>
                     </div>
                 </section>
@@ -82,7 +85,8 @@ const Elibrabry = () => {
                             </div>
                             <div className="row row-gutter-y-40">
                                 <div className="col-lg-12">
-                                    <button className="btn btn-primary " onClick={()=>{window.location.href=`${rows?.file}`;}}>Unduh <i className="fa-solid fa-download" aria-hidden="true"></i></button>
+                                    <button className="btn btn-primary " 
+                                    onClick={() => {window.open(rows?.file, '_blank', 'noopener,noreferrer')}}>Unduh <i className="fa-solid fa-download" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                             <div className="row row-gutter-y-40">
