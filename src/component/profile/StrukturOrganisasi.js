@@ -77,7 +77,7 @@ const StrukturOrganisasi = () => {
 								    <div className="col-12 col-md-6 col-xl-3" key={item.id}>
 									    <div className="team-card">
 										    <div className="team-card-img">
-											    <a href={`/struktur-organisasi/${convertToSlug(item.name)}`}><img src={item.photo ? `${process.env.REACT_APP_API_IMAGE}${item.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
+											    <a href={`/struktur-organisasi/${convertToSlug(item.name)}`}><img src={item.photo ? `${item.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
 											    <div className="team-card-icon">
 												    {/* Social Media Icons */}
 											    </div>

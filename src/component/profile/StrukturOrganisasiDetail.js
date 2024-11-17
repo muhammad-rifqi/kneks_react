@@ -63,13 +63,13 @@ const StrukturOrganisasiDetail = () => {
 								<h5>{rows?.position}</h5>
 							</div>
 							<div className="struktur-profil col-lg-6 col-md-6 col-sm-12 text-end  d-none d-lg-block d-md-block">
-								<img src={rows?.photo ? `${process.env.REACT_APP_API_IMAGE}${rows?.photo}` : "assets/image/defaulttumbnail.jpeg"} alt="" className="img-fluid" />
+								<img src={rows?.photo ? `${rows?.photo}` : "assets/image/defaulttumbnail.jpeg"} alt="" className="img-fluid" />
 							</div>
 
 
 
 							<div className="struktur-profil col-lg-6 col-md-6 col-sm-12 text-center  d-block d-lg-none d-md-none">
-								<img src={rows?.photo ? `${process.env.REACT_APP_API_IMAGE}${rows?.photo}` : "assets/image/defaulttumbnail.jpeg"} alt="" className="img-fluid" />
+								<img src={rows?.photo ? `${rows?.photo}` : "assets/image/defaulttumbnail.jpeg"} alt="" className="img-fluid" />
 							</div>
 							<div className="col-lg-6 col-md-6 col-sm-12 page-banner-title-x  text-center d-block d-lg-none d-md-none pt-5">
 								<h3>{rows?.name}</h3>
