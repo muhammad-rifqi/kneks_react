@@ -115,7 +115,7 @@ const KeuanganSosialSyariah = () => {
                         <div className="row row-gutter-y-40">
                             <div className="col-lg-12 ">
                                 <div className="event-details-inner-box text-center">
-                                    <img src="assets/image/diph.svg" className="img-fluid" alt="img-173" />
+                                    <img src="assets/image/direk.png" className="img-fluid" alt="img-173" />
 
                                 </div>
                                 <div className="about-one-inner-x">
@@ -166,7 +166,7 @@ const KeuanganSosialSyariah = () => {
                                 <div className="col-lg-3" key={item.id}>
                                     <div className="berita-card">
                                         <div className="berita-card-imgbox-direktorat-home ">
-                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} style={{ width: '100%' }} /></a>
+                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src={item?.image} className="img-fluid" alt={item.title} style={{ width: '100%' }} /></a>
                                         </div>
                                         <div className="berita-content-direktorat-x" style={{ width: '100%' }}>
                                             <div className="direktorat-tag-home">

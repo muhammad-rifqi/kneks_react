@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import dayjs from 'dayjs';
-import 'dayjs/locale/id';
+// import dayjs from 'dayjs';
+// import 'dayjs/locale/id';
 import axios from 'axios';
 const StrukturOrganisasiDetail = () => {
 	const { slug } = useParams();

@@ -56,11 +56,11 @@ const AgendaDetailsFix = () => {
                     const foundItem = responsei.data.find(agenda => convertToSlug(agenda.title) === slug);
 
                     // throw new Error("Error!");
-                        
+
                     if (responsei) {
                         setItem(foundItem);
                     }
-                    
+
                 } catch (err) {
                     Swal.fire({
                         icon: "error",
@@ -97,7 +97,7 @@ const AgendaDetailsFix = () => {
                                     <div dangerouslySetInnerHTML={{ __html: rows?.description }} />
                                 </div>
                                 <br />
-                                <p> <iframe src={rows?.area} width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </p>
+                                <p> <iframe src={rows?.area} title={rows?.area} width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </p>
                             </div>
                             <div className="col-lg-4">
                                 <div className="sidebar">
@@ -105,27 +105,64 @@ const AgendaDetailsFix = () => {
                                         <div className="sidebar-widget-event-meta-details">
                                             <div className="sidebar-widget-event-box">
                                                 <h6>Waktu:</h6>
-                                                <p className="m-0">{ dayjs(rows?.agenda_datetime).locale('id').format('h:mm')} WIB</p>
-                                                <p className="m-0">{ dayjs(rows?.agenda_datetime).locale('id').format('DD MMMM YYYY')}</p>
+                                                <p className="m-0">{dayjs(rows?.agenda_datetime).locale('id').format('h:mm')}  WIB</p>
+                                                <p className="m-0">{dayjs(rows?.agenda_datetime).locale('id').format('DD MMMM YYYY')} - {dayjs(rows?.agenda_endtime).locale('id').format('DD MMMM YYYY')}</p>
                                             </div>
                                             <div className="sidebar-widget-event-box">
                                                 <h6>Penyelenggara:</h6>
                                                 <p>{rows?.organizer || '-'}</p>
-                                                <p>Nama Proyek : {rows?.project || '-'}</p>
-                                                <p>Deskripsi Kegiatan : {rows?.description || '-'}</p>
-                                                <p>Tanggal Selesai	: {rows?.agenda_endtime || '-'}</p>
-                                                <p>Pengelola : {rows?.manager || '-'}</p>
-                                                <p> Kontributor : {rows?.contributor || '-'}</p>
-                                                <p>Indikator {rows?.indicator || '-'}</p>
-                                                <p>Dampak {rows?.impact || '-'}</p>
-                                                <p>Pembuka Acara : {rows?.opening || '-'}</p>
-                                                <p>Jumlah Peserta : {rows?.participants || '-'}</p>
-                                                <p>Level Of Content : {rows?.loc || '-'}</p>
-                                                <p> Peserta	Prioritas : {rows?.priority_participants || '-'}</p>
-                                                <p>KBLI : {rows?.kbli || '-'}</p>
-                                                <p>Skala Usia : {rows?.age || '-'}</p>
-                                                <p>Gender Audience	 : {rows?.gender || '-'}</p>
-                                                <p>Lokasi (Provinsi) : {rows?.province || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Nama Proyek</h6>
+                                                <p>{rows?.project || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Pengelola</h6>
+                                                <p>{rows?.manager || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Kontributor</h6>
+                                                <p>  {rows?.contributor || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Indikator</h6>
+                                                <p>{rows?.indicator || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Dampak</h6>
+                                                <p> {rows?.impact || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Pembuka Acara</h6>
+                                                <p>{rows?.opening || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Jumlah Peserta</h6>
+                                                <p>{rows?.participants || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Level Of Content</h6>
+                                                <p>{rows?.loc || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Peserta Prioritas</h6>
+                                                <p>{rows?.priority_participants || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>KBLI</h6>
+                                                <p>{rows?.kbli || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Skala Usia</h6>
+                                                <p> {rows?.age || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Gender Audience</h6>
+                                                <p>{rows?.gender || '-'}</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Lokasi (Provinsi)</h6>
+                                                <p>{rows?.province || '-'}</p>
                                             </div>
                                             <div className="sidebar-widget-event-box">
                                                 <h6>Link:</h6>
@@ -141,7 +178,7 @@ const AgendaDetailsFix = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section >
                 <section className="department-all">
                     <div className="container">
 
@@ -400,7 +437,7 @@ const AgendaDetailsFix = () => {
                         </div>
                     </div>
                 </section>
-            </div>
+            </div >
         </>
     )
 }
