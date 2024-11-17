@@ -39,7 +39,7 @@ const resources = {
             "tombol": "See More",
 
             "beritaTerkait": "Related News",
-
+            "zona":"Khas Zone",
             "pernekalkan": "About Us",
             "pernekalkanJudul": "National Committee for Sharia Economics and Finance (KNEKS)",
             "pernekalkanIsi": "It is a change from KNKS to improve the development of the sharia economic and financial ecosystem and make Indonesia the World Halal Center. The launch of the starting point to position Indonesia as one of the main players and hubs of the world's sharia economy was carried out in line with the launch of the Indonesian Sharia Economic Masterplan in May 2019.",
@@ -150,7 +150,7 @@ const resources = {
 
             "event": "Event Ekonomi dan Keuangan Syariah",
 
-
+            "zona": "Zona KHAS",
             "bannerJudul": "Menyatukan langkah, Memajukan Negeri",
             "bannerIsi": "Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional ",
             "tombol": "Lihat Selengkap",
