@@ -122,10 +122,10 @@ const InfrastrukturEkosistemSyariah = () => {
                                     <h2 className="section-title text-center">{t('direktorat.direktoratInfrastrukturEkosistemSyariah')}</h2>
                                     <p>{t('direktorat.direktoratInfrastrukturEkosistemSyariahDiKneks')}</p>
                                     <p>{t('direktorat.denganBerfokusPadaInfrastrukturYangMendukung')}</p>
-                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
+                                    {/* <h5 className="about-one-inner-text-x">{t('divisi')}</h5> */}
                                    
 
-                                    <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
+                                    {/* <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
                                             <a href="#t" className="component-service d-block ">
                                                 <div className="service-image ">
@@ -147,7 +147,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
 

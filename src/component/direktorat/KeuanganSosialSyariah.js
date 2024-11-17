@@ -122,9 +122,9 @@ const KeuanganSosialSyariah = () => {
                                     <h2 className="section-title text-center">{t('direktorat.direktoratKeuanganSosialSyariah')}</h2>
                                     <p>{t('direktorat.direktoratKeuanganSosialSyariahDiKneks')}</p>
                                     <p>{t('direktorat.direktoratIniBertujuanUntuk')}</p>
-                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
+                                    {/* <h5 className="about-one-inner-text-x">{t('divisi')}</h5> */}
                                     
-                                    <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
+                                    {/* <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
                                             <a href="#t" className="component-service d-block ">
                                                 <div className="service-image ">
@@ -146,7 +146,7 @@ const KeuanganSosialSyariah = () => {
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
 
