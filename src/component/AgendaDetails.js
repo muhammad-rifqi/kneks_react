@@ -59,6 +59,58 @@ const AgendaDetails = () => {
                                                 <p>Kementerian Keuangan</p>
                                             </div>
                                             <div className="sidebar-widget-event-box">
+                                                <h6>Nama Proyek</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Pengelola</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Kontributor</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Indikator</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Dampak</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Pembuka Acara</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Jumlah Peserta</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Level Of Content</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Peserta Prioritas</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>KBLI</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Skala Usia</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Gender Audience</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
+                                                <h6>Lokasi (Provinsi)</h6>
+                                                <p>-</p>
+                                            </div>
+                                            <div className="sidebar-widget-event-box">
                                                 <h6>Link:</h6>
                                                 <a href="https://app.zoom.us/wc" className="text-primary" target="_blank" rel="noreferrer">https://app.zoom.us/wc</a>
                                             </div>
