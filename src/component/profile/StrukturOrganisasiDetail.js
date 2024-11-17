@@ -84,7 +84,7 @@ const StrukturOrganisasiDetail = () => {
 							<div className="col-lg-9">
 								<div className="event-details-content-box">
 									<p style={{ textAlign: `justify` }}>
-										Tidak Deskripsi
+									{rows?.description}
 									</p>
 								</div>
 							</div>
