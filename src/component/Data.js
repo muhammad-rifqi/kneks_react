@@ -1,12 +1,29 @@
-import React, { useEffect } from "react";
-import html2canvas from 'html2canvas';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
-import Card from 'react-bootstrap/Card';
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-// import jsPDF from 'jspdf';
+import React, { useEffect, useState } from "react";
+import Iph from '../component/DataTab/Iph'
+import Jks from '../component/DataTab/Jks'
+import Kss from '../component/DataTab/Kss'
+import Biwis from '../component/DataTab/Biwis'
+import Insis from '../component/DataTab/Insis'
 const Data = () => {
+    const [selectedSection, setSelectedSection] = useState("Iph");
+    const renderContent = () => {
+
+        switch (selectedSection) {
+            case "Iph":
+                return <Iph />;
+            case "Jks":
+                return <Jks />;
+            case "Kss":
+                return <Kss />;
+            case "Biwis":
+                return <Biwis />;
+            case "Insis":
+                return <Insis />;
+            // Add other cases as needed for different sections
+            default:
+                return null;
+        }
+    };
     useEffect(() => {
         // Ensure ApexCharts is loaded before using it
         // if (window.ApexCharts) {
@@ -166,31 +183,15 @@ const Data = () => {
         //     };
         // }
     }, []);
-    const downloadJPG = () => {
-        html2canvas(document.querySelector("#dwnjpg")).then(canvas => {
-            const imgData = canvas.toDataURL('image/jpeg', 1.0);
-            const link = document.createElement('a');
-            link.href = imgData;
-            link.download = 'payment-records-chart.jpg';
+    // const downloadJPG = () => {
+    //     html2canvas(document.querySelector("#dwnjpg")).then(canvas => {
+    //         const imgData = canvas.toDataURL('image/jpeg', 1.0);
+    //         const link = document.createElement('a');
+    //         link.href = imgData;
+    //         link.download = 'payment-records-chart.jpg';
 
-            // Trigger the download
-            link.click();
-        });
-    };
-    // const downloadPDF = () => {
-    //     const pdfWidth = 210; // A4 width in mm
-    //     const pdfHeight = 297; // A4 height in mm
-    //     html2canvas(document.querySelector("#payment-records-chart")).then(canvas => {
-    //         const imgData = canvas.toDataURL('image/png');
-    //         const pdf = new jsPDF('portrait', 'mm', [pdfWidth, pdfHeight]);
-
-    //         // Adjust image dimensions to maintain aspect ratio
-    //         const imgWidth = pdfWidth - 20; // padding of 10mm
-    //         const imgHeight = (canvas.height * imgWidth) / canvas.width;
-    //         const margin = 10;
-
-    //         pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
-    //         pdf.save("custom-size-chart.pdf");
+    //         // Trigger the download
+    //         link.click();
     //     });
     // };
 
@@ -206,27 +207,31 @@ const Data = () => {
                     </div>
                 </section>
                 <section className="department-details-section" >
-                    <div className="container">
+                    <div className="container-lg">
                         <div className="row">
                             <div className="col-12 col-lg-3 col-xl-3">
                                 <div className="sidebar">
                                     <div className="sidebar-widget-list-inner">
                                         <ul>
-                                            <li><a href="#t">IPH</a></li>
-                                            <li><a href="#t">JKS</a></li>
-                                            <li><a href="#t">KSS</a></li>
-                                            <li><a href="#t">BIWIS</a></li>
-                                            <li><a href="#t">INSIS</a></li>
+                                            <li><a href="#IPH" onClick={() => setSelectedSection("Iph")}>IPH</a></li>
+                                            <li><a href="#JKS" onClick={() => setSelectedSection("Jks")}>JKS</a></li>
+                                            <li><a href="#KSS" onClick={() => setSelectedSection("Kss")}>KSS</a></li>
+                                            <li><a href="#BIWIS" onClick={() => setSelectedSection("Biwis")}>BIWIS</a></li>
+                                            <li><a href="#INSIS" onClick={() => setSelectedSection("Insis")}>INSIS</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-9" id="dwnjpg">
 
-                                <Card className="mb-3">
+
+                                {renderContent()}
+
+
+                                {/* <Card className="mb-3">
                                     <Card.Body>
                                         <Row >
-                                            <Breadcrumb as={Col} className="mb-0 ">
+                                            <Breadcrumb as={Col} className="">
                                                 <Breadcrumb.Item href="#">IPH</Breadcrumb.Item>
                                                 <Breadcrumb.Item active>Sertifikasi Halal UMK</Breadcrumb.Item>
                                             </Breadcrumb>
@@ -246,15 +251,18 @@ const Data = () => {
                                         <button onClick={downloadJPG} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
 
                                     </div>
-                                    <div className="card-body custom-card-action p-0">
-                                        {/* <div id="payment-records-chart"></div> */}
-                                        <div><iframe src="https://metabase.kneks.go.id/public/dashboard/7caec5a5-4e6f-45c2-8d38-00286d5dc3ed" title="iframe1" width={`100%`} height={`800`} allowFullScreen></iframe></div>
+                                    <div className="card-body custom-card-action p-0" id="dwnjpg">
+                                        <iframe src="https://metabase.kneks.go.id/public/dashboard/7caec5a5-4e6f-45c2-8d38-00286d5dc3ed" title="iframe1" width={`100%`} height="1000"
+                                            allowFullScreen></iframe>
                                     </div>
 
 
-                                </div>
-                                <div className="col-lg-12 pt-5">
-                                    {/* <div className="row">
+                                </div> */}
+
+
+
+                                {/* <div className="col-lg-12 pt-5">
+                                    <div className="row">
                                         <div className="col-lg-6">
                                             <div className="card stretch stretch-full">
                                                 <div className="card-body p-0">
@@ -331,7 +339,7 @@ const Data = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> */}
+                                    </div>
                                 </div>
                                 <div className="col-lg-12 pt-5">
                                     <div className="row">
@@ -339,7 +347,7 @@ const Data = () => {
                                             <div className="card stretch stretch-full">
 
                                                 <div className="card-body custom-card-action p-0">
-                                                    {/* <div id="payment-records-chartx"></div> */}
+                                                    <div id="payment-records-chartx"></div>
                                                 </div>
 
                                             </div>
@@ -348,7 +356,7 @@ const Data = () => {
                                             <div className="card stretch stretch-full">
 
                                                 <div className="card-body custom-card-action p-0">
-                                                    {/* <div id="payment-records-charts"></div> */}
+                                                    <div id="payment-records-charts"></div>
                                                 </div>
 
                                             </div>
@@ -357,7 +365,7 @@ const Data = () => {
                                     </div>
                                 </div>
                                 <div className="col-lg-12 pt-5">
-                                    {/* <div className="about-one-inner-x">
+                                    <div className="about-one-inner-x">
                                         <div className="d-flex justify-content-between ">
 
                                             <h5 >Narasi</h5>
@@ -368,11 +376,11 @@ const Data = () => {
 
                                         </div>
                                         <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    </div> */}
+                                    </div>
 
                                 </div>
                                 <div className="col-lg-12 pt-5">
-                                    {/* <div className="about-one-inner-x">
+                                    <div className="about-one-inner-x">
                                         <div className="text-start">
 
                                             <h5 >Sumber Data</h5>
@@ -414,9 +422,9 @@ const Data = () => {
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div> */}
+                                    </div>
 
-                                </div>
+                                </div> */}
 
                             </div>
                         </div>

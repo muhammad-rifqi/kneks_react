@@ -64,9 +64,12 @@ const Header = () => {
   };
 
 
-  window.addEventListener("load", ()=>{
+  window.addEventListener("load", () => {
     setCookie('i18next', 'id', { path: '/' });
   });
+
+
+
 
   // const [searchTerm, setSearchTerm] = useState('');
 
