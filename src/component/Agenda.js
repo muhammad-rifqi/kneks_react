@@ -30,6 +30,7 @@ const Agenda = () => {
     // const [selectedDates, setSelectedDates] = useState();
     const [posts, setPosts] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
+    const [searchDataCari, setDataCari] = useState([]);
     const [startDate, setStartDate] = useState("");
     const calendarRef = useRef(null); // Reference for FullCalendar
     dayjs.locale('id');
@@ -59,6 +60,21 @@ const Agenda = () => {
         fetchPosts();
     }, []);
 
+
+    useEffect(() => {
+        const fetchAgenda = async () => {
+            let ddd = !searchQuery ? "DJM" : searchQuery;
+            try {
+                const url = process.env.REACT_APP_API_URL + '/search_agenda?cari=' + ddd;
+                const response = await axios.get(`${url}`);
+                setDataCari(response.data);
+            } catch (err) {
+                console.log(err)
+            }
+        };
+        fetchAgenda();
+    }, [searchQuery]);
+
     // const filteredEvents = posts.filter(event =>
     //     event.title.toLowerCase().includes((searchQuery || "").toLowerCase())
     // );
@@ -66,12 +82,10 @@ const Agenda = () => {
     const filteredEvents = posts.filter(event => {
         const matchesSearch = searchQuery ? event.title.toLowerCase().includes(searchQuery.toLowerCase()) : true;
         const matchesDate = startDate ? dayjs(event.agenda_datetime).isSame(dayjs(startDate), 'day') : true;
-
-        // Only include events that match both search and date filters
         return matchesSearch && matchesDate;
     });
 
-console.log(filteredEvents )
+
     useEffect(() => {
         if (calendarRef.current) {
             const calendarApi = calendarRef.current.getApi();
@@ -79,7 +93,7 @@ console.log(filteredEvents )
             if ((searchQuery.length > 0 || startDate) && filteredEvents.length > 0) {
 
                 filteredEvents.forEach(event => {
-                   
+
                     if (event.agenda_datetime) {
                         calendarApi.gotoDate(event.agenda_datetime);
                     } else {
@@ -92,6 +106,9 @@ console.log(filteredEvents )
             }
         }
     }, [searchQuery, filteredEvents, startDate]);
+
+    if (!searchDataCari) return "Tidak Data";
+
 
     const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
         <FormControl
@@ -133,6 +150,7 @@ console.log(filteredEvents )
                                     />
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
+
                             </Col>
                             <Col lg={6} sm={12}>
                                 <InputGroup className="mb-3">
@@ -142,7 +160,7 @@ console.log(filteredEvents )
                                         style={{ border: '1px solid #ccc', padding: '8px' }}
                                         // size="sm"
                                         value={searchQuery}
-                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                        onChange={(e) => { setSearchQuery(e.target.value) }}
                                     />
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-search"></i></InputGroup.Text>
                                 </InputGroup>
@@ -158,6 +176,28 @@ console.log(filteredEvents )
                                         />
                                     </Card.Body>
                                 </Card>
+
+                                <Card>
+                                    <Card.Body className="d-flex justify-content-center">
+                                        <ul>
+                                            {
+                                                (   searchDataCari.length > 0) ?
+                                                    searchDataCari.map((rrr) => {
+                                                        return (
+                                                            <li key={rrr?.id}> {rrr?.title}-{rrr?.organizer} 
+                                                            </li>
+                                                        );
+                                                    })
+                                                    : (
+                                                        <li>
+                                                            No Data
+                                                        </li>
+                                                    )
+                                            }
+                                        </ul>
+                                    </Card.Body>
+                                </Card>
+
                             </Col>
                             <Col lg={8} >
                                 <Card className="p-2 border-radius">
@@ -177,7 +217,7 @@ console.log(filteredEvents )
                                             events={filteredEvents.map(event => ({
                                                 id: String(event.id),
                                                 title: event.title,
-                                                date: event.agenda_datetime ,
+                                                date: event.agenda_datetime,
                                             }))}
                                         />
                                     </Card.Body>
