@@ -63,6 +63,11 @@ const Header = () => {
     setCookie('i18next', lng, { path: '/' }); // Set cookie bahasa
   };
 
+
+  window.addEventListener("load", ()=>{
+    setCookie('i18next', 'id', { path: '/' });
+  });
+
   // const [searchTerm, setSearchTerm] = useState('');
 
   // const handleChange = (event) => {

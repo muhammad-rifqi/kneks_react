@@ -79,6 +79,16 @@ const Agenda = () => {
     //     event.title.toLowerCase().includes((searchQuery || "").toLowerCase())
     // );
 
+    const convertToSlug = (title) => {
+        if (!title) return "";
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    };
+
     const filteredEvents = posts.filter(event => {
         const matchesSearch = searchQuery ? event.title.toLowerCase().includes(searchQuery.toLowerCase()) : true;
         const matchesDate = startDate ? dayjs(event.agenda_datetime).isSame(dayjs(startDate), 'day') : true;
@@ -184,7 +194,7 @@ const Agenda = () => {
                                                 (   searchDataCari.length > 0) ?
                                                     searchDataCari.map((rrr) => {
                                                         return (
-                                                            <li key={rrr?.id}> {rrr?.title}-{rrr?.organizer} 
+                                                            <li key={rrr?.id}> <a href={`/agenda/${convertToSlug(rrr?.title)}`}>{rrr?.title} - {rrr?.organizer}</a> 
                                                             </li>
                                                         );
                                                     })

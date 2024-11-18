@@ -20,6 +20,7 @@ import Section11 from '../component/home/Section11'
 // import Section13 from '../component/home/Section13';
 // import Section14 from '../component/home/Section14';
 
+
 const Home = () => {
   const [isPopupActive, setPopupActive] = useState(true)
 
@@ -27,6 +28,17 @@ const Home = () => {
   const handleClose = () => {
     setPopupActive(false)
   }
+
+  
+  const convertToSlug = (title) => {
+    if (!title) return "";
+    return title
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+};
 
   return (
     <div className="page-wrapper">
@@ -73,7 +85,7 @@ const Home = () => {
               alt="Iklan"
             />
             <div className="selengkapnya">
-              <a href="/agenda/detail" className="btn btn-primary btn-sm">
+              <a href={`/agenda/${convertToSlug('Opening Ceremony')}`} className="btn btn-primary btn-sm">
                 Lihat Selengkap
               </a>
             </div>

@@ -134,11 +134,11 @@ const GaleriVideo = () => {
                                 posts.slice(0, visible).map((item) => (
                                     <div className="col-md-6 col-lg-4" key={item.id} >
                                         <a href={`https://img.youtube.com/vi/` +
-                                            item.video + '/default.jpg'
+                                            item.video
                                         } className="my-image-links" data-autoplay="true" data-vbtype="video">
                                             <div className="card-box-b card-shadow news-box">
                                                 <div className="img-box-bc">
-                                                    <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
+                                                    <img src={`https://img.youtube.com/vi/` + item.video + '/0.jpg'} alt="imgNews" className="img-b img-fluid" />
                                                     <div className="video-btn">
                                                         <div className="play-icon" >
                                                             <img src="/assets/image/play-circle.svg" alt="imgplay" />
