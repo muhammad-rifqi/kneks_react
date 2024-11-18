@@ -2,7 +2,7 @@ import React from "react";
 import html2canvas from 'html2canvas';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Card from 'react-bootstrap/Card';
-import Form from 'react-bootstrap/Form';
+// import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
