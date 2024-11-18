@@ -9,162 +9,162 @@ import Row from 'react-bootstrap/Row';
 const Data = () => {
     useEffect(() => {
         // Ensure ApexCharts is loaded before using it
-        if (window.ApexCharts) {
-            const chartOptions =
-            {
-                series: [
-                    {
-                        name: "Series 1",
-                        data: [101, 41, 35, 51, 49, 62, 69, 91, 148]
-                    },
+        // if (window.ApexCharts) {
+        //     const chartOptions =
+        //     {
+        //         series: [
+        //             {
+        //                 name: "Series 1",
+        //                 data: [101, 41, 35, 51, 49, 62, 69, 91, 148]
+        //             },
 
-                ],
-                chart: {
-                    height: 350,
-                    type: 'line', // This specifies that it's a line chart
+        //         ],
+        //         chart: {
+        //             height: 350,
+        //             type: 'line', // This specifies that it's a line chart
 
-                    zoom: {
-                        enabled: false
-                    }
-                },
+        //             zoom: {
+        //                 enabled: false
+        //             }
+        //         },
 
-                dataLabels: {
-                    enabled: true
-                },
-                stroke: {
-                    curve: 'smooth'
-                },
-                title: {
-                    text: 'Pendaftaran sehati perbulan',
-                    align: 'left'
-                },
-                grid: {
-                    row: {
-                        colors: ['#f3f3f3', 'transparent'], // alternating background colors
-                        opacity: 0.5
-                    },
-                },
-                xaxis: {
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-                }
-            };
+        //         dataLabels: {
+        //             enabled: true
+        //         },
+        //         stroke: {
+        //             curve: 'smooth'
+        //         },
+        //         title: {
+        //             text: 'Pendaftaran sehati perbulan',
+        //             align: 'left'
+        //         },
+        //         grid: {
+        //             row: {
+        //                 colors: ['#f3f3f3', 'transparent'], // alternating background colors
+        //                 opacity: 0.5
+        //             },
+        //         },
+        //         xaxis: {
+        //             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        //         }
+        //     };
 
-            const chart = new window.ApexCharts(document.querySelector("#payment-records-chart"), chartOptions);
-            chart.render();
+        //     // const chart = new window.ApexCharts(document.querySelector("#payment-records-chart"), chartOptions);
+        //     // chart.render();
 
-            // Cleanup function to destroy the chart when the component is unmounted
-            return () => {
-                chart.destroy();
-            };
-        }
+        //     // Cleanup function to destroy the chart when the component is unmounted
+        //     return () => {
+        //         // chart.destroy();
+        //     };
+        // }
     }, []);
     useEffect(() => {
         // Ensure ApexCharts is loaded before using it
         if (window.ApexCharts) {
-            const chartOptions =
-            {
-                series: [
-                    {
-                        name: "Fasilitas",
-                        data: [101, 41, 35, 51, 49, 62, 69, 91, 148]
-                    },
-                    {
-                        name: "Reguler",
-                        data: [110, 31, 55, 91, 99, 62, 69, 91, 148]
-                    },
-                    {
-                        name: "Total",
-                        data: [101, 41, 35, 13, 79, 62, 69, 91, 148]
-                    },
+            // const chartOptions =
+            // {
+            //     series: [
+            //         {
+            //             name: "Fasilitas",
+            //             data: [101, 41, 35, 51, 49, 62, 69, 91, 148]
+            //         },
+            //         {
+            //             name: "Reguler",
+            //             data: [110, 31, 55, 91, 99, 62, 69, 91, 148]
+            //         },
+            //         {
+            //             name: "Total",
+            //             data: [101, 41, 35, 13, 79, 62, 69, 91, 148]
+            //         },
 
-                ],
-                chart: {
-                    height: 350,
-                    type: 'line', // This specifies that it's a line chart
+            //     ],
+            //     chart: {
+            //         height: 350,
+            //         type: 'line', // This specifies that it's a line chart
 
-                    zoom: {
-                        enabled: false
-                    }
-                },
-                dataLabels: {
-                    enabled: true
-                },
-                stroke: {
-                    curve: 'straight'
-                },
-                title: {
-                    text: 'Perkembangan Sertifikat Halal Berdasarkan Jenis',
-                    align: 'left'
-                },
-                grid: {
-                    row: {
-                        colors: ['#f3f3f3', 'transparent'], // alternating background colors
-                        opacity: 0.5
-                    },
-                },
-                xaxis: {
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-                }
-            };
+            //         zoom: {
+            //             enabled: false
+            //         }
+            //     },
+            //     dataLabels: {
+            //         enabled: true
+            //     },
+            //     stroke: {
+            //         curve: 'straight'
+            //     },
+            //     title: {
+            //         text: 'Perkembangan Sertifikat Halal Berdasarkan Jenis',
+            //         align: 'left'
+            //     },
+            //     grid: {
+            //         row: {
+            //             colors: ['#f3f3f3', 'transparent'], // alternating background colors
+            //             opacity: 0.5
+            //         },
+            //     },
+            //     xaxis: {
+            //         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+            //     }
+            // };
 
-            const chart = new window.ApexCharts(document.querySelector("#payment-records-chartx"), chartOptions);
-            chart.render();
+            // const chart = new window.ApexCharts(document.querySelector("#payment-records-chartx"), chartOptions);
+            // chart.render();
 
             // Cleanup function to destroy the chart when the component is unmounted
-            return () => {
-                chart.destroy();
-            };
+            // return () => {
+            //     chart.destroy();
+            // };
         }
     }, []);
     useEffect(() => {
         // Ensure ApexCharts is loaded before using it
-        if (window.ApexCharts) {
-            const chartOptions =
-            {
-                series: [
-                    {
-                        name: "Series 1",
-                        data: [101, 41, 35, 51, 49, 62, 69, 91, 148]
-                    },
+        // if (window.ApexCharts) {
+        //     const chartOptions =
+        //     {
+        //         series: [
+        //             {
+        //                 name: "Series 1",
+        //                 data: [101, 41, 35, 51, 49, 62, 69, 91, 148]
+        //             },
 
-                ],
-                chart: {
-                    height: 350,
-                    type: 'bar', // This specifies that it's a line chart
+        //         ],
+        //         chart: {
+        //             height: 350,
+        //             type: 'bar', // This specifies that it's a line chart
 
-                    zoom: {
-                        enabled: false
-                    }
-                },
-                dataLabels: {
-                    enabled: true
-                },
-                stroke: {
-                    curve: 'straight'
-                },
-                title: {
-                    text: 'Progress Sertifikat Halal Gratis Untuk Pelaku UMK',
-                    align: 'left'
-                },
-                grid: {
-                    row: {
-                        colors: ['#f3f3f3', 'transparent'], // alternating background colors
-                        opacity: 0.5
-                    },
-                },
-                xaxis: {
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-                }
-            };
+        //             zoom: {
+        //                 enabled: false
+        //             }
+        //         },
+        //         dataLabels: {
+        //             enabled: true
+        //         },
+        //         stroke: {
+        //             curve: 'straight'
+        //         },
+        //         title: {
+        //             text: 'Progress Sertifikat Halal Gratis Untuk Pelaku UMK',
+        //             align: 'left'
+        //         },
+        //         grid: {
+        //             row: {
+        //                 colors: ['#f3f3f3', 'transparent'], // alternating background colors
+        //                 opacity: 0.5
+        //             },
+        //         },
+        //         xaxis: {
+        //             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        //         }
+        //     };
 
-            const chart = new window.ApexCharts(document.querySelector("#payment-records-charts"), chartOptions);
-            chart.render();
+        //     const chart = new window.ApexCharts(document.querySelector("#payment-records-charts"), chartOptions);
+        //     chart.render();
 
-            // Cleanup function to destroy the chart when the component is unmounted
-            return () => {
-                chart.destroy();
-            };
-        }
+        //     // Cleanup function to destroy the chart when the component is unmounted
+        //     return () => {
+        //         chart.destroy();
+        //     };
+        // }
     }, []);
     const downloadJPG = () => {
         html2canvas(document.querySelector("#dwnjpg")).then(canvas => {
@@ -247,12 +247,14 @@ const Data = () => {
 
                                     </div>
                                     <div className="card-body custom-card-action p-0">
-                                        <div id="payment-records-chart"></div>
+                                        {/* <div id="payment-records-chart"></div> */}
+                                        <div><iframe src="https://metabase.kneks.go.id/public/dashboard/7caec5a5-4e6f-45c2-8d38-00286d5dc3ed" title="iframe1" width={`100%`} height={`800`} allowFullScreen></iframe></div>
                                     </div>
+
 
                                 </div>
                                 <div className="col-lg-12 pt-5">
-                                    <div className="row">
+                                    {/* <div className="row">
                                         <div className="col-lg-6">
                                             <div className="card stretch stretch-full">
                                                 <div className="card-body p-0">
@@ -329,7 +331,7 @@ const Data = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="col-lg-12 pt-5">
                                     <div className="row">
@@ -337,7 +339,7 @@ const Data = () => {
                                             <div className="card stretch stretch-full">
 
                                                 <div className="card-body custom-card-action p-0">
-                                                    <div id="payment-records-chartx"></div>
+                                                    {/* <div id="payment-records-chartx"></div> */}
                                                 </div>
 
                                             </div>
@@ -346,7 +348,7 @@ const Data = () => {
                                             <div className="card stretch stretch-full">
 
                                                 <div className="card-body custom-card-action p-0">
-                                                    <div id="payment-records-charts"></div>
+                                                    {/* <div id="payment-records-charts"></div> */}
                                                 </div>
 
                                             </div>
@@ -355,7 +357,7 @@ const Data = () => {
                                     </div>
                                 </div>
                                 <div className="col-lg-12 pt-5">
-                                    <div className="about-one-inner-x">
+                                    {/* <div className="about-one-inner-x">
                                         <div className="d-flex justify-content-between ">
 
                                             <h5 >Narasi</h5>
@@ -366,11 +368,11 @@ const Data = () => {
 
                                         </div>
                                         <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    </div>
+                                    </div> */}
 
                                 </div>
                                 <div className="col-lg-12 pt-5">
-                                    <div className="about-one-inner-x">
+                                    {/* <div className="about-one-inner-x">
                                         <div className="text-start">
 
                                             <h5 >Sumber Data</h5>
@@ -412,7 +414,7 @@ const Data = () => {
                                                 </tbody>
                                             </table>
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                 </div>
 
