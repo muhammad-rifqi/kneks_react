@@ -239,6 +239,19 @@ const KdeksDetail = () => {
         fetchPostsTentang()
 
     }, []);
+
+    const renderImage = (fileKey) => {
+        if (listdataKota?.[fileKey] !== null) {
+            return (
+                <img
+                    src={`${process.env.PUBLIC_URL}/${listdataKota?.[fileKey]}`}
+                    alt="img-59"
+                    className="img-fluid"
+                />
+            );
+        }
+        return null;
+    };
     return (
         <>
             <div className="page-wrapper">
@@ -317,7 +330,13 @@ const KdeksDetail = () => {
                         <div className="row row-gutter-y-40 text-center">
                             <div className="col-lg-12 col-xl-12">
                                 <div className="about-one-image">
-                                    <img src="/assets/image/image_28.jpg" alt="img-59" className="img-fluid" />
+                                    {renderImage('skFile')}
+                                    {renderImage('skFile2')}
+                                    {renderImage('skFile3')}
+                                    {renderImage('skFile4')}
+                                    {renderImage('skFile5')}
+                                    {renderImage('skFile6')}
+                                    {renderImage('skFile7')}
                                 </div>
                             </div>
                         </div>
@@ -337,7 +356,7 @@ const KdeksDetail = () => {
                                             <div className="col-lg-3 swiper-slide" key={item.id}>
                                                 <div className="berita-card">
                                                     <div className="berita-card-imgbox-direktorat-home">
-                                                        <a href={item.title ? `/berita-kegiatan/${convertToSlug(item.title)}` : ''}>
+                                                        <a href={item.title ? `/ berita - kegiatan / ${convertToSlug(item.title)}` : ''}>
                                                             <img src={item?.image} className="img-fluid" alt={item.title ? item.title : ''} />
                                                         </a>
                                                     </div>
@@ -364,14 +383,14 @@ const KdeksDetail = () => {
                                     <div className="swiper-button-next">
                                         <i className="fa-solid fa-chevron-right"></i>
                                     </div>
-                                </div>
+                                </div >
                             ) : (
                                 <p className="text-center">No posts available.</p>
                             )}
                         </div >
                     </div >
 
-                </section>
+                </section >
                 <section className="funfact-section-struktur-x">
                     <section className="funfact-section">
                         <div className="container">
@@ -906,7 +925,7 @@ const KdeksDetail = () => {
                     </div>
                 </section>
 
-            </div>
+            </div >
         </>
     )
 }
