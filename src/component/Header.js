@@ -89,6 +89,41 @@ const Header = () => {
       </div>
       <header className="header">
         <div className="main-menu sticky-header">
+        <div className="main-menu-top">
+            <div className="main-menu-right">
+              {/* <input
+                type="text"
+                value={searchTerm}
+                onChange={handleChange}
+                placeholder={t('pencarian')}
+
+                style={{ width: '180px', padding: '4px', marginRight: '8px', borderRadius: '4px', border: '1px solid #ccc', outline: 'none' }}
+              /> */}
+
+              <div className="search-box">
+                <a href="#t" className="search-toggler">
+                  <i className="flaticon-search-interface-symbol"></i>
+                </a>
+              </div>
+              <div className="search-box">
+                <img src="/assets/image/person-circle.svg" className="img-fluid" alt="img-person" />
+              </div>
+              <div className="topNav-right pr-2">
+                <ul>
+                  <li onClick={() => changeLanguage('id')} className={cookies.i18next === 'id' ? 'text-primary bg-white' : ''}>ID</li>
+                  <li className={cookies.i18next === 'en' ? 'text-primary bg-white' : ''}
+                  onClick={() => changeLanguage('en')}>EN</li>
+                </ul>
+              </div>
+
+              <div className="mobile-menu-button mobile-nav-toggler m-0">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+            </div>
+          </div>
           <div className="main-menu-inner">
             <div className="main-menu-left">
               <div className="main-menu-logo">
@@ -163,38 +198,6 @@ const Header = () => {
                   </ul>
                 </div>
               )}
-
-            </div>
-
-            <div className="main-menu-right">
-              {/* <input
-                type="text"
-                value={searchTerm}
-                onChange={handleChange}
-                placeholder={t('pencarian')}
-
-                style={{ width: '180px', padding: '4px', marginRight: '8px', borderRadius: '4px', border: '1px solid #ccc', outline: 'none' }}
-              /> */}
-
-              <div className="search-box">
-                <a href="#t" className="search-toggler">
-                  <i className="flaticon-search-interface-symbol"></i>
-                </a>
-              </div>
-              <div className="topNav-right pr-2">
-                <ul>
-                  <li><a href="#t" onClick={() => changeLanguage('en')} className={cookies.i18next === 'en' ? 'text-primary' : ''}>EN</a></li>
-                  <li><a href="#t" onClick={() => changeLanguage('id')} className={cookies.i18next === 'id' ? 'text-primary' : ''}>ID</a></li>
-                </ul>
-
-              </div>
-
-              <div className="mobile-menu-button mobile-nav-toggler m-0">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
             </div>
           </div>
         </div>
