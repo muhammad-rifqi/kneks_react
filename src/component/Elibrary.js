@@ -46,16 +46,6 @@ const Elibrabry = () => {
                 <section className="department-details-section">
                     <div className="container">
                         <div className="row">
-                            <div className="col-12 col-lg-12">
-                                {/* <input
-                                    type="text"
-                                    value={searchTerm}
-                                    onChange={handleChange}
-                                    placeholder="Cari..."
-                                    style={{ width: '500px', padding: '4px', borderRadius: '4px', border: '1px solid #ccc', marginBottom: '12px', outline: 'none' }}
-                                /> */}
-
-                            </div>
                             <div className="col-12 col-lg-3 col-xl-3">
                                 <div className="sidebar">
                                     <div className="sidebar-widget-list-inner">

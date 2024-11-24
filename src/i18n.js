@@ -175,7 +175,7 @@ const resources = {
 
             "rekomendasi": "Rekomendasi Agenda Lainnya",
             "sosialMedia": "Media Sosial",
-            "ePustaka": "E-Perpustaka",
+            "ePustaka": "E-Pustaka",
 
             "instansi": "Anggota KNEKS",
             "instansiIsi": "KNEKS beranggotakan 3 Menteri Koordinator, 7 Menteri, 3 Ketua lembaga pemerintah,",
