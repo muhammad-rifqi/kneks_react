@@ -89,7 +89,7 @@ const Header = () => {
       </div>
       <header className="header">
         <div className="main-menu sticky-header">
-        <div className="main-menu-top">
+          <div className="main-menu-top">
             <div className="main-menu-right">
               {/* <input
                 type="text"
@@ -106,13 +106,15 @@ const Header = () => {
                 </a>
               </div>
               <div className="search-box">
-                <img src="/assets/image/person-circle.svg" className="img-fluid" alt="img-person" />
+                <a href="https://webdev.rifhandi.com/register">
+                  <img src="/assets/image/person-circle.svg" className="img-fluid" alt="img-person" />
+                </a>
               </div>
               <div className="topNav-right pr-2">
                 <ul>
                   <li onClick={() => changeLanguage('id')} className={cookies.i18next === 'id' ? 'text-primary bg-white' : ''}>ID</li>
                   <li className={cookies.i18next === 'en' ? 'text-primary bg-white' : ''}
-                  onClick={() => changeLanguage('en')}>EN</li>
+                    onClick={() => changeLanguage('en')}>EN</li>
                 </ul>
               </div>
 
