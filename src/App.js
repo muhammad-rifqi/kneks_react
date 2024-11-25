@@ -52,6 +52,9 @@ import InfoTerkiniDumiDetail from './component/InfoTerkiniDumiDetail';
 import BeritaKegiatan from './component/BeritaKegiatan';
 import BeritaKegiatanDetail from './component/BeritaKegiatanDetail';
 import SearchHome from './component/search/SearchHome';
+import BeritaTerkini from './component/BeritaTerkini';
+import BeritaDirektorat from './component/BeritaDirektorat';
+import BeritaKdeks from './component/BeritaKdeks';
 
 
 
@@ -109,6 +112,9 @@ function AppContent() {
 
         <Route path="/info-terkini/detail" element={<InfoTerkiniDumiDetail />} />
         <Route path="/berita-kegiatan" element={<BeritaKegiatan />} />
+        <Route path="/berita-terkini" element={<BeritaTerkini />} />
+        <Route path="/berita-direktorat" element={<BeritaDirektorat />} />
+        <Route path="/berita-kdeks" element={<BeritaKdeks />} />
         <Route path="/berita-kegiatan/:slug" element={<BeritaKegiatanDetail />} />
         <Route path="/search" element={<SearchHome />} />
       </Routes>

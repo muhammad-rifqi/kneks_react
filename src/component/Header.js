@@ -170,18 +170,17 @@ const Header = () => {
                         <li><a href="/infrastruktur-ekosistem-syariah">{t('menu.infrastrukturEkosistem')}</a></li>
                       </ul>
                     </li>
-                    {/* <li className="has-dropdown">
+                    <li className="has-dropdown">
                       <a href="#t">{t('menu.beritaKegiatan')}</a>
                       <ul className="list-unstyled">
-                        <li><a href="/siaran-pers">{t('menu.siaranPers')}</a></li>
-                        <li><a href="/liputan-media">{t('menu.liputanMedia')}</a></li>
-                        <li><a href="/info-terkini">{t('menu.infoTerkini')}</a></li>
-                        <li><a href="/opini">{t('menu.opini')}</a></li>
+                        <li><a href="/berita-terkini">{t('menu.beritaTerkini')}</a></li>
+                        <li><a href="/berita-direktorat">{t('menu.beritaDirektorat')}</a></li>
+                        <li><a href="/berita-kdeks">{t('menu.beritaKdeks')}</a></li>
                       </ul>
-                    </li> */}
-                    <li className={` ${activeMenu === '/berita-kegiatan' ? 'active' : ''}`}>
-                      <a onClick={() => handleMenuClick('/berita-kegiatan')} href="/berita-kegiatan">{t('menu.beritaKegiatan')}</a>
                     </li>
+                    {/* <li className={` ${activeMenu === '/berita-kegiatan' ? 'active' : ''}`}>
+                      <a onClick={() => handleMenuClick('/berita-kegiatan')} href="/berita-kegiatan">{t('menu.beritaKegiatan')}</a>
+                    </li> */}
                     <li className={` ${activeMenu === '/agenda' ? 'active' : ''}`}>
                       <a onClick={() => handleMenuClick('/agenda')} href="/agenda">{t('menu.agenda')}</a>
                     </li>
