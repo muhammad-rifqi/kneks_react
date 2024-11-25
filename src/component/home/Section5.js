@@ -91,7 +91,7 @@ const Section5 = () => {
                     </div>
                 </div>
                 <Carousel className='custom-carousel' interval={3000}>
-                    {dataTabs.map((item) => {
+                    {dataTabs.slice(0,6).map((item) => {
                         return (
                             <Carousel.Item key={item.key}>
                                 <div className='row d-flex align-items-start chart-container'>
