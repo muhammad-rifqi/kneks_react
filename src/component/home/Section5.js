@@ -1,76 +1,85 @@
-import React, { useState } from "react";
-import { Tabs, Tab } from "react-bootstrap";
-import Bi from "./dashboard/Bi";
-import Bpjph from "./dashboard/Bpjph";
-import KemenkoPmk from "./dashboard/KemenkoPmk";
-import Kneks from "./dashboard/Kneks";
-import Ojk from "./dashboard/Ojk";
-import Blank from "./dashboard/Blank";
+import React, { useEffect, useState } from "react";
+// import { Tabs, Tab } from "react-bootstrap";
+// import Bi from "./dashboard/Bi";
+// import Bpjph from "./dashboard/Bpjph";
+// import KemenkoPmk from "./dashboard/KemenkoPmk";
+// import Kneks from "./dashboard/Kneks";
+// import Ojk from "./dashboard/Ojk";
+// import Blank from "./dashboard/Blank";
 import { useTranslation } from "react-i18next";
 import { Carousel } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 
-const dataTabs = [
-    {
-        key: "BI",
-        data: {
-            totalKegiatan: 12,
-            totalPeserta: "2.1K",
-            totalWilayah: 23,
-        },
-        // contents: <Bi />,
-    },
-    {
-        key: "BPJPH",
-        data: {
-            totalKegiatan: 12,
-            totalPeserta: "2.1K",
-            totalWilayah: 23,
-        },
-        // contents: <Bpjph />,
-    },
-    {
-        key: "KemenkoPMK",
-        data: {
-            totalKegiatan: 12,
-            totalPeserta: "2.1K",
-            totalWilayah: 23,
-        },
-        // contents: <KemenkoPmk />,
-    },
-    {
-        key: "KNEKS",
-        data: {
-            totalKegiatan: 12,
-            totalPeserta: "2.1K",
-            totalWilayah: 23,
-        },
-        // contents: <Kneks />,
-    },
-    {
-        key: "OJK",
-        data: {
-            totalKegiatan: 12,
-            totalPeserta: "2.1K",
-            totalWilayah: 23,
-        },
-        // contents: <Ojk />,
-    },
-    {
-        key: "(blank)",
-        data: {
-            totalKegiatan: 12,
-            totalPeserta: "2.1K",
-            totalWilayah: 23,
-        },
-        // contents: <Blank />,
-    },
-];
+// const dataTabs = [
+//     {
+//         key: "BI",
+//         data: {
+//             totalKegiatan: 12,
+//             totalPeserta: "2.1K",
+//             totalWilayah: 23,
+//         },
+//         // contents: <Bi />,
+//     },
+//     {
+//         key: "BPJPH",
+//         data: {
+//             totalKegiatan: 12,
+//             totalPeserta: "2.1K",
+//             totalWilayah: 23,
+//         },
+//         // contents: <Bpjph />,
+//     },
+//     {
+//         key: "KemenkoPMK",
+//         data: {
+//             totalKegiatan: 12,
+//             totalPeserta: "2.1K",
+//             totalWilayah: 23,
+//         },
+//         // contents: <KemenkoPmk />,
+//     },
+//     {
+//         key: "KNEKS",
+//         data: {
+//             totalKegiatan: 12,
+//             totalPeserta: "2.1K",
+//             totalWilayah: 23,
+//         },
+//         // contents: <Kneks />,
+//     },
+//     {
+//         key: "OJK",
+//         data: {
+//             totalKegiatan: 12,
+//             totalPeserta: "2.1K",
+//             totalWilayah: 23,
+//         },
+//         // contents: <Ojk />,
+//     },
+//     {
+//         key: "(blank)",
+//         data: {
+//             totalKegiatan: 12,
+//             totalPeserta: "2.1K",
+//             totalWilayah: 23,
+//         },
+//         // contents: <Blank />,
+//     },
+// ];
 
 const Section5 = () => {
     const { t } = useTranslation();
-    const [activeTab, setActiveTab] = useState("BI");
+    // const [activeTab, setActiveTab] = useState("BI");
+    const [dataTabs, setDataTab] = useState([]);
+    useEffect(()=>{
+        fetch(process.env.REACT_APP_API_URL + '/agenda_graph')
+        .then(resp => resp.json())
+        .then((rows) => {
+            setDataTab(rows);
+        })
 
+    })
+  
     return (
         <section className='funfact-section'>
             <div className='container-fluid'>

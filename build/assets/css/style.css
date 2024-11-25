@@ -1114,11 +1114,15 @@ a {
   display: none;
   margin-left: 30px;
   margin-right: 30px;
+  padding-left: 20px;
+  
 }
 
 @media (max-width: 1399px) {
   .mobile-menu-button {
     display: block;
+    padding-right: 20px;
+    padding-left: 0;
   }
 }
 
