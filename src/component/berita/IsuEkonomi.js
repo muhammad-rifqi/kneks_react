@@ -163,7 +163,7 @@ const IsuEkonomi = () => {
                                         <div className="col-lg-4 col-md-6" key={item.id}>
                                             <div className="berita-card">
                                                 <div className="berita-card-imgbox ">
-                                                    <a href={`/isu-ekonomi/${convertToSlug(item.title)}`}>
+                                                    <a href={`/isu-ekonomi/${item.id}/${convertToSlug(item.title)}`}>
                                                         <img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} />
                                                     </a>
                                                 </div>
@@ -173,7 +173,7 @@ const IsuEkonomi = () => {
                                                     </div>
                                                     <div className="event-card-title pb-4">
                                                         <h4>
-                                                            <a href={`/isu-ekonomi/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                            <a href={`/isu-ekonomi/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                         </h4>
                                                     </div>
                                                     <div className="event-card-info">

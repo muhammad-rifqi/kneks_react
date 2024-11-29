@@ -107,7 +107,7 @@ const Section7 = () => {
 									<div className="col-lg-3 col-xl-3 swiper-slide" key={item.id}>
 										<div className="berita-card-kdeks">
 											<div className="berita-card-imgbox-berita">
-												<a href={`/berita-terkait/${convertToSlug(item.title)}`}>
+												<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
 													<img src={item.image} className="img-fluid" alt={item.title} />
 												</a>
 											</div>
@@ -118,7 +118,7 @@ const Section7 = () => {
 												</div>
 												<div className="event-card-title pb-2">
 													<h4>
-														<a href={`/berita-terkait/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
+														<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
 													</h4>
 												</div>
 												<div className="event-card-info-direktorat">

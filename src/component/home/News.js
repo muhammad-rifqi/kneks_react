@@ -60,7 +60,7 @@ const News = () => {
 
 						posts.slice(0, 2).map((item) => (
 							<div className="col-md-6 col-lg-6" key={item.id}>
-								<a href={`/berita-terkait/${convertToSlug(item.title)}`}>
+								<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
 									<div className="card-box-b card-shadow news-box">
 										<div className="img-box-b-home">
 											<img src={item.image} alt={item.title} className="img-b img-fluid" />

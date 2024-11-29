@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 const BeritaTerkaitDetail = () => {
     dayjs.locale('id');
     const { t } = useTranslation()
-    const { slug } = useParams();
+    const { id,slug } = useParams();
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -32,9 +32,12 @@ const BeritaTerkaitDetail = () => {
                     const url = process.env.REACT_APP_API_URL;
                     const endpoint = process.env.REACT_APP_API_POST;
                     const responsei = await axios.get(`${url}${endpoint}`);
-                    const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
-
-                    // throw new Error("Error!");
+                    
+                    const foundItem = responsei.data.find(
+                        (post) =>
+                            post.id === Number(id) &&
+                            convertToSlug(post.title) === slug
+                    );
 
                     if (responsei) {
                         setItemx(responsei.data);
@@ -57,7 +60,7 @@ const BeritaTerkaitDetail = () => {
                 effectrun.current = true
             }
         }
-    }, [slug]);
+    }, [id,slug]);
     const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
     return (

@@ -9,7 +9,7 @@ import axios from 'axios';
 const IsuEkonomiDetail = () => {
     dayjs.locale('id');
 
-    const { slug } = useParams();
+    const { id, slug } = useParams();
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -31,7 +31,12 @@ const IsuEkonomiDetail = () => {
                     const url = process.env.REACT_APP_API_URL;
                     const endpoint = process.env.REACT_APP_API_POST;
                     const responsei = await axios.get(`${url}${endpoint}`);
-                    const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
+
+                    const foundItem = responsei.data.find(
+                        (post) =>
+                            post.id === Number(id) &&
+                            convertToSlug(post.title) === slug
+                    );
 
                     // throw new Error("Error!");
 
@@ -56,7 +61,7 @@ const IsuEkonomiDetail = () => {
                 effectrun.current = true
             }
         }
-    }, [slug]);
+    }, [id, slug]);
     const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
     return (

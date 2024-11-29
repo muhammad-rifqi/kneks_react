@@ -61,7 +61,7 @@ const BeritaKegiatanDetail = () => {
                 effectrun.current = true
             }
         }
-    }, [slug]);
+    }, [id,slug]);
     const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
     return (
