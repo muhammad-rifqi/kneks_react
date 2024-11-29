@@ -75,7 +75,7 @@ function AppContent() {
         <Route path="/struktur-organisasi" element={<StrukturOrganisasi />} />
         <Route path="/struktur-organisasi/:slug" element={<StrukturOrganisasiDetail />} />
         <Route path="/galeri-foto" element={<GaleriFoto />} />
-        <Route path="/galeri-foto/:slug" element={<GaleriFotoDetail />} />
+        <Route path="/galeri-foto/:id/:slug" element={<GaleriFotoDetail />} />
         <Route path="/galeri-video" element={<GaleriVideo />} />
         <Route path="/industri-produk-halal" element={<IndustriProdukHalal />} />
         <Route path="/jasa-keuangan-syariah" element={<JasakeuanganSyariah />} />

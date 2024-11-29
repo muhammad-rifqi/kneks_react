@@ -144,7 +144,7 @@ const GaleriFoto = () => {
                                     className='col-md-4 col-lg-4 d-flex'
                                     key={item.id}>
                                     <a
-                                        href={`/galeri-foto/${convertToSlug(
+                                        href={`/galeri-foto/${item.id}/${convertToSlug(
                                             item.title
                                         )}`}
                                         className='card-box-b card-shadow news-box flex-grow-1'>
