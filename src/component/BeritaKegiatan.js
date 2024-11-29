@@ -181,7 +181,7 @@ const BeritaKegiatan = () => {
                                             <div className='berita-card'>
                                                 <div className='berita-card-imgbox '>
                                                     <a
-                                                        href={`/berita-kegiatan/${convertToSlug(
+                                                        href={`/berita-kegiatan/${item.id}/${convertToSlug(
                                                             item.title
                                                         )}`}>
                                                          {/* <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} />  */}
@@ -203,7 +203,7 @@ const BeritaKegiatan = () => {
                                                     <div className='event-card-title pb-4'>
                                                         <h4>
                                                             <a
-                                                                href={`/berita-kegiatan/${convertToSlug(
+                                                                href={`/berita-kegiatan/${item.id}/${convertToSlug(
                                                                     item.title
                                                                 )}`}>
                                                                 {item.title}

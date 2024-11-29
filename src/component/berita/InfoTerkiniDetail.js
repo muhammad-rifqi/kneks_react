@@ -10,7 +10,7 @@ import VenoBox from 'venobox';
 const InfoTerkiniDetail = () => {
     dayjs.locale('id');
 
-    const { slug } = useParams();
+    const { id,slug } = useParams();
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -46,8 +46,12 @@ const InfoTerkiniDetail = () => {
                     const url = process.env.REACT_APP_API_URL;
                     const endpoint = process.env.REACT_APP_API_INFO_TERKINI;
                     const responsei = await axios.get(`${url}${endpoint}`);
-                    const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
-
+                    // const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
+                    const foundItem = responsei.data.find(
+                        (post) =>
+                            post.id === Number(id) &&
+                            convertToSlug(post.title) === slug
+                    );
                     // throw new Error("Error!");
                     console.log(responsei)
                     if (responsei) {

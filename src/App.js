@@ -115,7 +115,7 @@ function AppContent() {
         <Route path="/berita-terkini" element={<BeritaTerkini />} />
         <Route path="/berita-direktorat" element={<BeritaDirektorat />} />
         <Route path="/berita-kdeks" element={<BeritaKdeks />} />
-        <Route path="/berita-kegiatan/:slug" element={<BeritaKegiatanDetail />} />
+        <Route path="/berita-kegiatan/:id/:slug" element={<BeritaKegiatanDetail />} />
         <Route path="/search" element={<SearchHome />} />
       </Routes>
       <Footer />
