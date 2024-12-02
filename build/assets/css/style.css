@@ -9422,10 +9422,16 @@ SOCIAL MEDIA
   height: 290px;
   object-fit: cover;
 }
-/* .berita-card-imgbox-berita img {
-  height: 270px;
-  object-fit: cover;
-} */
+.berita-card-imgbox-berita img {
+  width: 100%; /* Make the image fill the container width */
+  height: 180px; /* Maintain aspect ratio */
+}
+
+.berita-card-imgbox-berita {
+  width: 100%; /* Set the container width to 100% */
+  overflow: hidden; /* Hide any overflow */
+}
+
 
 .event-card-info-berita {
   margin-bottom: 5px;
@@ -10774,14 +10780,14 @@ SOCIAL MEDIA
 .berita-content-direktorat-x {
   padding: 15px;
   background-color: var(--thm-white);
-  /* height: 160px; */
+  height: 180px;
 
   display: -webkit-box; /* Use flexbox */
   -webkit-box-orient: vertical; /* Set the orientation to vertical */
-  -webkit-line-clamp: 4; 
+  -webkit-line-clamp: 5; 
   overflow: hidden; /* Hide overflow */
   text-overflow: ellipsis !important; /* Show ellipsis */
-  width: 279px; 
+  width: 280px; 
   white-space: normal; /* Allow text to wrap */
 }
 
