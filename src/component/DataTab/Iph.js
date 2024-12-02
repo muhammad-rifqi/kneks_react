@@ -22,6 +22,9 @@ const Iph = () => {
         });
     };
 
+    const handleChange = (e) => {
+        document.getElementById("mtbs").setAttribute("src", e.target.value);
+    }
     return (
         <>
             <div id="dwnjpg">
@@ -34,9 +37,10 @@ const Iph = () => {
                             </Breadcrumb>
 
                             <Form.Group as={Col} className="align-self-center">
-                                <Form.Select defaultValue="Choose...">
-                                    <option>- Pilih -</option>
-                                    <option>Sertifikat Halal Umk</option>
+                                <Form.Select defaultValue="Choose..." onChange={ e => handleChange(e) }>
+                                    <option value="00">- Pilih -</option>
+                                    <option value="https://metabase.kneks.go.id/public/dashboard/7caec5a5-4e6f-45c2-8d38-00286d5dc3ed">Sertifikat Halal Umk</option>
+                                    <option value="https://metabase.kneks.go.id/public/dashboard/246d5269-bb1d-4444-ad43-798777951414">Sertifikat Halal Umk 2022</option>
                                 </Form.Select>
                             </Form.Group>
                         </Row>
@@ -49,7 +53,7 @@ const Iph = () => {
 
                     </div>
                     <div className="card-body custom-card-action p-0" id="dwnjpg">
-                        <iframe src="https://metabase.kneks.go.id/public/dashboard/7caec5a5-4e6f-45c2-8d38-00286d5dc3ed" title="iframe1" width={`100%`} height="1000"
+                        <iframe id="mtbs" src="https://metabase.kneks.go.id/public/dashboard/7caec5a5-4e6f-45c2-8d38-00286d5dc3ed" title="iframe1" width={`100%`} height="1000"
                             allowFullScreen></iframe>
                     </div>
 
