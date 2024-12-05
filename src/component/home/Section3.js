@@ -1,12 +1,19 @@
-import React from "react"
+import React ,{ useState, useEffect } from "react"
 import { useTranslation } from 'react-i18next';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Section3 = () => {
     const { t } = useTranslation();
+    useEffect(() => {
+        AOS.init({
+            duration: 2000
+        });
+    }, []);
     return (
         <section className="about-section">
             <div className="container">
                 <div className="row justify-content-between">
-                    <div className="col-lg-6">
+                    <div className="col-lg-6" data-aos="fade-left">
                         <div className="about-image">
                             <div className="about-image-inner img-one">
                                 <img src="/assets/image/about-1.svg" className="img-fluid" alt="img-2" />
@@ -17,7 +24,7 @@ const Section3 = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-6" data-aos="fade-right">
                         <div className="about-inner">
                             <div className="section-title-box">
                                 <div className="section-tagline">{t('pernekalkan')}</div>
