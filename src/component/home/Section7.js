@@ -12,7 +12,8 @@ import 'dayjs/locale/id';
 import 'dayjs/locale/en';
 
 import { useCookies } from 'react-cookie';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Section7 = () => {
 
 	const [cookies] = useCookies(['i18next']);
@@ -95,10 +96,16 @@ const Section7 = () => {
 			.replace(/\s+/g, '-')
 			.replace(/-+/g, '-');
 	};
+	useEffect(() => {
+        AOS.init({
+            duration: 1000
+        });
+    }, []);
+
 	return (
 		<section className="portfolio-section ">
 
-			<div className="portfolio-content">
+			<div className="portfolio-content" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
 				<div className="row m-0">
 					{posts.length > 0 ? (
 						<div className="swiper swiper-berita">

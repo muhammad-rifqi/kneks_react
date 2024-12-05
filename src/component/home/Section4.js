@@ -1,12 +1,19 @@
-import React from "react"
+import React , { useState, useEffect }from "react"
 import { useTranslation } from 'react-i18next';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Section4 = () => {
 	const {t} = useTranslation();
+	useEffect(() => {
+        AOS.init({
+            duration: 1000
+        });
+    }, []);
 	return (
 		<section className="service-section funfact-section-isu">
 			<div className="container">
 				<div className="row justify-content-between">
-					<div className="col-lg-6">
+					<div className="col-lg-6" data-aos="zoom-in-left">
 						<div className="section-title-box">
 							<div className="section-tagline-b-x" style={{color:'#F4EE5C'}}>{t('isuUtama')}</div>
 							<h2 className="section-title text-white">{t('isuJudul')}
@@ -19,7 +26,7 @@ const Section4 = () => {
 							</div>
 						</div>
 					</div>
-					<div className="col-lg-5">
+					<div className="col-lg-5" data-aos="zoom-in-right">
 						<div className="service-card">
 							<ul className="list-unstyled">
 								<li><a href="/isu-ekonomi">{t('isuPengembanganProdukIndustriHalal')} <i className="fa-solid fa-chevron-right"></i></a></li>

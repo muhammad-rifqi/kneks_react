@@ -3,7 +3,8 @@ import EventDetailModal from "../modal/MapsModal";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import Swal from "sweetalert2";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Section6 = () => {
     const { t } = useTranslation();
     // const [currentEvents, setCurrentEvents] = useState([]);
@@ -78,7 +79,11 @@ const Section6 = () => {
 			return "#c3c4c3"; // Warna untuk total tenant lebih dari 100
 		}
     };
-
+    useEffect(() => {
+        AOS.init({
+            duration: 1000
+        });
+    }, []);
     return (
         <>
             {/* <iframe width="100%" height="900" src="https://metabase.kneks.go.id/public/dashboard/112dd65e-3c50-4885-aba9-0f0356404fdf" title="oa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -91,12 +96,12 @@ const Section6 = () => {
             />
             <section className='mayor-section-maps'>
                 <div className='blog-box-x'>
-                    <div className='section-title-box text-center'>
+                    <div className='section-title-box text-center' data-aos="fade-up">
                         <h2 className='section-title'>{t("zona")}</h2>
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-md-12 col-lg-12 text-center '>
+                    <div className='col-md-12 col-lg-12 text-center ' data-aos="fade-down">
                         <div className='container maps-indo-x'>
                             <svg
                                 style={{ width: "100%", height: "auto" }}

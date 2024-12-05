@@ -6,6 +6,8 @@ import 'dayjs/locale/id';
 import 'dayjs/locale/en';
 import { useTranslation } from 'react-i18next';
 import { useCookies } from 'react-cookie';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Section8 = () => {
 	const { t } = useTranslation();
 	const [cookies] = useCookies(['i18next']);
@@ -47,10 +49,15 @@ const Section8 = () => {
             .replace(/\s+/g, '-')
             .replace(/-+/g, '-');
     };
+	useEffect(() => {
+        AOS.init({
+            duration: 1000
+        });
+    }, []);
 	return (
 		<section className="mayor-section">
 			<div className="container">
-				<div className="blog-box-x">
+				<div className="blog-box-x" data-aos="flip-up">
 					<div className="section-title-box text-center">
 						<h2 className="section-title">{t('rekomendasi')}</h2>
 					</div>
@@ -59,7 +66,7 @@ const Section8 = () => {
 					{posts.length > 0 ? (
 
 						posts.slice(0, 4).map((item) => (
-							<div className="col-lg-3 col-md-6" key={item?.id}>
+							<div className="col-lg-3 col-md-6" data-aos="fade-down-left" key={item?.id}>
 								<a href={`/agenda/${convertToSlug(item?.title)}`}>
 									<div className="card shadow p-3 mb-5 rounded card-agendas" style={{ background: `#146AA4`, color: `#ffffff` }}>
 										<div className="card-header" style={{ borderBottom: `1px solid #ffffff`, paddingBottom: `10px`, background: `#146AA4` }}><h4>{cookies.i18next === 'id' ? item.title : item.title_en}</h4></div>

@@ -9,7 +9,8 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Carousel } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 // const dataTabs = [
 //     {
 //         key: "BI",
@@ -79,18 +80,22 @@ const Section5 = () => {
         })
 
     })
-  
+    useEffect(() => {
+        AOS.init({
+            duration: 1000
+        });
+    }, []);
     return (
         <section className='funfact-section'>
             <div className='container-fluid'>
                 <div className='blog-box' style={{ paddingBottom: "50px" }}>
-                    <div className='section-title-box text-center'>
+                    <div className='section-title-box text-center' data-aos="flip-up">
                         <h2 className='section-title text-white'>
                             {t("event")}
                         </h2>
                     </div>
                 </div>
-                <Carousel className='custom-carousel' interval={3000}>
+                <Carousel className='custom-carousel' interval={3000} data-aos="fade-down-left">
                     {dataTabs.slice(0,6).map((item) => {
                         return (
                             <Carousel.Item key={item.key}>

@@ -6,7 +6,7 @@ const Section3 = () => {
     const { t } = useTranslation();
     useEffect(() => {
         AOS.init({
-            duration: 2000
+            duration: 1000
         });
     }, []);
     return (

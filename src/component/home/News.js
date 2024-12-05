@@ -6,7 +6,8 @@ import 'dayjs/locale/id';
 import 'dayjs/locale/en';
 import { useTranslation } from 'react-i18next';
 import { useCookies } from 'react-cookie';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const News = () => {
 	const [cookies] = useCookies(['i18next']);
 	const formatDate = (date, locale = 'en') => {
@@ -47,6 +48,11 @@ const News = () => {
 			.replace(/\s+/g, '-')
 			.replace(/-+/g, '-');
 	};
+	useEffect(() => {
+        AOS.init({
+            duration: 1000
+        });
+    }, []);
 	return (
 		<section className="news-section">
 			<div className="portfolio-content conatainer-fluid">
@@ -59,7 +65,7 @@ const News = () => {
 					{posts.length > 0 ? (
 
 						posts.slice(0, 2).map((item) => (
-							<div className="col-md-6 col-lg-6" key={item.id}>
+							<div className="col-md-6 col-lg-6" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" key={item.id}>
 								<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
 									<div className="card-box-b card-shadow news-box">
 										<div className="img-box-b-home">
