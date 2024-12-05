@@ -21,7 +21,7 @@ const { t } = useTranslation()
                             {/* konten sebelah kiri */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
-                                    <img src="assets/image/gallery/ekonomisyariah.svg" alt="ekonomisyariah" style={{ width: `90%` }} className="img-fluid" />
+                                    <img src="assets/image/ekonomisyariah.jpeg" alt="ekonomisyariah" style={{ width: `90%` }} className="img-fluid" />
                                 </div>
                             </div>
 
