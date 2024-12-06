@@ -92,7 +92,7 @@ const Home = () => {
             />
             <div className="selengkapnya">
               <a href={`/agenda/${convertToSlug('Opening Ceremony')}`} className="btn btn-primary btn-sm">
-                Lihat Selengkap
+                Lihat Selengkapnya
               </a>
             </div>
           </div>

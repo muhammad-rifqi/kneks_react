@@ -159,7 +159,7 @@ const resources = {
             "zona": "Zona KHAS",
             "bannerJudul": "Menyatukan langkah, Memajukan Negeri",
             "bannerIsi": "Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional ",
-            "tombol": "Lihat Selengkap",
+            "tombol": "Lihat Selengkapnya",
 
 
             "beritaTerkait": "Berita Terkait",
