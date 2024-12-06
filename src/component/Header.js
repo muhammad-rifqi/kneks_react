@@ -130,7 +130,7 @@ const Header = () => {
                   <img
                     src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/logoKneks.png"}
                     alt="logo"
-                    width="130"
+                    width="280"
                   />
                 </a>
               </div>
