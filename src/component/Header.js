@@ -91,14 +91,6 @@ const Header = () => {
         <div className="main-menu sticky-header">
           <div className="main-menu-top">
             <div className="main-menu-right">
-              {/* <input
-                type="text"
-                value={searchTerm}
-                onChange={handleChange}
-                placeholder={t('pencarian')}
-
-                style={{ width: '180px', padding: '4px', marginRight: '8px', borderRadius: '4px', border: '1px solid #ccc', outline: 'none' }}
-              /> */}
 
               <div className="search-box">
                 <a href="#t" className="search-toggler">
@@ -107,7 +99,10 @@ const Header = () => {
               </div>
               <div className="search-box">
                 <a href="https://webdev.rifhandi.com/register">
-                  <img src="/assets/image/person-circle.svg" className="img-fluid" alt="img-person" />
+                  <img src="/assets/image/person-circle.svg" class="rounded-circle" alt="img-person"
+                    width="32"
+                    height="32"
+                  />
                 </a>
               </div>
               <div className="topNav-right pr-2">
@@ -117,6 +112,7 @@ const Header = () => {
                     onClick={() => changeLanguage('en')}>EN</li>
                 </ul>
               </div>
+             
 
               <div className="mobile-menu-button mobile-nav-toggler m-0">
                 <span></span>
