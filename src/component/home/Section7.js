@@ -12,8 +12,7 @@ import 'dayjs/locale/id';
 import 'dayjs/locale/en';
 
 import { useCookies } from 'react-cookie';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 const Section7 = () => {
 
 	const [cookies] = useCookies(['i18next']);
@@ -96,11 +95,7 @@ const Section7 = () => {
 			.replace(/\s+/g, '-')
 			.replace(/-+/g, '-');
 	};
-	useEffect(() => {
-        AOS.init({
-            duration: 1000
-        });
-    }, []);
+	
 
 	return (
 		<section className="portfolio-section ">

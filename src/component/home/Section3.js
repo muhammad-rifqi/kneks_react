@@ -1,14 +1,9 @@
 import React ,{ useState, useEffect } from "react"
 import { useTranslation } from 'react-i18next';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 const Section3 = () => {
     const { t } = useTranslation();
-    useEffect(() => {
-        AOS.init({
-            duration: 1000
-        });
-    }, []);
+    
     return (
         <section className="about-section">
             <div className="container">

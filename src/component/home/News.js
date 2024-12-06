@@ -6,8 +6,7 @@ import 'dayjs/locale/id';
 import 'dayjs/locale/en';
 import { useTranslation } from 'react-i18next';
 import { useCookies } from 'react-cookie';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 const News = () => {
 	const [cookies] = useCookies(['i18next']);
 	const formatDate = (date, locale = 'en') => {
@@ -48,11 +47,7 @@ const News = () => {
 			.replace(/\s+/g, '-')
 			.replace(/-+/g, '-');
 	};
-	useEffect(() => {
-        AOS.init({
-            duration: 1000
-        });
-    }, []);
+
 	return (
 		<section className="news-section">
 			<div className="portfolio-content conatainer-fluid">

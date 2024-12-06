@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { InstagramEmbed } from 'react-social-media-embed';
 import { useTranslation } from 'react-i18next';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 const Section11 = () => {
 	const { t } = useTranslation();
-	useEffect(() => {
-        AOS.init({
-            duration: 1000
-        });
-    }, []);
+	
 	return (
 		<>
 			<section className="sm-section funfact-section-post">
@@ -20,8 +15,8 @@ const Section11 = () => {
 							<h2 className="section-title">{t('instagram')}</h2>
 						</div>
 					</div>
-					<div className="row m-0">
-						<div className="col-lg-4 col-md-4 col-sm-6 mb-4" data-aos="fade-down-right">
+					<div className="row m-0" data-aos="fade-down" >
+						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
 							<InstagramEmbed url="https://www.instagram.com/p/C6pooCOBSOA"
 								width="100%"
 
@@ -66,7 +61,7 @@ const Section11 = () => {
 			<section className="funfact-section-instan">
 				<div className="container">
 					<div className="row">
-						<div className="col-6 col-md-4 col-lg-2 pb-3" data-aos="fade-up" data-aos="fade-up">
+						<div className="col-6 col-md-4 col-lg-2 pb-3" data-aos="fade-up">
 							<a rel="noreferrer" href={`https://www.kemenkeu.go.id/`} target="_blank" className="component-service d-block ">
 								<div className="service-image ">
 									<img src="assets/image/kemenkeu.png" className="img-fluid " alt="kemenkeu" />

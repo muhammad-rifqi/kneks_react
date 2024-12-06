@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
-import React, { useState } from 'react'
+import React, { useState ,useEffect } from 'react'
 
 import Section1 from '../component/home/Section1'
 import Section2 from '../component/home/Section2'
@@ -20,7 +20,8 @@ import Section11 from '../component/home/Section11'
 // import Section13 from '../component/home/Section13';
 // import Section14 from '../component/home/Section14';
 
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Home = () => {
   const [isPopupActive, setPopupActive] = useState(true)
 
@@ -29,7 +30,12 @@ const Home = () => {
     setPopupActive(false)
   }
 
-  
+  useEffect(() => {
+    AOS.init({
+        duration: 1500,
+        once: true
+    });
+}, []);
   const convertToSlug = (title) => {
     if (!title) return "";
     return title

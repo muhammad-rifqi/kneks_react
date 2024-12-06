@@ -6,8 +6,7 @@ import 'dayjs/locale/id';
 import 'dayjs/locale/en';
 import { useTranslation } from 'react-i18next';
 import { useCookies } from 'react-cookie';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 const Section8 = () => {
 	const { t } = useTranslation();
 	const [cookies] = useCookies(['i18next']);
@@ -49,11 +48,7 @@ const Section8 = () => {
             .replace(/\s+/g, '-')
             .replace(/-+/g, '-');
     };
-	useEffect(() => {
-        AOS.init({
-            duration: 1000
-        });
-    }, []);
+	
 	return (
 		<section className="mayor-section">
 			<div className="container">

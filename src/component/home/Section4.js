@@ -1,14 +1,9 @@
 import React , { useState, useEffect }from "react"
 import { useTranslation } from 'react-i18next';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 const Section4 = () => {
 	const {t} = useTranslation();
-	useEffect(() => {
-        AOS.init({
-            duration: 1000
-        });
-    }, []);
+	
 	return (
 		<section className="service-section funfact-section-isu">
 			<div className="container">
