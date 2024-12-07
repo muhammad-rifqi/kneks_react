@@ -522,7 +522,7 @@ const KdeksDetail = () => {
                             </div >
                         </div>
                     </section>
-                    <section className="funfact-section">
+                    {/* <section className="funfact-section">
                         <div className="container">
                             <div className="funfact-box">
                                 <div className="section-title-box text-center">
@@ -611,7 +611,7 @@ const KdeksDetail = () => {
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> */}
                     <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
@@ -796,12 +796,12 @@ const KdeksDetail = () => {
                             </div>
 
                         </div>
-                        <div className="funfact-box pt-5">
+                        {/* <div className="funfact-box pt-5">
                             <div className="section-title-box text-center">
                                 <h2 className="section-title">{t('menu.galeriVideo')}</h2>
                             </div>
-                        </div>
-                        <div className="row row-gutter-y-40">
+                        </div> */}
+                        {/* <div className="row row-gutter-y-40">
                             <section className="video-section-x">
                                 <div className="container">
                                     <div className="row row-gutter-y-40">
@@ -921,7 +921,7 @@ const KdeksDetail = () => {
                                     </div>
                                 </div>
                             </section>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
 
