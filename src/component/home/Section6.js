@@ -9,7 +9,7 @@ const Section6 = () => {
     // const [currentEvents, setCurrentEvents] = useState([]);
     const [showDetailModal, setShowDetailModal] = useState(false);
     // const [selectedEvent, setSelectedEvent] = useState(null);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
     const [dataKhas, setDataKhas] = useState([]);
     const [selectedItem, setSelectedItem] = useState(null);
     const [selectedZona, setSelectedZona] = useState(null);
@@ -26,7 +26,7 @@ const Section6 = () => {
     useEffect(() => {
         // Function to fetch posts
         const fetchPosts = async () => {
-            setLoading(true);
+            // setLoading(true);
             try {
                 const url = process.env.REACT_APP_API_URL;
                 const endpoint = process.env.REACT_APP_API_ZONA_KHAS;
@@ -40,7 +40,7 @@ const Section6 = () => {
                     text: err,
                 });
             } finally {
-                setLoading(false);
+                // setLoading(false);
             }
         };
 
