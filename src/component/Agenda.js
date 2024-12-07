@@ -237,16 +237,6 @@ const Agenda = () => {
                                 </Card>
                             </Col>
                         </Row>
-                    </div>
-                </section>
-                <EventDetailModal
-                    show={showDetailModal}
-                    handleClose={() => setShowDetailModal(false)}
-                    event={selectedEvent}
-                />
-
-                <section className="about-one-section">
-                    <div className="container-md">
                         <Row>
                             <Col lg={12} sm={12}>
                                 <AgendaMap />
@@ -254,8 +244,11 @@ const Agenda = () => {
                         </Row>
                     </div>
                 </section>
-
-
+                <EventDetailModal
+                    show={showDetailModal}
+                    handleClose={() => setShowDetailModal(false)}
+                    event={selectedEvent}
+                />
             </div>
 
 
