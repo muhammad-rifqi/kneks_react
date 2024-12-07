@@ -7,40 +7,40 @@ import { useTranslation } from "react-i18next";
 const StrukturOrganisasi = () => {
 	const { t } = useTranslation()
 	const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-        const fetchPosts = async () => {
-            setLoading(true);
-            try {
-                const url = process.env.REACT_APP_API_URL;
-                const endpoint = process.env.REACT_APP_API_STUKTUR_ORGANISASI;
-                const response = await axios.get(`${url}${endpoint}`);
-                setPosts(response.data);
-            } catch (err) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: err,
-                });
-            } finally {
-                setLoading(false);
-            }
-        };
+		const fetchPosts = async () => {
+			setLoading(true);
+			try {
+				const url = process.env.REACT_APP_API_URL;
+				const endpoint = process.env.REACT_APP_API_STUKTUR_ORGANISASI;
+				const response = await axios.get(`${url}${endpoint}`);
+				setPosts(response.data.slice(0, 6));
+			} catch (err) {
+				Swal.fire({
+					icon: "error",
+					title: "Oops...",
+					text: err,
+				});
+			} finally {
+				setLoading(false);
+			}
+		};
 
-        fetchPosts(); // Call fetchPosts function when component mounts
+		fetchPosts(); // Call fetchPosts function when component mounts
 
-    }, []);
+	}, []);
 
 	const convertToSlug = (title) => {
-        if (!title) return ""; // Handle null or undefined title
-        return title
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, "")
-            .replace(/\s+/g, "-")
-            .replace(/-+/g, "-");
-    };
+		if (!title) return ""; // Handle null or undefined title
+		return title
+			.toLowerCase()
+			.trim()
+			.replace(/[^\w\s-]/g, "")
+			.replace(/\s+/g, "-")
+			.replace(/-+/g, "-");
+	};
 	return (
 		<>
 			<div className="page-wrapper">
@@ -67,29 +67,127 @@ const StrukturOrganisasi = () => {
 								</div>
 							</div>
 							{loading ? (
-                                Array(4).fill().map((_, index) => (
-                                    <div className="col-12 col-md-6 col-xl-3" key={index}>
-                                        <SkeletonCardBerita />
-                                    </div>
-                                ))
-                            ) : (
-                                posts.slice(0,6).map((item) => (
-								    <div className="col-12 col-md-6 col-xl-3" key={item.id}>
-									    <div className="team-card">
-										    <div className="team-card-img">
-											    <a href={`/struktur-organisasi/${convertToSlug(item.name)}`}><img src={item.photo ? `${item.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
-											    <div className="team-card-icon">
-												    {/* Social Media Icons */}
-											    </div>
-										    </div>
-										    <div className="team-card-content">
-											    <h4><a href={`/struktur-organisasi/${convertToSlug(item.name)}`}>{item.name}</a></h4>
-											    <p>{item.position}</p>
-										    </div>
-									    </div>
-								    </div>
-							    ))
-                            )}
+								Array(4).fill().map((_, index) => (
+									<div className="col-12 col-md-6 col-xl-3" key={index}>
+										<SkeletonCardBerita />
+									</div>
+								))
+							) : (
+								// posts.slice(0,6).map((item) => (
+								// <div className="col-12 col-md-6 col-xl-3" key={item.id}>
+								<div className="tree" style={{marginTop : '-30px', backgroundColor : 'white'}}>
+									<li>
+										<ul>
+											<li><a href="#test">
+												{/* <div className="team-card"> */}
+												<div className="team-card">
+													{/* <div className="team-card-img"> */}
+													<div>
+														<a href={`/struktur-organisasi/${convertToSlug(posts[0]?.name)}`}><img src={posts[0]?.photo ? `${posts[0]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40"  width="80"/></a>
+														<div className="team-card-icon">
+															{/* Social Media Icons */}
+														</div>
+													</div>
+													<div className="team-card-content">
+														<h5 style={{fontSize : '10px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[0]?.name)}`}>{posts[0]?.name}</a></h5>
+														<p style={{fontSize : '10px', fontWeight : 'bold'}}>{posts[0]?.position}</p>
+													</div>
+												</div>
+											</a>
+												<ul>
+													<li><a href="#test">
+														{/* <div className="team-card"> */}
+														<div className="team-card">
+															{/* <div className="team-card-img"> */}
+															<div>
+																<a href={`/struktur-organisasi/${convertToSlug(posts[1]?.name)}`}><img src={posts[1]?.photo ? `${posts[1]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
+																<div className="team-card-icon">
+																	{/* Social Media Icons */}
+																</div>
+															</div>
+															<div className="team-card-content">
+																<p style={{fontSize : '9px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[1]?.name)}`}>{posts[1]?.name}</a></p>
+																<p style={{fontSize : '9px', fontWeight : 'bold'}}>{posts[1]?.position}</p>
+															</div>
+														</div>
+													</a>
+													</li>
+													<li><a href="#test">
+														{/* <div className="team-card"> */}
+														<div className="team-card">
+															{/* <div className="team-card-img"> */}
+															<div>
+																<a href={`/struktur-organisasi/${convertToSlug(posts[2]?.name)}`}><img src={posts[2]?.photo ? `${posts[2]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
+																<div className="team-card-icon">
+																	{/* Social Media Icons */}
+																</div>
+															</div>
+															<div className="team-card-content">
+																<p style={{fontSize : '9px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[2]?.name)}`}>{posts[2]?.name}</a></p>
+																<p style={{fontSize : '9px', fontWeight : 'bold'}}>{posts[2]?.position}</p>
+															</div>
+														</div>
+													</a>
+													</li>
+													<li><a href="#test">
+														{/* <div className="team-card"> */}
+														<div className="team-card">
+															{/* <div className="team-card-img"> */}
+															<div>
+																<a href={`/struktur-organisasi/${convertToSlug(posts[3]?.name)}`}><img src={posts[3]?.photo ? `${posts[3]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
+																<div className="team-card-icon">
+																	{/* Social Media Icons */}
+																</div>
+															</div>
+															<div className="team-card-content">
+																<p style={{fontSize : '9px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[3]?.name)}`}>{posts[3]?.name}</a></p>
+																<p style={{fontSize : '9px', fontWeight : 'bold'}}>{posts[3]?.position}</p>
+															</div>
+														</div>
+
+													</a>
+													</li>
+													<li><a href="#test">
+														{/* <div className="team-card"> */}
+														<div className="team-card">
+															{/* <div className="team-card-img"> */}
+															<div>
+																<a href={`/struktur-organisasi/${convertToSlug(posts[4]?.name)}`}><img src={posts[4]?.photo ? `${posts[4]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
+																<div className="team-card-icon">
+																	{/* Social Media Icons */}
+																</div>
+															</div>
+															<div className="team-card-content">
+																<p style={{fontSize : '9px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[4]?.name)}`}>{posts[4]?.name}</a></p>
+																<p style={{fontSize : '9px', fontWeight : 'bold'}}>{posts[4]?.position}</p>
+															</div>
+														</div>
+													</a>
+													</li>
+													<li><a href="#test">
+														{/* <div className="team-card"> */}
+														<div className="team-card">
+															{/* <div className="team-card-img"> */}
+															<div>
+																<a href={`/struktur-organisasi/${convertToSlug(posts[5]?.name)}`}><img src={posts[5]?.photo ? `${posts[5]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
+																<div className="team-card-icon">
+																	{/* Social Media Icons */}
+																</div>
+															</div>
+															<div className="team-card-content">
+																<p style={{fontSize : '9px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[5]?.name)}`}>{posts[5]?.name}</a></p>
+																<p style={{fontSize : '9px', fontWeight : 'bold'}}>{posts[5]?.position}</p>
+															</div>
+														</div>
+													</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</div>
+								// ))
+							)}
 						</div>
 					</div>
 				</section>
