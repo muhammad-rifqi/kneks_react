@@ -8,7 +8,7 @@ const Section3 = () => {
         <section className="about-section">
             <div className="container">
                 <div className="row justify-content-between">
-                    <div className="col-lg-6" data-aos="fade-left">
+                    <div className="col-lg-6" data-aos="fade-up">
                         <div className="about-image">
                             <div className="about-image-inner img-one">
                                 <img src="/assets/image/about-1.svg" className="img-fluid" alt="img-2" />
@@ -19,7 +19,7 @@ const Section3 = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6" data-aos="fade-right">
+                    <div className="col-lg-6" data-aos="fade-up">
                         <div className="about-inner">
                             <div className="section-title-box">
                                 <div className="section-tagline">{t('pernekalkan')}</div>
