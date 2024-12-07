@@ -806,8 +806,8 @@ a {
 .topNav-right li {
   display: inline-block;
   color: var(--thm-secondary);
-  font-size: 16px;
-  padding: 10px;
+  font-size: 14px;
+  padding: 4px;
   cursor: pointer;
 }
 
@@ -1000,7 +1000,7 @@ a {
   padding: 38px 0;
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
   position: relative;
   color: var(--thm-gray);
@@ -1166,11 +1166,11 @@ a {
 
 a.search-toggler {
   display: block;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   background-color: var(--thm-white);
-  line-height: 45px;
+  line-height: 35px;
   text-align: center;
 }
 
@@ -1180,8 +1180,9 @@ a.search-toggler {
 
 .search-box i {
   color: var(--thm-black);
-  font-size: 20px;
-  line-height: 2.5;
+  font-size: 15px;
+  line-height: 1;
+  
 }
 
 .main-menu-right-button .btn-primary {
