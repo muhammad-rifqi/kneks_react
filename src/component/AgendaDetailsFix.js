@@ -185,13 +185,13 @@ const AgendaDetailsFix = () => {
                         <div className="row row-gutter-y-30 d-flex justify-content-center">
 
                             <div className="col-lg-12">
-                                <div className="row ">
+                                {/* <div className="row ">
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
-                                            {/* <div className="team-card-img-x">
+                                            <div className="team-card-img-x">
                                                 <img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" />
                                                 
-                                                </div> */}
+                                                </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
@@ -205,10 +205,10 @@ const AgendaDetailsFix = () => {
                                     </div>
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
-                                            {/* <div className="team-card-img-x">
+                                            <div className="team-card-img-x">
                                                 <img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" />
                                                 
-                                                </div> */}
+                                                </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
@@ -222,10 +222,10 @@ const AgendaDetailsFix = () => {
                                     </div>
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
-                                            {/* <div className="team-card-img-x">
+                                            <div className="team-card-img-x">
                                                 <img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" />
                                                 
-                                                </div> */}
+                                                </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
@@ -239,10 +239,10 @@ const AgendaDetailsFix = () => {
                                     </div>
                                     <div className="col-12 col-md-6 col-xl-3">
                                         <div className="team-card-x">
-                                            {/* <div className="team-card-img-x">
+                                            <div className="team-card-img-x">
                                                 <img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" />
                                                 
-                                                </div> */}
+                                                </div>
                                             <div className="team-card-content-x">
                                                 <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
                                                 <div className="d-flex justify-content-between align-items-end">
@@ -255,7 +255,7 @@ const AgendaDetailsFix = () => {
                                         </div>
                                     </div>
 
-                                </div>
+                                </div> */}
                                 <div className="row row-gutter-y-30 d-flex justify-content-center pt-5">
                                     <div className="col-md-3 col-lg-3">
                                         <a href={`${process.env.PUBLIC_URL}/assets/image/berita2.jpeg`} className="my-image-links-foto" data-gall="gallery01">
@@ -294,7 +294,7 @@ const AgendaDetailsFix = () => {
                                         </a>
                                     </div>
                                 </div>
-                                <section className="video-section-x">
+                                {/* <section className="video-section-x">
                                     <div className="row row-gutter-y-40">
                                         <div className="col-md-3 col-lg-3">
                                             <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-image-links-video" data-autoplay="true" data-vbtype="video">
@@ -358,7 +358,7 @@ const AgendaDetailsFix = () => {
                                         </div>
 
                                     </div>
-                                </section>
+                                </section> */}
                                 <section className="department-all">
                                     <div className="container">
                                         <div className="blog-box-x">
