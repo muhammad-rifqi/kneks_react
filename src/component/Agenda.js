@@ -24,6 +24,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import AgendaMap from "./AgendaMap";
+
+
 const Agenda = () => {
     const [showDetailModal, setShowDetailModal] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState(null);
@@ -191,10 +194,10 @@ const Agenda = () => {
                                     <Card.Body className="d-flex justify-content-center">
                                         <ul>
                                             {
-                                                (   searchDataCari.length > 0) ?
+                                                (searchDataCari.length > 0) ?
                                                     searchDataCari.map((rrr) => {
                                                         return (
-                                                            <li key={rrr?.id}> <a href={`/agenda/${convertToSlug(rrr?.title)}`}>{rrr?.title} - {rrr?.organizer}</a> 
+                                                            <li key={rrr?.id}> <a href={`/agenda/${convertToSlug(rrr?.title)}`}>{rrr?.title} - {rrr?.organizer}</a>
                                                             </li>
                                                         );
                                                     })
@@ -241,7 +244,21 @@ const Agenda = () => {
                     handleClose={() => setShowDetailModal(false)}
                     event={selectedEvent}
                 />
+
+                <section className="about-one-section">
+                    <div className="container-md">
+                        <Row>
+                            <Col lg={12} sm={12}>
+                                <AgendaMap />
+                            </Col>
+                        </Row>
+                    </div>
+                </section>
+
+
             </div>
+
+
         </>
     );
 };

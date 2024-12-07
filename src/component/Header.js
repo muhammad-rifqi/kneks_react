@@ -99,7 +99,7 @@ const Header = () => {
               </div>
               <div className="search-box">
                 <a href="https://webdev.rifhandi.com/register">
-                  <img src="/assets/image/person-circle.svg" class="rounded-circle" alt="img-person"
+                  <img src="/assets/image/person-circle.svg" className="rounded-circle" alt="img-person"
                     width="32"
                     height="32"
                   />

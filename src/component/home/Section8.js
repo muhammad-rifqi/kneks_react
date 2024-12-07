@@ -82,8 +82,11 @@ const Section8 = () => {
 						<p className="text-center">No posts available.</p>
 					)}
 				</div>
-
-
+				<div className="selengkapnya" data-aos="fade-down-left" style={{textAlign : 'center' }}>
+					<a href={`/agenda`} className="btn btn-primary btn-sm" style={{backgroundColor: "#006699"}}>
+						Lihat Selengkapnya
+					</a>
+            	</div>
 			</div>
 		</section >
 	)
