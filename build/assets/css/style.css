@@ -3746,24 +3746,24 @@ a.search-toggler {
   background-repeat: no-repeat;
   background-color: var(--thm-black);
   background-size: cover;
-  padding-top: 122px;
-  padding-bottom: 122px;
+  padding-top: 70px;
+  padding-bottom: 85px;
 }
 .page-banner-kdeks {
   background-image: url("../image/slide.png");
   background-repeat: no-repeat;
   background-color: var(--thm-black);
   background-size: cover;
-  padding-top: 122px;
-  padding-bottom: 122px;
+  padding-top: 70px;
+  padding-bottom: 85px;
 }
 .page-banner {
   background-image: url("../image/page-banner.svg");
   background-repeat: no-repeat;
   background-color: var(--thm-black);
   background-size: cover;
-  padding-top: 122px;
-  padding-bottom: 122px;
+  padding-top: 70px;
+  padding-bottom: 85px;
 }
 
 .page-breadcrumbs ul {
@@ -3790,7 +3790,7 @@ a.search-toggler {
 }
 
 .page-banner-title h3 {
-  font-size: 60px;
+  font-size: 80px;
   text-align: center;
   margin-bottom: 0px;
   color: var(--thm-white);
@@ -3798,7 +3798,7 @@ a.search-toggler {
 
 @media (max-width: 1199px) {
   .page-banner-title h3 {
-    font-size: 50px;
+    font-size: 70px;
   }
 }
 
