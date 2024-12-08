@@ -73,92 +73,110 @@ const StrukturOrganisasi = () => {
 									</div>
 								))
 							) : (
-
-								<div className="tree" style={{ marginTop: '-30px', backgroundColor: 'white' }}>
+								// posts.slice(0,6).map((item) => (
+								// <div className="col-12 col-md-6 col-xl-3" key={item.id}>
+								<div className="tree" style={{marginTop : '-30px', backgroundColor : 'white'}}>
 									<li>
 										<ul>
 											<li><a href="#test">
-												<div>
+												{/* <div className="team-cardx"> */}
+												<div className="team-cardx">
+													{/* <div className="team-cardx-img"> */}
 													<div >
-														<a href={`/struktur-organisasi/${convertToSlug(posts[0]?.name)}`}><img src={posts[0]?.photo ? `${posts[0]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
+														<a href={`/struktur-organisasi/${convertToSlug(posts[0]?.name)}`}><img src={posts[0]?.photo ? `${posts[0]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40"  width="80"/></a>
+														<div className="team-cardx-icon">
+															{/* Social Media Icons */}
+														</div>
 													</div>
-													<div>
-														<h5 style={{ fontSize: '10px' }}><a href={`/struktur-organisasi/${convertToSlug(posts[0]?.name)}`}>{posts[0]?.name}</a></h5>
-														<p style={{ fontSize: '10px', fontWeight: 'bold' }}>{posts[0]?.position}</p>
+													<div className="team-cardx-content mt-3">
+														<h5 style={{fontSize : '10px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[0]?.name)}`}>{posts[0]?.name}</a></h5>
+														<p style={{fontSize : '10px', fontWeight : 'bold'}}>{posts[0]?.position}</p>
 													</div>
 												</div>
 											</a>
 												<ul>
 													<li><a href="#test">
-														<div>
+														{/* <div className="team-cardx"> */}
+														<div className="team-cardx">
+															{/* <div className="team-cardx-img"> */}
 															<div>
 																<a href={`/struktur-organisasi/${convertToSlug(posts[1]?.name)}`}><img src={posts[1]?.photo ? `${posts[1]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
-																
+																<div className="team-cardx-icon">
+																	{/* Social Media Icons */}
+																</div>
 															</div>
-															<div>
-																<p style={{ fontSize: '9px' }}><a href={`/struktur-organisasi/${convertToSlug(posts[1]?.name)}`}>{posts[1]?.name}</a></p>
-																<p style={{ fontSize: '9px', fontWeight: 'bold' }}>{posts[1]?.position}</p>
+															<div className="team-cardx-content">
+																<p style={{fontSize : '9px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[1]?.name)}`}>{posts[1]?.name}</a></p>
+																<p style={{fontSize : '9px', fontWeight : 'bold'}}>{posts[1]?.position}</p>
 															</div>
 														</div>
 													</a>
 													</li>
 													<li><a href="#test">
-														
-														<div>
-															
+														{/* <div className="team-cardx"> */}
+														<div className="team-cardx">
+															{/* <div className="team-cardx-img"> */}
 															<div>
 																<a href={`/struktur-organisasi/${convertToSlug(posts[2]?.name)}`}><img src={posts[2]?.photo ? `${posts[2]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
-																
+																<div className="team-cardx-icon">
+																	{/* Social Media Icons */}
+																</div>
 															</div>
-															<div>
-																<p style={{ fontSize: '9px' }}><a href={`/struktur-organisasi/${convertToSlug(posts[2]?.name)}`}>{posts[2]?.name}</a></p>
-																<p style={{ fontSize: '9px', fontWeight: 'bold' }}>{posts[2]?.position}</p>
+															<div className="team-cardx-content">
+																<p style={{fontSize : '9px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[2]?.name)}`}>{posts[2]?.name}</a></p>
+																<p style={{fontSize : '9px', fontWeight : 'bold'}}>{posts[2]?.position}</p>
 															</div>
 														</div>
 													</a>
 													</li>
 													<li><a href="#test">
-														
-														<div>
-														
+														{/* <div className="team-cardx"> */}
+														<div className="team-cardx">
+															{/* <div className="team-cardx-img"> */}
 															<div>
 																<a href={`/struktur-organisasi/${convertToSlug(posts[3]?.name)}`}><img src={posts[3]?.photo ? `${posts[3]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
-																
+																<div className="team-cardx-icon">
+																	{/* Social Media Icons */}
+																</div>
 															</div>
-															<div>
-																<p style={{ fontSize: '9px' }}><a href={`/struktur-organisasi/${convertToSlug(posts[3]?.name)}`}>{posts[3]?.name}</a></p>
-																<p style={{ fontSize: '9px', fontWeight: 'bold' }}>{posts[3]?.position}</p>
+															<div className="team-cardx-content">
+																<p style={{fontSize : '9px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[3]?.name)}`}>{posts[3]?.name}</a></p>
+																<p style={{fontSize : '9px', fontWeight : 'bold'}}>{posts[3]?.position}</p>
 															</div>
 														</div>
 
 													</a>
 													</li>
 													<li><a href="#test">
-														
-														<div >
-															
+														{/* <div className="team-cardx"> */}
+														<div className="team-cardx">
+															{/* <div className="team-cardx-img"> */}
 															<div>
 																<a href={`/struktur-organisasi/${convertToSlug(posts[4]?.name)}`}><img src={posts[4]?.photo ? `${posts[4]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
-																
+																<div className="team-cardx-icon">
+																	{/* Social Media Icons */}
+																</div>
 															</div>
-															<div>
-																<p style={{ fontSize: '9px' }}><a href={`/struktur-organisasi/${convertToSlug(posts[4]?.name)}`}>{posts[4]?.name}</a></p>
-																<p style={{ fontSize: '9px', fontWeight: 'bold' }}>{posts[4]?.position}</p>
+															<div className="team-cardx-content">
+																<p style={{fontSize : '9px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[4]?.name)}`}>{posts[4]?.name}</a></p>
+																<p style={{fontSize : '9px', fontWeight : 'bold'}}>{posts[4]?.position}</p>
 															</div>
 														</div>
 													</a>
 													</li>
 													<li><a href="#test">
-														
-														<div >
-															
+														{/* <div className="team-cardx"> */}
+														<div className="team-cardx">
+															{/* <div className="team-cardx-img"> */}
 															<div>
 																<a href={`/struktur-organisasi/${convertToSlug(posts[5]?.name)}`}><img src={posts[5]?.photo ? `${posts[5]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
-																
+																<div className="team-cardx-icon">
+																	{/* Social Media Icons */}
+																</div>
 															</div>
-															<div>
-																<p style={{ fontSize: '9px' }}><a href={`/struktur-organisasi/${convertToSlug(posts[5]?.name)}`}>{posts[5]?.name}</a></p>
-																<p style={{ fontSize: '9px', fontWeight: 'bold' }}>{posts[5]?.position}</p>
+															<div className="team-cardx-content">
+																<p style={{fontSize : '9px'}}><a href={`/struktur-organisasi/${convertToSlug(posts[5]?.name)}`}>{posts[5]?.name}</a></p>
+																<p style={{fontSize : '9px', fontWeight : 'bold'}}>{posts[5]?.position}</p>
 															</div>
 														</div>
 													</a>
@@ -168,7 +186,7 @@ const StrukturOrganisasi = () => {
 										</ul>
 									</li>
 								</div>
-								
+								// ))
 							)}
 						</div>
 					</div>

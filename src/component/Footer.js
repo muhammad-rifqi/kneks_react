@@ -246,34 +246,34 @@ const Footer = () => {
                             onMouseEnter={() => setHoveredSubItem('subItem11')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/siaran-pers" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem11')}>
-                              {t('menu.siaranPers')}
+                            <a href="/berita-terkini" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem11')}>
+                              {t('menu.beritaTerkini')}
                             </a>
                           </li>
                           <li
                             onMouseEnter={() => setHoveredSubItem('subItem12')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/liputan-media" style={submenuItemStyle(hoveredSubItem === 'subItem12')}>
-                              {t('menu.liputanMedia')}
+                            <a href="/berita-direktorat" style={submenuItemStyle(hoveredSubItem === 'subItem12')}>
+                              {t('menu.beritaDirektorat')}
                             </a>
                           </li>
                           <li
                             onMouseEnter={() => setHoveredSubItem('subItem13')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/info-terkini" style={submenuItemStyle(hoveredSubItem === 'subItem13')}>
-                              {t('menu.infoTerkini')}
+                            <a href="/berita-kdeks" style={submenuItemStyle(hoveredSubItem === 'subItem13')}>
+                              {t('menu.beritaKdeks')}
                             </a>
                           </li>
-                          <li
+                          {/* <li
                             onMouseEnter={() => setHoveredSubItem('subItem14')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
                             <a href="/opini" style={submenuItemStyle(hoveredSubItem === 'subItem14')}>
                               {t('menu.opini')}
                             </a>
-                          </li>
+                          </li> */}
 
                         </ul>
                       </li>
