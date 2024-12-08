@@ -4,12 +4,13 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
 import "dayjs/locale/id";
-
+import FormControl from 'react-bootstrap/FormControl';
 
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
-import DatePicker from "react-multi-date-picker"
-import transition from "react-element-popper/animations/transition"
+
+import DatePicker from "react-datepicker";
+
 import { useTranslation } from "react-i18next";
 const GaleriFoto = () => {
     const { t } = useTranslation()
@@ -17,7 +18,8 @@ const GaleriFoto = () => {
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
-
+    const [startDate, setStartDate] = useState("");
+    const [filteredPosts, setFilteredPosts] = useState([]);
     useEffect(() => {
         const fetchPosts = async () => {
             setLoading(true);
@@ -44,9 +46,9 @@ const GaleriFoto = () => {
 
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
-    const currentPosts = posts.slice(firstPostIndex, lastPostIndex);
+    const currentPosts = filteredPosts.slice(firstPostIndex, lastPostIndex);
 
-    const totalPages = Math.ceil(posts.length / postsPerPage);
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
     const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -96,6 +98,31 @@ const GaleriFoto = () => {
     };
 
     const [selectedDates, setSelectedDates] = useState();
+
+    const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
+        <FormControl
+            value={value}
+            onClick={onClick}
+            ref={ref}
+            placeholder="Filter Tanggal"
+            readOnly // Makes the input read-only
+            size="sm"
+            style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc'}}
+        />
+    ));
+    useEffect(() => {
+        if (startDate) {
+            const formattedDate = dayjs(startDate).format('YYYY-MM-DD'); // Lowercase 'yyyy'
+            const filtered = posts.filter(post =>
+                dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
+            );
+
+            setFilteredPosts(filtered);
+            setCurrentPage(1); // Reset to the first page after filtering
+        } else {
+            setFilteredPosts(posts);
+        }
+    }, [startDate, posts]);
     return (
         <div className='page-wrapper'>
             <section className='page-banner'>
@@ -113,17 +140,17 @@ const GaleriFoto = () => {
 
                             <InputGroup className="justify-content-end d-flex ">
                                 <DatePicker
-                                    value={selectedDates}
-                                    onChange={setSelectedDates}
-                                    format="DD-MM-YYYY"
-                                    placeholder="Filter Tanggal"
-                                    style={{ padding: '18px ', width: '100%' }}
-                                    animations={[
-                                        transition({
-                                            from: 35,
-                                            transition: "all 400ms cubic-bezier(0.335, 0.010, 0.030, 1.360)",
-                                        }),
-                                    ]}
+
+                                    dateFormat="dd-MM-yyyy"
+                                    // placeholderText="Filter Tanggal"
+                                    onChange={(date) => setStartDate(date)}
+                                    selected={startDate}
+                                    peekNextMonth
+                                    showMonthDropdown
+                                    showYearDropdown
+                                    dropdownMode="select"
+                                    isClearable={!!startDate}
+                                    customInput={<CustomInput />}
                                 />
                                 <InputGroup.Text id="basic-addon2" ><i className="fa fa-calendar"></i></InputGroup.Text>
                             </InputGroup>
@@ -139,7 +166,9 @@ const GaleriFoto = () => {
                                         <SkeletonCardBerita />
                                     </div>
                                 ))
-                            : currentPosts.map((item) => (
+                            : 
+                            currentPosts.length > 0 ? (
+                            currentPosts.map((item) => (
                                 <div
                                     className='col-md-4 col-lg-4 d-flex'
                                     key={item.id}>
@@ -162,7 +191,7 @@ const GaleriFoto = () => {
                                                     <h2 className='title-2'>
                                                         {item.title}
                                                         {item.is_publish}
-                                                       
+
                                                     </h2>
                                                 </div>
                                                 <div className='card-date'>
@@ -178,7 +207,13 @@ const GaleriFoto = () => {
                                         </div>
                                     </a>
                                 </div>
-                            ))}
+                            ))
+                        ) : (
+                            <div className="col-lg-12 col-md-12" style={{ marginBottom: '200px' }}>
+                                <p className="text-center">No posts available</p>
+                            </div>
+                        )
+                        }
                     </div>
 
                     {!loading && totalPages > 1 && (

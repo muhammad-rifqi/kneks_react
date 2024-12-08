@@ -122,6 +122,7 @@ const BeritaDirektorat = () => {
             placeholder="Filter Tanggal"
             readOnly // Makes the input read-only
             size="sm"
+            style={{paddingTop:'8px',paddingBottom:'9px', border:'1px solid #ccc'}}
         />
     ));
 

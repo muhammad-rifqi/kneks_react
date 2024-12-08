@@ -3748,6 +3748,7 @@ a.search-toggler {
   background-size: cover;
   padding-top: 70px;
   padding-bottom: 85px;
+  
 }
 .page-banner-kdeks {
   background-image: url("../image/slide.png");
@@ -3794,6 +3795,7 @@ a.search-toggler {
   text-align: center;
   margin-bottom: 0px;
   color: var(--thm-white);
+  border-bottom: none !important;
 }
 
 @media (max-width: 1199px) {
@@ -10277,6 +10279,7 @@ SOCIAL MEDIA
 
 .news-box{
   cursor: pointer;
+ z-index: 0;
 }
 
 
@@ -10837,4 +10840,17 @@ SOCIAL MEDIA
   width: 100%;
 }
 
+ }
+
+
+ .input-group-text{
+  height: 40px;
+  margin-left: 9px !important;
+  margin-top: 10px !important;
+ }
+
+ .inpt-tx{
+  height: 40px;
+  margin-left: -10px !important;
+  margin-top: 10px !important;
  }

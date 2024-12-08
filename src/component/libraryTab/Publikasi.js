@@ -110,7 +110,7 @@ const Publikasi = () => {
                             placeholder="Cari Publikasi"
                             aria-label="Cari Publikasi"
                             aria-describedby="basic-addon2"
-                            style={{ border: '1px solid #ccc', padding: '8px' }}
+                            style={{ border: '1px solid #ccc', padding: '8.5px' }}
                             size="sm"
                             value={searchQuery}
                             onChange={(e) => {
@@ -118,7 +118,7 @@ const Publikasi = () => {
                                 setCurrentPage(1);
                             }}
                         />
-                        <InputGroup.Text id="basic-addon2"><i className="fa fa-search"></i></InputGroup.Text>
+                        <InputGroup.Text className="inpt-tx" id="basic-addon2"><i className="fa fa-search"></i></InputGroup.Text>
                     </InputGroup>
                 </Col>
             </Row>

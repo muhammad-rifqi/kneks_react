@@ -106,7 +106,7 @@ const Siaran = () => {
                             placeholder="Cari Siaran Pers"
                             aria-label="Cari Siaran Pers"
                             aria-describedby="basic-addon2"
-                            style={{ border: '1px solid #ccc', padding: '8px' }}
+                            style={{ border: '1px solid #ccc', padding: '8.5px' }}
                             size="sm"
                             value={searchQuery}
                             onChange={(e) => {
@@ -114,7 +114,7 @@ const Siaran = () => {
                                 setCurrentPage(1);
                             }}
                         />
-                        <InputGroup.Text id="basic-addon2">
+                        <InputGroup.Text className="inpt-tx" id="basic-addon2">
                             <i className="fa fa-search"></i>
                         </InputGroup.Text>
                     </InputGroup>

@@ -117,6 +117,7 @@ const IsuEkonomi = () => {
             placeholder="Filter Tanggal"
             readOnly // Makes the input read-only
             size="sm"
+            style={{paddingTop:'8px',paddingBottom:'9px', border:'1px solid #ccc'}}
         />
     ));
     return (
@@ -164,7 +165,12 @@ const IsuEkonomi = () => {
                                             <div className="berita-card">
                                                 <div className="berita-card-imgbox ">
                                                     <a href={`/isu-ekonomi/${item.id}/${convertToSlug(item.title)}`}>
-                                                        <img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} />
+                                                        {/* <img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} /> */}
+                                                        <img
+                                                            src={item?.image}
+                                                            className='img-fluid w-100'
+                                                            alt={item.title}
+                                                        />
                                                     </a>
                                                 </div>
                                                 <div className="berita-content ">

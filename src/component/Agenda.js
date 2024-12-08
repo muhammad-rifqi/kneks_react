@@ -130,7 +130,7 @@ const Agenda = () => {
             ref={ref}
             placeholder="Filter Tanggal"
             readOnly // Makes the input read-only
-            style={{ border: '1px solid #ccc', padding: '8px' }}
+            style={{ border: '1px solid #ccc', padding: '8.5px' }}
         />
     ));
     return (
@@ -163,19 +163,18 @@ const Agenda = () => {
                                     />
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
-
+                                
                             </Col>
                             <Col lg={6} sm={12}>
                                 <InputGroup className="mb-3">
                                     <Form.Control
                                         placeholder="Cari Agenda..."
                                         aria-label="Cari Agenda..."
-                                        style={{ border: '1px solid #ccc', padding: '8px' }}
-                                        // size="sm"
+                                        style={{ border: '1px solid #ccc', padding: '8.5px' }}
                                         value={searchQuery}
                                         onChange={(e) => { setSearchQuery(e.target.value) }}
                                     />
-                                    <InputGroup.Text id="basic-addon2"><i className="fa fa-search"></i></InputGroup.Text>
+                                    <InputGroup.Text className="inpt-tx" id="basic-addon2"><i className="fa fa-search"></i></InputGroup.Text>
                                 </InputGroup>
                             </Col>
                         </Row>

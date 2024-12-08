@@ -7,6 +7,7 @@ import "dayjs/locale/id";
 
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row';
 import FormControl from 'react-bootstrap/FormControl';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -60,7 +61,7 @@ const BeritaKdeks = () => {
             const filtered = posts.filter(post =>
                 dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
             );
-          
+
             setFilteredPosts(filtered);
             setCurrentPage(1); // Reset to the first page after filtering
         } else {
@@ -121,7 +122,8 @@ const BeritaKdeks = () => {
             ref={ref}
             placeholder="Filter Tanggal"
             readOnly // Makes the input read-only
-            size="sm"
+            size=""
+            style={{paddingTop:'8px',paddingBottom:'9px', border:'1px solid #ccc'}}
         />
     ));
 
@@ -137,30 +139,31 @@ const BeritaKdeks = () => {
                 </section>
                 <section className='berita-section'>
                     <div className='container'>
-                        <div className='row row-gutter-30'>
-                            {/* <Row> */}
+                        <Row>
 
-                            <Col lg={{ span: 12 }} >
+                        <Col lg={{ span: 12 }} >
 
-                                <InputGroup className="justify-content-end d-flex ">
-                                    <DatePicker
+                            <InputGroup className="justify-content-end d-flex ">
+                                <DatePicker
 
-                                        dateFormat="dd-MM-yyyy"
-                                        // placeholderText="Filter Tanggal"
-                                        onChange={(date) => setStartDate(date)}
-                                        selected={startDate}
-                                        peekNextMonth
-                                        showMonthDropdown
-                                        showYearDropdown
-                                        dropdownMode="select"
-                                        isClearable={!!startDate}
-                                        customInput={<CustomInput />}
-                                    />
-                                    <InputGroup.Text id="basic-addon2" ><i className="fa fa-calendar"></i></InputGroup.Text>
-                                </InputGroup>
+                                    dateFormat="dd-MM-yyyy"
+                                    // placeholderText="Filter Tanggal"
+                                    onChange={(date) => setStartDate(date)}
+                                    selected={startDate}
+                                    peekNextMonth
+                                    showMonthDropdown
+                                    showYearDropdown
+                                    dropdownMode="select"
+                                    isClearable={!!startDate}
+                                    customInput={<CustomInput />}
+                                />
+                                <InputGroup.Text id="basic-addon2" ><i className="fa fa-calendar"></i></InputGroup.Text>
+                            </InputGroup>
 
-                            </Col>
-                            {/* </Row> */}
+                        </Col>
+                        </Row>
+                        <div className='row'>
+
                             {loading
                                 ? Array(postsPerPage)
                                     .fill()
@@ -183,7 +186,7 @@ const BeritaKdeks = () => {
                                                         href={`/berita-kegiatan/${item.id}/${convertToSlug(
                                                             item.title
                                                         )}`}>
-                                                         {/* <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} />  */}
+                                                        {/* <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} />  */}
                                                         <img
                                                             src={item?.image}
                                                             className='img-fluid w-100'
