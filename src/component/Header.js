@@ -128,7 +128,7 @@ const Header = () => {
 
                 <a href={isKdeksPage ? "#kdeks" : "/"}>
                   <img
-                    src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/logoKneks.png"}
+                    src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/kneks2.png"}
                     alt="logo"
                     width="280"
                   />

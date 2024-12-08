@@ -113,7 +113,7 @@ const Footer = () => {
             <div className="row">
               <div className="col-lg-3 ">
                 <div className="footer-widget-logo pb-3">
-                  <a href={isKdeksPage ? "#kdeks" : "/"}><img src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/logoKneks.png"} className="img-fluid " alt="img-25" /></a>
+                  <a href={isKdeksPage ? "#kdeks" : "/"}><img src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/kneks2.png"} className="img-fluid " alt="img-25" /></a>
                 </div>
 
                 <div className="footer-widget-socials ">
@@ -357,7 +357,7 @@ const Footer = () => {
             <span></span>
           </a>
           <div className="logo-box">
-            <a href="#tt"><img src="/assets/image/logoKneks.png" width="160" height="40" alt="26" /></a>
+            <a href="#tt"><img src="/assets/image/kneks2.png" width="160" height="40" alt="26" /></a>
           </div>
           <div className="mobile-nav-container"></div>
           <ul className="mobile-nav-contact list-unstyled">
