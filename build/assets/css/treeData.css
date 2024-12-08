@@ -1,9 +1,30 @@
+:root {
+    --thm-primary: #2dcd7c;
+    --thm-primary-rgb: 45, 205, 124;
+    --thm-secondary: #9cb7bd;
+    --thm-secondary-rgb: 156, 183, 189;
+    --thm-white: #ffffff;
+    --thm-white-rgb: 255, 255, 255;
+    --thm-gray: #838e91;
+    --thm-gray-rgb: 131, 142, 145;
+    --thm-border: #e1e8ea;
+    --thm-border-rgb: 225, 232, 234;
+    --thm-black: #003b49;
+    --thm-black-rgb: 0, 59, 73;
+    --thm-dark-black: #01313c;
+    --thm-dark-black-rgb: 1, 49, 60;
+    --thm-light-bg: #f3f6f7;
+    --thm-light-bg-rgb: 243, 246, 247;
+    --thm-font: "Manrope", sans-serif;
+    --thm-special-font: "reeyregular", sans-serif;
+    scroll-behavior: auto;
+  }
 /* Thee */
 * {
   padding: 0;
 }
 
-.tree ul {
+/* .tree ul {
     padding-top: 20px; position: relative;
 
     transition: all 0.5s;
@@ -79,15 +100,105 @@
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
-}
+} */
 
-.tree li a:hover, .tree li a:hover+ul li a {
-    background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
-}
-
-.tree li a:hover+ul li::after,
-.tree li a:hover+ul li::before,
-.tree li a:hover+ul::before,
-.tree li a:hover+ul ul::before{
-    border-color:  #94a0b4;
-}
+.tree {
+    margin-top: -30px;
+    background-color: var(--thm-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tree ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .tree ul li {
+    margin: 10px 0;
+    position: relative;
+  }
+  
+  .tree ul li:before, 
+  .tree ul li:after {
+    content: '';
+    position: absolute;
+    border-left: 2px solid var(--thm-primary);
+  }
+  
+  .tree ul li:before {
+    top: 0;
+    bottom: 50%;
+    left: -15px;
+  }
+  
+  .tree ul li:after {
+    top: 50%;
+    bottom: 0;
+    left: -15px;
+  }
+  
+  .tree ul > li:first-child:before {
+    top: 50%;
+  }
+  
+  .tree ul > li:last-child:after {
+    bottom: 50%;
+  }
+  
+  .tree .team-card {
+    padding: 10px;
+    background-color: var(--thm-white);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+  }
+  
+  .tree .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tree .team-card img {
+    height: 80px;
+    width: 80px;
+    background-color: var(--thm-white);
+    border-radius: 50%;
+    transition: transform 300ms ease, border 300ms ease;
+    border: 4px solid var(--thm-primary);
+  }
+  
+  .tree .team-card img:hover {
+    transform: scale(1.1);
+    border-color: var(--thm-secondary);
+  }
+  
+  .tree .team-card-content {
+    margin-top: 10px;
+  }
+  
+  .tree .team-card-content h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .tree .team-card-content h4 a {
+    color: var(--thm-dark);
+    text-decoration: none;
+    transition: color 300ms ease;
+  }
+  
+  .tree .team-card-content h4 a:hover {
+    color: var(--thm-primary);
+  }
+  
+  .tree .team-card-content p {
+    font-size: 12px;
+    color: var(--thm-grey);
+    margin: 0;
+  }
