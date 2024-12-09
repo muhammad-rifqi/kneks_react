@@ -137,7 +137,7 @@ const StrukturOrganisasi = () => {
 										</div>
 									</div>
 								</div>
-								<p>
+								<p> 
 								<div className="row">
 									<div className="col-4 offset-2">
 										<div className="team-card">
