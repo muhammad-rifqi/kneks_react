@@ -29,7 +29,7 @@ const BeritaDirektorat = () => {
             .replace(/\s+/g, "-")
             .replace(/-+/g, "-");
     };
-console.log(posts)
+
     useEffect(() => {
         // Function to fetch posts
         const fetchPosts = async () => {
