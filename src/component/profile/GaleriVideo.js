@@ -20,7 +20,7 @@ const GaleriVideo = () => {
 
     const [loading, setLoading] = useState(true);
 
-    const [loadingMore, setLoadingMore] = useState(false);
+    // const [loadingMore, setLoadingMore] = useState(false);
     const [posts, setPosts] = useState([]);
     const [startDate, setStartDate] = useState("");
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -160,7 +160,7 @@ const GaleriVideo = () => {
     }, [startDate, posts]);
 
 
-    const [selectedDates, setSelectedDates] = useState();
+    // const [selectedDates, setSelectedDates] = useState();
     return (
         <>
             <div className="page-wrapper">

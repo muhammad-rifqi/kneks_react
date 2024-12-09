@@ -97,7 +97,7 @@ const GaleriFoto = () => {
         return paginationItems;
     };
 
-    const [selectedDates, setSelectedDates] = useState();
+    // const [selectedDates, setSelectedDates] = useState();
 
     const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
         <FormControl

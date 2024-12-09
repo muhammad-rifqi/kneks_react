@@ -78,9 +78,9 @@ const StrukturOrganisasi = () => {
 									<li>
 										<ul>
 											<li><a href="#test">
-												<div>
-													<div >
-														<a href={`/struktur-organisasi/${convertToSlug(posts[0]?.name)}`}><img src={posts[0]?.photo ? `${posts[0]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
+												<div className="team-cardx">
+													<div className="team-cardx-img">
+														<a href={`/struktur-organisasi/${convertToSlug(posts[0]?.name)}`}><img src={posts[0]?.photo ? `${posts[0]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="300" /></a>
 													</div>
 													<div>
 														<h5 style={{ fontSize: '10px' }}><a href={`/struktur-organisasi/${convertToSlug(posts[0]?.name)}`}>{posts[0]?.name}</a></h5>
@@ -90,9 +90,9 @@ const StrukturOrganisasi = () => {
 											</a>
 												<ul>
 													<li><a href="#test">
-														<div>
-															<div>
-																<a href={`/struktur-organisasi/${convertToSlug(posts[1]?.name)}`}><img src={posts[1]?.photo ? `${posts[1]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
+														<div className="team-cardx">
+															<div className="team-cardx-img">
+																<a href={`/struktur-organisasi/${convertToSlug(posts[1]?.name)}`}><img src={posts[1]?.photo ? `${posts[1]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="300"/></a>
 																
 															</div>
 															<div>
@@ -103,11 +103,9 @@ const StrukturOrganisasi = () => {
 													</a>
 													</li>
 													<li><a href="#test">
-														
-														<div>
-															
-															<div>
-																<a href={`/struktur-organisasi/${convertToSlug(posts[2]?.name)}`}><img src={posts[2]?.photo ? `${posts[2]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
+														<div className="team-cardx">
+															<div className="team-cardx-img">
+																<a href={`/struktur-organisasi/${convertToSlug(posts[2]?.name)}`}><img src={posts[2]?.photo ? `${posts[2]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="300"/></a>
 																
 															</div>
 															<div>
@@ -118,12 +116,9 @@ const StrukturOrganisasi = () => {
 													</a>
 													</li>
 													<li><a href="#test">
-														
-														<div>
-														
-															<div>
-																<a href={`/struktur-organisasi/${convertToSlug(posts[3]?.name)}`}><img src={posts[3]?.photo ? `${posts[3]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
-																
+														<div className="team-cardx">
+															<div className="team-cardx-img">
+																<a href={`/struktur-organisasi/${convertToSlug(posts[3]?.name)}`}><img src={posts[3]?.photo ? `${posts[3]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="300"/></a>
 															</div>
 															<div>
 																<p style={{ fontSize: '9px' }}><a href={`/struktur-organisasi/${convertToSlug(posts[3]?.name)}`}>{posts[3]?.name}</a></p>
@@ -134,11 +129,9 @@ const StrukturOrganisasi = () => {
 													</a>
 													</li>
 													<li><a href="#test">
-														
-														<div >
-															
-															<div>
-																<a href={`/struktur-organisasi/${convertToSlug(posts[4]?.name)}`}><img src={posts[4]?.photo ? `${posts[4]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
+														<div className="team-cardx">
+															<div className="team-cardx-img">
+																<a href={`/struktur-organisasi/${convertToSlug(posts[4]?.name)}`}><img src={posts[4]?.photo ? `${posts[4]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40"  width="300" /></a>
 																
 															</div>
 															<div>
@@ -149,11 +142,9 @@ const StrukturOrganisasi = () => {
 													</a>
 													</li>
 													<li><a href="#test">
-														
-														<div >
-															
-															<div>
-																<a href={`/struktur-organisasi/${convertToSlug(posts[5]?.name)}`}><img src={posts[5]?.photo ? `${posts[5]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" width="80" /></a>
+														<div className="team-cardx">
+															<div className="team-cardx">
+																<a href={`/struktur-organisasi/${convertToSlug(posts[5]?.name)}`}><img src={posts[5]?.photo ? `${posts[5]?.photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40"  width="300"/></a>
 																
 															</div>
 															<div>
