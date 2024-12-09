@@ -10,7 +10,7 @@ import VenoBox from 'venobox';
 const InfoTerkiniDetail = () => {
     dayjs.locale('id');
 
-    const { id,slug } = useParams();
+    const { id, slug } = useParams();
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -75,7 +75,7 @@ const InfoTerkiniDetail = () => {
                 effectrun.current = true
             }
         }
-    }, [slug]);
+    }, [id, slug]);
 
 
     const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
