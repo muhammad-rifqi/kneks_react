@@ -203,7 +203,7 @@ const BeritaTerkini = () => {
                                                     <div className='event-card-title pb-4'>
                                                         <h4>
                                                             <a
-                                                                href={`/berita-kegiatan//${item.id}/${convertToSlug(
+                                                                href={`/berita-kegiatan/${item.id}/${convertToSlug(
                                                                     item.title
                                                                 )}`}>
                                                                 {item.title}

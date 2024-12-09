@@ -154,8 +154,10 @@ const BeritaKegiatanDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>
-                                                    <img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} />
+                                                <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>
+                                                    <img  src={
+                                                        item?.image
+                                                    } className="img-fluid" alt={item.title} />
                                                     {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
                                                 </a>
                                             </div>
@@ -165,7 +167,7 @@ const BeritaKegiatanDetail = () => {
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">

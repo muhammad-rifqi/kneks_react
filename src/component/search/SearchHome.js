@@ -160,7 +160,7 @@ const SearchHome = () => {
                                     <div className='berita-card'>
                                         <div className='berita-card-imgbox'>
                                             <a
-                                                href={`/berita-kegiatan/${convertToSlug(
+                                                href={`/berita-kegiatan/${item.id}/${convertToSlug(
                                                     item.title
                                                 )}`}>
                                                 <img
@@ -181,7 +181,7 @@ const SearchHome = () => {
                                             <div className='event-card-title pb-4'>
                                                 <h4>
                                                     <a
-                                                        href={`/berita-kegiatan/${convertToSlug(
+                                                        href={`/berita-kegiatan/${item.id}/${convertToSlug(
                                                             item.title
                                                         )}`}>
                                                         {item.title}
