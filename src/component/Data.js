@@ -363,22 +363,26 @@ const Data = () => {
                                         </div>
 
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className="col-lg-12 pt-5">
                                     <div className="about-one-inner-x">
-                                        <div className="d-flex justify-content-between ">
-
-                                            <h5 >Narasi</h5>
-                                            <div className="">
-                                                <h5 style={{ fontSize: `14px` }}>Sumber</h5>
-                                                <p style={{ fontSize: `12px` }}>www.kneks.co.id/e-pustaka</p>
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <h5>Narasi</h5>
                                             </div>
-
+                                            <div className="col-md-6 text-md-end text-start">
+                                                <h5 style={{ fontSize: '14px' }}>Sumber</h5>
+                                                <a href="https://www.kneks.co.id/e-pustaka" style={{ fontSize: '12px', textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
+                                                    www.kneks.co.id/e-pustaka
+                                                </a>
+                                            </div>
                                         </div>
-                                        <p>Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <p className="mt-3">
+                                            Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        </p>
                                     </div>
-
                                 </div>
+
                                 <div className="col-lg-12 pt-5">
                                     <div className="about-one-inner-x">
                                         <div className="text-start">
@@ -424,7 +428,7 @@ const Data = () => {
                                         </div>
                                     </div>
 
-                                </div> */}
+                                </div>
 
                             </div>
                         </div>

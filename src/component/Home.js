@@ -13,7 +13,7 @@ import News from '../component/home/News'
 import Section6 from '../component/home/Section6'
 import Section7 from '../component/home/Section7'
 import Section8 from '../component/home/Section8'
-// import Section9 from '../component/home/Section9';
+import Section9 from '../component/home/Section9';
 // import Section10 from '../component/home/Section10';
 import Section11 from '../component/home/Section11'
 // import Section12 from '../component/home/Section12';
@@ -53,6 +53,8 @@ const Home = () => {
       {/* <Section2backup /> */}
       <Section2 />
       {/* <Section14 /> */}
+      <Section9 />
+     
       <News />
       <Section7 />
 
@@ -63,8 +65,8 @@ const Home = () => {
 
       <Section6 />
 
-      {/* <Section9 />
-      <Section10 /> */}
+     
+      {/* <Section10 /> */}
 
       {/* <Zona /> */}
       <Section11 />
