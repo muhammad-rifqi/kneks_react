@@ -6,8 +6,8 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 
 
-import DatePicker from "react-multi-date-picker"
-import transition from "react-element-popper/animations/transition"
+// import DatePicker from "react-multi-date-picker"
+// import transition from "react-element-popper/animations/transition"
 const SiaranPers = () => {
 
 
@@ -61,7 +61,7 @@ const SiaranPers = () => {
             .replace(/-+/g, '-');
     };
 
-    const [selectedDates, setSelectedDates] = useState();
+    // const [selectedDates, setSelectedDates] = useState();
 
 
     return (
@@ -77,7 +77,7 @@ const SiaranPers = () => {
                 </section>
                 <section className="berita-section">
                     <div className="container">
-                        <div className="row row-gutter-30">
+                        {/* <div className="row row-gutter-30">
                             <div className="col-lg-12 col-xl-12 d-flex justify-content-end">
                                 <div className="sidebar-form-content">
                                     <div className="sidebar__item sidebar__item--search">
@@ -102,7 +102,7 @@ const SiaranPers = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="row row-gutter-30">
 
                             {loading ? (
@@ -117,7 +117,8 @@ const SiaranPers = () => {
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/siaran-pers/${convertToSlug(item.title)}`}>
-                                                    <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} />
+                                                    {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
+                                                    <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} />
                                                 </a>
                                             </div>
                                             <div className="berita-content ">
