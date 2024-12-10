@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
-
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { useTranslation } from "react-i18next";
-import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 
@@ -12,8 +10,6 @@ import 'dayjs/locale/id';
 const Section9 = () => {
 	const { t } = useTranslation();
 	dayjs.locale('id');
-	const [loading, setLoading] = useState(true);
-	const [posts, setPosts] = useState([]);
 
 	const options = {
 		items: 1,
