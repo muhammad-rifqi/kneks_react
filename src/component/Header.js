@@ -112,7 +112,7 @@ const Header = () => {
                     onClick={() => changeLanguage('en')}>EN</li>
                 </ul>
               </div>
-             
+
 
               <div className="mobile-menu-button mobile-nav-toggler m-0">
                 <span></span>
@@ -126,14 +126,42 @@ const Header = () => {
             <div className="main-menu-left">
               <div className="main-menu-logo">
 
-                <a href={isKdeksPage ? "#kdeks" : "/"}>
+                {/* <a href={isKdeksPage ? "#kdeks" : "/"}>
                   <img
                     src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/kneks2.png"}
                     alt="logo"
                     width="280"
                   />
-                </a>
+                </a> */}
+                {isKdeksPage ? (
+                  <a href="/kdeks">
+                    <img
+                      src="/assets/image/logoKdeks.png"
+                      alt="logo"
+                      width="200"
+                    />
+                  </a>
+                ) : (
+                  <>
+                    <a href="/">
+                      <img
+                        src="/assets/image/logo1.png"
+                        alt="logo"
+                        className="logo-large"
+                      />
+                    </a>
+                    <span className="separator"></span>
+                    <a href="/tentang-ekonomi-syariah">
+                      <img
+                        src="/assets/image/logo2.png"
+                        alt="logo"
+                        className="logo-small"
+                      />
+                    </a>
+                  </>
+                )}
               </div>
+
               {isKdeksPage ? (
                 <div className="navigation">
                   <ul className="main-menu-list list-unstyled">
@@ -172,9 +200,9 @@ const Header = () => {
                         <li><a href="/berita-terkini">{t('menu.beritaTerkini')}</a></li>
                         {/* <li><a href="/berita-direktorat">{t('menu.beritaDirektorat')}</a></li>
                         <li><a href="/berita-kdeks">{t('menu.beritaKdeks')}</a></li> */}
-                         <li><a href="/liputan-media">{t('menu.liputanMedia')}</a></li>
+                        <li><a href="/liputan-media">{t('menu.liputanMedia')}</a></li>
                         <li><a href="/siaran-pers">{t('menu.siaranPers')}</a></li>
-                       
+
                         {/* <li><a href="/info-terkini">{t('menu.infoTerkini')}</a></li> */}
                       </ul>
                     </li>

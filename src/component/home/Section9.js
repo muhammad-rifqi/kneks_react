@@ -16,7 +16,7 @@ const Section9 = () => {
 	};
 	const { t } = useTranslation();
 
-	
+
 
 
 
@@ -24,7 +24,6 @@ const Section9 = () => {
 		items: 1,
 		margin: 30,
 		loop: true, // Disable looping since we only have one slide
-		navigation: true,
 		autoplay: true,
 		autoplayTimeout: 4000,
 		dots: false,
@@ -43,23 +42,24 @@ const Section9 = () => {
 
 	const [data, setData] = useState([]);
 	useEffect(() => {
-		fetch(process.env.REACT_APP_API_URL + '/statistics')
-			.then(resp => resp.json())
-			.then((rows) => {
-				const arr = [];
-				rows.forEach((element) => {
-					const ddd = {
-						icon: '🌐',
-						title: element?.title,
-						value: element?.amount,
-						unit: 'Data',
-						date: element?.date_created.split('T')[0],
-					}
-					arr.push(ddd)
-				});
-				setData(arr)
-			})
-	})
+        fetch(process.env.REACT_APP_API_URL + '/statistics')
+            .then((resp) => {
+                if (!resp.ok) throw new Error("Failed to fetch data");
+                return resp.json();
+            })
+            .then((rows) => {
+                const arr = rows.map((element) => ({
+                    icon: '🌐',
+                    title: element?.title,
+                    title_en: element?.title_en || element?.title, // Default to original title
+                    value: element?.amount,
+                    unit: 'Data',
+                    date: element?.date_created.split('T')[0],
+                }));
+                setData(arr);
+            })
+            .catch((error) => console.error("Error fetching statistics:", error));
+    }, []);
 
 	return (
 		<section className='funfact-section'>
@@ -71,36 +71,35 @@ const Section9 = () => {
 						</h2>
 					</div>
 				</div>
-				<OwlCarousel className="owl-themes" {...options} data-aos="fade-down-left" >
-
-
+				<OwlCarousel className="owl-themes" {...options} data-aos="fade-down-left">
 					{data.map((item, index) => (
-						<div className="row align-items-center justify-content-center">
-							<div className="col-md-12 text-center mb-3 " key={index}>
+						<div
+							key={index} // Apply key here
+							className="row align-items-center justify-content-center"
+						>
+							<div className="col-md-12 text-center mb-3">
 								<div className="card bg-light border-0 shadow p-3">
 									{/* Replace with your actual icon component or image */}
 									<i className="fas fa-briefcase fa-2x mb-3"></i>
-									<h5 style={{ fontSize: '16px' }} className="card-title mb-0">{cookies.i18next === 'id' ? item.title : item.title_en}</h5>
+									<h5
+										style={{ fontSize: '16px' }}
+										className="card-title mb-0"
+									>
+										{cookies.i18next === 'id'
+											? item.title
+											: item.title_en}
+									</h5>
 									<h3 className="card-text mb-0">{item.value}</h3>
-									<p className="card-text text-muted">{cookies.i18next === 'id' ? formatDate(item.date, 'id') : formatDate(item.date, 'en')}</p>
-
+									<p className="card-text text-muted">
+										{cookies.i18next === 'id'
+											? formatDate(item.date, 'id')
+											: formatDate(item.date, 'en')}
+									</p>
 								</div>
 							</div>
 						</div>
 					))}
-
 				</OwlCarousel>
-				{/* <Tabs
-                    activeKey={activeTab}
-                    onSelect={setActiveTab}
-                    className="mb-3 justify-content-center"
-                >
-                    {dataTabs.map((tab) => (
-                        <Tab eventKey={tab.key} title={tab.key} key={tab.key}>
-                            {tab.contents}
-                        </Tab>
-                    ))}
-                </Tabs> */}
 			</div>
 		</section>
 	);

@@ -89,16 +89,16 @@ const Footer = () => {
     backgroundColor: isHovered ? '#ddd' : '#f9f9f9', // Change background on hover
   });
 
-  const onSearch = (e) =>{
+  const onSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       navigate(`/search?query=${searchQuery}`);
-      
+
       const searchPopup = document.querySelector(".search-popup");
       if (searchPopup) {
         searchPopup.classList.remove("active");
       }
-      
+
       document.body.classList.remove("locked");
     }
   }
@@ -113,9 +113,44 @@ const Footer = () => {
             <div className="row">
               <div className="col-lg-3 ">
                 <div className="footer-widget-logo pb-3">
-                  <a href={isKdeksPage ? "#kdeks" : "/"}><img src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/kneks2.png"} className="img-fluid " alt="img-25" /></a>
+                  {/* <a href={isKdeksPage ? "#kdeks" : "/"}><img src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/kneks2.png"} className="img-fluid " alt="img-25" /></a> */}
+                  {isKdeksPage ? (
+                    <a href="/kdeks">
+                      <img
+                        src="/assets/image/logoKdeks.png"
+                        alt="logo"
+                        width="200"
+                      />
+                    </a>
+                  ) : (
+                    <>
+                      <a href="/">
+                        <img
+                          src="/assets/image/logo1.png"
+                          alt="logo"
+                          className="logo-large"
+                        />
+                      </a>
+                      <span className="separator"></span>
+                      <a href="/tentang-ekonomi-syariah">
+                        <img
+                          src="/assets/image/logo2.png"
+                          alt="logo"
+                          className="logo-small"
+                        />
+                      </a>
+                    </>
+                  )}
                 </div>
-
+                {isKdeksPage ? (
+                  <div className="footer-widget-socials ">
+                  <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
+                  <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
+                  <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
+                  <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
+                </div>
+                ):(
                 <div className="footer-widget-socials ">
                   <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
                   <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
@@ -123,6 +158,7 @@ const Footer = () => {
                   <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
                   <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
                 </div>
+                )}
               </div>
               <div className="col-lg-2">
                 <div className="footer-widget">
@@ -234,7 +270,7 @@ const Footer = () => {
                           </li>
                         </ul>
                       </li>
-                     
+
                       <li
                         onMouseEnter={() => setHoveredItem('berita')}
                         onMouseLeave={() => setHoveredItem(null)}
@@ -262,7 +298,7 @@ const Footer = () => {
                             onMouseEnter={() => setHoveredSubItem('subItem13')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                           
+
                             <a href="/siaran-pers" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem11')}>
                               {t('menu.siaranPers')}
                             </a>
@@ -358,7 +394,21 @@ const Footer = () => {
             <span></span>
           </a>
           <div className="logo-box">
-            <a href="#tt"><img src="/assets/image/kneks2.png" width="160" height="40" alt="26" /></a>
+            <a href="/">
+              <img
+                src="/assets/image/logo1.png"
+                alt="logo"
+                className="logo-large"
+              />
+            </a>
+            <span className="separator"></span>
+            <a href="/tentang-ekonomi-syariah">
+              <img
+                src="/assets/image/logo2.png"
+                alt="logo"
+                className="logo-small"
+              />
+            </a>
           </div>
           <div className="mobile-nav-container"></div>
           <ul className="mobile-nav-contact list-unstyled">
