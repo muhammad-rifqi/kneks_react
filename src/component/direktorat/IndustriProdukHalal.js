@@ -108,7 +108,7 @@ const IndustriProdukHalal = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                        <h3>{t('menu.direktorat')}</h3>
+                            <h3>{t('menu.direktorat')}</h3>
                         </div>
                     </div>
                 </section>
@@ -124,8 +124,8 @@ const IndustriProdukHalal = () => {
                                     <h2 className="section-title text-center">{t('direktorat.direktoratIndustriProdukHalal')}</h2>
                                     <p>{t('direktorat.direktoratIndustriProdukHalalAdalah')}</p>
                                     <p>{t('direktorat.kneksSendiriAdalah')}</p>
-                                    {/* <h5 className="about-one-inner-text-x">{t('divisi')}</h5> */}
-                                   
+                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
+
                                     {/* <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
                                             <a href="#t" className="component-service d-block ">
@@ -149,6 +149,37 @@ const IndustriProdukHalal = () => {
                                             </a>
                                         </div>
                                     </div> */}
+
+                                    <div className="row row-gutter-y-30 d-flex justify-content-center">
+                                        <div className="col-12">
+                                            <div style={{ padding: '10px', backgroundColor: '#1c96c5', color: 'white' }}>
+                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
+                                                    <summary>Divisi 1</summary>
+                                                    <div style={{ padding: '10px', color: 'white' }}>
+                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    </div>
+                                                </details>
+                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
+                                                    <summary>Divisi 2</summary>
+                                                    <div style={{ padding: '10px', color: 'white' }}>
+                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    </div>
+                                                </details>
+                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
+                                                    <summary>Divisi 3</summary>
+                                                    <div style={{ padding: '10px', color: 'white' }}>
+                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    </div>
+                                                </details>
+                                                <details style={{ padding: '10px', color: '#fff' }}>
+                                                    <summary>Divisi 4</summary>
+                                                    <div style={{ padding: '10px', color: 'white' }}>
+                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    </div>
+                                                </details>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -169,7 +200,7 @@ const IndustriProdukHalal = () => {
                                     <div className="berita-card">
                                         <div className="berita-card-imgbox-direktorat-home " >
                                             <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>
-                                            <img src={item?.image} className="img-fluid" alt={item.title} style={{ width: '100%' }}/>
+                                                <img src={item?.image} className="img-fluid" alt={item.title} style={{ width: '100%' }} />
                                             </a>
                                         </div>
                                         <div className="berita-content-direktorat-x" style={{ width: '100%' }}>
