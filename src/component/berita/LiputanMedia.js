@@ -188,7 +188,7 @@ const LiputanMedia = () => {
                                                     </div>
                                                     <div className="event-card-title pb-4">
                                                         <h4>
-                                                            <a href={`/siaran-pers/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                            <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                         </h4>
                                                     </div>
                                                     <div className="event-card-info">
