@@ -169,12 +169,13 @@ const Header = () => {
                     <li className="has-dropdown">
                       <a href="#t">{t('menu.beritaKegiatan')}</a>
                       <ul className="list-unstyled">
-                        {/* <li><a href="/berita-terkini">{t('menu.beritaTerkini')}</a></li>
-                        <li><a href="/berita-direktorat">{t('menu.beritaDirektorat')}</a></li>
+                        <li><a href="/berita-terkini">{t('menu.beritaTerkini')}</a></li>
+                        {/* <li><a href="/berita-direktorat">{t('menu.beritaDirektorat')}</a></li>
                         <li><a href="/berita-kdeks">{t('menu.beritaKdeks')}</a></li> */}
+                         <li><a href="/liputan-media">{t('menu.liputanMedia')}</a></li>
                         <li><a href="/siaran-pers">{t('menu.siaranPers')}</a></li>
-                        <li><a href="/liputan-media">{t('menu.liputanMedia')}</a></li>
-                        <li><a href="/info-terkini">{t('menu.infoTerkini')}</a></li>
+                       
+                        {/* <li><a href="/info-terkini">{t('menu.infoTerkini')}</a></li> */}
                       </ul>
                     </li>
                     {/* <li className={` ${activeMenu === '/berita-kegiatan' ? 'active' : ''}`}>

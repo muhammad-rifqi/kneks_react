@@ -88,6 +88,7 @@ function AppContent() {
         <Route path="/liputan-media/:id/:slug" element={<LiputanMediaDetail />} />
         <Route path="/info-terkini" element={<InfoTerkini />} />
         <Route path="/info-terkini/:id/:slug" element={<InfoTerkiniDetail />} />
+       
         <Route path="/berita-terkait/:id/:slug" element={<BeritaTerkaitDetail />} />
         <Route path="/e-pustaka" element={<Elibrary />} />
         <Route path="/e-pustaka/:slug" element={<ElibraryDetail />} />
@@ -113,6 +114,7 @@ function AppContent() {
         <Route path="/info-terkini/detail" element={<InfoTerkiniDumiDetail />} />
         <Route path="/berita-kegiatan" element={<BeritaKegiatan />} />
         <Route path="/berita-terkini" element={<BeritaTerkini />} />
+        <Route path="/berita-terkini/:id/:slug" element={<InfoTerkiniDetail />} />
         <Route path="/berita-direktorat" element={<BeritaDirektorat />} />
         <Route path="/berita-kdeks" element={<BeritaKdeks />} />
         <Route path="/berita-kegiatan/:id/:slug" element={<BeritaKegiatanDetail />} />

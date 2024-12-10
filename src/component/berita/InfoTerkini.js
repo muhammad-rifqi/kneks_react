@@ -176,7 +176,7 @@ const InfoTerkini = () => {
                                         <div className="col-lg-4 col-xl-4 col-md-6" key={item.id}>
                                             <div className="berita-card">
                                                 <div className="berita-card-imgbox ">
-                                                    <a href={`/info-terkini/${item.id}/${convertToSlug(item.title)}`}>
+                                                    <a href={`/berita-terkini/${item.id}/${convertToSlug(item.title)}`}>
                                                         {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
                                                         <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} />
                                                     </a>
@@ -188,7 +188,7 @@ const InfoTerkini = () => {
                                                     </div>
                                                     <div className="event-card-title pb-4">
                                                         <h4>
-                                                            <a href={`/info-terkini/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                            <a href={`/berita-terkini/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                         </h4>
                                                     </div>
                                                     <div className="event-card-info">

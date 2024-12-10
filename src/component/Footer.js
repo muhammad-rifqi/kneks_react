@@ -246,8 +246,8 @@ const Footer = () => {
                             onMouseEnter={() => setHoveredSubItem('subItem11')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/siaran-pers" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem11')}>
-                              {t('menu.siaranPers')}
+                            <a href="/berita-terkini" style={submenuItemStyle(hoveredSubItem === 'subItem13')}>
+                              {t('menu.beritaTerkini')}
                             </a>
                           </li>
                           <li
@@ -262,8 +262,9 @@ const Footer = () => {
                             onMouseEnter={() => setHoveredSubItem('subItem13')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/info-terkini" style={submenuItemStyle(hoveredSubItem === 'subItem13')}>
-                              {t('menu.infoTerkini')}
+                           
+                            <a href="/siaran-pers" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem11')}>
+                              {t('menu.siaranPers')}
                             </a>
                           </li>
                           {/* <li
