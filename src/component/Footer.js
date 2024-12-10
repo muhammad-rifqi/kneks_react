@@ -234,7 +234,7 @@ const Footer = () => {
                           </li>
                         </ul>
                       </li>
-
+                     
                       <li
                         onMouseEnter={() => setHoveredItem('berita')}
                         onMouseLeave={() => setHoveredItem(null)}
@@ -246,24 +246,24 @@ const Footer = () => {
                             onMouseEnter={() => setHoveredSubItem('subItem11')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/berita-terkini" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem11')}>
-                              {t('menu.beritaTerkini')}
+                            <a href="/siaran-pers" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem11')}>
+                              {t('menu.siaranPers')}
                             </a>
                           </li>
                           <li
                             onMouseEnter={() => setHoveredSubItem('subItem12')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/berita-direktorat" style={submenuItemStyle(hoveredSubItem === 'subItem12')}>
-                              {t('menu.beritaDirektorat')}
+                            <a href="/liputan-media" style={submenuItemStyle(hoveredSubItem === 'subItem12')}>
+                              {t('menu.liputanMedia')}
                             </a>
                           </li>
                           <li
                             onMouseEnter={() => setHoveredSubItem('subItem13')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/berita-kdeks" style={submenuItemStyle(hoveredSubItem === 'subItem13')}>
-                              {t('menu.beritaKdeks')}
+                            <a href="/info-terkini" style={submenuItemStyle(hoveredSubItem === 'subItem13')}>
+                              {t('menu.infoTerkini')}
                             </a>
                           </li>
                           {/* <li
