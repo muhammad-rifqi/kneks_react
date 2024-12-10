@@ -9,11 +9,17 @@ import { useTranslation } from "react-i18next";
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import { useCookies } from 'react-cookie';
 
 
 const Section9 = () => {
+	const [cookies] = useCookies(['i18next']);
+	const formatDate = (date, locale = 'en') => {
+		dayjs.locale(locale); // Set the locale dynamically
+		return dayjs(date).format('DD MMMM YYYY'); // Format the date
+	};
 	const { t } = useTranslation();
-	dayjs.locale('id');
+	
 	const [loading, setLoading] = useState(true);
 	const [posts, setPosts] = useState([]);
 
@@ -130,9 +136,9 @@ const Section9 = () => {
 									<div className="card bg-light border-0 shadow p-3">
 										{/* Replace with your actual icon component or image */}
 										{/* <i className="fas fa-briefcase fa-2x mb-3"></i> */}
-										<h5 style={{ fontSize: '16px' }} className="card-title mb-0">{item.title}</h5>
+										<h5 style={{ fontSize: '16px' }} className="card-title mb-0">{cookies.i18next === 'id' ? item.title : item.title_en}</h5>
 										<h3 className="card-text mb-0">{item.amount}</h3>
-										<p className="card-text text-muted">{dayjs(item.date_created).format('DD MMMM YYYY')}</p>
+										<p className="card-text text-muted">{cookies.i18next === 'id' ? formatDate(item.date_created, 'id') : formatDate(item.date_created, 'en')}</p>
 									</div>
 								</div>
 							</div>
