@@ -806,8 +806,8 @@ a {
 .topNav-right li {
   display: inline-block;
   color: var(--thm-secondary);
-  font-size: 14px;
-  padding: 4px;
+  font-size: 12px;
+  padding: 2px 11px;
   cursor: pointer;
 }
 
