@@ -104,7 +104,13 @@ const StrukturOrganisasi = () => {
 												</div>
 												<div className="team-card-content">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[1].name)}`}>{posts[1].name}</a></h4>
-													<p>{posts[1].position}</p>
+													<p>{posts[1].position}</p><br/>
+													<ul style={{listStyle : 'none', textAlign : 'left'}}>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img4" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+														</ul>
 												</div>
 											</div>
 										</div>
@@ -118,7 +124,13 @@ const StrukturOrganisasi = () => {
 												</div>
 												<div className="team-card-content">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[2].name)}`}>{posts[2].name}</a></h4>
-													<p>{posts[2].position}</p>
+													<p>{posts[2].position}</p><br/>
+													<ul style={{listStyle : 'none', textAlign : 'left'}}>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img4" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+														</ul>
 												</div>
 											</div>
 										</div>
@@ -132,7 +144,13 @@ const StrukturOrganisasi = () => {
 												</div>
 												<div className="team-card-content">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[3].name)}`}>{posts[3].name}</a></h4>
-													<p>{posts[3].position}</p>
+													<p>{posts[3].position}</p><br/>
+													<ul style={{listStyle : 'none', textAlign : 'left'}}>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img4" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+														</ul>
 												</div>
 											</div>
 										</div>
@@ -149,7 +167,13 @@ const StrukturOrganisasi = () => {
 													</div>
 													<div className="team-card-content">
 														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[4].name)}`}>{posts[4].name}</a></h4>
-														<p>{posts[4].position}</p>
+														<p>{posts[4].position}</p><br/>
+														<ul style={{listStyle : 'none', textAlign : 'left'}}>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img4" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+														</ul>
 													</div>
 												</div>
 											</div>
@@ -163,25 +187,42 @@ const StrukturOrganisasi = () => {
 													</div>
 													<div className="team-card-content">
 														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[5].name)}`}>{posts[5].name}</a></h4>
-														<p>{posts[5].position}</p>
+														<p>{posts[5].position}</p><br/>
+														<ul style={{listStyle : 'none', textAlign : 'left'}}>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img4" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+														</ul>
 													</div>
 												</div>
 											</div>
 										</div>
 									</p>
 									<hr />
+									<div className="blog-box-manajemen">
+										<div className="section-title-box text-center">
+											<h2 className="section-title">Sekretariat</h2>
+										</div>
+									</div>
 									<div className="row">
 										<div className="col-12 col-md-6 col-xl-4 offset-4">
 											<div className="team-card">
 												<div className="team-card-img">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[6].name)}`}><img src={posts[6].photo ? "assets/image/team/team-2.jpg" : "assets/image/team/team-2.jpg"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[6].name)}`}><img src={posts[6].photo ? "assets/image/defaultuser.jpg" : "assets/image/defaultuser.jpg"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon">
 														{/* Social Media Icons */}
 													</div>
 												</div>
 												<div className="team-card-content">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[6].name)}`}>{posts[6].name}</a></h4>
-													<p>{posts[6].position}</p>
+													<p>{posts[6].position}</p><br/>
+													<ul style={{listStyle : 'none', textAlign : 'left'}}>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img4" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+														</ul>
 												</div>
 											</div>
 										</div>
@@ -191,28 +232,40 @@ const StrukturOrganisasi = () => {
 											<div className="col-4 offset-2">
 												<div className="team-card">
 													<div className="team-card-img">
-														<a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}><img src={posts[7].photo ? "assets/image/team/team-2.jpg" : "assets/image/team/team-2.jpg"} className="img-fluid" alt="img-40" /></a>
+														<a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}><img src={posts[7].photo ? "assets/image/defaultuser.jpg" : "assets/image/defaultuser.jpg"} className="img-fluid" alt="img-40" /></a>
 														<div className="team-card-icon">
 															{/* Social Media Icons */}
 														</div>
 													</div>
 													<div className="team-card-content">
 														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}>{posts[7].name}</a></h4>
-														<p>{posts[7].position}</p>
+														<p>{posts[7].position}</p><br/>
+														<ul style={{listStyle : 'none', textAlign : 'left'}}>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img4" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+														</ul>
 													</div>
 												</div>
 											</div>
 											<div className="col-4">
 												<div className="team-card">
 													<div className="team-card-img">
-														<a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}><img src={posts[8].photo ? "assets/image/team/team-2.jpg" : "assets/image/team/team-2.jpg"} className="img-fluid" alt="img-40" /></a>
+														<a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}><img src={posts[8].photo ? "assets/image/defaultuser.jpg" : "assets/image/defaultuser.jpg"} className="img-fluid" alt="img-40" /></a>
 														<div className="team-card-icon">
 															{/* Social Media Icons */}
 														</div>
 													</div>
 													<div className="team-card-content">
 														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}>{posts[8].name}</a></h4>
-														<p>{posts[8].position}</p>
+														<p>{posts[8].position}</p><br/>
+														<ul style={{listStyle : 'none', textAlign : 'left'}}>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+															<li><img src={'assets/image/defaultuser.jpg'} alt="img4" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/></li>
+														</ul>
 													</div>
 												</div>
 											</div>
