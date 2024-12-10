@@ -85,9 +85,9 @@ function AppContent() {
         <Route path="/siaran-pers" element={<SiaranPers />} />
         <Route path="/siaran-pers/:id/:slug" element={<SiaranPersDetail />} />
         <Route path="/liputan-media" element={<LiputanMedia />} />
-        <Route path="/liputan-media/:slug" element={<LiputanMediaDetail />} />
+        <Route path="/liputan-media/:id/:slug" element={<LiputanMediaDetail />} />
         <Route path="/info-terkini" element={<InfoTerkini />} />
-        <Route path="/info-terkini/:slug" element={<InfoTerkiniDetail />} />
+        <Route path="/info-terkini/:id/:slug" element={<InfoTerkiniDetail />} />
         <Route path="/berita-terkait/:id/:slug" element={<BeritaTerkaitDetail />} />
         <Route path="/e-pustaka" element={<Elibrary />} />
         <Route path="/e-pustaka/:slug" element={<ElibraryDetail />} />

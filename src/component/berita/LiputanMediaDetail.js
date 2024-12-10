@@ -93,7 +93,8 @@ const LiputanMediaDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src={`${process.env.REACT_APP_API_NEWS}` + rows.image} width={`100%`} className="img-fluid" alt={rows?.title} />
+                                    {/* <img src={`${process.env.REACT_APP_API_NEWS}` + rows.image} width={`100%`} className="img-fluid" alt={rows?.title} /> */}
+                                    <img src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image} width={`100%`} className="img-fluid" alt={rows?.title} />
                                 </div>
                             </div>
                             <div className="row">
@@ -162,7 +163,8 @@ const LiputanMediaDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/liputan-media/${convertToSlug(item.title)}`}> <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /></a>
+                                                {/* <a href={`/liputan-media/${convertToSlug(item.title)}`}> <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /></a> */}
+                                                <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}> <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} /></a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
@@ -170,7 +172,7 @@ const LiputanMediaDetail = () => {
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/liputan-media/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
