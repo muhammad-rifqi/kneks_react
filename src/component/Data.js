@@ -195,6 +195,16 @@ const Data = () => {
     //     });
     // };
 
+
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        fetch(process.env.REACT_APP_API_URL + '/sourcesdata')
+            .then(resp => resp.json())
+            .then((rows) => {
+                setData(rows)
+            })
+    })
+
     return (
         <>
             <div className="page-wrapper">
@@ -400,29 +410,17 @@ const Data = () => {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-
-                                                        <td><a href="/data/detail">Dataset A</a></td>
-                                                        <td className="text-center">Ojk</td>
-                                                        <td className="text-center">12:30:34 27-04-2024</td>
-
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td><a href="/data/detail">Dataset B</a></td>
-                                                        <td className="text-center">Ojk</td>
-                                                        <td className="text-center">12:30:34 27-04-2024</td>
-
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td><a href="/data/detail">Dataset C</a></td>
-                                                        <td className="text-center">Ojk</td>
-                                                        <td className="text-center">12:30:34 27-04-2024</td>
-
-                                                    </tr>
-
-
+                                                    {
+                                                        data?.map((items, index) => {
+                                                            return (
+                                                                <tr key={items?.id}>
+                                                                    <td><a href="#00">{items?.dataset}</a></td>
+                                                                    <td className="text-center">{items?.source}</td>
+                                                                    <td className="text-center">{items?.date_created.split('T')[0]}</td>
+                                                                </tr>
+                                                            )
+                                                        })
+                                                    }
                                                 </tbody>
                                             </table>
                                         </div>

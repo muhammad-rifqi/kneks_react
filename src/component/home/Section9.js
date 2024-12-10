@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from "react";
-import SkeletonCardBerita from "../skeleton/CardBerita";
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
-
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { useTranslation } from "react-i18next";
-import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import { useCookies } from 'react-cookie';
@@ -19,9 +15,13 @@ const Section9 = () => {
 		return dayjs(date).format('DD MMMM YYYY'); // Format the date
 	};
 	const { t } = useTranslation();
+<<<<<<< HEAD
 	
 	const [loading, setLoading] = useState(true);
 	const [posts, setPosts] = useState([]);
+=======
+	dayjs.locale('id');
+>>>>>>> 5315a11ee33052aca3dd770f03df6e8a7b9fc742
 
 	const options = {
 		items: 1,
@@ -44,78 +44,25 @@ const Section9 = () => {
 		},
 	};
 
+	const [data, setData] = useState([]);
 	useEffect(() => {
-		// Function to fetch posts
-		const fetchPosts = async () => {
-			setLoading(true);
-			try {
-				const url = process.env.REACT_APP_API_URL;
-				const endpoint = process.env.REACT_APP_API_DATA;
-				const response = await axios.get(`${url}${endpoint}`);
-				setPosts(response.data);
-				console.log(response.data)
-			} catch (err) {
-				Swal.fire({
-					icon: "error",
-					title: "Oops...",
-					text: err,
+		fetch(process.env.REACT_APP_API_URL + '/statistics')
+			.then(resp => resp.json())
+			.then((rows) => {
+				const arr = [];
+				rows.forEach((element) => {
+					const ddd = {
+						icon: '🌐',
+						title: element?.title,
+						value: element?.amount,
+						unit: 'Data',
+						date: element?.date_created.split('T')[0],
+					}
+					arr.push(ddd)
 				});
-			} finally {
-				setLoading(false);
-			}
-		};
-
-		fetchPosts(); // Call fetchPosts function when component mounts
-	}, []);
-	// const data = [
-	// 	{
-	// 		icon: '💼', // Replace with actual icon component or image path
-	// 		title: 'Tingkat Pengangguran Terbuka',
-	// 		value: '4,82',
-	// 		unit: 'Persen',
-	// 		date: 'Februari 2024',
-	// 	},
-	// 	{
-	// 		icon: '💰', // Replace with actual icon component or image path
-	// 		title: 'Gini Rasio',
-	// 		value: '0,379',
-	// 		date: 'Maret 2024',
-	// 	},
-	// 	{
-	// 		icon: '🏠', // Replace with actual icon component or image path
-	// 		title: 'IPM (UHH LF SP2020)',
-	// 		value: '74,39',
-	// 		date: '2023',
-	// 	},
-	// 	{
-	// 		icon: '🌐', // Replace with actual icon component or image path
-	// 		title: 'Nilai Ekspor',
-	// 		value: '24.421,6',
-	// 		unit: 'Juta US$',
-	// 		date: 'Oktober 2024',
-	// 	},
-	// 	{
-	// 		icon: '🌐', // Replace with actual icon component or image path
-	// 		title: 'Nilai Impor',
-	// 		value: '21.938,3',
-	// 		unit: 'Juta US$',
-	// 		date: 'Oktober 2024',
-	// 	},
-	// 	{
-	// 		icon: '🌐', // Replace with actual icon component or image path
-	// 		title: 'Nilai Impor',
-	// 		value: '21.938,3',
-	// 		unit: 'Juta US$',
-	// 		date: 'Oktober 2024',
-	// 	},
-	// 	{
-	// 		icon: '🌐', // Replace with actual icon component or image path
-	// 		title: 'Nilai Impor',
-	// 		value: '21.938,3',
-	// 		unit: 'Juta US$',
-	// 		date: 'Oktober 2024',
-	// 	},
-	// ];
+				setData(arr)
+			})
+	})
 
 	return (
 		<section className='funfact-section'>
@@ -129,6 +76,7 @@ const Section9 = () => {
 				</div>
 				<OwlCarousel className="owl-themes" {...options} data-aos="fade-down-left" >
 
+<<<<<<< HEAD
 					{posts.length > 0 ? (
 						posts.map((item,index) => (
 							<div className="row align-items-center justify-content-center">
@@ -140,12 +88,21 @@ const Section9 = () => {
 										<h3 className="card-text mb-0">{item.amount}</h3>
 										<p className="card-text text-muted">{cookies.i18next === 'id' ? formatDate(item.date_created, 'id') : formatDate(item.date_created, 'en')}</p>
 									</div>
+=======
+					{data.map((item, index) => (
+						<div className="row align-items-center justify-content-center">
+							<div className="col-md-12 text-center mb-3 " key={index}>
+								<div className="card bg-light border-0 shadow p-3">
+									{/* Replace with your actual icon component or image */}
+									{/* <i className="fas fa-briefcase fa-2x mb-3"></i> */}
+									<h5 style={{ fontSize: '16px' }} className="card-title mb-0">{item.title}</h5>
+									<h3 className="card-text mb-0">{item.value}</h3>
+									<p className="card-text text-muted">{item.date}</p>
+>>>>>>> 5315a11ee33052aca3dd770f03df6e8a7b9fc742
 								</div>
 							</div>
-						))
-					) : (
-						<p className="text-center">No posts available.</p>
-					)}
+						</div>
+					))}
 
 				</OwlCarousel>
 				{/* <Tabs
