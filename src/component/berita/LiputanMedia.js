@@ -4,15 +4,16 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
-import FormControl from 'react-bootstrap/FormControl';
+
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
-// import DatePicker from "react-multi-date-picker";
-// import transition from "react-element-popper/animations/transition";
-
+import FormControl from 'react-bootstrap/FormControl';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useTranslation } from "react-i18next";
+
 const LiputanMedia = () => {
+    const { t } = useTranslation()
     dayjs.locale('id');
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
@@ -20,7 +21,18 @@ const LiputanMedia = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
     const [startDate, setStartDate] = useState("");
+    const convertToSlug = (title) => {
+        if (!title) return ""; // Handle null or undefined title
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, "")
+            .replace(/\s+/g, "-")
+            .replace(/-+/g, "-");
+    };
+
     useEffect(() => {
+        // Function to fetch posts
         const fetchPosts = async () => {
             setLoading(true);
             try {
@@ -28,21 +40,20 @@ const LiputanMedia = () => {
                 const endpoint = process.env.REACT_APP_API_LIPUTAN_MEDIA;
                 const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
-                setFilteredPosts(response.data); // Initialize filteredPosts with all posts
+                setFilteredPosts(response.data);
             } catch (err) {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: err.message,
+                    text: err,
                 });
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchPosts();
+        fetchPosts(); // Call fetchPosts function when component mounts
     }, []);
-
 
     useEffect(() => {
         if (startDate) {
@@ -50,6 +61,7 @@ const LiputanMedia = () => {
             const filtered = posts.filter(post =>
                 dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
             );
+          
             setFilteredPosts(filtered);
             setCurrentPage(1); // Reset to the first page after filtering
         } else {
@@ -57,11 +69,13 @@ const LiputanMedia = () => {
         }
     }, [startDate, posts]);
 
+
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
     const currentPosts = filteredPosts.slice(firstPostIndex, lastPostIndex);
 
     const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
     const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
 
     const generatePaginationItems = () => {
@@ -100,15 +114,7 @@ const LiputanMedia = () => {
         return paginationItems;
     };
 
-    const convertToSlug = (title) => {
-        if (!title) return "";
-        return title
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/\s+/g, '-')
-            .replace(/-+/g, '-');
-    };
+
     const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
         <FormControl
             value={value}
@@ -117,16 +123,18 @@ const LiputanMedia = () => {
             placeholder="Filter Tanggal"
             readOnly // Makes the input read-only
             size="sm"
-            style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc' }}
+            style={{paddingTop:'8px',paddingBottom:'9px', border:'1px solid #ccc'}}
         />
     ));
+
     return (
         <>
             <div className="page-wrapper">
+
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Liputan Media</h3>
+                            <h3>{t('menu.liputanMedia')}</h3>
                         </div>
                     </div>
                 </section>
@@ -151,6 +159,9 @@ const LiputanMedia = () => {
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
                             </Col>
+                        </div>
+                        <div className="row row-gutter-30">
+
                             {loading
                                 ? Array(postsPerPage)
                                     .fill()
@@ -161,20 +172,18 @@ const LiputanMedia = () => {
                                     ))
                                 : currentPosts.length > 0 ? (
                                     currentPosts.map((item) => (
-                                        <div className="col-lg-4 col-md-6" key={item.id}>
+
+                                        <div className="col-lg-4 col-xl-4 col-md-6" key={item.id}>
                                             <div className="berita-card">
                                                 <div className="berita-card-imgbox ">
                                                     <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>
-                                                        {/* <img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} /> */}
-                                                        <img
-                                                            src={item?.image}
-                                                            className='img-fluid w-100'
-                                                            alt={item.title}
-                                                        />
+                                                        {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
+                                                        <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} />
                                                     </a>
                                                 </div>
                                                 <div className="berita-content ">
-                                                    <div className="event-card-info-x" style={{ color: `#F2994A` }}>
+                                                    <div className="event-card-info-x " style={{ color: `#F2994A` }}>
+
                                                         <span>#BERITABARU</span>
                                                     </div>
                                                     <div className="event-card-title pb-4">
@@ -194,6 +203,7 @@ const LiputanMedia = () => {
                                         <p className="text-center">No posts available</p>
                                     </div>
                                 )}
+
                             {!loading && totalPages > 1 && (
                                 <div className='pagination mt-4'>
                                     {generatePaginationItems().map((page, index) => (
@@ -214,9 +224,9 @@ const LiputanMedia = () => {
                         </div>
                     </div>
                 </section>
-            </div>
+            </div >
         </>
-    );
+    )
 }
 
-export default LiputanMedia;
+export default LiputanMedia
