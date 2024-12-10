@@ -91,11 +91,6 @@ const Section9 = () => {
 						</h2>
 					</div>
 				</div>
-
-
-
-				
-			
 				<OwlCarousel className="owl-themes" {...options} data-aos="fade-down-left" >
 					
 						{data.map((item, index) => (

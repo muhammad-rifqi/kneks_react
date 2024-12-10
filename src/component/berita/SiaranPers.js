@@ -4,25 +4,32 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
-import FormControl from 'react-bootstrap/FormControl';
+
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
-
+import FormControl from 'react-bootstrap/FormControl';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useTranslation } from "react-i18next";
+
 const SiaranPers = () => {
-
-
-    // const [visible, setVisible] = useState(9)
-
+    const { t } = useTranslation()
+    dayjs.locale('id');
     const [loading, setLoading] = useState(true);
-
-    // const [loadingMore, setLoadingMore] = useState(false);
     const [posts, setPosts] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
     const [startDate, setStartDate] = useState("");
+    const convertToSlug = (title) => {
+        if (!title) return ""; // Handle null or undefined title
+        return title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, "")
+            .replace(/\s+/g, "-")
+            .replace(/-+/g, "-");
+    };
 
     useEffect(() => {
         // Function to fetch posts
@@ -39,7 +46,6 @@ const SiaranPers = () => {
                     icon: "error",
                     title: "Oops...",
                     text: err,
-
                 });
             } finally {
                 setLoading(false);
@@ -48,23 +54,28 @@ const SiaranPers = () => {
 
         fetchPosts(); // Call fetchPosts function when component mounts
     }, []);
+
     useEffect(() => {
         if (startDate) {
             const formattedDate = dayjs(startDate).format('YYYY-MM-DD'); // Lowercase 'yyyy'
             const filtered = posts.filter(post =>
                 dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
             );
+          
             setFilteredPosts(filtered);
             setCurrentPage(1); // Reset to the first page after filtering
         } else {
             setFilteredPosts(posts);
         }
     }, [startDate, posts]);
+
+
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
     const currentPosts = filteredPosts.slice(firstPostIndex, lastPostIndex);
 
     const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
     const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
 
     const generatePaginationItems = () => {
@@ -102,6 +113,8 @@ const SiaranPers = () => {
 
         return paginationItems;
     };
+
+
     const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
         <FormControl
             value={value}
@@ -110,22 +123,9 @@ const SiaranPers = () => {
             placeholder="Filter Tanggal"
             readOnly // Makes the input read-only
             size="sm"
-            style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc' }}
+            style={{paddingTop:'8px',paddingBottom:'9px', border:'1px solid #ccc'}}
         />
     ));
-
-    const convertToSlug = (title) => {
-        return title
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/\s+/g, '-')
-            .replace(/-+/g, '-');
-    };
-
-    // const [selectedDates, setSelectedDates] = useState();
-
-
     return (
         <>
             <div className="page-wrapper">
@@ -133,7 +133,7 @@ const SiaranPers = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Siaran Pers</h3>
+                            <h3>{t('menu.siaranPers')}</h3>
                         </div>
                     </div>
                 </section>
@@ -220,11 +220,9 @@ const SiaranPers = () => {
                                     ))}
                                 </div>
                             )}
-
-
-                        </div >
-                    </div >
-                </section >
+                        </div>
+                    </div>
+                </section>
             </div >
         </>
     )
