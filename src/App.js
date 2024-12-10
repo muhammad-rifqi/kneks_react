@@ -83,7 +83,7 @@ function AppContent() {
         <Route path="/bisnis-dan-kewiraushaan-syariah" element={<BisnisDanKewirausahaanSyariah />} />
         <Route path="/infrastruktur-ekosistem-syariah" element={<InfrastrukturEkosistemSyariah />} />
         <Route path="/siaran-pers" element={<SiaranPers />} />
-        <Route path="/siaran-pers/:slug" element={<SiaranPersDetail />} />
+        <Route path="/siaran-pers/:id/:slug" element={<SiaranPersDetail />} />
         <Route path="/liputan-media" element={<LiputanMedia />} />
         <Route path="/liputan-media/:slug" element={<LiputanMediaDetail />} />
         <Route path="/info-terkini" element={<InfoTerkini />} />
