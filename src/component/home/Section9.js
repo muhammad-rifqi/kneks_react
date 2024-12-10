@@ -15,13 +15,10 @@ const Section9 = () => {
 		return dayjs(date).format('DD MMMM YYYY'); // Format the date
 	};
 	const { t } = useTranslation();
-<<<<<<< HEAD
+
 	
-	const [loading, setLoading] = useState(true);
-	const [posts, setPosts] = useState([]);
-=======
-	dayjs.locale('id');
->>>>>>> 5315a11ee33052aca3dd770f03df6e8a7b9fc742
+
+
 
 	const options = {
 		items: 1,
@@ -76,29 +73,17 @@ const Section9 = () => {
 				</div>
 				<OwlCarousel className="owl-themes" {...options} data-aos="fade-down-left" >
 
-<<<<<<< HEAD
-					{posts.length > 0 ? (
-						posts.map((item,index) => (
-							<div className="row align-items-center justify-content-center">
-								<div className="col-md-12 text-center mb-3 " key={index}>
-									<div className="card bg-light border-0 shadow p-3">
-										{/* Replace with your actual icon component or image */}
-										{/* <i className="fas fa-briefcase fa-2x mb-3"></i> */}
-										<h5 style={{ fontSize: '16px' }} className="card-title mb-0">{cookies.i18next === 'id' ? item.title : item.title_en}</h5>
-										<h3 className="card-text mb-0">{item.amount}</h3>
-										<p className="card-text text-muted">{cookies.i18next === 'id' ? formatDate(item.date_created, 'id') : formatDate(item.date_created, 'en')}</p>
-									</div>
-=======
+
 					{data.map((item, index) => (
 						<div className="row align-items-center justify-content-center">
 							<div className="col-md-12 text-center mb-3 " key={index}>
 								<div className="card bg-light border-0 shadow p-3">
 									{/* Replace with your actual icon component or image */}
 									{/* <i className="fas fa-briefcase fa-2x mb-3"></i> */}
-									<h5 style={{ fontSize: '16px' }} className="card-title mb-0">{item.title}</h5>
+									<h5 style={{ fontSize: '16px' }} className="card-title mb-0">{cookies.i18next === 'id' ? item.title : item.title_en}</h5>
 									<h3 className="card-text mb-0">{item.value}</h3>
-									<p className="card-text text-muted">{item.date}</p>
->>>>>>> 5315a11ee33052aca3dd770f03df6e8a7b9fc742
+									<p className="card-text text-muted">{cookies.i18next === 'id' ? formatDate(item.date, 'id') : formatDate(item.date, 'en')}</p>
+
 								</div>
 							</div>
 						</div>
