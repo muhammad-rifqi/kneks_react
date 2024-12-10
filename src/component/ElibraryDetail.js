@@ -98,7 +98,7 @@ const Elibrabry = () => {
                                         <div className="card-body">
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Judul</div>
-                                                <div className="col-sm-10 text-primary">{rows?.title || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.title || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Kategori</div>
@@ -106,17 +106,17 @@ const Elibrabry = () => {
                                                     {(() => {
                                                         switch (rows?.report_category_id) {
                                                             case 1:
-                                                                return "Roadmap/Masterplan";  // Or return <Roadmap /> if you want to render a component
+                                                                return " : Roadmap/Masterplan";  // Or return <Roadmap /> if you want to render a component
                                                             case 2:
-                                                                return "Pidato/Paparan";
+                                                                return " : Pidato/Paparan";
                                                             case 3:
-                                                                return "Kajian/Penelitian";
+                                                                return " : Kajian/Penelitian";
                                                             case 7:
-                                                                return "Publikasi";
+                                                                return " : Publikasi";
                                                             case 5:
-                                                                return "Regulasi";
+                                                                return " : Regulasi";
                                                             case 6:
-                                                                return "Siaran Pers";
+                                                                return " : Siaran Pers";
                                                             default:
                                                                 return "";  // Return nothing if no case matches
                                                         }
@@ -125,35 +125,35 @@ const Elibrabry = () => {
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Tanggal</div>
-                                                <div className="col-sm-10 text-primary">{dayjs(rows?.date).format("DD MMMM YYYY")} </div>
+                                                <div className="col-sm-10 text-primary"> : {dayjs(rows?.date).format("DD MMMM YYYY")} </div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Penulis</div>
-                                                <div className="col-sm-10 text-primary">{rows?.penulis || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.penulis || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Penerbit</div>
-                                                <div className="col-sm-10 text-primary">{rows?.penerbit || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.penerbit || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Sinopsis</div>
-                                                <div className="col-sm-10 text-primary">{rows?.sinopsis || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.sinopsis || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">ISBN</div>
-                                                <div className="col-sm-10 text-primary">{rows?.isbn || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.isbn || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Jumlah Halaman</div>
-                                                <div className="col-sm-10 text-primary">{rows?.jumlah_hal || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.jumlah_hal || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Lebar</div>
-                                                <div className="col-sm-10 text-primary">{rows?.lebar || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.lebar || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Panjang</div>
-                                                <div className="col-sm-10 text-primary">{rows?.panjang || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.panjang || '-'}</div>
                                             </div>
 
                                         </div>
