@@ -79,7 +79,7 @@ const Section9 = () => {
 							<div className="col-md-12 text-center mb-3 " key={index}>
 								<div className="card bg-light border-0 shadow p-3">
 									{/* Replace with your actual icon component or image */}
-									{/* <i className="fas fa-briefcase fa-2x mb-3"></i> */}
+									<i className="fas fa-briefcase fa-2x mb-3"></i>
 									<h5 style={{ fontSize: '16px' }} className="card-title mb-0">{cookies.i18next === 'id' ? item.title : item.title_en}</h5>
 									<h3 className="card-text mb-0">{item.value}</h3>
 									<p className="card-text text-muted">{cookies.i18next === 'id' ? formatDate(item.date, 'id') : formatDate(item.date, 'en')}</p>

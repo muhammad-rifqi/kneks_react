@@ -807,7 +807,7 @@ a {
   display: inline-block;
   color: var(--thm-secondary);
   font-size: 12px;
-  padding: 2px 11px;
+  padding: 4px 11px;
   cursor: pointer;
 }
 
