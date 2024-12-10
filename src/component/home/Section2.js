@@ -4,11 +4,8 @@ import 'dayjs/locale/id';
 
 const Section2 = () => {
     const { t } = useTranslation();
-
-
-  
-
     return (
+        <>
         <section className="funfact-section-direktorat" >
             <div className="container-fluid">
                 <div className="row justify-content-center">
@@ -86,6 +83,10 @@ const Section2 = () => {
                 </div>
             </div>
         </section>
+        <div style={{marginBottom : '30px'}}>
+
+        </div>
+        </>
     )
 }
 
