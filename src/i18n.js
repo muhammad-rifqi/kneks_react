@@ -37,7 +37,7 @@ const resources = {
             "alamat": "Address",
 
             "event": "Islamic Economics and Finance Events",
-            "statistik_slider": "Sharia Economic and Financial Statistics",
+            "statistik_slider": "Sharia Economic and Financial Data",
             "bannerJudul": "Uniting steps, advancing the country",
             "bannerIsi": "By accelerating, expanding and advancing the development of Islamic economics and finance in order to strengthen national economic resilience.",
             "tombol": "See More",
@@ -157,7 +157,7 @@ const resources = {
             "instagram": "Postingan Instagram",
 
             "event": "Event Ekonomi dan Keuangan Syariah",
-            "statistik_slider": "Statistik Ekonomi dan Keuangan Syariah",
+            "statistik_slider": "Data Ekonomi dan Keuangan Syariah",
             "zona": "Zona KHAS",
             "agenda_maps" : "Agenda Maps",
             "bannerJudul": "Menyatukan langkah, Memajukan Negeri",

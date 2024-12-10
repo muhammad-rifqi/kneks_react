@@ -31,7 +31,6 @@ const Section6 = () => {
                 const url = process.env.REACT_APP_API_URL;
                 const endpoint = process.env.REACT_APP_API_ZONA_KHAS;
                 const response = await axios.get(`${url}${endpoint}`);
-                console.log(response.data, "dataaa");
                 setDataKhas(response.data);
             } catch (err) {
                 Swal.fire({

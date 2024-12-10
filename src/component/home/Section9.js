@@ -4,18 +4,22 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { useTranslation } from "react-i18next";
-
+import Swal from "sweetalert2";
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 
 
 const Section9 = () => {
 	const { t } = useTranslation();
+	dayjs.locale('id');
+	const [loading, setLoading] = useState(true);
+	const [posts, setPosts] = useState([]);
 
 	const options = {
 		items: 1,
 		margin: 30,
 		loop: true, // Disable looping since we only have one slide
 		navigation: true,
-		// navText: ['<i className="fa-arrow-left-long"></i>', '<i className="fa-solid fa-arrow-right-long"></i>'],
 		autoplay: true,
 		autoplayTimeout: 4000,
 		dots: false,
