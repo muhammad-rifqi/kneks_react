@@ -122,8 +122,8 @@ const KeuanganSosialSyariah = () => {
                                     <h2 className="section-title text-center">{t('direktorat.direktoratKeuanganSosialSyariah')}</h2>
                                     <p>{t('direktorat.direktoratKeuanganSosialSyariahDiKneks')}</p>
                                     <p>{t('direktorat.direktoratIniBertujuanUntuk')}</p>
-                                    {/* <h5 className="about-one-inner-text-x">{t('divisi')}</h5> */}
-                                    
+                                    <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
+
                                     {/* <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
                                         <div className="col-6 col-md-4 col-lg-2 pb-3">
                                             <a href="#t" className="component-service d-block ">
@@ -147,6 +147,39 @@ const KeuanganSosialSyariah = () => {
                                             </a>
                                         </div>
                                     </div> */}
+
+                                    <div className="row row-gutter-y-30 d-flex justify-content-center">
+                                        <div className="col-12">
+                                            <div style={{ padding: '10px', backgroundColor: '#1c96c5', color: 'white' }}>
+                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
+                                                    <summary>Divisi 1</summary>
+                                                    <div style={{ padding: '10px', color: 'white' }}>
+                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    </div>
+                                                </details>
+                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
+                                                    <summary>Divisi 2</summary>
+                                                    <div style={{ padding: '10px', color: 'white' }}>
+                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    </div>
+                                                </details>
+                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
+                                                    <summary>Divisi 3</summary>
+                                                    <div style={{ padding: '10px', color: 'white' }}>
+                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    </div>
+                                                </details>
+                                                <details style={{ padding: '10px', color: '#fff' }}>
+                                                    <summary>Divisi 4</summary>
+                                                    <div style={{ padding: '10px', color: 'white' }}>
+                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    </div>
+                                                </details>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                 </div>
                             </div>
 

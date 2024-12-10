@@ -52,16 +52,16 @@ const Section8 = () => {
 	return (
 		<section className="mayor-section">
 			<div className="container">
-				<div className="blog-box-x" data-aos="flip-up">
+				<div className="blog-box-x" data-aos="flip-up" style={{marginTop: '-60px'}}>
 					<div className="section-title-box text-center">
 						<h2 className="section-title">{t('rekomendasi')}</h2>
 					</div>
 				</div>
-				<div className="row ">
+				<div className="row">
 					{posts.length > 0 ? (
 
 						posts.slice(0, 4).map((item) => (
-							<div className="col-lg-3 col-md-6" data-aos="fade-down-left" key={item?.id}>
+							<div style={{marginTop: '-40px'}} className="col-lg-3 col-md-6" data-aos="fade-down-left" key={item?.id}>
 								<a href={`/agenda/${convertToSlug(item?.title)}`}>
 									<div className="card shadow p-3 mb-5 rounded card-agendas" style={{ background: `#146AA4`, color: `#ffffff` }}>
 										<div className="card-header" style={{ borderBottom: `1px solid #ffffff`, paddingBottom: `10px`, background: `#146AA4` }}><h4>{cookies.i18next === 'id' ? item.title : item.title_en}</h4></div>
@@ -82,7 +82,7 @@ const Section8 = () => {
 						<p className="text-center">No posts available.</p>
 					)}
 				</div>
-				<div className="selengkapnya" data-aos="fade-down-left" style={{textAlign : 'center' }}>
+				<div className="selengkapnya" data-aos="fade-down-left" style={{textAlign : 'center',marginTop: '20px' }}>
 					<a href={`/agenda`} className="btn btn-primary btn-sm" style={{backgroundColor: "#006699"}}>
 						Lihat Selengkapnya
 					</a>
