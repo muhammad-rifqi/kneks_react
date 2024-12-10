@@ -3148,7 +3148,7 @@ a.search-toggler {
 
 .service-arrow-image img {
   position: absolute;
-  bottom: 150px;
+  bottom: 80px;
   right: -90px;
   animation: UpDown 2s linear infinite;
   transform: translateX(45px);
@@ -3658,7 +3658,7 @@ a.search-toggler {
 
 .funfact-section-isu {
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 30px;
   background-image: url(../image/bg/isu.jpg);
   height: 100%;
   background-position: 25% center;
