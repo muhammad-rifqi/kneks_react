@@ -316,7 +316,7 @@ const Footer = () => {
                     <h4 className="footer-widget-title">{t('menu.kontak')}</h4>
 
                   </div>
-                  <div className="footer-widget-contact-list">
+                  <div className="footer-widget-contact-list" style={{marginTop : '-40px'}}>
                     <i className="fa-solid fa-envelope"></i>
                     <div className="footer-widget-contact-item">
                       <a href="mailto:humas@kneks.go.id">humas@kneks.go.id</a>
