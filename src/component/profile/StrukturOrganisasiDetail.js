@@ -49,37 +49,47 @@ const StrukturOrganisasiDetail = () => {
 			}
 		}
 	}, [slug]);
-
-	console.log(rows)
 	return (
 		<>
 			<div className="page-wrapper">
-
-				<section className="page-banner">
+				{/* <section className="page-banner-structure" style={{ backgroundColor: '#cecece', paddingTop: '70px', paddingBottom: '85px', height: '320px' }}>
 					<div className="container">
 						<div className="row d-flex align-items-center">
 							<div className="col-lg-6 col-md-6 col-sm-12 page-banner-title-x  d-none d-lg-block d-md-block">
-								<h3>{rows?.name}</h3>
-								<h5>{rows?.position}</h5>
+								<h3 style={{ display: 'none' }}>{rows?.name}</h3>
+								<h5 style={{ display: 'none' }}>{rows?.position}</h5>
 							</div>
 							<div className="struktur-profil col-lg-6 col-md-6 col-sm-12 text-end  d-none d-lg-block d-md-block">
-								<img src={rows?.photo ? `${rows?.photo}` : "assets/image/defaulttumbnail.jpeg"} alt="" className="img-fluid" />
+								<img src={rows?.photo ? `${rows?.photo}` : "assets/image/defaulttumbnail.jpeg"} alt="" className="img-fluid" style={{ display: 'none' }} />
 							</div>
-
-
 
 							<div className="struktur-profil col-lg-6 col-md-6 col-sm-12 text-center  d-block d-lg-none d-md-none">
-								<img src={rows?.photo ? `${rows?.photo}` : "assets/image/defaulttumbnail.jpeg"} alt="" className="img-fluid" />
+								<img style={{ display: 'none' }} src={rows?.photo ? `${rows?.photo}` : "assets/image/defaulttumbnail.jpeg"} alt="" className="img-fluid" />
 							</div>
 							<div className="col-lg-6 col-md-6 col-sm-12 page-banner-title-x  text-center d-block d-lg-none d-md-none pt-5">
-								<h3>{rows?.name}</h3>
-								<h5>{rows?.position}</h5>
+								<h3 style={{ display: 'none' }}>{rows?.name}</h3>
+								<h5 style={{ display: 'none' }}>{rows?.position}</h5>
 							</div>
 						</div>
 					</div>
-				</section>
-				<section className="event-details-section-ber">
+				</section> */}
+				<section className="event-details-section-ber" style={{marginTop:'-35px'}}>
 					<div className="container">
+						<div className="row">
+							<div className="col-md-4">
+								<div className="struktur-profil text-center">
+									<img src={rows?.photo ? `${rows?.photo}` : "assets/image/defaulttumbnail.jpeg"} alt="" className="img-fluid"/>
+								</div>
+							</div>
+							<div className="col-md-8 text-center ">
+								<br />
+								<br />
+								<h5 className="text-secondary">{rows?.name}</h5>
+								<p className="text-secondary">{rows?.position}</p>
+							</div>
+						</div>
+						<br />
+						<br />
 						<div className="row">
 							<div className="col-lg-9">
 								<div className="event-details-content-box">
