@@ -107,7 +107,10 @@ const Footer = () => {
 
     <div>
 
-      <section className="footer border-top">
+      <section className="footer">
+      <div className="bottom-footer">
+       
+        </div>
         <div className="footer-inner">
           <div className="container">
             <div className="row">
