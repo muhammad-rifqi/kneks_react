@@ -11030,6 +11030,24 @@ SOCIAL MEDIA
     white-space: normal;
     /* Allow text to wrap */
   }
+  .berita-content-direktorat-xs {
+    padding: 15px;
+    background-color: var(--thm-white);
+    /* height: 160px; */
+
+    display: -webkit-box;
+    /* Use flexbox */
+    -webkit-box-orient: vertical;
+    /* Set the orientation to vertical */
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    /* Hide overflow */
+    text-overflow: ellipsis !important;
+    /* Show ellipsis */
+    width: 279px;
+    white-space: normal;
+    /* Allow text to wrap */
+  }
 
   .team-card-content-x {
     height: 110px;
