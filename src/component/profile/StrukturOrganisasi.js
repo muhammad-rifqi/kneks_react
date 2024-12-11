@@ -76,14 +76,14 @@ const StrukturOrganisasi = () => {
 								<>
 									<div className="row">
 										<div className="col-12 col-md-6 col-xl-4 offset-4">
-											<div className="team-card">
-												<div className="team-card-img">
+											<div className="team-card-rev">
+												<div className="team-card-img-rev">
 													<a href={`/struktur-organisasi/${convertToSlug(posts[0].name)}`}><img src={posts[0].photo ? `${posts[0].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
-													<div className="team-card-icon">
-														{/* Social Media Icons */}
+													<div className="team-card-icon-rev">
+													
 													</div>
 												</div>
-												<div className="team-card-content">
+												<div className="team-card-content-rev">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[0].name)}`}>{posts[0].name}</a></h4>
 													<p>{posts[0].position}</p>
 												</div>
@@ -95,14 +95,14 @@ const StrukturOrganisasi = () => {
 									</p>
 									<div className="row">
 										<div className="col-4">
-											<div className="team-card">
-												<div className="team-card-img">
+											<div className="team-card-rev">
+												<div className="team-card-img-rev">
 													<a href={`/struktur-organisasi/${convertToSlug(posts[1].name)}`}><img src={posts[1].photo ? `${posts[1].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
-													<div className="team-card-icon">
-														{/* Social Media Icons */}
+													<div className="team-card-icon-rev">
+													
 													</div>
 												</div>
-												<div className="team-card-content">
+												<div className="team-card-content-rev">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[1].name)}`}>{posts[1].name}</a></h4>
 													<p>{posts[1].position}</p><br/>
 													<ul style={{listStyle : 'none', textAlign : 'left'}}>
@@ -114,14 +114,14 @@ const StrukturOrganisasi = () => {
 											</div>
 										</div>
 										<div className="col-4">
-											<div className="team-card">
-												<div className="team-card-img">
+											<div className="team-card-rev">
+												<div className="team-card-img-rev">
 													<a href={`/struktur-organisasi/${convertToSlug(posts[2].name)}`}><img src={posts[2].photo ? `${posts[2].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
-													<div className="team-card-icon">
-														{/* Social Media Icons */}
+													<div className="team-card-icon-rev">
+													
 													</div>
 												</div>
-												<div className="team-card-content">
+												<div className="team-card-content-rev">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[2].name)}`}>{posts[2].name}</a></h4>
 													<p>{posts[2].position}</p><br/>
 													<ul style={{listStyle : 'none', textAlign : 'left'}}>
@@ -133,14 +133,14 @@ const StrukturOrganisasi = () => {
 											</div>
 										</div>
 										<div className="col-4">
-											<div className="team-card">
-												<div className="team-card-img">
+											<div className="team-card-rev">
+												<div className="team-card-img-rev">
 													<a href={`/struktur-organisasi/${convertToSlug(posts[3].name)}`}><img src={posts[3].photo ? `${posts[3].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
-													<div className="team-card-icon">
-														{/* Social Media Icons */}
+													<div className="team-card-icon-rev">
+													
 													</div>
 												</div>
-												<div className="team-card-content">
+												<div className="team-card-content-rev">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[3].name)}`}>{posts[3].name}</a></h4>
 													<p>{posts[3].position}</p><br/>
 													<ul style={{listStyle : 'none', textAlign : 'left'}}>
@@ -155,14 +155,14 @@ const StrukturOrganisasi = () => {
 									<p>
 										<div className="row">
 											<div className="col-4 offset-2">
-												<div className="team-card">
-													<div className="team-card-img">
+												<div className="team-card-rev">
+													<div className="team-card-img-rev">
 														<a href={`/struktur-organisasi/${convertToSlug(posts[4].name)}`}><img src={posts[4].photo ? `${posts[4].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
-														<div className="team-card-icon">
-															{/* Social Media Icons */}
+														<div className="team-card-icon-rev">
+														
 														</div>
 													</div>
-													<div className="team-card-content">
+													<div className="team-card-content-rev">
 														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[4].name)}`}>{posts[4].name}</a></h4>
 														<p>{posts[4].position}</p><br/>
 														<ul style={{listStyle : 'none', textAlign : 'left'}}>
@@ -174,14 +174,14 @@ const StrukturOrganisasi = () => {
 												</div>
 											</div>
 											<div className="col-4">
-												<div className="team-card">
-													<div className="team-card-img">
+												<div className="team-card-rev">
+													<div className="team-card-img-rev">
 														<a href={`/struktur-organisasi/${convertToSlug(posts[5].name)}`}><img src={posts[5].photo ? `${posts[5].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
-														<div className="team-card-icon">
-															{/* Social Media Icons */}
+														<div className="team-card-icon-rev">
+														
 														</div>
 													</div>
-													<div className="team-card-content">
+													<div className="team-card-content-rev">
 														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[5].name)}`}>{posts[5].name}</a></h4>
 														<p>{posts[5].position}</p><br/>
 														<ul style={{listStyle : 'none', textAlign : 'left'}}>
@@ -203,14 +203,14 @@ const StrukturOrganisasi = () => {
 									</div>
 									<div className="row">
 										<div className="col-12 col-md-6 col-xl-4 offset-4">
-											<div className="team-card">
-												<div className="team-card-img">
+											<div className="team-card-rev">
+												<div className="team-card-img-rev">
 													<a href={`/struktur-organisasi/${convertToSlug(posts[6].name)}`}><img src={posts[6].photo ? "assets/image/defaultuser.jpg" : "assets/image/defaultuser.jpg"} className="img-fluid" alt="img-40" /></a>
-													<div className="team-card-icon">
-														{/* Social Media Icons */}
+													<div className="team-card-icon-rev">
+													
 													</div>
 												</div>
-												<div className="team-card-content">
+												<div className="team-card-content-rev">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[6].name)}`}>{posts[6].name}</a></h4>
 													<p>{posts[6].position}</p><br/>
 												</div>
@@ -220,14 +220,14 @@ const StrukturOrganisasi = () => {
 									<p>
 										<div className="row">
 											<div className="col-4 offset-2">
-												<div className="team-card">
-													<div className="team-card-img">
+												<div className="team-card-rev">
+													<div className="team-card-img-rev">
 														<a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}><img src={posts[7].photo ? "assets/image/defaultuser.jpg" : "assets/image/defaultuser.jpg"} className="img-fluid" alt="img-40" /></a>
-														<div className="team-card-icon">
-															{/* Social Media Icons */}
+														<div className="team-card-icon-rev">
+														
 														</div>
 													</div>
-													<div className="team-card-content">
+													<div className="team-card-content-rev">
 														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}>{posts[7].name}</a></h4>
 														<p>{posts[7].position}</p><br/>
 														<ul style={{listStyle : 'none', textAlign : 'left'}}>
@@ -239,14 +239,14 @@ const StrukturOrganisasi = () => {
 												</div>
 											</div>
 											<div className="col-5">
-												<div className="team-card">
-													<div className="team-card-img">
+												<div className="team-card-rev">
+													<div className="team-card-img-rev">
 														<a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}><img src={posts[8].photo ? "assets/image/defaultuser.jpg" : "assets/image/defaultuser.jpg"} className="img-fluid" alt="img-40" /></a>
-														<div className="team-card-icon">
-															{/* Social Media Icons */}
+														<div className="team-card-icon-rev">
+														
 														</div>
 													</div>
-													<div className="team-card-content">
+													<div className="team-card-content-rev">
 														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}>{posts[8].name}</a></h4>
 														<p>{posts[8].position}</p><br/>
 														<ul style={{listStyle : 'none', textAlign : 'left'}}>
