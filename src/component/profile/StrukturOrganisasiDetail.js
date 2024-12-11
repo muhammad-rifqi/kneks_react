@@ -78,7 +78,7 @@ const StrukturOrganisasiDetail = () => {
 						<div className="row">
 							<div className="col-md-4">
 								<div className="struktur-profil text-center">
-									<img src={rows?.photo ? `${rows?.photo}` : "assets/image/defaulttumbnail.jpeg"} alt="" className="img-fluid"/>
+									<img src={rows?.photo ? `${rows?.photo}` : `${process.env.PUBLIC_URL}/assets/image/profilKosong.png`} alt="" className="img-fluid"/>
 								</div>
 							</div>
 							<div className="col-md-8 text-center ">

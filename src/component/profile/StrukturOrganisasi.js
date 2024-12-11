@@ -51,9 +51,9 @@ const StrukturOrganisasi = () => {
 						</div>
 					</div>
 				</section>
-				<section className="about-one-section funfact-section-struktur">
+				<section className="about-one-section">
 					<div className="container">
-						<div className="row row-gutter-y-40 text-center">
+						<div className="row row-gutter-y-40 text-center" style={{marginBottom:'80px'}}>
 							<div className="col-lg-12 col-xl-12">
 								<div className="about-one-image">
 									<img src="assets/image/struktur1.svg" alt="img-59" className="img-fluid" />
@@ -74,13 +74,13 @@ const StrukturOrganisasi = () => {
 								))
 							) : (
 								<>
-									<div className="row">
-										<div className="col-12 col-md-6 col-xl-4 offset-4">
+									<div className="row row-gutter-30 mb-4">
+										<div className="col-12 col-sm-6 col-md-4 col-lg-4 offset-lg-4 offset-md-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
 													<a href={`/struktur-organisasi/${convertToSlug(posts[0].name)}`}><img src={posts[0].photo ? `${posts[0].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
-													
+
 													</div>
 												</div>
 												<div className="team-card-content-rev">
@@ -90,176 +90,366 @@ const StrukturOrganisasi = () => {
 											</div>
 										</div>
 									</div>
-									<p>
 
-									</p>
-									<div className="row">
-										<div className="col-4">
+									<div className="row mb-4">
+										<div className="col-12 col-sm-6 col-md-4 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
 													<a href={`/struktur-organisasi/${convertToSlug(posts[1].name)}`}><img src={posts[1].photo ? `${posts[1].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
-													
+
 													</div>
 												</div>
 												<div className="team-card-content-rev">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[1].name)}`}>{posts[1].name}</a></h4>
-													<p>{posts[1].position}</p><br/>
-													<ul style={{listStyle : 'none', textAlign : 'left'}}>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/> <span style={{fontSize : '11px'}}>Kepala Divisi Pengembangan Halal Assurance System</span> </li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/> <span style={{fontSize : '11px'}}>Kepala Divisi Infrastruktur Industri Halal </span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/> <span style={{fontSize : '11px'}}>Kepala Divisi Rantai Nilai Produk Halal</span></li>
-														</ul>
+													<p>{posts[1].position}</p>
 												</div>
+												<ul className="list-unstyled text-left">
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img1"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Pengembangan Halal Assurance System</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img2"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Infrastruktur Industri Halal</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img3"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Rantai Nilai Produk Halal</span>
+													</li>
+												</ul>
 											</div>
 										</div>
-										<div className="col-4">
+										<div className="col-12 col-sm-6 col-md-4 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
 													<a href={`/struktur-organisasi/${convertToSlug(posts[2].name)}`}><img src={posts[2].photo ? `${posts[2].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
-													
+
 													</div>
 												</div>
 												<div className="team-card-content-rev">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[2].name)}`}>{posts[2].name}</a></h4>
-													<p>{posts[2].position}</p><br/>
-													<ul style={{listStyle : 'none', textAlign : 'left'}}>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Perbankan Syariah</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Jasa Keuangan Syariah Non-Bank Syariah</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Pasar Modal Syariah</span></li>
-														</ul>
+													<p>{posts[2].position}</p>
+
+
 												</div>
+												<ul className="list-unstyled text-left">
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img1"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Perbankan Syariah</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img2"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Jasa Keuangan Syariah Non-Bank Syariah</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img3"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Pasar Modal Syariah</span>
+													</li>
+												</ul>
 											</div>
 										</div>
-										<div className="col-4">
+										<div className="col-12 col-sm-6 col-md-4 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
 													<a href={`/struktur-organisasi/${convertToSlug(posts[3].name)}`}><img src={posts[3].photo ? `${posts[3].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
-													
+
 													</div>
 												</div>
 												<div className="team-card-content-rev">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[3].name)}`}>{posts[3].name}</a></h4>
-													<p>{posts[3].position}</p><br/>
-													<ul style={{listStyle : 'none', textAlign : 'left'}}>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Dana Sosial Syariah</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Lembaga Keuangan Mikro Syariah</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Inklusi Keuangan Syariah</span></li>
-														</ul>
+													<p>{posts[3].position}</p>
+
 												</div>
+												<ul className="list-unstyled text-left">
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img1"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Dana Sosial Syariah</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img2"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Lembaga Keuangan Mikro Syariah</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img3"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Inklusi Keuangan Syariah</span>
+													</li>
+												</ul>
 											</div>
 										</div>
 									</div>
-									<p>
-										<div className="row">
-											<div className="col-4 offset-2">
-												<div className="team-card-rev">
-													<div className="team-card-img-rev">
-														<a href={`/struktur-organisasi/${convertToSlug(posts[4].name)}`}><img src={posts[4].photo ? `${posts[4].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
-														<div className="team-card-icon-rev">
-														
-														</div>
-													</div>
-													<div className="team-card-content-rev">
-														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[4].name)}`}>{posts[4].name}</a></h4>
-														<p>{posts[4].position}</p><br/>
-														<ul style={{listStyle : 'none', textAlign : 'left'}}>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Kemitraan dan Akselerasi Usaha Syariah</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Inkubasi Bisnis Syariah</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Bisnis Digital dan Pusat Ekonomi Syariah</span></li>
-														</ul>
+
+									<div className="row mb-4">
+										<div className="col-12 col-sm-6 col-md-4 offset-lg-2 offset-md-2 mb-4">
+											<div className="team-card-rev">
+												<div className="team-card-img-rev">
+													<a href={`/struktur-organisasi/${convertToSlug(posts[4].name)}`}><img src={posts[4].photo ? `${posts[4].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
+													<div className="team-card-icon-rev">
+
 													</div>
 												</div>
-											</div>
-											<div className="col-4">
-												<div className="team-card-rev">
-													<div className="team-card-img-rev">
-														<a href={`/struktur-organisasi/${convertToSlug(posts[5].name)}`}><img src={posts[5].photo ? `${posts[5].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
-														<div className="team-card-icon-rev">
-														
-														</div>
-													</div>
-													<div className="team-card-content-rev">
-														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[5].name)}`}>{posts[5].name}</a></h4>
-														<p>{posts[5].position}</p><br/>
-														<ul style={{listStyle : 'none', textAlign : 'left'}}>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Hukum Pengembangan Ekonomi Syariah</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Promosi dan Kerja Sama Strategis</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Pengembagan SDM Ekonomi Syariah</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img4" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Riset Ekonomi Syariah</span></li>
-														</ul>
-													</div>
+												<div className="team-card-content-rev">
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[4].name)}`}>{posts[4].name}</a></h4>
+													<p>{posts[4].position}</p>
+
 												</div>
+												<ul className="list-unstyled text-left">
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img1"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Kemitraan dan Akselerasi Usaha Syariah</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img2"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Inkubasi Bisnis Syariah</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img3"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Bisnis Digital dan Pusat Ekonomi Syariah</span>
+													</li>
+												</ul>
 											</div>
 										</div>
-									</p>
+										<div className="col-12 col-sm-6 col-md-4 mb-4">
+											<div className="team-card-rev">
+												<div className="team-card-img-rev">
+													<a href={`/struktur-organisasi/${convertToSlug(posts[5].name)}`}><img src={posts[5].photo ? `${posts[5].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
+													<div className="team-card-icon-rev">
+
+													</div>
+												</div>
+												<div className="team-card-content-rev">
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[5].name)}`}>{posts[5].name}</a></h4>
+													<p>{posts[5].position}</p>
+
+												</div>
+												<ul className="list-unstyled text-left">
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img1"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Hukum Pengembangan Ekonomi Syariah</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img2"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Promosi dan Kerja Sama Strategis</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img3"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Pengembagan SDM Ekonomi Syariah</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img3"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Riset Ekonomi Syariah</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
 									<hr />
 									<div className="blog-box-manajemen">
 										<div className="section-title-box text-center">
 											<h2 className="section-title">Sekretariat</h2>
 										</div>
 									</div>
-									<div className="row">
-										<div className="col-12 col-md-6 col-xl-4 offset-4">
+									<div className="row mb-4">
+										<div className="col-12 col-sm-6 col-md-4 col-lg-4 offset-lg-4 offset-md-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[6].name)}`}><img src={posts[6].photo ? "assets/image/defaultuser.jpg" : "assets/image/defaultuser.jpg"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[6].name)}`}><img src={posts[6].photo ? "assets/image/profilKosong.png" : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
-													
+
 													</div>
 												</div>
 												<div className="team-card-content-rev">
 													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[6].name)}`}>{posts[6].name}</a></h4>
-													<p>{posts[6].position}</p><br/>
+													<p>{posts[6].position}</p>
 												</div>
 											</div>
 										</div>
 									</div>
-									<p>
-										<div className="row">
-											<div className="col-4 offset-2">
-												<div className="team-card-rev">
-													<div className="team-card-img-rev">
-														<a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}><img src={posts[7].photo ? "assets/image/defaultuser.jpg" : "assets/image/defaultuser.jpg"} className="img-fluid" alt="img-40" /></a>
-														<div className="team-card-icon-rev">
-														
-														</div>
-													</div>
-													<div className="team-card-content-rev">
-														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}>{posts[7].name}</a></h4>
-														<p>{posts[7].position}</p><br/>
-														<ul style={{listStyle : 'none', textAlign : 'left'}}>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Perencanaan dan Keuangan</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi SDM dan Kepatuhan Internal</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Dukungan Teknologi dan Rumah Tangga</span></li>
-														</ul>
+
+									<div className="row mb-4">
+										<div className="col-12 col-sm-6 col-md-4 offset-lg-2 offset-md-2 mb-4">
+											<div className="team-card-rev">
+												<div className="team-card-img-rev">
+													<a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}><img src={posts[7].photo ? "assets/image/profilKosong.png" : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
+													<div className="team-card-icon-rev">
+
 													</div>
 												</div>
-											</div>
-											<div className="col-5">
-												<div className="team-card-rev">
-													<div className="team-card-img-rev">
-														<a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}><img src={posts[8].photo ? "assets/image/defaultuser.jpg" : "assets/image/defaultuser.jpg"} className="img-fluid" alt="img-40" /></a>
-														<div className="team-card-icon-rev">
-														
-														</div>
-													</div>
-													<div className="team-card-content-rev">
-														<h4><a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}>{posts[8].name}</a></h4>
-														<p>{posts[8].position}</p><br/>
-														<ul style={{listStyle : 'none', textAlign : 'left'}}>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img1" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Pemantauan Program dan Industri Produk Halal</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img2" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Pemantauan Program dan Industri Jasa Keuangan Syariah</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img3" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Pemantauan Program dan Keuangan Sosial Syariah</span></li>
-															<li><img src={'assets/image/defaultuser.jpg'} alt="img4" width={'50'} style={{borderRadius : '50%', padding: '3px'}}/><span style={{fontSize : '11px'}}>Kepala Divisi Pemantauan Program dan Bisnis dan Kewirausahaan Syariah</span></li>
-														</ul>
-													</div>
+												<div className="team-card-content-rev">
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}>{posts[7].name}</a></h4>
+													<p>{posts[7].position}</p>
+
 												</div>
+												<ul className="list-unstyled text-left">
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img1"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Perencanaan dan Keuangan</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img2"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi SDM dan Kepatuhan Internal</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img3"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Dukungan Teknologi dan Rumah Tangga</span>
+													</li>
+
+												</ul>
 											</div>
 										</div>
-									</p>
+										<div className="col-12 col-sm-6 col-md-4 mb-4">
+											<div className="team-card-rev">
+												<div className="team-card-img-rev">
+													<a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}><img src={posts[8].photo ? "assets/image/profilKosong.png" : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
+													<div className="team-card-icon-rev">
+
+													</div>
+												</div>
+												<div className="team-card-content-rev">
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}>{posts[8].name}</a></h4>
+													<p>{posts[8].position}</p>
+
+												</div>
+												<ul className="list-unstyled text-left">
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img1"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Pemantauan Program dan Industri Produk Halal</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img2"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Pemantauan Program dan Industri Jasa Keuangan Syariah</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img3"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Pemantauan Program dan Keuangan Sosial Syariah</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src="assets/image/profilKosong.png"
+															alt="img3"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small">Kepala Divisi Pemantauan Program dan Bisnis dan Kewirausahaan Syariah</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
 
 								</>
 
