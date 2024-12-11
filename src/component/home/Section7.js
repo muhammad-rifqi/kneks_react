@@ -74,6 +74,10 @@ const Section7 = () => {
 							slidesPerView: 4,
 							spaceBetween: 20,
 						},
+						2048: {
+							slidesPerView: 10,
+							spaceBetween: 20,
+						},
 					},
 				});
 				// Cleanup function to destroy Swiper instance
@@ -105,7 +109,7 @@ const Section7 = () => {
 					{posts.length > 0 ? (
 						<div className="swiper swiper-berita">
 							<div className="swiper-wrapper">
-								{posts.slice(3, 9).map((item) => (
+								{posts.slice(3, 25).map((item) => (
 									<div className="col-lg-3 col-xl-3 swiper-slide" key={item.id}>
 										<div className="berita-card-kdeks">
 											<div className="berita-card-imgbox-berita">
