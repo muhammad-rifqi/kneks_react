@@ -268,7 +268,8 @@ const StrukturOrganisasi = () => {
 														/>
 														<span className="text-small">Kepala Divisi Bisnis Digital dan Pusat Ekonomi Syariah</span>
 													</li>
-												</ul>
+													
+												</ul><br/><br/>
 											</div>
 										</div>
 										<div className="col-12 col-sm-6 col-md-4 mb-4">
@@ -391,7 +392,7 @@ const StrukturOrganisasi = () => {
 														/>
 														<span className="text-small">Kepala Divisi Dukungan Teknologi dan Rumah Tangga</span>
 													</li>
-
+													<br/><br/>
 												</ul>
 											</div>
 										</div>
