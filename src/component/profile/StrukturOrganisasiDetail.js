@@ -73,41 +73,60 @@ const StrukturOrganisasiDetail = () => {
 						</div>
 					</div>
 				</section> */}
-				<section className="event-details-section-ber" style={{marginTop:'-35px'}}>
+				<section className="page-banner">
 					<div className="container">
-						<div className="row">
-							<div className="col-md-4">
-								<div className="struktur-profil text-center">
-									<img src={rows?.photo ? `${rows?.photo}` : `${process.env.PUBLIC_URL}/assets/image/profilKosong.png`} alt="" className="img-fluid"/>
+						<div className="page-banner-title">
+							{/* */}
+						</div>
+					</div>
+				</section>
+				<section className="event-details-section-ber" style={{ marginTop: '-35px' }}>
+					<div className="container">
+						{/* Profile Section */}
+						<div className="row align-items-center">
+							<div className="col-md-4 text-center mb-3 mb-md-0">
+								<div className="struktur-profil">
+									<img
+										src={rows?.photo ? rows.photo : `${process.env.PUBLIC_URL}/assets/image/profilKosong.png`}
+										alt="Profile"
+										className="img-fluid rounded-circle"
+									/>
 								</div>
 							</div>
-							<div className="col-md-8 text-center ">
-								<br />
-								<br />
+							<div className="col-md-8 text-center text-md-start">
 								<h5 className="text-secondary">{rows?.name}</h5>
 								<p className="text-secondary">{rows?.position}</p>
 							</div>
 						</div>
-						<br />
-						<br />
+						<hr className="my-4" />
+						{/* Details Section */}
 						<div className="row">
 							<div className="col-lg-9">
 								<div className="event-details-content-box">
-									<p style={{ textAlign: `justify` }} dangerouslySetInnerHTML={{ __html: rows?.description }}>
-									</p>
+									<p style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: rows?.description }} />
 								</div>
 							</div>
-							<div className="col-lg-3">
-								<div className="sidebar-widget-event-meta-socials">
-									<a href="https://x.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-x-twitter s"></i></a>
-									<a href="https://facebook.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook"></i></a>
-									<a href="https://linkedln/" target="_blank" rel="noreferrer"><i className="fa-brands fa-linkedin"></i></a>
-									<a href="https://instagram.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
+							<div className="col-lg-3 text-center text-lg-start">
+								{/* Social Media Links */}
+								<div className="sidebar-widget-event-meta-socials d-flex justify-content-center justify-content-lg-start gap-3">
+									<a href="https://x.com/" target="_blank" rel="noreferrer" className="social-icon">
+										<i className="fa-brands fa-x-twitter"></i>
+									</a>
+									<a href="https://facebook.com/" target="_blank" rel="noreferrer" className="social-icon">
+										<i className="fa-brands fa-facebook"></i>
+									</a>
+									<a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="social-icon">
+										<i className="fa-brands fa-linkedin"></i>
+									</a>
+									<a href="https://instagram.com/" target="_blank" rel="noreferrer" className="social-icon">
+										<i className="fa-brands fa-instagram"></i>
+									</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
+
 			</div>
 		</>
 	)
