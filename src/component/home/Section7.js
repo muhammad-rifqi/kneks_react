@@ -75,7 +75,7 @@ const Section7 = () => {
 							spaceBetween: 20,
 						},
 						2048: {
-							slidesPerView: 10,
+							slidesPerView: 6,
 							spaceBetween: 20,
 						},
 					},
