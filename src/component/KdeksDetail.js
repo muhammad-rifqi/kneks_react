@@ -20,14 +20,13 @@ const KdeksDetail = () => {
     const [dataKota, setDataKota] = useState([]);
     const [listdataKota, setListDataKota] = useState([]);
 
-    const { slug } = useParams();
+    const { slug, id } = useParams();
     const [posts, setPosts] = useState([]);
 
     const [postSejarah, setPostSejarah] = useState(null);
     const [postTentang, setPostTentang] = useState(null);
 
     useEffect(() => {
-
         // Function to fetch posts
         const fetchPosts = async () => {
             try {
@@ -47,6 +46,8 @@ const KdeksDetail = () => {
 
         fetchPosts(); // Call fetchPosts function when component mounts
     }, []);
+
+
     useEffect(() => {
         if (posts.length > 0) {
             if (document.querySelector('.swiper-kdeks')) {
@@ -166,18 +167,16 @@ const KdeksDetail = () => {
         // }
     }, [])
     useEffect(() => {
-        if (Kota) { // Make sure Kota is defined
+        if (Kota) {
             setDataKota(Kota);
         }
+    }, [Kota]);
 
-        if (dataKota && dataKota.length > 0) {
+    useEffect(() => {
+        if (dataKota.length > 0) {
             const foundItem = dataKota.find(kneks => convertToSlug(kneks.title) === slug);
             setListDataKota(foundItem);
-            // const isKdeksPage = location.pathname === '/kdeks/'
         }
-
-
-
     }, [dataKota, slug]);
 
 
@@ -197,8 +196,9 @@ const KdeksDetail = () => {
         const fetchPosts = async () => {
             try {
                 const url = process.env.REACT_APP_API_URLKDEKS;
-                const endpoint = process.env.REACT_APP_API_KDEKSSEJARAH;
-                const response = await axios.get(`${url}${endpoint}`);
+                const endpoint = process.env.REACT_APP_API_KDEKS_SEJARAH_PROV;
+                const response = await axios.get(`${url}${endpoint}/${id}`);
+               
                 if (response.data && response.data.length > 0) {
                     setPostSejarah(response.data[0]); // Set data ke state
                 } else {
@@ -219,8 +219,8 @@ const KdeksDetail = () => {
         const fetchPostsTentang = async () => {
             try {
                 const url = process.env.REACT_APP_API_URLKDEKS;
-                const endpoint = process.env.REACT_APP_API_KDEKSTENTANGKAMI;
-                const response = await axios.get(`${url}${endpoint}`);
+                const endpoint = process.env.REACT_APP_API_KDEKS_TENTANG_PROV;
+                const response = await axios.get(`${url}${endpoint}/${id}`);
                 if (response.data && response.data.length > 0) {
                     setPostTentang(response.data[0]); // Set data ke state
                 } else {
@@ -271,7 +271,7 @@ const KdeksDetail = () => {
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
                                     <img src={`${process.env.PUBLIC_URL}/${listdataKota?.foto}`} alt="logo" width={300} className="img-fluid" />
-                                    {/* <img src={`${process.env.PUBLIC_URL}/${listdataKota?.foto}`} alt="logo" width={300} className="img-fluid" /> */}
+                                    {/* <img src={postTentang ? postTentang.images : ''} alt="logo" width={300} className="img-fluid" /> */}
                                 </div>
                             </div>
 
@@ -302,7 +302,9 @@ const KdeksDetail = () => {
                             {/* konten sejarah images */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
-                                    <img src={`${process.env.PUBLIC_URL}/assets/image/sejarah.svg`} alt="sejarah" className="img-fluid" />
+                                    {/* <img src={`${process.env.PUBLIC_URL}/assets/image/sejarah.svg`} alt="sejarah" className="img-fluid" /> */}
+                                    <img src= {postTentang ? postTentang.images : `${process.env.PUBLIC_URL}/assets/image/sejarah.svg`} alt="sejarah" className="img-fluid" />
+                                   
                                 </div>
                             </div>
 
@@ -713,8 +715,8 @@ const KdeksDetail = () => {
 
                                                 <div className="card-title-b">
                                                     <h2 className="title-2-x">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
+                                                        Travel is comming
+                                                        new
                                                     </h2>
                                                 </div>
                                                 <div className="card-date">
@@ -736,8 +738,8 @@ const KdeksDetail = () => {
 
                                                 <div className="card-title-b">
                                                     <h2 className="title-2-x">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
+                                                        Travel is comming
+                                                        new
                                                     </h2>
                                                 </div>
                                                 <div className="card-date">
@@ -759,8 +761,8 @@ const KdeksDetail = () => {
 
                                                 <div className="card-title-b">
                                                     <h2 className="title-2-x">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
+                                                        Travel is comming
+                                                        new
                                                     </h2>
                                                 </div>
                                                 <div className="card-date">
@@ -782,8 +784,8 @@ const KdeksDetail = () => {
 
                                                 <div className="card-title-b">
                                                     <h2 className="title-2-x">
-                                                        <a href="blog-single.html">Travel is comming
-                                                            new</a>
+                                                        Travel is comming
+                                                        new
                                                     </h2>
                                                 </div>
                                                 <div className="card-date">

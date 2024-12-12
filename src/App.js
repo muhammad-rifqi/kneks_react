@@ -94,7 +94,7 @@ function AppContent() {
         <Route path="/e-pustaka/:slug" element={<ElibraryDetail />} />
         <Route path="/e-pustaka/detail" element={<ElibraryDetailx />} />
         <Route path="/kdeks" element={<Kdeks />} />
-        <Route path="/kdeks/:slug" element={<KdeksDetail />} />
+        <Route path="/kdeks/:slug/:id" element={<KdeksDetail />} />
         <Route path="/data" element={<Data />} />
         <Route path="/data/detail" element={<DataDetail />} />
         <Route path="/opini" element={<Opini />} />
