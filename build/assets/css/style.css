@@ -10624,11 +10624,25 @@ SOCIAL MEDIA
   max-height: 80%;
 }
 
+/* .struktur-profil img {
+  height: 170px;
+  width: 170px;
+  object-fit: cover;
+  border-radius: 10%;
+} */
+
+.struktur-profil {
+  background-color: #F1F1F1; /* Warna background (abu-abu terang, bisa disesuaikan) */
+  padding: 10px; /* Tambahkan padding untuk memberi ruang antara gambar dan tepi */
+  border-radius: 10%; /* Sesuaikan dengan gambar agar menyatu */
+  display: inline-block; /* Supaya hanya membungkus konten gambar */
+}
+
 .struktur-profil img {
   height: 170px;
   width: 170px;
   object-fit: cover;
-  border-radius: 50%;
+  /* border-radius: 10%;  */
 }
 
 .maps-indo-x {
