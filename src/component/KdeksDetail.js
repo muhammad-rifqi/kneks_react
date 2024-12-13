@@ -170,7 +170,7 @@ const KdeksDetail = () => {
         if (Kota) {
             setDataKota(Kota);
         }
-    }, [Kota]);
+    }, [id]);
 
     useEffect(() => {
         if (dataKota.length > 0) {
@@ -238,7 +238,7 @@ const KdeksDetail = () => {
 
         fetchPostsTentang()
 
-    }, []);
+    }, [id]);
 
     const renderImage = (fileKey) => {
         if (listdataKota?.[fileKey] !== null) {
