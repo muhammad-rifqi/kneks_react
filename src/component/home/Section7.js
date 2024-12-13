@@ -74,10 +74,10 @@ const Section7 = () => {
 							slidesPerView: 4,
 							spaceBetween: 20,
 						},
-						2048: {
-							slidesPerView: 6,
-							spaceBetween: 20,
-						},
+						// 2048: {
+						// 	slidesPerView: 6,
+						// 	spaceBetween: 20,
+						// },
 					},
 				});
 				// Cleanup function to destroy Swiper instance
@@ -105,6 +105,7 @@ const Section7 = () => {
 		<section className="portfolio-section ">
 
 			<div className="portfolio-content" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+			<div className="container">
 				<div className="row m-0">
 					{posts.length > 0 ? (
 						<div className="swiper swiper-berita">
@@ -146,6 +147,7 @@ const Section7 = () => {
 						<p className="text-center">No posts available.</p>
 					)}
 				</div >
+				</div>
 			</div>
 		</section>
 	)

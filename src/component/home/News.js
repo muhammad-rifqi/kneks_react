@@ -51,6 +51,7 @@ const News = () => {
 	return (
 		<section className="news-section">
 			<div className="portfolio-content conatainer-fluid">
+			<div className="container">
 				<div className="blog-box">
 					<div className="section-title-box text-center">
 						<h2 className="section-title" style={{ color: '#146AA4' }}>{t('menu.beritaKegiatan')}</h2>
@@ -89,6 +90,7 @@ const News = () => {
 					) : (
 						<p className="text-center">No posts available.</p>
 					)}
+				</div>
 				</div>
 			</div>
 		</section>
