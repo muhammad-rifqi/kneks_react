@@ -81,7 +81,10 @@ const OpiniDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} width={`100%`} className="img-fluid" alt={rows?.title} />
+                                    {/* <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} width={`100%`} className="img-fluid" alt={rows?.title} /> */}
+                                    <img src={
+                                        rows?.image
+                                    } className="img-fluid" width={`100%`} alt={rows?.title} />
                                 </div>
                             </div>
                             <div className="row">
@@ -147,7 +150,12 @@ const OpiniDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/liputan-media/${convertToSlug(item.title)}`}> <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} className="img-fluid" alt={item.title} /></a>
+                                                <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>
+                                                    {/* <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} className="img-fluid" alt={item.title} /> */}
+                                                    <img  src={
+                                                        item?.image
+                                                    } className="img-fluid" alt={item.title} />
+                                                </a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>

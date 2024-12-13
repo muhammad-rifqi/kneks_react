@@ -79,7 +79,10 @@ const Opini = () => {
                                             <div className="event-card">
                                                 <div className="event-card-image">
                                                     <div className="event-card-image-inner-x">
-                                                        <a href={`/opini/${convertToSlug(item.title)}`}><img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} /></a>
+                                                        <a href={`/opini/${convertToSlug(item.title)}`}>
+                                                        {/* <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} /> */}
+                                                        <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} />
+                                                        </a>
 
                                                     </div>
                                                 </div>

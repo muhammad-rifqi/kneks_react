@@ -202,6 +202,7 @@ const Header = () => {
                         <li><a href="/berita-kdeks">{t('menu.beritaKdeks')}</a></li> */}
                         <li><a href="/liputan-media">{t('menu.liputanMedia')}</a></li>
                         <li><a href="/siaran-pers">{t('menu.siaranPers')}</a></li>
+                        <li><a href="/opini">{t('menu.opini')}</a></li>
 
                         {/* <li><a href="/info-terkini">{t('menu.infoTerkini')}</a></li> */}
                       </ul>

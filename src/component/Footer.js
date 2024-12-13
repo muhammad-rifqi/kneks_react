@@ -306,14 +306,14 @@ const Footer = () => {
                               {t('menu.siaranPers')}
                             </a>
                           </li>
-                          {/* <li
+                          <li
                             onMouseEnter={() => setHoveredSubItem('subItem14')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
                             <a href="/opini" style={submenuItemStyle(hoveredSubItem === 'subItem14')}>
                               {t('menu.opini')}
                             </a>
-                          </li> */}
+                          </li>
 
                         </ul>
                       </li>
