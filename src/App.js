@@ -98,7 +98,7 @@ function AppContent() {
         <Route path="/data" element={<Data />} />
         <Route path="/data/detail" element={<DataDetail />} />
         <Route path="/opini" element={<Opini />} />
-        <Route path="/opini/:slug" element={<OpiniDetail />} />
+        <Route path="/opini/:id/:slug" element={<OpiniDetail />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/agenda/:slug" element={<AgendaDetailsFix />} />
         <Route path="/agenda/detail" element={<AgendaDetail />} />

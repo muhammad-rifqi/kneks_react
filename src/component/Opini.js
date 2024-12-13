@@ -4,7 +4,9 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+
 const Opini = () => {
+    dayjs.locale('id');
     const [visible, setVisible] = useState(4)
 
     const [loading, setLoading] = useState(true);
@@ -79,7 +81,7 @@ const Opini = () => {
                                             <div className="event-card">
                                                 <div className="event-card-image">
                                                     <div className="event-card-image-inner-x">
-                                                        <a href={`/opini/${convertToSlug(item.title)}`}>
+                                                        <a href={`/opini/${item.id}/${convertToSlug(item.title)}`}>
                                                         {/* <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} /> */}
                                                         <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} />
                                                         </a>
@@ -95,7 +97,7 @@ const Opini = () => {
                                                         </ul>
                                                     </div>
                                                     <div className="event-card-title pb-4">
-                                                        <h4><a href={`/opini/${convertToSlug(item.title)}`}>{item.title}</a></h4>
+                                                        <h4><a href={`/opini/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a></h4>
                                                     </div>
                                                     <div className="event-card-info">
                                                         <ul className="list-unstyled">

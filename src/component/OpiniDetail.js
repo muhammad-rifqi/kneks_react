@@ -4,12 +4,13 @@ import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import axios from 'axios';
-
+import { useTranslation } from "react-i18next";
 
 const OpiniDetail = () => {
+    const { t } = useTranslation()
     dayjs.locale('id');
 
-    const { slug } = useParams();
+    const {id,slug} = useParams(); 
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -32,9 +33,14 @@ const OpiniDetail = () => {
                     const url = process.env.REACT_APP_API_URL;
                     const endpoint = process.env.REACT_APP_API_POST;
                     const responsei = await axios.get(`${url}${endpoint}`);
-                    const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
+                    // const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 
                     // throw new Error("Error!");
+                    const foundItem = responsei.data.find(
+                        (post) =>
+                            post.id === Number(id) &&
+                            convertToSlug(post.title) === slug
+                    );
 
                     if (responsei) {
                         setItemx(responsei.data);
@@ -56,7 +62,7 @@ const OpiniDetail = () => {
                 effectrun.current = true
             }
         }
-    }, [slug]);
+    }, [id,slug]);
     const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
 
@@ -66,7 +72,8 @@ const OpiniDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Opini</h3>
+                       
+                            <h3>{t('menu.opini')}</h3>
                         </div>
                     </div>
                 </section>
@@ -152,7 +159,7 @@ const OpiniDetail = () => {
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>
                                                     {/* <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} className="img-fluid" alt={item.title} /> */}
-                                                    <img  src={
+                                                    <img src={
                                                         item?.image
                                                     } className="img-fluid" alt={item.title} />
                                                 </a>
@@ -163,7 +170,7 @@ const OpiniDetail = () => {
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/liputan-media/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
