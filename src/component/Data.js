@@ -4,6 +4,7 @@ import Jks from '../component/DataTab/Jks'
 import Kss from '../component/DataTab/Kss'
 import Biwis from '../component/DataTab/Biwis'
 import Insis from '../component/DataTab/Insis'
+import Swal from "sweetalert2";
 const Data = () => {
     const [selectedSection, setSelectedSection] = useState("Iph");
     const renderContent = () => {
@@ -204,6 +205,29 @@ const Data = () => {
                 setData(rows)
             })
     })
+
+    useEffect(() => {
+    fetch(process.env.REACT_APP_API_URL + '/sourcesdata')
+        .then(resp => {
+            if (!resp.ok) {
+                // Jika respons tidak OK, lemparkan error dengan status dan pesan
+                throw new Error(`HTTP error! status: ${resp.status}`);
+            }
+            return resp.json();
+        })
+        .then((rows) => {
+            setData(rows);
+        })
+        .catch((error) => {
+            
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: error,
+
+            });
+        });
+}, []);
 
     return (
         <>
@@ -414,7 +438,7 @@ const Data = () => {
                                                         data?.map((items, index) => {
                                                             return (
                                                                 <tr key={items?.id}>
-                                                                    <td><a href="#00">{items?.dataset}</a></td>
+                                                                    <td><a href="/data/detail">{items?.dataset}</a></td>
                                                                     <td className="text-center">{items?.source}</td>
                                                                     <td className="text-center">{items?.date_created.split('T')[0]}</td>
                                                                 </tr>
