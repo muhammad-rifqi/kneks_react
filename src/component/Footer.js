@@ -108,8 +108,8 @@ const Footer = () => {
     <div>
 
       <section className="footer">
-      <div className="bottom-footer">
-       
+        <div className="bottom-footer">
+
         </div>
         <div className="footer-inner">
           <div className="container">
@@ -147,20 +147,20 @@ const Footer = () => {
                 </div>
                 {isKdeksPage ? (
                   <div className="footer-widget-socials ">
-                  <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
-                  <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
-                  <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
-                  <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
-                  <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
-                </div>
-                ):(
-                <div className="footer-widget-socials ">
-                  <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
-                  <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
-                  <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
-                  <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
-                  <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
-                </div>
+                    <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
+                  </div>
+                ) : (
+                  <div className="footer-widget-socials ">
+                    <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
+                  </div>
                 )}
               </div>
               <div className="col-lg-2">
@@ -344,8 +344,7 @@ const Footer = () => {
                 <div className="footer-widget">
                   <div className="footer-widget-department">
                     <h4 className="footer-widget-title">{t('alamat')}</h4>
-                    <p>Gedung Djuanda II Lantai 17 Jalan Wahidin Nomor 1,
-                      Jakarta, Indonesia</p>
+                    <p>Gedung Sutikno Slamet DJA Lantai 18 Jalan Wahidin Nomor 1 Jakarta 10710, Indonesia</p>
 
                   </div>
                 </div>
@@ -365,7 +364,8 @@ const Footer = () => {
                   <div className="footer-widget-contact-list">
                     <i className="fa-solid fa-phone"></i>
                     <div className="footer-widget-contact-item">
-                      <a href="tel:+021-3449230">(021) 3449230</a>
+                      {/* <a href="tel:+021-3449230">(021) 3449230</a> */}
+                      <a href="#">-</a>
                     </div>
                   </div>
                 </div>
@@ -417,7 +417,8 @@ const Footer = () => {
           <ul className="mobile-nav-contact list-unstyled">
             <li>
               <i className="fa-solid fa-phone"></i>
-              <a href="tel:+021-3449230">+ (021) 3449230</a>
+              {/* <a href="tel:+021-3449230">+ (021) 3449230</a> */}
+              <a href="#">-</a>
             </li>
             <li>
               <i className="fa-solid fa-envelope"></i>
@@ -425,7 +426,8 @@ const Footer = () => {
             </li>
             <li>
               <i className="fa-solid fa-map-marker-alt"></i>
-              Gedung Djuanda II Lantai 17 Jalan Wahidin Nomor 1, <br /> Jakarta, Indonesia
+              
+              <p>Gedung Sutikno Slamet DJA Lantai 18 Jalan Wahidin  Nomor 1 Jakarta 10710, Indonesia</p>
             </li>
           </ul>
           <ul className="mobile-nav-social list-unstyled">
