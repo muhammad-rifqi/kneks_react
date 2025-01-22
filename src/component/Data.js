@@ -438,7 +438,7 @@ const Data = () => {
                                                         data?.map((items, index) => {
                                                             return (
                                                                 <tr key={items?.id}>
-                                                                    <td><a href="/data/detail">{items?.dataset}</a></td>
+                                                                    <td><a href={`/data/${items?.id}`}>{items?.dataset}</a></td>
                                                                     <td className="text-center">{items?.source}</td>
                                                                     <td className="text-center">{items?.date_created.split('T')[0]}</td>
                                                                 </tr>

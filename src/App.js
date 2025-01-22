@@ -96,7 +96,7 @@ function AppContent() {
         <Route path="/kdeks" element={<Kdeks />} />
         <Route path="/kdeks/:slug/:id" element={<KdeksDetail />} />
         <Route path="/data" element={<Data />} />
-        <Route path="/data/detail" element={<DataDetail />} />
+        <Route path="/data/:id" element={<DataDetail />} />
         <Route path="/opini" element={<Opini />} />
         <Route path="/opini/:id/:slug" element={<OpiniDetail />} />
         <Route path="/agenda" element={<Agenda />} />
