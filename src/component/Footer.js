@@ -365,7 +365,7 @@ const Footer = () => {
                     <i className="fa-solid fa-phone"></i>
                     <div className="footer-widget-contact-item">
                       {/* <a href="tel:+021-3449230">(021) 3449230</a> */}
-                      <a href="#">-</a>
+                      <a href="#test">-</a>
                     </div>
                   </div>
                 </div>
@@ -418,7 +418,7 @@ const Footer = () => {
             <li>
               <i className="fa-solid fa-phone"></i>
               {/* <a href="tel:+021-3449230">+ (021) 3449230</a> */}
-              <a href="#">-</a>
+              <a href="#test">-</a>
             </li>
             <li>
               <i className="fa-solid fa-envelope"></i>

@@ -151,25 +151,25 @@ const KeuanganSosialSyariah = () => {
                                     <div className="row row-gutter-y-30 d-flex justify-content-center">
                                         <div className="col-12">
                                             <div style={{ padding: '10px', backgroundColor: '#1c96c5', color: 'white' }}>
-                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
+                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} name="accordion">
                                                     <summary>Divisi 1</summary>
                                                     <div style={{ padding: '10px', color: 'white' }}>
                                                         <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                                     </div>
                                                 </details>
-                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
+                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} name="accordion">
                                                     <summary>Divisi 2</summary>
                                                     <div style={{ padding: '10px', color: 'white' }}>
                                                         <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                                     </div>
                                                 </details>
-                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
+                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} name="accordion">
                                                     <summary>Divisi 3</summary>
                                                     <div style={{ padding: '10px', color: 'white' }}>
                                                         <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                                     </div>
                                                 </details>
-                                                <details style={{ padding: '10px', color: '#fff' }}>
+                                                <details style={{ padding: '10px', color: '#fff' }} name="accordion">
                                                     <summary>Divisi 4</summary>
                                                     <div style={{ padding: '10px', color: 'white' }}>
                                                         <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
