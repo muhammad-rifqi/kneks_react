@@ -207,27 +207,37 @@ const Data = () => {
     })
 
     useEffect(() => {
-    fetch(process.env.REACT_APP_API_URL + '/sourcesdata')
-        .then(resp => {
-            if (!resp.ok) {
-                // Jika respons tidak OK, lemparkan error dengan status dan pesan
-                throw new Error(`HTTP error! status: ${resp.status}`);
-            }
-            return resp.json();
-        })
-        .then((rows) => {
-            setData(rows);
-        })
-        .catch((error) => {
-            
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: error,
+        fetch(process.env.REACT_APP_API_URL + '/sourcesdata')
+            .then(resp => {
+                if (!resp.ok) {
+                    // Jika respons tidak OK, lemparkan error dengan status dan pesan
+                    throw new Error(`HTTP error! status: ${resp.status}`);
+                }
+                return resp.json();
+            })
+            .then((rows) => {
+                setData(rows);
+            })
+            .catch((error) => {
 
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: error,
+
+                });
             });
-        });
-}, []);
+    }, []);
+
+    const showPanel = () => {
+        document.getElementById("sidepanels").style.display = 'block';
+        document.getElementById("dwnjpg").className = 'col-lg-9';
+    }
+
+    const hidePanel = () => {
+        document.getElementById("sidepanels").style.display = 'none';
+        document.getElementById("dwnjpg").className = 'col-lg-12';
+    }
 
     return (
         <>
@@ -242,8 +252,9 @@ const Data = () => {
                 </section>
                 <section className="department-details-section" >
                     <div className="container-lg">
+                        <p> <button className="btn btn-success" onClick={showPanel}> + </button> &nbsp; &nbsp; <button className="btn btn-success" onClick={hidePanel}> - </button> </p>
                         <div className="row">
-                            <div className="col-12 col-lg-3 col-xl-3">
+                            <div className="col-12 col-lg-3 col-xl-3" id="sidepanels">
                                 <div className="sidebar">
                                     <div className="sidebar-widget-list-inner">
                                         <ul>
@@ -257,11 +268,7 @@ const Data = () => {
                                 </div>
                             </div>
                             <div className="col-lg-9" id="dwnjpg">
-
-
                                 {renderContent()}
-
-
                                 {/* <Card className="mb-3">
                                     <Card.Body>
                                         <Row >
