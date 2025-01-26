@@ -5,7 +5,8 @@ import Kota from "../component/dumy/dataKota";
 
 import { useTranslation } from 'react-i18next';
 import { useCookies } from 'react-cookie';
-
+import Swal from "sweetalert2";
+import axios from "axios";
 const Header = () => {
 
   const location = useLocation();
@@ -14,7 +15,7 @@ const Header = () => {
 
   const [activeMenu, setActiveMenu] = useState(location.pathname); // Initial state
   const [dataKota, setDataKota] = useState([]); // Initial state
-
+  const [menu, setMenu] = useState([]);
   // Function to handle menu click
   const handleMenuClick = (menu) => {
     setActiveMenu(menu);
@@ -69,7 +70,27 @@ const Header = () => {
   });
 
 
+  useEffect(() => {
+    // Function to fetch posts
+    const fetchMenu = async () => {
 
+      try {
+        const url = process.env.REACT_APP_API_URL;
+        const endpoint = process.env.REACT_APP_API_MENU_DIREKTORAT;
+        const response = await axios.get(`${url}${endpoint}`);
+        setMenu(response.data);
+
+      } catch (err) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err,
+        });
+      }
+    };
+
+    fetchMenu(); // Call fetchPosts function when component mounts
+  }, []);
 
   // const [searchTerm, setSearchTerm] = useState('');
 
@@ -187,11 +208,16 @@ const Header = () => {
                     <li className="has-dropdown">
                       <a href="#t">{t('menu.direktorat')}</a>
                       <ul className="list-unstyled">
-                        <li><a href="/industri-produk-halal">{t('menu.industriProdukHalal')}</a></li>
+                        {/* <li><a href="/industri-produk-halal">{t('menu.industriProdukHalal')}</a></li>
                         <li><a href="/jasa-keuangan-syariah">{t('menu.jasaKeuanganSyariah')}</a></li>
                         <li><a href="/keuangan-sosial-syariah">{t('menu.keuanganSosialSyariah')}</a></li>
-                        <li><a href="/bisnis-dan-kewiraushaan-syariah">{t('menu.bisnisDanKewirausahaan')}</a></li>
-                        <li><a href="/infrastruktur-ekosistem-syariah">{t('menu.infrastrukturEkosistem')}</a></li>
+                        <li><a href="/bisnis-dan-kewirausahaan-syariah">{t('menu.bisnisDanKewirausahaan')}</a></li>
+                        <li><a href="/infrastruktur-ekosistem-syariah">{t('menu.infrastrukturEkosistem')}</a></li> */}
+                        {menu.map((item, index) => (
+                          <li key={index}>
+                            <a href={`/${convertToSlug(item.title)}`}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
+                          </li>
+                        ))}
                       </ul>
                     </li>
                     <li className="has-dropdown">

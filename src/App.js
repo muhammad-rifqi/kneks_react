@@ -80,7 +80,7 @@ function AppContent() {
         <Route path="/industri-produk-halal" element={<IndustriProdukHalal />} />
         <Route path="/jasa-keuangan-syariah" element={<JasakeuanganSyariah />} />
         <Route path="/keuangan-sosial-syariah" element={<KeuanganSosialSyariah />} />
-        <Route path="/bisnis-dan-kewiraushaan-syariah" element={<BisnisDanKewirausahaanSyariah />} />
+        <Route path="/bisnis-dan-kewirausahaan-syariah" element={<BisnisDanKewirausahaanSyariah />} />
         <Route path="/infrastruktur-ekosistem-syariah" element={<InfrastrukturEkosistemSyariah />} />
         <Route path="/siaran-pers" element={<SiaranPers />} />
         <Route path="/siaran-pers/:id/:slug" element={<SiaranPersDetail />} />

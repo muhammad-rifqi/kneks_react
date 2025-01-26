@@ -4,14 +4,16 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Kota from "../component/dumy/dataKota";
 
 import { useTranslation } from 'react-i18next';
-
+import Swal from "sweetalert2";
+import axios from "axios";
+import { useCookies } from 'react-cookie';
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
+  const [cookies] = useCookies(['i18next']);
   // const [activeMenu, setActiveMenu] = useState(location.pathname); // Initial state
   const [dataKota, setDataKota] = useState([]); // Initial state
-
+  const [menu, setMenu] = useState([]);
   const convertToSlug = (title) => {
     return title
       .toLowerCase()
@@ -102,6 +104,27 @@ const Footer = () => {
       document.body.classList.remove("locked");
     }
   }
+  useEffect(() => {
+    // Function to fetch posts
+    const fetchMenu = async () => {
+
+      try {
+        const url = process.env.REACT_APP_API_URL;
+        const endpoint = process.env.REACT_APP_API_MENU_DIREKTORAT;
+        const response = await axios.get(`${url}${endpoint}`);
+        setMenu(response.data);
+
+      } catch (err) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err,
+        });
+      }
+    };
+
+    fetchMenu(); // Call fetchPosts function when component mounts
+  }, []);
 
   return (
 
@@ -231,7 +254,7 @@ const Footer = () => {
                       >
                         <a href="#direktorat" style={menuItemStyle}>{t('menu.direktorat')}</a>
                         <ul style={hoveredItem === 'direktorat' ? showSubmenuStyle : submenuStyle}>
-                          <li
+                          {/* <li
                             onMouseEnter={() => setHoveredSubItem('subItem6')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
@@ -270,7 +293,16 @@ const Footer = () => {
                             <a href="/infrastruktur-ekosistem-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem10')}>
                               {t('menu.infrastrukturEkosistem')}
                             </a>
-                          </li>
+                          </li> */}
+                          {menu.map((item, index) => (
+                            <li 
+                            key={index}
+                            onMouseEnter={() => setHoveredSubItem(index)}
+                            onMouseLeave={() => setHoveredSubItem(null)}
+                            >
+                              <a href={`/${convertToSlug(item.title)}`} style={submenuItemStyle(hoveredSubItem === index)}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
+                            </li>
+                          ))}
                         </ul>
                       </li>
 
@@ -426,7 +458,7 @@ const Footer = () => {
             </li>
             <li>
               <i className="fa-solid fa-map-marker-alt"></i>
-              
+
               <p>Gedung Sutikno Slamet DJA Lantai 18 Jalan Wahidin  Nomor 1 Jakarta 10710, Indonesia</p>
             </li>
           </ul>
