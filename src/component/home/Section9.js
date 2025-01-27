@@ -42,7 +42,7 @@ const Section9 = () => {
 
 	const [data, setData] = useState([]);
 	useEffect(() => {
-        fetch(process.env.REACT_APP_API_URL + '/statistics')
+        fetch(process.env.REACT_APP_API_URL + '/' + process.env.REACT_APP_API_DATA)
             .then((resp) => {
                 if (!resp.ok) throw new Error("Failed to fetch data");
                 return resp.json();
