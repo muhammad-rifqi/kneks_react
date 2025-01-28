@@ -279,7 +279,7 @@ const KdeksDetail = () => {
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title">{postTentang ? postTentang.title : ''}</h2>
-                                    <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.content : '' }} />
+                                    <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.abouts : '' }} />
                                 </div>
 
 
@@ -295,7 +295,7 @@ const KdeksDetail = () => {
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title">{postSejarah ? postSejarah.title : ''}</h2>
                                     {/* <p></p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: postSejarah ? postSejarah.content : '' }} />
+                                    <div dangerouslySetInnerHTML={{ __html: postSejarah ? postSejarah.historys : '' }} />
                                 </div>
                             </div>
 
