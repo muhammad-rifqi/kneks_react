@@ -15,7 +15,7 @@ const Header = () => {
 
   const [activeMenu, setActiveMenu] = useState(location.pathname); // Initial state
   const [dataKota, setDataKota] = useState([]); // Initial state
-  const [menu, setMenu] = useState([]);
+  const [menux, setMenu] = useState([]);
   // Function to handle menu click
   const handleMenuClick = (menu) => {
     setActiveMenu(menu);
@@ -213,7 +213,7 @@ const Header = () => {
                         <li><a href="/keuangan-sosial-syariah">{t('menu.keuanganSosialSyariah')}</a></li>
                         <li><a href="/bisnis-dan-kewirausahaan-syariah">{t('menu.bisnisDanKewirausahaan')}</a></li>
                         <li><a href="/infrastruktur-ekosistem-syariah">{t('menu.infrastrukturEkosistem')}</a></li> */}
-                        {menu.map((item, index) => (
+                        {menux.map((item, index) => (
                           <li key={index}>
                             <a href={`/${convertToSlug(item.title)}`}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
                           </li>

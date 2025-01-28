@@ -42,24 +42,24 @@ const Section9 = () => {
 
 	const [data, setData] = useState([]);
 	useEffect(() => {
-        fetch(process.env.REACT_APP_API_URL + '/' + process.env.REACT_APP_API_DATA)
-            .then((resp) => {
-                if (!resp.ok) throw new Error("Failed to fetch data");
-                return resp.json();
-            })
-            .then((rows) => {
-                const arr = rows.map((element) => ({
-                    icon: '🌐',
-                    title: element?.title,
-                    title_en: element?.title_en || element?.title, // Default to original title
-                    value: element?.amount,
-                    unit: 'Data',
-                    date: element?.date_created.split('T')[0],
-                }));
-                setData(arr);
-            })
-            .catch((error) => console.error("Error fetching statistics:", error));
-    }, []);
+		fetch(process.env.REACT_APP_API_URL + '/' + process.env.REACT_APP_API_DATA)
+			.then((resp) => {
+				if (!resp.ok) throw new Error("Failed to fetch data");
+				return resp.json();
+			})
+			.then((rows) => {
+				const arr = rows.map((element) => ({
+					icon: '🌐',
+					title: element?.title,
+					title_en: element?.title_en || element?.title, // Default to original title
+					value: element?.amount,
+					unit: 'Data',
+					date: element?.date_created.split('T')[0],
+				}));
+				setData(arr);
+			})
+			.catch((error) => console.error("Error fetching statistics:", error));
+	}, []);
 
 	return (
 		<section className='funfact-section'>
@@ -74,12 +74,11 @@ const Section9 = () => {
 				<OwlCarousel className="owl-themes" {...options} data-aos="fade-down-left">
 					{data.map((item, index) => (
 						<div
-							key={index} // Apply key here
+							key={index}
 							className="row align-items-center justify-content-center"
 						>
 							<div className="col-md-12 text-center mb-3">
 								<div className="card bg-light border-0 shadow p-3">
-									{/* Replace with your actual icon component or image */}
 									<i className="fas fa-briefcase fa-2x mb-3"></i>
 									<h5
 										style={{ fontSize: '16px' }}

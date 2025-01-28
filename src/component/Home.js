@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
-import React, { useState ,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Section1 from '../component/home/Section1'
 import Section2 from '../component/home/Section2'
@@ -19,12 +19,15 @@ import Section11 from '../component/home/Section11'
 // import Section12 from '../component/home/Section12';
 // import Section13 from '../component/home/Section13';
 // import Section14 from '../component/home/Section14';
-
+import Swal from "sweetalert2";
+import axios from "axios";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useTranslation } from "react-i18next";
 const Home = () => {
+  const { t } = useTranslation();
   const [isPopupActive, setPopupActive] = useState(true)
-
+  const [post, setPost] = useState([])
   // Handler untuk menutup popup
   const handleClose = () => {
     setPopupActive(false)
@@ -32,20 +35,42 @@ const Home = () => {
 
   useEffect(() => {
     AOS.init({
-        duration: 1500,
-        once: true
+      duration: 1500,
+      once: true
     });
-}, []);
+  }, []);
   const convertToSlug = (title) => {
     if (!title) return "";
     return title
-        .toLowerCase()
-        .trim()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-');
-};
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  };
+  useEffect(() => {
+    // Function to fetch posts
+    const fetchMenu = async () => {
 
+      try {
+        const url = process.env.REACT_APP_API_URL;
+        const response = await axios.get(`${url}/welcome_pages`);
+        setPost(response.data);
+
+      } catch (err) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err,
+        });
+      }
+    };
+
+    fetchMenu(); // Call fetchPosts function when component mounts
+  }, []);
+
+
+console.log(post)
   return (
     <div className="page-wrapper">
       <Section1 />
@@ -54,7 +79,7 @@ const Home = () => {
       <Section2 />
       {/* <Section14 /> */}
       <Section9 />
-     
+
       <News />
       <Section7 />
 
@@ -65,7 +90,7 @@ const Home = () => {
 
       <Section6 />
 
-     
+
       {/* <Section10 /> */}
 
       {/* <Zona /> */}
@@ -89,12 +114,13 @@ const Home = () => {
 
             <img
               className="img-fluid img-thumbnail"
-              src="/assets/image/Iklan.svg"
+              src={post?.[0]?.path}
               alt="Iklan"
             />
             <div className="selengkapnya">
-              <a href={`/agenda/${convertToSlug('Opening Ceremony')}`} className="btn btn-primary btn-sm">
-                Lihat Selengkapnya
+              <a href={`/agenda/${convertToSlug(post?.[0]?.name)}`} className="btn btn-primary btn-sm">
+                {/* Lihat Selengkapnya */}
+                {t("tombol")}
               </a>
             </div>
           </div>
