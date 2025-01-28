@@ -13,7 +13,7 @@ import dayjs from "dayjs";
 import "dayjs/locale/id";
 const DataDetail = () => {
     dayjs.locale('id');
-    const {id} = useParams(); 
+    const { id } = useParams();
     const [post, setPost] = useState(null);
 
     useEffect(() => {
@@ -41,7 +41,7 @@ const DataDetail = () => {
         fetchPosts()
 
     }, [id]);
-    
+
     // const downloadJPG = () => {
     //     html2canvas(document.querySelector("#dwnjpg")).then(canvas => {
     //         const imgData = canvas.toDataURL('image/jpeg', 1.0);
@@ -69,7 +69,14 @@ const DataDetail = () => {
     //         pdf.save("custom-size-chart.pdf");
     //     });
     // };
-
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        fetch(process.env.REACT_APP_API_URL + '/kneks/api')
+            .then(resp => resp.json())
+            .then((rows) => {
+                setData(rows)
+            })
+    })
     return (
         <>
             <div className="page-wrapper">
@@ -135,13 +142,13 @@ const DataDetail = () => {
                                         <div className="row mb-4">
                                             <div className="col-sm-6 fw-semibold">Tanggal:</div>
                                             <div className="col-sm-6 text-primary">
-                                              
+
                                                 {dayjs(
-                                                                post?.tanggal
-                                                            ).format(
-                                                                "DD MMMM YYYY"
-                                                            )}
-                                                </div>
+                                                    post?.tanggal
+                                                ).format(
+                                                    "DD MMMM YYYY"
+                                                )}
+                                            </div>
                                         </div>
                                         {/* <div className="row mb-4">
                                             <div className="col-sm-6 fw-semibold">Kategori:</div>
@@ -182,6 +189,41 @@ const DataDetail = () => {
 
                                     </div>
                                 </div>
+                                <div className="card mt-4 p-2">
+                                <div className="table-responsive">
+                                    <table className="table table-hover mb-0" style={{ fontSize: `14px` }}>
+                                        <thead>
+                                            <tr>
+
+                                                <th >Pangsa aktivitas usaha</th>
+                                                <th>Pangsa Pembiayaan</th>
+                                                <th>Total nilai pembiayaan</th>
+                                                <th >Kuartal</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                data?.slice(0, 10).map((items, index) => {
+                                                    return (
+                                                        <tr key={items?.id}>
+                                                            <td>{items?.pangsa_aktivitas_usaha}</td>
+                                                            <td>{items?.pangsa_pembiayaan}</td>
+                                                            <td>{items?.total_nilai_pembiayaan}</td>
+                                                            <td>
+                                                                {dayjs(
+                                                                    items?.kuartal
+                                                                ).format(
+                                                                    "DD MMMM YYYY"
+                                                                )}
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                             </div>
                         </div>
 

@@ -53,7 +53,7 @@ const Section2 = () => {
                         </a>
                     </div>
                     <div className="col-lg-2 col-md-4 mb-3" data-aos="fade-up">
-                        <a href="/bisnis-dan-kewiraushaan-syariah">
+                        <a href="/bisnis-dan-kewirausahaan-syariah">
                             <div className="card card-dir">
                                 <div className="card-body text-center px-2">
                                     <div className="department-card-gambar">

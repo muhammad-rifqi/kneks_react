@@ -5,7 +5,10 @@ import Kss from '../component/DataTab/Kss'
 import Biwis from '../component/DataTab/Biwis'
 import Insis from '../component/DataTab/Insis'
 import Swal from "sweetalert2";
+import dayjs from "dayjs";
+import "dayjs/locale/id";
 const Data = () => {
+    dayjs.locale('id');
     const [selectedSection, setSelectedSection] = useState("Iph");
     const renderContent = () => {
 
@@ -447,7 +450,14 @@ const Data = () => {
                                                                 <tr key={items?.id}>
                                                                     <td><a href={`/data/${items?.id}`}>{items?.dataset}</a></td>
                                                                     <td className="text-center">{items?.source}</td>
-                                                                    <td className="text-center">{items?.date_created.split('T')[0]}</td>
+                                                                    <td className="text-center">
+                                                                       
+                                                                        {dayjs(
+                                                                    items?.date_created
+                                                                ).format(
+                                                                    "DD MMMM YYYY"
+                                                                )}
+                                                                        </td>
                                                                 </tr>
                                                             )
                                                         })
