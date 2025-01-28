@@ -198,7 +198,7 @@ const KdeksDetail = () => {
                 const url = process.env.REACT_APP_API_URLKDEKS;
                 const endpoint = process.env.REACT_APP_API_KDEKS_SEJARAH_PROV;
                 const response = await axios.get(`${url}${endpoint}/${id}`);
-               
+
                 if (response.data && response.data.length > 0) {
                     setPostSejarah(response.data[0]); // Set data ke state
                 } else {
@@ -278,7 +278,8 @@ const KdeksDetail = () => {
                             {/* konten sebelah kanan */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title">{postTentang ? postTentang.title : ''}</h2>
+                                    {/* <h2 className="section-title">{postTentang ? postTentang.title : ''}</h2> */}
+                                    <h2 className="section-title">Tentang {listdataKota?.title}</h2>
                                     <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.abouts : '' }} />
                                 </div>
 
@@ -293,7 +294,8 @@ const KdeksDetail = () => {
                             {/* konten sejarah deskripsi */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title">{postSejarah ? postSejarah.title : ''}</h2>
+                                    {/* <h2 className="section-title">{postSejarah ? postSejarah.title : ''}</h2> */}
+                                    <h2 className="section-title"> Sejarah {listdataKota?.title} </h2>
                                     {/* <p></p> */}
                                     <div dangerouslySetInnerHTML={{ __html: postSejarah ? postSejarah.historys : '' }} />
                                 </div>
@@ -303,8 +305,8 @@ const KdeksDetail = () => {
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
                                     {/* <img src={`${process.env.PUBLIC_URL}/assets/image/sejarah.svg`} alt="sejarah" className="img-fluid" /> */}
-                                    <img src= {postTentang ? postTentang.images : `${process.env.PUBLIC_URL}/assets/image/sejarah.svg`} alt="sejarah" className="img-fluid" />
-                                   
+                                    <img src={postTentang ? postTentang.images : `${process.env.PUBLIC_URL}/assets/image/sejarah.svg`} alt="sejarah" className="img-fluid" />
+
                                 </div>
                             </div>
 
