@@ -22,16 +22,16 @@ const KdeksDetail = () => {
 
     const { slug, id } = useParams();
     const [posts, setPosts] = useState([]);
+    const [posts_photo, setPostsPhoto] = useState([]);
 
     const [postSejarah, setPostSejarah] = useState(null);
     const [postTentang, setPostTentang] = useState(null);
 
     useEffect(() => {
-        // Function to fetch posts
         const fetchPosts = async () => {
             try {
                 const url = process.env.REACT_APP_API_URL;
-                const endpoint = process.env.REACT_APP_API_POST;
+                const endpoint = process.env.REACT_APP_API_KDEKS_NEWS + '/' + id;
                 const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
             } catch (err) {
@@ -44,9 +44,29 @@ const KdeksDetail = () => {
             }
         };
 
-        fetchPosts(); // Call fetchPosts function when component mounts
-    }, []);
+        fetchPosts(); 
+    }, [id]);
 
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_KDEKS_PHOTO + '/' + id;
+                const response = await axios.get(`${url}${endpoint}`);
+                setPostsPhoto(response.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            }
+        };
+
+        fetchPosts(); // Call fetchPosts function when component mounts
+    }, [id]);
 
     useEffect(() => {
         if (posts.length > 0) {
@@ -200,7 +220,7 @@ const KdeksDetail = () => {
                 const response = await axios.get(`${url}${endpoint}/${id}`);
 
                 if (response.data && response.data.length > 0) {
-                    setPostSejarah(response.data[0]); // Set data ke state
+                    setPostSejarah(response.data[0]);
                 } else {
                     throw new Error("Data kosong atau tidak ditemukan.");
                 }
@@ -706,99 +726,30 @@ const KdeksDetail = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">
-                            <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita2.jpeg" className="my-image-as" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b-x">
+                            {posts_photo.slice(0, 4).map((item, idx) => (
+                                <div className="col-md-3 col-lg-3" key={item.id}>
+                                    <a href={item?.photo} className="my-image-links" data-gall="gallery10">
+                                        <div className="card-box-b card-shadow news-box">
+                                            <div className="img-box-b ">
+                                                <img src={item?.photo} alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
+                                            </div>
+                                            <div className="card-overlay">
+                                                <div className="card-header-b-x">
 
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2-x">
-                                                        Travel is comming
-                                                        new
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
+                                                    <div className="card-title-b">
+                                                        <h2 className="title-2-x text-white">
+                                                            {item?.title}
+                                                        </h2>
+                                                    </div>
+                                                    <div className="card-date">
+                                                        <span className="date-b">  {item?.photos_datetime}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-as" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b-x">
-
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2-x">
-                                                        Travel is comming
-                                                        new
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-as-foto" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b-x">
-
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2-x">
-                                                        Travel is comming
-                                                        new
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div className="col-md-3 col-lg-3">
-                                <a href="/assets/image/berita.jpg" className="my-image-as" data-gall="gallery01">
-                                    <div className="card-box-b card-shadow news-box">
-                                        <div className="img-box-b">
-                                            <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                        </div>
-                                        <div className="card-overlay">
-                                            <div className="card-header-b-x">
-
-                                                <div className="card-title-b">
-                                                    <h2 className="title-2-x">
-                                                        Travel is comming
-                                                        new
-                                                    </h2>
-                                                </div>
-                                                <div className="card-date">
-                                                    <span className="date-b">18 Sep. 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
+                                    </a>
+                                </div>
+                            ))}
                         </div>
                         {/* <div className="funfact-box pt-5">
                             <div className="section-title-box text-center">
