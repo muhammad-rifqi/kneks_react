@@ -3,15 +3,19 @@ import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import 'dayjs/locale/en';
 import axios from 'axios';
 import { useTranslation } from "react-i18next";
+import { useCookies } from 'react-cookie';
 const Elibrabry = () => {
-
+    const [cookies] = useCookies(['i18next']);
     const { t } = useTranslation()
 
-    dayjs.locale('id');
-
-    const { slug } = useParams();
+    const formatDate = (date, locale = 'en') => {
+		dayjs.locale(locale); // Set the locale dynamically
+		return dayjs(date).format('DD MMMM YYYY'); // Format the date
+	};
+    const { id } = useParams();
     const [rows, setItem] = useState(null);
 
 
@@ -21,10 +25,10 @@ const Elibrabry = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_PUSTAKA;
-                    const responsei = await axios.get(`${url}${endpoint}`);
-                    const foundItem = responsei.data.find(pustaka => convertToSlug(pustaka.title) === slug);
-
+                    // const endpoint = process.env.REACT_APP_API_PUSTAKA;
+                    const responsei = await axios.get(`${url}/filesdetails/${id}`);
+                    // const foundItem = responsei.data.find(pustaka => convertToSlug(pustaka.title) === id);
+                    const foundItem = responsei?.data?.[0]
                     // throw new Error("Error!");
 
                     if (responsei) {
@@ -46,7 +50,7 @@ const Elibrabry = () => {
                 effectrun.current = true
             }
         }
-    }, [slug]);
+    }, [id]);
     const convertToSlug = (title) => {
         if (!title) return "";
         return title
@@ -78,8 +82,8 @@ const Elibrabry = () => {
                             <div className="col-lg-9 d-flex align-items-left">
                                 <div className="about-one-inner">
 
-                                    <h2 className="section-title">{rows?.title}</h2>
-                                    <div dangerouslySetInnerHTML={{ __html: rows?.content }} />
+                                    <h2 className="section-title">{cookies.i18next === 'en' ? rows?.title_en : rows?.title}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? rows?.content_en : rows?.content }} />
 
                                 </div>
                             </div>
@@ -98,7 +102,7 @@ const Elibrabry = () => {
                                         <div className="card-body">
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Judul</div>
-                                                <div className="col-sm-10 text-primary"> : {rows?.title || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {cookies.i18next === 'en' ? rows?.title_en : rows?.title || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Kategori</div>
@@ -125,7 +129,7 @@ const Elibrabry = () => {
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Tanggal</div>
-                                                <div className="col-sm-10 text-primary"> : {dayjs(rows?.date).format("DD MMMM YYYY")} </div>
+                                                <div className="col-sm-10 text-primary"> : {cookies.i18next === 'id' ? formatDate(rows?.date, 'id') : formatDate(rows?.date, 'en')} </div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Penulis</div>

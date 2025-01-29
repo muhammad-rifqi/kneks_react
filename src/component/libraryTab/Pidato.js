@@ -2,21 +2,26 @@ import React, { useState, useEffect, useMemo } from "react";
 import SkeletonCardBerita from "../../component/skeleton/CardBerita";
 import axios from "axios";
 import Swal from "sweetalert2";
-import dayjs from "dayjs";
-import "dayjs/locale/id";
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
+import 'dayjs/locale/en';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import InputGroup from 'react-bootstrap/InputGroup';
-
+import { useCookies } from 'react-cookie';
 const Pidato = () => {
+    const [cookies] = useCookies(['i18next']);
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState("");
     const postsPerPage = 8;
 
-    dayjs.locale('id');
+    const formatDate = (date, locale = 'en') => {
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
 
     const convertToSlug = (title) => {
         if (!title) return "";
@@ -135,25 +140,21 @@ const Pidato = () => {
                             <div className="col-12 col-md-6 col-xl-3" key={item?.id}>
                                 <div className="team-card-x">
                                     <div className="team-card-img-x">
-                                        <a href={`/e-pustaka/${convertToSlug(
-                                            item?.title
-                                        )}`}>
+                                        <a href={`/e-pustaka/${item?.id}`}>
                                             <img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" />
                                         </a>
                                     </div>
                                     <div className="team-card-content-x">
-                                        <h4><a href={`/e-pustaka/${convertToSlug(
-                                            item?.title
-                                        )}`}>{item?.title}</a></h4>
+                                        <h4><a href={`/e-pustaka/${item?.id}`}>{cookies.i18next === 'en' ? item?.title_en : item?.title}</a></h4>
                                         <div className="d-flex justify-content-between align-items-end">
-                                            <p>{dayjs(item?.date).format("DD MMMM YYYY")}</p>
-                                            <a 
-                                                data-bs-toggle="tooltip" 
+                                            <p>{cookies.i18next === 'id' ? formatDate(item.date, 'id') : formatDate(item.date, 'en')}</p>
+                                            <a
+                                                data-bs-toggle="tooltip"
                                                 title="Downloadable"
-                                                href={item?.file} 
-                                                target="_blank" 
+                                                href={item?.file}
+                                                target="_blank"
                                                 rel="noopener noreferrer"
-                                                >
+                                            >
                                                 <i className="fa-solid fa-download" aria-hidden="true"></i>
                                             </a>
                                         </div>
