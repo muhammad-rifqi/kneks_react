@@ -297,7 +297,7 @@ const KdeksDetail = () => {
                                     {/* <h2 className="section-title">{postSejarah ? postSejarah.title : ''}</h2> */}
                                     <h2 className="section-title"> Sejarah {listdataKota?.title} </h2>
                                     {/* <p></p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: postSejarah ? postSejarah.historys : '' }} />
+                                    <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.historys : '' }} />
                                 </div>
                             </div>
 
