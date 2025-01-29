@@ -20,6 +20,7 @@ const KeuanganSosialSyariah = () => {
 
     const [detaildir, setDetailDirektorat] = useState([]);
     const [cookies, setCookie] = useCookies(['i18next']);
+    const [newsdir, setDirektoratNews] = useState([]);
 
     window.addEventListener("load", () => {
         setCookie('i18next', 'id', { path: '/' });
@@ -58,8 +59,25 @@ const KeuanganSosialSyariah = () => {
     }, [id_dir]);
 
     useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const urls = process.env.REACT_APP_API_URL;
+                const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT + '/' + id_dir;
+                const responses = await axios.get(`${urls}${endpoints}`);
+                setDirektoratNews(responses.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
 
-        // Function to fetch posts
+                });
+            }
+        };
+        fetchPosts();
+    }, [id_dir]);
+
+    useEffect(() => {
         const fetchPosts = async () => {
             try {
                 const url = process.env.REACT_APP_API_URL;
@@ -214,11 +232,11 @@ const KeuanganSosialSyariah = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-30">
-                            {posts.slice(0, 4).map((item) => (
+                            {newsdir.slice(0, 4).map((item) => (
                                 <div className="col-lg-3" key={item.id}>
                                     <div className="berita-card">
                                         <div className="berita-card-imgbox-direktorat-home ">
-                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src={item?.image} className="img-fluid" alt={item.title} style={{ width: '100%' }} /></a>
+                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src={item?.image} className="img-fluid" alt={item.title} style={{ width: '100%', height: '200px', overflowY: 'hidden' }} /></a>
                                         </div>
                                         <div className="berita-content-direktorat-x" style={{ width: '100%' }}>
                                             <div className="direktorat-tag-home">

@@ -19,6 +19,7 @@ const BisnisDanKewirausahaanSyariah = () => {
 
     const [detaildir, setDetailDirektorat] = useState([]);
     const [cookies, setCookie] = useCookies(['i18next']);
+    const [newsdir, setDirektoratNews] = useState([]);
 
     window.addEventListener("load", () => {
         setCookie('i18next', 'id', { path: '/' });
@@ -57,6 +58,24 @@ const BisnisDanKewirausahaanSyariah = () => {
         fetchPosts();
     }, [id_dir]);
 
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const urls = process.env.REACT_APP_API_URL;
+                const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT + '/' + id_dir;
+                const responses = await axios.get(`${urls}${endpoints}`);
+                setDirektoratNews(responses.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            }
+        };
+        fetchPosts();
+    }, [id_dir]);
 
     useEffect(() => {
 
@@ -214,7 +233,7 @@ const BisnisDanKewirausahaanSyariah = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-30">
-                            {posts.slice(0, 4).map((item) => (
+                            {newsdir.slice(0, 4).map((item) => (
                                 <div className="col-lg-3 col-md-6 col-sm-12" key={item.id}>
                                     <div className="berita-card">
                                         <div className="berita-card-imgbox-direktorat-home ">
