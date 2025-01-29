@@ -236,7 +236,7 @@ const KeuanganSosialSyariah = () => {
                                 <div className="col-lg-3" key={item.id}>
                                     <div className="berita-card">
                                         <div className="berita-card-imgbox-direktorat-home ">
-                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src={item?.image} className="img-fluid" alt={item.title} style={{ width: '100%', height: '200px', overflowY: 'hidden' }} /></a>
+                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src={item?.image} className="img-fluid" alt={item.title} style={{ width: '100%', height: '220px', overflowY: 'hidden' }} /></a>
                                         </div>
                                         <div className="berita-content-direktorat-x" style={{ width: '100%' }}>
                                             <div className="direktorat-tag-home">
