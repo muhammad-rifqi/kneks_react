@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import isiItemsBerita from "../dumy/dataBerita"
+// import isiItemsBerita from "../dumy/dataBerita"
 
 import "venobox/dist/venobox.css";
 import "venobox/dist/venobox.min.js";
@@ -14,10 +14,10 @@ import { useCookies } from 'react-cookie';
 
 const KeuanganSosialSyariah = () => {
     const { t } = useTranslation()
-    const [items, setItems] = useState([]);
+    const [item_photo, setItemsPhoto] = useState([]);
+    const [item_video, setItemsVideo] = useState([]);
 
     const [posts, setPosts] = useState([]);
-
     const [detaildir, setDetailDirektorat] = useState([]);
     const [cookies, setCookie] = useCookies(['i18next']);
     const [newsdir, setDirektoratNews] = useState([]);
@@ -94,12 +94,29 @@ const KeuanganSosialSyariah = () => {
             }
         };
 
-        fetchPosts(); // Call fetchPosts function when component mounts
-    }, []);
-    useEffect(() => {
-        const isian = isiItemsBerita();
-        setItems(isian);
+        fetchPosts();
 
+    }, []);
+
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const urls = process.env.REACT_APP_API_URL;
+                const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_PHOTOS + '/' + id_dir;
+                const responses = await axios.get(`${urls}${endpoints}`);;
+                setItemsPhoto(responses.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            }
+        };
+        fetchPosts();
+        // const isian = isiItemsBerita();
         new VenoBox({
             selector: '.my-image-links',
             numeration: true,
@@ -122,10 +139,26 @@ const KeuanganSosialSyariah = () => {
             });
         };
 
-    }, []);
+    }, [id_dir]);
 
     useEffect(() => {
 
+        const fetchPosts = async () => {
+            try {
+                const urls = process.env.REACT_APP_API_URL;
+                const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_VIDEOS + '/' + id_dir;
+                const responses = await axios.get(`${urls}${endpoints}`);;
+                setItemsVideo(responses.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            }
+        };
+        fetchPosts();
 
         new VenoBox({
             selector: '.my-video-links',
@@ -149,7 +182,7 @@ const KeuanganSosialSyariah = () => {
             });
         };
 
-    }, [items]);
+    }, [id_dir]);
     return (
         <>
             <div className="page-wrapper">
@@ -471,24 +504,23 @@ const KeuanganSosialSyariah = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">
-                            {items.slice(0, 4).map((item, idx) => (
+                            {item_photo.slice(0, 4).map((item, idx) => (
                                 <div className="col-md-3 col-lg-3" key={item.id}>
-                                    <a href="/assets/image/berita2.jpeg" className="my-image-links" data-gall="gallery10">
+                                    <a href={item?.photo} className="my-image-links" data-gall="gallery10">
                                         <div className="card-box-b card-shadow news-box">
                                             <div className="img-box-b ">
-                                                <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
+                                                <img src={item?.photo} alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
                                             </div>
                                             <div className="card-overlay">
                                                 <div className="card-header-b-x">
 
                                                     <div className="card-title-b">
                                                         <h2 className="title-2-x text-white">
-                                                            Travel is comming
-                                                            new
+                                                            {item?.title}
                                                         </h2>
                                                     </div>
                                                     <div className="card-date">
-                                                        <span className="date-b">18 Sep. 2017</span>
+                                                        <span className="date-b">  {item?.photos_datetime}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -507,12 +539,12 @@ const KeuanganSosialSyariah = () => {
                             <section className="video-section-x">
                                 <div className="container">
                                     <div className="row row-gutter-y-40">
-                                        {items.slice(0, 4).map((item) => (
+                                        {item_video.slice(0, 4).map((item) => (
                                             <div className="col-md-3 col-lg-3" key={item.id}>
-                                                <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-links" data-autoplay="true" data-vbtype="video">
+                                                <a href={`https://www.youtube.com/watch?v=` + item?.video} className="my-video-links" data-autoplay="true" data-vbtype="video">
                                                     <div className="card-box-b card-shadow news-box">
                                                         <div className="img-box-bc">
-                                                            <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
+                                                            <img src={`https://img.youtube.com/vi/` + item?.video + `/hqdefault.jpg`} alt="imgNews" className="img-b img-fluid" />
                                                             <div className="video-btn">
                                                                 <div className="play-icon" >
                                                                     <img src="/assets/image/play-circle.svg" alt="imgplay" />
@@ -524,12 +556,11 @@ const KeuanganSosialSyariah = () => {
 
                                                                 <div className="card-title-b">
                                                                     <h2 className="title-2-x text-white">
-                                                                        Travel is comming
-                                                                        new
+                                                                        {item?.title}
                                                                     </h2>
                                                                 </div>
                                                                 <div className="card-date">
-                                                                    <span className="date-b">18 Sep. 2017</span>
+                                                                    <span className="date-b">{item?.videos_datetime}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -537,8 +568,6 @@ const KeuanganSosialSyariah = () => {
                                                 </a>
                                             </div>
                                         ))}
-
-
                                     </div>
                                 </div>
                             </section>
