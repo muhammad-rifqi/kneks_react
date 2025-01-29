@@ -381,7 +381,7 @@ const KdeksDetail = () => {
                                                 <div className="berita-card">
                                                     <div className="berita-card-imgbox-direktorat-home">
                                                         <a href={item.title ? `/ berita - kegiatan / ${convertToSlug(item.title)}` : ''}>
-                                                            <img src={item?.image} className="img-fluid" alt={item.title ? item.title : ''} />
+                                                            <img src={item?.image} className="img-fluid" alt={item.title ? item.title : ''} style={{width: '100%', height: '200px', overflowY:'hidden'}} />
                                                         </a>
                                                     </div>
                                                     <div className="berita-content-direktorat-xs">
