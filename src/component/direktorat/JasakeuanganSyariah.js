@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import isiItemsBerita from "../dumy/dataBerita"
-
+import { useParams } from "react-router-dom";
 import "venobox/dist/venobox.css";
 import "venobox/dist/venobox.min.js";
 import VenoBox from 'venobox';
@@ -9,11 +9,21 @@ import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import { useTranslation } from "react-i18next";
+import { useCookies } from 'react-cookie';
 
 const JasakeuanganSyariah = () => {
     const { t } = useTranslation()
     const [items, setItems] = useState([]);
     const [posts, setPosts] = useState([]);
+
+    const [detaildir, setDetailDirektorat] = useState([]);
+    const [cookies, setCookie] = useCookies(['i18next']);
+
+    window.addEventListener("load", () => {
+        setCookie('i18next', 'id', { path: '/' });
+    });
+
+
     const convertToSlug = (title) => {
         if (!title) return ""; // Handle null or undefined title
         return title
@@ -24,9 +34,31 @@ const JasakeuanganSyariah = () => {
             .replace(/-+/g, '-');
     };
 
-    useEffect(() => {
+    let params = useParams();
+    let id_dir = params.id;
 
-        // Function to fetch posts
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const urls = process.env.REACT_APP_API_URL;
+                const endpoints = process.env.REACT_APP_API_DIREKTORAT_DETAIL + '/' + id_dir;
+                const responses = await axios.get(`${urls}${endpoints}`);
+                setDetailDirektorat(responses.data);
+                console.log(responses.data)
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            }
+        };
+        fetchPosts();
+    }, [id_dir]);
+
+
+    useEffect(() => {
         const fetchPosts = async () => {
             try {
                 const url = process.env.REACT_APP_API_URL;
@@ -115,13 +147,12 @@ const JasakeuanganSyariah = () => {
                         <div className="row row-gutter-y-40">
                             <div className="col-lg-12 ">
                                 <div className="event-details-inner-box text-center">
-                                    <img src="assets/image/direk.png" className="img-fluid" alt="img-173" />
-
+                                    <img src="/assets/image/direk.png" className="img-fluid" alt="img-173" />
                                 </div>
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title text-center">{t('direktorat.direktoratJasaKeuanganSyariah')}</h2>
-                                    <p>{t('direktorat.direktoratJasaKeuanganSyariahDibawahKneks')}</p>
-                                    <p>{t('direktorat.direktoratJasaKeuanganSyariahMemiliki')}</p>
+                                    <h2 className="section-title text-center">{cookies.i18next === 'en' ? detaildir[0]?.title_en : detaildir[0]?.title}</h2>
+                                    <p>{t('direktorat.direktoratIndustriProdukHalalAdalah')}</p>
+                                    <p>{cookies.i18next === 'en' ? detaildir[0]?.description_en : detaildir[0]?.description}</p>
                                     <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
 
 
@@ -152,30 +183,16 @@ const JasakeuanganSyariah = () => {
                                     <div className="row row-gutter-y-30 d-flex justify-content-center">
                                         <div className="col-12">
                                             <div style={{ padding: '10px', backgroundColor: '#1c96c5', color: 'white' }}>
-                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
-                                                    <summary>Divisi 1</summary>
-                                                    <div style={{ padding: '10px', color: 'white' }}>
-                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                    </div>
-                                                </details>
-                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
-                                                    <summary>Divisi 2</summary>
-                                                    <div style={{ padding: '10px', color: 'white' }}>
-                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                    </div>
-                                                </details>
-                                                <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }}>
-                                                    <summary>Divisi 3</summary>
-                                                    <div style={{ padding: '10px', color: 'white' }}>
-                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                    </div>
-                                                </details>
-                                                <details style={{ padding: '10px', color: '#fff' }}>
-                                                    <summary>Divisi 4</summary>
-                                                    <div style={{ padding: '10px', color: 'white' }}>
-                                                        <p style={{ color: 'white' }}>Content for section 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                    </div>
-                                                </details>
+                                                {
+                                                    detaildir[0]?.detail?.map((element) => (
+                                                        <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} key={element.id}>
+                                                            <summary>{element?.title}</summary>
+                                                            <div style={{ padding: '10px', color: 'white' }}>
+                                                                <p style={{ color: 'white' }}>{element?.description}</p>
+                                                            </div>
+                                                        </details>
+                                                    ))
+                                                }
                                             </div>
                                         </div>
                                     </div>

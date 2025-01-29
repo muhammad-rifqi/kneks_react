@@ -215,7 +215,7 @@ const Header = () => {
                         <li><a href="/infrastruktur-ekosistem-syariah">{t('menu.infrastrukturEkosistem')}</a></li> */}
                         {menux.map((item, index) => (
                           <li key={index}>
-                            <a href={`/${convertToSlug(item.title)}`}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
+                            <a href={`/${convertToSlug(item.title)}/${item.id}`}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
                           </li>
                         ))}
                       </ul>
