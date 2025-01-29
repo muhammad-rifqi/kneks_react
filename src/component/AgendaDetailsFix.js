@@ -98,13 +98,14 @@ const AgendaDetailsFix = () => {
                                 </div>
                                 <br />
                                 <p> 
-                                    {
-                                        rows?.area ? (
+                                    {/* {
+                                        rows?.area == null ? (
                                             <iframe src={rows?.area} title={rows?.area} width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         ) : (
                                             <div></div>
                                         )
-                                    }
+                                    } */}
+                                    {rows?.area || '-'}
                                 </p>
                             </div>
                             <div className="col-lg-4">
