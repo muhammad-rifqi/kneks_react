@@ -97,7 +97,15 @@ const AgendaDetailsFix = () => {
                                     <div dangerouslySetInnerHTML={{ __html: rows?.description }} />
                                 </div>
                                 <br />
-                                <p> <iframe src={rows?.area} title={rows?.area} width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </p>
+                                <p> 
+                                    {
+                                        rows?.area ? (
+                                            <iframe src={rows?.area} title={rows?.area} width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        ) : (
+                                            <div></div>
+                                        )
+                                    }
+                                </p>
                             </div>
                             <div className="col-lg-4">
                                 <div className="sidebar">
