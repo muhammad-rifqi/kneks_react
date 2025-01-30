@@ -15,11 +15,13 @@ const JasakeuanganSyariah = () => {
     const { t } = useTranslation()
     const [item_photo, setItemsPhoto] = useState([]);
     const [item_video, setItemsVideo] = useState([]);
-    const [posts, setPosts] = useState([]);
+    // const [posts, setPosts] = useState([]);
 
     const [newsdir, setDirektoratNews] = useState([]);
     const [detaildir, setDetailDirektorat] = useState([]);
     const [cookies, setCookie] = useCookies(['i18next']);
+    const [opinidir, setDirektoratOpini] = useState([]);
+    const [filesdir, setDirektoratFiles] = useState([]);
 
     window.addEventListener("load", () => {
         setCookie('i18next', 'id', { path: '/' });
@@ -78,13 +80,33 @@ const JasakeuanganSyariah = () => {
         fetchPosts();
     }, [id_dir]);
 
+    // useEffect(() => {
+    //     const fetchPosts = async () => {
+    //         try {
+    //             const url = process.env.REACT_APP_API_URL;
+    //             const endpoint = process.env.REACT_APP_API_POST;
+    //             const response = await axios.get(`${url}${endpoint}`);
+    //             setPosts(response.data);
+    //         } catch (err) {
+    //             Swal.fire({
+    //                 icon: "error",
+    //                 title: "Oops...",
+    //                 text: err,
+
+    //             });
+    //         }
+    //     };
+
+    //     fetchPosts(); 
+    // }, []);
+
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const url = process.env.REACT_APP_API_URL;
-                const endpoint = process.env.REACT_APP_API_POST;
-                const response = await axios.get(`${url}${endpoint}`);
-                setPosts(response.data);
+                const urls = process.env.REACT_APP_API_URL;
+                const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_OPINI + '/' + id_dir;
+                const responses = await axios.get(`${urls}${endpoints}`);
+                setDirektoratOpini(responses.data);
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -94,9 +116,29 @@ const JasakeuanganSyariah = () => {
                 });
             }
         };
+        fetchPosts();
+    }, [id_dir]);
 
-        fetchPosts(); // Call fetchPosts function when component mounts
-    }, []);
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const urls = process.env.REACT_APP_API_URL;
+                const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_FILES + '/' + id_dir;
+                const responses = await axios.get(`${urls}${endpoints}`);
+                setDirektoratFiles(responses.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            }
+        };
+        fetchPosts();
+    }, [id_dir]);
+
+
     useEffect(() => {
         // const isian = isiItemsBerita();
         // setItems(isian);
@@ -303,7 +345,7 @@ const JasakeuanganSyariah = () => {
                             </div>
                             <div className="row row-gutter-30">
                                 {
-                                    posts.slice(0, 4).map((item) => (
+                                    opinidir.slice(0, 4).map((item) => (
                                         <div className="col-lg-3 col-xl-3" key={item.id}>
                                             <div className="berita-card">
                                                 {/* <div className="berita-card-imgbox-direktorat ">
@@ -317,7 +359,7 @@ const JasakeuanganSyariah = () => {
                                                         </h4>
                                                     </div>
                                                     <div className="event-card-info-direktorat">
-                                                        <span>{item.tanggal}</span>
+                                                        <span>{item.date_created}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -337,80 +379,26 @@ const JasakeuanganSyariah = () => {
 
                                 <div className="col-lg-9">
                                     <div className="row ">
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
 
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
+                                        {filesdir.slice(0, 4).map((item) => (
+                                            <div className="col-12 col-md-6 col-xl-3">
+                                                <div className="team-card-x">
+                                                    <div className="team-card-img-x">
+                                                        <a href="#t"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
+                                                    </div>
+                                                    <div className="team-card-content-x">
+                                                        <h4><a href="#t">{item?.title}</a></h4>
+                                                        <div className="d-flex justify-content-between align-items-end">
+                                                            <p>{item?.date}</p>
+                                                            <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                                <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail">
-                                                        <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
-                                                    </a>
+                                        ))}
 
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail">
-                                                        <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
-                                                    </a>
-
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail">
-                                                        <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
-                                                    </a>
-
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -540,7 +528,7 @@ const JasakeuanganSyariah = () => {
                             <section className="video-section-x">
                                 <div className="container">
                                     <div className="row row-gutter-y-40">
-                                    {item_video.slice(0, 4).map((item) => (
+                                        {item_video.slice(0, 4).map((item) => (
                                             <div className="col-md-3 col-lg-3" key={item.id}>
                                                 <a href={`https://www.youtube.com/watch?v=` + item?.video} className="my-video-links" data-autoplay="true" data-vbtype="video">
                                                     <div className="card-box-b card-shadow news-box">

@@ -16,7 +16,7 @@ const IndustriProdukHalal = () => {
     const [item_photo, setItemsPhoto] = useState([]);
     const [item_video, setItemsVideo] = useState([]);
 
-    const [posts, setPosts] = useState([]);
+    // const [posts, setPosts] = useState([]);
     const [detaildir, setDetailDirektorat] = useState([]);
     const [cookies, setCookie] = useCookies(['i18next']);
     const [newsdir, setDirektoratNews] = useState([]);
@@ -116,25 +116,25 @@ const IndustriProdukHalal = () => {
         fetchPosts();
     }, [id_dir]);
 
-    useEffect(() => {
-        // Function to fetch posts
-        const fetchPosts = async () => {
-            try {
-                const url = process.env.REACT_APP_API_URL;
-                const endpoint = process.env.REACT_APP_API_POST;
-                const response = await axios.get(`${url}${endpoint}`);
-                setPosts(response.data);
-            } catch (err) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: err,
+    // useEffect(() => {
+    //     // Function to fetch posts
+    //     const fetchPosts = async () => {
+    //         try {
+    //             const url = process.env.REACT_APP_API_URL;
+    //             const endpoint = process.env.REACT_APP_API_POST;
+    //             const response = await axios.get(`${url}${endpoint}`);
+    //             setPosts(response.data);
+    //         } catch (err) {
+    //             Swal.fire({
+    //                 icon: "error",
+    //                 title: "Oops...",
+    //                 text: err,
 
-                });
-            }
-        };
-        fetchPosts(); // Call fetchPosts function when component mounts
-    }, []);
+    //             });
+    //         }
+    //     };
+    //     fetchPosts();
+    // }, []);
 
     useEffect(() => {
         // const isian = isiItemsBerita();
@@ -378,10 +378,10 @@ const IndustriProdukHalal = () => {
                                             <div className="col-12 col-md-6 col-xl-3">
                                                 <div className="team-card-x">
                                                     <div className="team-card-img-x">
-                                                        <a href="#"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
+                                                        <a href="#t"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
                                                     </div>
                                                     <div className="team-card-content-x">
-                                                        <h4><a href="#">{item?.title}</a></h4>
+                                                        <h4><a href="#t">{item?.title}</a></h4>
                                                         <div className="d-flex justify-content-between align-items-end">
                                                             <p>{item?.date}</p>
                                                             <a href="#t" data-bs-toggle="tooltip" title="download">
