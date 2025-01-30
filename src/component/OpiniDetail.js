@@ -3,12 +3,17 @@ import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
-import axios from 'axios';
+import 'dayjs/locale/en';
+import { useCookies } from 'react-cookie';
 import { useTranslation } from "react-i18next";
-
+import axios from 'axios';
 const OpiniDetail = () => {
     const { t } = useTranslation()
-    dayjs.locale('id');
+    const [cookies] = useCookies(['i18next']);
+    const formatDate = (date, locale = 'en') => {
+		dayjs.locale(locale); // Set the locale dynamically
+		return dayjs(date).format('DD MMMM YYYY'); // Format the date
+	};
 
     const {id,slug} = useParams(); 
     const [rows, setItem] = useState(null);
@@ -82,16 +87,16 @@ const OpiniDetail = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                    <h4>{rows?.title}</h4>
+                                    <h4>{cookies.i18next === 'id' ? rows.title : rows.title_en}</h4>
                                     <p>{formattedDate}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    {/* <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} width={`100%`} className="img-fluid" alt={rows?.title} /> */}
+                                    {/* <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} width={`100%`} className="img-fluid" alt={cookies.i18next === 'id' ? rows.title : rows.title_en} /> */}
                                     <img src={
                                         rows?.image
-                                    } className="img-fluid" width={`100%`} alt={rows?.title} />
+                                    } className="img-fluid" width={`100%`} alt={cookies.i18next === 'id' ? rows.title : rows.title_en} />
                                 </div>
                             </div>
                             <div className="row">

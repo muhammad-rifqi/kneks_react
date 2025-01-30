@@ -159,8 +159,8 @@ const InfoTerkini = () => {
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
                             </Col>
-                        </div>
-                        <div className="row row-gutter-30">
+                        {/* </div>
+                        <div className="row row-gutter-30"> */}
 
                             {loading
                                 ? Array(postsPerPage)

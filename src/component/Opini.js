@@ -4,9 +4,16 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
-
+import 'dayjs/locale/en';
+import { useCookies } from 'react-cookie';
+import { useTranslation } from "react-i18next";
 const Opini = () => {
-    dayjs.locale('id');
+    const { t } = useTranslation()
+    const [cookies] = useCookies(['i18next']);
+    const formatDate = (date, locale = 'en') => {
+		dayjs.locale(locale); // Set the locale dynamically
+		return dayjs(date).format('DD MMMM YYYY'); // Format the date
+	};
     const [visible, setVisible] = useState(4)
 
     const [loading, setLoading] = useState(true);
@@ -61,7 +68,7 @@ const Opini = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Opini</h3>
+                            <h3>{t('menu.opini')}</h3>
                         </div>
                     </div>
                 </section>
@@ -83,7 +90,7 @@ const Opini = () => {
                                                     <div className="event-card-image-inner-x">
                                                         <a href={`/opini/${item.id}/${convertToSlug(item.title)}`}>
                                                         {/* <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} /> */}
-                                                        <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} />
+                                                        <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={cookies.i18next === 'id' ? item.title : item.title_en} />
                                                         </a>
 
                                                     </div>
@@ -92,17 +99,17 @@ const Opini = () => {
                                                     <div className="event-card-info-x pb-3">
                                                         <ul className="list-unstyled" style={{ color: `#F2994A` }}>
                                                             <li>
-                                                                <span>#BERITABARU</span>
+                                                                <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                     <div className="event-card-title pb-4">
-                                                        <h4><a href={`/opini/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a></h4>
+                                                        <h4><a href={`/opini/${item.id}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a></h4>
                                                     </div>
                                                     <div className="event-card-info">
                                                         <ul className="list-unstyled">
                                                             <li>
-                                                                <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                                                <span>{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
                                                             </li>
                                                         </ul>
                                                     </div>

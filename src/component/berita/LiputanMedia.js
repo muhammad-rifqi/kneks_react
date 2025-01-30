@@ -4,7 +4,8 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
-
+import 'dayjs/locale/en';
+import { useCookies } from 'react-cookie';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
@@ -14,7 +15,11 @@ import { useTranslation } from "react-i18next";
 
 const LiputanMedia = () => {
     const { t } = useTranslation()
-    dayjs.locale('id');
+    const [cookies] = useCookies(['i18next']);
+    const formatDate = (date, locale = 'en') => {
+		dayjs.locale(locale); // Set the locale dynamically
+		return dayjs(date).format('DD MMMM YYYY'); // Format the date
+	};
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -61,7 +66,7 @@ const LiputanMedia = () => {
             const filtered = posts.filter(post =>
                 dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
             );
-          
+
             setFilteredPosts(filtered);
             setCurrentPage(1); // Reset to the first page after filtering
         } else {
@@ -120,10 +125,10 @@ const LiputanMedia = () => {
             value={value}
             onClick={onClick}
             ref={ref}
-            placeholder="Filter Tanggal"
+            placeholder={cookies.i18next === 'id' ? 'Filter Tanggal' : 'Filter Date'}
             readOnly // Makes the input read-only
             size="sm"
-            style={{paddingTop:'8px',paddingBottom:'9px', border:'1px solid #ccc'}}
+            style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc' }}
         />
     ));
 
@@ -159,8 +164,8 @@ const LiputanMedia = () => {
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
                             </Col>
-                        </div>
-                        <div className="row row-gutter-30">
+                        {/* </div>
+                        <div className="row row-gutter-30"> */}
 
                             {loading
                                 ? Array(postsPerPage)
@@ -178,21 +183,21 @@ const LiputanMedia = () => {
                                                 <div className="berita-card-imgbox ">
                                                     <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>
                                                         {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
-                                                        <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} />
+                                                        <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={cookies.i18next === 'id' ? item.title : item.title_en} />
                                                     </a>
                                                 </div>
                                                 <div className="berita-content ">
                                                     <div className="event-card-info-x " style={{ color: `#F2994A` }}>
 
-                                                        <span>#BERITABARU</span>
+                                                        <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
                                                     </div>
                                                     <div className="event-card-title pb-4">
                                                         <h4>
-                                                            <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                            <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
                                                         </h4>
                                                     </div>
                                                     <div className="event-card-info">
-                                                        <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                                        <span>{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
                                                     </div>
                                                 </div>
                                             </div>

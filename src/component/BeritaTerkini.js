@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import SkeletonCardBerita from "./skeleton/CardBerita";
 import axios from "axios";
 import Swal from "sweetalert2";
-import dayjs from "dayjs";
-import "dayjs/locale/id";
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
+import 'dayjs/locale/en';
+import { useCookies } from 'react-cookie';
 
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -12,8 +14,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useTranslation } from "react-i18next";
 const BeritaTerkini = () => {
+   
     const { t } = useTranslation()
-    dayjs.locale('id');
+    const [cookies] = useCookies(['i18next']);
+    const formatDate = (date, locale = 'en') => {
+		dayjs.locale(locale); // Set the locale dynamically
+		return dayjs(date).format('DD MMMM YYYY'); // Format the date
+	};
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -119,7 +126,7 @@ const BeritaTerkini = () => {
             value={value}
             onClick={onClick}
             ref={ref}
-            placeholder="Filter Tanggal"
+            placeholder={cookies.i18next === 'id' ? 'Filter Tanggal' : 'Filter Date'}
             readOnly // Makes the input read-only
             size="sm"
             style={{paddingTop:'8px',paddingBottom:'9px', border:'1px solid #ccc'}}
@@ -188,7 +195,7 @@ const BeritaTerkini = () => {
                                                         <img
                                                             src={item?.image}
                                                             className='img-fluid w-100'
-                                                            alt={item.title}
+                                                            alt={cookies.i18next === 'id' ? item.title : item.title_en}
                                                         />
                                                     </a>
                                                 </div>
@@ -198,7 +205,7 @@ const BeritaTerkini = () => {
                                                         style={{
                                                             color: `#F2994A`,
                                                         }}>
-                                                        <span>#BERITABARU</span>
+                                                        <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
                                                     </div>
                                                     <div className='event-card-title pb-4'>
                                                         <h4>
@@ -206,17 +213,13 @@ const BeritaTerkini = () => {
                                                                 href={`/berita-kegiatan/${item.id}/${convertToSlug(
                                                                     item.title
                                                                 )}`}>
-                                                                {item.title}
+                                                                {cookies.i18next === 'id' ? item.title : item.title_en}
                                                             </a>
                                                         </h4>
                                                     </div>
                                                     <div className='event-card-info'>
                                                         <span>
-                                                            {dayjs(
-                                                                item.news_datetime
-                                                            ).format(
-                                                                "DD MMMM YYYY"
-                                                            )}
+                                                        {cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}
                                                         </span>
                                                     </div>
                                                 </div>
