@@ -20,6 +20,8 @@ const IndustriProdukHalal = () => {
     const [detaildir, setDetailDirektorat] = useState([]);
     const [cookies, setCookie] = useCookies(['i18next']);
     const [newsdir, setDirektoratNews] = useState([]);
+    const [opinidir, setDirektoratOpini] = useState([]);
+    const [filesdir, setDirektoratFiles] = useState([]);
 
     window.addEventListener("load", () => {
         setCookie('i18next', 'id', { path: '/' });
@@ -64,6 +66,44 @@ const IndustriProdukHalal = () => {
                 const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT + '/' + id_dir;
                 const responses = await axios.get(`${urls}${endpoints}`);
                 setDirektoratNews(responses.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            }
+        };
+        fetchPosts();
+    }, [id_dir]);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const urls = process.env.REACT_APP_API_URL;
+                const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_OPINI + '/' + id_dir;
+                const responses = await axios.get(`${urls}${endpoints}`);
+                setDirektoratOpini(responses.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            }
+        };
+        fetchPosts();
+    }, [id_dir]);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const urls = process.env.REACT_APP_API_URL;
+                const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_FILES + '/' + id_dir;
+                const responses = await axios.get(`${urls}${endpoints}`);
+                setDirektoratFiles(responses.data);
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -301,7 +341,7 @@ const IndustriProdukHalal = () => {
                             </div>
                             <div className="row row-gutter-30">
                                 {
-                                    posts.slice(0, 4).map((item) => (
+                                    opinidir.slice(0, 4).map((item) => (
                                         <div className="col-lg-3 col-xl-3" key={item.id}>
                                             <div className="berita-card">
                                                 {/* <div className="berita-card-imgbox-direktorat ">
@@ -315,7 +355,7 @@ const IndustriProdukHalal = () => {
                                                         </h4>
                                                     </div>
                                                     <div className="event-card-info-direktorat">
-                                                        <span>{item.tanggal}</span>
+                                                        <span>{item.date_created}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -332,83 +372,26 @@ const IndustriProdukHalal = () => {
                                 </div>
                             </div>
                             <div className="row row-gutter-y-30 d-flex justify-content-center">
-
                                 <div className="col-lg-9">
                                     <div className="row ">
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
-
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
+                                        {filesdir.slice(0, 4).map((item) => (
+                                            <div className="col-12 col-md-6 col-xl-3">
+                                                <div className="team-card-x">
+                                                    <div className="team-card-img-x">
+                                                        <a href="#"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
+                                                    </div>
+                                                    <div className="team-card-content-x">
+                                                        <h4><a href="#">{item?.title}</a></h4>
+                                                        <div className="d-flex justify-content-between align-items-end">
+                                                            <p>{item?.date}</p>
+                                                            <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                                <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail">
-                                                        <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
-                                                    </a>
-
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail">
-                                                        <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
-                                                    </a>
-
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail">
-                                                        <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
-                                                    </a>
-
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
