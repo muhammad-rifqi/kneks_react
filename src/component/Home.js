@@ -68,9 +68,6 @@ const Home = () => {
 
     fetchMenu(); // Call fetchPosts function when component mounts
   }, []);
-
-
-console.log(post)
   return (
     <div className="page-wrapper">
       <Section1 />

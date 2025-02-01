@@ -1,10 +1,41 @@
-// import React, { useEffect, useState } from "react"
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { useTranslation } from "react-i18next";
+import { useCookies } from 'react-cookie';
 import { InstagramEmbed } from 'react-social-media-embed';
-import { useTranslation } from 'react-i18next';
+
 
 const Section11 = () => {
-	const { t } = useTranslation();
+	const [cookies] = useCookies(['i18next']);
+	const { t } = useTranslation()
+	const [posts, setPosts] = useState([]);
+	const [loading, setLoading] = useState(true);
+	useEffect(() => {
+		const fetchPosts = async () => {
+			setLoading(true);
+			try {
+				const url = process.env.REACT_APP_API_URL;
+
+				const response = await axios.get(`${url}/institutions`);
+				setPosts(response.data);
+
+			} catch (err) {
+				Swal.fire({
+					icon: "error",
+					title: "Oops...",
+					text: err.message,
+				});
+			} finally {
+				setLoading(false);
+			}
+		};
+
+		fetchPosts();
+	}, []);
+
 	
+
 	return (
 		<>
 			<section className="sm-section funfact-section-post">
@@ -19,10 +50,7 @@ const Section11 = () => {
 						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
 							<InstagramEmbed url="https://www.instagram.com/p/C6pooCOBSOA"
 								width="100%"
-
-
 							/>
-
 						</div >
 						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
 
@@ -38,12 +66,7 @@ const Section11 = () => {
 								width="100%"
 
 							/>
-
-
 						</div >
-
-
-
 					</div>
 
 					<div className="sm-box" style={{ marginTop: `100px` }}>
@@ -61,14 +84,43 @@ const Section11 = () => {
 			<section className="funfact-section-instan">
 				<div className="container">
 					<div className="row">
-						<div className="col-6 col-md-4 col-lg-2 pb-3" data-aos="fade-up">
+						{posts && posts.length > 0 ? (
+							<>
+								{/* Render 12 item pertama dengan layout col-6 col-md-4 col-lg-2 */}
+								{posts.slice(0, 12).map((item, index) => (
+									<div className="col-6 col-md-4 col-lg-2 pb-3" data-aos="fade-up" key={item.id || index}>
+										<a rel="noreferrer" href={item?.link} target="_blank" className="component-service d-block">
+											<div className="service-image">
+												<img src={item?.logo} className="img-fluid" alt={item?.title || "service"} />
+											</div>
+										</a>
+									</div>
+								))}
+
+								{/* Render item ke-13 hingga ke-16 dengan layout col-6 col-md-4 col-lg-3 */}
+								{posts.length > 12 && posts.slice(12, 16).map((item, index) => (
+									<div className="col-6 col-md-4 col-lg-3 pb-3" data-aos="fade-up" key={item.id || index + 12}>
+										<a rel="noreferrer" href={item?.link} target="_blank" className="component-service d-block">
+											<div className="service-image">
+												<img src={item?.logo} className="img-fluid" alt={item?.title || "service"} />
+											</div>
+										</a>
+									</div>
+								))}
+							</>
+						) : (
+							<div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+								<p className="text-center text-danger">No posts available</p>
+							</div>
+						)}
+						{/* <div className="col-6 col-md-4 col-lg-2 pb-3" data-aos="fade-up">
 							<a rel="noreferrer" href={`https://www.kemenkeu.go.id/`} target="_blank" className="component-service d-block ">
 								<div className="service-image ">
 									<img src="assets/image/kemenkeu.png" className="img-fluid " alt="kemenkeu" />
 								</div>
 							</a>
-						</div>
-						<div className="col-6 col-md-4 col-lg-2 pb-3" data-aos="fade-up">
+						</div> */}
+						{/* <div className="col-6 col-md-4 col-lg-2 pb-3" data-aos="fade-up">
 							<a rel="noreferrer" href={`https://www.ekon.go.id/`} target="_blank" className="component-service  d-block">
 								<div className="service-image">
 									<img src="assets/image/instansi2.png" className="img-fluid" alt="kementriang bidang perekonomian republik indonesia" />
@@ -96,7 +148,6 @@ const Section11 = () => {
 								</div>
 							</a>
 						</div>
-
 						<div className="col-6 col-md-4 col-lg-2 pb-3" data-aos="fade-up">
 							<a rel="noreferrer" href={`https://www.kemendag.go.id/`} target="_blank" className="component-service d-block">
 								<div className="service-image">
@@ -132,8 +183,6 @@ const Section11 = () => {
 								</div>
 							</a>
 						</div>
-
-
 						<div className="col-6 col-md-4 col-lg-2 pb-3" data-aos="fade-up">
 							<a rel="noreferrer" href={`https://mui.or.id/`} target="_blank" className="component-service d-block">
 								<div className="service-image">
@@ -147,8 +196,9 @@ const Section11 = () => {
 									<img src="assets/image/instansi17.png" className="img-fluid" alt="kadin" />
 								</div>
 							</a>
-						</div>
-						<div className="col-6 col-md-4 col-lg-3 pb-3" data-aos="fade-up">
+						</div> */}
+
+						{/* <div className="col-6 col-md-4 col-lg-3 pb-3" data-aos="fade-up">
 							<a rel="noreferrer" href={`https://bi.go.id/`} target="_blank" className="component-service d-block">
 								<div className="service-image">
 									<img src="assets/image/instansi13.png" className="img-fluid" alt="bi" />
@@ -175,7 +225,7 @@ const Section11 = () => {
 									<img src="assets/image/instansi12.png" className="img-fluid" alt="ojk" />
 								</div>
 							</a>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</section>

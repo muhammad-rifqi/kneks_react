@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useTranslation } from "react-i18next";
@@ -13,7 +13,6 @@ const TentangKami = () => {
             setLoading(true);
             try {
                 const url = process.env.REACT_APP_API_URL;
-
                 const response = await axios.get(`${url}/abouts`);
                 setPosts(response.data);
 
