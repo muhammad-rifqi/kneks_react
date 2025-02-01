@@ -195,7 +195,7 @@ const GaleriVideo = () => {
                                 currentPosts.length > 0 ? (
                                     currentPosts.map((item) => (
                                         <div className="col-md-6 col-lg-4" key={item.id} >
-                                            <a href={`https://img.youtube.com/vi/` +
+                                            <a href={`https://www.youtube.com/watch?v=` +
                                                 item.video
                                             } className="my-videos-linksx" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
