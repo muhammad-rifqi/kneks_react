@@ -7,7 +7,7 @@ import 'dayjs/locale/en';
 import { useCookies } from 'react-cookie';
 import { useTranslation } from "react-i18next";
 import axios from 'axios';
-const OpiniDetailDirektorat = () => {
+const OpiniDetailKdeks = () => {
     const { t } = useTranslation()
     const [cookies] = useCookies(['i18next']);
     const formatDate = (date, locale = 'en') => {
@@ -15,7 +15,7 @@ const OpiniDetailDirektorat = () => {
 		return dayjs(date).format('DD MMMM YYYY'); // Format the date
 	};
 
-    const {id,slug,id_dir} = useParams(); 
+    const {id,slug,id_kd} = useParams(); 
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -36,7 +36,7 @@ const OpiniDetailDirektorat = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_POST_DIREKTORAT_OPINI+ '/' + id_dir;
+                    const endpoint = process.env.REACT_APP_API_KDEKS_OPINI+ '/' + id_kd;
                     const responsei = await axios.get(`${url}${endpoint}`);
                     // const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 
@@ -46,7 +46,7 @@ const OpiniDetailDirektorat = () => {
                             post.id === Number(id) &&
                             convertToSlug(post.title) === slug
                     );
-                   
+                 
                     if (responsei) {
                         setItemx(responsei.data);
                         setItem(foundItem);
@@ -195,4 +195,4 @@ const OpiniDetailDirektorat = () => {
     )
 }
 
-export default OpiniDetailDirektorat
+export default OpiniDetailKdeks

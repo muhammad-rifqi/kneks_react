@@ -55,6 +55,7 @@ import SearchHome from './component/search/SearchHome';
 import BeritaTerkini from './component/BeritaTerkini';
 import BeritaDirektorat from './component/BeritaDirektorat';
 import BeritaKdeks from './component/BeritaKdeks';
+import OpiniDetailKdeks from './component/OpiniDetailKdeks';
 
 
 
@@ -101,6 +102,7 @@ function AppContent() {
         <Route path="/opini" element={<Opini />} />
         <Route path="/opini/:id/:slug" element={<OpiniDetail />} />
         <Route path="/opini-direktorat/:id/:slug/:id_dir" element={<OpiniDetailDirektorat />} />
+        <Route path="/opini-kdeks/:id/:slug/:id_kd" element={<OpiniDetailKdeks />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/agenda/:slug" element={<AgendaDetailsFix />} />
         <Route path="/agenda/detail" element={<AgendaDetail />} />

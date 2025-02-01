@@ -13,27 +13,42 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import 'dayjs/locale/en';
 import { useTranslation } from 'react-i18next';
+import SkeletonCardBerita from "../component/skeleton/CardBerita";
+import { useCookies } from 'react-cookie';
 const KdeksDetail = () => {
+    const [cookies] = useCookies(['i18next']);
     const { t } = useTranslation()
     // const [rows, setItems] = useState([]);
     const [dataKota, setDataKota] = useState([]);
     const [listdataKota, setListDataKota] = useState([]);
-
+    const formatDate = (date, locale = 'en') => {
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
     const { slug, id } = useParams();
     const [posts, setPosts] = useState([]);
     const [posts_photo, setPostsPhoto] = useState([]);
-
+    const [postsOpini, setPostsOpini] = useState([]);
     const [postSejarah, setPostSejarah] = useState(null);
     const [postTentang, setPostTentang] = useState(null);
+    const [loadingNew, setLoadingNew] = useState(true);
+    const [loadingOpini, setLoadingOpini] = useState(true);
+    const [loadingFile, setLoadingFile] = useState(true);
+    const [loadingData, setLoadingData] = useState(true);
+    const [loadingPoto, setLoadingPoto] = useState(true);
+    const [loadingAgenda, setLoadingAgenda] = useState(true);
 
     useEffect(() => {
         const fetchPosts = async () => {
+            setLoadingNew(true)
             try {
                 const url = process.env.REACT_APP_API_URL;
                 const endpoint = process.env.REACT_APP_API_KDEKS_NEWS + '/' + id;
                 const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
+
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -41,20 +56,48 @@ const KdeksDetail = () => {
                     text: err,
 
                 });
+            } finally {
+                setLoadingNew(false);
             }
         };
 
-        fetchPosts(); 
+        fetchPosts();
+    }, [id]);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            setLoadingOpini(true)
+            try {
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_KDEKS_OPINI + '/' + id;
+                const response = await axios.get(`${url}${endpoint}`);
+                setPostsOpini(response.data);
+
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            } finally {
+                setLoadingOpini(false);
+            }
+        };
+
+        fetchPosts();
     }, [id]);
 
 
     useEffect(() => {
         const fetchPosts = async () => {
+            setLoadingPoto(true)
             try {
                 const url = process.env.REACT_APP_API_URL;
                 const endpoint = process.env.REACT_APP_API_KDEKS_PHOTO + '/' + id;
                 const response = await axios.get(`${url}${endpoint}`);
                 setPostsPhoto(response.data);
+               
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -62,11 +105,39 @@ const KdeksDetail = () => {
                     text: err,
 
                 });
+            } finally {
+                setLoadingPoto(false);
             }
         };
 
         fetchPosts(); // Call fetchPosts function when component mounts
+
+      
     }, [id]);
+
+    useEffect(() => {
+        new VenoBox({
+            selector: '.my-image-links-kd',
+            numeration: true,
+            infinigall: true,
+            share: true,
+            spinner: 'swing',
+            spinColor: '#5A8DEE',
+            titlePosition: 'bottom',
+            toolsColor: '#ffffff',
+            titleattr: 'data-title',
+            titleStyle: 'block'
+
+        });
+
+        return () => {
+            // Manually remove all Venobox instances to prevent duplicates
+            const elements = document.querySelectorAll(".my-image-links-kd");
+            elements.forEach((el) => {
+                el.removeAttribute("data-venobox-initialized"); // Reset initialization flag
+            });
+        };
+    }, [posts_photo]);
 
     useEffect(() => {
         if (posts.length > 0) {
@@ -108,42 +179,7 @@ const KdeksDetail = () => {
 
     }, [posts]);
 
-    new VenoBox({
-        selector: '.my-image-as',
-        numeration: true,
-        infinigall: true,
-        share: true,
-        spinner: 'swing',
-        spinColor: '#5A8DEE',
-        titlePosition: 'bottom',
-        toolsColor: '#ffffff',
-        titleattr: 'data-title',
-        titleStyle: 'block'
-    });
-    new VenoBox({
-        selector: '.my-video-as',
-        numeration: true,
-        infinigall: true,
-        share: true,
-        spinner: 'swing',
-        spinColor: '#5A8DEE',
-        titlePosition: 'bottom',
-        toolsColor: '#ffffff',
-        titleattr: 'data-title',
-        titleStyle: 'block'
-    });
-    new VenoBox({
-        selector: '.skfile',
-        numeration: true,
-        infinigall: true,
-        share: true,
-        spinner: 'swing',
-        spinColor: '#5A8DEE',
-        titlePosition: 'bottom',
-        toolsColor: '#ffffff',
-        titleattr: 'data-title',
-        titleStyle: 'block'
-    });
+   
     // untukmengeloladatasebelumdiloop
     useEffect(() => {
         // if (document.querySelector('.swiper-kdeks-agenda')) {
@@ -373,44 +409,58 @@ const KdeksDetail = () => {
                             <h2 className="section-title">{t('beritaDanKegiatan')}</h2>
                         </div>
                         <div className="row row-gutter-30">
-                            {posts.length > 0 ? (
-                                <div className="swiper swiper-kdeks">
-                                    <div className="swiper-wrapper">
-                                        {posts.slice(0, 5).map((item) => (
-                                            <div className="col-lg-3 swiper-slide" key={item.id}>
-                                                <div className="berita-card">
-                                                    <div className="berita-card-imgbox-direktorat-home">
-                                                        <a href={item.title ? `/ berita - kegiatan / ${convertToSlug(item.title)}` : ''}>
-                                                            <img src={item?.image} className="img-fluid" alt={item.title ? item.title : ''} style={{width: '100%', height: '200px', overflowY:'hidden'}} />
-                                                        </a>
-                                                    </div>
-                                                    <div className="berita-content-direktorat-xs">
-                                                        <div className="direktorat-tag-home">
-                                                            <span>#BERITABARU</span>
+
+                            {loadingNew
+                                ? Array(4)
+                                    .fill()
+                                    .map((_, index) => (
+                                        <div
+                                            className='col-lg-3 col-xl-3 d-flex'
+                                            key={index}>
+                                            <SkeletonCardBerita />
+                                        </div>
+                                    ))
+                                :
+                                posts.length > 0 ? (
+                                    <div className="swiper swiper-kdeks">
+                                        <div className="swiper-wrapper">
+                                            {posts.slice(0, 5).map((item) => (
+                                                <div className="col-lg-3 swiper-slide" key={item.id}>
+                                                    <div className="berita-card">
+                                                        <div className="berita-card-imgbox-direktorat-home">
+                                                            <a href={item.title ? `/berita-kegiatan/${item?.id}/${convertToSlug(item?.title)}` : ''}>
+                                                                <img src={item?.image} className="img-fluid" alt={cookies.i18next === 'en' ? item?.title_en : item?.title} style={{ width: '100%', height: '200px', overflowY: 'hidden' }} />
+                                                            </a>
                                                         </div>
-                                                        <div className="event-card-title-direktorat-kdek pb-2">
-                                                            <h4>
-                                                                <a href={item.title ? `/berita-kegiatan/${convertToSlug(item.title)}` : ''}>{item.title ? item.title : ''}</a>
-                                                            </h4>
-                                                        </div>
-                                                        <div className="event-card-info-direktorat">
-                                                            <span>{item.news_datetime ? dayjs(item.news_datetime).format('DD MMMM YYYY') : ''}</span>
+                                                        <div className="berita-content-direktorat-xs">
+                                                            <div className="direktorat-tag-home">
+                                                                <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
+                                                            </div>
+                                                            <div className="event-card-title-direktorat-kdek pb-2">
+                                                                <h4>
+                                                                    <a href={item.title ? `/berita-kegiatan/${item?.id}/${convertToSlug(item?.title)}` : ''}>{cookies.i18next === 'en' ? item?.title_en : item?.title}</a>
+                                                                </h4>
+                                                            </div>
+                                                            <div className="event-card-info-direktorat">
+                                                                <span>{cookies.i18next === 'id' ? formatDate(item?.news_datetime, 'id') : formatDate(item?.news_datetime, 'en')}</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            ))}
+                                        </div>
+                                        <div className="swiper-button-prev">
+                                            <i className="fa-solid fa-chevron-left"></i>
+                                        </div>
+                                        <div className="swiper-button-next">
+                                            <i className="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div >
+                                ) : (
+                                    <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+                                        <p className="text-center text-danger">No posts available</p>
                                     </div>
-                                    <div className="swiper-button-prev">
-                                        <i className="fa-solid fa-chevron-left"></i>
-                                    </div>
-                                    <div className="swiper-button-next">
-                                        <i className="fa-solid fa-chevron-right"></i>
-                                    </div>
-                                </div >
-                            ) : (
-                                <p className="text-center">No posts available.</p>
-                            )}
+                                )}
                         </div >
                     </div >
 
@@ -515,30 +565,38 @@ const KdeksDetail = () => {
                                 </div>
                             </div>
                             <div className="row row-gutter-30">
-                                {
-                                    posts.length > 0 ? (
-                                        posts.slice(0, 4).map((item) => (
+                                {loadingOpini
+                                    ? Array(4)
+                                        .fill()
+                                        .map((_, index) => (
+                                            <div
+                                                className='col-lg-3 col-xl-3 d-flex'
+                                                key={index}>
+                                                <SkeletonCardBerita />
+                                            </div>
+                                        ))
+                                    :
+                                    postsOpini.length > 0 ? (
+                                        postsOpini.slice(0, 4).map((item) => (
                                             <div className="col-lg-3 col-md-6" key={item.id}>
                                                 <div className="berita-card">
 
                                                     <div className="berita-content-direktorat-xs">
                                                         <div className="event-card-title pb-2">
                                                             <h4>
-                                                                <a href={`/opini/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                                <a href={`/opini-kdeks/${item?.id}/${convertToSlug(item?.title)}/${id}`}>{cookies.i18next === 'en' ? item?.title_en : item?.title}</a>
                                                             </h4>
                                                         </div>
                                                         <div className="event-card-info-direktorat">
-                                                            <span>{item.tanggal}</span>
+                                                            <span>{cookies.i18next === 'id' ? formatDate(item?.date_created, 'id') : formatDate(item?.date_created, 'en')}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         ))
                                     ) : (
-                                        <div className="col-12">
-                                            <div className="no-posts-message">
-                                                <p className="text-center">No posts available</p>
-                                            </div>
+                                        <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+                                            <p className="text-center text-danger">No posts available</p>
                                         </div>
                                     )
                                 }
@@ -546,96 +604,6 @@ const KdeksDetail = () => {
                             </div >
                         </div>
                     </section>
-                    {/* <section className="funfact-section">
-                        <div className="container">
-                            <div className="funfact-box">
-                                <div className="section-title-box text-center">
-                                    <h2 className="section-title">{t('menu.ePustaka')}</h2>
-                                </div>
-                            </div>
-                            <div className="row row-gutter-y-30 d-flex justify-content-center">
-
-                                <div className="col-lg-9">
-                                    <div className="row row-gutter-30">
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
-
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail">
-                                                        <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
-                                                    </a>
-
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail">
-                                                        <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
-                                                    </a>
-
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="/e-pustaka/detail">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-12 col-md-6 col-xl-3">
-                                            <div className="team-card-x">
-                                                <div className="team-card-img-x">
-                                                    <a href="/e-pustaka/detail">
-                                                        <img src="/assets/image/berita.jpg" className="img-fluid" alt="img-40" />
-                                                    </a>
-
-                                                </div>
-                                                <div className="team-card-content-x">
-                                                    <h4><a href="#t">Ekonomi Syariah Indonesia 2014 - 2019</a></h4>
-                                                    <div className="d-flex justify-content-between align-items-end">
-                                                        <p>21 Mei 2024</p>
-                                                        <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                            <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section> */}
                     <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
@@ -726,157 +694,48 @@ const KdeksDetail = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">
-                            {posts_photo.slice(0, 4).map((item, idx) => (
-                                <div className="col-md-3 col-lg-3" key={item.id}>
-                                    <a href={item?.photo} className="my-image-links" data-gall="gallery10">
-                                        <div className="card-box-b card-shadow news-box">
-                                            <div className="img-box-b ">
-                                                <img src={item?.photo} alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
-                                            </div>
-                                            <div className="card-overlay">
-                                                <div className="card-header-b-x">
-
-                                                    <div className="card-title-b">
-                                                        <h2 className="title-2-x text-white">
-                                                            {item?.title}
-                                                        </h2>
-                                                    </div>
-                                                    <div className="card-date">
-                                                        <span className="date-b">  {item?.photos_datetime}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                            {loadingPoto
+                                ? Array(4)
+                                    .fill()
+                                    .map((_, index) => (
+                                        <div
+                                            className='col-lg-3 col-xl-3 d-flex'
+                                            key={index}>
+                                            <SkeletonCardBerita />
                                         </div>
-                                    </a>
-                                </div>
-                            ))}
-                        </div>
-                        {/* <div className="funfact-box pt-5">
-                            <div className="section-title-box text-center">
-                                <h2 className="section-title">{t('menu.galeriVideo')}</h2>
-                            </div>
-                        </div> */}
-                        {/* <div className="row row-gutter-y-40">
-                            <section className="video-section-x">
-                                <div className="container">
-                                    <div className="row row-gutter-y-40">
-                                        <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-as" data-autoplay="true" data-vbtype="video">
+                                    ))
+                                : posts_photo.length > 0 ? (
+                                    posts_photo.slice(0, 4).map((item, idx) => (
+                                        <div className="col-md-3 col-lg-3" key={item.id}>
+                                            <a href={item?.photo} className="my-image-links-kd" data-gall="gallery">
                                                 <div className="card-box-b card-shadow news-box">
-                                                    <div className="img-box-bc">
-                                                        <img src="/assets/image/berita2.jpeg" alt="imgNews" className="img-b img-fluid" />
-                                                        <div className="video-btn">
-                                                            <div className="play-icon" >
-                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                            </div>
-                                                        </div>
+                                                    <div className="img-box-b ">
+                                                        <img src={item?.photo} alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
                                                     </div>
                                                     <div className="card-overlay">
                                                         <div className="card-header-b-x">
 
                                                             <div className="card-title-b">
                                                                 <h2 className="title-2-x text-white">
-                                                                    Travel is comming
-                                                                    new
+                                                                    {cookies.i18next === 'en' ? item?.title_en : item?.title}
                                                                 </h2>
                                                             </div>
                                                             <div className="card-date">
-                                                                <span className="date-b">18 Sep. 2017</span>
+                                                                <span className="date-b">{cookies.i18next === 'id' ? formatDate(item?.photos_datetime, 'id') : formatDate(item?.photos_datetime, 'en')}</span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </a>
                                         </div>
-                                        <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-as" data-autoplay="true" data-vbtype="video">
-                                                <div className="card-box-b card-shadow news-box">
-                                                    <div className="img-box-bc">
-                                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                                        <div className="video-btn">
-                                                            <div className="play-icon" >
-                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="card-overlay">
-                                                        <div className="card-header-b-x">
-
-                                                            <div className="card-title-b">
-                                                                <h2 className="title-2-x text-white">
-                                                                    Travel is comming
-                                                                    new
-                                                                </h2>
-                                                            </div>
-                                                            <div className="card-date">
-                                                                <span className="date-b">18 Sep. 2017</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-as" data-autoplay="true" data-vbtype="video">
-                                                <div className="card-box-b card-shadow news-box">
-                                                    <div className="img-box-bc">
-                                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                                        <div className="video-btn">
-                                                            <div className="play-icon" >
-                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="card-overlay">
-                                                        <div className="card-header-b-x">
-
-                                                            <div className="card-title-b">
-                                                                <h2 className="title-2-x text-white">
-                                                                    Travel is comming
-                                                                    new
-                                                                </h2>
-                                                            </div>
-                                                            <div className="card-date">
-                                                                <span className="date-b">18 Sep. 2017</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div className="col-md-3 col-lg-3">
-                                            <a href="https://www.youtube.com/watch?v=rzfmZC3kg3M" className="my-video-as" data-autoplay="true" data-vbtype="video">
-                                                <div className="card-box-b card-shadow news-box">
-                                                    <div className="img-box-bc">
-                                                        <img src="/assets/image/berita.jpg" alt="imgNews" className="img-b img-fluid" />
-                                                        <div className="video-btn">
-                                                            <div className="play-icon" >
-                                                                <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="card-overlay">
-                                                        <div className="card-header-b-x">
-
-                                                            <div className="card-title-b">
-                                                                <h2 className="title-2-x text-white">
-                                                                    Travel is comming
-                                                                    new
-                                                                </h2>
-                                                            </div>
-                                                            <div className="card-date">
-                                                                <span className="date-b">18 Sep. 2017</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-
+                                    ))
+                                ) : (
+                                    <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+                                        <p className="text-center text-danger">No posts available</p>
                                     </div>
-                                </div>
-                            </section>
-                        </div> */}
+                                )
+                            }
+                        </div>
                     </div>
                 </section>
 
