@@ -17,10 +17,7 @@ const GaleriVideo = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
  
-
     const [loading, setLoading] = useState(true);
-
-    // const [loadingMore, setLoadingMore] = useState(false);
     const [posts, setPosts] = useState([]);
     const [startDate, setStartDate] = useState("");
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -102,7 +99,7 @@ const GaleriVideo = () => {
         if (!loading) {
             // Initialize VenoBox after data is fetched and component is rendered
             new VenoBox({
-                selector: '.my-image-links',
+                selector: '.my-videos-linksx',
                 numeration: true,
                 infinigall: true,
                 share: true,
@@ -116,22 +113,13 @@ const GaleriVideo = () => {
 
             return () => {
                 // Manually reset the Venobox initialization
-                const elements = document.querySelectorAll(".my-image-links");
+                const elements = document.querySelectorAll(".my-videos-linksx");
                 elements.forEach((el) => {
                     el.removeAttribute("data-venobox-initialized");
                 });
             };
         }
     }, [loading, posts]); // Re-run effect if loading or posts change
-
-    // const showMore = () => {
-    //     setLoadingMore(true);
-
-    //     setTimeout(() => {
-    //         setVisible((preValue) => preValue + 3);
-    //         setLoadingMore(false);
-    //     }, 2000); // Simulate network delay
-    // }
 
     const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
         <FormControl
@@ -159,8 +147,6 @@ const GaleriVideo = () => {
         }
     }, [startDate, posts]);
 
-
-    // const [selectedDates, setSelectedDates] = useState();
     return (
         <>
             <div className="page-wrapper">
@@ -211,7 +197,7 @@ const GaleriVideo = () => {
                                         <div className="col-md-6 col-lg-4" key={item.id} >
                                             <a href={`https://img.youtube.com/vi/` +
                                                 item.video
-                                            } className="my-image-links" data-autoplay="true" data-vbtype="video">
+                                            } className="my-videos-linksx" data-autoplay="true" data-vbtype="video">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-bc">
                                                         <img src={`https://img.youtube.com/vi/` + item.video + '/0.jpg'} alt="imgNews" className="img-b img-fluid" />
