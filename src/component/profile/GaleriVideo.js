@@ -96,7 +96,7 @@ const GaleriVideo = () => {
     }, []);
 
     useEffect(() => {
-        if (!loading) {
+        // if (!loading) {
             // Initialize VenoBox after data is fetched and component is rendered
             new VenoBox({
                 selector: '.my-videos-linksx',
@@ -118,8 +118,8 @@ const GaleriVideo = () => {
                     el.removeAttribute("data-venobox-initialized");
                 });
             };
-        }
-    }, [loading, posts]); // Re-run effect if loading or posts change
+        // }
+    }, [ posts]); // Re-run effect if loading or posts change
 
     const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
         <FormControl
