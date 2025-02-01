@@ -7,7 +7,7 @@ import 'dayjs/locale/en';
 import { useCookies } from 'react-cookie';
 import { useTranslation } from "react-i18next";
 import axios from 'axios';
-const OpiniDetail = () => {
+const OpiniDetailDirektorat = () => {
     const { t } = useTranslation()
     const [cookies] = useCookies(['i18next']);
     const formatDate = (date, locale = 'en') => {
@@ -15,7 +15,7 @@ const OpiniDetail = () => {
 		return dayjs(date).format('DD MMMM YYYY'); // Format the date
 	};
 
-    const {id,slug} = useParams(); 
+    const {id,slug,id_dir} = useParams(); 
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -36,7 +36,7 @@ const OpiniDetail = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_POST;
+                    const endpoint = process.env.REACT_APP_API_POST_DIREKTORAT_OPINI+ '/' + id_dir;
                     const responsei = await axios.get(`${url}${endpoint}`);
                     // const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 
@@ -88,7 +88,7 @@ const OpiniDetail = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
                                     <h4>{cookies.i18next === 'id' ? rows?.title : rows?.title_en}</h4>
-                                    <p>{cookies.i18next === 'id' ? formatDate(rows?.date, 'id') : formatDate(rows?.date, 'en')}</p>
+                                    <p>{cookies.i18next === 'id' ? formatDate(rows?.date_created, 'id') : formatDate(rows?.date_created, 'en')}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
@@ -195,4 +195,4 @@ const OpiniDetail = () => {
     )
 }
 
-export default OpiniDetail
+export default OpiniDetailDirektorat

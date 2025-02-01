@@ -45,7 +45,7 @@ import { Test } from './component/Test';
 import AgendaDetail from './component/AgendaDetails';
 import AgendaDetailsFix from './component/AgendaDetailsFix';
 import OpiniDetail from './component/OpiniDetail';
-
+import OpiniDetailDirektorat from './component/OpiniDetailDirektorat';
 import BannerDetail from './component/bannerDetail';
 
 import InfoTerkiniDumiDetail from './component/InfoTerkiniDumiDetail';
@@ -100,6 +100,7 @@ function AppContent() {
         <Route path="/data/:id" element={<DataDetail />} />
         <Route path="/opini" element={<Opini />} />
         <Route path="/opini/:id/:slug" element={<OpiniDetail />} />
+        <Route path="/opini-direktorat/:id/:slug/:id_dir" element={<OpiniDetailDirektorat />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/agenda/:slug" element={<AgendaDetailsFix />} />
         <Route path="/agenda/detail" element={<AgendaDetail />} />

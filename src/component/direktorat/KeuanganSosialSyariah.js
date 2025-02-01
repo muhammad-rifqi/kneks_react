@@ -11,8 +11,15 @@ import 'dayjs/locale/id';
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { useCookies } from 'react-cookie';
-
+import SkeletonCardBerita from "../skeleton/CardBerita";
 const KeuanganSosialSyariah = () => {
+    const [loading, setLoading] = useState(true);
+    const [loadingNew, setLoadingNew] = useState(true);
+    const [loadingOpini, setLoadingOpini] = useState(true);
+    const [loadingFile, setLoadingFile] = useState(true);
+    const [loadingData, setLoadingData] = useState(true);
+    const [loadingPoto, setLoadingPoto] = useState(true);
+    const [loadingVideo, setLoadingVideo] = useState(true);
     const { t } = useTranslation()
     const [item_photo, setItemsPhoto] = useState([]);
     const [item_video, setItemsVideo] = useState([]);
@@ -43,6 +50,7 @@ const KeuanganSosialSyariah = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
+            setLoading(true);
             try {
                 const urls = process.env.REACT_APP_API_URL;
                 const endpoints = process.env.REACT_APP_API_DIREKTORAT_DETAIL + '/' + id_dir;
@@ -55,6 +63,8 @@ const KeuanganSosialSyariah = () => {
                     text: err,
 
                 });
+            } finally {
+                setLoading(false);
             }
         };
         fetchPosts();
@@ -62,6 +72,7 @@ const KeuanganSosialSyariah = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
+            setLoadingNew(true)
             try {
                 const urls = process.env.REACT_APP_API_URL;
                 const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT + '/' + id_dir;
@@ -74,6 +85,8 @@ const KeuanganSosialSyariah = () => {
                     text: err,
 
                 });
+            } finally {
+                setLoadingNew(false);
             }
         };
         fetchPosts();
@@ -102,6 +115,7 @@ const KeuanganSosialSyariah = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
+            setLoadingOpini(true)
             try {
                 const urls = process.env.REACT_APP_API_URL;
                 const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_OPINI + '/' + id_dir;
@@ -114,6 +128,8 @@ const KeuanganSosialSyariah = () => {
                     text: err,
 
                 });
+            } finally {
+                setLoadingOpini(false);
             }
         };
         fetchPosts();
@@ -121,6 +137,7 @@ const KeuanganSosialSyariah = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
+            setLoadingFile(true)
             try {
                 const urls = process.env.REACT_APP_API_URL;
                 const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_FILES + '/' + id_dir;
@@ -133,6 +150,8 @@ const KeuanganSosialSyariah = () => {
                     text: err,
 
                 });
+            } finally {
+                setLoadingFile(false);
             }
         };
         fetchPosts();
@@ -142,6 +161,7 @@ const KeuanganSosialSyariah = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
+            setLoadingPoto(true)
             try {
                 const urls = process.env.REACT_APP_API_URL;
                 const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_PHOTOS + '/' + id_dir;
@@ -154,6 +174,8 @@ const KeuanganSosialSyariah = () => {
                     text: err,
 
                 });
+            } finally {
+                setLoadingPoto(false);
             }
         };
         fetchPosts();
@@ -185,6 +207,7 @@ const KeuanganSosialSyariah = () => {
     useEffect(() => {
 
         const fetchPosts = async () => {
+            setLoadingVideo(true)
             try {
                 const urls = process.env.REACT_APP_API_URL;
                 const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_VIDEOS + '/' + id_dir;
@@ -197,6 +220,8 @@ const KeuanganSosialSyariah = () => {
                     text: err,
 
                 });
+            } finally {
+                setLoadingVideo(false);
             }
         };
         fetchPosts();
@@ -306,28 +331,45 @@ const KeuanganSosialSyariah = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-30">
-                            {newsdir.slice(0, 4).map((item) => (
-                                <div className="col-lg-3" key={item.id}>
-                                    <div className="berita-card">
-                                        <div className="berita-card-imgbox-direktorat-home ">
-                                            <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}><img src={item?.image} className="img-fluid" alt={item.title} style={{ width: '100%', height: '220px', overflowY: 'hidden' }} /></a>
+                            {loadingNew
+                                ? Array(4)
+                                    .fill()
+                                    .map((_, index) => (
+                                        <div
+                                            className='col-lg-3 col-xl-3 d-flex'
+                                            key={index}>
+                                            <SkeletonCardBerita />
                                         </div>
-                                        <div className="berita-content-direktorat-x" style={{ width: '100%' }}>
-                                            <div className="direktorat-tag-home">
-                                                <span>#BERITABARU</span>
-                                            </div>
-                                            <div className="event-card-title-direktorat pb-2">
-                                                <h4>
-                                                    <a href={`/berita-kegiatan/${convertToSlug(item.title)}`}>{item.title}</a>
-                                                </h4>
-                                            </div>
-                                            <div className="event-card-info-direktorat">
-                                                <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                    ))
+                                :
+                                newsdir.length > 0 ? (
+                                    newsdir.slice(0, 4).map((item) => (
+                                        <div className="col-lg-3" key={item.id}>
+                                            <div className="berita-card">
+                                                <div className="berita-card-imgbox-direktorat-home ">
+                                                    <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}><img src={item?.image} className="img-fluid" alt={item.title} style={{ width: '100%', height: '220px', overflowY: 'hidden' }} /></a>
+                                                </div>
+                                                <div className="berita-content-direktorat-x" style={{ width: '100%' }}>
+                                                    <div className="direktorat-tag-home">
+                                                        <span>#BERITABARU</span>
+                                                    </div>
+                                                    <div className="event-card-title-direktorat pb-2">
+                                                        <h4>
+                                                            <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div className="event-card-info-direktorat">
+                                                        <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+                                    ))
+                                ) : (
+                                    <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+                                        <p className="text-center text-danger">No posts available</p>
                                     </div>
-                                </div>
-                            ))
+                                )
                             }
                         </div >
                     </div>
@@ -341,27 +383,44 @@ const KeuanganSosialSyariah = () => {
                                 </div>
                             </div>
                             <div className="row row-gutter-30">
-                                {
-                                    opinidir.slice(0, 4).map((item) => (
-                                        <div className="col-lg-3 col-xl-3" key={item.id}>
-                                            <div className="berita-card">
-                                                {/* <div className="berita-card-imgbox-direktorat ">
+                                {loadingOpini
+                                    ? Array(4)
+                                        .fill()
+                                        .map((_, index) => (
+                                            <div
+                                                className='col-lg-3 col-xl-3 d-flex'
+                                                key={index}>
+                                                <SkeletonCardBerita />
+                                            </div>
+                                        ))
+                                    :
+                                    opinidir.length > 0 ? (
+                                        opinidir.slice(0, 4).map((item) => (
+                                            <div className="col-lg-3 col-xl-3" key={item.id}>
+                                                <div className="berita-card">
+                                                    {/* <div className="berita-card-imgbox-direktorat ">
                                                 <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
                                             </div> */}
-                                                <div className="berita-content-direktorat-xs">
+                                                    <div className="berita-content-direktorat-xs">
 
-                                                    <div className="event-card-title pb-2">
-                                                        <h4>
-                                                            <a href={`/opini/${convertToSlug(item.title)}`} >{item.title}</a>
-                                                        </h4>
-                                                    </div>
-                                                    <div className="event-card-info-direktorat">
-                                                        <span>{item.date_created}</span>
+                                                        <div className="event-card-title pb-2">
+                                                            <h4>
+                                                                <a href={`/opini-direktorat/${item.id}/${convertToSlug(item.title)}/${id_dir}`} >{item.title}</a>
+                                                            </h4>
+                                                        </div>
+                                                        <div className="event-card-info-direktorat">
+                                                            <span>{dayjs(item.date_created).format('DD MMMM YYYY')}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        ))
+                                    ) : (
+                                        <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+                                            <p className="text-center text-danger">No posts available</p>
                                         </div>
-                                    ))}
+                                    )
+                                }
                             </div >
                         </div>
                     </section>
@@ -376,24 +435,42 @@ const KeuanganSosialSyariah = () => {
 
                                 <div className="col-lg-9">
                                     <div className="row ">
-                                        {filesdir.slice(0, 4).map((item) => (
-                                            <div className="col-12 col-md-6 col-xl-3">
-                                                <div className="team-card-x">
-                                                    <div className="team-card-img-x">
-                                                        <a href="#t"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
+                                        {loadingFile
+                                            ? Array(4)
+                                                .fill()
+                                                .map((_, index) => (
+                                                    <div
+                                                        className='col-lg-3 col-xl-3 d-flex'
+                                                        key={index}>
+                                                        <SkeletonCardBerita />
                                                     </div>
-                                                    <div className="team-card-content-x">
-                                                        <h4><a href="#t">{item?.title}</a></h4>
-                                                        <div className="d-flex justify-content-between align-items-end">
-                                                            <p>{item?.date}</p>
-                                                            <a href="#t" data-bs-toggle="tooltip" title="download">
-                                                                <i className="fa-solid fa-download" aria-hidden="true"></i>
-                                                            </a>
+                                                ))
+                                            :
+                                            filesdir.length > 0 ? (
+                                                filesdir.slice(0, 4).map((item) => (
+                                                    <div className="col-12 col-md-6 col-xl-3">
+                                                        <div className="team-card-x">
+                                                            <div className="team-card-img-x">
+                                                                <a href="#t"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
+                                                            </div>
+                                                            <div className="team-card-content-x">
+                                                                <h4><a href="#t">{item?.title}</a></h4>
+                                                                <div className="d-flex justify-content-between align-items-end">
+                                                                    <p>{dayjs(item.date).format('DD MMMM YYYY')}</p>
+                                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                                        <i className="fa-solid fa-download" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                ))
+                                            ) : (
+                                                <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+                                                    <p className="text-center text-danger">No posts available</p>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            )
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -489,30 +566,48 @@ const KeuanganSosialSyariah = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-y-40">
-                            {item_photo.slice(0, 4).map((item, idx) => (
-                                <div className="col-md-3 col-lg-3" key={item.id}>
-                                    <a href={item?.photo} className="my-image-links" data-gall="gallery10">
-                                        <div className="card-box-b card-shadow news-box">
-                                            <div className="img-box-b ">
-                                                <img src={item?.photo} alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
-                                            </div>
-                                            <div className="card-overlay">
-                                                <div className="card-header-b-x">
-
-                                                    <div className="card-title-b">
-                                                        <h2 className="title-2-x text-white">
-                                                            {item?.title}
-                                                        </h2>
+                            {loadingPoto
+                                ? Array(4)
+                                    .fill()
+                                    .map((_, index) => (
+                                        <div
+                                            className='col-lg-3 col-xl-3 d-flex'
+                                            key={index}>
+                                            <SkeletonCardBerita />
+                                        </div>
+                                    ))
+                                :
+                                item_photo.length > 0 ? (
+                                    item_photo.slice(0, 4).map((item, idx) => (
+                                        <div className="col-md-3 col-lg-3" key={item.id}>
+                                            <a href={item?.photo} className="my-image-links" data-gall="gallery10">
+                                                <div className="card-box-b card-shadow news-box">
+                                                    <div className="img-box-b ">
+                                                        <img src={item?.photo} alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
                                                     </div>
-                                                    <div className="card-date">
-                                                        <span className="date-b">  {item?.photos_datetime}</span>
+                                                    <div className="card-overlay">
+                                                        <div className="card-header-b-x">
+
+                                                            <div className="card-title-b">
+                                                                <h2 className="title-2-x text-white">
+                                                                    {item?.title}
+                                                                </h2>
+                                                            </div>
+                                                            <div className="card-date">
+                                                                <span className="date-b"> {dayjs(item?.photos_datetime).format('DD MMMM YYYY')}</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
-                                    </a>
-                                </div>
-                            ))}
+                                    ))
+                                ) : (
+                                    <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+                                        <p className="text-center text-danger">No posts available</p>
+                                    </div>
+                                )
+                            }
 
                         </div>
                         <div className="funfact-box pt-5">
@@ -524,35 +619,53 @@ const KeuanganSosialSyariah = () => {
                             <section className="video-section-x">
                                 <div className="container">
                                     <div className="row row-gutter-y-40">
-                                        {item_video.slice(0, 4).map((item) => (
-                                            <div className="col-md-3 col-lg-3" key={item.id}>
-                                                <a href={`https://www.youtube.com/watch?v=` + item?.video} className="my-video-links" data-autoplay="true" data-vbtype="video">
-                                                    <div className="card-box-b card-shadow news-box">
-                                                        <div className="img-box-bc">
-                                                            <img src={`https://img.youtube.com/vi/` + item?.video + `/hqdefault.jpg`} alt="imgNews" className="img-b img-fluid" />
-                                                            <div className="video-btn">
-                                                                <div className="play-icon" >
-                                                                    <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="card-overlay">
-                                                            <div className="card-header-b-x">
-
-                                                                <div className="card-title-b">
-                                                                    <h2 className="title-2-x text-white">
-                                                                        {item?.title}
-                                                                    </h2>
-                                                                </div>
-                                                                <div className="card-date">
-                                                                    <span className="date-b">{item?.videos_datetime}</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                        {loadingVideo
+                                            ? Array(4)
+                                                .fill()
+                                                .map((_, index) => (
+                                                    <div
+                                                        className='col-lg-3 col-xl-3 d-flex'
+                                                        key={index}>
+                                                        <SkeletonCardBerita />
                                                     </div>
-                                                </a>
-                                            </div>
-                                        ))}
+                                                ))
+                                            :
+                                            item_video.length > 0 ? (
+                                                item_video.slice(0, 4).map((item) => (
+                                                    <div className="col-md-3 col-lg-3" key={item.id}>
+                                                        <a href={`https://www.youtube.com/watch?v=` + item?.video} className="my-video-links" data-autoplay="true" data-vbtype="video">
+                                                            <div className="card-box-b card-shadow news-box">
+                                                                <div className="img-box-bc">
+                                                                    <img src={`https://img.youtube.com/vi/` + item?.video + `/hqdefault.jpg`} alt="imgNews" className="img-b img-fluid" />
+                                                                    <div className="video-btn">
+                                                                        <div className="play-icon" >
+                                                                            <img src="/assets/image/play-circle.svg" alt="imgplay" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="card-overlay">
+                                                                    <div className="card-header-b-x">
+
+                                                                        <div className="card-title-b">
+                                                                            <h2 className="title-2-x text-white">
+                                                                                {item?.title}
+                                                                            </h2>
+                                                                        </div>
+                                                                        <div className="card-date">
+                                                                            <span className="date-b">{dayjs(item?.videos_datetime).format('DD MMMM YYYY')}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                ))
+                                            ) : (
+                                                <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+                                                    <p className="text-center text-danger">No posts available</p>
+                                                </div>
+                                            )
+                                        }
                                     </div>
                                 </div>
                             </section>
