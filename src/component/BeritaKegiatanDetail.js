@@ -3,13 +3,18 @@ import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import 'dayjs/locale/en';
 import axios from 'axios';
 import { useTranslation } from "react-i18next";
 
-
+import { useCookies } from 'react-cookie';
 const BeritaKegiatanDetail = () => {
+    const [cookies] = useCookies(['i18next']);
     const { t } = useTranslation()
-    dayjs.locale('id');
+    const formatDate = (date, locale = 'en') => {
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
 
     const { id, slug } = useParams();
     const [rows, setItem] = useState(null);
@@ -33,12 +38,13 @@ const BeritaKegiatanDetail = () => {
                     const url = process.env.REACT_APP_API_URL;
                     const endpoint = process.env.REACT_APP_API_POST;
                     const responsei = await axios.get(`${url}${endpoint}`);
-                    
+                   
                     const foundItem = responsei.data.find(
                         (post) =>
                             post.id === Number(id) &&
                             convertToSlug(post.title) === slug
                     );
+                    console.log(foundItem)
                     // throw new Error("Error!");
 
                     if (responsei) {
@@ -62,7 +68,7 @@ const BeritaKegiatanDetail = () => {
             }
         }
     }, [id,slug]);
-    const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
+    // const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
     return (
         <>
@@ -79,8 +85,8 @@ const BeritaKegiatanDetail = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                    <h4>{rows?.title}</h4>
-                                    <p>{formattedDate}</p>
+                                    <h4>{cookies.i18next === 'en' ? rows?.title_en : rows?.title}</h4>
+                                    <p>{cookies.i18next === 'id' ? formatDate(rows?.news_datetime, 'id') : formatDate(rows?.news_datetime, 'en')}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
@@ -113,7 +119,7 @@ const BeritaKegiatanDetail = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
                                     {/* <p style={{ textAlign: `justify` }}>{rows?.content}</p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: rows?.content }} />
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? rows?.content_en : rows?.content }} />
                                 </div>
                             </div>
                             <hr />
