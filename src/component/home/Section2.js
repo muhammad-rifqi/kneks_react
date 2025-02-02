@@ -9,15 +9,12 @@ const Section2 = () => {
     // const { t } = useTranslation();
     const [menu, setMenu] = useState([]);
     useEffect(() => {
-        // Function to fetch posts
         const fetchMenu = async () => {
-    
           try {
             const url = process.env.REACT_APP_API_URL;
             const endpoint = process.env.REACT_APP_API_MENU_DIREKTORAT;
             const response = await axios.get(`${url}${endpoint}`);
             setMenu(response.data);
-    
           } catch (err) {
             Swal.fire({
               icon: "error",
@@ -27,7 +24,7 @@ const Section2 = () => {
           }
         };
     
-        fetchMenu(); // Call fetchPosts function when component mounts
+        fetchMenu();
       }, []);
       const convertToSlug = (title) => {
         return title

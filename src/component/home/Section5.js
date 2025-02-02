@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Carousel } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
+import axios from "axios";
 
 // const dataTabs = [
 //     {
@@ -71,15 +72,24 @@ const Section5 = () => {
     const { t } = useTranslation();
     // const [activeTab, setActiveTab] = useState("BI");
     const [dataTabs, setDataTab] = useState([]);
-    useEffect(()=>{
-        fetch(process.env.REACT_APP_API_URL + '/agenda_graph')
-        .then(resp => resp.json())
-        .then((rows) => {
-            setDataTab(rows);
-        })
+    useEffect(() => {
+        const fetchTab = async () => {
+            try {
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_AGENDA_GRAPH;
+                const response = await axios.get(`${url}${endpoint}`);
+                setDataTab(rows);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+                });
+            }
+        };
+        fetchTab();
+    }, [])
 
-    })
-    
     return (
         <section className='funfact-section'>
             <div className='container-fluid'>
@@ -91,7 +101,7 @@ const Section5 = () => {
                     </div>
                 </div>
                 <Carousel className='custom-carousel' interval={3000} data-aos="fade-down-left">
-                    {dataTabs.slice(0,6).map((item) => {
+                    {dataTabs.slice(0, 6).map((item) => {
                         return (
                             <Carousel.Item key={item.key}>
                                 <div className='row d-flex align-items-start chart-container'>
