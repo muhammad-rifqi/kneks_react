@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 import { Carousel } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 // const dataTabs = [
 //     {
@@ -78,7 +79,7 @@ const Section5 = () => {
                 const url = process.env.REACT_APP_API_URL;
                 const endpoint = process.env.REACT_APP_API_AGENDA_GRAPH;
                 const response = await axios.get(`${url}${endpoint}`);
-                setDataTab(rows);
+                setDataTab(response.data);
             } catch (err) {
                 Swal.fire({
                     icon: "error",
