@@ -15,7 +15,7 @@ const OpiniDetailKdeks = () => {
 		return dayjs(date).format('DD MMMM YYYY'); // Format the date
 	};
 
-    const {id,slug,id_kd} = useParams(); 
+    const {id,slug} = useParams(); 
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -36,7 +36,7 @@ const OpiniDetailKdeks = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_KDEKS_OPINI+ '/' + id_kd;
+                    const endpoint = process.env.REACT_APP_API_KDEKS_OPINI+ '/' + id;
                     const responsei = await axios.get(`${url}${endpoint}`);
                     // const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 

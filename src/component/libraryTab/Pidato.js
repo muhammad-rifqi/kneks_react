@@ -23,15 +23,15 @@ const Pidato = () => {
         return dayjs(date).format('DD MMMM YYYY'); // Format the date
     };
 
-    const convertToSlug = (title) => {
-        if (!title) return "";
-        return title
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, "")
-            .replace(/\s+/g, "-")
-            .replace(/-+/g, "-");
-    };
+    // const convertToSlug = (title) => {
+    //     if (!title) return "";
+    //     return title
+    //         .toLowerCase()
+    //         .trim()
+    //         .replace(/[^\w\s-]/g, "")
+    //         .replace(/\s+/g, "-")
+    //         .replace(/-+/g, "-");
+    // };
 
     useEffect(() => {
         const fetchPosts = async () => {

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useTranslation } from "react-i18next";
-import { useCookies } from 'react-cookie';
+// import { useCookies } from 'react-cookie';
 import { InstagramEmbed } from 'react-social-media-embed';
 
 
 const Section11 = () => {
-	const [cookies] = useCookies(['i18next']);
+	// const [cookies] = useCookies(['i18next']);
 	const { t } = useTranslation()
 	const [posts, setPosts] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -34,7 +34,7 @@ const Section11 = () => {
 		fetchPosts();
 	}, []);
 
-	
+	if (loading) return <p>Loading...</p>
 
 	return (
 		<>

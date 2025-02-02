@@ -51,15 +51,15 @@ const Elibrabry = () => {
             }
         }
     }, [id]);
-    const convertToSlug = (title) => {
-        if (!title) return "";
-        return title
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, "")
-            .replace(/\s+/g, "-")
-            .replace(/-+/g, "-");
-    };
+    // const convertToSlug = (title) => {
+    //     if (!title) return "";
+    //     return title
+    //         .toLowerCase()
+    //         .trim()
+    //         .replace(/[^\w\s-]/g, "")
+    //         .replace(/\s+/g, "-")
+    //         .replace(/-+/g, "-");
+    // };
     return (
         <>
             <div className="page-wrapper">

@@ -17,7 +17,7 @@ const IndustriProdukHalal = () => {
     const [loadingNew, setLoadingNew] = useState(true);
     const [loadingOpini, setLoadingOpini] = useState(true);
     const [loadingFile, setLoadingFile] = useState(true);
-    const [loadingData, setLoadingData] = useState(true);
+    // const [loadingData, setLoadingData] = useState(true);
     const [loadingPoto, setLoadingPoto] = useState(true);
     const [loadingVideo, setLoadingVideo] = useState(true);
     const { t } = useTranslation();
@@ -249,6 +249,9 @@ const IndustriProdukHalal = () => {
         };
 
     }, [id_dir]);
+
+    if (loading) return <p>Loading...</p>
+    
     return (
         <>
             <div className="page-wrapper">

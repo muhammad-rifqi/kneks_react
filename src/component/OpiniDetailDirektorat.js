@@ -15,7 +15,7 @@ const OpiniDetailDirektorat = () => {
 		return dayjs(date).format('DD MMMM YYYY'); // Format the date
 	};
 
-    const {id,slug,id_dir} = useParams(); 
+    const {id,slug} = useParams(); 
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -36,7 +36,7 @@ const OpiniDetailDirektorat = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_POST_DIREKTORAT_OPINI+ '/' + id_dir;
+                    const endpoint = process.env.REACT_APP_API_POST_DIREKTORAT_OPINI+ '/' + id;
                     const responsei = await axios.get(`${url}${endpoint}`);
                     // const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 

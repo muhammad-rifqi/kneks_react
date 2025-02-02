@@ -1,12 +1,12 @@
 import React,{ useState, useEffect } from "react";
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import 'dayjs/locale/id';
 import { useCookies } from 'react-cookie';
 import Swal from "sweetalert2";
 import axios from "axios";
 const Section2 = () => {
     const [cookies] = useCookies(['i18next']);
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
     const [menu, setMenu] = useState([]);
     useEffect(() => {
         // Function to fetch posts

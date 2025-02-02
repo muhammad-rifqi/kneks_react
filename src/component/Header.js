@@ -57,7 +57,8 @@ const Header = () => {
   }, [location, dataKota]);
 
 
-  const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const [cookies, setCookie] = useCookies(['i18next']);
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -76,7 +77,7 @@ const Header = () => {
 
       try {
         const url = process.env.REACT_APP_API_URL;
-        const endpoint = process.env.REACT_APP_API_MENU_DIREKTORAT;
+        const endpoint = process.env.REACT_APP_API_MENU_ALL;
         const response = await axios.get(`${url}${endpoint}`);
         setMenu(response.data);
 
@@ -192,7 +193,24 @@ const Header = () => {
               ) : (
                 <div className="navigation">
                   <ul className="main-menu-list list-unstyled">
-                    <li className={` ${activeMenu === '/' ? 'active' : ''}`}>
+                    {menux.map((item, index) => (
+                      <li key={index} className={activeMenu === item.menu_link ? "active" : ""}>
+                        <a onClick={() => handleMenuClick(item.menu_link)} href={item.menu_link}>
+                        {cookies.i18next === 'en' ? item.menu_name_en : item.menu_name}
+                        </a>
+                        {item.menu_sub.length > 0 && (
+                          <ul className="list-unstyled">
+                            {item.menu_sub.map((detail, detailIndex) => (
+                              <li key={detailIndex}>
+                                <a href={detail.submenu_link}>{cookies.i18next === 'en' ? detail.submenu_name_en : detail.submenu_name}</a>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                  {/* <li className={` ${activeMenu === '/' ? 'active' : ''}`}>
                       <a onClick={() => handleMenuClick('/')} href="/">{t('menu.home')}</a>
                     </li>
                     <li className="has-dropdown">
@@ -204,21 +222,21 @@ const Header = () => {
                         <li><a href="/galeri-foto">{t('menu.galeriFoto')}</a></li>
                         <li><a href="/galeri-video">{t('menu.galeriVideo')}</a></li>
                       </ul>
-                    </li>
-                    <li className="has-dropdown">
+                    </li> */}
+                  {/* <li className="has-dropdown">
                       <a href="#t">{t('menu.direktorat')}</a>
                       <ul className="list-unstyled">
-                        {/* <li><a href="/industri-produk-halal">{t('menu.industriProdukHalal')}</a></li>
-                        <li><a href="/jasa-keuangan-syariah">{t('menu.jasaKeuanganSyariah')}</a></li>
-                        <li><a href="/keuangan-sosial-syariah">{t('menu.keuanganSosialSyariah')}</a></li>
-                        <li><a href="/bisnis-dan-kewirausahaan-syariah">{t('menu.bisnisDanKewirausahaan')}</a></li>
-                        <li><a href="/infrastruktur-ekosistem-syariah">{t('menu.infrastrukturEkosistem')}</a></li> */}
-                        {menux.map((item, index) => (
+                        <li><a href="/industri-produk-halal/1">{t('menu.industriProdukHalal')}</a></li>
+                        <li><a href="/jasa-keuangan-syariah/2">{t('menu.jasaKeuanganSyariah')}</a></li>
+                        <li><a href="/keuangan-sosial-syariah/3">{t('menu.keuanganSosialSyariah')}</a></li>
+                        <li><a href="/bisnis-dan-kewirausahaan-syariah/4">{t('menu.bisnisDanKewirausahaan')}</a></li>
+                        <li><a href="/infrastruktur-ekosistem-syariah/5">{t('menu.infrastrukturEkosistem')}</a></li> */}
+                  {/* {menux.map((item, index) => (
                           <li key={index}>
                             <a href={`/${convertToSlug(item.title)}/${item.id}`}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
                           </li>
-                        ))}
-                      </ul>
+                        ))} */}
+                  {/* </ul>
                     </li>
                     <li className="has-dropdown">
                       <a href="#t">{t('menu.beritaKegiatan')}</a>
@@ -226,17 +244,17 @@ const Header = () => {
                         <li><a href="/berita-terkini">{t('menu.beritaTerkini')}</a></li>
                         {/* <li><a href="/berita-direktorat">{t('menu.beritaDirektorat')}</a></li>
                         <li><a href="/berita-kdeks">{t('menu.beritaKdeks')}</a></li> */}
-                        <li><a href="/liputan-media">{t('menu.liputanMedia')}</a></li>
+                  {/* <li><a href="/liputan-media">{t('menu.liputanMedia')}</a></li>
                         <li><a href="/siaran-pers">{t('menu.siaranPers')}</a></li>
-                        <li><a href="/opini">{t('menu.opini')}</a></li>
+                        <li><a href="/opini">{t('menu.opini')}</a></li>  */}
 
-                        {/* <li><a href="/info-terkini">{t('menu.infoTerkini')}</a></li> */}
-                      </ul>
-                    </li>
-                    {/* <li className={` ${activeMenu === '/berita-kegiatan' ? 'active' : ''}`}>
+                  {/* <li><a href="/info-terkini">{t('menu.infoTerkini')}</a></li> */}
+                  {/* </ul>
+                    </li> */}
+                  {/* <li className={` ${activeMenu === '/berita-kegiatan' ? 'active' : ''}`}>
                       <a onClick={() => handleMenuClick('/berita-kegiatan')} href="/berita-kegiatan">{t('menu.beritaKegiatan')}</a>
                     </li> */}
-                    <li className={` ${activeMenu === '/agenda' ? 'active' : ''}`}>
+                  {/* <li className={` ${activeMenu === '/agenda' ? 'active' : ''}`}>
                       <a onClick={() => handleMenuClick('/agenda')} href="/agenda">{t('menu.agenda')}</a>
                     </li>
                     <li className={` ${activeMenu === '/e-pustaka' ? 'active' : ''}`}>
@@ -250,8 +268,7 @@ const Header = () => {
                     </li>
                     <li className={` ${activeMenu === '/kontak' ? 'active' : ''}`}>
                       <a onClick={() => handleMenuClick('/kontak')} href="/kontak">{t('menu.kontak')}</a>
-                    </li>
-                  </ul>
+                    </li> */}
                 </div>
               )}
             </div>

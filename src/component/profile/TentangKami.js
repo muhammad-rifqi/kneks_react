@@ -30,7 +30,7 @@ const TentangKami = () => {
         fetchPosts();
     }, []);
 
-  
+    if (loading) return <p>Loading...</p>
     return (
 
         <>

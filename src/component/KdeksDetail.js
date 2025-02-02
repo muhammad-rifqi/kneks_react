@@ -31,14 +31,14 @@ const KdeksDetail = () => {
     const [posts, setPosts] = useState([]);
     const [posts_photo, setPostsPhoto] = useState([]);
     const [postsOpini, setPostsOpini] = useState([]);
-    const [postSejarah, setPostSejarah] = useState(null);
+    // const [postSejarah, setPostSejarah] = useState(null);
     const [postTentang, setPostTentang] = useState(null);
     const [loadingNew, setLoadingNew] = useState(true);
     const [loadingOpini, setLoadingOpini] = useState(true);
-    const [loadingFile, setLoadingFile] = useState(true);
-    const [loadingData, setLoadingData] = useState(true);
+    // const [loadingFile, setLoadingFile] = useState(true);
+    // const [loadingData, setLoadingData] = useState(true);
     const [loadingPoto, setLoadingPoto] = useState(true);
-    const [loadingAgenda, setLoadingAgenda] = useState(true);
+    // const [loadingAgenda, setLoadingAgenda] = useState(true);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -248,29 +248,28 @@ const KdeksDetail = () => {
 
 
     useEffect(() => {
-        // Function to fetch posts
-        const fetchPosts = async () => {
-            try {
-                const url = process.env.REACT_APP_API_URLKDEKS;
-                const endpoint = process.env.REACT_APP_API_KDEKS_SEJARAH_PROV;
-                const response = await axios.get(`${url}${endpoint}/${id}`);
+        // const fetchPosts = async () => {
+        //     try {
+        //         const url = process.env.REACT_APP_API_URLKDEKS;
+        //         const endpoint = process.env.REACT_APP_API_KDEKS_SEJARAH_PROV;
+        //         const response = await axios.get(`${url}${endpoint}/${id}`);
 
-                if (response.data && response.data.length > 0) {
-                    setPostSejarah(response.data[0]);
-                } else {
-                    throw new Error("Data kosong atau tidak ditemukan.");
-                }
-            } catch (err) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: err,
+        //         if (response.data && response.data.length > 0) {
+        //             setPostSejarah(response.data[0]);
+        //         } else {
+        //             throw new Error("Data kosong atau tidak ditemukan.");
+        //         }
+        //     } catch (err) {
+        //         Swal.fire({
+        //             icon: "error",
+        //             title: "Oops...",
+        //             text: err,
 
-                });
-            }
-        };
+        //         });
+        //     }
+        // };
 
-        fetchPosts(); // Call fetchPosts function when component mounts
+        // fetchPosts(); 
 
         const fetchPostsTentang = async () => {
             try {
