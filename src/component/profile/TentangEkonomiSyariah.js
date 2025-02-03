@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useTranslation } from "react-i18next";
@@ -30,9 +30,17 @@ const TentangEkonomiSyariah = () => {
 
         fetchPosts();
     }, []);
+    console.log(posts)
+    if (loading) {
+        return (
+            <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+                <div className="spinner-border text-primary" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        );
+    }
 
-    if (loading) return <p>Loading...</p>
-    
     return (
 
         <>
@@ -109,9 +117,11 @@ const TentangEkonomiSyariah = () => {
                             {/* deskripsi landasan hukum */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{t('landasanHukum')}</h2>
+                                    {/* <h2 className="section-title" style={{ textAlign: 'center' }}>{t('landasanHukum')}</h2>
                                     <p className="section-title" style={{ textAlign: 'center', fontSize: '12pt', }}>{t('peraturanPresiden')}</p>
-                                    <p>{t('isiPerpres')}</p>
+                                    <p>{t('isiPerpres')}</p> */}
+                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[3]?.title_en : posts?.[3]?.title}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[3]?.content_en : posts?.[3]?.content }} />
                                 </div>
                             </div>
 
@@ -124,26 +134,27 @@ const TentangEkonomiSyariah = () => {
                 {/* SECTION FILOSOFI LOGO */}
                 <section className="filosofi-logo-section">
                     <div className="container">
-                        
+
                         <div className="row row-gutter-y-40" >
 
-                            
+
                             <div className="col-lg-12 col-xl-12">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{t('filosofiLogo')}</h2>
+                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[5]?.title_en : posts?.[5]?.title}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[5]?.content_en : posts?.[5]?.content }} />
                                 </div>
                             </div>
 
-                            
-                            <div className="col-lg-12 col-xl-12">
+
+                            {/* <div className="col-lg-12 col-xl-12">
                                 <div className="about-one-image" style={{ textAlign: 'center' }}>
                                     <img src="assets/image/filosofiTk.svg" alt="img-59" className="img-fluid" />
                                 </div>
-                            </div>
+                            </div> */}
 
                         </div>
-                        
-                        <div className="row row-gutter-y-40" >
+
+                        {/* <div className="row row-gutter-y-40" >
 
                             <div className="col-lg-12 col-xl-12">
                                 <div className="about-one-inner-x">
@@ -166,10 +177,10 @@ const TentangEkonomiSyariah = () => {
                                 </div>
                             </div>
 
-                        </div>
-                     
+                        </div> */}
 
-                        <br />
+
+                        {/* <br /> */}
 
                         {/* row untuk masing - masing konten */}
                         <div className="row row-gutter-y-40" style={{ paddingBottom: '75px' }}>
@@ -177,8 +188,10 @@ const TentangEkonomiSyariah = () => {
                             {/* deskripsi landasan hukum */}
                             <div className="col-lg-12 col-xl-12">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{t('tugasKneks')}</h2>
-                                    <p>{t('KneksBertugasMempercepat')}</p>
+                                    {/* <h2 className="section-title" style={{ textAlign: 'center' }}>{t('tugasKneks')}</h2>
+                                    <p>{t('KneksBertugasMempercepat')}</p> */}
+                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[4]?.title_en : posts?.[4]?.title}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[4]?.content_en : posts?.[4]?.content }} />
                                 </div>
                             </div>
 

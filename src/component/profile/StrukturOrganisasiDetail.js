@@ -7,6 +7,8 @@ import axios from 'axios';
 const StrukturOrganisasiDetail = () => {
 	const { slug } = useParams();
 	const [rows, setItem] = useState(null);
+	const [loading, setLoading] = useState(true);
+
 	const convertToSlug = (title) => {
 		if (!title) return ""; // Handle null or undefined title
 		return title
@@ -21,6 +23,7 @@ const StrukturOrganisasiDetail = () => {
 	useEffect(() => {
 		if (effectrun.current === false) {
 			const fetchPosts = async () => {
+				setLoading(true)
 				try {
 					const url = process.env.REACT_APP_API_URL;
 					const endpoint = process.env.REACT_APP_API_STUKTUR_ORGANISASI;
@@ -39,6 +42,8 @@ const StrukturOrganisasiDetail = () => {
 						title: "Oops...",
 						text: err.message || "An error occurred while fetching data.",
 					});
+				}finally {
+					setLoading(false);
 				}
 			};
 
@@ -49,6 +54,16 @@ const StrukturOrganisasiDetail = () => {
 			}
 		}
 	}, [slug]);
+
+	if (loading) {
+        return (
+            <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+                <div className="spinner-border text-primary" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        );
+    }
 	return (
 		<>
 			<div className="page-wrapper">
