@@ -146,7 +146,7 @@ const Header = () => {
           </div>
           <div className="main-menu-inner">
             <div className="main-menu-left">
-              <div className="main-menu-logo">
+              <div className={isKdeksPage ? "" : "main-menu-logo"}>
 
                 {/* <a href={isKdeksPage ? "#kdeks" : "/"}>
                   <img
@@ -156,13 +156,14 @@ const Header = () => {
                   />
                 </a> */}
                 {isKdeksPage ? (
-                  <a href="/kdeks">
-                    <img
-                      src="/assets/image/logoKdeks.png"
-                      alt="logo"
-                      width="200"
-                    />
-                  </a>
+                  // <a href="/kdeks">
+                  //   <img
+                  //     src="/assets/image/logoKdeks.png"
+                  //     alt="logo"
+                  //     width="200"
+                  //   />
+                  // </a>
+                  ""
                 ) : (
                   <>
                     <a href="/">
@@ -185,18 +186,19 @@ const Header = () => {
               </div>
 
               {isKdeksPage ? (
-                <div className="navigation">
-                  <ul className="main-menu-list list-unstyled">
+                // <div className="navigation">
+                //   <ul className="main-menu-list list-unstyled">
 
-                  </ul>
-                </div>
+                //   </ul>
+                // </div>
+                ""
               ) : (
                 <div className="navigation">
                   <ul className="main-menu-list list-unstyled">
                     {menux.map((item, index) => (
                       <li key={index} className={activeMenu === item.menu_link ? "active" : ""}>
                         <a onClick={() => handleMenuClick(item.menu_link)} href={item.menu_link}>
-                        {cookies.i18next === 'en' ? item.menu_name_en : item.menu_name}
+                          {cookies.i18next === 'en' ? item.menu_name_en : item.menu_name}
                         </a>
                         {item.menu_sub.length > 0 && (
                           <ul className="list-unstyled">
