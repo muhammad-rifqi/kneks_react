@@ -10,23 +10,28 @@ import { useCookies } from 'react-cookie';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Form from 'react-bootstrap/Form';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useTranslation } from "react-i18next";
 const BeritaTerkini = () => {
-   
+
     const { t } = useTranslation()
     const [cookies] = useCookies(['i18next']);
     const formatDate = (date, locale = 'en') => {
-		dayjs.locale(locale); // Set the locale dynamically
-		return dayjs(date).format('DD MMMM YYYY'); // Format the date
-	};
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
     const [startDate, setStartDate] = useState("");
+    const [searchTitle, setSearchTitle] = useState("");
     const convertToSlug = (title) => {
         if (!title) return ""; // Handle null or undefined title
         return title
@@ -61,21 +66,50 @@ const BeritaTerkini = () => {
         fetchPosts(); // Call fetchPosts function when component mounts
     }, []);
 
+    // useEffect(() => {
+    //     if (startDate) {
+    //         const formattedDate = dayjs(startDate).format('YYYY-MM-DD'); // Lowercase 'yyyy'
+    //         const filtered = posts.filter(post =>
+    //             dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
+    //         );
+
+    //         setFilteredPosts(filtered);
+    //         setCurrentPage(1); // Reset to the first page after filtering
+
+    //     }else if (searchTitle) {
+    //         const filtered = posts.filter((post) =>
+    //             post.title.toLowerCase().includes(searchTitle.toLowerCase())
+    //         );
+
+    //         setFilteredPosts(filtered);
+    //         setCurrentPage(1); // Reset ke halaman pertama
+    //     } 
+    //      else {
+    //         setFilteredPosts(posts);
+    //     }
+    // }, [searchTitle,startDate, posts]);
+
     useEffect(() => {
+        let filtered = posts;
+
+        // ✅ Filter berdasarkan tanggal jika ada input
         if (startDate) {
-            const formattedDate = dayjs(startDate).format('YYYY-MM-DD'); // Lowercase 'yyyy'
-            const filtered = posts.filter(post =>
-                dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
+            const formattedDate = dayjs(startDate).format("YYYY-MM-DD");
+            filtered = filtered.filter(
+                (post) => dayjs(post.news_datetime).format("YYYY-MM-DD") === formattedDate
             );
-          
-            setFilteredPosts(filtered);
-            setCurrentPage(1); // Reset to the first page after filtering
-        } else {
-            setFilteredPosts(posts);
         }
-    }, [startDate, posts]);
 
+        // ✅ Filter berdasarkan judul jika ada input
+        if (searchTitle) {
+            filtered = filtered.filter((post) =>
+                post.title.toLowerCase().includes(searchTitle.toLowerCase())
+            );
+        }
 
+        setFilteredPosts(filtered);
+        setCurrentPage(1); // Reset ke halaman pertama setelah filter berubah
+    }, [searchTitle, startDate, posts]);
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
     const currentPosts = filteredPosts.slice(firstPostIndex, lastPostIndex);
@@ -129,7 +163,7 @@ const BeritaTerkini = () => {
             placeholder={cookies.i18next === 'id' ? 'Filter Tanggal' : 'Filter Date'}
             readOnly // Makes the input read-only
             size="sm"
-            style={{paddingTop:'8px',paddingBottom:'9px', border:'1px solid #ccc'}}
+            style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc' }}
         />
     ));
 
@@ -148,9 +182,16 @@ const BeritaTerkini = () => {
                         <div className='row row-gutter-30'>
                             {/* <Row> */}
 
-                            <Col lg={{ span: 12 }} >
-
+                            {/* <Col lg={{ span: 12 }} >
+                            <input
+                                        type="text"
+                                        placeholder="Filter Judul"
+                                        className="form-control"
+                                        value={searchTitle}
+                                        onChange={(e) => setSearchTitle(e.target.value)}
+                                    />
                                 <InputGroup className="justify-content-end d-flex ">
+                                    
                                     <DatePicker
 
                                         dateFormat="dd-MM-yyyy"
@@ -167,7 +208,51 @@ const BeritaTerkini = () => {
                                     <InputGroup.Text id="basic-addon2" ><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
 
-                            </Col>
+
+                            </Col> */}
+
+
+
+
+                            <Row >
+                                {/* Input Filter Judul */}
+                                <Col md={8} >
+                                    <InputGroup >
+
+                                        <input
+                                            type="text"
+                                            placeholder={cookies.i18next === 'id' ? 'Filter Judul' : 'Filter Title'}
+                                            value={searchTitle}
+                                            
+                                            onChange={(e) => setSearchTitle(e.target.value)}
+                                            style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc'}}
+                                        />
+                                        <InputGroup.Text><i className="fa fa-search text-muted"></i></InputGroup.Text>
+                                    </InputGroup>
+                                </Col>
+
+                                {/* Input Filter Tanggal */}
+                                <Col md={4} className="">
+                                    <InputGroup>
+                                        <DatePicker
+                                            dateFormat="dd-MM-yyyy"
+                                            onChange={(date) => setStartDate(date)}
+                                            selected={startDate}
+                                            placeholderText="Pilih tanggal"
+                                            //   className="form-control"
+                                            peekNextMonth
+                                            showMonthDropdown
+                                            showYearDropdown
+                                            dropdownMode="select"
+
+                                            isClearable={!!startDate}
+                                            customInput={<CustomInput />}
+                                        />
+                                        <InputGroup.Text><i className="fa fa-calendar text-muted"></i></InputGroup.Text>
+                                    </InputGroup>
+                                </Col>
+                            </Row>
+
                             {/* </Row> */}
                             {loading
                                 ? Array(postsPerPage)
@@ -191,7 +276,7 @@ const BeritaTerkini = () => {
                                                         href={`/berita-kegiatan/${item.id}/${convertToSlug(
                                                             item.title
                                                         )}`}>
-                                                         {/* <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} />  */}
+                                                        {/* <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} />  */}
                                                         <img
                                                             src={item?.image}
                                                             className='img-fluid w-100'
@@ -219,7 +304,7 @@ const BeritaTerkini = () => {
                                                     </div>
                                                     <div className='event-card-info'>
                                                         <span>
-                                                        {cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}
+                                                            {cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}
                                                         </span>
                                                     </div>
                                                 </div>

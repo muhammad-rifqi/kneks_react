@@ -21,6 +21,7 @@ const InfoTerkini = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
     const [startDate, setStartDate] = useState("");
+    const [searchTitle, setSearchTitle] = useState("");
     const convertToSlug = (title) => {
         if (!title) return ""; // Handle null or undefined title
         return title
@@ -64,10 +65,20 @@ const InfoTerkini = () => {
           
             setFilteredPosts(filtered);
             setCurrentPage(1); // Reset to the first page after filtering
-        } else {
+
+        }
+        // else if (searchTitle) {
+        //     const filtered = posts.filter((post) =>
+        //         post.title.toLowerCase().includes(searchTitle.toLowerCase())
+        //     );
+        
+        //     setFilteredPosts(filtered);
+        //     setCurrentPage(1); // Reset ke halaman pertama
+        // } 
+         else {
             setFilteredPosts(posts);
         }
-    }, [startDate, posts]);
+    }, [searchTitle,startDate, posts]);
 
 
     const lastPostIndex = currentPage * postsPerPage;
@@ -159,8 +170,6 @@ const InfoTerkini = () => {
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
                             </Col>
-                        {/* </div>
-                        <div className="row row-gutter-30"> */}
 
                             {loading
                                 ? Array(postsPerPage)
