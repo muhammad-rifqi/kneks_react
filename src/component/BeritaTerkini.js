@@ -179,42 +179,7 @@ const BeritaTerkini = () => {
                 </section>
                 <section className='berita-section'>
                     <div className='container'>
-                        <div className='row row-gutter-30'>
-                            {/* <Row> */}
-
-                            {/* <Col lg={{ span: 12 }} >
-                            <input
-                                        type="text"
-                                        placeholder="Filter Judul"
-                                        className="form-control"
-                                        value={searchTitle}
-                                        onChange={(e) => setSearchTitle(e.target.value)}
-                                    />
-                                <InputGroup className="justify-content-end d-flex ">
-                                    
-                                    <DatePicker
-
-                                        dateFormat="dd-MM-yyyy"
-                                        // placeholderText="Filter Tanggal"
-                                        onChange={(date) => setStartDate(date)}
-                                        selected={startDate}
-                                        peekNextMonth
-                                        showMonthDropdown
-                                        showYearDropdown
-                                        dropdownMode="select"
-                                        isClearable={!!startDate}
-                                        customInput={<CustomInput />}
-                                    />
-                                    <InputGroup.Text id="basic-addon2" ><i className="fa fa-calendar"></i></InputGroup.Text>
-                                </InputGroup>
-
-
-                            </Col> */}
-
-
-
-
-                            <Row >
+                    <Row className="pb-3" >
                                 {/* Input Filter Judul */}
                                 <Col md={8} >
                                     <InputGroup >
@@ -252,6 +217,13 @@ const BeritaTerkini = () => {
                                     </InputGroup>
                                 </Col>
                             </Row>
+                        <div className='row row-gutter-30'>
+            
+
+
+
+
+                           
 
                             {/* </Row> */}
                             {loading
