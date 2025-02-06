@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import MapsKdeks from "./MapsKdeks";
 const Kdeks = () => {
     // const [rows, setItems] = useState([]);
-    const [postSejarah, setPostSejarah] = useState(null);
+    // const [postSejarah, setPostSejarah] = useState(null);
     const [postTentang, setPostTentang] = useState(null);
     useEffect(() => {
         // const isian = Kota();
@@ -19,27 +19,27 @@ const Kdeks = () => {
 
     useEffect(() => {
         // Function to fetch posts
-        const fetchPosts = async () => {
-            try {
-                const url = process.env.REACT_APP_API_URLKDEKS;
-                const endpoint = process.env.REACT_APP_API_KDEKSSEJARAH;
-                const response = await axios.get(`${url}${endpoint}`);
-                if (response.data && response.data.length > 0) {
-                    setPostSejarah(response.data[0]); // Set data ke state
-                } else {
-                    throw new Error("Data kosong atau tidak ditemukan.");
-                }
-            } catch (err) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: err,
+        // const fetchPosts = async () => {
+        //     try {
+        //         const url = process.env.REACT_APP_API_URLKDEKS;
+        //         const endpoint = process.env.REACT_APP_API_KDEKSSEJARAH;
+        //         const response = await axios.get(`${url}${endpoint}`);
+        //         if (response.data && response.data.length > 0) {
+        //             setPostSejarah(response.data[0]); // Set data ke state
+        //         } else {
+        //             throw new Error("Data kosong atau tidak ditemukan.");
+        //         }
+        //     } catch (err) {
+        //         Swal.fire({
+        //             icon: "error",
+        //             title: "Oops...",
+        //             text: err,
 
-                });
-            }
-        };
+        //         });
+        //     }
+        // };
 
-        fetchPosts(); // Call fetchPosts function when component mounts
+        // fetchPosts(); 
 
         const fetchPostsTentang = async () => {
             try {
@@ -100,8 +100,8 @@ const Kdeks = () => {
                             {/* konten sebelah kanan */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title">{postTentang ? postTentang.title : ''}</h2>
-                                    <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.content : '' }} />
+                                    <h2 className="section-title">{postTentang ? postTentang.about : ''}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.about_content : '' }} />
                                 </div>
                             </div>
                         </div>
@@ -110,9 +110,9 @@ const Kdeks = () => {
                             {/* konten sejarah deskripsi */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title">{postSejarah ? postSejarah.title : ''}</h2>
+                                    <h2 className="section-title">{postTentang ? postTentang.history : ''}</h2>
                                     {/* <p></p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: postSejarah ? postSejarah.content : '' }} />
+                                    <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.history_content : '' }} />
                                 </div>
                             </div>
 
