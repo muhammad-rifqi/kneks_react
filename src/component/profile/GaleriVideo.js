@@ -4,19 +4,27 @@ import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import 'dayjs/locale/en';
 
 import VenoBox from 'venobox';
 
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
+import Row from 'react-bootstrap/Row';
 import DatePicker from "react-datepicker";
 import { useTranslation } from "react-i18next";
-import FormControl from 'react-bootstrap/FormControl';
+import { useCookies } from 'react-cookie';
 const GaleriVideo = () => {
     const { t } = useTranslation()
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
- 
+    const [searchTitle, setSearchTitle] = useState("");
+    const [cookies] = useCookies(['i18next']);
+    const formatDate = (date, locale = 'en') => {
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
     const [startDate, setStartDate] = useState("");
@@ -97,36 +105,36 @@ const GaleriVideo = () => {
 
     useEffect(() => {
         // if (!loading) {
-            // Initialize VenoBox after data is fetched and component is rendered
-            new VenoBox({
-                selector: '.my-videos-linksx',
-                numeration: true,
-                infinigall: true,
-                share: true,
-                spinner: 'swing',
-                spinColor: '#5A8DEE',
-                titlePosition: 'bottom',
-                toolsColor: '#ffffff',
-                titleattr: 'data-title',
-                titleStyle: 'block',
-            });
+        // Initialize VenoBox after data is fetched and component is rendered
+        new VenoBox({
+            selector: '.my-videos-linksx',
+            numeration: true,
+            infinigall: true,
+            share: true,
+            spinner: 'swing',
+            spinColor: '#5A8DEE',
+            titlePosition: 'bottom',
+            toolsColor: '#ffffff',
+            titleattr: 'data-title',
+            titleStyle: 'block',
+        });
 
-            return () => {
-                // Manually reset the Venobox initialization
-                const elements = document.querySelectorAll(".my-videos-linksx");
-                elements.forEach((el) => {
-                    el.removeAttribute("data-venobox-initialized");
-                });
-            };
+        return () => {
+            // Manually reset the Venobox initialization
+            const elements = document.querySelectorAll(".my-videos-linksx");
+            elements.forEach((el) => {
+                el.removeAttribute("data-venobox-initialized");
+            });
+        };
         // }
-    }, [ posts]); // Re-run effect if loading or posts change
+    }, [posts]); // Re-run effect if loading or posts change
 
     const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
         <FormControl
             value={value}
             onClick={onClick}
             ref={ref}
-            placeholder="Filter Tanggal"
+            placeholder={cookies.i18next === 'id' ? 'Filter Tanggal' : 'Filter Date'}
             readOnly // Makes the input read-only
             size="sm"
             style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc' }}
@@ -134,18 +142,26 @@ const GaleriVideo = () => {
     ));
 
     useEffect(() => {
-        if (startDate) {
-            const formattedDate = dayjs(startDate).format('YYYY-MM-DD'); // Lowercase 'yyyy'
-            const filtered = posts.filter(post =>
-                dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
-            );
+        let filtered = posts;
 
-            setFilteredPosts(filtered);
-            setCurrentPage(1); // Reset to the first page after filtering
-        } else {
-            setFilteredPosts(posts);
+        // ✅ Filter berdasarkan tanggal jika ada input
+        if (startDate) {
+            const formattedDate = dayjs(startDate).format("YYYY-MM-DD");
+            filtered = filtered.filter(
+                (post) => dayjs(post.news_datetime).format("YYYY-MM-DD") === formattedDate
+            );
         }
-    }, [startDate, posts]);
+
+        // ✅ Filter berdasarkan judul jika ada input
+        if (searchTitle) {
+            filtered = filtered.filter((post) =>
+                post.title.toLowerCase().includes(searchTitle.toLowerCase())
+            );
+        }
+
+        setFilteredPosts(filtered);
+        setCurrentPage(1); // Reset ke halaman pertama setelah filter berubah
+    }, [searchTitle, startDate, posts]);
 
     return (
         <>
@@ -160,14 +176,26 @@ const GaleriVideo = () => {
                 </section>
                 <section className="video-section">
                     <div className="container">
-                        <div className="row row-gutter-y-40">
-                            <Col lg={{ span: 12 }} >
+                        <Row className="pb-3" >
+                            <Col md={7} className="pb-3 offset-md-2">
+                                <InputGroup >
 
-                                <InputGroup className="justify-content-end d-flex ">
+                                    <input
+                                        type="text"
+                                        placeholder={cookies.i18next === 'id' ? 'Filter Judul' : 'Filter Title'}
+                                        value={searchTitle}
+                                        className="form-control form-control-sm"
+                                        onChange={(e) => setSearchTitle(e.target.value)}
+                                        style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc' }}
+                                    />
+                                    <InputGroup.Text><i className="fa fa-search text-muted"></i></InputGroup.Text>
+                                </InputGroup>
+                            </Col>
+
+                            <Col md={3} className="" >
+                                <InputGroup className="d-flex justify-content-end">
                                     <DatePicker
-
                                         dateFormat="dd-MM-yyyy"
-                                        // placeholderText="Filter Tanggal"
                                         onChange={(date) => setStartDate(date)}
                                         selected={startDate}
                                         peekNextMonth
@@ -176,11 +204,14 @@ const GaleriVideo = () => {
                                         dropdownMode="select"
                                         isClearable={!!startDate}
                                         customInput={<CustomInput />}
-                                    />
-                                    <InputGroup.Text id="basic-addon2" ><i className="fa fa-calendar"></i></InputGroup.Text>
-                                </InputGroup>
+                                        className="w-100"
 
+                                    />
+                                    <InputGroup.Text><i className="fa fa-calendar text-muted"></i></InputGroup.Text>
+                                </InputGroup>
                             </Col>
+                        </Row>
+                        <div className="row row-gutter-y-40">
                             {loading
                                 ? Array(postsPerPage)
                                     .fill()
@@ -218,7 +249,7 @@ const GaleriVideo = () => {
                                                                     </div>
 
                                                                     <div className="card-date">
-                                                                        <span className="date-b">{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                                                        <span className="date-b">{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
                                                                     </div>
                                                                 </div>
                                                                 <div className="col-6 text-end">
@@ -240,26 +271,26 @@ const GaleriVideo = () => {
                             }
                         </div>
                         {!loading && totalPages > 1 && (
-                        <div className='pagination mt-4'>
-                            {generatePaginationItems().map((page, index) => (
-                                <button
-                                    key={index}
-                                    className={`pagination-btn ${page === currentPage
-                                        ? "active"
-                                        : ""
-                                        }`}
-                                    onClick={() => {
-                                        if (page !== '...') {
-                                            handlePageChange(page);
-                                        }
-                                    }}
-                                    disabled={page === '...'}
-                                >
-                                    {page}
-                                </button>
-                            ))}
-                        </div>
-                    )}
+                            <div className='pagination mt-4'>
+                                {generatePaginationItems().map((page, index) => (
+                                    <button
+                                        key={index}
+                                        className={`pagination-btn ${page === currentPage
+                                            ? "active"
+                                            : ""
+                                            }`}
+                                        onClick={() => {
+                                            if (page !== '...') {
+                                                handlePageChange(page);
+                                            }
+                                        }}
+                                        disabled={page === '...'}
+                                    >
+                                        {page}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </section >
             </div >

@@ -10,10 +10,7 @@ import { useCookies } from 'react-cookie';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Form from 'react-bootstrap/Form';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useTranslation } from "react-i18next";
@@ -179,7 +176,6 @@ const BeritaTerkini = () => {
                 </section>
                 <section className='berita-section'>
                     <div className='container'>
-
                         <Row className="pb-3" >
                             <Col md={7} className="pb-3 offset-md-2">
                                 <InputGroup >
@@ -218,14 +214,6 @@ const BeritaTerkini = () => {
                             </Col>
                         </Row>
                         <div className='row row-gutter-30'>
-
-
-
-
-
-
-
-                            {/* </Row> */}
                             {loading
                                 ? Array(postsPerPage)
                                     .fill()

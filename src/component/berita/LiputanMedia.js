@@ -6,9 +6,11 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import 'dayjs/locale/en';
 import { useCookies } from 'react-cookie';
+
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
+import Row from 'react-bootstrap/Row';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useTranslation } from "react-i18next";
@@ -17,15 +19,16 @@ const LiputanMedia = () => {
     const { t } = useTranslation()
     const [cookies] = useCookies(['i18next']);
     const formatDate = (date, locale = 'en') => {
-		dayjs.locale(locale); // Set the locale dynamically
-		return dayjs(date).format('DD MMMM YYYY'); // Format the date
-	};
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 9;
     const [startDate, setStartDate] = useState("");
+    const [searchTitle, setSearchTitle] = useState("");
     const convertToSlug = (title) => {
         if (!title) return ""; // Handle null or undefined title
         return title
@@ -61,19 +64,26 @@ const LiputanMedia = () => {
     }, []);
 
     useEffect(() => {
+        let filtered = posts;
+
+        // ✅ Filter berdasarkan tanggal jika ada input
         if (startDate) {
-            const formattedDate = dayjs(startDate).format('YYYY-MM-DD'); // Lowercase 'yyyy'
-            const filtered = posts.filter(post =>
-                dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
+            const formattedDate = dayjs(startDate).format("YYYY-MM-DD");
+            filtered = filtered.filter(
+                (post) => dayjs(post.news_datetime).format("YYYY-MM-DD") === formattedDate
             );
-
-            setFilteredPosts(filtered);
-            setCurrentPage(1); // Reset to the first page after filtering
-        } else {
-            setFilteredPosts(posts);
         }
-    }, [startDate, posts]);
 
+        // ✅ Filter berdasarkan judul jika ada input
+        if (searchTitle) {
+            filtered = filtered.filter((post) =>
+                post.title.toLowerCase().includes(searchTitle.toLowerCase())
+            );
+        }
+
+        setFilteredPosts(filtered);
+        setCurrentPage(1); // Reset ke halaman pertama setelah filter berubah
+    }, [searchTitle, startDate, posts]);
 
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
@@ -145,13 +155,26 @@ const LiputanMedia = () => {
                 </section>
                 <section className="berita-section">
                     <div className="container">
-                        <div className="row row-gutter-30">
-                            <Col lg={{ span: 12 }}>
-                                <InputGroup className="justify-content-end d-flex">
-                                    <DatePicker
+                        <Row className="pb-3" >
+                            <Col md={7} className="pb-3 offset-md-2">
+                                <InputGroup >
 
+                                    <input
+                                        type="text"
+                                        placeholder={cookies.i18next === 'id' ? 'Filter Judul' : 'Filter Title'}
+                                        value={searchTitle}
+                                        className="form-control form-control-sm"
+                                        onChange={(e) => setSearchTitle(e.target.value)}
+                                        style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc' }}
+                                    />
+                                    <InputGroup.Text><i className="fa fa-search text-muted"></i></InputGroup.Text>
+                                </InputGroup>
+                            </Col>
+
+                            <Col md={3} className="" >
+                                <InputGroup className="d-flex justify-content-end">
+                                    <DatePicker
                                         dateFormat="dd-MM-yyyy"
-                                        // placeholderText="Filter Tanggal"
                                         onChange={(date) => setStartDate(date)}
                                         selected={startDate}
                                         peekNextMonth
@@ -160,13 +183,14 @@ const LiputanMedia = () => {
                                         dropdownMode="select"
                                         isClearable={!!startDate}
                                         customInput={<CustomInput />}
+                                        className="w-100"
+
                                     />
-                                    <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
+                                    <InputGroup.Text><i className="fa fa-calendar text-muted"></i></InputGroup.Text>
                                 </InputGroup>
                             </Col>
-                        {/* </div>
-                        <div className="row row-gutter-30"> */}
-
+                        </Row>
+                        <div className="row row-gutter-30">
                             {loading
                                 ? Array(postsPerPage)
                                     .fill()
