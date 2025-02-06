@@ -34,6 +34,7 @@ const Section2 = () => {
           .replace(/\s+/g, '-')
           .replace(/-+/g, '-');
       };
+      console.log(menu)
     return (
         <>
         <section className="funfact-section-direktorat" >
@@ -46,7 +47,7 @@ const Section2 = () => {
                         //   </li>
 
                         <div className="col-lg-2 col-md-4 mb-3" data-aos="fade-up" key={index}>
-                        <a href={`/${convertToSlug(item.title)}`}>
+                        <a href={`/${convertToSlug(item.title)}/${item.id}`}>
                             <div className="card card-dir">
                                 <div className="card-body text-center">
                                     <div className="department-card-gambar">
