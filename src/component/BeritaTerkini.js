@@ -179,9 +179,9 @@ const BeritaTerkini = () => {
                 </section>
                 <section className='berita-section'>
                     <div className='container'>
-                       
+
                         <Row className="pb-3" >
-                        <Col md={8} className="pb-3">
+                            <Col md={7} className="pb-3 offset-md-2">
                                 <InputGroup >
 
                                     <input
@@ -196,8 +196,8 @@ const BeritaTerkini = () => {
                                 </InputGroup>
                             </Col>
 
-                            <Col md={4} className="">
-                                <InputGroup  className="d-flex justify-content-end">
+                            <Col md={3} className="" >
+                                <InputGroup className="d-flex justify-content-end">
                                     <DatePicker
                                         dateFormat="dd-MM-yyyy"
                                         onChange={(date) => setStartDate(date)}
@@ -211,7 +211,7 @@ const BeritaTerkini = () => {
                                         isClearable={!!startDate}
                                         customInput={<CustomInput />}
                                         className="w-100"
-                                        
+
                                     />
                                     <InputGroup.Text><i className="fa fa-calendar text-muted"></i></InputGroup.Text>
                                 </InputGroup>
