@@ -179,51 +179,51 @@ const BeritaTerkini = () => {
                 </section>
                 <section className='berita-section'>
                     <div className='container'>
-                    <Row className="pb-3" >
-                                {/* Input Filter Judul */}
-                                <Col md={8} >
-                                    <InputGroup >
+                       
+                        <Row className="pb-3" >
+                        <Col md={8} className="pb-3">
+                                <InputGroup >
 
-                                        <input
-                                            type="text"
-                                            placeholder={cookies.i18next === 'id' ? 'Filter Judul' : 'Filter Title'}
-                                            value={searchTitle}
-                                            
-                                            onChange={(e) => setSearchTitle(e.target.value)}
-                                            style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc'}}
-                                        />
-                                        <InputGroup.Text><i className="fa fa-search text-muted"></i></InputGroup.Text>
-                                    </InputGroup>
-                                </Col>
+                                    <input
+                                        type="text"
+                                        placeholder={cookies.i18next === 'id' ? 'Filter Judul' : 'Filter Title'}
+                                        value={searchTitle}
+                                        className="form-control form-control-sm"
+                                        onChange={(e) => setSearchTitle(e.target.value)}
+                                        style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc' }}
+                                    />
+                                    <InputGroup.Text><i className="fa fa-search text-muted"></i></InputGroup.Text>
+                                </InputGroup>
+                            </Col>
 
-                                {/* Input Filter Tanggal */}
-                                <Col md={4} className="">
-                                    <InputGroup>
-                                        <DatePicker
-                                            dateFormat="dd-MM-yyyy"
-                                            onChange={(date) => setStartDate(date)}
-                                            selected={startDate}
-                                            placeholderText="Pilih tanggal"
-                                            //   className="form-control"
-                                            peekNextMonth
-                                            showMonthDropdown
-                                            showYearDropdown
-                                            dropdownMode="select"
-
-                                            isClearable={!!startDate}
-                                            customInput={<CustomInput />}
-                                        />
-                                        <InputGroup.Text><i className="fa fa-calendar text-muted"></i></InputGroup.Text>
-                                    </InputGroup>
-                                </Col>
-                            </Row>
+                            <Col md={4} className="">
+                                <InputGroup  className="d-flex justify-content-end">
+                                    <DatePicker
+                                        dateFormat="dd-MM-yyyy"
+                                        onChange={(date) => setStartDate(date)}
+                                        selected={startDate}
+                                        // placeholderText="Pilih tanggal"
+                                        //   className="form-control"
+                                        peekNextMonth
+                                        showMonthDropdown
+                                        showYearDropdown
+                                        dropdownMode="select"
+                                        isClearable={!!startDate}
+                                        customInput={<CustomInput />}
+                                        className="w-100"
+                                        
+                                    />
+                                    <InputGroup.Text><i className="fa fa-calendar text-muted"></i></InputGroup.Text>
+                                </InputGroup>
+                            </Col>
+                        </Row>
                         <div className='row row-gutter-30'>
-            
 
 
 
 
-                           
+
+
 
                             {/* </Row> */}
                             {loading
