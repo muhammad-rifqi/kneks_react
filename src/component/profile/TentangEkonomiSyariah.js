@@ -70,8 +70,8 @@ const TentangEkonomiSyariah = () => {
                                     {/* <h2 className="section-title">{t('menu.tentangKami')}</h2>
                                     <p>{t('about.kneksMerupakan')}</p>
                                     <p>{t('about.pencananganTitikAwal')}</p> */}
-                                    <h2 className="section-title">{cookies.i18next === 'en' ? posts?.[0]?.title_en : posts?.[0]?.title}</h2>
-                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[0]?.content_en : posts?.[0]?.content }} />
+                                    <h2 className="section-title">{cookies.i18next === 'en' ? posts?.[0]?.about_en : posts?.[0]?.about}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[0]?.about_content_en : posts?.[0]?.about_content }} />
                                 </div>
                             </div>
                         </div>
@@ -87,8 +87,8 @@ const TentangEkonomiSyariah = () => {
                                 <div className="about-one-inner-x">
                                     {/* <h2 className="section-title">{t('sejarahEkonomiSyariah')}</h2>
                                     <p>{t('dalamRangkaMendukung')}</p> */}
-                                    <h2 className="section-title">{cookies.i18next === 'en' ? posts?.[2]?.title_en : posts?.[2]?.title}</h2>
-                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[2]?.content_en : posts?.[2]?.content }} />
+                                    <h2 className="section-title">{cookies.i18next === 'en' ? posts?.[0]?.history_en : posts?.[0]?.history}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[0]?.history_content_en : posts?.[0]?.history_content }} />
                                 </div>
                             </div>
 
@@ -120,8 +120,8 @@ const TentangEkonomiSyariah = () => {
                                     {/* <h2 className="section-title" style={{ textAlign: 'center' }}>{t('landasanHukum')}</h2>
                                     <p className="section-title" style={{ textAlign: 'center', fontSize: '12pt', }}>{t('peraturanPresiden')}</p>
                                     <p>{t('isiPerpres')}</p> */}
-                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[3]?.title_en : posts?.[3]?.title}</h2>
-                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[3]?.content_en : posts?.[3]?.content }} />
+                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[0]?.legal_foundation_en : posts?.[0]?.legal_foundation}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[0]?.legal_foundation_content_en : posts?.[0]?.legal_foundation_content }} />
                                 </div>
                             </div>
 
@@ -136,12 +136,16 @@ const TentangEkonomiSyariah = () => {
                     <div className="container">
 
                         <div className="row row-gutter-y-40" >
-
+                            <div className="col-lg-12 col-xl-12">
+                                <div className="about-one-image" style={{ textAlign: 'center' }}>
+                                    <img src="assets/image/filosofiTk.svg" alt="img-59" className="img-fluid" />
+                                </div>
+                            </div>
 
                             <div className="col-lg-12 col-xl-12">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[5]?.title_en : posts?.[5]?.title}</h2>
-                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[5]?.content_en : posts?.[5]?.content }} />
+                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[0]?.logo_philosophy_en : posts?.[0]?.logo_philosophy}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[0]?.content_en : posts?.[0]?.content }} />
                                 </div>
                             </div>
 
@@ -190,8 +194,8 @@ const TentangEkonomiSyariah = () => {
                                 <div className="about-one-inner-x">
                                     {/* <h2 className="section-title" style={{ textAlign: 'center' }}>{t('tugasKneks')}</h2>
                                     <p>{t('KneksBertugasMempercepat')}</p> */}
-                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[4]?.title_en : posts?.[4]?.title}</h2>
-                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[4]?.content_en : posts?.[4]?.content }} />
+                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[0]?.kneks_task_en : posts?.[0]?.kneks_task}</h2>
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[0]?.kneks_task_content_en : posts?.[0]?.kneks_task_content }} />
                                 </div>
                             </div>
 
@@ -205,10 +209,10 @@ const TentangEkonomiSyariah = () => {
                                             <li><p>{t('perumusanDanPemberianRekomendasi')}</p></li>
                                             <li><p>{t('pemantauanDanEvaluasi')}</p></li>
                                         </ol> */}
-                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[1]?.title_en : posts?.[1]?.title}</h2>
+                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[0]?.function_en : posts?.[0]?.function}</h2>
 
                                     {/* <li><p>{t('pemberianRekomendasiArahKebijakan')}</p></li> */}
-                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[1]?.content_en : posts?.[1]?.content }} />
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[0]?.function_content_en : posts?.[0]?.function_content }} />
                                 </div>
                             </div>
 
