@@ -335,6 +335,7 @@ const KdeksDetail = () => {
         }
         return null;
     };
+    
     return (
         <>
             <div className="page-wrapper">
@@ -787,7 +788,83 @@ const KdeksDetail = () => {
                         </div>
                     </div>
                 </section>
+                <section className="footer">
+                    <div className="bottom-footer">
 
+                    </div>
+                    <div className="footer-inner">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-3 ">
+                                    <div className="footer-widget-logo pb-3">
+                                        <a href="/kdeks">
+                                            <img
+                                                src="/assets/image/logoKdeks.png"
+                                                alt="logo"
+                                                width="200"
+                                            />
+                                        </a>
+                                    </div>
+
+                                    <div className="footer-widget-socials ">
+                                        <a href={postKdeks?.twitter} target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
+                                        <a href={postKdeks?.facebook} target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
+                                        <a href={postKdeks?.linkedin} target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
+                                        <a href={postKdeks?.instagram} target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
+                                        <a href={postKdeks?.youtube} target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
+                                    </div>
+
+                                </div>
+
+                                <div className="col-lg-2">
+                                    <div className="footer-widget">
+                                        <div className="footer-widget-department">
+                                            <h4 className="footer-widget-title">{t('alamat')}</h4>
+                                            <p>{postKdeks?.address}</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-2">
+                                    <div className="footer-widget">
+                                        <div className="footer-widget-contact">
+                                            <h4 className="footer-widget-title">{t('menu.kontak')}</h4>
+
+                                        </div>
+                                        <div className="footer-widget-contact-list">
+                                            <i className="fa-solid fa-envelope"></i>
+                                            <div className="footer-widget-contact-item">
+                                                <a href={`mailto:${postKdeks?.email}`}>{postKdeks?.email}</a>
+                                            </div>
+                                        </div>
+                                        <div className="footer-widget-contact-list">
+                                            <i className="fa-solid fa-phone"></i>
+                                            <div className="footer-widget-contact-item">
+                                                <a href={`tel:${postKdeks?.phone_number}`}>{postKdeks?.phone_number}</a>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div className="col-lg-3">
+                                    <div className="footer-widget">
+
+                                        <iframe width="100%" height="250px" frameBorder="0" scrolling="no" title="frame" marginHeight="0" marginWidth="0" src={postKdeks?.maps}>
+                                        </iframe>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="bottom-footer">
+                        <div className="conatiner">
+                            <p>© Copyright {(new Date().getFullYear())} by {postKdeks?.title}</p>
+                        </div>
+                    </div>
+                </section>
             </div >
         </>
     )

@@ -54,7 +54,7 @@ const Kdeks = () => {
             } catch (err) {
                 Swal.fire({
                     icon: "error",
-                    title: "Oops...",
+                    title: "Oopsxx...",
                     text: err,
 
                 });

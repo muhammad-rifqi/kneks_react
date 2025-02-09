@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useCookies } from 'react-cookie';
+import { useParams } from "react-router-dom";
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -126,135 +127,128 @@ const Footer = () => {
     fetchMenu(); // Call fetchPosts function when component mounts
   }, []);
 
+
   return (
 
     <div>
+      {!isKdeksPage ? (
+        <section className="footer">
+          <div className="bottom-footer">
 
-      <section className="footer">
-        <div className="bottom-footer">
-
-        </div>
-        <div className="footer-inner">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-3 ">
-                <div className="footer-widget-logo pb-3">
-                  {/* <a href={isKdeksPage ? "#kdeks" : "/"}><img src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/kneks2.png"} className="img-fluid " alt="img-25" /></a> */}
-                  {isKdeksPage ? (
-                    <a href="/kdeks">
-                      <img
-                        src="/assets/image/logoKdeks.png"
-                        alt="logo"
-                        width="200"
-                      />
-                    </a>
-                  ) : (
-                    <>
-                      <a href="/">
+          </div>
+          <div className="footer-inner">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-3 ">
+                  <div className="footer-widget-logo pb-3">
+                    {/* <a href={isKdeksPage ? "#kdeks" : "/"}><img src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/kneks2.png"} className="img-fluid " alt="img-25" /></a> */}
+                    {isKdeksPage ? (
+                      <a href="/kdeks">
                         <img
-                          src="/assets/image/logo1.png"
+                          src="/assets/image/logoKdeks.png"
                           alt="logo"
-                          className="logo-large"
+                          width="200"
                         />
                       </a>
-                      <span className="separator"></span>
-                      <a href="/tentang-ekonomi-syariah">
-                        <img
-                          src="/assets/image/logo2.png"
-                          alt="logo"
-                          className="logo-small"
-                        />
-                      </a>
-                    </>
-                  )}
+                    ) : (
+                      <>
+                        <a href="/">
+                          <img
+                            src="/assets/image/logo1.png"
+                            alt="logo"
+                            className="logo-large"
+                          />
+                        </a>
+                        <span className="separator"></span>
+                        <a href="/tentang-ekonomi-syariah">
+                          <img
+                            src="/assets/image/logo2.png"
+                            alt="logo"
+                            className="logo-small"
+                          />
+                        </a>
+                      </>
+                    )}
+                  </div>
+                 
+                    <div className="footer-widget-socials ">
+                      <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
+                      <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
+                      <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
+                      <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
+                      <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
+                    </div>
+               
                 </div>
-                {isKdeksPage ? (
-                  <div className="footer-widget-socials ">
-                    <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
-                  </div>
-                ) : (
-                  <div className="footer-widget-socials ">
-                    <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
-                  </div>
-                )}
-              </div>
-              <div className="col-lg-2">
-                <div className="footer-widget">
-                  <div className="footer-widget-explore">
-                    <h4 className="footer-widget-title">Menu</h4>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                      <li>
-                        <a href="/" style={menuItemStyle}>{t('menu.home')}</a>
-                      </li>
+                <div className="col-lg-2">
+                  <div className="footer-widget">
+                    <div className="footer-widget-explore">
+                      <h4 className="footer-widget-title">Menu</h4>
+                      <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                        <li>
+                          <a href="/" style={menuItemStyle}>{t('menu.home')}</a>
+                        </li>
 
-                      {/* Profile menu with hover */}
-                      <li
-                        onMouseEnter={() => setHoveredItem('profile')}
-                        onMouseLeave={() => setHoveredItem(null)}
-                        style={{ position: 'relative' }}
-                      >
-                        <a href="#profil" style={menuItemStyle}>{t('menu.profile')}</a>
-                        <ul style={hoveredItem === 'profile' ? showSubmenuStyle : submenuStyle}>
-                          <li
-                            onMouseEnter={() => setHoveredSubItem('subItem1')}
-                            onMouseLeave={() => setHoveredSubItem(null)}
-                          >
-                            <a href="/tentang-kami" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem1')}>
-                              {t('menu.tentangKami')}
-                            </a>
-                          </li>
-                          <li
-                            onMouseEnter={() => setHoveredSubItem('subItem2')}
-                            onMouseLeave={() => setHoveredSubItem(null)}
-                          >
-                            <a href="/tentang-ekonomi-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem2')}>
-                              {t('menu.tentangEkonomiSyariah')}
-                            </a>
-                          </li>
-                          <li
-                            onMouseEnter={() => setHoveredSubItem('subItem3')}
-                            onMouseLeave={() => setHoveredSubItem(null)}
-                          >
-                            <a href="/struktur-organisasi" style={submenuItemStyle(hoveredSubItem === 'subItem3')}>
-                              {t('menu.strukturOrganisasi')}
-                            </a>
-                          </li>
-                          <li
-                            onMouseEnter={() => setHoveredSubItem('subItem4')}
-                            onMouseLeave={() => setHoveredSubItem(null)}
-                          >
-                            <a href="/galeri-foto" style={submenuItemStyle(hoveredSubItem === 'subItem4')}>
-                              {t('menu.galeriFoto')}
-                            </a>
-                          </li>
-                          <li
-                            onMouseEnter={() => setHoveredSubItem('subItem5')}
-                            onMouseLeave={() => setHoveredSubItem(null)}
-                          >
-                            <a href="/galeri-video" style={submenuItemStyle(hoveredSubItem === 'subItem5')}>
-                              {t('menu.galeriVideo')}
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
+                        {/* Profile menu with hover */}
+                        <li
+                          onMouseEnter={() => setHoveredItem('profile')}
+                          onMouseLeave={() => setHoveredItem(null)}
+                          style={{ position: 'relative' }}
+                        >
+                          <a href="#profil" style={menuItemStyle}>{t('menu.profile')}</a>
+                          <ul style={hoveredItem === 'profile' ? showSubmenuStyle : submenuStyle}>
+                            <li
+                              onMouseEnter={() => setHoveredSubItem('subItem1')}
+                              onMouseLeave={() => setHoveredSubItem(null)}
+                            >
+                              <a href="/tentang-kami" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem1')}>
+                                {t('menu.tentangKami')}
+                              </a>
+                            </li>
+                            <li
+                              onMouseEnter={() => setHoveredSubItem('subItem2')}
+                              onMouseLeave={() => setHoveredSubItem(null)}
+                            >
+                              <a href="/tentang-ekonomi-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem2')}>
+                                {t('menu.tentangEkonomiSyariah')}
+                              </a>
+                            </li>
+                            <li
+                              onMouseEnter={() => setHoveredSubItem('subItem3')}
+                              onMouseLeave={() => setHoveredSubItem(null)}
+                            >
+                              <a href="/struktur-organisasi" style={submenuItemStyle(hoveredSubItem === 'subItem3')}>
+                                {t('menu.strukturOrganisasi')}
+                              </a>
+                            </li>
+                            <li
+                              onMouseEnter={() => setHoveredSubItem('subItem4')}
+                              onMouseLeave={() => setHoveredSubItem(null)}
+                            >
+                              <a href="/galeri-foto" style={submenuItemStyle(hoveredSubItem === 'subItem4')}>
+                                {t('menu.galeriFoto')}
+                              </a>
+                            </li>
+                            <li
+                              onMouseEnter={() => setHoveredSubItem('subItem5')}
+                              onMouseLeave={() => setHoveredSubItem(null)}
+                            >
+                              <a href="/galeri-video" style={submenuItemStyle(hoveredSubItem === 'subItem5')}>
+                                {t('menu.galeriVideo')}
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
 
-                      {/* Direktorat menu with hover */}
-                      <li
-                        onMouseEnter={() => setHoveredItem('direktorat')}
-                        onMouseLeave={() => setHoveredItem(null)}
-                        style={{ position: 'relative' }}
-                      >
-                        <a href="#direktorat" style={menuItemStyle}>{t('menu.direktorat')}</a>
-                        <ul style={hoveredItem === 'direktorat' ? showSubmenuStyle : submenuStyle}>
-                          {/* <li
+                        {/* Direktorat menu with hover */}
+                        <li
+                          onMouseEnter={() => setHoveredItem('direktorat')}
+                          onMouseLeave={() => setHoveredItem(null)}
+                          style={{ position: 'relative' }}
+                        >
+                          <a href="#direktorat" style={menuItemStyle}>{t('menu.direktorat')}</a>
+                          <ul style={hoveredItem === 'direktorat' ? showSubmenuStyle : submenuStyle}>
+                            {/* <li
                             onMouseEnter={() => setHoveredSubItem('subItem6')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
@@ -294,133 +288,134 @@ const Footer = () => {
                               {t('menu.infrastrukturEkosistem')}
                             </a>
                           </li> */}
-                          {menu.map((item, index) => (
-                            <li 
-                            key={index}
-                            onMouseEnter={() => setHoveredSubItem(index)}
-                            onMouseLeave={() => setHoveredSubItem(null)}
+                            {menu.map((item, index) => (
+                              <li
+                                key={index}
+                                onMouseEnter={() => setHoveredSubItem(index)}
+                                onMouseLeave={() => setHoveredSubItem(null)}
+                              >
+                                <a href={`/${convertToSlug(item.title)}`} style={submenuItemStyle(hoveredSubItem === index)}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
+                              </li>
+                            ))}
+                          </ul>
+                        </li>
+
+                        <li
+                          onMouseEnter={() => setHoveredItem('berita')}
+                          onMouseLeave={() => setHoveredItem(null)}
+                          style={{ position: 'relative' }}
+                        >
+                          <a href="#berita-kegiatan" style={menuItemStyle}>{t('menu.beritaKegiatan')}</a>
+                          <ul style={hoveredItem === 'berita' ? showSubmenuStyle : submenuStyle}>
+                            <li
+                              onMouseEnter={() => setHoveredSubItem('subItem11')}
+                              onMouseLeave={() => setHoveredSubItem(null)}
                             >
-                              <a href={`/${convertToSlug(item.title)}`} style={submenuItemStyle(hoveredSubItem === index)}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
+                              <a href="/berita-terkini" style={submenuItemStyle(hoveredSubItem === 'subItem13')}>
+                                {t('menu.beritaTerkini')}
+                              </a>
                             </li>
-                          ))}
-                        </ul>
-                      </li>
+                            <li
+                              onMouseEnter={() => setHoveredSubItem('subItem12')}
+                              onMouseLeave={() => setHoveredSubItem(null)}
+                            >
+                              <a href="/liputan-media" style={submenuItemStyle(hoveredSubItem === 'subItem12')}>
+                                {t('menu.liputanMedia')}
+                              </a>
+                            </li>
+                            <li
+                              onMouseEnter={() => setHoveredSubItem('subItem13')}
+                              onMouseLeave={() => setHoveredSubItem(null)}
+                            >
 
-                      <li
-                        onMouseEnter={() => setHoveredItem('berita')}
-                        onMouseLeave={() => setHoveredItem(null)}
-                        style={{ position: 'relative' }}
-                      >
-                        <a href="#berita-kegiatan" style={menuItemStyle}>{t('menu.beritaKegiatan')}</a>
-                        <ul style={hoveredItem === 'berita' ? showSubmenuStyle : submenuStyle}>
-                          <li
-                            onMouseEnter={() => setHoveredSubItem('subItem11')}
-                            onMouseLeave={() => setHoveredSubItem(null)}
-                          >
-                            <a href="/berita-terkini" style={submenuItemStyle(hoveredSubItem === 'subItem13')}>
-                              {t('menu.beritaTerkini')}
-                            </a>
-                          </li>
-                          <li
-                            onMouseEnter={() => setHoveredSubItem('subItem12')}
-                            onMouseLeave={() => setHoveredSubItem(null)}
-                          >
-                            <a href="/liputan-media" style={submenuItemStyle(hoveredSubItem === 'subItem12')}>
-                              {t('menu.liputanMedia')}
-                            </a>
-                          </li>
-                          <li
-                            onMouseEnter={() => setHoveredSubItem('subItem13')}
-                            onMouseLeave={() => setHoveredSubItem(null)}
-                          >
+                              <a href="/siaran-pers" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem11')}>
+                                {t('menu.siaranPers')}
+                              </a>
+                            </li>
+                            <li
+                              onMouseEnter={() => setHoveredSubItem('subItem14')}
+                              onMouseLeave={() => setHoveredSubItem(null)}
+                            >
+                              <a href="/opini" style={submenuItemStyle(hoveredSubItem === 'subItem14')}>
+                                {t('menu.opini')}
+                              </a>
+                            </li>
 
-                            <a href="/siaran-pers" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem11')}>
-                              {t('menu.siaranPers')}
-                            </a>
-                          </li>
-                          <li
-                            onMouseEnter={() => setHoveredSubItem('subItem14')}
-                            onMouseLeave={() => setHoveredSubItem(null)}
-                          >
-                            <a href="/opini" style={submenuItemStyle(hoveredSubItem === 'subItem14')}>
-                              {t('menu.opini')}
-                            </a>
-                          </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a href="/agenda" style={menuItemStyle}>{t('menu.agenda')}</a>
+                        </li>
 
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="/agenda" style={menuItemStyle}>{t('menu.agenda')}</a>
-                      </li>
+                        <li>
+                          <a href="/e-pustaka" style={menuItemStyle}>{t('menu.ePustaka')}</a>
+                        </li>
 
-                      <li>
-                        <a href="/e-pustaka" style={menuItemStyle}>{t('menu.ePustaka')}</a>
-                      </li>
+                        <li>
+                          <a href="/data" style={menuItemStyle}>{t('menu.data')}</a>
+                        </li>
 
-                      <li>
-                        <a href="/data" style={menuItemStyle}>{t('menu.data')}</a>
-                      </li>
+                        <li>
+                          <a href="/kdeks" style={menuItemStyle}>{t('menu.kdeks')}</a>
+                        </li>
 
-                      <li>
-                        <a href="/kdeks" style={menuItemStyle}>{t('menu.kdeks')}</a>
-                      </li>
-
-                      <li>
-                        <a href="/kontak" style={menuItemStyle}>{t('menu.kontak')}</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2">
-                <div className="footer-widget">
-                  <div className="footer-widget-department">
-                    <h4 className="footer-widget-title">{t('alamat')}</h4>
-                    <p>Gedung Sutikno Slamet DJA Lantai 18 Jalan Wahidin Nomor 1 Jakarta 10710, Indonesia</p>
-
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-2">
-                <div className="footer-widget">
-                  <div className="footer-widget-contact">
-                    <h4 className="footer-widget-title">{t('menu.kontak')}</h4>
-
-                  </div>
-                  <div className="footer-widget-contact-list">
-                    <i className="fa-solid fa-envelope"></i>
-                    <div className="footer-widget-contact-item">
-                      <a href="mailto:humas@kneks.go.id">humas@kneks.go.id</a>
-                    </div>
-                  </div>
-                  <div className="footer-widget-contact-list">
-                    <i className="fa-solid fa-phone"></i>
-                    <div className="footer-widget-contact-item">
-                      {/* <a href="tel:+021-3449230">(021) 3449230</a> */}
-                      <a href="#test">-</a>
+                        <li>
+                          <a href="/kontak" style={menuItemStyle}>{t('menu.kontak')}</a>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
+                <div className="col-lg-2">
+                  <div className="footer-widget">
+                    <div className="footer-widget-department">
+                      <h4 className="footer-widget-title">{t('alamat')}</h4>
+                      <p>Gedung Sutikno Slamet DJA Lantai 18 Jalan Wahidin Nomor 1 Jakarta 10710, Indonesia</p>
 
-              </div>
-              <div className="col-lg-3">
-                <div className="footer-widget">
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-2">
+                  <div className="footer-widget">
+                    <div className="footer-widget-contact">
+                      <h4 className="footer-widget-title">{t('menu.kontak')}</h4>
 
-                  <iframe width="100%" height="250px" frameBorder="0" scrolling="no" title="frame" marginHeight="0" marginWidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7933.418301716268!2d106.8388627!3d-6.1696863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cbd72035e3%3A0x78a3dc4ef4719cb8!2sKementerian%20Keuangan%20Republik%20Indonesia!5e0!3m2!1sid!2sid!4v1690270978567!5m2!1sid!2sid">
-                  </iframe>
+                    </div>
+                    <div className="footer-widget-contact-list">
+                      <i className="fa-solid fa-envelope"></i>
+                      <div className="footer-widget-contact-item">
+                        <a href="mailto:humas@kneks.go.id">humas@kneks.go.id</a>
+                      </div>
+                    </div>
+                    <div className="footer-widget-contact-list">
+                      <i className="fa-solid fa-phone"></i>
+                      <div className="footer-widget-contact-item">
+                        {/* <a href="tel:+021-3449230">(021) 3449230</a> */}
+                        <a href="#test">-</a>
+                      </div>
+                    </div>
+                  </div>
 
                 </div>
+                <div className="col-lg-3">
+                  <div className="footer-widget">
 
+                    <iframe width="100%" height="250px" frameBorder="0" scrolling="no" title="frame" marginHeight="0" marginWidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7933.418301716268!2d106.8388627!3d-6.1696863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cbd72035e3%3A0x78a3dc4ef4719cb8!2sKementerian%20Keuangan%20Republik%20Indonesia!5e0!3m2!1sid!2sid!4v1690270978567!5m2!1sid!2sid">
+                    </iframe>
+
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="bottom-footer">
-          <div className="conatiner">
-            <p>© Copyright {(new Date().getFullYear())} by KNEKS</p>
+          <div className="bottom-footer">
+            <div className="conatiner">
+              <p>© Copyright {(new Date().getFullYear())} by KNEKS</p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : ("")}
       <div className="mobile-nav-wrapper">
         <div className="mobile-nav-overlay mobile-nav-toggler"></div>
         <div className="mobile-nav-content">
