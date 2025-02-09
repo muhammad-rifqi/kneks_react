@@ -44,7 +44,7 @@ const resources = {
 
             "beritaTerkait": "Related News",
             "zona": "Khas Zone",
-            "agenda_maps" : "Maps Agenda",
+            "agenda_maps": "Maps Agenda",
             "pernekalkan": "About Us",
             "pernekalkanJudul": "National Committee for Sharia Economics and Finance (KNEKS)",
             "pernekalkanIsi": "It is a change from KNKS to improve the development of the sharia economic and financial ecosystem and make Indonesia the World Halal Center. The launch of the starting point to position Indonesia as one of the main players and hubs of the world's sharia economy was carried out in line with the launch of the Indonesian Sharia Economic Masterplan in May 2019.",
@@ -61,7 +61,8 @@ const resources = {
             "isuPengembanganInfrastrukturEkosistemSyariah": "Development of Sharia Ecosystem Infrastructure",
 
             "rekomendasi": "Other Agenda Recommendations",
-
+            "tentangKamikdeks": "About",
+            "sejarahKdeks":"History",
             "sosialMedia": "Social Media",
             "ePustaka": "e-Library",
             "instagram": "Instagram Post",
@@ -159,14 +160,15 @@ const resources = {
             "event": "Event Ekonomi dan Keuangan Syariah",
             "statistik_slider": "Data Ekonomi dan Keuangan Syariah",
             "zona": "Zona KHAS",
-            "agenda_maps" : "Agenda Maps",
+            "agenda_maps": "Agenda Maps",
             "bannerJudul": "Menyatukan langkah, Memajukan Negeri",
             "bannerIsi": "Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional ",
             "tombol": "Lihat Selengkapnya",
 
 
             "beritaTerkait": "Berita Terkait",
-
+            "tentangKamikdeks": "Tentang",
+            "sejarahKdeks":"Sejarah",
             "pernekalkan": "Perkenalkan",
             "pernekalkanJudul": "Komite Nasional Ekonomi dan Keuangan Syariah (KNEKS)",
             "pernekalkanIsi": "Merupakan perubahan dari KNKS untuk peningkatan pembangunan ekosistem ekonomi dan keuangan syariah serta menjadikan Indonesia sebagai Pusat Halal Dunia. Pencanangan titik awal untuk memposisikan Indonesia sebagai salah satu pelaku utama dan hub ekonomi syariah dunia dilakukan seiring dengan peluncuran Masterplan Ekonomi Syariah Indonesia pada bulan Mei 2019.",

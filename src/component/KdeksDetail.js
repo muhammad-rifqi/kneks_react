@@ -27,18 +27,46 @@ const KdeksDetail = () => {
         dayjs.locale(locale); // Set the locale dynamically
         return dayjs(date).format('DD MMMM YYYY'); // Format the date
     };
+
     const { slug, id } = useParams();
     const [posts, setPosts] = useState([]);
     const [posts_photo, setPostsPhoto] = useState([]);
     const [postsOpini, setPostsOpini] = useState([]);
     // const [postSejarah, setPostSejarah] = useState(null);
     const [postTentang, setPostTentang] = useState(null);
+
+    const [postKdeks, setPostKdeks] = useState(null);
+    const [loadingKdeks, setLoadingKdeks] = useState(true);
+
     const [loadingNew, setLoadingNew] = useState(true);
     const [loadingOpini, setLoadingOpini] = useState(true);
     // const [loadingFile, setLoadingFile] = useState(true);
     // const [loadingData, setLoadingData] = useState(true);
     const [loadingPoto, setLoadingPoto] = useState(true);
     // const [loadingAgenda, setLoadingAgenda] = useState(true);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            setLoadingKdeks(true)
+            try {
+                const url = process.env.REACT_APP_API_URL;
+                const response = await axios.get(`${url}/api_about_province_kdeks/${id}`);
+                setPostKdeks(response.data[0]);
+
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+
+                });
+            } finally {
+                setLoadingKdeks(false);
+            }
+        };
+
+        fetchPosts();
+    }, [id]);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -97,7 +125,7 @@ const KdeksDetail = () => {
                 const endpoint = process.env.REACT_APP_API_KDEKS_PHOTO + '/' + id;
                 const response = await axios.get(`${url}${endpoint}`);
                 setPostsPhoto(response.data);
-               
+
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -112,7 +140,7 @@ const KdeksDetail = () => {
 
         fetchPosts(); // Call fetchPosts function when component mounts
 
-      
+
     }, [id]);
 
     useEffect(() => {
@@ -179,7 +207,7 @@ const KdeksDetail = () => {
 
     }, [posts]);
 
-   
+
     // untukmengeloladatasebelumdiloop
     useEffect(() => {
         // if (document.querySelector('.swiper-kdeks-agenda')) {
@@ -314,7 +342,7 @@ const KdeksDetail = () => {
                 <section className="page-banner-kdeks ">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>{listdataKota?.title}</h3>
+                            <h3>{cookies.i18next === 'en' ? postKdeks?.title_en : postKdeks?.title}</h3>
                         </div>
                     </div>
                 </section>
@@ -325,8 +353,11 @@ const KdeksDetail = () => {
                             {/* konten sebelah kiri */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
-                                    <img src={`${process.env.PUBLIC_URL}/${listdataKota?.foto}`} alt="logo" width={300} className="img-fluid" />
-                                    {/* <img src={postTentang ? postTentang.images : ''} alt="logo" width={300} className="img-fluid" /> */}
+                                    {loadingKdeks ? (
+                                        <div className="skeleton-kdeks skeleton-kdeks-img"></div>
+                                    ) : (
+                                        <img src={`${process.env.PUBLIC_URL}/${listdataKota?.foto}`} alt="logo" width={300} className="img-fluid" />
+                                    )}
                                 </div>
                             </div>
 
@@ -334,8 +365,17 @@ const KdeksDetail = () => {
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
                                     {/* <h2 className="section-title">{postTentang ? postTentang.title : ''}</h2> */}
-                                    <h2 className="section-title">Tentang {listdataKota?.title}</h2>
-                                    <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.abouts : '' }} />
+                                    {loadingKdeks ? (
+                                        <>
+                                            <div className="skeleton-kdeks skeleton-kdeks-text"></div>
+                                            <div className="skeleton-kdeks skeleton-kdeks-text" style={{ width: "60%" }}></div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <h2 className="section-title">{t('tentangKamikdeks')} {cookies.i18next === 'en' ? postKdeks?.title_en : postKdeks?.title}</h2>
+                                            <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? postKdeks?.abouts_en : postKdeks?.abouts }} />
+                                        </>
+                                    )}
                                 </div>
 
 
@@ -349,19 +389,29 @@ const KdeksDetail = () => {
                             {/* konten sejarah deskripsi */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    {/* <h2 className="section-title">{postSejarah ? postSejarah.title : ''}</h2> */}
-                                    <h2 className="section-title"> Sejarah {listdataKota?.title} </h2>
-                                    {/* <p></p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.historys : '' }} />
+                                    {loadingKdeks ? (
+                                        <>
+                                            <div className="skeleton-kdeks skeleton-kdeks-text"></div>
+                                            <div className="skeleton-kdeks skeleton-kdeks-text" style={{ width: "60%" }}></div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <h2 className="section-title"> {t('sejarahKdeks')}  {cookies.i18next === 'en' ? postKdeks?.title_en : postKdeks?.title}</h2>
+                                            <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? postKdeks?.historys_en : postKdeks?.historys }} />
+                                        </>
+                                    )}
                                 </div>
                             </div>
 
                             {/* konten sejarah images */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
-                                    {/* <img src={`${process.env.PUBLIC_URL}/assets/image/sejarah.svg`} alt="sejarah" className="img-fluid" /> */}
-                                    <img src={postTentang ? postTentang.images : `${process.env.PUBLIC_URL}/assets/image/sejarah.svg`} alt="sejarah" className="img-fluid" />
-
+                                    {loadingKdeks ? (
+                                        <div className="skeleton-kdeks skeleton-kdeks-img"></div>
+                                    ) : (
+                                        // <img src={postTentang ? postTentang.images : `${process.env.PUBLIC_URL}/assets/image/sejarah.svg`} alt="sejarah" className="img-fluid" />
+                                        <img src={postKdeks?.images} alt="sejarah" className="img-fluid" />
+                                    )}
                                 </div>
                             </div>
 

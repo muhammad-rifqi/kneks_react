@@ -4,29 +4,80 @@ import Jks from '../component/DataTab/Jks'
 import Kss from '../component/DataTab/Kss'
 import Biwis from '../component/DataTab/Biwis'
 import Insis from '../component/DataTab/Insis'
+import Rph from '../component/DataTab/Rph'
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
 import "dayjs/locale/id";
+import axios from "axios";
+import { useCookies } from 'react-cookie';
 const Data = () => {
+    const [cookies] = useCookies(['i18next']);
     dayjs.locale('id');
-    const [selectedSection, setSelectedSection] = useState("Iph");
-    const renderContent = () => {
+    const [selectedSection, setSelectedSection] = useState("1");
+    const [loading, setLoading] = useState(true);
+    const [categories, setCategories] = useState([]);
 
-        switch (selectedSection) {
-            case "Iph":
-                return <Iph />;
-            case "Jks":
-                return <Jks />;
-            case "Kss":
-                return <Kss />;
-            case "Biwis":
-                return <Biwis />;
-            case "Insis":
-                return <Insis />;
-            // Add other cases as needed for different sections
-            default:
-                return null;
+    const fetchCategories = async () => {
+        const url = process.env.REACT_APP_API_URL;
+        const response = await axios.get(`${url}/data_menu`);
+        return response.data
+    };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            try {
+                const data = await fetchCategories();
+                setCategories(data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err.message,
+                });
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchData();
+    }, []);
+    // const renderContent = () => {
+
+    //     switch (selectedSection) {
+    //         case "Iph":
+    //             return <Iph />;
+    //         case "Jks":
+    //             return <Jks />;
+    //         case "Kss":
+    //             return <Kss />;
+    //         case "Biwis":
+    //             return <Biwis />;
+    //         case "Insis":
+    //             return <Insis />;
+    //         default:
+    //             return null;
+    //     }
+    // };
+    const componentMap = {
+        1: Rph,
+        2: Iph,
+        3: Jks,
+        4: Kss,
+        5: Biwis,
+    };
+
+    const renderContent = () => {
+        if (loading) {
+            return (
+                <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+                    <div className="spinner-border text-primary" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            );
         }
+        const Component = componentMap[selectedSection];
+        return Component ? <Component /> : <p>Pilih kategori untuk melihat konten.</p>;
     };
     useEffect(() => {
         // Ensure ApexCharts is loaded before using it
@@ -261,11 +312,24 @@ const Data = () => {
                                 <div className="sidebar">
                                     <div className="sidebar-widget-list-inner">
                                         <ul>
-                                            <li><a href="#IPH" onClick={() => setSelectedSection("Iph")}>IPH</a></li>
+                                            {/* <li><a href="#IPH" onClick={() => setSelectedSection("Iph")}>IPH</a></li>
                                             <li><a href="#JKS" onClick={() => setSelectedSection("Jks")}>JKS</a></li>
                                             <li><a href="#KSS" onClick={() => setSelectedSection("Kss")}>KSS</a></li>
                                             <li><a href="#BIWIS" onClick={() => setSelectedSection("Biwis")}>BIWIS</a></li>
-                                            <li><a href="#INSIS" onClick={() => setSelectedSection("Insis")}>INSIS</a></li>
+                                            <li><a href="#INSIS" onClick={() => setSelectedSection("Insis")}>INSIS</a></li> */}
+                                            {loading ? (
+                                                Array.from({ length: 5 }).map((_, index) => (
+                                                    <li key={index} className="skeletonxx"></li>
+                                                ))
+                                            ) : (
+                                                categories.map(category => (
+                                                    <li key={category.id}>
+                                                        <a href="#t" onClick={() => setSelectedSection(category.id)}>
+                                                            {cookies.i18next === 'en' ? category?.title_en : category?.title}
+                                                        </a>
+                                                    </li>
+                                                ))
+                                            )}
                                         </ul>
                                     </div>
                                 </div>
@@ -451,13 +515,13 @@ const Data = () => {
                                                                     <td><a href={`/data/${items?.id}`}>{items?.dataset}</a></td>
                                                                     <td className="text-center">{items?.source}</td>
                                                                     <td className="text-center">
-                                                                       
+
                                                                         {dayjs(
-                                                                    items?.date_created
-                                                                ).format(
-                                                                    "DD MMMM YYYY"
-                                                                )}
-                                                                        </td>
+                                                                            items?.date_created
+                                                                        ).format(
+                                                                            "DD MMMM YYYY"
+                                                                        )}
+                                                                    </td>
                                                                 </tr>
                                                             )
                                                         })

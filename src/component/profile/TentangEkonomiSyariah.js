@@ -30,7 +30,7 @@ const TentangEkonomiSyariah = () => {
 
         fetchPosts();
     }, []);
-    console.log(posts)
+
     if (loading) {
         return (
             <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
