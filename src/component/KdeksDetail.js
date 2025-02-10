@@ -335,7 +335,7 @@ const KdeksDetail = () => {
         }
         return null;
     };
-    
+
     return (
         <>
             <div className="page-wrapper">
@@ -378,11 +378,7 @@ const KdeksDetail = () => {
                                         </>
                                     )}
                                 </div>
-
-
-
                             </div>
-
                         </div>
 
                         <div className="row row-gutter-y-40">
@@ -841,7 +837,7 @@ const KdeksDetail = () => {
                                             <i className="fa-solid fa-phone"></i>
                                             <div className="footer-widget-contact-item">
                                                 <a href={`tel:${postKdeks?.phone_number}`}>{postKdeks?.phone_number}</a>
-                                               
+
                                             </div>
                                         </div>
                                     </div>

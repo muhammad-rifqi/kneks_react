@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
-
 import axios from 'axios';
 import Swal from "sweetalert2";
 import MapsKdeks from "./MapsKdeks";
+
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
+import 'dayjs/locale/en';
+import { useTranslation } from 'react-i18next';
+import { useCookies } from 'react-cookie';
 const Kdeks = () => {
     // const [rows, setItems] = useState([]);
     // const [postSejarah, setPostSejarah] = useState(null);
+    const [cookies] = useCookies(['i18next']);
     const [postTentang, setPostTentang] = useState(null);
+    const [loadingKdeks, setLoadingKdeks] = useState(true);
     useEffect(() => {
         // const isian = Kota();
         // setItems(isian);
@@ -18,28 +25,6 @@ const Kdeks = () => {
 
 
     useEffect(() => {
-        // Function to fetch posts
-        // const fetchPosts = async () => {
-        //     try {
-        //         const url = process.env.REACT_APP_API_URLKDEKS;
-        //         const endpoint = process.env.REACT_APP_API_KDEKSSEJARAH;
-        //         const response = await axios.get(`${url}${endpoint}`);
-        //         if (response.data && response.data.length > 0) {
-        //             setPostSejarah(response.data[0]); // Set data ke state
-        //         } else {
-        //             throw new Error("Data kosong atau tidak ditemukan.");
-        //         }
-        //     } catch (err) {
-        //         Swal.fire({
-        //             icon: "error",
-        //             title: "Oops...",
-        //             text: err,
-
-        //         });
-        //     }
-        // };
-
-        // fetchPosts(); 
 
         const fetchPostsTentang = async () => {
             try {
@@ -58,6 +43,8 @@ const Kdeks = () => {
                     text: err,
 
                 });
+            } finally {
+                setLoadingKdeks(false);
             }
         };
 
@@ -67,7 +54,7 @@ const Kdeks = () => {
 
 
 
-
+    console.log(postTentang)
     // const divStyle = {
     //     overflowY: 'scroll',
     //     padding: '20px',
@@ -93,15 +80,28 @@ const Kdeks = () => {
                             {/* konten sebelah kiri */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
-                                    <img src="assets/image/logoKdeks.png" alt="logo" width={300} className="img-fluid" />
+                                    {loadingKdeks ? (
+                                        <div className="skeleton-kdeks skeleton-kdeks-img"></div>
+                                    ) : (
+                                        <img src="assets/image/logoKdeks.png" alt="logo" width={300} className="img-fluid" />
+                                    )}
                                 </div>
                             </div>
 
                             {/* konten sebelah kanan */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title">{postTentang ? postTentang.about : ''}</h2>
-                                    <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.about_content : '' }} />
+                                    {loadingKdeks ? (
+                                        <>
+                                            <div className="skeleton-kdeks skeleton-kdeks-text"></div>
+                                            <div className="skeleton-kdeks skeleton-kdeks-text" style={{ width: "60%" }}></div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <h2 className="section-title">{postTentang ? postTentang.about : ''}{cookies.i18next === 'en' ? postTentang?.about_en : postTentang?.about}</h2>
+                                            <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? postTentang?.about_content_en : postTentang?.about_content }} />
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -110,16 +110,28 @@ const Kdeks = () => {
                             {/* konten sejarah deskripsi */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title">{postTentang ? postTentang.history : ''}</h2>
-                                    {/* <p></p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: postTentang ? postTentang.history_content : '' }} />
+                                    {loadingKdeks ? (
+                                        <>
+                                            <div className="skeleton-kdeks skeleton-kdeks-text"></div>
+                                            <div className="skeleton-kdeks skeleton-kdeks-text" style={{ width: "60%" }}></div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <h2 className="section-title">{cookies.i18next === 'en' ? postTentang?.history_en : postTentang?.history}</h2>
+                                            <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? postTentang?.about_content_en : postTentang?.about_content }} />
+                                        </>
+                                    )}
                                 </div>
                             </div>
 
                             {/* konten sejarah images */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
-                                    <img src="assets/image/sejarah.svg" alt="sejarah" className="img-fluid" />
+                                    {loadingKdeks ? (
+                                        <div className="skeleton-kdeks skeleton-kdeks-img"></div>
+                                    ) : (
+                                        <img src="assets/image/sejarah.svg" alt="sejarah" className="img-fluid" />
+                                    )}
                                 </div>
                             </div>
 
