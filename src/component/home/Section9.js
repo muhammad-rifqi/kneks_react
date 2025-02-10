@@ -16,30 +16,6 @@ const Section9 = () => {
 	};
 	const { t } = useTranslation();
 
-
-
-
-
-	const options = {
-		items: 1,
-		margin: 30,
-		loop: true, // Disable looping since we only have one slide
-		autoplay: true,
-		autoplayTimeout: 4000,
-		dots: false,
-		responsive: {
-			0: {
-				items: 1,
-			},
-			600: {
-				items: 3,
-			},
-			1000: {
-				items: 5,
-			},
-		},
-	};
-
 	const [data, setData] = useState([]);
 	useEffect(() => {
 		fetch(process.env.REACT_APP_API_URL + '/' + process.env.REACT_APP_API_DATA)
@@ -61,6 +37,31 @@ const Section9 = () => {
 			.catch((error) => console.error("Error fetching statistics:", error));
 	}, []);
 
+	if (data.length > 0) {
+		var options = {
+			loop: true,
+			margin: 10, 
+			dots: true,
+			autoplay: true,
+			nav: true,
+			navText: [
+				"<i class='custom-prev fas fa-chevron-left'></i>", 
+				"<i class='custom-next fas fa-chevron-right'></i>"
+			], // Custom tombol navigasi
+			responsive: {
+				0: {
+					items: 1,
+				},
+				600: {
+					items: 3,
+				},
+				1000: {
+					items: 4,
+				},
+			},
+		};
+	}
+
 	return (
 		<section className='funfact-section'>
 			<div className='container'>
@@ -71,13 +72,13 @@ const Section9 = () => {
 						</h2>
 					</div>
 				</div>
-				<OwlCarousel className="owl-themes" {...options} data-aos="fade-down-left">
+				<OwlCarousel className="owl-theme custom-carouselx" loop={true} nav={true} dots={true} {...options} data-aos="fade-down-left">
 					{data.map((item, index) => (
 						<div
 							key={index}
 							className="row align-items-center justify-content-center"
 						>
-							<div className="col-md-12 text-center mb-3">
+							<div className="col-md-10 text-center mb-3">
 								<div className="card bg-light border-0 shadow p-3">
 									<i className="fas fa-briefcase fa-2x mb-3"></i>
 									<h5
