@@ -28,6 +28,7 @@ const Home = () => {
   const { t } = useTranslation();
   const [isPopupActive, setPopupActive] = useState(true)
   const [post, setPost] = useState([])
+  const [loading, setLoading] = useState(true);
   // Handler untuk menutup popup
   const handleClose = () => {
     setPopupActive(false)
@@ -63,6 +64,8 @@ const Home = () => {
           title: "Oops...",
           text: err,
         });
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -101,6 +104,10 @@ const Home = () => {
             className="information-popup-overlay search-toggler-x"
             onClick={handleClose}></div>
           <div className="information-popup-content">
+          {loading ? (
+              <div className="skeleton-kdeks skeleton-kdeks-img"></div>
+            ) : (
+              <>
             <div className="p-3 close">
               <button
                 type="button"
@@ -108,18 +115,21 @@ const Home = () => {
                 aria-label="Close"
                 onClick={handleClose}></button>
             </div>
-
-            <img
-              className="img-fluid img-thumbnail"
-              src={post?.[0]?.path}
-              alt="Iklan"
-            />
-            <div className="selengkapnya">
-              <a href={`/agenda/${convertToSlug(post?.[0]?.name)}`} className="btn btn-primary btn-sm">
-                {/* Lihat Selengkapnya */}
-                {t("tombol")}
-              </a>
-            </div>
+            
+            
+                <img
+                  className="img-fluid img-thumbnail"
+                  src={post?.[0]?.path}
+                  alt="Iklan"
+                />
+                <div className="selengkapnya">
+                  <a href={`/agenda/${convertToSlug(post?.[0]?.name)}`} className="btn btn-primary btn-sm">
+                    {/* Lihat Selengkapnya */}
+                    {t("tombol")}
+                  </a>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
