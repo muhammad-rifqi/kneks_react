@@ -3,7 +3,7 @@ import Iph from '../component/DataTab/Iph'
 import Jks from '../component/DataTab/Jks'
 import Kss from '../component/DataTab/Kss'
 import Biwis from '../component/DataTab/Biwis'
-import Insis from '../component/DataTab/Insis'
+// import Insis from '../component/DataTab/Insis'
 import Rph from '../component/DataTab/Rph'
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
