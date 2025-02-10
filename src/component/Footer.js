@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useCookies } from 'react-cookie';
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
