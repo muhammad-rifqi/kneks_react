@@ -19,7 +19,7 @@ const Data = () => {
 
     const fetchCategories = async () => {
         const url = process.env.REACT_APP_API_URL;
-        const response = await axios.get(`${url}/data_menu`);
+        const response = await axios.get(`${url}/data_menu_fe`);
         return response.data
     };
 
