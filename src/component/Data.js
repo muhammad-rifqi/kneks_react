@@ -16,7 +16,9 @@ const Data = () => {
     const [selectedSection, setSelectedSection] = useState("1");
     const [loading, setLoading] = useState(true);
     const [categories, setCategories] = useState([]);
-
+    const [selectedMenu, setSelectedMenu] = useState(null);
+    const [selectedSubmenu, setSelectedSubmenu] = useState(null);
+    
     const fetchCategories = async () => {
         const url = process.env.REACT_APP_API_URL;
         const response = await axios.get(`${url}/data_menu_fe`);
