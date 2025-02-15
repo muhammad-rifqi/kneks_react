@@ -413,18 +413,30 @@ const KdeksDetail = () => {
                             </div>
 
                         </div>
-                        {/* <div className="row row-gutter-y-40 d-flex justify-content-center pt-5">
+                        <div className="row row-gutter-y-40 d-flex justify-content-center pt-5">
                             <div className="col-lg-3 text-center">
                                 <div className="sidebar-widget">
                                     <div className="sidebar-widget-box-icon">
                                         <i className="flaticon-pdf"></i>
                                     </div>
                                     <div className="sidebar-widget-box-content">
-                                        <h3>List Pengurus Kdeks {listdataKota?.title}</h3>
+                                        <h3>Surat Keputusan&nbsp;
+                                            {cookies.i18next === 'en' ? postKdeks?.title_en : postKdeks?.title}
+                                        </h3>
+                                        <a
+                                            href={`${process.env.PUBLIC_URL}/${listdataKota?.skFile}`}
+                                            className="btn btn-primary mt-3"
+                                            download
+                                            target="_blank" // Buka di tab baru jika file bisa diakses langsung
+                                            rel="noopener noreferrer" // Keamanan tambahan
+                                        >
+                                            Download
+                                        </a>
+
                                     </div>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 </section>
 

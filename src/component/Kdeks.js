@@ -98,7 +98,7 @@ const Kdeks = () => {
                                         </>
                                     ) : (
                                         <>
-                                            <h2 className="section-title">{postTentang ? postTentang.about : ''}{cookies.i18next === 'en' ? postTentang?.about_en : postTentang?.about}</h2>
+                                            <h2 className="section-title">{cookies.i18next === 'en' ? postTentang?.about_en : postTentang?.about}</h2>
                                             <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? postTentang?.about_content_en : postTentang?.about_content }} />
                                         </>
                                     )}
