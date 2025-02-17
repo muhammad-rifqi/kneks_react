@@ -35,6 +35,7 @@ const Footer = () => {
   const isKdeksPage = locationsx && splita[2] === convertToSlug(locationsx.title);
 
 
+  const isEkonomiSyariah = splita[1] === 'tentang-ekonomi-syariah';
 
   useEffect(() => {
 
@@ -170,15 +171,25 @@ const Footer = () => {
                       </>
                     )}
                   </div>
-                 
-                    <div className="footer-widget-socials ">
-                      <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
-                      <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
-                      <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
-                      <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
-                      <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
-                    </div>
-               
+
+                  <div className="footer-widget-socials ">
+
+
+                    {isEkonomiSyariah ? (
+                      <>
+                        
+                      </>
+                    ) : (
+                      <>
+                        <a href="https://twitter.com/kneks_id" target='_blank' rel='noreferrer'><i className="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/kneks.id" target='_blank' rel='noreferrer'><i className="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/company/kneks" target='_blank' rel='noreferrer'><i className="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/kneks.id/" target='_blank' rel='noreferrer'><i className="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber/" target='_blank' rel='noreferrer'><i className="fa-brands fa-youtube"></i></a>
+                      </>
+                    )}
+                  </div>
+
                 </div>
                 <div className="col-lg-2">
                   <div className="footer-widget">
@@ -458,11 +469,20 @@ const Footer = () => {
             </li>
           </ul>
           <ul className="mobile-nav-social list-unstyled">
-            <li><a href="https://twitter.com/kneks_id"><i className="fa-brands fa-twitter"></i></a></li>
-            <li><a href="https://www.facebook.com/kneks.id"><i className="fa-brands fa-facebook"></i></a></li>
-            <li><a href="https://www.linkedin.com/company/kneks"><i className="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="https://www.instagram.com/kneks.id/"><i className="fa-brands fa-instagram"></i></a></li>
-            <li><a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber"><i className="fa-brands fa-youtube"></i></a></li>
+            {isEkonomiSyariah ? (
+              <>
+              
+              </>
+            ) : (
+              <>
+                <li><a href="https://twitter.com/kneks_id"><i className="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/kneks.id"><i className="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/kneks"><i className="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/kneks.id/"><i className="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCkoy3PTHaKD5OIh3Jx-cGsg?view_as=subscriber"><i className="fa-brands fa-youtube"></i></a></li>
+              </>
+            )}
+
           </ul>
         </div>
       </div>

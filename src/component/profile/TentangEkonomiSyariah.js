@@ -144,7 +144,7 @@ const TentangEkonomiSyariah = () => {
 
                             <div className="col-lg-12 col-xl-12">
                                 <div className="about-one-inner-x">
-                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[0]?.logo_philosophy_en : posts?.[0]?.logo_philosophy}</h2>
+                                    <h2 className="section-title" style={{ textAlign: 'center' }}>{cookies.i18next === 'en' ? posts?.[0]?.logo_philosophy_en : posts?.[0]?.logo_philosophy ?? '-'}</h2>
                                     <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? posts?.[0]?.content_en : posts?.[0]?.content }} />
                                 </div>
                             </div>
