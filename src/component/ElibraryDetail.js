@@ -97,7 +97,7 @@ const Elibrabry = () => {
                                 <div className="col-md-12">
                                     <div className="card ">
                                         <div className="card-header p-3">
-                                            <h3 className="fw-bold mb-0 text-primary" >List Pustaka</h3>
+                                            <h3 className="fw-bold mb-0 text-primary" >Detail Pustaka</h3>
                                         </div>
                                         <div className="card-body">
                                             <div className="row g-0 mb-4">
