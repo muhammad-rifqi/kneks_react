@@ -18,7 +18,7 @@ const Data = () => {
     const [categories, setCategories] = useState([]);
     const [selectedMenu, setSelectedMenu] = useState(null);
     const [selectedSubmenu, setSelectedSubmenu] = useState(null);
-    
+
     const fetchCategories = async () => {
         const url = process.env.REACT_APP_API_URL;
         const response = await axios.get(`${url}/data_menu_fe`);
@@ -475,19 +475,25 @@ const Data = () => {
                                     </div>
                                 </div> */}
                                 <div className="col-lg-12 pt-5">
-                                    <div className="about-one-inner-x">
-                                        <div className="row">
+                                    <div className="about-one-inner-x border p-3 rounded">
+                                        {/* <div className="row align-items-center">
                                             <div className="col-md-6">
-                                                <h5>Narasi</h5>
+                                                <h5 className="fw-bold">Narasi</h5>
                                             </div>
                                             <div className="col-md-6 text-md-end text-start">
-                                                <h5 style={{ fontSize: '14px' }}>Sumber</h5>
-                                                <a href="https://www.kneks.co.id/e-pustaka" style={{ fontSize: '12px', textDecoration: 'none' }} target="_blank" rel="noopener noreferrer">
+                                                <h5 className="fw-bold" style={{ fontSize: '14px' }}>Sumber</h5>
+                                                <a
+                                                    href="https://www.kneks.co.id/e-pustaka"
+                                                    className="text-decoration-none text-primary"
+                                                    style={{ fontSize: '12px' }}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
                                                     www.kneks.co.id/e-pustaka
                                                 </a>
                                             </div>
-                                        </div>
-                                        <p className="mt-3">
+                                        </div> */}
+                                        <p className="mt-3 text-secondary">
                                             Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                         </p>
                                     </div>
