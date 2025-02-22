@@ -140,12 +140,16 @@ const Elibrabry = () => {
                                                 <div className="col-sm-10 text-primary"> : {rows?.penerbit || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
+                                                <div className="col-sm-2 fw-semibold">Tagging</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.tagging ? rows?.tagging:  '-'}</div>
+                                            </div>
+                                            <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Sinopsis</div>
                                                 <div className="col-sm-10 text-primary"> : {rows?.sinopsis || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">ISBN</div>
-                                                <div className="col-sm-10 text-primary"> : {rows?.isbn || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.isbn ? rows?.isbn:  '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Jumlah Halaman</div>

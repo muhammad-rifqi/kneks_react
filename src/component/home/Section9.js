@@ -40,12 +40,12 @@ const Section9 = () => {
 	if (data.length > 0) {
 		var options = {
 			loop: true,
-			margin: 10, 
+			margin: 10,
 			dots: true,
 			autoplay: true,
 			nav: true,
 			navText: [
-				"<i class='custom-prev fas fa-chevron-left'></i>", 
+				"<i class='custom-prev fas fa-chevron-left'></i>",
 				"<i class='custom-next fas fa-chevron-right'></i>"
 			], // Custom tombol navigasi
 			responsive: {
@@ -79,23 +79,26 @@ const Section9 = () => {
 							className="row align-items-center justify-content-center"
 						>
 							<div className="col-md-10 text-center mb-3">
-								<div className="card bg-light border-0 shadow p-3">
-									<i className="fas fa-briefcase fa-2x mb-3"></i>
-									<h5
-										style={{ fontSize: '16px' }}
-										className="card-title mb-0"
-									>
-										{cookies.i18next === 'id'
-											? item.title
-											: item.title_en}
-									</h5>
-									<h3 className="card-text mb-0">{item.value}</h3>
-									<p className="card-text text-muted">
-										{cookies.i18next === 'id'
-											? formatDate(item.date, 'id')
-											: formatDate(item.date, 'en')}
-									</p>
-								</div>
+								<a
+									href={`/data`}>
+									<div className="card bg-light border-0 shadow p-3">
+										<i className="fas fa-briefcase fa-2x mb-3"></i>
+										<h5
+											style={{ fontSize: '16px' }}
+											className="card-title mb-0"
+										>
+											{cookies.i18next === 'id'
+												? item.title
+												: item.title_en}
+										</h5>
+										<h3 className="card-text mb-0">{item.value}</h3>
+										<p className="card-text text-muted">
+											{cookies.i18next === 'id'
+												? formatDate(item.date, 'id')
+												: formatDate(item.date, 'en')}
+										</p>
+									</div>
+								</a>
 							</div>
 						</div>
 					))}
