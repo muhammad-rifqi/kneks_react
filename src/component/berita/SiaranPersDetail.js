@@ -46,12 +46,12 @@ const SiaranPersDetail = () => {
                     const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 
                     // throw new Error("Error!");
-
+                    // console.log(responsei)
                     if (responsei) {
                         setItemx(responsei.data);
                         setItem(foundItem);
                     }
-                   
+
                 } catch (err) {
                     Swal.fire({
                         icon: "error",

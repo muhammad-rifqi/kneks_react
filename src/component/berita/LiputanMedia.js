@@ -213,7 +213,10 @@ const LiputanMedia = () => {
                                                 <div className="berita-content ">
                                                     <div className="event-card-info-x " style={{ color: `#F2994A` }}>
 
-                                                        <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
+                                                        {/* <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span> */}
+                                                        {item.tag.split(",").map((tag, index) => (
+                                                            <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                        ))}
                                                     </div>
                                                     <div className="event-card-title pb-4">
                                                         <h4>

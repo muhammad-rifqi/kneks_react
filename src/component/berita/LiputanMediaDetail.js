@@ -130,17 +130,11 @@ const LiputanMediaDetail = () => {
                                 <h4>Tags :</h4>
                             </div>
                             <div className="news-details-list-button">
-                                <a href="#t" className="btn btn-primary">#Culturse</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
+                                {/* <a href="#t" className="btn btn-primary">#Culturse</a> */}
+                                {
+                                    rows?.tagging.split(",").map((tag, index) => (
+                                        <a href="#t" key={index} className="btn btn-primary">{tag}</a>
+                                    ))}
                             </div>
                         </div>
                     </div>

@@ -29,6 +29,7 @@ const Opini = () => {
                 const url = process.env.REACT_APP_API_URL;
                 const endpoint = process.env.REACT_APP_API_POST;
                 const response = await axios.get(`${url}${endpoint}`);
+                console.log(response)
                 setPosts(response.data);
             } catch (err) {
                 Swal.fire({

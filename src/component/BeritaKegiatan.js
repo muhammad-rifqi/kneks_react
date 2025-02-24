@@ -199,7 +199,11 @@ const BeritaKegiatan = () => {
                                                         style={{
                                                             color: `#F2994A`,
                                                         }}>
-                                                        <span>#BERITABARU</span>
+                                                        {/* <span>#BERITABARU</span> */}
+                                                        {item.tagging.split(",").map((tag, index) => (
+                                                        <span key={index}>{tag ? '#' + tag : ''} </span>
+
+                                                    ))}
                                                     </div>
                                                     <div className='event-card-title pb-4'>
                                                         <h4>

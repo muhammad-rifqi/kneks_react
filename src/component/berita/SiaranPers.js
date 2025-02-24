@@ -60,13 +60,11 @@ const SiaranPers = () => {
             }
         };
 
-        fetchPosts(); // Call fetchPosts function when component mounts
+        fetchPosts(); 
     }, []);
 
     useEffect(() => {
         let filtered = posts;
-
-        // ✅ Filter berdasarkan tanggal jika ada input
         if (startDate) {
             const formattedDate = dayjs(startDate).format("YYYY-MM-DD");
             filtered = filtered.filter(
@@ -74,7 +72,6 @@ const SiaranPers = () => {
             );
         }
 
-        // ✅ Filter berdasarkan judul jika ada input
         if (searchTitle) {
             filtered = filtered.filter((post) =>
                 post.title.toLowerCase().includes(searchTitle.toLowerCase())
@@ -214,6 +211,9 @@ const SiaranPers = () => {
                                                     <div className="event-card-info-x " style={{ color: `#F2994A` }}>
 
                                                         <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
+                                                        {/* {item.tag.split(",").map((tag, index) => (
+                                                            <span key={index}>{tag ? '#' + tag.value : ''} </span>
+                                                        ))} */}
                                                     </div>
                                                     <div className="event-card-title pb-4">
                                                         <h4>
