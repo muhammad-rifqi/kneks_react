@@ -11,9 +11,9 @@ const Opini = () => {
     const { t } = useTranslation()
     const [cookies] = useCookies(['i18next']);
     const formatDate = (date, locale = 'en') => {
-		dayjs.locale(locale); // Set the locale dynamically
-		return dayjs(date).format('DD MMMM YYYY'); // Format the date
-	};
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
     const [visible, setVisible] = useState(4)
 
     const [loading, setLoading] = useState(true);
@@ -29,7 +29,6 @@ const Opini = () => {
                 const url = process.env.REACT_APP_API_URL;
                 const endpoint = process.env.REACT_APP_API_POST;
                 const response = await axios.get(`${url}${endpoint}`);
-                console.log(response)
                 setPosts(response.data);
             } catch (err) {
                 Swal.fire({
@@ -90,8 +89,8 @@ const Opini = () => {
                                                 <div className="event-card-image">
                                                     <div className="event-card-image-inner-x">
                                                         <a href={`/opini/${item.id}/${convertToSlug(item.title)}`}>
-                                                        {/* <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} /> */}
-                                                        <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={cookies.i18next === 'id' ? item.title : item.title_en} />
+                                                            {/* <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} /> */}
+                                                            <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={cookies.i18next === 'id' ? item.title : item.title_en} />
                                                         </a>
 
                                                     </div>
@@ -100,7 +99,10 @@ const Opini = () => {
                                                     <div className="event-card-info-x pb-3">
                                                         <ul className="list-unstyled" style={{ color: `#F2994A` }}>
                                                             <li>
-                                                                <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
+                                                                {/* <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span> */}
+                                                                {item.tags.split(",").map((tag, index) => (
+                                                                    <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                                ))}
                                                             </li>
                                                         </ul>
                                                     </div>

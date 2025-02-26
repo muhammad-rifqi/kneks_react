@@ -37,17 +37,19 @@ const BeritaKegiatanDetail = () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
                     const endpoint = process.env.REACT_APP_API_POST;
-                    const responsei = await axios.get(`${url}${endpoint}`);
+                    const responsei = await axios.get(`${url}/newsdetail/${id}`);
+                    const responlain = await axios.get(`${url}${endpoint}`);
+
                     const foundItem = responsei.data.find(
                         (post) =>
                             post.id === Number(id) &&
                             convertToSlug(post.title) === slug
                     );
-                    console.log(foundItem)
+              
                     // throw new Error("Error!");
-
-                    if (responsei) {
-                        setItemx(responsei.data);
+      
+                    if (responlain) {
+                        setItemx(responlain.data);
                         setItem(foundItem);
                     }
 
@@ -162,7 +164,7 @@ const BeritaKegiatanDetail = () => {
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
                                                     {/* <span>#BERITABARU</span> */}
-                                                    {item.tagging.split(",").map((tag, index) => (
+                                                    {item.tags.split(",").map((tag, index) => (
                                                         <span key={index}>{tag ? '#' + tag : ''} </span>
 
                                                     ))}

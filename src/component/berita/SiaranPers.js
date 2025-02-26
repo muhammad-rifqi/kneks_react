@@ -45,8 +45,9 @@ const SiaranPers = () => {
             setLoading(true);
             try {
                 const url = process.env.REACT_APP_API_URL;
-                const endpoint = process.env.REACT_APP_API_PERS;
-                const response = await axios.get(`${url}${endpoint}`);
+                // const endpoint = process.env.REACT_APP_API_PERS;
+                // const response = await axios.get(`${url}${endpoint}`);
+                const response = await axios.get(`${url}/posts`);
                 setPosts(response.data);
                 setFilteredPosts(response.data);
             } catch (err) {
@@ -60,7 +61,7 @@ const SiaranPers = () => {
             }
         };
 
-        fetchPosts(); 
+        fetchPosts();
     }, []);
 
     useEffect(() => {
@@ -210,10 +211,10 @@ const SiaranPers = () => {
                                                 <div className="berita-content ">
                                                     <div className="event-card-info-x " style={{ color: `#F2994A` }}>
 
-                                                        <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
-                                                        {/* {item.tag.split(",").map((tag, index) => (
-                                                            <span key={index}>{tag ? '#' + tag.value : ''} </span>
-                                                        ))} */}
+                                                        {/* <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span> */}
+                                                        {item.tags.split(",").map((tag, index) => (
+                                                            <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                        ))}
                                                     </div>
                                                     <div className="event-card-title pb-4">
                                                         <h4>

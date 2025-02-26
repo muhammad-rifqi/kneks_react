@@ -99,54 +99,59 @@ const Section7 = () => {
 			.replace(/\s+/g, '-')
 			.replace(/-+/g, '-');
 	};
-	
+
 
 	return (
 		<section className="portfolio-section ">
 
 			<div className="portfolio-content" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-			<div className="container">
-				<div className="row m-0">
-					{posts.length > 0 ? (
-						<div className="swiper swiper-berita">
-							<div className="swiper-wrapper">
-								{posts.slice(3, 25).map((item) => (
-									<div className="col-lg-3 col-xl-3 swiper-slide" key={item.id}>
-										<div className="berita-card-kdeks">
-											<div className="berita-card-imgbox-berita">
-												<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
-													<img src={item.image} className="" alt={item.title} />
-												</a>
-											</div>
+				<div className="container">
+					<div className="row m-0">
+						{posts.length > 0 ? (
+							<div className="swiper swiper-berita">
+								<div className="swiper-wrapper">
+									{posts.slice(3, 25).map((item) => (
+										<div className="col-lg-3 col-xl-3 swiper-slide" key={item.id}>
+											<div className="berita-card-kdeks">
+												<div className="berita-card-imgbox-berita">
+													<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
+														<img src={item.image} className="" alt={item.title} />
+													</a>
+												</div>
 
-											<div className="berita-content-direktorat-x">
-												<div className="direktorat-tag-home">
-													<span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
-												</div>
-												<div className="event-card-title pb-2">
-													<h4>
-														<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
-													</h4>
-												</div>
-												<div className="event-card-info-direktorat">
-													<span>{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
+												<div className="berita-content-direktorat-x">
+													<div className="direktorat-tag-home">
+														{/* <span>
+															{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}
+														</span> */}
+														{item.tags.split(",").map((tag, index) => (
+                                                            <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                        ))}
+													</div>
+													<div className="event-card-title pb-2">
+														<h4>
+															<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
+														</h4>
+													</div>
+													<div className="event-card-info-direktorat">
+														<span>{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								))}
+									))}
+								</div>
+								<div className="swiper-button-prev">
+									<i className="fa-solid fa-chevron-left"></i>
+								</div>
+								<div className="swiper-button-next">
+									<i className="fa-solid fa-chevron-right"></i>
+								</div>
 							</div>
-							<div className="swiper-button-prev">
-								<i className="fa-solid fa-chevron-left"></i>
-							</div>
-							<div className="swiper-button-next">
-								<i className="fa-solid fa-chevron-right"></i>
-							</div>
-						</div>
-					) : (
-						<p className="text-center">No posts available.</p>
-					)}
-				</div >
+						) : (
+							<p className="text-center">No posts available.</p>
+						)}
+					</div >
 				</div>
 			</div>
 		</section>

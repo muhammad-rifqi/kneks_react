@@ -30,7 +30,8 @@ const IsuEkonomiDetail = () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
                     const endpoint = process.env.REACT_APP_API_POST;
-                    const responsei = await axios.get(`${url}${endpoint}`);
+                    const responsei = await axios.get(`${url}/newsdetail/${id}`);
+                    const responlain = await axios.get(`${url}${endpoint}`);
 
                     const foundItem = responsei.data.find(
                         (post) =>
@@ -40,12 +41,10 @@ const IsuEkonomiDetail = () => {
 
                     // throw new Error("Error!");
 
-                    if (responsei) {
-                        setItemx(responsei.data);
+                    if (responlain) {
+                        setItemx(responlain.data);
                         setItem(foundItem);
                     }
-                    console.log(responsei.data)
-                    console.log(foundItem)
                 } catch (err) {
                     Swal.fire({
                         icon: "error",
@@ -121,17 +120,9 @@ const IsuEkonomiDetail = () => {
                                 <h4>Tags :</h4>
                             </div>
                             <div className="news-details-list-button">
-                                <a href="#t" className="btn btn-primary">#Culturse</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                {/* <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a> */}
+                                {rows?.tagging.split(",").map((tag, index) => (
+                                    <a href="#t" key={index} className="btn btn-primary">{tag}</a>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -149,23 +140,24 @@ const IsuEkonomiDetail = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-30">
-                            {itemx.slice(0, 3).map((item) => {
+                        {itemx.slice(0, 3).map((item) => {
                                 return (
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>
-                                                    <img src={item?.image} className="img-fluid" alt={item.title} />
-                                                    {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
-                                                </a>
+                                                {/* <a href={`/liputan-media/${convertToSlug(item.title)}`}> <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /></a> */}
+                                                <a href={`/isu-ekonomi/${item.id}/${convertToSlug(item.title)}`}> <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} /></a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
-                                                    <span>#BERITABARU</span>
+                                                    {/* <span>#BERITABARU</span> */}
+                                                    {item.tags.split(",").map((tag, index) => (
+                                                        <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                    ))}
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/isu-ekonomi/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">

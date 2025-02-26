@@ -8,7 +8,7 @@ import VenoBox from 'venobox';
 const SiaranPersDetail = () => {
     dayjs.locale('id');
 
-    const { slug } = useParams();
+    const { id, slug } = useParams();
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -40,15 +40,22 @@ const SiaranPersDetail = () => {
         if (effectrun.current === false) {
             const fetchPosts = async () => {
                 try {
+                    // const endpoint = process.env.REACT_APP_API_PERS;
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_PERS;
-                    const responsei = await axios.get(`${url}${endpoint}`);
-                    const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
+                    const endpoint = process.env.REACT_APP_API_POST;
+                    const responsei = await axios.get(`${url}/newsdetail/${id}`);
+                    const responlain = await axios.get(`${url}${endpoint}`);
+
+                    const foundItem = responsei.data.find(
+                        (post) =>
+                            post.id === Number(id) &&
+                            convertToSlug(post.title) === slug
+                    );
 
                     // throw new Error("Error!");
-                    // console.log(responsei)
-                    if (responsei) {
-                        setItemx(responsei.data);
+
+                    if (responlain) {
+                        setItemx(responlain.data);
                         setItem(foundItem);
                     }
 
@@ -67,7 +74,7 @@ const SiaranPersDetail = () => {
                 effectrun.current = true
             }
         }
-    }, [slug]);
+    }, [id, slug]);
 
 
     const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
@@ -127,17 +134,10 @@ const SiaranPersDetail = () => {
                                 <h4>Tags :</h4>
                             </div>
                             <div className="news-details-list-button">
-                                <a href="#t" className="btn btn-primary">#Culturse</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
+                                {/* <a href="#t" className="btn btn-primary">#Culturse</a> */}
+                                {rows?.tagging.split(",").map((tag, index) => (
+                                    <a href="#t" key={index} className="btn btn-primary">{tag}</a>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -164,7 +164,9 @@ const SiaranPersDetail = () => {
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
-                                                    <span>#BERITABARU</span>
+                                                    {item.tags.split(",").map((tag, index) => (
+                                                        <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                    ))}
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>

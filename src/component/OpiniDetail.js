@@ -11,11 +11,11 @@ const OpiniDetail = () => {
     const { t } = useTranslation()
     const [cookies] = useCookies(['i18next']);
     const formatDate = (date, locale = 'en') => {
-		dayjs.locale(locale); // Set the locale dynamically
-		return dayjs(date).format('DD MMMM YYYY'); // Format the date
-	};
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
 
-    const {id,slug} = useParams(); 
+    const { id, slug } = useParams();
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -67,7 +67,7 @@ const OpiniDetail = () => {
                 effectrun.current = true
             }
         }
-    }, [id,slug]);
+    }, [id, slug]);
     // const formattedDate = rows?.news_datetime ? dayjs(rows?.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
 
@@ -77,7 +77,7 @@ const OpiniDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                       
+
                             <h3>{t('menu.opini')}</h3>
                         </div>
                     </div>
@@ -129,17 +129,9 @@ const OpiniDetail = () => {
                                 <h4>Tags :</h4>
                             </div>
                             <div className="news-details-list-button">
-                                <a href="#t" className="btn btn-primary">#Culturse</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
+                                {rows?.tagging.split(",").map((tag, index) => (
+                                    <a href="#t" key={index} className="btn btn-primary">{tag}</a>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -171,7 +163,9 @@ const OpiniDetail = () => {
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
-                                                    <span>#BERITABARU</span>
+                                                {item.tags.split(",").map((tag, index) => (
+                                                        <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                    ))}
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>

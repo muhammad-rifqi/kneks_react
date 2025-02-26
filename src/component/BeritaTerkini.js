@@ -45,8 +45,9 @@ const BeritaTerkini = () => {
             setLoading(true);
             try {
                 const url = process.env.REACT_APP_API_URL;
-                const endpoint = process.env.REACT_APP_API_INFO_TERKINI;
-                const response = await axios.get(`${url}${endpoint}`);
+                // const endpoint = process.env.REACT_APP_API_INFO_TERKINI;
+                // const response = await axios.get(`${url}${endpoint}`);
+                const response = await axios.get(`${url}/posts`);
                 setPosts(response.data);
                 setFilteredPosts(response.data);
             } catch (err) {
@@ -62,29 +63,6 @@ const BeritaTerkini = () => {
 
         fetchPosts(); // Call fetchPosts function when component mounts
     }, []);
-
-    // useEffect(() => {
-    //     if (startDate) {
-    //         const formattedDate = dayjs(startDate).format('YYYY-MM-DD'); // Lowercase 'yyyy'
-    //         const filtered = posts.filter(post =>
-    //             dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
-    //         );
-
-    //         setFilteredPosts(filtered);
-    //         setCurrentPage(1); // Reset to the first page after filtering
-
-    //     }else if (searchTitle) {
-    //         const filtered = posts.filter((post) =>
-    //             post.title.toLowerCase().includes(searchTitle.toLowerCase())
-    //         );
-
-    //         setFilteredPosts(filtered);
-    //         setCurrentPage(1); // Reset ke halaman pertama
-    //     } 
-    //      else {
-    //         setFilteredPosts(posts);
-    //     }
-    // }, [searchTitle,startDate, posts]);
 
     useEffect(() => {
         let filtered = posts;
@@ -252,7 +230,7 @@ const BeritaTerkini = () => {
                                                         }}>
                                                         {/* <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span> */}
 
-                                                        {item.tag.split(",").map((tag, index) => (
+                                                        {item.tags.split(",").map((tag, index) => (
                                                             <span key={index}>{tag ? '#' + tag : ''} </span>
                                                         ))}
                                                     </div>

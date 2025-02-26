@@ -70,7 +70,12 @@ const News = () => {
 										<div className="card-overlay">
 											<div className="card-header-b">
 												<div className="card-category-b">
-													<span className="category-b-x">{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
+													<span className="category-b-x">
+														{/* {cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'} */}
+														{item.tags.split(",").map((tag, index) => (
+                                                            <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                        ))}
+														</span>
 												</div>
 												<div className="card-title-b">
 													<h2 className="text-white">

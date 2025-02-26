@@ -45,8 +45,10 @@ const LiputanMedia = () => {
             setLoading(true);
             try {
                 const url = process.env.REACT_APP_API_URL;
-                const endpoint = process.env.REACT_APP_API_LIPUTAN_MEDIA;
-                const response = await axios.get(`${url}${endpoint}`);
+                // const endpoint = process.env.REACT_APP_API_LIPUTAN_MEDIA;
+                // const response = await axios.get(`${url}${endpoint}`);
+
+                const response = await axios.get(`${url}/posts`);
                 setPosts(response.data);
                 setFilteredPosts(response.data);
             } catch (err) {
@@ -214,7 +216,7 @@ const LiputanMedia = () => {
                                                     <div className="event-card-info-x " style={{ color: `#F2994A` }}>
 
                                                         {/* <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span> */}
-                                                        {item.tag.split(",").map((tag, index) => (
+                                                        {item.tags.split(",").map((tag, index) => (
                                                             <span key={index}>{tag ? '#' + tag : ''} </span>
                                                         ))}
                                                     </div>

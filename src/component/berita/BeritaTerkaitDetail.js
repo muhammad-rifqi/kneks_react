@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 const BeritaTerkaitDetail = () => {
     dayjs.locale('id');
     const { t } = useTranslation()
-    const { id,slug } = useParams();
+    const { id, slug } = useParams();
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -31,20 +31,21 @@ const BeritaTerkaitDetail = () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
                     const endpoint = process.env.REACT_APP_API_POST;
-                    const responsei = await axios.get(`${url}${endpoint}`);
-                    
+                    const responsei = await axios.get(`${url}/newsdetail/${id}`);
+                    const responlain = await axios.get(`${url}${endpoint}`);
+
                     const foundItem = responsei.data.find(
                         (post) =>
                             post.id === Number(id) &&
                             convertToSlug(post.title) === slug
                     );
 
-                    if (responsei) {
-                        setItemx(responsei.data);
+                    // throw new Error("Error!");
+
+                    if (responlain) {
+                        setItemx(responlain.data);
                         setItem(foundItem);
                     }
-                    console.log(responsei.data)
-                    console.log(foundItem)
                 } catch (err) {
                     Swal.fire({
                         icon: "error",
@@ -60,7 +61,7 @@ const BeritaTerkaitDetail = () => {
                 effectrun.current = true
             }
         }
-    }, [id,slug]);
+    }, [id, slug]);
     const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
     return (
@@ -117,17 +118,9 @@ const BeritaTerkaitDetail = () => {
                                 <h4>Tags :</h4>
                             </div>
                             <div className="news-details-list-button">
-                                <a href="#t" className="btn btn-primary">#Culturse</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
+                                {rows?.tagging.split(",").map((tag, index) => (
+                                    <a href="#t" key={index} className="btn btn-primary">{tag}</a>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -145,23 +138,22 @@ const BeritaTerkaitDetail = () => {
                             </div>
                         </div>
                         <div className="row row-gutter-30">
-                            {itemx.slice(0, 3).map((item) => {
+                        {itemx.slice(0, 3).map((item) => {
                                 return (
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/liputan-media/${convertToSlug(item.title)}`}>
-                                                    <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} />
-                                                    {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
-                                                </a>
+                                                <a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}> <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} /></a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
-                                                    <span>#BERITABARU</span>
+                                                    {item.tags.split(",").map((tag, index) => (
+                                                        <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                    ))}
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/liputan-media/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
