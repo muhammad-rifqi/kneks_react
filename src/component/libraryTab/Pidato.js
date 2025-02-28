@@ -9,7 +9,9 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { Modal, Button } from "react-bootstrap";
 import { useCookies } from 'react-cookie';
+
 const Pidato = () => {
     const [cookies] = useCookies(['i18next']);
     const [loading, setLoading] = useState(true);
@@ -17,7 +19,9 @@ const Pidato = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState("");
     const postsPerPage = 8;
-
+    const [showModal, setShowModal] = useState(false);
+    const [passcode, setPasscode] = useState("");
+    const [file, setFile] = useState(null);
     const formatDate = (date, locale = 'en') => {
         dayjs.locale(locale); // Set the locale dynamically
         return dayjs(date).format('DD MMMM YYYY'); // Format the date
@@ -105,6 +109,20 @@ const Pidato = () => {
         return paginationItems;
     }, [currentPage, totalPages]);
 
+    // const handleDownload = (fileUrl) => {
+    //     if (passcode === "123456") { // Ganti dengan passcode yang benar
+    //         const link = document.createElement("a");
+    //         link.href = fileUrl;
+    //         link.setAttribute("download", "file.pdf"); // Bisa diubah sesuai nama file
+    //         document.body.appendChild(link);
+    //         link.click();
+    //         document.body.removeChild(link);
+    //         setShowModal(false);
+    //         setPasscode(""); // Reset input
+    //     } else {
+    //         alert("Passcode salah!");
+    //     }
+    // };
 
     return (
         <>
@@ -149,11 +167,12 @@ const Pidato = () => {
                                         <div className="d-flex justify-content-between align-items-end">
                                             <p>{cookies.i18next === 'id' ? formatDate(item.date, 'id') : formatDate(item.date, 'en')}</p>
                                             <a
-                                                data-bs-toggle="tooltip"
                                                 title="Downloadable"
-                                                href={item?.file}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
+                                                href="#download"
+                                                onClick={() => {
+                                                    setShowModal(true)
+                                                    setFile(item?.file)
+                                                }}
                                             >
                                                 <i className="fa-solid fa-download" aria-hidden="true"></i>
                                             </a>
@@ -185,6 +204,52 @@ const Pidato = () => {
                     </div>
                 )}
             </div>
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>Enter Passcode</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+                        <Form.Group>
+                            <Form.Label>Passcode</Form.Label>
+                            <Form.Control
+                                type="password"
+                                value={passcode}
+                                onChange={(e) => setPasscode(e.target.value)}
+                                placeholder="Enter passcode"
+                            />
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowModal(false)}>
+                        Cancel
+                    </Button>
+                    <Button variant="success"
+                        onClick={() => {
+                            if (passcode === "123456") {
+                                const link = document.createElement("a");
+                                link.href = file || "#";
+                                link.setAttribute("download", "file.pdf");
+                                document.body.appendChild(link);
+                                link.click();
+                                document.body.removeChild(link);
+                                setShowModal(false);
+                                setPasscode("");
+                            } else {
+
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Oops...",
+                                    text: "Passcode salah!",
+                                });
+                            }
+                        }}
+                    >
+                        Submit
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     );
 };

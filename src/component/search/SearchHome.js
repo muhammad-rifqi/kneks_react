@@ -176,7 +176,9 @@ const SearchHome = () => {
                                             <div
                                                 className='event-card-info-x'
                                                 style={{ color: `#F2994A` }}>
-                                                <span>#BERITABARU</span>
+                                                {item.tag.split(",").map((tag, index) => (
+                                                    <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                ))}
                                             </div>
                                             <div className='event-card-title pb-4'>
                                                 <h4>
