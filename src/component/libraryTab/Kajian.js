@@ -202,7 +202,8 @@ const Kajian = () => {
                                 type="password"
                                 value={passcode}
                                 onChange={(e) => setPasscode(e.target.value)}
-                                placeholder="Enter passcode"
+                                placeholder="Masukkan passcode"
+                                className="border"
                             />
                         </Form.Group>
                     </Form>
