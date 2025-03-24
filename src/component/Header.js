@@ -120,7 +120,7 @@ const Header = () => {
                 </a>
               </div>
               <div className="search-box">
-                <a href="https://webdev.rifhandi.com/register">
+                <a href="https://cms-dev.kneks.go.id/">
                   <img src="/assets/image/person-circle.svg" className="rounded-circle" alt="img-person"
                     width="32"
                     height="32"
