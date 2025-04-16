@@ -173,8 +173,6 @@ const Footer = () => {
                   </div>
 
                   <div className="footer-widget-socials ">
-
-
                     {isEkonomiSyariah ? (
                       <>
                         
@@ -451,7 +449,9 @@ const Footer = () => {
               />
             </a>
           </div>
-          <div className="mobile-nav-container"></div>
+          <div className="mobile-nav-container">
+         
+          </div>
           <ul className="mobile-nav-contact list-unstyled">
             <li>
               <i className="fa-solid fa-phone"></i>

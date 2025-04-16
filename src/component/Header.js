@@ -7,12 +7,13 @@ import { useTranslation } from 'react-i18next';
 import { useCookies } from 'react-cookie';
 import Swal from "sweetalert2";
 import axios from "axios";
+import $ from 'jquery';
 const Header = () => {
 
   const location = useLocation();
 
   // const isKdeksPage = location.pathname === '/kdeks/';
-
+  const { t } = useTranslation();
   const [activeMenu, setActiveMenu] = useState(location.pathname); // Initial state
   const [dataKota, setDataKota] = useState([]); // Initial state
   const [menux, setMenu] = useState([]);
@@ -101,6 +102,20 @@ const Header = () => {
   //   // Implement search logic if needed
   //   console.log('Cari apa' + searchTerm)
   // };
+
+  useEffect(() => {
+    const menuEl = $('.main-menu .navigation ul')[0];
+    if (menuEl) {
+      const menu_content = menuEl.outerHTML;
+  
+      $('.mobile-nav-container').html(menu_content);
+      $('.mobile-nav-container .main-menu-list li.has-dropdown > a').append('<button><i class="fa-solid fa-chevron-right"></i></button>');
+      $('.mobile-nav-container .main-menu-list li.has-dropdown > a button').on('click', function () {
+        $(this).toggleClass('expanded');
+        $(this).parents('a').siblings('ul').slideToggle();
+      });
+    }
+  }, [menux]);
   return (
     <>
       <div id="pre-loader">
@@ -144,75 +159,101 @@ const Header = () => {
 
             </div>
           </div>
-          <div className="main-menu-inner">
-            <div className="main-menu-left">
-              <div className={isKdeksPage ? "" : "main-menu-logo"}>
+          <div className="main-menu sticky-header">
+            <div className="main-menu-inner">
+              <div className="main-menu-left">
+                <div className={isKdeksPage ? "" : "main-menu-logo"}>
 
-                {/* <a href={isKdeksPage ? "#kdeks" : "/"}>
+                  {/* <a href={isKdeksPage ? "#kdeks" : "/"}>
                   <img
                     src={isKdeksPage ? "/assets/image/logoKdeks.png" : "/assets/image/kneks2.png"}
                     alt="logo"
                     width="280"
                   />
                 </a> */}
+                  {isKdeksPage ? (
+                    // <a href="/kdeks">
+                    //   <img
+                    //     src="/assets/image/logoKdeks.png"
+                    //     alt="logo"
+                    //     width="200"
+                    //   />
+                    // </a>
+                    ""
+                  ) : (
+                    <>
+                      <a href="/">
+                        <img
+                          src="/assets/image/logo1.png"
+                          alt="logo"
+                          className="logo-large"
+                        />
+                      </a>
+                      <span className="separator"></span>
+                      <a href="/tentang-ekonomi-syariah">
+                        <img
+                          src="/assets/image/logo2.png"
+                          alt="logo"
+                          className="logo-small"
+                        />
+                      </a>
+                    </>
+                  )}
+                </div>
+
                 {isKdeksPage ? (
-                  // <a href="/kdeks">
-                  //   <img
-                  //     src="/assets/image/logoKdeks.png"
-                  //     alt="logo"
-                  //     width="200"
-                  //   />
-                  // </a>
+                  // <div className="navigation">
+                  //   <ul className="main-menu-list list-unstyled">
+
+                  //   </ul>
+                  // </div>
                   ""
                 ) : (
-                  <>
-                    <a href="/">
-                      <img
-                        src="/assets/image/logo1.png"
-                        alt="logo"
-                        className="logo-large"
-                      />
-                    </a>
-                    <span className="separator"></span>
-                    <a href="/tentang-ekonomi-syariah">
-                      <img
-                        src="/assets/image/logo2.png"
-                        alt="logo"
-                        className="logo-small"
-                      />
-                    </a>
-                  </>
-                )}
-              </div>
-
-              {isKdeksPage ? (
-                // <div className="navigation">
-                //   <ul className="main-menu-list list-unstyled">
-
-                //   </ul>
-                // </div>
-                ""
-              ) : (
-                <div className="navigation">
-                  <ul className="main-menu-list list-unstyled">
-                    {menux.map((item, index) => (
-                      <li key={index} className={activeMenu === item.menu_link ? "active" : ""}>
-                        <a onClick={() => handleMenuClick(item.menu_link)} href={item.menu_link}>
-                          {cookies.i18next === 'en' ? item.menu_name_en : item.menu_name}
-                        </a>
-                        {item.menu_sub.length > 0 && (
-                          <ul className="list-unstyled">
-                            {item.menu_sub.map((detail, detailIndex) => (
-                              <li key={detailIndex}>
-                                <a href={detail.submenu_link}>{cookies.i18next === 'en' ? detail.submenu_name_en : detail.submenu_name}</a>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                  {/* <li className={` ${activeMenu === '/' ? 'active' : ''}`}>
+                  <div className="navigation">
+                    <ul className="main-menu-list list-unstyled">
+                      {/* {menux.map((item, index) => (
+                        <li key={index} className={activeMenu === item.menu_link ? "active" : ""}>
+                          <a onClick={() => handleMenuClick(item.menu_link)} href={item.menu_link}>
+                            {cookies.i18next === 'en' ? item.menu_name_en : item.menu_name}
+                          </a>
+                          {item.menu_sub.length > 0 && (
+                            <ul className="list-unstyled">
+                              {item.menu_sub.map((detail, detailIndex) => (
+                                <li key={detailIndex}>
+                                  <a href={detail.submenu_link}>{cookies.i18next === 'en' ? detail.submenu_name_en : detail.submenu_name}</a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </li>
+                      ))} */}
+                      {Array.isArray(menux) && menux.length > 0 ? (
+                        menux.map((item, index) => (
+                          <li
+                            key={index}
+                            className={`${item.menu_sub.length > 0 ? "has-dropdown" : ""} ${activeMenu === item.menu_link ? "active" : ""}`}
+                          >
+                            <a onClick={() => handleMenuClick(item.menu_link)} href={item.menu_link}>
+                              {cookies.i18next === 'en' ? item.menu_name_en : item.menu_name}
+                            </a>
+                            {item.menu_sub.length > 0 && (
+                              <ul className="list-unstyled">
+                                {item.menu_sub.map((detail, detailIndex) => (
+                                  <li key={detailIndex}>
+                                    <a href={detail.submenu_link}>
+                                      {cookies.i18next === 'en' ? detail.submenu_name_en : detail.submenu_name}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </li>
+                        ))
+                      ) : (
+                        <li><span>No menu found</span></li>
+                      )}
+                    </ul>
+                    {/* <li className={` ${activeMenu === '/' ? 'active' : ''}`}>
                       <a onClick={() => handleMenuClick('/')} href="/">{t('menu.home')}</a>
                     </li>
                     <li className="has-dropdown">
@@ -225,7 +266,7 @@ const Header = () => {
                         <li><a href="/galeri-video">{t('menu.galeriVideo')}</a></li>
                       </ul>
                     </li> */}
-                  {/* <li className="has-dropdown">
+                    {/* <li className="has-dropdown">
                       <a href="#t">{t('menu.direktorat')}</a>
                       <ul className="list-unstyled">
                         <li><a href="/industri-produk-halal/1">{t('menu.industriProdukHalal')}</a></li>
@@ -233,12 +274,12 @@ const Header = () => {
                         <li><a href="/keuangan-sosial-syariah/3">{t('menu.keuanganSosialSyariah')}</a></li>
                         <li><a href="/bisnis-dan-kewirausahaan-syariah/4">{t('menu.bisnisDanKewirausahaan')}</a></li>
                         <li><a href="/infrastruktur-ekosistem-syariah/5">{t('menu.infrastrukturEkosistem')}</a></li> */}
-                  {/* {menux.map((item, index) => (
+                    {/* {menux.map((item, index) => (
                           <li key={index}>
                             <a href={`/${convertToSlug(item.title)}/${item.id}`}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
                           </li>
                         ))} */}
-                  {/* </ul>
+                    {/* </ul>
                     </li>
                     <li className="has-dropdown">
                       <a href="#t">{t('menu.beritaKegiatan')}</a>
@@ -246,17 +287,17 @@ const Header = () => {
                         <li><a href="/berita-terkini">{t('menu.beritaTerkini')}</a></li>
                         {/* <li><a href="/berita-direktorat">{t('menu.beritaDirektorat')}</a></li>
                         <li><a href="/berita-kdeks">{t('menu.beritaKdeks')}</a></li> */}
-                  {/* <li><a href="/liputan-media">{t('menu.liputanMedia')}</a></li>
+                    {/* <li><a href="/liputan-media">{t('menu.liputanMedia')}</a></li>
                         <li><a href="/siaran-pers">{t('menu.siaranPers')}</a></li>
                         <li><a href="/opini">{t('menu.opini')}</a></li>  */}
 
-                  {/* <li><a href="/info-terkini">{t('menu.infoTerkini')}</a></li> */}
-                  {/* </ul>
+                    {/* <li><a href="/info-terkini">{t('menu.infoTerkini')}</a></li> */}
+                    {/* </ul>
                     </li> */}
-                  {/* <li className={` ${activeMenu === '/berita-kegiatan' ? 'active' : ''}`}>
+                    {/* <li className={` ${activeMenu === '/berita-kegiatan' ? 'active' : ''}`}>
                       <a onClick={() => handleMenuClick('/berita-kegiatan')} href="/berita-kegiatan">{t('menu.beritaKegiatan')}</a>
                     </li> */}
-                  {/* <li className={` ${activeMenu === '/agenda' ? 'active' : ''}`}>
+                    {/* <li className={` ${activeMenu === '/agenda' ? 'active' : ''}`}>
                       <a onClick={() => handleMenuClick('/agenda')} href="/agenda">{t('menu.agenda')}</a>
                     </li>
                     <li className={` ${activeMenu === '/e-pustaka' ? 'active' : ''}`}>
@@ -271,8 +312,9 @@ const Header = () => {
                     <li className={` ${activeMenu === '/kontak' ? 'active' : ''}`}>
                       <a onClick={() => handleMenuClick('/kontak')} href="/kontak">{t('menu.kontak')}</a>
                     </li> */}
-                </div>
-              )}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
