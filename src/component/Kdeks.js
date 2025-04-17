@@ -98,8 +98,8 @@ const Kdeks = () => {
                                         </>
                                     ) : (
                                         <>
-                                            <h2 className="section-title">{cookies.i18next === 'en' ? postTentang?.about_en : postTentang?.about}</h2>
-                                            <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? postTentang?.about_content_en : postTentang?.about_content }} />
+                                            <h2 className="section-title">{cookies.i18next === 'en' ? (postTentang?.about_en === null ? postTentang?.about_en : "Not Title") : (postTentang?.about === null ? postTentang?.about : "Tidak ada judul")}</h2>
+                                            <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? (postTentang?.about_content_en === null ? postTentang?.about_content_en : "Not content") : (postTentang?.about_content === null ? postTentang?.about_content : "Tidak ada konten") }} />
                                         </>
                                     )}
                                 </div>
@@ -117,8 +117,8 @@ const Kdeks = () => {
                                         </>
                                     ) : (
                                         <>
-                                            <h2 className="section-title">{cookies.i18next === 'en' ? postTentang?.history_en : postTentang?.history}</h2>
-                                            <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? postTentang?.about_content_en : postTentang?.about_content }} />
+                                            <h2 className="section-title">{cookies.i18next === 'en' ? (postTentang?.history_en===null ? postTentang?.history_en:'Not title' ) : (postTentang?.history === null ?postTentang?.history:"Tidak ada judul")}</h2>
+                                            <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? (postTentang?.about_content_en=== null ?postTentang?.about_content_en:'Not content') : (postTentang?.about_content===null ? postTentang?.about_content: "Tidak ada content") }} />
                                         </>
                                     )}
                                 </div>
