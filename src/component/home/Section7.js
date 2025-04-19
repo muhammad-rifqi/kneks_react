@@ -115,7 +115,13 @@ const Section7 = () => {
 											<div className="berita-card-kdeks">
 												<div className="berita-card-imgbox-berita">
 													<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
-														<img src={item.image} className="" alt={item.title} />
+														<img
+															src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+															onError={(e) => {
+																e.target.onerror = null;
+																e.target.src = `/assets/image/foto-beritas.png`;
+															}}
+															className="" alt={item.title} />
 													</a>
 												</div>
 
@@ -125,8 +131,8 @@ const Section7 = () => {
 															{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}
 														</span> */}
 														{item.tags.split(",").map((tag, index) => (
-                                                            <span key={index}>{tag ? '#' + tag : ''} </span>
-                                                        ))}
+															<span key={index}>{tag ? '#' + tag : ''} </span>
+														))}
 													</div>
 													<div className="event-card-title pb-2">
 														<h4>

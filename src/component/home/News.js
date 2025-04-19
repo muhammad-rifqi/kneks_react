@@ -51,51 +51,57 @@ const News = () => {
 	return (
 		<section className="news-section">
 			<div className="portfolio-content conatainer-fluid">
-			<div className="container">
-				<div className="blog-box">
-					<div className="section-title-box text-center">
-						<h2 className="section-title" style={{ color: '#146AA4' }}>{t('menu.beritaKegiatan')}</h2>
+				<div className="container">
+					<div className="blog-box">
+						<div className="section-title-box text-center">
+							<h2 className="section-title" style={{ color: '#146AA4' }}>{t('menu.beritaKegiatan')}</h2>
+						</div>
 					</div>
-				</div>
-				<div className="row ">
-					{posts.length > 0 ? (
+					<div className="row ">
+						{posts.length > 0 ? (
 
-						posts.slice(0, 2).map((item) => (
-							<div className="col-md-6 col-lg-6" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" key={item.id}>
-								<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
-									<div className="card-box-b card-shadow news-box">
-										<div className="img-box-b-home">
-											<img src={item.image} alt={item.title} className="img-b img-fluid" />
-										</div>
-										<div className="card-overlay">
-											<div className="card-header-b">
-												<div className="card-category-b">
-													<span className="category-b-x">
-														{/* {cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'} */}
-														{item.tags.split(",").map((tag, index) => (
-                                                            <span key={index}>{tag ? '#' + tag : ''} </span>
-                                                        ))}
+							posts.slice(0, 2).map((item) => (
+								<div className="col-md-6 col-lg-6" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" key={item.id}>
+									<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
+										<div className="card-box-b card-shadow news-box">
+											<div className="img-box-b-home">
+												<img
+													src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+													onError={(e) => {
+														e.target.onerror = null;
+														e.target.src = `/assets/image/foto-beritas.png`;
+													}}
+													alt={item.title} className="img-b img-fluid" />
+											</div>
+											<div className="card-overlay">
+												<div className="card-header-b">
+													<div className="card-category-b">
+														<span className="category-b-x">
+															{/* {cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'} */}
+															{item.tags.split(",").map((tag, index) => (
+																<span key={index}>{tag ? '#' + tag : ''} </span>
+															))}
 														</span>
-												</div>
-												<div className="card-title-b">
-													<h2 className="text-white">
-														{cookies.i18next === 'id' ? item.title : item.title_en}
-													</h2>
-												</div>
-												<div className="card-date">
-													<span className="date-b">{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
+													</div>
+													<div className="card-title-b">
+														<h2 className="text-white">
+															{cookies.i18next === 'id' ? item.title : item.title_en}
+														</h2>
+													</div>
+													<div className="card-date">
+														<span className="date-b">{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</a>
-							</div>
-						))
+									</a>
+								</div>
+							))
 
-					) : (
-						<p className="text-center">No posts available.</p>
-					)}
-				</div>
+						) : (
+							<p className="text-center">No posts available.</p>
+						)}
+					</div>
 				</div>
 			</div>
 		</section>

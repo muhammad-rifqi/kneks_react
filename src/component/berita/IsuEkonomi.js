@@ -199,7 +199,11 @@ const IsuEkonomi = () => {
                                                     <a href={`/isu-ekonomi/${item.id}/${convertToSlug(item.title)}`}>
                                                         {/* <img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} /> */}
                                                         <img
-                                                            src={item?.image}
+                                                            src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                            onError={(e) => {
+                                                                e.target.onerror = null;
+                                                                e.target.src = `/assets/image/foto-beritas.png`;
+                                                            }}
                                                             className='img-fluid w-100'
                                                             alt={cookies.i18next === 'id' ? item.title : item.title_en}
                                                         />

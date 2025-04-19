@@ -94,9 +94,13 @@ const OpiniDetail = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
                                     {/* <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} width={`100%`} className="img-fluid" alt={cookies.i18next === 'id' ? rows.title : rows.title_en} /> */}
-                                    <img src={
-                                        rows?.image
-                                    } className="img-fluid" width={`100%`} alt={cookies.i18next === 'id' ? rows?.title : rows?.title_en} />
+                                    <img
+                                        src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image}
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = `/assets/image/foto-beritas.png`;
+                                        }}
+                                        className="img-fluid" width={`100%`} alt={cookies.i18next === 'id' ? rows?.title : rows?.title_en} />
                                 </div>
                             </div>
                             <div className="row">
@@ -128,11 +132,15 @@ const OpiniDetail = () => {
                             <div className="news-details-list-title pb-3">
                                 <h4>Tags :</h4>
                             </div>
-                            <div className="news-details-list-button">
-                                {rows?.tagging.split(",").map((tag, index) => (
-                                    <a href="#t" key={index} className="btn btn-primary">{tag}</a>
-                                ))}
-                            </div>
+                            {(rows?.tagging || "").trim().length > 0 && (
+                                <div className="news-details-list-button">
+                                    {(rows?.tagging || "")
+                                        .split(",")
+                                        .map((tag, index) => (
+                                            <a href="#t" key={index} className="btn btn-primary">{tag.trim()}</a>
+                                        ))}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </section>
@@ -156,14 +164,18 @@ const OpiniDetail = () => {
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>
                                                     {/* <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} className="img-fluid" alt={item.title} /> */}
-                                                    <img src={
-                                                        item?.image
-                                                    } className="img-fluid" alt={item.title} />
+                                                    <img
+                                                        src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                        onError={(e) => {
+                                                            e.target.onerror = null;
+                                                            e.target.src = `/assets/image/foto-beritas.png`;
+                                                        }}
+                                                        className="img-fluid" alt={item.title} />
                                                 </a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
-                                                {item.tags.split(",").map((tag, index) => (
+                                                    {item.tags.split(",").map((tag, index) => (
                                                         <span key={index}>{tag ? '#' + tag : ''} </span>
                                                     ))}
                                                 </div>

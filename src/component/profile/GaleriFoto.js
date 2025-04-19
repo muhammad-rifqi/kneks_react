@@ -210,7 +210,11 @@ const GaleriFoto = () => {
                                             <div className='img-box-b'>
                                                 <img
                                                     // src={item.photo ? `${process.env.REACT_APP_API_IMAGE}${item.photo}` : "assets/image/defaulttumbnail.jpeg"}
-                                                    src={item.photo}
+                                                    src={item?.photo === "" ? '/assets/image/foto-beritas.png' : item?.photo}
+                                                    onError={(e) => {
+                                                        e.target.onerror = null;
+                                                        e.target.src = `/assets/image/foto-beritas.png`;
+                                                    }}
                                                     className='img-fluid img-b cover-image'
                                                     alt={item.title}
                                                 />

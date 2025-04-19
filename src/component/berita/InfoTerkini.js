@@ -62,7 +62,7 @@ const InfoTerkini = () => {
             const filtered = posts.filter(post =>
                 dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
             );
-          
+
             setFilteredPosts(filtered);
             setCurrentPage(1); // Reset to the first page after filtering
 
@@ -71,14 +71,14 @@ const InfoTerkini = () => {
         //     const filtered = posts.filter((post) =>
         //         post.title.toLowerCase().includes(searchTitle.toLowerCase())
         //     );
-        
+
         //     setFilteredPosts(filtered);
         //     setCurrentPage(1); // Reset ke halaman pertama
         // } 
-         else {
+        else {
             setFilteredPosts(posts);
         }
-    }, [searchTitle,startDate, posts]);
+    }, [searchTitle, startDate, posts]);
 
 
     const lastPostIndex = currentPage * postsPerPage;
@@ -134,7 +134,7 @@ const InfoTerkini = () => {
             placeholder="Filter Tanggal"
             readOnly // Makes the input read-only
             size="sm"
-            style={{paddingTop:'8px',paddingBottom:'9px', border:'1px solid #ccc'}}
+            style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc' }}
         />
     ));
 
@@ -187,7 +187,13 @@ const InfoTerkini = () => {
                                                 <div className="berita-card-imgbox ">
                                                     <a href={`/berita-terkini/${item.id}/${convertToSlug(item.title)}`}>
                                                         {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
-                                                        <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} />
+                                                        <img
+                                                            src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                            onError={(e) => {
+                                                                e.target.onerror = null;
+                                                                e.target.src = `/assets/image/foto-beritas.png`;
+                                                            }}
+                                                            className="img-fluid" alt={item.title} />
                                                     </a>
                                                 </div>
                                                 <div className="berita-content ">

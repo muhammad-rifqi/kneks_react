@@ -216,9 +216,14 @@ const BeritaTerkini = () => {
                                                         )}`}>
                                                         {/* <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} />  */}
                                                         <img
-                                                            src={item?.image}
+                                                            src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                            onError={(e) => {
+                                                                e.target.onerror = null;
+                                                                e.target.src = `/assets/image/foto-beritas.png`;
+                                                            }}
                                                             className='img-fluid w-100'
                                                             alt={cookies.i18next === 'id' ? item.title : item.title_en}
+
                                                         />
                                                     </a>
                                                 </div>

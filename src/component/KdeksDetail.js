@@ -17,8 +17,10 @@ import 'dayjs/locale/en';
 import { useTranslation } from 'react-i18next';
 import SkeletonCardBerita from "../component/skeleton/CardBerita";
 import { useCookies } from 'react-cookie';
+import { useNavigate } from "react-router-dom";
 const KdeksDetail = () => {
     const [cookies] = useCookies(['i18next']);
+    const navigate = useNavigate();
     const { t } = useTranslation()
     // const [rows, setItems] = useState([]);
     const [dataKota, setDataKota] = useState([]);
@@ -52,7 +54,7 @@ const KdeksDetail = () => {
                 const url = process.env.REACT_APP_API_URL;
                 const response = await axios.get(`${url}/api_about_province_kdeks/${id}`);
                 setPostKdeks(response.data[0]);
-
+                console.log(response)
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -487,7 +489,13 @@ const KdeksDetail = () => {
                                                     <div className="berita-card">
                                                         <div className="berita-card-imgbox-direktorat-home">
                                                             <a href={item.title ? `/berita-kegiatan/${item?.id}/${convertToSlug(item?.title)}` : ''}>
-                                                                <img src={item?.image} className="img-fluid" alt={cookies.i18next === 'en' ? item?.title_en : item?.title} style={{ width: '100%', height: '200px', overflowY: 'hidden' }} />
+                                                                <img
+                                                                    src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                                    onError={(e) => {
+                                                                        e.target.onerror = null;
+                                                                        e.target.src = `/assets/image/foto-beritas.png`;
+                                                                    }}
+                                                                    className="img-fluid" alt={cookies.i18next === 'en' ? item?.title_en : item?.title} style={{ width: '100%', height: '200px', overflowY: 'hidden' }} />
                                                             </a>
                                                         </div>
                                                         <div className="berita-content-direktorat-xs">
@@ -768,7 +776,13 @@ const KdeksDetail = () => {
                                             <a href={item?.photo} className="my-image-links-kd" data-gall="gallery">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-b ">
-                                                        <img src={item?.photo} alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
+                                                        <img
+                                                            src={item?.photo === "" ? '/assets/image/foto-beritas.png' : item?.photo}
+                                                            onError={(e) => {
+                                                                e.target.onerror = null;
+                                                                e.target.src = `/assets/image/foto-beritas.png`;
+                                                            }}
+                                                            alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
                                                     </div>
                                                     <div className="card-overlay">
                                                         <div className="card-header-b-x">

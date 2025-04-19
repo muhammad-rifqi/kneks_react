@@ -60,7 +60,7 @@ const BeritaKegiatan = () => {
             const filtered = posts.filter(post =>
                 dayjs(post.news_datetime).format('YYYY-MM-DD') === formattedDate
             );
-          
+
             setFilteredPosts(filtered);
             setCurrentPage(1); // Reset to the first page after filtering
         } else {
@@ -122,7 +122,7 @@ const BeritaKegiatan = () => {
             placeholder="Filter Tanggal"
             readOnly // Makes the input read-only
             size="sm"
-            style={{paddingTop:'8px',paddingBottom:'9px', border:'1px solid #ccc'}}
+            style={{ paddingTop: '8px', paddingBottom: '9px', border: '1px solid #ccc' }}
         />
     ));
 
@@ -185,9 +185,13 @@ const BeritaKegiatan = () => {
                                                         href={`/berita-kegiatan/${item.id}/${convertToSlug(
                                                             item.title
                                                         )}`}>
-                                                         {/* <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} />  */}
+                                                        {/* <img src={item.image ? `${process.env.REACT_APP_API_PHOTO_BERITA}${item.image}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid w-100" alt={item.title} />  */}
                                                         <img
-                                                            src={item?.image}
+                                                            src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                            onError={(e) => {
+                                                                e.target.onerror = null;
+                                                                e.target.src = `/assets/image/foto-beritas.png`;
+                                                            }}
                                                             className='img-fluid w-100'
                                                             alt={item.title}
                                                         />
@@ -201,9 +205,9 @@ const BeritaKegiatan = () => {
                                                         }}>
                                                         {/* <span>#BERITABARU</span> */}
                                                         {item.tagging.split(",").map((tag, index) => (
-                                                        <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                            <span key={index}>{tag ? '#' + tag : ''} </span>
 
-                                                    ))}
+                                                        ))}
                                                     </div>
                                                     <div className='event-card-title pb-4'>
                                                         <h4>

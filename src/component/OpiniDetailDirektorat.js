@@ -11,11 +11,11 @@ const OpiniDetailDirektorat = () => {
     const { t } = useTranslation()
     const [cookies] = useCookies(['i18next']);
     const formatDate = (date, locale = 'en') => {
-		dayjs.locale(locale); // Set the locale dynamically
-		return dayjs(date).format('DD MMMM YYYY'); // Format the date
-	};
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
 
-    const {id,slug} = useParams(); 
+    const { id, slug } = useParams();
     const [rows, setItem] = useState(null);
 
     const [itemx, setItemx] = useState([]);
@@ -36,7 +36,7 @@ const OpiniDetailDirektorat = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_POST_DIREKTORAT_OPINI+ '/' + id;
+                    const endpoint = process.env.REACT_APP_API_POST_DIREKTORAT_OPINI + '/' + id;
                     const responsei = await axios.get(`${url}${endpoint}`);
                     // const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 
@@ -46,7 +46,7 @@ const OpiniDetailDirektorat = () => {
                             post.id === Number(id) &&
                             convertToSlug(post.title) === slug
                     );
-                   
+
                     if (responsei) {
                         setItemx(responsei.data);
                         setItem(foundItem);
@@ -67,7 +67,7 @@ const OpiniDetailDirektorat = () => {
                 effectrun.current = true
             }
         }
-    }, [id,slug]);
+    }, [id, slug]);
     // const formattedDate = rows?.news_datetime ? dayjs(rows?.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
 
@@ -77,7 +77,7 @@ const OpiniDetailDirektorat = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                       
+
                             <h3>{t('menu.opini')}</h3>
                         </div>
                     </div>
@@ -94,9 +94,13 @@ const OpiniDetailDirektorat = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
                                     {/* <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} width={`100%`} className="img-fluid" alt={cookies.i18next === 'id' ? rows.title : rows.title_en} /> */}
-                                    <img src={
-                                        rows?.image
-                                    } className="img-fluid" width={`100%`} alt={cookies.i18next === 'id' ? rows?.title : rows?.title_en} />
+                                    <img
+                                        src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image}
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = `/assets/image/foto-beritas.png`;
+                                        }}
+                                        className="img-fluid" width={`100%`} alt={cookies.i18next === 'id' ? rows?.title : rows?.title_en} />
                                 </div>
                             </div>
                             <div className="row">
@@ -128,19 +132,15 @@ const OpiniDetailDirektorat = () => {
                             <div className="news-details-list-title pb-3">
                                 <h4>Tags :</h4>
                             </div>
-                            <div className="news-details-list-button">
-                                <a href="#t" className="btn btn-primary">#Culturse</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                            </div>
+                            {(rows?.tagging || "").trim().length > 0 && (
+                                <div className="news-details-list-button">
+                                    {(rows?.tagging || "")
+                                        .split(",")
+                                        .map((tag, index) => (
+                                            <a href="#t" key={index} className="btn btn-primary">{tag.trim()}</a>
+                                        ))}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </section>
@@ -164,9 +164,13 @@ const OpiniDetailDirektorat = () => {
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>
                                                     {/* <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} className="img-fluid" alt={item.title} /> */}
-                                                    <img src={
-                                                        item?.image
-                                                    } className="img-fluid" alt={item.title} />
+                                                    <img
+                                                        src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                        onError={(e) => {
+                                                            e.target.onerror = null;
+                                                            e.target.src = `/assets/image/foto-beritas.png`;
+                                                        }}
+                                                        className="img-fluid" alt={item.title} />
                                                 </a>
                                             </div>
                                             <div className="berita-content ">

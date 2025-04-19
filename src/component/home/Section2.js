@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // import { useTranslation } from 'react-i18next';
 import 'dayjs/locale/id';
 import { useCookies } from 'react-cookie';
@@ -10,59 +10,59 @@ const Section2 = () => {
     const [menu, setMenu] = useState([]);
     useEffect(() => {
         const fetchMenu = async () => {
-          try {
-            const url = process.env.REACT_APP_API_URL;
-            const endpoint = process.env.REACT_APP_API_MENU_DIREKTORAT;
-            const response = await axios.get(`${url}${endpoint}`);
-            setMenu(response.data);
-          } catch (err) {
-            Swal.fire({
-              icon: "error",
-              title: "Oops...",
-              text: err,
-            });
-          }
+            try {
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_MENU_DIREKTORAT;
+                const response = await axios.get(`${url}${endpoint}`);
+                setMenu(response.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+                });
+            }
         };
-    
+
         fetchMenu();
-      }, []);
-      const convertToSlug = (title) => {
+    }, []);
+    const convertToSlug = (title) => {
         return title
-          .toLowerCase()
-          .trim()
-          .replace(/[^\w\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .replace(/-+/g, '-');
-      };
-      console.log(menu)
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    };
+
     return (
         <>
-        <section className="funfact-section-direktorat" >
-            <div className="container-fluid">
-                <div className="row justify-content-center">
+            <section className="funfact-section-direktorat" >
+                <div className="container-fluid">
+                    <div className="row justify-content-center">
 
-                {menu.map((item, index) => (
-                        //   <li key={index}>
-                        //     <a href={`/${convertToSlug(item.title)}`}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
-                        //   </li>
+                        {menu.map((item, index) => (
+                            //   <li key={index}>
+                            //     <a href={`/${convertToSlug(item.title)}`}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
+                            //   </li>
 
-                        <div className="col-lg-2 col-md-4 mb-3" data-aos="fade-up" key={index}>
-                        <a href={`/${convertToSlug(item.title)}/${item.id}`}>
-                            <div className="card card-dir">
-                                <div className="card-body text-center">
-                                    <div className="department-card-gambar">
-                                        <img src={item.images} alt={cookies.i18next === 'en' ? item.title_en : item.title} className="img-b img-fluid" />
+                            <div className="col-lg-2 col-md-4 mb-3" data-aos="fade-up" key={index}>
+                                <a href={`/${convertToSlug(item.title)}/${item.id}`}>
+                                    <div className="card card-dir">
+                                        <div className="card-body text-center">
+                                            <div className="department-card-gambar">
+                                                <img src={item.images} alt={cookies.i18next === 'en' ? item.title_en : item.title} className="img-b img-fluid" />
+                                            </div>
+                                            <div className="department-card-content mt-3 ">
+                                                <h5>{cookies.i18next === 'en' ? item.title_en : item.title}</h5>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="department-card-content mt-3 ">
-                                        <h5>{cookies.i18next === 'en' ? item.title_en : item.title}</h5>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
 
                         ))}
-                    {/* <div className="col-lg-2 col-md-4 mb-3" data-aos="fade-up">
+                        {/* <div className="col-lg-2 col-md-4 mb-3" data-aos="fade-up">
                         <a href="/industri-produk-halal">
                             <div className="card card-dir">
                                 <div className="card-body text-center">
@@ -133,12 +133,12 @@ const Section2 = () => {
                             </div>
                         </a>
                     </div> */}
+                    </div>
                 </div>
-            </div>
-        </section>
-        <div style={{marginBottom : '30px'}}>
+            </section>
+            <div style={{ marginBottom: '30px' }}>
 
-        </div>
+            </div>
         </>
     )
 }

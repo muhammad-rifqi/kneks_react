@@ -209,7 +209,13 @@ const LiputanMedia = () => {
                                                 <div className="berita-card-imgbox ">
                                                     <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>
                                                         {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
-                                                        <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={cookies.i18next === 'id' ? item.title : item.title_en} />
+                                                        <img
+                                                            src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                            onError={(e) => {
+                                                                e.target.onerror = null;
+                                                                e.target.src = `/assets/image/foto-beritas.png`;
+                                                            }}
+                                                            className="img-fluid" alt={cookies.i18next === 'id' ? item.title : item.title_en} />
                                                     </a>
                                                 </div>
                                                 <div className="berita-content ">

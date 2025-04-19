@@ -45,9 +45,9 @@ const BeritaKegiatanDetail = () => {
                             post.id === Number(id) &&
                             convertToSlug(post.title) === slug
                     );
-              
+
                     // throw new Error("Error!");
-      
+
                     if (responlain) {
                         setItemx(responlain.data);
                         setItem(foundItem);
@@ -92,7 +92,13 @@ const BeritaKegiatanDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src={rows?.image} width={`100%`} className="img-fluid" alt={rows?.title} />
+                                    <img
+                                        src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image}
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = `/assets/image/foto-beritas.png`;
+                                        }}
+                                        width={`100%`} className="img-fluid" alt={rows?.title} />
                                 </div>
                             </div>
                             <div className="row">
@@ -127,12 +133,15 @@ const BeritaKegiatanDetail = () => {
                             <div className="news-details-list-title pb-3">
                                 <h4>Tags : {rows?.tag}</h4>
                             </div>
-                            <div className="news-details-list-button">
-                                {
-                                    rows?.tagging.split(",").map((tag, index) => (
-                                        <a href="#t" key={index} className="btn btn-primary">{tag}</a>
-                                    ))}
-                            </div>
+                            {(rows?.tagging || "").trim().length > 0 && (
+                                <div className="news-details-list-button">
+                                    {(rows?.tagging || "")
+                                        .split(",")
+                                        .map((tag, index) => (
+                                            <a href="#t" key={index} className="btn btn-primary">{tag.trim()}</a>
+                                        ))}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </section>
@@ -155,9 +164,13 @@ const BeritaKegiatanDetail = () => {
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>
-                                                    <img src={
-                                                        item?.image
-                                                    } className="img-fluid" alt={item.title} />
+                                                    <img
+                                                        src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                        onError={(e) => {
+                                                            e.target.onerror = null;
+                                                            e.target.src = `/assets/image/foto-beritas.png`;
+                                                        }}
+                                                        className="img-fluid" alt={item.title} />
                                                     {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
                                                 </a>
                                             </div>

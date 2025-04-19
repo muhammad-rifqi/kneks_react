@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 
 const GaleriFotoDetail = () => {
-const { t } = useTranslation()
+    const { t } = useTranslation()
 
     dayjs.locale('id');
 
@@ -85,7 +85,7 @@ const { t } = useTranslation()
                 effectrun.current = true
             }
         }
-    }, [id,slug]);
+    }, [id, slug]);
 
 
     const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
@@ -112,7 +112,13 @@ const { t } = useTranslation()
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
                                     {/* <img src={rows?.photo ? `${process.env.REACT_APP_API_IMAGE}${rows?.photo}` : "/assets/image/logoKneksFooter.png"} width={'100%'} className="img-fluid" alt={rows?.title} /> */}
-                                    <img src={rows?.photo} width={'100%'} className="img-fluid" alt={rows?.title} />
+                                    <img
+                                        src={rows?.photo === "" ? '/assets/image/foto-beritas.png' : rows?.photo}
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = `/assets/image/foto-beritas.png`;
+                                        }}
+                                        width={'100%'} className="img-fluid" alt={rows?.title} />
                                 </div>
                             </div>
                             <div className="row">
@@ -143,19 +149,15 @@ const { t } = useTranslation()
                             <div className="news-details-list-title pb-3">
                                 <h4>Tags :</h4>
                             </div>
-                            <div className="news-details-list-button">
-                                <a href="#t" className="btn btn-primary">#Culturse</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                                <a href="#t" className="btn btn-primary">Government</a>
-                            </div>
+                            {(rows?.tagging || "").trim().length > 0 && (
+                                <div className="news-details-list-button">
+                                    {(rows?.tagging || "")
+                                        .split(",")
+                                        .map((tag, index) => (
+                                            <a href="#t" key={index} className="btn btn-primary">{tag.trim()}</a>
+                                        ))}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </section>
@@ -177,7 +179,14 @@ const { t } = useTranslation()
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/liputan-media/${convertToSlug(item.title)}`}> <img src="/assets/image/berita3.svg" className="img-fluid" alt={item.title} /></a>
+                                                <a href={`/liputan-media/${convertToSlug(item.title)}`}>
+                                                    <img
+                                                        src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                        onError={(e) => {
+                                                            e.target.onerror = null;
+                                                            e.target.src = `/assets/image/foto-beritas.png`;
+                                                        }}
+                                                        className="img-fluid" alt={item.title} /></a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>

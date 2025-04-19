@@ -262,7 +262,7 @@ const JasakeuanganSyariah = () => {
             </div>
         );
     }
-    
+
     return (
         <>
             <div className="page-wrapper">
@@ -361,7 +361,14 @@ const JasakeuanganSyariah = () => {
                                         <div className="col-lg-3" key={item.id}>
                                             <div className="berita-card">
                                                 <div className="berita-card-imgbox-direktorat-home ">
-                                                    <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}><img src={item?.image} className="img-fluid" alt={item.title} style={{ width: '100%' }} /></a>
+                                                    <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>
+                                                        <img
+                                                            src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                            onError={(e) => {
+                                                                e.target.onerror = null;
+                                                                e.target.src = `/assets/image/foto-beritas.png`;
+                                                            }}
+                                                            className="img-fluid" alt={item.title} style={{ width: '100%' }} /></a>
                                                 </div>
                                                 <div className="berita-content-direktorat-x" style={{ width: '100%' }}>
                                                     <div className="direktorat-tag-home">
@@ -599,7 +606,13 @@ const JasakeuanganSyariah = () => {
                                             <a href={item?.photo} className="my-image-links" data-gall="gallery10">
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-b ">
-                                                        <img src={item?.photo} alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
+                                                        <img
+                                                            src={item?.photo === "" ? '/assets/image/foto-beritas.png' : item?.photo}
+                                                            onError={(e) => {
+                                                                e.target.onerror = null;
+                                                                e.target.src = `/assets/image/foto-beritas.png`;
+                                                            }}
+                                                            alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
                                                     </div>
                                                     <div className="card-overlay">
                                                         <div className="card-header-b-x">
