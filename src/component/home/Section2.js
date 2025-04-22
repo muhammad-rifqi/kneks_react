@@ -39,22 +39,22 @@ const Section2 = () => {
         <>
             <section className="funfact-section-direktorat" >
                 <div className="container-fluid">
-                    <div className="row justify-content-center">
+                    <div className="row justify-content-center ">
 
                         {menu.map((item, index) => (
                             //   <li key={index}>
                             //     <a href={`/${convertToSlug(item.title)}`}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
                             //   </li>
 
-                            <div className="col-lg-2 col-md-4 mb-3" data-aos="fade-up" key={index}>
+                            <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-3" data-aos="fade-up" key={index}>
                                 <a href={`/${convertToSlug(item.title)}/${item.id}`}>
-                                    <div className="card card-dir">
-                                        <div className="card-body text-center">
-                                            <div className="department-card-gambar">
+                                    <div className="card card-dir h-100">
+                                        <div className="card-body text-center ">
+                                            <div className="department-card-gambar mb-3">
                                                 <img src={item.images} alt={cookies.i18next === 'en' ? item.title_en : item.title} className="img-b img-fluid" />
                                             </div>
                                             <div className="department-card-content mt-3 ">
-                                                <h5>{cookies.i18next === 'en' ? item.title_en : item.title}</h5>
+                                                <h5 className="mb-0">{cookies.i18next === 'en' ? item.title_en : item.title}</h5>
                                             </div>
                                         </div>
                                     </div>
