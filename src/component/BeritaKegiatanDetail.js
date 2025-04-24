@@ -135,10 +135,9 @@ const BeritaKegiatanDetail = () => {
                             </div>
                             {(rows?.tagging || "").trim().length > 0 && (
                                 <div className="news-details-list-button">
-                                    {(rows?.tagging || "")
-                                        .split(",")
+                                    {(JSON.parse(rows?.tagging) || "")
                                         .map((tag, index) => (
-                                            <a href="#t" key={index} className="btn btn-primary">{tag.trim()}</a>
+                                            <a href="#t" key={index} className="btn btn-primary">{tag.value}</a>
                                         ))}
                                 </div>
                             )}

@@ -204,7 +204,7 @@ const BeritaKegiatan = () => {
                                                             color: `#F2994A`,
                                                         }}>
                                                         {/* <span>#BERITABARU</span> */}
-                                                        {item.tagging.split(",").map((tag, index) => (
+                                                        {item.tag.split(",").map((tag, index) => (
                                                             <span key={index}>{tag ? '#' + tag : ''} </span>
 
                                                         ))}

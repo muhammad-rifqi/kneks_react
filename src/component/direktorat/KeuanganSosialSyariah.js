@@ -364,7 +364,7 @@ const KeuanganSosialSyariah = () => {
                                                                 e.target.onerror = null;
                                                                 e.target.src = `/assets/image/foto-beritas.png`;
                                                             }}
-                                                            className="img-fluid" alt={item.title} style={{ width: '100%', height: '220px', overflowY: 'hidden' }} /></a>
+                                                            className="img-fluid" alt={item.title} style={{ width: '100%', height: '150px', overflowY: 'hidden' }} /></a>
                                                 </div>
                                                 <div className="berita-content-direktorat-x" style={{ width: '100%' }}>
                                                     <div className="direktorat-tag-home">
