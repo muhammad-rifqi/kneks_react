@@ -40,19 +40,19 @@ const Section8 = () => {
 
 	}, []);
 	const convertToSlug = (title) => {
-        if (!title) return ""; // Handle null or undefined title
-        return title
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/\s+/g, '-')
-            .replace(/-+/g, '-');
-    };
-	
+		if (!title) return ""; // Handle null or undefined title
+		return title
+			.toLowerCase()
+			.trim()
+			.replace(/[^\w\s-]/g, '')
+			.replace(/\s+/g, '-')
+			.replace(/-+/g, '-');
+	};
+
 	return (
 		<section className="mayor-section">
 			<div className="container">
-				<div className="blog-box-x" data-aos="flip-up" style={{marginTop: '-60px'}}>
+				<div className="blog-box-x" data-aos="flip-up" style={{ marginTop: '-60px' }}>
 					<div className="section-title-box text-center">
 						<h2 className="section-title">{t('rekomendasi')}</h2>
 					</div>
@@ -61,13 +61,13 @@ const Section8 = () => {
 					{posts.length > 0 ? (
 
 						posts.slice(0, 4).map((item) => (
-							<div style={{marginTop: '-40px'}} className="col-lg-3 col-md-6" data-aos="fade-down-left" key={item?.id}>
+							<div style={{ marginTop: '-40px' }} className="col-lg-3 col-md-4" data-aos="fade-down-left" key={item?.id}>
 								<a href={`/agenda/${convertToSlug(item?.title)}`}>
-									<div className="card shadow p-3 mb-5 rounded card-agendas" style={{ background: `#146AA4`, color: `#ffffff` }}>
+									<div className="card shadow p-3 rounded card-agendas h-100" style={{ background: `#146AA4`, color: `#ffffff` }}>
 										<div className="card-header" style={{ borderBottom: `1px solid #ffffff`, paddingBottom: `10px`, background: `#146AA4` }}><h4>{cookies.i18next === 'id' ? item.title : item.title_en}</h4></div>
 										<div className="card-body">
 											<div className="card-text">{cookies.i18next === 'id' ? formatDate(item.agenda_datetime, 'id') : formatDate(item.agenda_datetime, 'en')}</div>
-											<div className="card-text">{ dayjs(item.agenda_datetime).locale('id').format('h:mm')} WIB</div>
+											<div className="card-text">{dayjs(item.agenda_datetime).locale('id').format('h:mm')} WIB</div>
 
 										</div>
 										<div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
@@ -82,11 +82,11 @@ const Section8 = () => {
 						<p className="text-center">No posts available.</p>
 					)}
 				</div>
-				<div className="selengkapnya" data-aos="fade-down-left" style={{textAlign : 'center',marginTop: '20px' }}>
-					<a href={`/agenda`} className="btn btn-primary btn-sm" style={{backgroundColor: "#006699"}}>
+				<div className="selengkapnya" data-aos="fade-down-left" style={{ textAlign: 'center', marginTop: '20px' }}>
+					<a href={`/agenda`} className="btn btn-primary btn-sm" style={{ backgroundColor: "#006699" }}>
 						Lihat Selengkapnya
 					</a>
-            	</div>
+				</div>
 			</div>
 		</section >
 	)

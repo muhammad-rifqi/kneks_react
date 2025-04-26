@@ -121,7 +121,7 @@ const Section5 = () => {
                                             </Card.Body>
                                         </Card>
                                     </div>
-                                    <div className='col-lg-4 my-1'>
+                                    <div className='col-lg-4 '>
                                         <Card className='text-center'>
                                             <Card.Body>
                                                 <Card.Title>

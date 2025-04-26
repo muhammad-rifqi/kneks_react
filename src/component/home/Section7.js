@@ -74,10 +74,10 @@ const Section7 = () => {
 							slidesPerView: 4,
 							spaceBetween: 20,
 						},
-						// 2048: {
-						// 	slidesPerView: 6,
-						// 	spaceBetween: 20,
-						// },
+						2048: {
+							slidesPerView: 6,
+							spaceBetween: 20,
+						},
 					},
 				});
 				// Cleanup function to destroy Swiper instance
@@ -111,8 +111,8 @@ const Section7 = () => {
 							<div className="swiper swiper-berita">
 								<div className="swiper-wrapper">
 									{posts.slice(3, 25).map((item) => (
-										<div className="col-lg-3 col-xl-3 swiper-slide" key={item.id}>
-											<div className="berita-card-kdeks">
+										<div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 swiper-slide" key={item.id}>
+											<div className="berita-card-kdeks d-flex flex-column">
 												<div className="berita-card-imgbox-berita">
 													<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
 														<img
@@ -125,22 +125,21 @@ const Section7 = () => {
 													</a>
 												</div>
 
-												<div className="berita-content-direktorat-x">
-													<div className="direktorat-tag-home">
-														{/* <span>
-															{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}
-														</span> */}
-														{item.tags.split(",").map((tag, index) => (
-															<span key={index}>{tag ? '#' + tag : ''} </span>
-														))}
-													</div>
-													<div className="event-card-title pb-2">
-														<h4>
-															<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
-														</h4>
-													</div>
-													<div className="event-card-info-direktorat">
-														<span>{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
+												<div className="berita-content-direktorat-x flex-grow-1 d-flex flex-column justify-content-between">
+													<div>
+														<div className="direktorat-tag-home mb-2">
+															{item.tags.split(",").map((tag, index) => (
+																<span key={index}>{tag ? '#' + tag : ''} </span>
+															))}
+														</div>
+														<div className="event-card-title pb-2">
+															<h4 className="mb-0">
+																<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
+															</h4>
+														</div>
+														<div className="event-card-info-direktorat mt-auto">
+															<span>{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
+														</div>
 													</div>
 												</div>
 											</div>

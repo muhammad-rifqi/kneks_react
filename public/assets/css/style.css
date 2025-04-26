@@ -10945,6 +10945,25 @@ SOCIAL MEDIA
     /* Allow text to wrap */
   }
 
+  .berita-content-direktorat-x {
+    padding: 15px;
+    background-color: var(--thm-white);
+    height: 180px;
+
+    display: -webkit-box;
+    /* Use flexbox */
+    -webkit-box-orient: vertical;
+    /* Set the orientation to vertical */
+    /* -webkit-line-clamp: 5; */
+    overflow: hidden;
+    /* Hide overflow */
+    text-overflow: ellipsis !important;
+    /* Show ellipsis */
+    /* width: 280px; */
+    white-space: normal;
+    /* Allow text to wrap */
+  }
+
   .berita-content-direktorat-xs {
     padding: 23px;
     background-color: var(--thm-white);
@@ -11072,6 +11091,18 @@ SOCIAL MEDIA
     width: 240px;
     white-space: normal;
     /* Allow text to wrap */
+  }
+
+  .berita-content-direktorat-x {
+    padding: 15px;
+    background-color: var(--thm-white);
+    height: 180px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+    white-space: normal;
   }
 
   .berita-content-direktorat-xs {
@@ -11202,6 +11233,7 @@ SOCIAL MEDIA
     white-space: normal;
     /* Allow text to wrap */
   }
+  
 
   .berita-content-direktorat-xs {
     padding: 15px;
@@ -11221,24 +11253,38 @@ SOCIAL MEDIA
     white-space: normal;
     /* Allow text to wrap */
   }
-  .berita-content-direktorat-xs {
+
+  .berita-content-direktorat-x {
     padding: 15px;
     background-color: var(--thm-white);
-    /* height: 160px; */
+    height: 180px;
 
     display: -webkit-box;
     /* Use flexbox */
     -webkit-box-orient: vertical;
     /* Set the orientation to vertical */
-    -webkit-line-clamp: 4;
+    /* -webkit-line-clamp: 5; */
     overflow: hidden;
     /* Hide overflow */
     text-overflow: ellipsis !important;
     /* Show ellipsis */
-    width: 279px;
+    /* width: 280px; */
     white-space: normal;
     /* Allow text to wrap */
   }
+  /* .berita-content-direktorat-xs {
+    padding: 15px;
+    background-color: var(--thm-white);
+   
+
+    display: -webkit-box;
+   
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+    width: 279px;
+    white-space: normal;
+  } */
 
   .team-card-content-x {
     height: 110px;
@@ -11318,6 +11364,25 @@ SOCIAL MEDIA
     white-space: normal;
     /* Allow text to wrap */
     color: #ffffff !important;
+  }
+
+  .berita-content-direktorat-x {
+    padding: 15px;
+    background-color: var(--thm-white);
+    height: 180px;
+
+    display: -webkit-box;
+    /* Use flexbox */
+    -webkit-box-orient: vertical;
+    /* Set the orientation to vertical */
+    /* -webkit-line-clamp: 5; */
+    overflow: hidden;
+    /* Hide overflow */
+    text-overflow: ellipsis !important;
+    /* Show ellipsis */
+    /* width: 280px; */
+    white-space: normal;
+    /* Allow text to wrap */
   }
 
   .berita-content-direktorat {
@@ -11704,3 +11769,7 @@ SOCIAL MEDIA
   right: -40px;
   transform: translateY(-100%);
 }
+
+
+
+
