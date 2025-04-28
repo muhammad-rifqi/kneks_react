@@ -122,7 +122,7 @@ const Data = () => {
                 </section>
                 <section className="department-details-section" >
                     <div className="container-lg">
-                        <p> <button className="btn btn-success" onClick={showPanel}> + </button> &nbsp; &nbsp; <button className="btn btn-success" onClick={hidePanel}> - </button> </p>
+                        <p> <button className="btn btn-success" onClick={showPanel}> - </button> &nbsp; &nbsp; <button className="btn btn-success" onClick={hidePanel}> + </button> </p>
                         <div className="row">
                             <div className="col-12 col-lg-3 col-xl-3" id="sidepanels">
                                 {loading ? (
