@@ -9974,6 +9974,7 @@ SOCIAL MEDIA
 }
 
 
+
 @media (max-width: 991px) {
   .berita-card-imgbox-direktorat img {
     width: 100%;
@@ -9981,7 +9982,24 @@ SOCIAL MEDIA
 }
 
 
+.berita-img-responsive {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* memastikan gambar tidak terdistorsi */
+  display: block;
+}
 
+.berita-card-imgbox-direktorat-homes {
+  width: 100%;
+  height: 200px; /* kamu bisa sesuaikan tinggi ini */
+  overflow: hidden;
+  /* border-radius: 8px; */
+}
+
+.event-card-info-direktorat-t {
+  margin-bottom: 5px;
+  /* font-size: 12px; */
+}
 
 
 .berita-content-direktorat-xs h4 {
@@ -9991,6 +10009,12 @@ SOCIAL MEDIA
 }
 
 .berita-content-direktorat-x h4 {
+  margin-top: 5px;
+  margin-bottom: 1px;
+  font-size: 16px;
+}
+
+.berita-content-direktorat-x-t h4 {
   margin-top: 5px;
   margin-bottom: 1px;
   font-size: 16px;
@@ -10012,6 +10036,11 @@ SOCIAL MEDIA
   transition: all 500ms ease;
 }
 
+.berita-content-direktorat-x-t h4>a {
+  color: inherit;
+  transition: all 500ms ease;
+}
+
 .berita-content-direktorat-xs h4>a {
   color: inherit;
   transition: all 500ms ease;
@@ -10022,6 +10051,10 @@ SOCIAL MEDIA
 }
 
 .berita-content-direktorat-x h4>a:hover {
+  color: var(--thm-primary);
+}
+
+.berita-content-direktorat-x-t h4>a:hover {
   color: var(--thm-primary);
 }
 
@@ -10036,6 +10069,11 @@ SOCIAL MEDIA
 .berita-content-direktorat-x p {
   margin-bottom: 10px;
 }
+
+.berita-content-direktorat-x-t p {
+  margin-bottom: 10px;
+}
+
 
 .berita-content-direktorat-xs p {
   margin-bottom: 10px;
@@ -10052,6 +10090,13 @@ SOCIAL MEDIA
   font-size: 13px;
   font-weight: 600;
 }
+
+.berita-content-direktorat-x-t.btn-primary {
+  padding: 11px 27px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
 
 .berita-content-direktorat-xs.btn-primary {
   padding: 11px 27px;
@@ -10964,6 +11009,25 @@ SOCIAL MEDIA
     /* Allow text to wrap */
   }
 
+  .berita-content-direktorat-x-t {
+    padding: 15px;
+    background-color: var(--thm-white);
+    height: 180px;
+
+    display: -webkit-box;
+    /* Use flexbox */
+    -webkit-box-orient: vertical;
+    /* Set the orientation to vertical */
+    /* -webkit-line-clamp: 5; */
+    overflow: hidden;
+    /* Hide overflow */
+    /* text-overflow: ellipsis !important; */
+    /* Show ellipsis */
+    /* width: 280px; */
+    white-space: normal;
+    /* Allow text to wrap */
+  }
+
   .berita-content-direktorat-xs {
     padding: 23px;
     background-color: var(--thm-white);
@@ -11089,6 +11153,25 @@ SOCIAL MEDIA
     text-overflow: ellipsis !important;
     /* Show ellipsis */
     width: 240px;
+    white-space: normal;
+    /* Allow text to wrap */
+  }
+
+  .berita-content-direktorat-x-t {
+    padding: 15px;
+    background-color: var(--thm-white);
+    height: 180px;
+
+    display: -webkit-box;
+    /* Use flexbox */
+    -webkit-box-orient: vertical;
+    /* Set the orientation to vertical */
+    /* -webkit-line-clamp: 5; */
+    overflow: hidden;
+    /* Hide overflow */
+    /* text-overflow: ellipsis !important; */
+    /* Show ellipsis */
+    /* width: 280px; */
     white-space: normal;
     /* Allow text to wrap */
   }
@@ -11234,6 +11317,24 @@ SOCIAL MEDIA
     /* Allow text to wrap */
   }
   
+  .berita-content-direktorat-x-t {
+    padding: 15px;
+    background-color: var(--thm-white);
+    height: 180px;
+
+    display: -webkit-box;
+    /* Use flexbox */
+    -webkit-box-orient: vertical;
+    /* Set the orientation to vertical */
+    /* -webkit-line-clamp: 5; */
+    overflow: hidden;
+    /* Hide overflow */
+    /* text-overflow: ellipsis !important; */
+    /* Show ellipsis */
+    /* width: 280px; */
+    white-space: normal;
+    /* Allow text to wrap */
+  }
 
   .berita-content-direktorat-xs {
     padding: 15px;
@@ -11366,7 +11467,7 @@ SOCIAL MEDIA
     color: #ffffff !important;
   }
 
-  .berita-content-direktorat-x {
+  .berita-content-direktorat-x-t {
     padding: 15px;
     background-color: var(--thm-white);
     height: 180px;
@@ -11378,9 +11479,29 @@ SOCIAL MEDIA
     /* -webkit-line-clamp: 5; */
     overflow: hidden;
     /* Hide overflow */
-    text-overflow: ellipsis !important;
+    /* text-overflow: ellipsis !important; */
     /* Show ellipsis */
     /* width: 280px; */
+    white-space: normal;
+    /* Allow text to wrap */
+  }
+
+  .berita-content-direktorat-x {
+    padding: 15px;
+    background-color: var(--thm-white);
+    height: 180px;
+
+    display: -webkit-box;
+    /* Use flexbox */
+    -webkit-box-orient: vertical;
+    /* Set the orientation to vertical */
+    -webkit-line-clamp: 1;
+    font-size: 14px !important;
+    overflow: hidden;
+    /* Hide overflow */
+    text-overflow: ellipsis !important;
+    /* Show ellipsis */
+    width: 280px;
     white-space: normal;
     /* Allow text to wrap */
   }
@@ -11518,6 +11639,25 @@ SOCIAL MEDIA
     text-overflow: ellipsis !important;
     /* Show ellipsis */
     width: 340px;
+    white-space: normal;
+    /* Allow text to wrap */
+  }
+
+  .berita-content-direktorat-x-t {
+    padding: 15px;
+    background-color: var(--thm-white);
+    height: 180px;
+
+    display: -webkit-box;
+    /* Use flexbox */
+    -webkit-box-orient: vertical;
+    /* Set the orientation to vertical */
+    /* -webkit-line-clamp: 5; */
+    overflow: hidden;
+    /* Hide overflow */
+    /* text-overflow: ellipsis !important; */
+    /* Show ellipsis */
+    /* width: 280px; */
     white-space: normal;
     /* Allow text to wrap */
   }

@@ -52,15 +52,15 @@ const Section7 = () => {
 			if (document.querySelector('.swiper-berita')) {
 				const swipers = new Swiper('.swiper-berita', {
 					// pengaturan Swiper
-					loop: true,
+					loop: false,
 
 					navigation: {
 						nextEl: '.swiper-button-next',
 						prevEl: '.swiper-button-prev',
 					},
-					autoplay: {
-						delay: 2500,
-					},
+					// autoplay: {
+					// 	delay: 2500,
+					// },
 					breakpoints: {
 						640: {
 							slidesPerView: 2,

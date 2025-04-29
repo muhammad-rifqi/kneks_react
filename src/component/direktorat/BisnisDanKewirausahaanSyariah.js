@@ -317,14 +317,20 @@ const BisnisDanKewirausahaanSyariah = () => {
                                         <div className="col-12">
                                             <div style={{ padding: '10px', backgroundColor: '#1c96c5', color: 'white' }}>
                                                 {
-                                                    detaildir[0]?.detail?.map((element) => (
-                                                        <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} key={element.id}>
-                                                            <summary>{element?.title}</summary>
-                                                            <div style={{ padding: '10px', color: 'white' }}>
-                                                                <p style={{ color: 'white' }}>{element?.description}</p>
-                                                            </div>
-                                                        </details>
-                                                    ))
+                                                    detaildir[0]?.detail && detaildir[0].detail.length > 0 ? (
+                                                        detaildir[0].detail.map((element) => (
+                                                            <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} key={element.id}>
+                                                                <summary>{element?.title}</summary>
+                                                                <div style={{ padding: '10px', color: 'white' }}>
+                                                                    <p style={{ color: 'white' }}>{element?.description}</p>
+                                                                </div>
+                                                            </details>
+                                                        ))
+                                                    ) : (
+                                                        <div style={{ padding: '10px', color: 'white' }}>
+                                                            <p style={{ color: 'white' }}>Tidak ada divisi.</p>
+                                                        </div>
+                                                    )
                                                 }
                                             </div>
                                         </div>
@@ -357,9 +363,9 @@ const BisnisDanKewirausahaanSyariah = () => {
                                 :
                                 newsdir.length > 0 ? (
                                     newsdir.slice(0, 4).map((item) => (
-                                        <div className="col-lg-3 col-md-6 col-sm-12" key={item.id}>
+                                        <div className="col-lg-3 " key={item.id}>
                                             <div className="berita-card">
-                                                <div className="berita-card-imgbox-direktorat-home ">
+                                                <div className="berita-card-imgbox-direktorat-homes " >
                                                     <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>
                                                         <img
                                                             src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
@@ -367,19 +373,23 @@ const BisnisDanKewirausahaanSyariah = () => {
                                                                 e.target.onerror = null;
                                                                 e.target.src = `/assets/image/foto-beritas.png`;
                                                             }}
-                                                            className="img-fluid W-100 shadow" alt={item.title} style={{ width: '100%' }} />
+                                                            className="img-fluid berita-img-responsive" alt={item.title} />
                                                     </a>
                                                 </div>
-                                                <div className="berita-content-direktorat-x" style={{ width: '100%' }}>
+                                                <div className="berita-content-direktorat-x-t" >
                                                     <div className="direktorat-tag-home">
                                                         <span>#BERITABARU</span>
+                                                        {/* {item?.tag.split(",").map((tag, index) => (
+                                                                                                   <span key={index}>{tag ? '#' + tag : ''} </span>
+                                       
+                                                                                               ))} */}
                                                     </div>
                                                     <div className="event-card-title-direktorat pb-2">
                                                         <h4>
                                                             <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                         </h4>
                                                     </div>
-                                                    <div className="event-card-info-direktorat">
+                                                    <div className="event-card-info-direktorat-t">
                                                         <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
                                                     </div>
                                                 </div>
