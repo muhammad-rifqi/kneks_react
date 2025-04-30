@@ -16,7 +16,7 @@ const StrukturOrganisasi = () => {
 				const url = process.env.REACT_APP_API_URL;
 				const endpoint = process.env.REACT_APP_API_STUKTUR_ORGANISASI;
 				const response = await axios.get(`${url}${endpoint}`);
-				setPosts(response.data.slice(0, 9));
+				setPosts(response.data.slice(0, 10));
 			} catch (err) {
 				Swal.fire({
 					icon: "error",
@@ -354,7 +354,7 @@ const StrukturOrganisasi = () => {
 										<div className="col-12 col-sm-6 col-md-4 offset-lg-2 offset-md-2 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}><img src={posts[7].photo ? "assets/image/profilKosong.png" : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}><img src={posts[7].photo ? `${posts[7].photo}` : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
 
 													</div>
@@ -399,7 +399,7 @@ const StrukturOrganisasi = () => {
 										<div className="col-12 col-sm-6 col-md-4 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}><img src={posts[8].photo ? "assets/image/profilKosong.png" : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}><img src={posts[8].photo ? `${posts[8].photo}` : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
 
 													</div>
