@@ -10682,7 +10682,8 @@ SOCIAL MEDIA
 .maps-indo-x g:hover {
   cursor: pointer;
   stroke: #000000 !important;
-  fill: var(--thm-primary);
+  /* fill: var(--thm-primary); */
+  fill: #f4f4f4;
 }
 
 .maps-indo-x g:focus {

@@ -61,7 +61,7 @@ const Section9 = () => {
 			},
 		};
 	}
-	console.log(data)
+	
 	return (
 		<section className='funfact-section'>
 			<div className='container'>

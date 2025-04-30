@@ -55,7 +55,7 @@ const Section6 = () => {
     }
 
     const getFillColor = (provinceName) => {
-        const defaultColor = "#f4f4f4";
+        const defaultColor = "#146aa4";
 
         const provinceData = dataKhas.find(
             (item) => item.province_name === provinceName
@@ -65,19 +65,25 @@ const Section6 = () => {
             return defaultColor;
         }
 
-		const totalTenants = provinceData.zonakhas.reduce((sum, zone) => sum + (zone.tenant || 0), 0);
+        const totalTenants = provinceData.zonakhas.reduce((sum, zone) => sum + (zone.tenant || 0), 0);
 
-		if (totalTenants <= 10) {
-			return "#f4f4f4"; // Warna untuk total tenant 0-10
-		} else if (totalTenants <= 55) {
-			return "#dbdcdc"; // Warna untuk total tenant 11-55
-		} else if (totalTenants <= 100) {
-			return "#c3c4c3"; // Warna untuk total tenant 56-100
-		} else {
-			return "#c3c4c3"; // Warna untuk total tenant lebih dari 100
-		}
+        if (totalTenants == 0) {
+            return "#146aa4"; // Warna untuk total tenant 0-10
+        } else {
+            return "#2dcd7c";
+        }
+
+        // if (totalTenants <= 10) {
+        // 	return "#f4f4f4"; // Warna untuk total tenant 0-10
+        // } else if (totalTenants <= 55) {
+        // 	return "#dbdcdc"; // Warna untuk total tenant 11-55
+        // } else if (totalTenants <= 100) {
+        // 	return "#c3c4c3"; // Warna untuk total tenant 56-100
+        // } else {
+        // 	return "#c3c4c3"; // Warna untuk total tenant lebih dari 100
+        // }
     };
-  
+
     return (
         <>
             {/* <iframe width="100%" height="900" src="https://metabase.kneks.go.id/public/dashboard/112dd65e-3c50-4885-aba9-0f0356404fdf" title="oa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
