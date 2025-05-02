@@ -203,7 +203,7 @@ const Data = () => {
                                 <div className="col-lg-12 pt-5">
                                     <div className="about-one-inner-x border p-3 rounded">
                                         <p className="mt-3 text-secondary">
-                                            Lanjutan deskripsi dari direktorat ini Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            -
                                         </p>
                                     </div>
                                 </div>

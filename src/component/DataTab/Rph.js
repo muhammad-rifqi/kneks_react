@@ -25,23 +25,18 @@ const RPH = () => {
     return (
         <>
             <div id="dwnjpg">
-                <Card className="mb-3">
+                {/* <Card className="mb-3 hidden">
                     <Card.Body>
                         <Row >
                             <Breadcrumb as={Col} className="">
                                 <Breadcrumb.Item active>Rph</Breadcrumb.Item>
-                                {/* <Breadcrumb.Item active>Sertifikasi Halal UMK</Breadcrumb.Item> */}
+                               
                             </Breadcrumb>
 
-                            {/* <Form.Group as={Col} className="align-self-center">
-                                <Form.Select defaultValue="Choose...">
-                                    <option>- Pilih -</option>
-                                    <option>Sertifikat Halal Umk</option>
-                                </Form.Select>
-                            </Form.Group> */}
+                        
                         </Row>
                     </Card.Body>
-                </Card>
+                </Card> */}
                 <div className="card stretch stretch-full">
                     <div className="card-header d-flex justify-content-between align-items-center">
                         <h5 className="card-title">Rph</h5>
