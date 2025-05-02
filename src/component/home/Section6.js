@@ -94,10 +94,42 @@ const Section6 = () => {
                 item={selectedItem}
                 name={selectedZona}
             />
+
             <section className='mayor-section-maps'>
                 <div className='blog-box-x'>
                     <div className='section-title-box text-center' data-aos="fade-up">
                         <h2 className='section-title'>{t("zona")}</h2>
+                    </div>
+                </div>
+                <div className="row justify-content-center mb-4 gx-2 gy-2">
+                    <div className="col-auto">
+                        <span
+                            style={{
+                                backgroundColor: "#146aa4",
+                                color: "#fff",
+                                padding: "4px 12px",
+                                borderRadius: "8px",
+                                fontSize: "12px",
+                                display: "inline-block",
+                            }}
+                        >
+                            Tidak zona khas
+                        </span>
+                    </div>
+                    <div className="col-auto">
+                        <span
+                            style={{
+                                backgroundColor: "#2dcd7c",
+                                color: "#fff",
+                                padding: "4px 12px",
+                                borderRadius: "8px",
+                                fontSize: "12px",
+                                fontFamily: "sans-serif",
+                                display: "inline-block",
+                            }}
+                        >
+                            Ada zona khas
+                        </span>
                     </div>
                 </div>
                 <div className='row'>
