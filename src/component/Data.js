@@ -3,8 +3,8 @@ import Iph from '../component/DataTab/Iph'
 import Jks from '../component/DataTab/Jks'
 import Kss from '../component/DataTab/Kss'
 import Biwis from '../component/DataTab/Biwis'
-// import Insis from '../component/DataTab/Insis'
-import Rph from '../component/DataTab/Rph'
+import Insis from '../component/DataTab/Insis'
+// import Rph from '../component/DataTab/Rph'
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
 import "dayjs/locale/id";
@@ -45,12 +45,13 @@ const Data = () => {
         fetchData();
     }, []);
 
+    // 1: Rph,
     const componentMap = {
-        1: Rph,
-        2: Iph,
-        3: Jks,
-        4: Kss,
-        5: Biwis,
+        1: Iph,
+        2: Jks,
+        3: Kss,
+        4: Biwis,
+        5: Insis,
     };
 
     const renderContent = () => {
