@@ -88,7 +88,7 @@ const GaleriFotoDetail = () => {
     }, [id, slug]);
 
 
-    const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
+    const formattedDate = rows?.photos_datetime ? dayjs(rows.photos_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
     return (
         <>
@@ -149,12 +149,13 @@ const GaleriFotoDetail = () => {
                             <div className="news-details-list-title pb-3">
                                 <h4>Tags :</h4>
                             </div>
-                            {(rows?.tagging || "").trim().length > 0 && (
+                            {/* .split(",") */}
+                            {/* {tag.trim()} */}
+                            {(rows?.tag || "").trim().length > 0 && (
                                 <div className="news-details-list-button">
-                                    {(rows?.tagging || "")
-                                        .split(",")
-                                        .map((tag, index) => (
-                                            <a href="#t" key={index} className="btn btn-primary">{tag.trim()}</a>
+                                    {(JSON.parse(rows?.tag) || "")
+                                        .map((tags, index) => (
+                                            <a href="#t" key={index} className="btn btn-primary">{tags?.value}</a>
                                         ))}
                                 </div>
                             )}
