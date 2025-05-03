@@ -49,7 +49,7 @@ const Kss = () => {
 
                     </div>
                     <div className="card-body custom-card-action p-0" id="dwnjpg">
-                        <iframe src="https://metabase.kneks.go.id/public/dashboard/fa103cc7-ae0e-45d4-8518-036f7173b14b" title="iframe1" width={`100%`} height="1000"
+                        <iframe src="https://metabase.kneks.go.id/public/dashboard/f6979ea6-cf8f-47f3-b13a-2047ca72c6f7" title="iframe1" width={`100%`} height="1000"
                             allowFullScreen></iframe>
                     </div>
 

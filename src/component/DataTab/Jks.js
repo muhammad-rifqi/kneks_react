@@ -49,7 +49,7 @@ const Jks = () => {
 
                     </div>
                     <div className="card-body custom-card-action p-0" id="dwnjpg">
-                        <iframe src="https://metabase.kneks.go.id/public/dashboard/76abbee6-24af-43e5-96ea-8c6bfdee48c7" title="iframe1" width={`100%`} height="1000"
+                        <iframe src="https://metabase.kneks.go.id/public/dashboard/469415bf-3a6d-4365-a12a-6c186f723529" title="iframe1" width={`100%`} height="1000"
                             allowFullScreen></iframe>
                     </div>
 
