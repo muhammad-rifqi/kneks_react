@@ -145,15 +145,15 @@ const Data = () => {
                                                                 {category.data_submenu.map((submenu) => (
                                                                     <ListGroup.Item action variant="white" className="pb-3 pt-3" key={submenu.id}
                                                                         onClick={() => {
-                                                                            if (submenu.id_statistic === 1) {
+                                                                            if (submenu.id_statistic === 2) {
                                                                                 setSelectedSection(1);
-                                                                            } else if (submenu.id_statistic === 2) {
+                                                                            } else if (submenu.id_statistic === 3) {
                                                                                 setSelectedSection(2);
-                                                                            } if (submenu.id_statistic === 3) {
-                                                                                setSelectedSection(3);
                                                                             } if (submenu.id_statistic === 4) {
-                                                                                setSelectedSection(4);
+                                                                                setSelectedSection(3);
                                                                             } if (submenu.id_statistic === 5) {
+                                                                                setSelectedSection(4);
+                                                                            } if (submenu.id_statistic === 8) {
                                                                                 setSelectedSection(5);
                                                                             }
                                                                         }}
