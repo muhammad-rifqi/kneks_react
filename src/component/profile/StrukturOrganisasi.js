@@ -53,7 +53,7 @@ const StrukturOrganisasi = () => {
 				</section>
 				<section className="about-one-section">
 					<div className="container">
-						<div className="row row-gutter-y-40 text-center" style={{marginBottom:'80px'}}>
+						<div className="row row-gutter-y-40 text-center" style={{ marginBottom: '80px' }}>
 							<div className="col-lg-12 col-xl-12">
 								<div className="about-one-image">
 									<img src="assets/image/struktur1.svg" alt="img-59" className="img-fluid" />
@@ -107,30 +107,29 @@ const StrukturOrganisasi = () => {
 												<ul className="list-unstyled text-left">
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/pak_binsar.jpg"
 															alt="img1"
 															className="rounded-circle me-2"
-
 														/>
-														<span className="text-small">Kepala Divisi Pengembangan Halal Assurance System</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Binsar Agung Hartanto</u> </b>, <br /> Kepala Divisi Pengembangan Halal Assurance System</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/pak_binsar.jpg"
 															alt="img2"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Infrastruktur Industri Halal</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Binsar Agung Hartanto</u> </b>, <br /> Kepala Divisi Infrastruktur Industri Halal</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/pak_umar.jpg"
 															alt="img3"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Rantai Nilai Produk Halal</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Umar Aditiawarman, PhD</u> </b>, <br /> Kepala Divisi Rantai Nilai Produk Halal</span>
 													</li>
 												</ul>
 											</div>
@@ -152,12 +151,12 @@ const StrukturOrganisasi = () => {
 												<ul className="list-unstyled text-left">
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/bu_yos_abc.jpeg"
 															alt="img1"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Perbankan Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Yosita Nur Wirdayanti, S.T., MBA, MIFP</u> </b>, <br /> Kepala Divisi Perbankan Syariah</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -196,30 +195,30 @@ const StrukturOrganisasi = () => {
 												<ul className="list-unstyled text-left">
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/pak_urip.jpg"
 															alt="img1"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Dana Sosial Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Urip Budiarto, M.E</u> </b>, <br /> Kepala Divisi Dana Sosial Syariah</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/pak_bagus.jpg"
 															alt="img2"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Lembaga Keuangan Mikro Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Bagus Aryo, PhD</u> </b>, <br /> Kepala Divisi Lembaga Keuangan Mikro Syariah</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/pak_eka.jpg"
 															alt="img3"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Inklusi Keuangan Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Eka Jati Rahayu Firmansyah, S.H.I., M.E.</u> </b>, <br />Kepala Divisi Inklusi Keuangan Syariah</span>
 													</li>
 												</ul>
 											</div>
@@ -243,33 +242,33 @@ const StrukturOrganisasi = () => {
 												<ul className="list-unstyled text-left">
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/pak_iqbal.jpg"
 															alt="img1"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Kemitraan dan Akselerasi Usaha Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Achmad Iqbal, SP., M.E.</u> </b>, <br /> Kepala Divisi Kemitraan dan Akselerasi Usaha Syariah</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/pak_helma.png"
 															alt="img2"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Inkubasi Bisnis Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Helma Agustiawan</u> </b>, <br />Kepala Divisi Inkubasi Bisnis Syariah</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/pak_dedi.jpg"
 															alt="img3"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Bisnis Digital dan Pusat Ekonomi Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Dedi Wibowo, Ph.D</u> </b>, <br />Kepala Divisi Bisnis Digital dan Pusat Ekonomi Syariah</span>
 													</li>
-													
-												</ul><br/><br/>
+
+												</ul><br /><br />
 											</div>
 										</div>
 										<div className="col-12 col-sm-6 col-md-4 mb-4">
@@ -288,21 +287,21 @@ const StrukturOrganisasi = () => {
 												<ul className="list-unstyled text-left">
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/pak_dece.jpg"
 															alt="img1"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Hukum Pengembangan Ekonomi Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Dece Kurniadi, SH., MM., Ph.D</u> </b>, <br />Kepala Divisi Hukum Pengembangan Ekonomi Syariah</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
+															src="assets/image/pejabat/pak_inza.jpg"
 															alt="img2"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Promosi dan Kerja Sama Strategis</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Drs. Inza Putra, MM</u> </b>, <br />Kepala Divisi Promosi dan Kerja Sama Strategis</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -311,7 +310,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Pengembagan SDM Ekonomi Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Mohamad Soleh Nurzaman, Ph.D</u> </b>, <br />Kepala Divisi Pengembagan SDM Ekonomi Syariah</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -320,7 +319,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Riset Ekonomi Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u>Mohamad Soleh Nurzaman, Ph.D</u> </b>, <br />Kepala Divisi Riset Ekonomi Syariah</span>
 													</li>
 												</ul>
 											</div>
@@ -392,7 +391,7 @@ const StrukturOrganisasi = () => {
 														/>
 														<span className="text-small">Kepala Divisi Dukungan Teknologi dan Rumah Tangga</span>
 													</li>
-													<br/><br/>
+													<br /><br />
 												</ul>
 											</div>
 										</div>
