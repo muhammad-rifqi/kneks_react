@@ -4,6 +4,7 @@ import Jks from '../component/DataTab/Jks'
 import Kss from '../component/DataTab/Kss'
 import Biwis from '../component/DataTab/Biwis'
 import Insis from '../component/DataTab/Insis'
+import AktivitasUsahaSyariah from '../component/DataTab/aktivitasUsahaSyariah'
 // import Rph from '../component/DataTab/Rph'
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
@@ -52,6 +53,7 @@ const Data = () => {
         3: Kss,
         4: Biwis,
         5: Insis,
+        6: AktivitasUsahaSyariah
     };
 
     const renderContent = () => {
@@ -69,19 +71,18 @@ const Data = () => {
     };
 
     const [data, setData] = useState([]);
-    useEffect(() => {
-        fetch(process.env.REACT_APP_API_URL + '/sourcesdata')
-            .then(resp => resp.json())
-            .then((rows) => {
-                setData(rows)
-            })
-    })
-
+    // useEffect(() => {
+    //     fetch(process.env.REACT_APP_API_URL + '/sourcesdata')
+    //         .then(resp => resp.json())
+    //         .then((rows) => {
+    //             setData(rows)
+    //         })
+    // })
+    // console.log(data)
     useEffect(() => {
         fetch(process.env.REACT_APP_API_URL + '/sourcesdata')
             .then(resp => {
                 if (!resp.ok) {
-                    // Jika respons tidak OK, lemparkan error dengan status dan pesan
                     throw new Error(`HTTP error! status: ${resp.status}`);
                 }
                 return resp.json();
@@ -175,7 +176,7 @@ const Data = () => {
                                             ) : (
                                                 <ListGroup.Item action variant="white" className="mb-3 border-2"
                                                     onClick={() => {
-                                                        if (category.id  === 1) {
+                                                        if (category.id === 1) {
                                                             setSelectedSection(1);
                                                         } else if (category.id === 2) {
                                                             setSelectedSection(2);
@@ -185,6 +186,8 @@ const Data = () => {
                                                             setSelectedSection(4);
                                                         } if (category.id === 5) {
                                                             setSelectedSection(5);
+                                                        } if (category.id === 9) {
+                                                            setSelectedSection(6);
                                                         }
                                                     }}
                                                     style={{

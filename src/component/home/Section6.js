@@ -21,7 +21,7 @@ const Section6 = () => {
         setShowDetailModal(true);
     };
 
-    const strokeColor = "#aaacaa";
+    const strokeColor = "#000000";
 
     useEffect(() => {
         // Function to fetch posts
@@ -67,7 +67,7 @@ const Section6 = () => {
 
         const totalTenants = provinceData.zonakhas.reduce((sum, zone) => sum + (zone.tenant || 0), 0);
 
-        if (totalTenants == 0) {
+        if (totalTenants === 0) {
             return "#146aa4"; // Warna untuk total tenant 0-10
         } else {
             return "#2dcd7c";
