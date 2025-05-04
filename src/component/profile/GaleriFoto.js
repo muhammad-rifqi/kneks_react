@@ -110,7 +110,7 @@ const GaleriFoto = () => {
         if (startDate) {
             const formattedDate = dayjs(startDate).format("YYYY-MM-DD");
             filtered = filtered.filter(
-                (post) => dayjs(post.news_datetime).format("YYYY-MM-DD") === formattedDate
+                (post) => dayjs(post.photos_datetime).format("YYYY-MM-DD") === formattedDate
             );
         }
 
@@ -230,7 +230,7 @@ const GaleriFoto = () => {
                                                     </div>
                                                     <div className='card-date'>
                                                         <span>
-                                                            {cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}
+                                                            {cookies.i18next === 'id' ? formatDate(item.photos_datetime, 'id') : formatDate(item.photos_datetime, 'en')}
                                                         </span>
                                                     </div>
                                                 </div>
