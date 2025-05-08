@@ -11,7 +11,7 @@ import { Carousel } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import axios from "axios";
 import Swal from "sweetalert2";
-
+import "./s5.css"
 // const dataTabs = [
 //     {
 //         key: "BI",
@@ -101,7 +101,7 @@ const Section5 = () => {
                         </h2>
                     </div>
                 </div>
-                <Carousel className='custom-carousel' interval={3000} data-aos="fade-down-left">
+                <Carousel className='custom-carousel-x' interval={3000} data-aos="fade-down-left">
                     {dataTabs.slice(0, 6).map((item) => {
                         return (
                             <Carousel.Item key={item.key}>
@@ -150,17 +150,7 @@ const Section5 = () => {
                         );
                     })}
                 </Carousel>
-                {/* <Tabs
-                    activeKey={activeTab}
-                    onSelect={setActiveTab}
-                    className="mb-3 justify-content-center"
-                >
-                    {dataTabs.map((tab) => (
-                        <Tab eventKey={tab.key} title={tab.key} key={tab.key}>
-                            {tab.contents}
-                        </Tab>
-                    ))}
-                </Tabs> */}
+              
             </div>
         </section>
     );

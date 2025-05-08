@@ -1,0 +1,272 @@
+/* Base Card Styling */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(20, 106, 164, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(20, 106, 164, 0.15);
+}
+
+/* Card Content Styling */
+.card-body {
+    padding: 1.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: #333;
+    letter-spacing: 0.3px;
+}
+
+/* .card-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #146AA4;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.card:hover .card-title::after {
+    width: 50%;
+} */
+
+.card h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #146AA4, #2196F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    letter-spacing: 0.5px;
+}
+
+/* Container Layout */
+.chart-container h3 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .card h1 {
+        font-size: 1.8rem;
+    }
+    
+    .chart-container h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-title {
+        font-size: 0.95rem;
+    }
+    
+    .card h1 {
+        font-size: 1.6rem;
+    }
+    
+    .chart-container h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 0.9rem;
+    }
+    
+    .card h1 {
+        font-size: 1.4rem;
+    }
+    
+    .chart-container h3 {
+        font-size: 1.2rem;
+    }
+}
+/* .card:hover::before {
+    opacity: 1;
+} */
+
+/* Card Content Styling */
+.card-body {
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+/* .card-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #146AA4;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.card:hover .card-title::after {
+    width: 40%;
+} */
+
+.card h1 {
+    font-size: 2.2rem;
+    background: linear-gradient(45deg, #146AA4, #2196F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+    margin: 0;
+}
+
+.card:hover h1 {
+    transform: scale(1.1);
+}
+
+/* Container Layout */
+.custom-carousel-x {
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.chart-container {
+    padding: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.chart-container h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+/* Navigation Controls */
+.custom-carousel-x .carousel-control-prev,
+.custom-carousel-x .carousel-control-next {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s ease;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-carousel-x:hover .carousel-control-prev,
+.custom-carousel-x:hover .carousel-control-next {
+    opacity: 0.6;
+}
+
+.custom-carousel-x .carousel-control-prev {
+    left: -40px;
+}
+
+.custom-carousel-x .carousel-control-next {
+    right: -40px;
+}
+
+.custom-carousel-x .carousel-control-prev:hover,
+.custom-carousel-x .carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.25);
+    opacity: 0.9;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .custom-carousel-x {
+        max-width: 95%;
+    }
+    
+    .card h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .chart-container {
+        padding: 10px;
+    }
+    
+    .card h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-carousel-x .carousel-control-prev,
+    .custom-carousel-x .carousel-control-next {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .chart-container h3 {
+        font-size: 1.2rem;
+    }
+    
+    .card {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .chart-container {
+        padding: 8px;
+    }
+    
+    .card {
+        max-width: 100%;
+    }
+    
+    .card h1 {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,134 @@
+/* Card Styling */
+.card-agendas {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-agendas:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(20, 106, 164, 0.2) !important;
+}
+
+.card-agendas:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-agendas:hover:before {
+    opacity: 1;
+}
+
+.card-agendas .card-header h4 {
+    font-size: 1.1rem;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* .card-agendas:hover .card-header h4 {
+    color: #e6f3ff;
+} */
+
+/* .card-agendas .card-text {
+    transition: transform 0.3s ease;
+} */
+
+/* .card-agendas:hover .card-text {
+    transform: translateX(5px);
+} */
+
+.card-agendas .fa-calendar {
+    transition: all 0.3s ease;
+}
+
+/* .card-agendas:hover .fa-calendar {
+    transform: scale(1.2) rotate(15deg);
+} */
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .card-agendas .card-header h4 {
+        font-size: 1rem;
+    }
+    
+    .card-agendas .card-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .col-lg-3 {
+        margin-bottom: 20px;
+    }
+    
+    .card-agendas {
+        height: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-agendas .card-header h4 {
+        font-size: 0.95rem;
+    }
+    
+    .card-agendas .card-text {
+        font-size: 0.85rem;
+    }
+    
+    .btn-sm {
+        padding: 0.4rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-lg-3 {
+        padding: 0 10px;
+    }
+    
+    .card-agendas {
+        margin-bottom: 15px;
+    }
+    
+    .card-agendas .card-header {
+        padding: 10px;
+    }
+    
+    .card-agendas .card-body {
+        padding: 10px;
+    }
+}
+
+/* Button Animation */
+.btn-primary {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 102, 153, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Loading State */
+.card-agendas.loading {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+

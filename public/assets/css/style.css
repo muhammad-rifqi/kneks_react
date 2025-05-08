@@ -9220,6 +9220,7 @@ label {
   text-overflow: ellipsis;
 }
 
+
 .card-header-b .title-2-x {
   margin-bottom: 0;
   padding: 0.6rem 0;
@@ -11880,7 +11881,7 @@ SOCIAL MEDIA
   z-index: 10;
 }
 
-.custom-prev, .custom-next {
+/* .custom-prev, .custom-next {
   font-size: 24px;
   color: #007bff;
   background: white;
@@ -11909,8 +11910,64 @@ SOCIAL MEDIA
   top: 50%;
   right: -40px;
   transform: translateY(-100%);
+} */
+
+
+
+.custom-carouselx .owl-stage {
+    display: flex;
+    align-items: stretch;
 }
 
+.custom-carouselx .owl-item {
+    display: flex;
+    height: 100%;
+}
 
+.custom-carouselx .item {
+    width: 100%;
+}
 
+.custom-carouselx .card {
+    height: 100%;
+    transition: transform 0.3s ease;
+}
 
+.custom-carouselx .card:hover {
+    transform: translateY(-5px);
+}
+
+.custom-carouselx .owl-nav {
+    margin-top: 20px;
+}
+
+.custom-carouselx .owl-nav button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    margin: 0 5px;
+}
+
+.custom-carouselx .owl-nav button:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.custom-carouselx .owl-dots {
+    margin-top: 20px;
+}
+
+@media (max-width: 576px) {
+    .custom-carouselx .card {
+        margin: 0 10px;
+    }
+    
+    .custom-carouselx .owl-nav {
+        margin-top: 15px;
+    }
+    
+    .custom-carouselx .owl-nav button {
+        width: 35px;
+        height: 35px;
+    }
+}

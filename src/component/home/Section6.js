@@ -113,7 +113,7 @@ const Section6 = () => {
                                 display: "inline-block",
                             }}
                         >
-                            Tidak zona khas
+                            Tidak ada zona khas
                         </span>
                     </div>
                     <div className="col-auto">

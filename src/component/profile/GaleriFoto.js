@@ -221,13 +221,12 @@ const GaleriFoto = () => {
                                             </div>
                                             <div className='card-overlay'>
                                                 <div className='card-header-b'>
-                                                    <div className='card-title-b'>
+                                                    {/* <div className='card-title-b'> */}
                                                         <h2 className='title-2'>
                                                             {item.title}
-                                                            {item.is_publish}
-
+                                                            {/* {item.is_publish} */}
                                                         </h2>
-                                                    </div>
+                                                    {/* </div> */}
                                                     <div className='card-date'>
                                                         <span>
                                                             {cookies.i18next === 'id' ? formatDate(item.photos_datetime, 'id') : formatDate(item.photos_datetime, 'en')}
