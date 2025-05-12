@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-const aktivitasUsahaSyariah = () => {
+const Beranda = () => {
 
 
 
@@ -39,12 +39,12 @@ const aktivitasUsahaSyariah = () => {
                 </Card> */}
                 <div className="card stretch stretch-full">
                     <div className="card-header d-flex justify-content-between align-items-center">
-                        <h5 className="card-title">Aktivitas Usaha Syariah</h5>
+                        <h5 className="card-title">Beranda</h5>
                         {/* <button onClick={downloadJPG} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button> */}
 
                     </div>
                     <div className="card-body custom-card-action p-0" id="dwnjpg">
-                        <iframe src="https://metabase.kneks.go.id/public/dashboard/b0bedf29-1481-40db-938b-e2ce37ee6da9" title="iframe1" width={`100%`} height="1000"
+                        <iframe src="https://metabase.kneks.go.id/public/dashboard/f85c27c5-89f1-42b8-bace-543b335ae4e2" title="iframe1" width={`100%`} height="1000"
                             allowFullScreen></iframe>
                     </div>
 
@@ -56,4 +56,4 @@ const aktivitasUsahaSyariah = () => {
     )
 }
 
-export default aktivitasUsahaSyariah
+export default Beranda;

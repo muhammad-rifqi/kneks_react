@@ -5,6 +5,7 @@ import Kss from '../component/DataTab/Kss'
 import Biwis from '../component/DataTab/Biwis'
 import Insis from '../component/DataTab/Insis'
 import AktivitasUsahaSyariah from '../component/DataTab/aktivitasUsahaSyariah'
+import Beranda from '../component/DataTab/Beranda'
 // import Rph from '../component/DataTab/Rph'
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
@@ -53,7 +54,8 @@ const Data = () => {
         3: Kss,
         4: Biwis,
         5: Insis,
-        6: AktivitasUsahaSyariah
+        6: AktivitasUsahaSyariah,
+        7: Beranda
     };
 
     const renderContent = () => {
@@ -188,6 +190,8 @@ const Data = () => {
                                                             setSelectedSection(5);
                                                         } if (category.id === 9) {
                                                             setSelectedSection(6);
+                                                        }if (category.id === 10) {
+                                                            setSelectedSection(7);
                                                         }
                                                     }}
                                                     style={{
