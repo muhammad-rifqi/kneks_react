@@ -206,6 +206,7 @@ const GaleriFoto = () => {
                                             href={`/galeri-foto/${item.id}/${convertToSlug(
                                                 item.title
                                             )}`}
+                                            title= {cookies.i18next === 'id' ? item.title : item.title_en}
                                             className='card-box-b card-shadow news-box flex-grow-1'>
                                             <div className='img-box-b'>
                                                 <img
@@ -222,10 +223,10 @@ const GaleriFoto = () => {
                                             <div className='card-overlay'>
                                                 <div className='card-header-b'>
                                                     {/* <div className='card-title-b'> */}
-                                                        <h2 className='title-2'>
-                                                            {item.title}
-                                                            {/* {item.is_publish} */}
-                                                        </h2>
+                                                    <h2 className='title-2'>
+                                                        {cookies.i18next === 'id' ? item.title : item.title_en}
+                                                        {/* {item.is_publish} */}
+                                                    </h2>
                                                     {/* </div> */}
                                                     <div className='card-date'>
                                                         <span>

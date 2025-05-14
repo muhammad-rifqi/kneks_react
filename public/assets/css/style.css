@@ -9229,6 +9229,7 @@ label {
   width: 280px;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: block;
 }
 
 @media (max-width: 575px) {
@@ -9269,6 +9270,12 @@ label {
 .card-header-b .title-2 {
   font-size: 20px;
   color: #ffffff;
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;  /* Change from -webkit-box to block */
+    line-height: 1.4;
   /* width: 450px;
   overflow: hidden;
   text-overflow: ellipsis; */

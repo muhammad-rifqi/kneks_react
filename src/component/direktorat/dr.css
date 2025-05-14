@@ -1,0 +1,363 @@
+/* Card Box Styling */
+.my-image-links-c .card-box-b {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .my-image-links-c .card-box-b:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Image Box Styling */
+ .my-image-links-c .img-box-b {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .my-image-links-c .img-box-b img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .my-image-links-c .card-box-b:hover .img-box-b img {
+    transform: scale(1.1);
+  }
+  
+  /* Overlay Styling */
+  .my-image-links-c .card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    /* padding: 20px; */
+    color: #fff;
+  }
+  
+  /* Card Header Styling */
+  .my-image-links-c .card-header-b-x-s {
+    padding: 1rem;
+    color: #ffffff;
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    width: 100%;
+  }
+  
+  .my-image-links-c .card-title-b-s .title-2-x-s {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;  /* Change from -webkit-box to block */
+    line-height: 1.4;
+  }
+  
+  /* Tambahkan tooltip untuk menampilkan teks penuh saat hover */
+  .my-image-links-c .card-title-b-s {
+    position: relative;
+  }
+  
+  .my-image-links-c .card-title-b-s .title-2-x-s:hover::after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    top: -40px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: normal;
+    max-width: 200px;
+    z-index: 10;
+  }
+  
+  .my-image-links-c .card-date-s {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 5px;
+  }
+  
+  .my-image-links-c .date-b-s {
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  /* Responsive Adjustments */
+  @media (min-width: 576px) {
+    .my-image-links-c .card-title-b-s .title-2-x-s {
+      font-size: 13px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .my-image-links-c .card-box-b {
+      height: 220px;
+    }
+    
+    .my-image-links-c .card-header-b-x-s {
+      bottom: 0px;
+      padding: 0.8rem;
+    }
+    
+    .my-image-links-c .card-title-b-s .title-2-x-s {
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .my-image-links-c .card-box-b {
+      height: 200px;
+    }
+    
+    .my-image-links-c .card-header-b-x-s {
+      bottom: 1px;
+    }
+    
+    .my-image-links-c .card-title-b-s .title-2-x-s {
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .my-image-links-c .card-box-b {
+      height: 200px;
+    }
+    
+    .my-image-links-c .card-title-b-s .title-2-x-s {
+      font-size: 14px;
+    }
+  }
+
+
+
+  /* Styling untuk Video Card */
+.my-video-links .card-box-b-d {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .my-video-links .card-box-b-d:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Styling untuk Box Gambar */
+  .my-video-links .img-box-bc-d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .my-video-links .img-box-bc-d img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .my-video-links .card-box-b-d:hover .img-box-bc-d img {
+    transform: scale(1.1);
+  }
+  
+  /* Styling untuk Tombol Play */
+  .my-video-links .video-btn {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    z-index: 2;
+  }
+  
+  .my-video-links .play-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .my-video-links .play-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  
+  .my-video-links .card-box-b-d:hover .play-icon {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+  }
+  
+  /* Styling untuk Overlay */
+  .my-video-links .card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #fff;
+  }
+  
+  /* Styling untuk Header Card */
+  .my-video-links .card-header-b-x-d {
+    padding: 1rem;
+    color: #ffffff;
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    width: 100%;
+  }
+  
+  .my-video-links .card-title-b-d .title-2-x-d {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;  /* Change from -webkit-box to block */
+    /* line-height: 1.4; */
+  }
+  
+  /* Tooltip untuk menampilkan teks penuh saat hover */
+  .my-video-links .card-title-b-d {
+    position: relative;
+  }
+  
+  .my-video-links .card-title-b-d .title-2-x-d:hover::after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    top: -40px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: normal;
+    max-width: 200px;
+    z-index: 10;
+  }
+  
+  .my-video-links .card-date-d {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 5px;
+  }
+  
+  .my-video-links .date-b-d {
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  /* Penyesuaian Responsif */
+  @media (min-width: 576px) {
+    .my-video-links .card-title-b-d .title-2-x-d {
+      font-size: 13px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .my-video-links .card-box-b-d {
+      height: 220px;
+    }
+    
+    .my-video-links .card-header-b-x-d {
+      bottom: 0px;
+      padding: 0.8rem;
+    }
+    
+    .my-video-links .card-title-b-d .title-2-x-d {
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .my-video-links .card-box-b-d {
+      height: 200px;
+    }
+    
+    /* .my-video-links .card-header-b-x-d {
+      bottom: 1px;
+    }
+     */
+    .my-video-links .card-title-b-d .title-2-x-d {
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .my-video-links .card-box-b-d {
+      height: 200px;
+    }
+    
+    .my-video-links .card-title-b-d .title-2-x-d {
+      font-size: 14px;
+    }
+  }
+  
+  /* Styling untuk VenoBox */
+  .vbox-content {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .vbox-title {
+    font-size: 16px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    line-height: 1.4;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .vbox-num {
+    font-size: 12px;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+  }
+  
+  .vbox-close {
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: #fff;
+    z-index: 1000;
+  }

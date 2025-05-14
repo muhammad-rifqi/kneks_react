@@ -62,7 +62,7 @@ const News = () => {
 
 							posts.slice(0, 2).map((item) => (
 								<div className="col-md-6 col-lg-6" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" key={item.id}>
-									<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
+									<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`} title= {cookies.i18next === 'id' ? item.title : item.title_en}>
 										<div className="card-box-b card-shadow news-box">
 											<div className="img-box-b-home">
 												<img

@@ -1,0 +1,231 @@
+/* Styling untuk Card Video */
+.my-videos-linksx-x {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .my-videos-linksx-x:hover {
+    transform: translateY(-5px);
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .my-videos-linksx-x .card-box-b {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 220px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .my-videos-linksx-x .card-box-b:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styling untuk Box Gambar */
+  .my-videos-linksx-x .img-box-bc {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .my-videos-linksx-x .img-box-bc img.img-b {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .my-videos-linksx-x:hover .img-box-bc img.img-b {
+    transform: scale(1.1);
+  }
+  
+  /* Styling untuk Tombol Play */
+  .my-videos-linksx-x .video-btn {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    z-index: 2;
+  }
+  
+  .my-videos-linksx-x .play-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .my-videos-linksx-x .play-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  
+  .my-videos-linksx-x:hover .play-icon {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+  }
+  
+  /* Styling untuk Overlay */
+  .my-videos-linksx-x .card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Styling untuk Header Card */
+  .my-videos-linksx-x .card-header-b-xx {
+
+    /* padding: 1rem; */
+    color: #ffffff;
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    width: 100%;
+  }
+  
+  .my-videos-linksx-x .card-title-b-xx .title-2-x-xx {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    display: block; 
+    
+  }
+  
+  .my-videos-linksx-x .card-date-xx {
+    margin-top: 5px;
+  }
+  
+  .my-videos-linksx-x .date-b-xx {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .my-videos-linksx-x .date-b-sd-xx {
+    font-size: 12px;
+    margin-right: 35px !important;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .my-videos-linksx-x .date-b-xx.bg-dark {
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  
+  /* Responsivitas */
+  @media (max-width: 767px) {
+    .my-videos-linksx-x .card-box-b {
+      height: 200px;
+    }
+    
+    .my-videos-linksx-x .play-icon {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .my-videos-linksx-x .play-icon img {
+      width: 25px;
+      height: 25px;
+    }
+    
+    .my-videos-linksx-x .card-title-b .title-2-x {
+      font-size: 13px;
+      -webkit-line-clamp: 1;
+      max-height: 18px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .my-videos-linksx-x .card-box-b {
+      height: 180px;
+    }
+  }
+  
+  /* Styling untuk VenoBox */
+  .vbox-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.85);
+  }
+  
+  .vbox-content {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .vbox-title {
+    font-size: 16px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    line-height: 1.4;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .vbox-close {
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: #fff;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+  
+  .vbox-close:hover {
+    background: rgba(255, 0, 0, 0.7);
+  }
+  
+  .vbox-num {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  
+  .vbox-share {
+    position: fixed;
+    top: 15px;
+    right: 70px;
+  }
+
+  

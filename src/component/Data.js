@@ -152,11 +152,11 @@ const Data = () => {
                                                                                 setSelectedSection(1);
                                                                             } else if (submenu.id_statistic === 3) {
                                                                                 setSelectedSection(2);
-                                                                            } if (submenu.id_statistic === 4) {
+                                                                            } else if (submenu.id_statistic === 4) {
                                                                                 setSelectedSection(3);
-                                                                            } if (submenu.id_statistic === 5) {
+                                                                            } else if (submenu.id_statistic === 5) {
                                                                                 setSelectedSection(4);
-                                                                            } if (submenu.id_statistic === 8) {
+                                                                            } else if (submenu.id_statistic === 8) {
                                                                                 setSelectedSection(5);
                                                                             }
                                                                         }}
@@ -207,7 +207,6 @@ const Data = () => {
                             </div>
                             <div className="col-lg-9" id="dwnjpg">
                                 {renderContent()}
-
                                 <div className="col-lg-12 pt-5">
                                     <div className="about-one-inner-x border p-3 rounded">
                                         <p className="mt-3 text-secondary">
@@ -258,11 +257,7 @@ const Data = () => {
 
                             </div>
                         </div>
-
-
                     </div>
-
-
                 </section>
             </div>
         </>

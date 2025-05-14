@@ -12,6 +12,7 @@ import 'dayjs/locale/id';
 import { useTranslation } from 'react-i18next';
 import { useCookies } from 'react-cookie';
 import SkeletonCardBerita from "../skeleton/CardBerita";
+import './dr.css'
 const IndustriProdukHalal = () => {
     const [loading, setLoading] = useState(true);
     const [loadingNew, setLoadingNew] = useState(true);
@@ -27,6 +28,10 @@ const IndustriProdukHalal = () => {
     // const [posts, setPosts] = useState([]);
     const [detaildir, setDetailDirektorat] = useState([]);
     const [cookies, setCookie] = useCookies(['i18next']);
+    const formatDate = (date, locale = 'en') => {
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
     const [newsdir, setDirektoratNews] = useState([]);
     const [opinidir, setDirektoratOpini] = useState([]);
     const [filesdir, setDirektoratFiles] = useState([]);
@@ -157,23 +162,37 @@ const IndustriProdukHalal = () => {
     // }, []);
 
     useEffect(() => {
-        // const isian = isiItemsBerita();
-        // setItems(isian);
-        // alert(items.length);
-
         const fetchPosts = async () => {
             setLoadingPoto(true);
             try {
                 const urls = process.env.REACT_APP_API_URL;
                 const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_PHOTOS + '/' + id_dir;
-                const responses = await axios.get(`${urls}${endpoints}`);;
+                const responses = await axios.get(`${urls}${endpoints}`);
                 setItemsPhoto(responses.data);
+
+                // Inisialisasi VenoBox setelah data dimuat
+                setTimeout(() => {
+                    if (document.querySelectorAll('.my-image-links-c').length > 0) {
+                        new VenoBox({
+                            selector: '.my-image-links-c',
+                            numeration: true,
+                            infinigall: true,
+                            share: true,
+                            spinner: 'swing',
+                            spinColor: '#5A8DEE',
+                            titlePosition: 'bottom',
+                            toolsColor: '#ffffff',
+                            titleattr: 'data-title',
+                            titleStyle: 'block'
+                        });
+                    }
+                }, 500);
+
             } catch (err) {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
                     text: err,
-
                 });
             } finally {
                 setLoadingPoto(false);
@@ -181,44 +200,56 @@ const IndustriProdukHalal = () => {
         };
         fetchPosts();
 
-        new VenoBox({
-            selector: '.my-image-links',
-            numeration: true,
-            infinigall: true,
-            share: true,
-            spinner: 'swing',
-            spinColor: '#5A8DEE',
-            titlePosition: 'bottom',
-            toolsColor: '#ffffff',
-            titleattr: 'data-title',
-            titleStyle: 'block'
-
-        });
-
         return () => {
-            // Manually remove all Venobox instances to prevent duplicates
-            const elements = document.querySelectorAll(".my-image-links");
+            // Bersihkan semua instance VenoBox untuk mencegah duplikasi
+            const elements = document.querySelectorAll(".my-image-links-c");
             elements.forEach((el) => {
-                el.removeAttribute("data-venobox-initialized"); // Reset initialization flag
+                el.removeAttribute("data-venobox-initialized");
             });
+
+            // Hapus elemen VenoBox dari DOM
+            const venoboxOverlay = document.querySelector('.vbox-overlay');
+            if (venoboxOverlay) {
+                venoboxOverlay.remove();
+            }
         };
-
     }, [id_dir]);
-    useEffect(() => {
 
+    useEffect(() => {
         const fetchPosts = async () => {
             setLoadingVideo(true);
             try {
                 const urls = process.env.REACT_APP_API_URL;
                 const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_VIDEOS + '/' + id_dir;
-                const responses = await axios.get(`${urls}${endpoints}`);;
+                const responses = await axios.get(`${urls}${endpoints}`);
                 setItemsVideo(responses.data);
+
+                // Inisialisasi VenoBox setelah data dimuat
+                setTimeout(() => {
+                    if (document.querySelectorAll('.my-video-links').length > 0) {
+                        const myVenoBox = new VenoBox({
+                            selector: '.my-video-links',
+                            numeration: true,
+                            infinigall: true,
+                            share: true,
+                            spinner: 'swing',
+                            spinColor: '#5A8DEE',
+                            titlePosition: 'bottom',
+                            toolsColor: '#ffffff',
+                            titleattr: 'data-title',
+                            titleStyle: 'block'
+                        });
+
+                        // Simpan instance VenoBox ke window untuk akses global
+                        window.myVideoVenoBox = myVenoBox;
+                    }
+                }, 500);
+
             } catch (err) {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
                     text: err,
-
                 });
             } finally {
                 setLoadingVideo(false);
@@ -226,30 +257,30 @@ const IndustriProdukHalal = () => {
         };
         fetchPosts();
 
-        new VenoBox({
-            selector: '.my-video-links',
-            numeration: true,
-            infinigall: true,
-            share: true,
-            spinner: 'swing',
-            spinColor: '#5A8DEE',
-            titlePosition: 'bottom',
-            toolsColor: '#ffffff',
-            titleattr: 'data-title',
-            titleStyle: 'block'
-
-        });
-
         return () => {
-            // Manually remove all Venobox instances to prevent duplicates
+            // Tutup VenoBox jika masih terbuka
+            if (window.myVideoVenoBox) {
+                try {
+                    window.myVideoVenoBox.close();
+                    delete window.myVideoVenoBox;
+                } catch (e) {
+                    console.error("Error closing VenoBox:", e);
+                }
+            }
+
+            // Bersihkan semua instance VenoBox untuk mencegah duplikasi
             const elements = document.querySelectorAll(".my-video-links");
             elements.forEach((el) => {
-                el.removeAttribute("data-venobox-initialized"); // Reset initialization flag
+                el.removeAttribute("data-venobox-initialized");
             });
+
+            // Hapus elemen VenoBox dari DOM
+            const venoboxOverlay = document.querySelector('.vbox-overlay');
+            if (venoboxOverlay) {
+                venoboxOverlay.remove();
+            }
         };
-
     }, [id_dir]);
-
     if (loading) {
         return (
             <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
@@ -604,27 +635,35 @@ const IndustriProdukHalal = () => {
                                 item_photo.length > 0 ? (
                                     item_photo.slice(0, 4).map((item, idx) => (
                                         <div className="col-md-3 col-lg-3" key={item.id}>
-                                            <a href={item?.photo} className="my-image-links" data-gall="gallery10">
+                                            <a
+                                                href={item?.photo}
+                                                className="my-image-links-c"
+                                                data-gall="gallery10"
+                                                data-title={item?.title}
+                                                title={cookies.i18next === 'id' ? item.title : item.title_en}
+                                            >
                                                 <div className="card-box-b card-shadow news-box">
-                                                    <div className="img-box-b ">
+                                                    <div className="img-box-b">
                                                         <img
                                                             src={item?.photo === "" ? '/assets/image/foto-beritas.png' : item?.photo}
                                                             onError={(e) => {
                                                                 e.target.onerror = null;
                                                                 e.target.src = `/assets/image/foto-beritas.png`;
                                                             }}
-                                                            alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
+                                                            alt={item?.title || "Galeri Foto"}
+                                                            className="img-b img-fluid"
+                                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                                        />
                                                     </div>
                                                     <div className="card-overlay">
-                                                        <div className="card-header-b-x">
-
-                                                            <div className="card-title-b">
-                                                                <h2 className="title-2-x text-white">
-                                                                    {item?.title}
+                                                        <div className="card-header-b-x-s">
+                                                            <div className="card-title-b-s">
+                                                                <h2 className="title-2-x-s text-white">
+                                                                    {cookies.i18next === 'id' ? item.title : item.title_en}
                                                                 </h2>
                                                             </div>
-                                                            <div className="card-date">
-                                                                <span className="date-b">{dayjs(item?.photos_datetime).format('DD MMMM YYYY')}</span>
+                                                            <div className="card-date-s">
+                                                                <span className="date-b-s">{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -647,57 +686,56 @@ const IndustriProdukHalal = () => {
                         </div>
                         <div className="row row-gutter-y-40">
                             <section className="video-section-x">
-                                <div className="container">
-                                    <div className="row row-gutter-y-40">
-                                        {loadingVideo
-                                            ? Array(4)
-                                                .fill()
-                                                .map((_, index) => (
-                                                    <div
-                                                        className='col-lg-3 col-xl-3 d-flex'
-                                                        key={index}>
-                                                        <SkeletonCardBerita />
-                                                    </div>
-                                                ))
-                                            :
-                                            item_video.length > 0 ? (
-                                                item_video.slice(0, 4).map((item) => (
-                                                    <div className="col-md-3 col-lg-3" key={item.id}>
-                                                        <a href={`https://www.youtube.com/watch?v=` + item?.video} className="my-video-links" data-autoplay="true" data-vbtype="video">
-                                                            <div className="card-box-b card-shadow news-box">
-                                                                <div className="img-box-bc">
-                                                                    <img src={`https://img.youtube.com/vi/` + item?.video + `/hqdefault.jpg`} alt="imgNews" className="img-b img-fluid" />
-                                                                    <div className="video-btn">
-                                                                        <div className="play-icon" >
-                                                                            <img src="/assets/image/play-circle.svg" alt="imgplay" />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="card-overlay">
-                                                                    <div className="card-header-b-x">
-
-                                                                        <div className="card-title-b">
-                                                                            <h2 className="title-2-x text-white">
-                                                                                {item?.title}
-                                                                            </h2>
-                                                                        </div>
-                                                                        <div className="card-date">
-                                                                            <span className="date-b">{dayjs(item?.videos_datetime).format('DD MMMM YYYY')}</span>
-                                                                        </div>
+                                {/* <div className="container"> */}
+                                <div className="row row-gutter-y-40">
+                                    {loadingVideo
+                                        ? Array(4)
+                                            .fill()
+                                            .map((_, index) => (
+                                                <div
+                                                    className='col-lg-3 col-xl-3 d-flex'
+                                                    key={index}>
+                                                    <SkeletonCardBerita />
+                                                </div>
+                                            ))
+                                        :
+                                        item_video.length > 0 ? (
+                                            item_video.slice(0, 4).map((item) => (
+                                                <div className="col-md-3 col-lg-3" key={item.id}>
+                                                    <a href={`https://www.youtube.com/watch?v=${item?.video}`} className="my-video-links" data-autoplay="true" data-vbtype="video" data-title={item?.title} title={cookies.i18next === 'id' ? item.title : item.title_en}>
+                                                        <div className="card-box-b-d card-shadow news-box">
+                                                            <div className="img-box-bc-d">
+                                                                <img src={`https://img.youtube.com/vi/${item?.video}/hqdefault.jpg`} alt="imgNews" className="img-b img-fluid" />
+                                                                <div className="video-btn d-flex justify-content-center">
+                                                                    <div className="play-icon">
+                                                                        <img src="/assets/image/play-circle.svg" alt="imgplay" />
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </a>
-                                                    </div>
-                                                ))
-                                            ) : (
-                                                <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
-                                                    <p className="text-center text-danger">No posts available</p>
+                                                            <div className="card-overlay">
+                                                                <div className="card-header-b-x-d">
+                                                                    <div className="card-title-b-d">
+                                                                        <h2 className="title-2-x-d text-white">
+                                                                        {cookies.i18next === 'id' ? item.title : item.title_en}
+                                                                        </h2>
+                                                                    </div>
+                                                                    <div className="card-date-d">
+                                                                        <span className="date-b-d">{cookies.i18next === 'id' ? formatDate(item.videos_datetime, 'id') : formatDate(item.videos_datetime, 'en')}</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
                                                 </div>
-                                            )
-                                        }
-                                    </div>
+                                            ))
+                                        ) : (
+                                            <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+                                                <p className="text-center text-danger">No posts available</p>
+                                            </div>
+                                        )
+                                    }
                                 </div>
+                                {/* </div> */}
                             </section>
                         </div>
                     </div >

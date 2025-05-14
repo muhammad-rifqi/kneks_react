@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import axios from 'axios';
 import { useTranslation } from "react-i18next";
-
+import { useCookies } from 'react-cookie';
 
 const GaleriFotoDetail = () => {
     const { t } = useTranslation()
@@ -24,6 +24,11 @@ const GaleriFotoDetail = () => {
             .replace(/[^\w\s-]/g, '')
             .replace(/\s+/g, '-')
             .replace(/-+/g, '-');
+    };
+    const [cookies, setCookie] = useCookies(['i18next']);
+    const formatDate = (date, locale = 'en') => {
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
     };
 
     const effectrun = useRef(false);
@@ -180,7 +185,7 @@ const GaleriFotoDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/liputan-media/${convertToSlug(item.title)}`}>
+                                                <a href={`/liputan-media/${convertToSlug(item.title)}`} title={cookies.i18next === 'id' ? item.title : item.title_en}>
                                                     <img
                                                         src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
                                                         onError={(e) => {
@@ -195,7 +200,7 @@ const GaleriFotoDetail = () => {
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/liputan-media/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/liputan-media/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
