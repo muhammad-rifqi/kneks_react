@@ -28,7 +28,7 @@ const Section9 = () => {
 					icon: '🌐',
 					title: element?.title,
 					title_en: element?.title_en || element?.title, // Default to original title
-					value: element?.amount,
+					value: parseInt(element?.amount).toLocaleString('id-ID'),
 					unit: 'Data',
 					date: element?.date_created.split('T')[0],
 				}));
