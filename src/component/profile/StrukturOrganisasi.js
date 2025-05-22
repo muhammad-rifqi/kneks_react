@@ -371,7 +371,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[27].name)}`}>{posts[27].name}</a></u> </b>, <br />{posts[26].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[26].name)}`}>{posts[26].name}</a></u> </b>, <br />{posts[26].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
