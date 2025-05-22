@@ -111,7 +111,7 @@ const StrukturOrganisasi = () => {
 															alt="img1"
 															className="rounded-circle me-2"
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[9].name)}`}>{posts[9].name}</a></u> </b>, <br /> {posts[9].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[9].name)}`}><b style={{color : 'black'}}>{posts[9].name}</b></a></u> </b>, <br /> {posts[9].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -120,7 +120,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[10].name)}`}>{posts[10].name}</a></u> </b>, <br /> {posts[10].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[10].name)}`}><b style={{color : 'black'}}>{posts[10].name}</b></a></u> </b>, <br /> {posts[10].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -129,7 +129,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[11].name)}`}>{posts[11].name}</a></u> </b>, <br /> {posts[11].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[11].name)}`}><b style={{color : 'black'}}>{posts[11].name}</b></a></u> </b>, <br /> {posts[11].position}</span>
 													</li>
 												</ul>
 											</div>
@@ -156,7 +156,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[12].name)}`}>{posts[12].name}</a></u> </b>, <br /> {posts[12].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[12].name)}`}><b style={{color : 'black'}}>{posts[12].name}</b></a></u> </b>, <br /> {posts[12].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -165,7 +165,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[13].name)}`}>{posts[13].name}</a></u> </b>, <br /> {posts[13].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[13].name)}`}><b style={{color : 'black'}}>{posts[13].name}</b></a></u> </b>, <br /> {posts[13].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -174,7 +174,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[14].name)}`}>{posts[14].name}</a></u> </b>, <br /> {posts[14].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[14].name)}`}><b style={{color : 'black'}}>{posts[14].name}</b></a></u> </b>, <br /> {posts[14].position}</span>
 													</li>
 												</ul>
 											</div>
@@ -200,7 +200,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[15].name)}`}>{posts[15].name}</a></u> </b>, <br /> {posts[15].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[15].name)}`}><b style={{color : 'black'}}>{posts[15].name}</b></a></u> </b>, <br /> {posts[15].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -209,7 +209,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[16].name)}`}>{posts[16].name}</a></u> </b>, <br /> {posts[16].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[16].name)}`}><b style={{color : 'black'}}>{posts[16].name}</b></a></u> </b>, <br /> {posts[16].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -218,7 +218,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[17].name)}`}>{posts[17].name}</a></u> </b>, <br />{posts[17].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[17].name)}`}><b style={{color : 'black'}}>{posts[17].name}</b></a></u> </b>, <br />{posts[17].position}</span>
 													</li>
 												</ul>
 											</div>
@@ -247,7 +247,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[18].name)}`}>{posts[18].name}</a></u> </b>, <br /> {posts[18].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[18].name)}`}><b style={{color : 'black'}}>{posts[18].name}</b></a></u> </b>, <br /> {posts[18].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -256,7 +256,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[19].name)}`}>{posts[19].name}</a></u> </b>, <br />{posts[19].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[19].name)}`}><b style={{color : 'black'}}>{posts[19].name}</b></a></u> </b>, <br />{posts[19].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -265,7 +265,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[20].name)}`}>{posts[20].name}</a></u> </b>, <br />{posts[20].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[20].name)}`}><b style={{color : 'black'}}>{posts[20].name}</b></a></u> </b>, <br />{posts[20].position}</span>
 													</li>
 
 												</ul><br /><br />
@@ -292,7 +292,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[21].name)}`}>{posts[21].name}</a></u> </b>, <br />{posts[21].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[21].name)}`}><b style={{color : 'black'}}>{posts[21].name}</b></a></u> </b>, <br />{posts[21].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -301,7 +301,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[22].name)}`}>{posts[22].name}</a></u> </b>, <br />{posts[22].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[22].name)}`}><b style={{color : 'black'}}>{posts[22].name}</b></a></u> </b>, <br />{posts[22].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -310,7 +310,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[23].name)}`}>{posts[23].name}</a></u> </b>, <br />{posts[23].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[23].name)}`}><b style={{color : 'black'}}>{posts[23].name}</b> </a></u> </b>, <br />{posts[23].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -319,7 +319,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[24].name)}`}>{posts[24].name}</a></u> </b>, <br />{posts[24].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[24].name)}`}><b style={{color : 'black'}}>{posts[24].name}</b></a></u> </b>, <br />{posts[24].position}</span>
 													</li>
 												</ul>
 											</div>
@@ -371,7 +371,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[26].name)}`}>{posts[26].name}</a></u> </b>, <br />{posts[26].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[26].name)}`}><b style={{color : 'black'}}>{posts[26].name}</b></a></u> </b>, <br />{posts[26].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -380,7 +380,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[27].name)}`}>{posts[27].name}</a></u> </b>, <br />{posts[27].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[27].name)}`}><b style={{color : 'black'}}>{posts[27].name}</b></a></u> </b>, <br />{posts[27].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -389,7 +389,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[28].name)}`}>{posts[28].name}</a></u> </b>, <br />{posts[28].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[28].name)}`}><b style={{color : 'black'}}>{posts[28].name}</b></a></u> </b>, <br />{posts[28].position}</span>
 													</li>
 													<br /><br />
 												</ul>
@@ -416,7 +416,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[29].name)}`}>{posts[29].name}</a></u> </b>, <br />{posts[29].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[29].name)}`}><b style={{color : 'black'}}>{posts[29].name}</b></a></u> </b>, <br />{posts[29].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -425,7 +425,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[30].name)}`}>{posts[30].name}</a></u> </b>, <br />{posts[30].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[30].name)}`}><b style={{color : 'black'}}>{posts[30].name}</b></a></u> </b>, <br />{posts[30].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -434,7 +434,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[31].name)}`}>{posts[31].name}</a></u> </b>, <br />{posts[31].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[31].name)}`}><b style={{color : 'black'}}>{posts[31].name}</b></a></u> </b>, <br />{posts[31].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -443,7 +443,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[32].name)}`}>{posts[32].name}</a></u> </b>, <br />{posts[32].position}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[32].name)}`}><b style={{color : 'black'}}>{posts[32].name}</b></a></u> </b>, <br />{posts[32].position}</span>
 													</li>
 												</ul>
 											</div>
