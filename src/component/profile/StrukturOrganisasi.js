@@ -16,7 +16,7 @@ const StrukturOrganisasi = () => {
 				const url = process.env.REACT_APP_API_URL;
 				const endpoint = process.env.REACT_APP_API_STUKTUR_ORGANISASI;
 				const response = await axios.get(`${url}${endpoint}`);
-				setPosts(response.data.slice(0, 25));
+				setPosts(response.data.slice(0, 35));
 			} catch (err) {
 				Swal.fire({
 					icon: "error",
@@ -366,30 +366,30 @@ const StrukturOrganisasi = () => {
 												<ul className="list-unstyled text-left">
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
-															alt="img1"
-															className="rounded-circle me-2"
-
-														/>
-														<span className="text-small">Kepala Divisi Perencanaan dan Keuangan</span>
-													</li>
-													<li className="d-flex align-items-center mb-2">
-														<img
-															src="assets/image/profilKosong.png"
+															src={posts[26].photo}
 															alt="img2"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi SDM dan Kepatuhan Internal</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[27].name)}`}>{posts[27].name}</a></u> </b>, <br />{posts[26].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
-															alt="img3"
+															src={posts[27].photo}
+															alt="img2"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Dukungan Teknologi dan Rumah Tangga</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[27].name)}`}>{posts[27].name}</a></u> </b>, <br />{posts[27].position}</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src={posts[28].photo}
+															alt="img2"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[28].name)}`}>{posts[28].name}</a></u> </b>, <br />{posts[28].position}</span>
 													</li>
 													<br /><br />
 												</ul>
@@ -411,39 +411,39 @@ const StrukturOrganisasi = () => {
 												<ul className="list-unstyled text-left">
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
-															alt="img1"
-															className="rounded-circle me-2"
-
-														/>
-														<span className="text-small">Kepala Divisi Pemantauan Program dan Industri Produk Halal</span>
-													</li>
-													<li className="d-flex align-items-center mb-2">
-														<img
-															src="assets/image/profilKosong.png"
+															src={posts[29].photo}
 															alt="img2"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Pemantauan Program dan Industri Jasa Keuangan Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[29].name)}`}>{posts[29].name}</a></u> </b>, <br />{posts[29].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
-															alt="img3"
+															src={posts[30].photo}
+															alt="img2"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Pemantauan Program dan Keuangan Sosial Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[30].name)}`}>{posts[30].name}</a></u> </b>, <br />{posts[30].position}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src="assets/image/profilKosong.png"
-															alt="img3"
+															src={posts[31].photo}
+															alt="img2"
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small">Kepala Divisi Pemantauan Program dan Bisnis dan Kewirausahaan Syariah</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[31].name)}`}>{posts[31].name}</a></u> </b>, <br />{posts[31].position}</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src={posts[32].photo}
+															alt="img2"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[32].name)}`}>{posts[32].name}</a></u> </b>, <br />{posts[32].position}</span>
 													</li>
 												</ul>
 											</div>
