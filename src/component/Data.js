@@ -6,6 +6,7 @@ import Biwis from '../component/DataTab/Biwis'
 import Insis from '../component/DataTab/Insis'
 import AktivitasUsahaSyariah from '../component/DataTab/aktivitasUsahaSyariah'
 import Beranda from '../component/DataTab/Beranda'
+import PercepatanExport from "./DataTab/PercepatanExport";
 // import Rph from '../component/DataTab/Rph'
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
@@ -55,7 +56,8 @@ const Data = () => {
         4: Biwis,
         5: Insis,
         6: AktivitasUsahaSyariah,
-        7: Beranda
+        7: Beranda,
+        8: PercepatanExport
     };
 
     const renderContent = () => {
@@ -154,8 +156,10 @@ const Data = () => {
                                                                                 setSelectedSection(2);
                                                                             } else if (submenu.id_statistic === 4) {
                                                                                 setSelectedSection(3);
-                                                                            } else if (submenu.id_statistic === 5) {
+                                                                            } else if (submenu.id_statistic === 5 && submenu.id === 7) {
                                                                                 setSelectedSection(4);
+                                                                            } else if (submenu.id_statistic === 5 && submenu.id === 9) {
+                                                                                setSelectedSection(8);
                                                                             } else if (submenu.id_statistic === 8) {
                                                                                 setSelectedSection(5);
                                                                             }
@@ -190,7 +194,7 @@ const Data = () => {
                                                             setSelectedSection(5);
                                                         } if (category.id === 9) {
                                                             setSelectedSection(6);
-                                                        }if (category.id === 10) {
+                                                        } if (category.id === 10) {
                                                             setSelectedSection(7);
                                                         }
                                                     }}

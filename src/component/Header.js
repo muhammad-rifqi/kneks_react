@@ -13,10 +13,11 @@ const Header = () => {
   const location = useLocation();
 
   // const isKdeksPage = location.pathname === '/kdeks/';
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [activeMenu, setActiveMenu] = useState(location.pathname); // Initial state
   const [dataKota, setDataKota] = useState([]); // Initial state
   const [menux, setMenu] = useState([]);
+  const [loading, setLoading] = useState(true); // Add this state
   // Function to handle menu click
   const handleMenuClick = (menu) => {
     setActiveMenu(menu);
@@ -75,7 +76,7 @@ const Header = () => {
   useEffect(() => {
     // Function to fetch posts
     const fetchMenu = async () => {
-
+      setLoading(true);
       try {
         const url = process.env.REACT_APP_API_URL;
         const endpoint = process.env.REACT_APP_API_MENU_ALL;
@@ -88,6 +89,8 @@ const Header = () => {
           title: "Oops...",
           text: err,
         });
+      } finally {
+        setLoading(false); // Set loading to false after fetch
       }
     };
 
@@ -107,7 +110,7 @@ const Header = () => {
     const menuEl = $('.main-menu .navigation ul')[0];
     if (menuEl) {
       const menu_content = menuEl.outerHTML;
-  
+
       $('.mobile-nav-container').html(menu_content);
       $('.mobile-nav-container .main-menu-list li.has-dropdown > a').append('<button><i class="fa-solid fa-chevron-right"></i></button>');
       $('.mobile-nav-container .main-menu-list li.has-dropdown > a button').on('click', function () {
@@ -227,32 +230,47 @@ const Header = () => {
                           )}
                         </li>
                       ))} */}
-                      {Array.isArray(menux) && menux.length > 0 ? (
-                        menux.map((item, index) => (
-                          <li
-                            key={index}
-                            className={`${item.menu_sub.length > 0 ? "has-dropdown" : ""} ${activeMenu === item.menu_link ? "active" : ""}`}
-                          >
-                            <a onClick={() => handleMenuClick(item.menu_link)} href={item.menu_link}>
-                              {cookies.i18next === 'en' ? item.menu_name_en : item.menu_name}
-                            </a>
-                            {item.menu_sub.length > 0 && (
-                              <ul className="list-unstyled">
-                                {item.menu_sub.map((detail, detailIndex) => (
-                                  <li key={detailIndex}>
-                                    <a href={detail.submenu_link}>
-                                      {cookies.i18next === 'en' ? detail.submenu_name_en : detail.submenu_name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
+
+                      {loading ? (
+                        // Skeleton loading for menu items
+                        Array(5).fill(0).map((_, index) => (
+                          <li key={index} className="skeleton-m-item">
+                            <div className="skeleton-m-link">
+                              <div className="skeleton-m-text"></div>
+                            </div>
                           </li>
                         ))
                       ) : (
-                        <li><span>No menu found</span></li>
-                      )}
+                        Array.isArray(menux) && menux.length > 0 ? (
+                          menux.map((item, index) => (
+                            <li
+                              key={index}
+                              className={`${item.menu_sub.length > 0 ? "has-dropdown" : ""} ${activeMenu === item.menu_link ? "active" : ""}`}
+                            >
+                              <a onClick={() => handleMenuClick(item.menu_link)} href={item.menu_link}>
+                                {cookies.i18next === 'en' ? item.menu_name_en : item.menu_name}
+                              </a>
+                              {item.menu_sub.length > 0 && (
+                                <ul className="list-unstyled">
+                                  {item.menu_sub.map((detail, detailIndex) => (
+                                    <li key={detailIndex}>
+                                      <a href={detail.submenu_link}>
+                                        {cookies.i18next === 'en' ? detail.submenu_name_en : detail.submenu_name}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          ))
+                        ) : (
+                          <li><span>No menu found</span></li>
+                        )
+                      )
+                      }
+
                     </ul>
+
                     {/* <li className={` ${activeMenu === '/' ? 'active' : ''}`}>
                       <a onClick={() => handleMenuClick('/')} href="/">{t('menu.home')}</a>
                     </li>
