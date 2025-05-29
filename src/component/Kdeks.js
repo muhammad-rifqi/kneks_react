@@ -145,7 +145,6 @@ const Kdeks = () => {
                         </div> */}
                     </div>
                 </section>
-
                 <MapsKdeks />
                 {/* <section className="about-one-section-kdeks ">
                     <div className="container">

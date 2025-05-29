@@ -103,6 +103,23 @@ const KdeksDetail = () => {
                 const response = await axios.get(`${url}${endpoint}`);
                 setPostsOpini(response.data);
 
+                setTimeout(() => {
+                    if (document.querySelectorAll('.my-image-links-c').length > 0) {
+                        new VenoBox({
+                            selector: '.my-image-links-c',
+                            numeration: true,
+                            infinigall: true,
+                            share: true,
+                            spinner: 'swing',
+                            spinColor: '#5A8DEE',
+                            titlePosition: 'bottom',
+                            toolsColor: '#ffffff',
+                            titleattr: 'data-title',
+                            titleStyle: 'block'
+                        });
+                    }
+                }, 500);
+
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -116,6 +133,20 @@ const KdeksDetail = () => {
         };
 
         fetchPosts();
+
+        return () => {
+            // Bersihkan semua instance VenoBox untuk mencegah duplikasi
+            const elements = document.querySelectorAll(".my-image-links-c");
+            elements.forEach((el) => {
+                el.removeAttribute("data-venobox-initialized");
+            });
+
+            // Hapus elemen VenoBox dari DOM
+            const venoboxOverlay = document.querySelector('.vbox-overlay');
+            if (venoboxOverlay) {
+                venoboxOverlay.remove();
+            }
+        };
     }, [id]);
 
 
@@ -144,30 +175,6 @@ const KdeksDetail = () => {
 
 
     }, [id]);
-
-    useEffect(() => {
-        new VenoBox({
-            selector: '.my-image-links-kd',
-            numeration: true,
-            infinigall: true,
-            share: true,
-            spinner: 'swing',
-            spinColor: '#5A8DEE',
-            titlePosition: 'bottom',
-            toolsColor: '#ffffff',
-            titleattr: 'data-title',
-            titleStyle: 'block'
-
-        });
-
-        return () => {
-            // Manually remove all Venobox instances to prevent duplicates
-            const elements = document.querySelectorAll(".my-image-links-kd");
-            elements.forEach((el) => {
-                el.removeAttribute("data-venobox-initialized"); // Reset initialization flag
-            });
-        };
-    }, [posts_photo]);
 
     useEffect(() => {
         if (posts.length > 0) {
@@ -773,27 +780,28 @@ const KdeksDetail = () => {
                                 : posts_photo.length > 0 ? (
                                     posts_photo.slice(0, 4).map((item, idx) => (
                                         <div className="col-md-3 col-lg-3" key={item.id}>
-                                            <a href={item?.photo} className="my-image-links-kd" data-gall="gallery">
+                                            <a href={item?.photo} className="my-image-links-c" data-gall="gallery">
                                                 <div className="card-box-b card-shadow news-box">
-                                                    <div className="img-box-b ">
+                                                    <div className="img-box-b">
                                                         <img
                                                             src={item?.photo === "" ? '/assets/image/foto-beritas.png' : item?.photo}
                                                             onError={(e) => {
                                                                 e.target.onerror = null;
                                                                 e.target.src = `/assets/image/foto-beritas.png`;
                                                             }}
+                                                            data-title={item?.title}
+                                                            title={cookies.i18next === 'id' ? item.title : item.title_en}
                                                             alt="imgNews" style={{ width: '100%', height: '100%' }} sclassName="img-b img-fluid" />
                                                     </div>
                                                     <div className="card-overlay">
-                                                        <div className="card-header-b-x">
-
-                                                            <div className="card-title-b">
-                                                                <h2 className="title-2-x text-white">
-                                                                    {cookies.i18next === 'en' ? item?.title_en : item?.title}
+                                                        <div className="card-header-b-x-s">
+                                                            <div className="card-title-b-s">
+                                                                <h2 className="title-2-x-s text-white">
+                                                                    {cookies.i18next === 'id' ? item.title : item.title_en}
                                                                 </h2>
                                                             </div>
-                                                            <div className="card-date">
-                                                                <span className="date-b">{cookies.i18next === 'id' ? formatDate(item?.photos_datetime, 'id') : formatDate(item?.photos_datetime, 'en')}</span>
+                                                            <div className="card-date-s">
+                                                                <span className="date-b-s">{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
                                                             </div>
                                                         </div>
                                                     </div>
