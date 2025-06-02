@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Iph from '../component/DataTab/Iph'
-import Jks from '../component/DataTab/Jks'
-import Kss from '../component/DataTab/Kss'
-import Biwis from '../component/DataTab/Biwis'
-import Insis from '../component/DataTab/Insis'
-import AktivitasUsahaSyariah from '../component/DataTab/aktivitasUsahaSyariah'
-import Beranda from '../component/DataTab/Beranda'
-import PercepatanExport from "./DataTab/PercepatanExport";
+// import Iph from '../component/DataTab/Iph'
+// import Jks from '../component/DataTab/Jks'
+// import Kss from '../component/DataTab/Kss'
+// import Biwis from '../component/DataTab/Biwis'
+// import Insis from '../component/DataTab/Insis'
+// import AktivitasUsahaSyariah from '../component/DataTab/aktivitasUsahaSyariah'
+// import Beranda from '../component/DataTab/Beranda'
+// import PercepatanExport from "./DataTab/PercepatanExport";
 // import Rph from '../component/DataTab/Rph'
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
@@ -15,11 +15,13 @@ import axios from "axios";
 import { useCookies } from 'react-cookie';
 import './cssCustom.css'; // Import file CSS kustom
 import { Accordion, Card, ListGroup } from 'react-bootstrap';
+import html2canvas from 'html2canvas';
 
 const Data = () => {
     const [cookies] = useCookies(['i18next']);
     dayjs.locale('id');
-    const [selectedSection, setSelectedSection] = useState("1");
+    const [selectedSection, setSelectedSection] = useState("");
+    const [selectedTitle, setTitleSection] = useState("");
     const [loading, setLoading] = useState(true);
     const [categories, setCategories] = useState([]);
 
@@ -49,30 +51,30 @@ const Data = () => {
     }, []);
 
     // 1: Rph,
-    const componentMap = {
-        1: Iph,
-        2: Jks,
-        3: Kss,
-        4: Biwis,
-        5: Insis,
-        6: AktivitasUsahaSyariah,
-        7: Beranda,
-        8: PercepatanExport
-    };
+    // const componentMap = {
+    //     1: Iph,
+    //     2: Jks,
+    //     3: Kss,
+    //     4: Biwis,
+    //     5: Insis,
+    //     6: AktivitasUsahaSyariah,
+    //     7: Beranda,
+    //     8: PercepatanExport
+    // };
 
-    const renderContent = () => {
-        if (loading) {
-            return (
-                <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-                    <div className="spinner-border text-primary" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </div>
-                </div>
-            );
-        }
-        const Component = componentMap[selectedSection];
-        return Component ? <Component /> : <p>Pilih kategori untuk melihat konten.</p>;
-    };
+    // const renderContent = () => {
+    //     if (loading) {
+    //         return (
+    //             <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+    //                 <div className="spinner-border text-primary" role="status">
+    //                     <span className="visually-hidden">Loading...</span>
+    //                 </div>
+    //             </div>
+    //         );
+    //     }
+    // const Component = componentMap[selectedSection];
+    // return Component ? <Component /> : <p>Pilih kategori untuk melihat konten.</p>;
+    // };
 
     const [data, setData] = useState([]);
     // useEffect(() => {
@@ -115,6 +117,18 @@ const Data = () => {
         document.getElementById("dwnjpg").className = 'col-lg-12';
     }
 
+      const downloadJPG = () => {
+        html2canvas(document.querySelector("#dwnjpg")).then(canvas => {
+            const imgData = canvas.toDataURL('image/jpeg', 1.0);
+            const link = document.createElement('a');
+            link.href = imgData;
+            link.download = 'payment-records-chart.jpg';
+
+            // Trigger the download
+            link.click();
+        });
+    };
+
     return (
         <>
             <div className="page-wrapper">
@@ -150,19 +164,21 @@ const Data = () => {
                                                                 {category.data_submenu.map((submenu) => (
                                                                     <ListGroup.Item action variant="white" className="pb-3 pt-3" key={submenu.id}
                                                                         onClick={() => {
-                                                                            if (submenu.id_statistic === 2) {
-                                                                                setSelectedSection(1);
-                                                                            } else if (submenu.id_statistic === 3) {
-                                                                                setSelectedSection(2);
-                                                                            } else if (submenu.id_statistic === 4) {
-                                                                                setSelectedSection(3);
-                                                                            } else if (submenu.id_statistic === 5 && submenu.id === 7) {
-                                                                                setSelectedSection(4);
-                                                                            } else if (submenu.id_statistic === 5 && submenu.id === 9) {
-                                                                                setSelectedSection(8);
-                                                                            } else if (submenu.id_statistic === 8) {
-                                                                                setSelectedSection(5);
-                                                                            }
+                                                                            // if (submenu.id_statistic === 2) {
+                                                                            //     setSelectedSection(1);
+                                                                            // } else if (submenu.id_statistic === 3) {
+                                                                            //     setSelectedSection(2);
+                                                                            // } else if (submenu.id_statistic === 4) {
+                                                                            //     setSelectedSection(3);
+                                                                            // } else if (submenu.id_statistic === 5 && submenu.id === 7) {
+                                                                            //     setSelectedSection(4);
+                                                                            // } else if (submenu.id_statistic === 5 && submenu.id === 9) {
+                                                                            //     setSelectedSection(8);
+                                                                            // } else if (submenu.id_statistic === 8) {
+                                                                            //     setSelectedSection(5);
+                                                                            // }
+                                                                            setSelectedSection(submenu.link_data)
+                                                                            setTitleSection(submenu.short_name)
                                                                         }}
                                                                     >
 
@@ -182,21 +198,25 @@ const Data = () => {
                                             ) : (
                                                 <ListGroup.Item action variant="white" className="mb-3 border-2"
                                                     onClick={() => {
-                                                        if (category.id === 1) {
-                                                            setSelectedSection(1);
-                                                        } else if (category.id === 2) {
-                                                            setSelectedSection(2);
-                                                        } if (category.id === 3) {
-                                                            setSelectedSection(3);
-                                                        } if (category.id === 4) {
-                                                            setSelectedSection(4);
-                                                        } if (category.id === 5) {
-                                                            setSelectedSection(5);
-                                                        } if (category.id === 9) {
-                                                            setSelectedSection(6);
-                                                        } if (category.id === 10) {
-                                                            setSelectedSection(7);
+                                                        if (category.id === 10) {
+                                                            setSelectedSection("https://metabase.kneks.go.id/public/dashboard/f85c27c5-89f1-42b8-bace-543b335ae4e2")
+                                                            setTitleSection("Beranda")
+                                                        } else if (category.id === 9) {
+                                                            setSelectedSection("https://metabase.kneks.go.id/public/dashboard/b0bedf29-1481-40db-938b-e2ce37ee6da9");
+                                                            setTitleSection("Aktivitas Usaha Syariah")
                                                         }
+                                                        // } if (category.id === 3) {
+                                                        //     setSelectedSection(3);
+                                                        // } if (category.id === 4) {
+                                                        //     setSelectedSection(4);
+                                                        // } if (category.id === 5) {
+                                                        //     setSelectedSection(5);
+                                                        // } if (category.id === 9) {
+                                                        //     setSelectedSection(6);
+                                                        // } if (category.id === 10) {
+                                                        //     setSelectedSection(7);
+                                                        // }
+                                                        // console.log(selectedSection)
                                                     }}
                                                     style={{
                                                         padding: `1.3rem 1.8rem`,
@@ -209,8 +229,26 @@ const Data = () => {
 
                                 )}
                             </div>
+
+
                             <div className="col-lg-9" id="dwnjpg">
-                                {renderContent()}
+                                {/* {renderContent()} */}
+                                {/* {console.log(selectedSection)} */}
+                                <div id="dwnjpg">
+
+                                    <div className="card stretch stretch-full">
+                                        <div className="card-header d-flex justify-content-between align-items-center">
+                                            <h5 className="card-title">{selectedTitle}</h5>
+                                            <button onClick={downloadJPG} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
+                                        </div>
+                                        <div className="card-body custom-card-action p-0" id="dwnjpg">
+                                            <iframe src={selectedSection} title="iframe1" width={`100%`} height="1000"
+                                                allowFullScreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                                 <div className="col-lg-12 pt-5">
                                     <div className="about-one-inner-x border p-3 rounded">
                                         <p className="mt-3 text-secondary">
