@@ -18,10 +18,12 @@ import { Accordion, Card, ListGroup } from 'react-bootstrap';
 import html2canvas from 'html2canvas';
 
 const Data = () => {
+    const nilai_awal_selected = "https://metabase.kneks.go.id/public/dashboard/f85c27c5-89f1-42b8-bace-543b335ae4e2";
+    const title_awal_selected = "Beranda";
     const [cookies] = useCookies(['i18next']);
     dayjs.locale('id');
-    const [selectedSection, setSelectedSection] = useState("");
-    const [selectedTitle, setTitleSection] = useState("");
+    const [selectedSection, setSelectedSection] = useState(nilai_awal_selected);
+    const [selectedTitle, setTitleSection] = useState(title_awal_selected);
     const [loading, setLoading] = useState(true);
     const [categories, setCategories] = useState([]);
 
