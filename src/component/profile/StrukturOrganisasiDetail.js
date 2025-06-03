@@ -4,7 +4,9 @@ import Swal from "sweetalert2";
 // import dayjs from 'dayjs';
 // import 'dayjs/locale/id';
 import axios from 'axios';
+import { useCookies } from 'react-cookie';
 const StrukturOrganisasiDetail = () => {
+	const [cookies] = useCookies(['i18next']);
 	const { slug } = useParams();
 	const [rows, setItem] = useState(null);
 	const [loading, setLoading] = useState(true);
@@ -42,7 +44,7 @@ const StrukturOrganisasiDetail = () => {
 						title: "Oops...",
 						text: err.message || "An error occurred while fetching data.",
 					});
-				}finally {
+				} finally {
 					setLoading(false);
 				}
 			};
@@ -56,14 +58,14 @@ const StrukturOrganisasiDetail = () => {
 	}, [slug]);
 
 	if (loading) {
-        return (
-            <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-                <div className="spinner-border text-primary" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        );
-    }
+		return (
+			<div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+				<div className="spinner-border text-primary" role="status">
+					<span className="visually-hidden">Loading...</span>
+				</div>
+			</div>
+		);
+	}
 	return (
 		<>
 			<div className="page-wrapper">
@@ -110,7 +112,7 @@ const StrukturOrganisasiDetail = () => {
 							</div>
 							<div className="col-md-8 text-center text-md-start">
 								<h5 className="text-secondary">{rows?.name}</h5>
-								<p className="text-secondary">{rows?.position}</p>
+								<p className="text-secondary">{cookies.i18next === 'id' ? rows?.position : rows?.position_en}</p>
 							</div>
 						</div>
 						<hr className="my-4" />
@@ -118,7 +120,7 @@ const StrukturOrganisasiDetail = () => {
 						<div className="row">
 							<div className="col-lg-9">
 								<div className="event-details-content-box">
-									<p style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: rows?.description }} />
+									<p style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: cookies.i18next === 'id' ? rows?.description : rows?.description_en }} />
 								</div>
 							</div>
 							<div className="col-lg-3 text-center text-lg-start">
