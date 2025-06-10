@@ -200,13 +200,13 @@ const Data = () => {
                                             ) : (
                                                 <ListGroup.Item action variant="white" className="mb-3 border-2"
                                                     onClick={() => {
-                                                        if (category.id === 10) {
-                                                            setSelectedSection("https://metabase.kneks.go.id/public/dashboard/f85c27c5-89f1-42b8-bace-543b335ae4e2")
-                                                            setTitleSection("Beranda")
-                                                        } else if (category.id === 9) {
-                                                            setSelectedSection("https://metabase.kneks.go.id/public/dashboard/b0bedf29-1481-40db-938b-e2ce37ee6da9");
-                                                            setTitleSection("Aktivitas Usaha Syariah")
-                                                        }
+                                                        // if (category.id === 10) {
+                                                        //     setSelectedSection("https://metabase.kneks.go.id/public/dashboard/f85c27c5-89f1-42b8-bace-543b335ae4e2")
+                                                        //     setTitleSection("Beranda")
+                                                        // } else if (category.id === 9) {
+                                                        //     setSelectedSection("https://metabase.kneks.go.id/public/dashboard/b0bedf29-1481-40db-938b-e2ce37ee6da9");
+                                                        //     setTitleSection("Aktivitas Usaha Syariah")
+                                                        // }
                                                         // } if (category.id === 3) {
                                                         //     setSelectedSection(3);
                                                         // } if (category.id === 4) {
@@ -219,6 +219,13 @@ const Data = () => {
                                                         //     setSelectedSection(7);
                                                         // }
                                                         // console.log(selectedSection)
+                                                        if (category.link_menu_data == null || category.link_menu_data == undefined) {
+                                                         setSelectedSection("")
+                                                         setTitleSection(category.title)
+                                                        }else{
+                                                         setSelectedSection(category.link_menu_data)
+                                                         setTitleSection(category.title)
+                                                        }
                                                     }}
                                                     style={{
                                                         padding: `1.3rem 1.8rem`,
