@@ -15,7 +15,7 @@ import axios from "axios";
 import { useCookies } from 'react-cookie';
 import './cssCustom.css'; // Import file CSS kustom
 import { Accordion, Card, ListGroup } from 'react-bootstrap';
-import html2canvas from 'html2canvas';
+// import html2canvas from 'html2canvas';
 
 const Data = () => {
     const [cookies] = useCookies(['i18next']);
@@ -119,7 +119,7 @@ const Data = () => {
         document.getElementById("dwnjpg").className = 'col-lg-12';
     }
 
-    const downloadJPG = (events) => {
+    function downloadJPG(events) {
         // const iframe = document.getElementById("download_frame");
         // const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
         // html2canvas(document.body,{ allowTaint: true, useCORS: true, logging: true }).then(canvas => {
@@ -132,39 +132,38 @@ const Data = () => {
         // link.click();
         // });
 
-        useEffect(() => {
-            fetch(process.env.REACT_APP_API_URL + '/post_puppeteer', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    ss: events,
-                })
+        fetch(process.env.REACT_APP_API_URL + '/post_puppeteer', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                ss: events,
             })
-                .then(resp => {
-                    if (!resp.ok) {
-                        throw new Error(`HTTP error! status: ${resp.status}`);
-                    }
-                    return resp.json();
-                })
-                .then((output) => {
-                    console.log(output)
-                    const link = document.createElement('a');
-                    link.href = output?.ss;
-                    link.download = 'download_metabase.jpg';
-                    link.click();
-                })
-                .catch((error) => {
+        })
+            .then(resp => {
+                if (!resp.ok) {
+                    throw new Error(`HTTP error! status: ${resp.status}`);
+                }
+                return resp.json();
+            })
+            .then((output) => {
+                console.log(output)
+                const link = document.createElement('a');
+                link.href = output?.ss;
+                link.download = 'download_metabase.jpg';
+                link.click();
+            })
+            .catch((error) => {
 
-                    Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: error,
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: error,
 
-                    });
                 });
-        }, []);
+            });
+
 
     };
 
