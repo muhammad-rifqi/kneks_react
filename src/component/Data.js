@@ -120,18 +120,17 @@ const Data = () => {
     }
 
     const downloadJPG = () => {
-        const iframe = document.getElementById("download_frame");
-        console.log(iframe?.contentDocument)
+        // const iframe = document.getElementById("download_frame");
         // const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-        // html2canvas(iframeDoc.body).then(canvas => {
-        //     const imgData = canvas.toDataURL('image/jpeg', 1.0);
-        //     const img = new Image();
-        //     img.src = imgData;
-        //     const link = document.createElement('a');
-        //     link.href = img;
-        //     link.download = 'download_metabase.jpg';
-        //     link.click();
-        // });
+        html2canvas(document.body,{ allowTaint: true, useCORS: true, logging: true }).then(canvas => {
+            const imgData = canvas.toDataURL('image/jpeg', 1.0);
+            // const img = new Image();
+            // img.src = imgData;
+            const link = document.createElement('a');
+            link.href = imgData;
+            link.download = 'download_metabase.jpg';
+            link.click();
+        });
     };
 
     return (
@@ -256,7 +255,7 @@ const Data = () => {
                                             <button onClick={downloadJPG} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
                                         </div>
                                         <div className="card-body custom-card-action p-0" id="dwnjpg">
-                                            <iframe src={selectedSection} title="iframe1" width={`100%`} id="download_frame" height="1000"
+                                            <iframe id="download_frame" src={selectedSection} title="iframe1" width={`100%`} height="1000"
                                                 allowFullScreen></iframe>
                                         </div>
                                     </div>
