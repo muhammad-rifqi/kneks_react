@@ -18,14 +18,14 @@ import { Accordion, Card, ListGroup } from 'react-bootstrap';
 import html2canvas from 'html2canvas';
 
 const Data = () => {
-    const nilai_awal_selected = "https://metabase.kneks.go.id/public/dashboard/f85c27c5-89f1-42b8-bace-543b335ae4e2";
-    const title_awal_selected = "Beranda";
     const [cookies] = useCookies(['i18next']);
     dayjs.locale('id');
-    const [selectedSection, setSelectedSection] = useState(nilai_awal_selected);
-    const [selectedTitle, setTitleSection] = useState(title_awal_selected);
     const [loading, setLoading] = useState(true);
     const [categories, setCategories] = useState([]);
+    const nilai_awal_selected = "https://metabase.kneks.go.id/public/dashboard/f85c27c5-89f1-42b8-bace-543b335ae4e2";
+    const title_awal_selected = cookies.i18next === 'en' ? 'Executive Dashboard' : 'Dashboard Eksekutif';
+    const [selectedSection, setSelectedSection] = useState(nilai_awal_selected);
+    const [selectedTitle, setTitleSection] = useState(title_awal_selected);
 
     const fetchCategories = async () => {
         const url = process.env.REACT_APP_API_URL;
@@ -119,16 +119,19 @@ const Data = () => {
         document.getElementById("dwnjpg").className = 'col-lg-12';
     }
 
-      const downloadJPG = () => {
-        html2canvas(document.querySelector("#dwnjpg")).then(canvas => {
-            const imgData = canvas.toDataURL('image/jpeg', 1.0);
-            const link = document.createElement('a');
-            link.href = imgData;
-            link.download = 'payment-records-chart.jpg';
-
-            // Trigger the download
-            link.click();
-        });
+    const downloadJPG = () => {
+        const iframe = document.getElementById("download_frame");
+        console.log(iframe?.contentDocument)
+        // const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        // html2canvas(iframeDoc.body).then(canvas => {
+        //     const imgData = canvas.toDataURL('image/jpeg', 1.0);
+        //     const img = new Image();
+        //     img.src = imgData;
+        //     const link = document.createElement('a');
+        //     link.href = img;
+        //     link.download = 'download_metabase.jpg';
+        //     link.click();
+        // });
     };
 
     return (
@@ -166,6 +169,7 @@ const Data = () => {
                                                                 {category.data_submenu.map((submenu) => (
                                                                     <ListGroup.Item action variant="white" className="pb-3 pt-3" key={submenu.id}
                                                                         onClick={() => {
+                                                                            const child_text = cookies.i18next === 'en' ? submenu.long_name_en : submenu.long_name;
                                                                             // if (submenu.id_statistic === 2) {
                                                                             //     setSelectedSection(1);
                                                                             // } else if (submenu.id_statistic === 3) {
@@ -180,7 +184,7 @@ const Data = () => {
                                                                             //     setSelectedSection(5);
                                                                             // }
                                                                             setSelectedSection(submenu.link_data)
-                                                                            setTitleSection(submenu.short_name)
+                                                                            setTitleSection(child_text);
                                                                         }}
                                                                     >
 
@@ -200,6 +204,7 @@ const Data = () => {
                                             ) : (
                                                 <ListGroup.Item action variant="white" className="mb-3 border-2"
                                                     onClick={() => {
+                                                        const parent_text = cookies.i18next === 'en' ? category.long_title_en : category.long_title;
                                                         // if (category.id === 10) {
                                                         //     setSelectedSection("https://metabase.kneks.go.id/public/dashboard/f85c27c5-89f1-42b8-bace-543b335ae4e2")
                                                         //     setTitleSection("Beranda")
@@ -219,12 +224,12 @@ const Data = () => {
                                                         //     setSelectedSection(7);
                                                         // }
                                                         // console.log(selectedSection)
-                                                        if (category.link_menu_data == null || category.link_menu_data == undefined) {
-                                                         setSelectedSection("")
-                                                         setTitleSection(category.title)
-                                                        }else{
-                                                         setSelectedSection(category.link_menu_data)
-                                                         setTitleSection(category.title)
+                                                        if (category.link_menu_data === null || category.link_menu_data === undefined) {
+                                                            setSelectedSection("")
+                                                            setTitleSection(parent_text)
+                                                        } else {
+                                                            setSelectedSection(category.link_menu_data)
+                                                            setTitleSection(parent_text)
                                                         }
                                                     }}
                                                     style={{
@@ -251,7 +256,7 @@ const Data = () => {
                                             <button onClick={downloadJPG} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
                                         </div>
                                         <div className="card-body custom-card-action p-0" id="dwnjpg">
-                                            <iframe src={selectedSection} title="iframe1" width={`100%`} height="1000"
+                                            <iframe src={selectedSection} title="iframe1" width={`100%`} id="download_frame" height="1000"
                                                 allowFullScreen></iframe>
                                         </div>
                                     </div>
