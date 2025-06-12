@@ -879,10 +879,7 @@ const KdeksDetail = () => {
                                 </div>
                                 <div className="col-lg-3">
                                     <div className="footer-widget">
-
-                                        <iframe width="100%" height="250px" frameBorder="0" scrolling="no" title="frame" marginHeight="0" marginWidth="0" src={postKdeks?.maps}>
-                                        </iframe>
-
+                                        <div dangerouslySetInnerHTML={{ __html: postKdeks?.maps }} />
                                     </div>
 
                                 </div>
