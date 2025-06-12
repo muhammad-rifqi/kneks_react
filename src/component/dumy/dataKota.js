@@ -1,6 +1,70 @@
 const dataKota = () => {
     return [
-
+        {
+            title: "Aceh",
+            tanggal: "20 Juni 2024",
+            foto: "",
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "aceh"
+        },
+        {
+            title: "Jakarta",
+            tanggal: "20 Juni 2024",
+            foto: "",
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "jakarta"
+        },
+        {
+            title: "Yogyakarta",
+            tanggal: "20 Juni 2024",
+            foto: "",
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "yogyakarta"
+        },
+        {
+            title: "Bali",
+            tanggal: "20 Juni 2024",
+            foto: "",
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "bali"
+        },
+        {
+            title: "Sulawesi Tenggara",
+            tanggal: "20 Juni 2024",
+            foto: "",
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "sultenggara"
+        },
         {
             title: "Sumatera Utara",
             tanggal: "20 Juni 2024",

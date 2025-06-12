@@ -54,7 +54,6 @@ const KdeksDetail = () => {
                 const url = process.env.REACT_APP_API_URL;
                 const response = await axios.get(`${url}/api_about_province_kdeks/${id}`);
                 setPostKdeks(response.data[0]);
-                console.log(response)
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -316,7 +315,7 @@ const KdeksDetail = () => {
                 if (response.data && response.data.length > 0) {
                     setPostTentang(response.data[0]); // Set data ke state
                 } else {
-                    throw new Error("Data kosong atau tidak ditemukan.");
+                    console.error("Data kosong atau tidak ditemukanx.");
                 }
             } catch (err) {
                 Swal.fire({
@@ -344,7 +343,6 @@ const KdeksDetail = () => {
         }
         return null;
     };
-
     return (
         <>
             <div className="page-wrapper">
@@ -470,7 +468,7 @@ const KdeksDetail = () => {
                     </div >
 
                 </section>
-                <section className="portfolio-section">
+                {/* <section className="portfolio-section">
                     <div className="container">
                         <div className="section-title-box text-center">
                             <h2 className="section-title">{t('beritaDanKegiatan')}</h2>
@@ -537,7 +535,7 @@ const KdeksDetail = () => {
                         </div >
                     </div >
 
-                </section >
+                </section > */}
                 <section className="funfact-section-struktur-x">
                     <section className="funfact-section">
                         <div className="container">
@@ -753,8 +751,6 @@ const KdeksDetail = () => {
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </section>
