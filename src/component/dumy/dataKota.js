@@ -354,7 +354,6 @@ const dataKota = () => {
             skFile7: null,
             kode: "papbar"
         },
-
         {
             title: "Papua",
             tanggal: "20 Juni 2024",
@@ -367,6 +366,18 @@ const dataKota = () => {
             skFile6: null,
             skFile7: null,
             kode: "papua"
+        }, {
+            title: "Nusa Tenggara Timur",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "ntt"
         },
 
     ]
