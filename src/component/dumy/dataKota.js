@@ -134,6 +134,19 @@ const dataKota = () => {
             kode: "gorontalo"
         },
         {
+            title: "Jawa Barat",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "jabar"
+        },
+        {
             title: "Jawa Timur",
             tanggal: "20 Juni 2024",
             foto: "assets/image/logoKdeks/KDEKS_Jawa_Timur.png",
@@ -199,6 +212,45 @@ const dataKota = () => {
             kode: "kaltra"
         },
         {
+            title: "Kalimantan Barat",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "kalbar"
+        },
+        {
+            title: "Kalimantan Tengah",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "kalteng"
+        },
+        {
+            title: "Maluku",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "maluku"
+        },
+        {
             title: "Maluku Utara",
             tanggal: "20 Juni 2024",
             foto: "assets/image/logoKdeks/KDEKS_Maluku_Utara_Logo.jpg",
@@ -225,6 +277,32 @@ const dataKota = () => {
             kode: "ntb"
         },
         {
+            title: "Sulawesi Utara",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "sultra"
+        },
+        {
+            title: "Sulawesi Barat",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "sulbar"
+        },
+        {
             title: "Sulawesi Selatan",
             tanggal: "20 Juni 2024",
             foto: "assets/image/logoKdeks/KDEKS_Sulawesi_Selatan_Logo.jpg",
@@ -249,6 +327,33 @@ const dataKota = () => {
             skFile6: null,
             skFile7: null,
             kode: "sulteng"
+        },
+        {
+            title: "Papua Barat",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "papbar"
+        },
+
+        {
+            title: "Papua",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "papua"
         },
 
     ]
