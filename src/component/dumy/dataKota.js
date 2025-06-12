@@ -134,6 +134,19 @@ const dataKota = () => {
             kode: "gorontalo"
         },
         {
+            title: "Banten",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "banten"
+        },
+        {
             title: "Jawa Barat",
             tanggal: "20 Juni 2024",
             foto: null,
