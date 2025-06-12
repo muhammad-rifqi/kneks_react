@@ -123,9 +123,6 @@ const MapsKdeks = () => {
 									</g>
 								</a>
 
-
-
-
 								<a href={gorontalo.title ? `/kdeks/${convertToSlug(gorontalo.title)}/29` : '#gorontalo'} data-bs-toggle="tooltip" title={gorontalo.title ? gorontalo.title : ''} style={{ outline: 'none' }} rel="noreferrer" target={gorontalo.title ? '_blank' : ''} >
 									<g fill={gorontalo.title ? '#e6ece8' : '#000000 '} stroke="#bcc0be">
 										<path
