@@ -223,7 +223,7 @@ const Data = () => {
 
                                                                         <div>
                                                                             <label htmlFor="cv-mentor" style={{ cursor: 'pointer' }} >
-                                                                                {cookies.i18next === 'en' ? submenu.long_name_en : submenu.long_name}
+                                                                                {cookies.i18next === 'en' ? submenu.short_name_en : submenu.short_name}
                                                                             </label>
                                                                         </div>
 
