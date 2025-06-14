@@ -119,13 +119,11 @@ const Data = () => {
         document.getElementById("dwnjpg").className = 'col-lg-12';
     }
 
-    function downloadJPG(events) {
+    const downloadJPG = () => {
         const iframe = document.getElementById("download_frame");
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-        html2canvas(document.body,{ allowTaint: true, useCORS: true, logging: true }).then(canvas => {
-            const imgData = canvas.toDataURL('image/jpeg', 1.0);
-        const img = new Image();
-        img.src = imgData;
+        // const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        html2canvas(iframe).then(canvas => {
+        const imgData = canvas.toDataURL('image/jpeg', 1.0);
         const link = document.createElement('a');
         link.href = imgData;
         link.download = 'download_metabase.jpg';
@@ -180,7 +178,7 @@ const Data = () => {
                 </section>
                 <section className="department-details-section" >
                     <div className="container-lg">
-                        <p> <button className="btn btn-success" onClick={showPanel}> {cookies.i18next === 'en' ? 'close menu' : 'tutup menu'} </button> &nbsp; &nbsp; <button className="btn btn-success" onClick={hidePanel}> {cookies.i18next === 'en' ? 'open menu' : 'buka menu'} </button> </p>
+                        <p> <button className="btn btn-success" onClick={showPanel}> {cookies.i18next === 'en' ? 'open menu' : 'buka menu'} </button> &nbsp; &nbsp; <button className="btn btn-success" onClick={hidePanel}> {cookies.i18next === 'en' ? 'close menu' : 'tutup menu'} </button> </p>
                         <div className="row">
                             <div className="col-12 col-lg-3 col-xl-3" id="sidepanels">
                                 {loading ? (
@@ -286,7 +284,7 @@ const Data = () => {
                                     <div className="card stretch stretch-full">
                                         <div className="card-header d-flex justify-content-between align-items-center">
                                             <h5 className="card-title">{selectedTitle}</h5>
-                                            <button onClick={(e) => { downloadJPG() }} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
+                                            <button onClick={downloadJPG} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
                                         </div>
                                         <div className="card-body custom-card-action p-0" id="dwnjpg">
                                             <iframe id="download_frame" src={selectedSection} title="iframe1" width={`100%`} height="1000"
