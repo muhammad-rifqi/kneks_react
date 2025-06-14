@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"; 
 // import Iph from '../component/DataTab/Iph'
 // import Jks from '../component/DataTab/Jks'
 // import Kss from '../component/DataTab/Kss'
@@ -10,12 +10,12 @@ import React, { useEffect, useState } from "react";
 // import Rph from '../component/DataTab/Rph'
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
-import "dayjs/locale/id";
+import "dayjs/locale/id"; 
 import axios from "axios";
 import { useCookies } from 'react-cookie';
 import './cssCustom.css'; // Import file CSS kustom
 import { Accordion, Card, ListGroup } from 'react-bootstrap';
-// import html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas';
 
 const Data = () => {
     const [cookies] = useCookies(['i18next']);
