@@ -237,6 +237,8 @@ const Data = () => {
                                                 <ListGroup.Item action variant="white" className="mb-3 border-2"
                                                     onClick={() => {
                                                         const parent_text = cookies.i18next === 'en' ? category.long_title_en : category.long_title;
+                                                        const naration_text = cookies.i18next === 'en' ? category.narations_menu_en : category.narations_menu;
+                                                        
                                                         // if (category.id === 10) {
                                                         //     setSelectedSection("https://metabase.kneks.go.id/public/dashboard/f85c27c5-89f1-42b8-bace-543b335ae4e2")
                                                         //     setTitleSection("Beranda")
@@ -259,9 +261,11 @@ const Data = () => {
                                                         if (category.link_menu_data === null || category.link_menu_data === undefined) {
                                                             setSelectedSection("")
                                                             setTitleSection(parent_text)
+                                                            setSubNarations(naration_text)
                                                         } else {
                                                             setSelectedSection(category.link_menu_data)
                                                             setTitleSection(parent_text)
+                                                            setSubNarations(naration_text)
                                                         }
                                                     }}
                                                     style={{
