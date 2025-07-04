@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"; 
+import React, { useEffect, useState } from "react";
 // import Iph from '../component/DataTab/Iph'
 // import Jks from '../component/DataTab/Jks'
 // import Kss from '../component/DataTab/Kss'
@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 // import Rph from '../component/DataTab/Rph'
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
-import "dayjs/locale/id"; 
+import "dayjs/locale/id";
 import axios from "axios";
 import { useCookies } from 'react-cookie';
 import './cssCustom.css'; // Import file CSS kustom
@@ -123,11 +123,11 @@ const Data = () => {
         const iframe = document.getElementById("download_frame");
         // const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
         html2canvas(iframe).then(canvas => {
-        const imgData = canvas.toDataURL('image/jpeg', 1.0);
-        const link = document.createElement('a');
-        link.href = imgData;
-        link.download = 'download_metabase.jpg';
-        link.click();
+            const imgData = canvas.toDataURL('image/jpeg', 1.0);
+            const link = document.createElement('a');
+            link.href = imgData;
+            link.download = 'download_metabase.jpg';
+            link.click();
         });
 
         // fetch(process.env.REACT_APP_API_URL + '/post_puppeteer', {
@@ -239,7 +239,7 @@ const Data = () => {
                                                     onClick={() => {
                                                         const parent_text = cookies.i18next === 'en' ? category.long_title_en : category.long_title;
                                                         const naration_text = cookies.i18next === 'en' ? category.narations_menu_en : category.narations_menu;
-                                                        
+
                                                         // if (category.id === 10) {
                                                         //     setSelectedSection("https://metabase.kneks.go.id/public/dashboard/f85c27c5-89f1-42b8-bace-543b335ae4e2")
                                                         //     setTitleSection("Beranda")
@@ -303,7 +303,7 @@ const Data = () => {
                                 <div className="col-lg-12 pt-5">
                                     <div className="about-one-inner-x border p-3 rounded">
                                         <p className="mt-3 text-secondary">
-                                            {narasi}
+                                            {narasi ? narasi : '-'}
                                         </p>
                                     </div>
                                 </div>
