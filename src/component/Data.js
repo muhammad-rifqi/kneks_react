@@ -201,6 +201,7 @@ const Data = () => {
                                                                     <ListGroup.Item action variant="white" className="pb-3 pt-3" key={submenu.id}
                                                                         onClick={() => {
                                                                             const child_text = cookies.i18next === 'en' ? submenu.long_name_en : submenu.long_name;
+                                                                            const naration_subtext = cookies.i18next === 'en' ? submenu.sub_narations_en : submenu.sub_narations;
                                                                             // if (submenu.id_statistic === 2) {
                                                                             //     setSelectedSection(1);
                                                                             // } else if (submenu.id_statistic === 3) {
@@ -216,7 +217,7 @@ const Data = () => {
                                                                             // }
                                                                             setSelectedSection(submenu.link_data)
                                                                             setTitleSection(child_text);
-                                                                            setSubNarations(submenu.sub_narations)
+                                                                            setSubNarations(naration_subtext)
                                                                         }}
                                                                     >
 
