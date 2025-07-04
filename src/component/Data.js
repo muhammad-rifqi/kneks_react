@@ -26,7 +26,7 @@ const Data = () => {
     const title_awal_selected = cookies.i18next === 'en' ? 'Executive Dashboard' : 'Dashboard Eksekutif';
     const [selectedSection, setSelectedSection] = useState(nilai_awal_selected);
     const [selectedTitle, setTitleSection] = useState(title_awal_selected);
-
+    const [narasi, setSubNarations] = useState("");
     const fetchCategories = async () => {
         const url = process.env.REACT_APP_API_URL;
         const response = await axios.get(`${url}/data_menu_fe`);
@@ -216,6 +216,7 @@ const Data = () => {
                                                                             // }
                                                                             setSelectedSection(submenu.link_data)
                                                                             setTitleSection(child_text);
+                                                                            setSubNarations(submenu.sub_narations)
                                                                         }}
                                                                     >
 
@@ -297,7 +298,7 @@ const Data = () => {
                                 <div className="col-lg-12 pt-5">
                                     <div className="about-one-inner-x border p-3 rounded">
                                         <p className="mt-3 text-secondary">
-                                            -
+                                            {narasi}
                                         </p>
                                     </div>
                                 </div>
