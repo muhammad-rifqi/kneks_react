@@ -148,7 +148,7 @@ const Data = () => {
             .then((output) => {
                 const link = document.createElement('a');
                 link.href = output?.ss;
-                link.download = `${Math.random() * 10000000000000000}.png`;
+                link.download = `${Math.ceil(Math.random() * 10000000)}.png`;
                 link.click();
             })
             .catch((error) => {
