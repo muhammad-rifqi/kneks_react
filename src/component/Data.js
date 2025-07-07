@@ -16,6 +16,7 @@ import { useCookies } from 'react-cookie';
 import './cssCustom.css'; // Import file CSS kustom
 import { Accordion, Card, ListGroup } from 'react-bootstrap';
 import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 
 const Data = () => {
     const [cookies] = useCookies(['i18next']);
@@ -120,6 +121,7 @@ const Data = () => {
     }
 
     const [isDownloading, setIsDownloading] = useState(false);
+    const [downloadType, setDownloadType] = useState('pdf'); // 'png' or 'pdf'
 
     const downloadJPG = async (events) => {
         try {
@@ -133,31 +135,55 @@ const Data = () => {
                     "domain": events,
                 })
             });
-            
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            
+
             const output = await response.json();
             const link = document.createElement('a');
             link.href = output?.ss;
-            link.download = `screenshot_${Date.now()}.png`;
-            link.click();
+            link.download = `screenshot_${Date.now()}.${downloadType}`;
 
-            Swal.fire({
-                icon: "success",
-                title: cookies.i18next === 'en' ? "Success!" : "Berhasil!",
-                text: cookies.i18next === 'en' ? "File has been downloaded successfully." : "File telah berhasil diunduh.",
-                timer: 2000,
-                showConfirmButton: false
-            });
+            if (downloadType === 'pdf') {
+                const img = new Image();
+                img.crossOrigin = 'anonymous';
+                img.src = output?.ss;
+                img.onload = () => {
+                    const pdf = new jsPDF({
+                        orientation: img.width > img.height ? 'landscape' : 'portrait',
+                        unit: 'px',
+                        format: [img.width, img.height]
+                    });
+                    pdf.addImage(img, 'PNG', 0, 0, img.width, img.height);
+                    pdf.save(`screenshot_${Date.now()}.pdf`);
+
+                    Swal.fire({
+                        icon: "success",
+                        title: cookies.i18next === 'en' ? "Success!" : "Berhasil!",
+                        text: cookies.i18next === 'en' ? "PDF has been downloaded successfully." : "PDF telah berhasil diunduh.",
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+                    setIsDownloading(false);
+                };
+            } else {
+                link.click();
+                Swal.fire({
+                    icon: "success",
+                    title: cookies.i18next === 'en' ? "Success!" : "Berhasil!",
+                    text: cookies.i18next === 'en' ? "Image has been downloaded successfully." : "Gambar telah berhasil diunduh.",
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+                setIsDownloading(false);
+            }
         } catch (error) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
                 text: error.message,
             });
-        } finally {
             setIsDownloading(false);
         }
     };
@@ -287,10 +313,10 @@ const Data = () => {
                                     <div className="card stretch stretch-full">
                                         <div className="card-header d-flex justify-content-between align-items-center">
                                             <h5 className="card-title">{selectedTitle}</h5>
-                                            <button 
-                                                onClick={() => downloadJPG(selectedSection)} 
-                                                className="card-header-action" 
-                                                data-bs-toggle="tooltip" 
+                                            <button
+                                                onClick={() => downloadJPG(selectedSection)}
+                                                className="card-header-action"
+                                                data-bs-toggle="tooltip"
                                                 title="download"
                                                 disabled={isDownloading}
                                                 style={{
@@ -298,7 +324,7 @@ const Data = () => {
                                                     opacity: isDownloading ? 0.7 : 1
                                                 }}
                                             >
-                                                <i 
+                                                <i
                                                     className={`fa-solid ${isDownloading ? 'fa-spinner fa-spin' : 'fa-download'}`}
                                                     aria-hidden="true"
                                                     style={{
