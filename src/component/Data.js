@@ -119,46 +119,47 @@ const Data = () => {
         document.getElementById("dwnjpg").className = 'col-lg-12';
     }
 
-    const downloadJPG = (events) => {
-        // const iframe = document.getElementById("download_frame");
-        // const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-        // html2canvas(iframe).then(canvas => {
-        //     const imgData = canvas.toDataURL('image/jpeg', 1.0);
-        //     const link = document.createElement('a');
-        //     link.href = imgData;
-        //     link.download = 'download_metabase.jpg';
-        //     link.click();
-        // });
+    const [isDownloading, setIsDownloading] = useState(false);
 
-        fetch(process.env.REACT_APP_API_URL + '/post_puppeteer', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                "domain" : events,
-            })
-        })
-            .then(resp => {
-                if (!resp.ok) {
-                    throw new Error(`HTTP error! status: ${resp.status}`);
-                }
-                return resp.json();
-            })
-            .then((output) => {
-                const link = document.createElement('a');
-                link.href = output?.ss;
-                link.download = `${Math.ceil(Math.random() * 10000000)}.png`;
-                link.click();
-            })
-            .catch((error) => {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: error,
-
-                });
+    const downloadJPG = async (events) => {
+        try {
+            setIsDownloading(true);
+            const response = await fetch(process.env.REACT_APP_API_URL + '/post_puppeteer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    "domain": events,
+                })
             });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const output = await response.json();
+            const link = document.createElement('a');
+            link.href = output?.ss;
+            link.download = `screenshot_${Date.now()}.png`;
+            link.click();
+
+            Swal.fire({
+                icon: "success",
+                title: cookies.i18next === 'en' ? "Success!" : "Berhasil!",
+                text: cookies.i18next === 'en' ? "File has been downloaded successfully." : "File telah berhasil diunduh.",
+                timer: 2000,
+                showConfirmButton: false
+            });
+        } catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: error.message,
+            });
+        } finally {
+            setIsDownloading(false);
+        }
     };
 
     return (
@@ -286,7 +287,26 @@ const Data = () => {
                                     <div className="card stretch stretch-full">
                                         <div className="card-header d-flex justify-content-between align-items-center">
                                             <h5 className="card-title">{selectedTitle}</h5>
-                                            <button onClick={()=>downloadJPG(selectedSection)} className="card-header-action" data-bs-toggle="tooltip" title="download"><i className="fa-solid fa-download" aria-hidden="true"></i></button>
+                                            <button 
+                                                onClick={() => downloadJPG(selectedSection)} 
+                                                className="card-header-action" 
+                                                data-bs-toggle="tooltip" 
+                                                title="download"
+                                                disabled={isDownloading}
+                                                style={{
+                                                    transition: 'all 0.3s ease-in-out',
+                                                    opacity: isDownloading ? 0.7 : 1
+                                                }}
+                                            >
+                                                <i 
+                                                    className={`fa-solid ${isDownloading ? 'fa-spinner fa-spin' : 'fa-download'}`}
+                                                    aria-hidden="true"
+                                                    style={{
+                                                        transition: 'transform 0.3s ease-in-out',
+                                                        transform: isDownloading ? 'scale(1.1)' : 'scale(1)'
+                                                    }}
+                                                />
+                                            </button>
                                         </div>
                                         <div className="card-body custom-card-action p-0" id="dwnjpg">
                                             <iframe id="download_frame" src={selectedSection} title="iframe1" width={`100%`} height="1000"
