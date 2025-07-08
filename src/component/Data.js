@@ -157,7 +157,21 @@ const Data = () => {
                     });
                     pdf.addImage(img, 'PNG', 0, 0, img.width, img.height);
                     pdf.addPage();
-                    pdf.text(narasi, 10, 10);
+                    const margin = 40;
+                    const pageWidth = pdf.internal.pageSize.getWidth();
+                    const pageHeight = pdf.internal.pageSize.getHeight();
+                    const maxWidth = pageWidth - 2 * margin;
+                    let cursorY = margin;
+                    const lineHeight = 20;
+                    const textLines = pdf.splitTextToSize(narasi, maxWidth);
+                    textLines.forEach(line => {
+                        if (cursorY + lineHeight > pageHeight - margin) {
+                            pdf.addPage();
+                            cursorY = margin; 
+                        }
+                        pdf.text(line, margin, cursorY);
+                        cursorY += lineHeight;
+                    });
                     pdf.save(`screenshot_${Date.now()}.pdf`);
 
                     Swal.fire({
