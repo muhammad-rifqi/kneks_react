@@ -156,6 +156,10 @@ const Data = () => {
                         format: [img.width, img.height]
                     });
                     pdf.addImage(img, 'PNG', 0, 0, img.width, img.height);
+                    const textX = img.width;
+                    const textY = img.height + 50;
+                    pdf.setFontSize(12);
+                    pdf.text(narasi, textX, textY);
                     pdf.save(`screenshot_${Date.now()}.pdf`);
 
                     Swal.fire({
