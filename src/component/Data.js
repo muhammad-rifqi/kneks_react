@@ -33,7 +33,7 @@ const Data = () => {
         const response = await axios.get(`${url}/data_menu_fe`);
         return response.data
     };
-
+    console.log(`sc`, narasi)
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
@@ -87,7 +87,7 @@ const Data = () => {
     //             setData(rows)
     //         })
     // })
-    // console.log(data)
+
     useEffect(() => {
         fetch(process.env.REACT_APP_API_URL + '/sourcesdata')
             .then(resp => {
@@ -167,7 +167,7 @@ const Data = () => {
                     textLines.forEach(line => {
                         if (cursorY + lineHeight > pageHeight - margin) {
                             pdf.addPage();
-                            cursorY = margin; 
+                            cursorY = margin;
                         }
                         pdf.text(line, margin, cursorY);
                         cursorY += lineHeight;
@@ -359,10 +359,51 @@ const Data = () => {
 
 
                                 <div className="col-lg-12 pt-5">
-                                    <div className="about-one-inner-x border p-3 rounded">
-                                        <p className="mt-3 text-secondary">
-                                            {narasi ? narasi : '-'}
-                                        </p>
+                                    <style jsx>{`
+                                        .narasi-content {
+                                            white-space: pre-wrap;
+                                            word-wrap: break-word;
+                                            line-height: 1.6;
+                                            font-size: 1rem;
+                                        }
+                                        .narasi-content p {
+                                            margin-bottom: 1rem;
+                                        }
+                                        .skeleton-loading {
+                                            width: 100%;
+                                        }
+                                        .skeleton-line {
+                                            height: 15px;
+                                            margin: 10px 0;
+                                            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+                                            background-size: 200% 100%;
+                                            animation: loading 1.5s infinite;
+                                            border-radius: 4px;
+                                        }
+                                        @keyframes loading {
+                                            0% {
+                                                background-position: 200% 0;
+                                            }
+                                            100% {
+                                                background-position: -200% 0;
+                                            }
+                                        }
+                                    `}</style>
+                                    <div className="about-one-inner-x border p-3 rounded mb-4">
+                                        {loading ? (
+                                            <div className="skeleton-loading">
+                                                <div className="skeleton-line"></div>
+                                                <div className="skeleton-line"></div>
+                                                <div className="skeleton-line"></div>
+                                            </div>
+                                        ) : (
+                                            <div
+                                                className="mt-3 text-start narasi-content"
+                                                dangerouslySetInnerHTML={{
+                                                    __html: narasi ? narasi : '-'
+                                                }}
+                                            />
+                                        )}
                                     </div>
                                 </div>
 
