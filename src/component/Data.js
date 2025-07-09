@@ -15,7 +15,7 @@ import axios from "axios";
 import { useCookies } from 'react-cookie';
 import './cssCustom.css'; // Import file CSS kustom
 import { Accordion, Card, ListGroup } from 'react-bootstrap';
-import html2canvas from 'html2canvas';
+// import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
 const Data = () => {
@@ -156,32 +156,43 @@ const Data = () => {
                         format: [img.width, img.height]
                     });
                     pdf.addImage(img, 'PNG', 0, 0, img.width, img.height);
-                    pdf.addPage();
-                    const margin = 40;
-                    const pageWidth = pdf.internal.pageSize.getWidth();
-                    const pageHeight = pdf.internal.pageSize.getHeight();
-                    const maxWidth = pageWidth - 2 * margin;
-                    let cursorY = margin;
-                    const lineHeight = 20;
-                    const textLines = pdf.splitTextToSize(narasi, maxWidth);
-                    textLines.forEach(line => {
-                        if (cursorY + lineHeight > pageHeight - margin) {
-                            pdf.addPage();
-                            cursorY = margin;
-                        }
-                        pdf.text(line, margin, cursorY);
-                        cursorY += lineHeight;
-                    });
-                    pdf.save(`screenshot_${Date.now()}.pdf`);
-
-                    Swal.fire({
-                        icon: "success",
-                        title: cookies.i18next === 'en' ? "Success!" : "Berhasil!",
-                        text: cookies.i18next === 'en' ? "PDF has been downloaded successfully." : "PDF telah berhasil diunduh.",
-                        timer: 2000,
-                        showConfirmButton: false
-                    });
-                    setIsDownloading(false);
+                    if (narasi === "" || narasi === "null" || narasi === "-") {
+                        pdf.save(`screenshot_${Date.now()}.pdf`);
+                        Swal.fire({
+                            icon: "success",
+                            title: cookies.i18next === 'en' ? "Success!" : "Berhasil!",
+                            text: cookies.i18next === 'en' ? "PDF has been downloaded successfully." : "PDF telah berhasil diunduh.",
+                            timer: 2000,
+                            showConfirmButton: false
+                        });
+                        setIsDownloading(false);
+                    } else {
+                        pdf.addPage();
+                        const margin = 40;
+                        const pageWidth = pdf.internal.pageSize.getWidth();
+                        const pageHeight = pdf.internal.pageSize.getHeight();
+                        const maxWidth = pageWidth - 2 * margin;
+                        let cursorY = margin;
+                        const lineHeight = 20;
+                        const textLines = pdf.splitTextToSize(narasi, maxWidth);
+                        textLines.forEach(line => {
+                            if (cursorY + lineHeight > pageHeight - margin) {
+                                pdf.addPage();
+                                cursorY = margin;
+                            }
+                            pdf.text(line, margin, cursorY);
+                            cursorY += lineHeight;
+                        });
+                        pdf.save(`screenshot_${Date.now()}.pdf`);
+                        Swal.fire({
+                            icon: "success",
+                            title: cookies.i18next === 'en' ? "Success!" : "Berhasil!",
+                            text: cookies.i18next === 'en' ? "PDF has been downloaded successfully." : "PDF telah berhasil diunduh.",
+                            timer: 2000,
+                            showConfirmButton: false
+                        });
+                        setIsDownloading(false);
+                    }
                 };
             } else {
                 link.click();
