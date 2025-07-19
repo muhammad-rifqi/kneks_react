@@ -3,7 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useTranslation } from "react-i18next";
 // import { useCookies } from 'react-cookie';
-import { InstagramEmbed } from 'react-social-media-embed';
+// import { InstagramEmbed } from 'react-social-media-embed';
 
 
 const Section11 = () => {
@@ -48,24 +48,22 @@ const Section11 = () => {
 					</div>
 					<div className="row m-0" data-aos="fade-down" >
 						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
-							<InstagramEmbed url="https://www.instagram.com/p/C6pooCOBSOA"
+							{/* <InstagramEmbed url="https://www.instagram.com/p/C6pooCOBSOA"
 								width="100%"
-							/>
+							/> */}
+							<img src={process.env.PUBLIC_URL + '/assets/ig/1.png'} alt="Intagram1" width="100%"/>
 						</div >
 						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
-
-							<InstagramEmbed url="https://www.instagram.com/p/CtjUgOFrnVn/"
+							{/* <InstagramEmbed url="https://www.instagram.com/p/CtjUgOFrnVn/"
 								width="100%"
-
-							/>
-
+							/> */}
+							<img src={process.env.PUBLIC_URL + '/assets/ig/2.png'} alt="Intagram2" width="100%"/>
 						</div >
 						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
-
-							<InstagramEmbed url="https://www.instagram.com/p/DB2pOXjz09c/"
+							{/* <InstagramEmbed url="https://www.instagram.com/p/DB2pOXjz09c/"
 								width="100%"
-
-							/>
+							/> */}
+							<img src={process.env.PUBLIC_URL + '/assets/ig/3.png'} alt="Intagram3" width="100%"/>
 						</div >
 					</div>
 
