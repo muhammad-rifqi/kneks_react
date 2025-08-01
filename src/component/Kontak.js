@@ -165,7 +165,7 @@ const Kontak = () => {
                                                             marginRight: '8px'
                                                         }}
                                                     ></span>
-                                                    Mengirim...
+                                                    loading...
                                                 </>
                                             ) : (
                                                 t('kirim')
