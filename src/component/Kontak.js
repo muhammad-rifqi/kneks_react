@@ -126,7 +126,7 @@ const Kontak = () => {
                                                 id={field}
                                                 placeholder={t(field).charAt(0).toUpperCase() + t(field).slice(1)}
                                                 name={field}
-                                                value={formValues[field]}
+                                                value={formValues[field] || ''}
                                                 onChange={handleInputChange}
                                                 className={`input-text ${fieldErrors[field] ? "border-error" : ""}`}
                                                 disabled={isLoading}
@@ -140,7 +140,7 @@ const Kontak = () => {
                                             name="inputText"
                                             placeholder={t('tulisPesan')}
                                             className={`input-text ${fieldErrors.inputText ? "border-error" : ""}`}
-                                            value={formValues.inputText}
+                                            value={formValues.inputText || ''}
                                             onChange={handleInputChange}
                                             disabled={isLoading}
                                         ></textarea>
