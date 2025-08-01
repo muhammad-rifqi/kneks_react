@@ -13,6 +13,7 @@ const Kontak = () => {
     });
 
     const [fieldErrors, setFieldErrors] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
 
     const validateField = (name, value) => {
         switch (name) {
@@ -48,6 +49,7 @@ const Kontak = () => {
 
         const allValid = Object.values(newFieldErrors).every(error => error === null);
         if (allValid) {
+            setIsLoading(true);
 
             const url = process.env.REACT_APP_API_URL;
             const endpoint = process.env.REACT_APP_API_INPUT_KONTAK;
@@ -72,6 +74,7 @@ const Kontak = () => {
                     return response.json(); // Parse the response as JSON
                 })
                 .then(data => {
+                    setIsLoading(false);
                     if (data.success) {
                         Swal.fire({
                             icon: "success",
@@ -91,6 +94,7 @@ const Kontak = () => {
                     }
                 })
                 .catch(error => {
+                    setIsLoading(false);
                     Swal.fire({
                         icon: "error",
                         title: "Oops...",
@@ -115,16 +119,17 @@ const Kontak = () => {
                         <div className="col-lg-8 offset-lg-2">
                             <form className="contact-form contact-form-validated" onSubmit={handleSubmit}>
                                 <div className="row row-gutter-10">
-                                    {[t('nama'), t('email'), t('phone'), t('subjek')].map((field, index) => (
+                                    {['nama', 'email', 'phone', 'subjek'].map((field, index) => (
                                         <div key={index} className="col-12 col-lg-6">
                                             <input
                                                 type={field === "email" ? "email" : "text"}
                                                 id={field}
-                                                placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                                                placeholder={t(field).charAt(0).toUpperCase() + t(field).slice(1)}
                                                 name={field}
-                                                value={formValues[field] || ''}
+                                                value={formValues[field]}
                                                 onChange={handleInputChange}
                                                 className={`input-text ${fieldErrors[field] ? "border-error" : ""}`}
+                                                disabled={isLoading}
                                             />
                                             {fieldErrors[field] && <small className="text-danger">{fieldErrors[field]}</small>}
                                         </div>
@@ -135,13 +140,37 @@ const Kontak = () => {
                                             name="inputText"
                                             placeholder={t('tulisPesan')}
                                             className={`input-text ${fieldErrors.inputText ? "border-error" : ""}`}
-                                            value={formValues.inputText || ''}
+                                            value={formValues.inputText}
                                             onChange={handleInputChange}
+                                            disabled={isLoading}
                                         ></textarea>
                                         {fieldErrors.inputText && <small className="text-danger">{fieldErrors.inputText}</small>}
                                     </div>
                                     <div className="col-12">
-                                        <button className="btn btn-primary" type="submit">{t('kirim')}</button>
+                                        <button 
+                                            className="btn btn-primary" 
+                                            type="submit" 
+                                            disabled={isLoading}
+                                            style={{ position: 'relative' }}
+                                        >
+                                            {isLoading ? (
+                                                <>
+                                                    <span 
+                                                        className="spinner-border spinner-border-sm me-2" 
+                                                        role="status" 
+                                                        aria-hidden="true"
+                                                        style={{ 
+                                                            width: '1rem', 
+                                                            height: '1rem',
+                                                            marginRight: '8px'
+                                                        }}
+                                                    ></span>
+                                                    Mengirim...
+                                                </>
+                                            ) : (
+                                                t('kirim')
+                                            )}
+                                        </button>
                                     </div>
                                 </div>
                             </form>
