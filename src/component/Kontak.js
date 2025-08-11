@@ -15,16 +15,54 @@ const Kontak = () => {
     const [fieldErrors, setFieldErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
+    // Fungsi untuk sanitasi input - mencegah XSS dan injection
+    const sanitizeInput = (input) => {
+        if (typeof input !== 'string') return input;
+        
+        return input
+            .replace(/[<>]/g, '') // Hapus tag HTML
+            .replace(/['"]/g, '') // Hapus quotes yang bisa digunakan untuk injection
+            .replace(/javascript:/gi, '') // Hapus javascript protocol
+            .replace(/on\w+=/gi, '') // Hapus event handlers
+            .trim();
+    };
+
+    // Validasi yang lebih ketat
     const validateField = (name, value) => {
+        // Sanitasi input terlebih dahulu
+        const sanitizedValue = sanitizeInput(value);
+        
         switch (name) {
             case "nama":
+                if (sanitizedValue.trim() === '') return "*Wajib diisi";
+                if (sanitizedValue.length < 2) return "*Nama minimal 2 karakter";
+                // if (sanitizedValue.length > 50) return "*Nama maksimal 50 karakter";
+                if (!/^[a-zA-Z\s]+$/.test(sanitizedValue)) return "*Nama hanya boleh huruf";
+                return null;
+                
             case "subjek":
+                if (sanitizedValue.trim() === '') return "*Wajib diisi";
+                if (sanitizedValue.length < 3) return "*Subjek minimal 3 karakter";
+                // if (sanitizedValue.length > 100) return "*Subjek maksimal 100 karakter";
+                return null;
+                
             case "inputText":
-                return value.trim() === '' ? "*Wajib diisi" : null;
+                if (sanitizedValue.trim() === '') return "*Wajib diisi";
+                if (sanitizedValue.length < 10) return "*Pesan minimal 10 karakter";
+                // if (sanitizedValue.length > 1000) return "*Pesan maksimal 1000 karakter";
+                return null;
+                
             case "email":
-                return !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value) ? "*Email tidak valid" : null;
+                if (sanitizedValue.trim() === '') return "*Wajib diisi";
+                if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(sanitizedValue)) return "*Email tidak valid";
+                if (sanitizedValue.length > 100) return "*Email terlalu panjang";
+                return null;
+                
             case "phone":
-                return !/^[0-9]{10,15}$/.test(value) ? "*Nomor telepon tidak valid" : null;
+                if (sanitizedValue.trim() === '') return "*Wajib diisi";
+                if (!/^[0-9+\-\s()]{10,15}$/.test(sanitizedValue)) return "*Nomor telepon tidak valid";
+                return null;
+                
             default:
                 return null;
         }
@@ -32,9 +70,12 @@ const Kontak = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setFormValues({ ...formValues, [name]: value });
+        
+        // Sanitasi input sebelum menyimpan ke state
+        const sanitizedValue = sanitizeInput(value);
+        setFormValues({ ...formValues, [name]: sanitizedValue });
 
-        setFieldErrors({ ...fieldErrors, [name]: validateField(name, value) });
+        setFieldErrors({ ...fieldErrors, [name]: validateField(name, sanitizedValue) });
     };
 
     const handleSubmit = async (e) => {
@@ -51,20 +92,54 @@ const Kontak = () => {
         if (allValid) {
             setIsLoading(true);
 
+            // Sanitasi final sebelum mengirim ke server
+            const sanitizedData = {
+                name: sanitizeInput(formValues.nama),
+                email: sanitizeInput(formValues.email).toLowerCase(),
+                phone_number: sanitizeInput(formValues.phone).replace(/[^\d+\-\s()]/g, ''), // Hanya angka dan karakter telepon yang valid
+                subjek: sanitizeInput(formValues.subjek),
+                pesan: sanitizeInput(formValues.inputText)
+            };
+
+            // Validasi ulang data yang sudah disanitasi
+            const finalValidation = Object.keys(sanitizedData).every(key => {
+                if (key === 'phone_number') {
+                    return validateField('phone', sanitizedData[key]) === null;
+                }
+                return validateField(key === 'name' ? 'nama' : key === 'pesan' ? 'inputText' : key, sanitizedData[key]) === null;
+            });
+
+            if (!finalValidation) {
+                setIsLoading(false);
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: "Data tidak valid. Silakan periksa kembali input Anda."
+                });
+                return;
+            }
+
             const url = process.env.REACT_APP_API_URL;
             const endpoint = process.env.REACT_APP_API_INPUT_KONTAK;
+            
+            // Validasi URL endpoint
+            if (!url || !endpoint) {
+                setIsLoading(false);
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: "Konfigurasi server tidak valid."
+                });
+                return;
+            }
+
             fetch(`${url}${endpoint}`, {
-                method: 'POST', // Specify the request method
+                method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json', // Specify the content type as JSON
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
-                body: JSON.stringify({
-                    name: formValues.nama,
-                    email: formValues.email,
-                    phone_number: parseInt(formValues.phone, 10), // Convert phone to a number
-                    subjek: formValues.subjek,
-                    pesan: formValues.inputText
-                }) // Convert the form data to a JSON string
+                body: JSON.stringify(sanitizedData)
             })
                 .then(response => {
                     // Check if the response is OK (status 200-299)
@@ -122,7 +197,11 @@ const Kontak = () => {
                                     {['nama', 'email', 'phone', 'subjek'].map((field, index) => (
                                         <div key={index} className="col-12 col-lg-6">
                                             <input
-                                                type={field === "email" ? "email" : "text"}
+                                                type={
+                                                    field === "email" ? "email" : 
+                                                    field === "phone" ? "tel" : 
+                                                    "text"
+                                                }
                                                 id={field}
                                                 placeholder={t(field).charAt(0).toUpperCase() + t(field).slice(1)}
                                                 name={field}
@@ -130,6 +209,15 @@ const Kontak = () => {
                                                 onChange={handleInputChange}
                                                 className={`input-text ${fieldErrors[field] ? "border-error" : ""}`}
                                                 disabled={isLoading}
+                                                autoComplete="off"
+                                                spellCheck="false"
+                                                maxLength={field === "nama" ? 50 : field === "email" ? 100 : field === "phone" ? 15 : 100}
+                                                pattern={field === "phone" ? "[0-9+\\-\\s()]{10,15}" : undefined}
+                                                inputMode={
+                                                    field === "phone" ? "tel" : 
+                                                    field === "email" ? "email" : 
+                                                    "text"
+                                                }
                                             />
                                             {fieldErrors[field] && <small className="text-danger">{fieldErrors[field]}</small>}
                                         </div>
@@ -143,6 +231,10 @@ const Kontak = () => {
                                             value={formValues.inputText}
                                             onChange={handleInputChange}
                                             disabled={isLoading}
+                                            autoComplete="off"
+                                            spellCheck="false"
+                                            maxLength={1000}
+                                            rows={5}
                                         ></textarea>
                                         {fieldErrors.inputText && <small className="text-danger">{fieldErrors.inputText}</small>}
                                     </div>
@@ -165,7 +257,7 @@ const Kontak = () => {
                                                             marginRight: '8px'
                                                         }}
                                                     ></span>
-                                                    loading...
+                                                    Mengirim...
                                                 </>
                                             ) : (
                                                 t('kirim')
