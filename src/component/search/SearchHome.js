@@ -5,10 +5,22 @@ import SkeletonCardBerita from "../skeleton/CardBerita";
 import { useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import VenoBox from 'venobox';
+
 const SearchHome = () => {
+    const sanitizeInput = (input) => {
+        if (typeof input !== 'string') return input;
+
+        return input
+            .replace(/[<>]/g, '')
+            .replace(/['"]/g, '')
+            .replace(/javascript:/gi, '')
+            .replace(/on\w+=/gi, '')
+            .trim();
+    };
+    
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
-    const query = searchParams.get("query");
+    const query = sanitizeInput(searchParams.get("query"));
 
     const [posts, setPosts] = useState([]);
     const [photo, setPhoto] = useState([]);
