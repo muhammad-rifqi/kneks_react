@@ -61,6 +61,13 @@ const Footer = () => {
   const [hoveredSubItem, setHoveredSubItem] = useState(null); // State to track hover for sub-items
   const [searchQuery, setSearchQuery] = useState('');
 
+  const serializeQuery = (query) => {
+    return encodeURIComponent(query.trim())
+      .replace(/%20/g, '+')
+      .replace(/[!'()]/g, escape)
+      .replace(/\*/g, '%2A'); 
+  };
+
   // Inline styles for the dropdown menu
   const menuItemStyle = {
     padding: '1px 0 0 0 ',
@@ -96,7 +103,8 @@ const Footer = () => {
   const onSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/search?query=${searchQuery}`);
+      const serializedQuery = serializeQuery(searchQuery);
+      navigate(`/search?query=${serializedQuery}`);
 
       const searchPopup = document.querySelector(".search-popup");
       if (searchPopup) {
