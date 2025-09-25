@@ -1,8 +1,10 @@
-FROM node:16
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-EXPOSE 3000
-CMD ["npm", "start"]
+FROM nginx:alpine
+
+# Copy hasil build React
+COPY build/ /usr/share/nginx/html
+
+# Tambah konfigurasi custom Nginx
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80

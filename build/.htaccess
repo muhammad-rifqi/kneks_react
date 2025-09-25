@@ -1,0 +1,5 @@
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule \.(jpg|jpeg|png|gif|css|js|map|woff2?|eot|ttf|svg|json|txt|xml)$ - [F,L]
+RewriteRule ^ index.html [QSA,L]
