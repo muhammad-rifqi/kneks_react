@@ -362,7 +362,9 @@ const Data = () => {
                                             </button>
                                         </div>
                                         <div className="card-body custom-card-action p-0" id="dwnjpg">
-                                            <iframe id="download_frame" src={selectedSection} title="iframe1" width={`100%`} height="1000"
+                                            {/* <iframe id="download_frame" src={selectedSection} title="iframe1" width={`100%`} height="1000"
+                                                allowFullScreen></iframe> */}
+                                            <iframe id="download_frame" src="assets/image/frame.png" title="iframe1" width={`100%`} height="1000"
                                                 allowFullScreen></iframe>
                                         </div>
                                     </div>
