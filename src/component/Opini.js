@@ -3,7 +3,7 @@ import SkeletonCardBerita from "../../src/component/skeleton/CardBerita";
 import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
-import 'dayjs/locale/id';
+import 'dayjs/locale/id'; 
 import 'dayjs/locale/en';
 import { useCookies } from 'react-cookie';
 import { useTranslation } from "react-i18next";
