@@ -25,6 +25,9 @@ const Data = () => {
     const [categories, setCategories] = useState([]);
     const nilai_awal_selected = "https://metabase.kneks.go.id/public/dashboard/f85c27c5-89f1-42b8-bace-543b335ae4e2";
     const title_awal_selected = cookies.i18next === 'en' ? 'Executive Dashboard' : 'Dashboard Eksekutif';
+
+    const image_awal = "/assets/image/frames.png";
+    const [selectedImage, setSelectedImage] = useState(image_awal);
     const [selectedSection, setSelectedSection] = useState(nilai_awal_selected);
     const [selectedTitle, setTitleSection] = useState(title_awal_selected);
     const [narasi, setSubNarations] = useState("");
@@ -266,6 +269,7 @@ const Data = () => {
                                                                             //     setSelectedSection(5);
                                                                             // }
                                                                             setSelectedSection(submenu.link_data)
+                                                                            setSelectedImage(submenu.link_image)
                                                                             setTitleSection(child_text);
                                                                             setSubNarations(naration_subtext)
                                                                         }}
@@ -313,10 +317,12 @@ const Data = () => {
                                                             setSelectedSection("")
                                                             setTitleSection(parent_text)
                                                             setSubNarations(naration_text)
+                                                             setSelectedImage(category.link_menu_image)
                                                         } else {
                                                             setSelectedSection(category.link_menu_data)
                                                             setTitleSection(parent_text)
                                                             setSubNarations(naration_text)
+                                                            setSelectedImage(category.link_menu_image)
                                                         }
                                                     }}
                                                     style={{
@@ -364,7 +370,7 @@ const Data = () => {
                                         <div className="card-body custom-card-action p-0" id="dwnjpg">
                                             {/* <iframe id="download_frame" src={selectedSection} title="iframe1" width={`100%`} height="1000"
                                                 allowFullScreen></iframe> */}
-                                            <iframe id="download_frame" src="assets/image/frames.png" title="iframe1" width={`100%`} height="1000"
+                                            <iframe id="download_frame" src={selectedImage} title="iframe1" width={`100%`} height="1000"
                                                 allowFullScreen></iframe>
                                         </div>
                                     </div>
