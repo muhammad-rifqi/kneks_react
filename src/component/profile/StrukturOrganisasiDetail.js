@@ -112,7 +112,7 @@ const StrukturOrganisasiDetail = () => {
 							</div>
 							<div className="col-md-8 text-center text-md-start">
 								<h5 className="text-secondary">{rows?.name}</h5>
-								<p className="text-secondary">{cookies.i18next === 'id' ? rows?.position ?? '' : rows?.position_en ?? ''}</p>
+								<p className="text-secondary">{cookies.i18next === 'id' ? rows?.position : rows?.position_en}</p>
 							</div>
 						</div>
 						<hr className="my-4" />
@@ -121,7 +121,7 @@ const StrukturOrganisasiDetail = () => {
 							<div className="col-lg-9">
 								<div className="event-details-content-box">
 									{/* <p style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: cookies.i18next === 'id' ? rows?.description : rows?.description_en }} /> */}
-									<p style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: cookies.i18next === 'id' ? rows?.description : rows?.description_en }} />
+									<p style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: cookies.i18next === 'id' ? rows?.description ?? '' : rows?.description_en ?? '' }} />
 								</div>
 							</div>
 							<div className="col-lg-3 text-center text-lg-start">
