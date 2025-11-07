@@ -80,13 +80,13 @@ const StrukturOrganisasi = () => {
 										<div className="col-12 col-sm-6 col-md-4 col-lg-4 offset-lg-4 offset-md-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[0].name)}`}><img src={posts[0].photo ? `${posts[0].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[0].position)}`}><img src={posts[0].photo ? `${posts[0].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
 
 													</div>
 												</div>
 												<div className="team-card-content-rev">
-													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[0].name)}`}>{posts[0].name}</a></h4>
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[0].position)}`}>{posts[0].name}</a></h4>
 													<p>{cookies.i18next === 'id' ? posts[0].position : posts[0].position_en}</p>
 												</div>
 											</div>
@@ -97,13 +97,13 @@ const StrukturOrganisasi = () => {
 										<div className="col-12 col-sm-6 col-md-4 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[1].name)}`}><img src={posts[1].photo ? `${posts[1].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[1].position)}`}><img src={posts[1].photo ? `${posts[1].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
 
 													</div>
 												</div>
 												<div className="team-card-content-rev">
-													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[1].name)}`}>{posts[1].name}</a></h4>
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[1].position)}`}>{posts[1].name}</a></h4>
 													<p>{cookies.i18next === 'id' ? posts[1].position : posts[1].position_en}</p>
 												</div>
 												<ul className="list-unstyled text-left">
@@ -113,7 +113,7 @@ const StrukturOrganisasi = () => {
 															alt="img1"
 															className="rounded-circle me-2"
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[9].name)}`}><b style={{ color: 'black' }}>{posts[9].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[9].position : posts[9].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[9].position)}`}><b style={{ color: 'black' }}>{posts[9].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[9].position : posts[9].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -122,7 +122,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[10].name)}`}><b style={{ color: 'black' }}>{posts[10].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[10].position : posts[10].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[10].position)}`}><b style={{ color: 'black' }}>{posts[10].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[10].position : posts[10].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -131,7 +131,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[11].name)}`}><b style={{ color: 'black' }}>{posts[11].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[11].position : posts[11].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[11].position)}`}><b style={{ color: 'black' }}>{posts[11].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[11].position : posts[11].position_en}</span>
 													</li>
 												</ul>
 											</div>
@@ -139,13 +139,13 @@ const StrukturOrganisasi = () => {
 										<div className="col-12 col-sm-6 col-md-4 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[2].name)}`}><img src={posts[2].photo ? `${posts[2].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[2].position)}`}><img src={posts[2].photo ? `${posts[2].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
 
 													</div>
 												</div>
 												<div className="team-card-content-rev">
-													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[2].name)}`}>{posts[2].name}</a></h4>
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[2].position)}`}>{posts[2].name}</a></h4>
 													<p>{cookies.i18next === 'id' ? posts[2].position : posts[2].position_en}</p>
 
 
@@ -158,7 +158,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[12].name)}`}><b style={{ color: 'black' }}>{posts[12].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[12].position : posts[12].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[12].position)}`}><b style={{ color: 'black' }}>{posts[12].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[12].position : posts[12].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -167,7 +167,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[13].name)}`}><b style={{ color: 'black' }}>{posts[13].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[13].position : posts[13].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[13].position)}`}><b style={{ color: 'black' }}>{posts[13].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[13].position : posts[13].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -176,7 +176,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[14].name)}`}><b style={{ color: 'black' }}>{posts[14].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[14].position : posts[14].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[14].position)}`}><b style={{ color: 'black' }}>{posts[14].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[14].position : posts[14].position_en}</span>
 													</li>
 												</ul>
 											</div>
@@ -184,13 +184,13 @@ const StrukturOrganisasi = () => {
 										<div className="col-12 col-sm-6 col-md-4 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[3].name)}`}><img src={posts[3].photo ? `${posts[3].photo}` : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[3].position)}`}><img src={posts[3].photo ? `${posts[3].photo}` : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
 
 													</div>
 												</div>
 												<div className="team-card-content-rev">
-													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[3].name)}`}>{posts[3].name}</a></h4>
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[3].position)}`}>{posts[3].name}</a></h4>
 													<p>{cookies.i18next === 'id' ? posts[3].position : posts[3].position_en}</p>
 
 												</div>
@@ -202,7 +202,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[15].name)}`}><b style={{ color: 'black' }}>{posts[15].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[15].position : posts[15].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[15].position)}`}><b style={{ color: 'black' }}>{posts[15].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[15].position : posts[15].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -211,7 +211,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[16].name)}`}><b style={{ color: 'black' }}>{posts[16].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[16].position : posts[16].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[16].position)}`}><b style={{ color: 'black' }}>{posts[16].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[16].position : posts[16].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -220,7 +220,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[17].name)}`}><b style={{ color: 'black' }}>{posts[17].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[17].position : posts[17].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[17].position)}`}><b style={{ color: 'black' }}>{posts[17].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[17].position : posts[17].position_en}</span>
 													</li>
 												</ul>
 											</div>
@@ -231,13 +231,13 @@ const StrukturOrganisasi = () => {
 										<div className="col-12 col-sm-6 col-md-4 offset-lg-2 offset-md-2 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[4].name)}`}><img src={posts[4].photo ? `${posts[4].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[4].position)}`}><img src={posts[4].photo ? `${posts[4].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
 
 													</div>
 												</div>
 												<div className="team-card-content-rev">
-													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[4].name)}`}>{posts[4].name}</a></h4>
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[4].position)}`}>{posts[4].name}</a></h4>
 													<p>{cookies.i18next === 'id' ? posts[4].position : posts[4].position_en}</p>
 
 												</div>
@@ -249,7 +249,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[18].name)}`}><b style={{ color: 'black' }}>{posts[18].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[18].position : posts[18].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[18].position)}`}><b style={{ color: 'black' }}>{posts[18].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[18].position : posts[18].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -258,7 +258,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[19].name)}`}><b style={{ color: 'black' }}>{posts[19].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[19].position : posts[19].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[19].position)}`}><b style={{ color: 'black' }}>{posts[19].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[19].position : posts[19].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -267,7 +267,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[20].name)}`}><b style={{ color: 'black' }}>{posts[20].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[20].position : posts[20].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[20].position)}`}><b style={{ color: 'black' }}>{posts[20].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[20].position : posts[20].position_en}</span>
 													</li>
 
 												</ul><br /><br />
@@ -276,13 +276,13 @@ const StrukturOrganisasi = () => {
 										<div className="col-12 col-sm-6 col-md-4 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[5].name)}`}><img src={posts[5].photo ? `${posts[5].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[5].position)}`}><img src={posts[5].photo ? `${posts[5].photo}` : "assets/image/defaulttumbnail.jpeg"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
 
 													</div>
 												</div>
 												<div className="team-card-content-rev">
-													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[5].name)}`}>{posts[5].name}</a></h4>
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[5].position)}`}>{posts[5].name}</a></h4>
 													<p>{cookies.i18next === 'id' ? posts[5].position : posts[5].position_en}</p>
 
 												</div>
@@ -294,7 +294,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[21].name)}`}><b style={{ color: 'black' }}>{posts[21].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[21].position : posts[21].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[21].position)}`}><b style={{ color: 'black' }}>{posts[21].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[21].position : posts[21].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -303,7 +303,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[22].name)}`}><b style={{ color: 'black' }}>{posts[22].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[22].position : posts[22].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[22].position)}`}><b style={{ color: 'black' }}>{posts[22].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[22].position : posts[22].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -312,7 +312,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[23].name)}`}><b style={{ color: 'black' }}>{posts[23].name}</b> </a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[23].position : posts[23].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[23].position)}`}><b style={{ color: 'black' }}>{posts[23].name}</b> </a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[23].position : posts[23].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -321,7 +321,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[24].name)}`}><b style={{ color: 'black' }}>{posts[24].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[24].position : posts[24].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[24].position)}`}><b style={{ color: 'black' }}>{posts[24].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[24].position : posts[24].position_en}</span>
 													</li>
 												</ul>
 											</div>
@@ -338,13 +338,13 @@ const StrukturOrganisasi = () => {
 										<div className="col-12 col-sm-6 col-md-4 col-lg-4 offset-lg-4 offset-md-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[6].name)}`}><img src={posts[6].photo ? `${posts[6].photo}` : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[6].position)}`}><img src={posts[6].photo ? `${posts[6].photo}` : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
 
 													</div>
 												</div>
 												<div className="team-card-content-rev">
-													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[6].name)}`}>{posts[6].name}</a></h4>
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[6].position)}`}>{posts[6].name}</a></h4>
 													<p>{cookies.i18next === 'id' ? posts[6].position : posts[6].position_en}</p>
 												</div>
 											</div>
@@ -355,7 +355,7 @@ const StrukturOrganisasi = () => {
 										<div className="col-12 col-sm-6 col-md-4 offset-lg-2 offset-md-2 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[7].name)}`}><img src={posts[7].photo ? `${posts[7].photo}` : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[7].position)}`}><img src={posts[7].photo ? `${posts[7].photo}` : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
 
 													</div>
@@ -373,7 +373,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[26].name)}`}><b style={{ color: 'black' }}>{posts[26].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[26].position : posts[26].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[26].position)}`}><b style={{ color: 'black' }}>{posts[26].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[26].position : posts[26].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -382,7 +382,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[27].name)}`}><b style={{ color: 'black' }}>{posts[27].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[27].position : posts[27].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[27].position)}`}><b style={{ color: 'black' }}>{posts[27].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[27].position : posts[27].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -391,7 +391,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[28].name)}`}><b style={{ color: 'black' }}>{posts[28].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[28].position : posts[28].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[28].position)}`}><b style={{ color: 'black' }}>{posts[28].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[28].position : posts[28].position_en}</span>
 													</li>
 													<br /><br />
 												</ul>
@@ -400,13 +400,13 @@ const StrukturOrganisasi = () => {
 										<div className="col-12 col-sm-6 col-md-4 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
-													<a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}><img src={posts[8].photo ? `${posts[8].photo}` : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
+													<a href={`/struktur-organisasi/${convertToSlug(posts[8].position)}`}><img src={posts[8].photo ? `${posts[8].photo}` : "assets/image/profilKosong.png"} className="img-fluid" alt="img-40" /></a>
 													<div className="team-card-icon-rev">
 
 													</div>
 												</div>
 												<div className="team-card-content-rev">
-													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[8].name)}`}>{posts[8].name}</a></h4>
+													<h4><a href={`/struktur-organisasi/${convertToSlug(posts[8].position)}`}>{posts[8].name}</a></h4>
 													<p>{cookies.i18next === 'id' ? posts[8].position : posts[8].position_en}</p>
 
 												</div>
@@ -418,7 +418,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[29].name)}`}><b style={{ color: 'black' }}>{posts[29].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[29].position : posts[29].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[29].position)}`}><b style={{ color: 'black' }}>{posts[29].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[29].position : posts[29].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -427,7 +427,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[30].name)}`}><b style={{ color: 'black' }}>{posts[30].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[30].position : posts[30].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[30].position)}`}><b style={{ color: 'black' }}>{posts[30].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[30].position : posts[30].position_en}</span>
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
@@ -436,7 +436,7 @@ const StrukturOrganisasi = () => {
 															className="rounded-circle me-2"
 
 														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[31].name)}`}><b style={{ color: 'black' }}>{posts[31].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[31].position : posts[31].position_en}</span>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[31].position)}`}><b style={{ color: 'black' }}>{posts[31].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[31].position : posts[31].position_en}</span>
 													</li>
 												</ul>
 											</div>

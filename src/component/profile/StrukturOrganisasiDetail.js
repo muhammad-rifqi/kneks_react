@@ -30,7 +30,7 @@ const StrukturOrganisasiDetail = () => {
 					const url = process.env.REACT_APP_API_URL;
 					const endpoint = process.env.REACT_APP_API_STUKTUR_ORGANISASI;
 					const responsei = await axios.get(`${url}${endpoint}`);
-					const foundItem = responsei.data.find(kneks => convertToSlug(kneks.name) === slug);
+					const foundItem = responsei.data.find(kneks => convertToSlug(kneks.position) === slug);
 
 					// throw new Error("Error!");
 
