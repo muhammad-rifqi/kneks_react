@@ -57,6 +57,12 @@ const StrukturOrganisasiDetail = () => {
 		}
 	}, [slug]);
 
+	function decodeHtmlEntities(str) {
+		const txt = document.createElement("textarea");
+		txt.innerHTML = str;
+		return txt.value;
+	}
+
 	if (loading) {
 		return (
 			<div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
@@ -120,7 +126,7 @@ const StrukturOrganisasiDetail = () => {
 						<div className="row">
 							<div className="col-lg-9">
 								<div className="event-details-content-box">
-									<p style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: cookies.i18next === 'id' ? rows?.description : rows?.description_en }} />
+									<p style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: cookies.i18next === 'id' ? decodeHtmlEntities(rows?.description) : decodeHtmlEntities(rows?.description_en) }} />
 								</div>
 							</div>
 							<div className="col-lg-3 text-center text-lg-start">

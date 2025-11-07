@@ -368,7 +368,7 @@ const StrukturOrganisasi = () => {
 												<ul className="list-unstyled text-left">
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src={posts[26].photo}
+															src={posts[26].photo ? `${posts[26].photo}` : "assets/image/profilKosong.png"}
 															alt="img2"
 															className="rounded-circle me-2"
 
@@ -377,7 +377,7 @@ const StrukturOrganisasi = () => {
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src={posts[27].photo}
+															src={posts[27].photo ? `${posts[27].photo}` : "assets/image/profilKosong.png"}
 															alt="img2"
 															className="rounded-circle me-2"
 
@@ -386,7 +386,7 @@ const StrukturOrganisasi = () => {
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src={posts[28].photo}
+															src={posts[28].photo ? `${posts[28].photo}` : "assets/image/profilKosong.png"}
 															alt="img2"
 															className="rounded-circle me-2"
 
@@ -413,7 +413,7 @@ const StrukturOrganisasi = () => {
 												<ul className="list-unstyled text-left">
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src={posts[29].photo}
+															src={posts[29].photo ? `${posts[29].photo}` : "assets/image/profilKosong.png"}
 															alt="img2"
 															className="rounded-circle me-2"
 
@@ -422,7 +422,7 @@ const StrukturOrganisasi = () => {
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src={posts[30].photo}
+															src={posts[30].photo ? `${posts[30].photo}` : "assets/image/profilKosong.png"}
 															alt="img2"
 															className="rounded-circle me-2"
 
@@ -431,21 +431,12 @@ const StrukturOrganisasi = () => {
 													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
-															src={posts[31].photo}
+															src={posts[31].photo ? `${posts[31].photo}` : "assets/image/profilKosong.png"}
 															alt="img2"
 															className="rounded-circle me-2"
 
 														/>
 														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[31].name)}`}><b style={{ color: 'black' }}>{posts[31].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[31].position : posts[31].position_en}</span>
-													</li>
-													<li className="d-flex align-items-center mb-2">
-														<img
-															src={posts[32].photo}
-															alt="img2"
-															className="rounded-circle me-2"
-
-														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[32].name)}`}><b style={{ color: 'black' }}>{posts[32].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[32].position : posts[32].position_en}</span>
 													</li>
 												</ul>
 											</div>
