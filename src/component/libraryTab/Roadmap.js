@@ -150,7 +150,7 @@ const Roadmap = () => {
                                           <a href={`/e-pustaka/${
                                             item?.id
                                         }`}>
-                                            <img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" />
+                                            <img src="/assets/image/book1.jpeg" className="img-fluid" alt="img-40" />
                                         </a>
                                     </div>
                                     <div className="team-card-content-x">
