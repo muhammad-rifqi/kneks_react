@@ -18,7 +18,8 @@ const StrukturOrganisasi = () => {
 				const url = process.env.REACT_APP_API_URL;
 				const endpoint = process.env.REACT_APP_API_STUKTUR_ORGANISASI;
 				const response = await axios.get(`${url}${endpoint}`);
-				setPosts(response.data.slice(0, 35));
+				console.log(response)
+				setPosts(response.data.slice(0, 36));
 			} catch (err) {
 				Swal.fire({
 					icon: "error",
@@ -368,6 +369,15 @@ const StrukturOrganisasi = () => {
 												<ul className="list-unstyled text-left">
 													<li className="d-flex align-items-center mb-2">
 														<img
+															src={posts[32].photo ? `${posts[32].photo}` : "assets/image/profilKosong.png"}
+															alt="img2"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[32].position)}`}><b style={{ color: 'black' }}>{posts[32].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[32].position : posts[32].position_en}</span>
+													</li>
+													<li className="d-flex align-items-center mb-2">
+														<img
 															src={posts[26].photo ? `${posts[26].photo}` : "assets/image/profilKosong.png"}
 															alt="img2"
 															className="rounded-circle me-2"
@@ -383,15 +393,6 @@ const StrukturOrganisasi = () => {
 
 														/>
 														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[27].position)}`}><b style={{ color: 'black' }}>{posts[27].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[27].position : posts[27].position_en}</span>
-													</li>
-													<li className="d-flex align-items-center mb-2">
-														<img
-															src={posts[28].photo ? `${posts[28].photo}` : "assets/image/profilKosong.png"}
-															alt="img2"
-															className="rounded-circle me-2"
-
-														/>
-														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[28].position)}`}><b style={{ color: 'black' }}>{posts[28].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[28].position : posts[28].position_en}</span>
 													</li>
 													<br /><br />
 												</ul>
@@ -411,6 +412,15 @@ const StrukturOrganisasi = () => {
 
 												</div>
 												<ul className="list-unstyled text-left">
+													<li className="d-flex align-items-center mb-2">
+														<img
+															src={posts[28].photo ? `${posts[28].photo}` : "assets/image/profilKosong.png"}
+															alt="img2"
+															className="rounded-circle me-2"
+
+														/>
+														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[28].position)}`}><b style={{ color: 'black' }}>{posts[28].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[28].position : posts[28].position_en}</span>
+													</li>
 													<li className="d-flex align-items-center mb-2">
 														<img
 															src={posts[29].photo ? `${posts[29].photo}` : "assets/image/profilKosong.png"}
@@ -438,6 +448,7 @@ const StrukturOrganisasi = () => {
 														/>
 														<span className="text-small"><b style={{ fontWeight: 'bold' }}><u><a href={`/struktur-organisasi/${convertToSlug(posts[31].position)}`}><b style={{ color: 'black' }}>{posts[31].name}</b></a></u> </b>, <br /> {cookies.i18next === 'id' ? posts[31].position : posts[31].position_en}</span>
 													</li>
+													
 												</ul>
 											</div>
 										</div>
