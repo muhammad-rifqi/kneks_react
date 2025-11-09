@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useLocation  } from "react-router-dom";
 import Swal from "sweetalert2";
 // import dayjs from 'dayjs';
 // import 'dayjs/locale/id';
@@ -10,6 +10,10 @@ const StrukturOrganisasiDetail = () => {
 	const { slug } = useParams();
 	const [rows, setItem] = useState(null);
 	const [loading, setLoading] = useState(true);
+	const { search } = useLocation();
+  	const queryParams = new URLSearchParams(search);
+	const nama_table = queryParams.get('tbl');
+  	const id_table = queryParams.get('keyid');
 
 	const convertToSlug = (title) => {
 		if (!title) return ""; // Handle null or undefined title
@@ -28,16 +32,15 @@ const StrukturOrganisasiDetail = () => {
 				setLoading(true)
 				try {
 					const url = process.env.REACT_APP_API_URL;
-					const endpoint = process.env.REACT_APP_API_STUKTUR_ORGANISASI;
+					const endpoint = process.env.REACT_APP_API_DETAIL_MULTI_STRUCTURE+'?tbl='+nama_table+'&keyid='+id_table;
 					const responsei = await axios.get(`${url}${endpoint}`);
-					const foundItem = responsei.data.find(kneks => convertToSlug(kneks.position) === slug);
-
-					// throw new Error("Error!");
-
-					if (responsei) {
-						// setItemx(responsei.data);
-						setItem(foundItem);
+					// const foundItem = responsei.data.find(kneks => convertToSlug(kneks.position) === slug);
+					if(responsei){
+						setItem(responsei.data);
 					}
+
+
+
 				} catch (err) {
 					Swal.fire({
 						icon: "error",
@@ -110,15 +113,15 @@ const StrukturOrganisasiDetail = () => {
 							<div className="col-md-4 text-center mb-3 mb-md-0">
 								<div className="struktur-profil">
 									<img
-										src={rows?.photo ? rows.photo : `${process.env.PUBLIC_URL}/assets/image/profilKosong.png`}
+										src={rows[0]?.photo ? rows[0]?.photo : `${process.env.PUBLIC_URL}/assets/image/profilKosong.png`}
 										alt="Profile"
 										className="img-fluid rounded-circle"
 									/>
 								</div>
 							</div>
 							<div className="col-md-8 text-center text-md-start">
-								<h5 className="text-secondary">{rows?.name}</h5>
-								<p className="text-secondary">{cookies.i18next === 'id' ? rows?.position : rows?.position_en}</p>
+								<h5 className="text-secondary">{rows[0]?.name}</h5>
+								<p className="text-secondary">{cookies.i18next === 'id' ? rows[0]?.position : rows[0]?.position_en}</p>
 							</div>
 						</div>
 						<hr className="my-4" />
@@ -126,7 +129,7 @@ const StrukturOrganisasiDetail = () => {
 						<div className="row">
 							<div className="col-lg-9">
 								<div className="event-details-content-box">
-									<p style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: cookies.i18next === 'id' ? decodeHtmlEntities(rows?.description) : decodeHtmlEntities(rows?.description_en) }} />
+									<p style={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: cookies.i18next === 'id' ? decodeHtmlEntities(rows[0]?.description) : decodeHtmlEntities(rows[0]?.description_en) }} />
 								</div>
 							</div>
 							<div className="col-lg-3 text-center text-lg-start">
