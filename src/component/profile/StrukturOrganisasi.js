@@ -18,7 +18,7 @@ const StrukturOrganisasi = () => {
 				const url = process.env.REACT_APP_API_URL;
 				const endpoint = process.env.REACT_APP_API_STUKTUR_ORGANISASI;
 				const response = await axios.get(`${url}${endpoint}`);
-				console.log(response)
+				// console.log(response)
 				setPosts(response.data.slice(0, 36));
 			} catch (err) {
 				Swal.fire({
