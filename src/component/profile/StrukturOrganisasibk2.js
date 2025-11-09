@@ -226,6 +226,9 @@ const StrukturOrganisasi = () => {
 												</ul>
 											</div>
 										</div>
+									</div>
+
+									<div className="row mb-4">
 										<div className="col-12 col-sm-6 col-md-4 offset-lg-2 offset-md-2 mb-4">
 											<div className="team-card-rev">
 												<div className="team-card-img-rev">
