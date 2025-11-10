@@ -141,7 +141,7 @@ const Elibrabry = () => {
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Tagging</div>
-                                                <div className="col-sm-10 text-primary"> : {rows?.tagging ? rows?.tagging.map(item => item.value).join(", "):  '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.tagging ? JSON.parse(rows?.tagging).map(item => item.value).join(", "):  '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Sinopsis</div>
