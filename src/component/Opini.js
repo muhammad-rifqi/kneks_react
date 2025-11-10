@@ -27,7 +27,7 @@ const Opini = () => {
             setLoading(true);
             try {
                 const url = process.env.REACT_APP_API_URL;
-                const endpoint = '/api_news_kdeks';
+                const endpoint = '/api_opini';
                 const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
             } catch (err) {
@@ -89,14 +89,14 @@ const Opini = () => {
                                                 <div className="event-card-image">
                                                     <div className="event-card-image-inner-x">
                                                         <a href={`/opini/${item.id}/${convertToSlug(item.title)}`}>
-                                                            {/* <img src="/assets/image/berita.jpg" className="img-fluid" alt={item.title} /> */}
-                                                            <img
+                                                            <img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} />
+                                                            {/* <img
                                                                 src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
                                                                 onError={(e) => {
                                                                     e.target.onerror = null;
                                                                     e.target.src = `/assets/image/foto-beritas.png`;
                                                                 }}
-                                                                className="img-fluid" alt={cookies.i18next === 'id' ? item.title : item.title_en} />
+                                                                className="img-fluid" alt={cookies.i18next === 'id' ? item.title : item.title_en} /> */}
                                                         </a>
 
                                                     </div>

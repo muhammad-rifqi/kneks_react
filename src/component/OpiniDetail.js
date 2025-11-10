@@ -36,7 +36,7 @@ const OpiniDetail = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = '/api_news_detail_kdeks/' + id;
+                    const endpoint = '/api_opini_detail/' + id;
                     const responsei = await axios.get(`${url}${endpoint}`);
                     // const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 
@@ -93,14 +93,14 @@ const OpiniDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    {/* <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} width={`100%`} className="img-fluid" alt={cookies.i18next === 'id' ? rows.title : rows.title_en} /> */}
-                                    <img
+                                    <img src={`${process.env.PUBLIC_URL}/assets/image/foto-beritas.png`} width={`100%`} className="img-fluid" alt={cookies.i18next === 'id' ? rows.title : rows.title_en} />
+                                    {/* <img
                                         src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image}
                                         onError={(e) => {
                                             e.target.onerror = null;
                                             e.target.src = `/assets/image/foto-beritas.png`;
                                         }}
-                                        className="img-fluid" width={`100%`} alt={cookies.i18next === 'id' ? rows?.title : rows?.title_en} />
+                                        className="img-fluid" width={`100%`} alt={cookies.i18next === 'id' ? rows?.title : rows?.title_en} /> */}
                                 </div>
                             </div>
                             <div className="row">
@@ -172,14 +172,14 @@ const OpiniDetail = () => {
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>
-                                                    {/* <img src={`${process.env.PUBLIC_URL}/assets/image/berita3.svg`} className="img-fluid" alt={item.title} /> */}
-                                                    <img
+                                                    <img src={`${process.env.PUBLIC_URL}/assets/image/foto-beritas.png`} className="img-fluid" alt={item.title} />
+                                                    {/* <img
                                                         src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
                                                         onError={(e) => {
                                                             e.target.onerror = null;
                                                             e.target.src = `/assets/image/foto-beritas.png`;
                                                         }}
-                                                        className="img-fluid" alt={item.title} />
+                                                        className="img-fluid" alt={item.title} /> */}
                                                 </a>
                                             </div>
                                             <div className="berita-content ">
@@ -197,8 +197,8 @@ const OpiniDetail = () => {
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
-                                                    {/* <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
-                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span> */}
+                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
+                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
                                                 </div>
                                             </div>
                                         </div>
