@@ -46,7 +46,7 @@ const OpiniDetail = () => {
                             post.id === Number(id) &&
                             convertToSlug(post.title) === slug
                     );
-                    console.log(foundItem)
+                    // console.log(foundItem)
                     if (responsei) {
                         setItemx(responsei.data);
                         setItem(foundItem);
