@@ -3,7 +3,7 @@ import SkeletonCardBerita from "../../src/component/skeleton/CardBerita";
 import axios from 'axios';
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
-import 'dayjs/locale/id'; 
+import 'dayjs/locale/id';
 import 'dayjs/locale/en';
 import { useCookies } from 'react-cookie';
 import { useTranslation } from "react-i18next";
@@ -27,7 +27,7 @@ const Opini = () => {
             setLoading(true);
             try {
                 const url = process.env.REACT_APP_API_URL;
-                const endpoint = process.env.REACT_APP_API_POST;
+                const endpoint = '/api_news_kdeks';
                 const response = await axios.get(`${url}${endpoint}`);
                 setPosts(response.data);
             } catch (err) {
@@ -106,8 +106,11 @@ const Opini = () => {
                                                         <ul className="list-unstyled" style={{ color: `#F2994A` }}>
                                                             <li>
                                                                 {/* <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span> */}
-                                                                {item.tags.split(",").map((tag, index) => (
+                                                                {/* {item.tags.split(",").map((tag, index) => (
                                                                     <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                                ))} */}
+                                                                {Array.isArray(item.tags) && item.tags.map((tag, index) => (
+                                                                    <span key={index}>#{tag.value} </span>
                                                                 ))}
                                                             </li>
                                                         </ul>

@@ -44,10 +44,10 @@ const BeritaTerkini = () => {
         const fetchPosts = async () => {
             setLoading(true);
             try {
-                const url = process.env.REACT_APP_API_URL;
+                const url = process.env.REACT_APP_API_URL+'/news_category/cat/1';
                 // const endpoint = process.env.REACT_APP_API_INFO_TERKINI;
                 // const response = await axios.get(`${url}${endpoint}`);
-                const response = await axios.get(`${url}/posts`);
+                const response = await axios.get(`${url}`);
                 setPosts(response.data);
                 setFilteredPosts(response.data);
             } catch (err) {
@@ -234,9 +234,12 @@ const BeritaTerkini = () => {
                                                             color: `#F2994A`,
                                                         }}>
                                                         {/* <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span> */}
-
+                                                        {/* 
                                                         {item.tags.split(",").map((tag, index) => (
                                                             <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                        ))} */}
+                                                        {Array.isArray(item.tags) && item.tags.map((tag, index) => (
+                                                            <span key={index}>#{tag.value} </span>
                                                         ))}
                                                     </div>
                                                     <div className='event-card-title pb-4'>

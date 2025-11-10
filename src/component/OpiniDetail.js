@@ -36,7 +36,7 @@ const OpiniDetail = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_POST;
+                    const endpoint = '/api_news_detail_kdeks/' + id;
                     const responsei = await axios.get(`${url}${endpoint}`);
                     // const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 
@@ -184,8 +184,11 @@ const OpiniDetail = () => {
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
-                                                    {item.tags.split(",").map((tag, index) => (
+                                                    {/* {item.tags.split(",").map((tag, index) => (
                                                         <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                    ))} */}
+                                                    {Array.isArray(item.tags) && item.tags.map((tag, index) => (
+                                                        <span key={index}>#{tag.value} </span>
                                                     ))}
                                                 </div>
                                                 <div className="event-card-title pb-4">
@@ -194,7 +197,8 @@ const OpiniDetail = () => {
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
-                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
+                                                    {/* <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
+                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span> */}
                                                 </div>
                                             </div>
                                         </div>

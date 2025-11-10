@@ -48,7 +48,7 @@ const LiputanMedia = () => {
                 // const endpoint = process.env.REACT_APP_API_LIPUTAN_MEDIA;
                 // const response = await axios.get(`${url}${endpoint}`);
 
-                const response = await axios.get(`${url}/posts`);
+                const response = await axios.get(`${url}/news_category/cat/2`);
                 setPosts(response.data);
                 setFilteredPosts(response.data);
             } catch (err) {
@@ -222,8 +222,11 @@ const LiputanMedia = () => {
                                                     <div className="event-card-info-x " style={{ color: `#F2994A` }}>
 
                                                         {/* <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span> */}
-                                                        {item.tags.split(",").map((tag, index) => (
+                                                        {/* {item.tags.split(",").map((tag, index) => (
                                                             <span key={index}>{tag ? '#' + tag : ''} </span>
+                                                        ))} */}
+                                                          {Array.isArray(item.tags) && item.tags.map((tag, index) => (
+                                                            <span key={index}>#{tag.value} </span>
                                                         ))}
                                                     </div>
                                                     <div className="event-card-title pb-4">
