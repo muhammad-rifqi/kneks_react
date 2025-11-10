@@ -73,9 +73,9 @@ const Section1 = () => {
                                                         }}
                                                     />
                                                 </div>
-                                                <a href="banner/detail" className="btn btn-primary mt-3">
+                                                {/* <a href="banner/detail" className="btn btn-primary mt-3">
                                                     {t("tombol")}
-                                                </a>
+                                                </a> */}
                                             </div>
                                         </div>
                                     </div>
