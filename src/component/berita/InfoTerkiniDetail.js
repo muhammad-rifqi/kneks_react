@@ -100,7 +100,7 @@ const InfoTerkiniDetail = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                <img src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image} width={`100%`} className="img-fluid" alt={rows?.title} />
+                                    <img src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image} width={`100%`} className="img-fluid" alt={rows?.title} />
                                     {/* <img src={`${process.env.REACT_APP_API_NEWS}` + rows?.image} width={`100%`} className="img-fluid" alt={rows?.title} /> */}
                                 </div>
                             </div>
@@ -133,7 +133,7 @@ const InfoTerkiniDetail = () => {
                             <div className="news-details-list-title pb-3">
                                 <h4>Tags :</h4>
                             </div>
-                            <div className="news-details-list-button">
+                            {/* <div className="news-details-list-button">
                                 <a href="#t" className="btn btn-primary">#Culturse</a>
                                 <a href="#t" className="btn btn-primary">Government</a>
                                 <a href="#t" className="btn btn-primary">Government</a>
@@ -145,7 +145,16 @@ const InfoTerkiniDetail = () => {
                                 <a href="#t" className="btn btn-primary">Government</a>
                                 <a href="#t" className="btn btn-primary">Government</a>
                                 <a href="#t" className="btn btn-primary">Government</a>
-                            </div>
+                            </div> */}
+                            {rows?.tagging && (
+                                <div className="news-details-list-button">
+                                    {(JSON.parse(rows.tagging || '[]')).map((t, i) => (
+                                        <a key={i} href="#t" className="btn btn-primary me-2">
+                                            {t.value}
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </section>
@@ -168,7 +177,7 @@ const InfoTerkiniDetail = () => {
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/berita-terkini/${item.id}/${convertToSlug(item.title)}`}>
-                                                <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} />
+                                                    <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} />
                                                     {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
                                                 </a>
                                             </div>

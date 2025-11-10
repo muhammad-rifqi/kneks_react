@@ -139,13 +139,22 @@ const SiaranPersDetail = () => {
                             <div className="news-details-list-title pb-3">
                                 <h4>Tags :</h4>
                             </div>
-                            {(rows?.tagging || "").trim().length > 0 && (
+                            {/* {(rows?.tagging || "").trim().length > 0 && (
                                 <div className="news-details-list-button">
                                     {(rows?.tagging || "")
                                         .split(",")
                                         .map((tag, index) => (
                                             <a href="#t" key={index} className="btn btn-primary">{tag.trim()}</a>
                                         ))}
+                                </div>
+                            )} */}
+                            {rows?.tagging && (
+                                <div className="news-details-list-button">
+                                    {(JSON.parse(rows.tagging || '[]')).map((t, i) => (
+                                        <a key={i} href="#t" className="btn btn-primary me-2">
+                                            {t.value}
+                                        </a>
+                                    ))}
                                 </div>
                             )}
                         </div>
