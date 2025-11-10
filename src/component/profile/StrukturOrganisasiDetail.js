@@ -12,18 +12,18 @@ const StrukturOrganisasiDetail = () => {
 	const [loading, setLoading] = useState(true);
 	const { search } = useLocation();
   	const queryParams = new URLSearchParams(search);
-	const nama_table = queryParams.get('tbl');
-  	const id_table = queryParams.get('keyid');
+	const nama_table = atob(queryParams.get('tbl'));
+  	const id_table = atob(queryParams.get('keyid'));
 
-	const convertToSlug = (title) => {
-		if (!title) return ""; // Handle null or undefined title
-		return title
-			.toLowerCase()
-			.trim()
-			.replace(/[^\w\s-]/g, "")
-			.replace(/\s+/g, "-")
-			.replace(/-+/g, "-");
-	};
+	// const convertToSlug = (title) => {
+	// 	if (!title) return ""; 
+	// 	return title
+	// 		.toLowerCase()
+	// 		.trim()
+	// 		.replace(/[^\w\s-]/g, "")
+	// 		.replace(/\s+/g, "-")
+	// 		.replace(/-+/g, "-");
+	// };
 
 	const effectrun = useRef(false);
 	useEffect(() => {
@@ -58,7 +58,7 @@ const StrukturOrganisasiDetail = () => {
 				effectrun.current = true
 			}
 		}
-	}, [slug]);
+	}, [slug,id_table,nama_table]);
 
 	function decodeHtmlEntities(str) {
 		const txt = document.createElement("textarea");

@@ -98,7 +98,7 @@ const StrukturOrganisasi = () => {
 															<div className="col-12 col-sm-6 col-md-4 col-lg-4 offset-lg-4 offset-md-4">
 																<div className="team-card-rev">
 																	<div className="team-card-img-rev">
-																		<a href={`/struktur-organisasi/${convertToSlug(items1?.position)}?tbl=pejabat&keyid=${items1?.id}`}>
+																		<a href={`/struktur-organisasi/${convertToSlug(items1?.position)}?tbl=${btoa('pejabat')}&keyid=${btoa(items1?.id)}`}>
 																			<img
 																				src={items1?.photo ? `${items1?.photo}` : "assets/image/defaulttumbnail.jpeg"}
 																				className="img-fluid"
@@ -109,7 +109,7 @@ const StrukturOrganisasi = () => {
 																	</div>
 																	<div className="team-card-content-rev">
 																		<h4>
-																			<a href={`/struktur-organisasi/${convertToSlug(items1?.position)}?tbl=pejabat&keyid=${items1?.id}`}>{items1?.name}</a>
+																			<a href={`/struktur-organisasi/${convertToSlug(items1?.position)}?tbl=${btoa('pejabat')}&keyid=${btoa(items1?.id)}`}>{items1?.name}</a>
 																		</h4>
 																		<p>{cookies.i18next === 'id' ? items1?.position : items1?.position_en}</p>
 																	</div>
@@ -125,7 +125,7 @@ const StrukturOrganisasi = () => {
 																		<div className="col-12 col-sm-6 col-md-4 mb-4" key={item2.id}>
 																			<div className="team-card-rev">
 																				<div className="team-card-img-rev">
-																					<a href={`/struktur-organisasi/${convertToSlug(item2?.position)}?tbl=anggota&keyid=${item2?.id}`}>
+																					<a href={`/struktur-organisasi/${convertToSlug(item2?.position)}?tbl=${btoa('anggota')}&keyid=${btoa(item2?.id)}`}>
 																						<img
 																							src={item2?.photo ? `${item2?.photo}` : "assets/image/defaulttumbnail.jpeg"}
 																							className="img-fluid"
@@ -135,7 +135,7 @@ const StrukturOrganisasi = () => {
 																				</div>
 																				<div className="team-card-content-rev">
 																					<h4>
-																						<a href={`/struktur-organisasi/${convertToSlug(item2?.position)}?tbl=anggota&keyid=${item2?.id}`}>{item2?.name}</a>
+																						<a href={`/struktur-organisasi/${convertToSlug(item2?.position)}?tbl=${btoa('anggota')}&keyid=${btoa(item2?.id)}`}>{item2?.name}</a>
 																					</h4>
 																					<p>{cookies.i18next === 'id' ? item2?.position : item2?.position_en}</p>
 																				</div>
@@ -154,7 +154,7 @@ const StrukturOrganisasi = () => {
 																									<span className="text-small">
 																										<b>
 																											<u>
-																												<a href={`/struktur-organisasi/${convertToSlug(item3?.position)}?tbl=sub_anggota&keyid=${item3?.id}`}>
+																												<a href={`/struktur-organisasi/${convertToSlug(item3?.position)}?tbl=${btoa('sub_anggota')}&keyid=${btoa(item3?.id)}`}>
 																													<b style={{ color: 'black' }}>{item3?.name}</b>
 																												</a>
 																											</u>

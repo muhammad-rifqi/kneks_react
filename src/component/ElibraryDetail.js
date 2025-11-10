@@ -76,7 +76,7 @@ const Elibrabry = () => {
                         <div className="row row-gutter-y-40">
                             <div className="col-lg-3">
                                 <div className="about-one-image">
-                                    <img src={`${process.env.PUBLIC_URL}/assets/image/epustaka.svg`} alt="img-59" className="img-fluid" />
+                                    <img src={`${process.env.PUBLIC_URL}/assets/image/book1.jpeg`} alt="img-59" className="img-fluid" />
                                 </div>
                             </div>
                             <div className="col-lg-9 d-flex align-items-left">
