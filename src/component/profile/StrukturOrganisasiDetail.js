@@ -135,16 +135,16 @@ const StrukturOrganisasiDetail = () => {
 							<div className="col-lg-3 text-center text-lg-start">
 								{/* Social Media Links */}
 								<div className="sidebar-widget-event-meta-socials d-flex justify-content-center justify-content-lg-start gap-3">
-									<a href={rows[0]?.x || "https://x.com/"} target="_blank" rel="noreferrer" className="social-icon">
+									<a href={(rows[0]?.x === 'null') ? "https://x.com/" : rows[0]?.x} target="_blank" rel="noreferrer" className="social-icon">
 										<i className="fa-brands fa-x-twitter"></i>
 									</a>
-									<a href={rows[0]?.facebook || "https://web.facebook.com/"} target="_blank" rel="noreferrer" className="social-icon">
+									<a href={(rows[0]?.facebook === 'null') ? "https://web.facebook.com/" : rows[0]?.facebook} target="_blank" rel="noreferrer" className="social-icon">
 										<i className="fa-brands fa-facebook"></i>
 									</a>
-									<a href={rows[0]?.linkedin || "https://linkedin.com/"} target="_blank" rel="noreferrer" className="social-icon">
+									<a href={(rows[0]?.linkedin === 'null') ? "https://linkedin.com/" : rows[0]?.linkedin} target="_blank" rel="noreferrer" className="social-icon">
 										<i className="fa-brands fa-linkedin"></i>
 									</a>
-									<a href={rows[0]?.instagram || "https://instagram.com/"} target="_blank" rel="noreferrer" className="social-icon">
+									<a href={(rows[0]?.instagram === 'null') ? "https://instagram.com/" : rows[0]?.instagram} target="_blank" rel="noreferrer" className="social-icon">
 										<i className="fa-brands fa-instagram"></i>
 									</a>
 								</div>
