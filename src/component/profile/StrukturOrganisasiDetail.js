@@ -135,16 +135,16 @@ const StrukturOrganisasiDetail = () => {
 							<div className="col-lg-3 text-center text-lg-start">
 								{/* Social Media Links */}
 								<div className="sidebar-widget-event-meta-socials d-flex justify-content-center justify-content-lg-start gap-3">
-									<a href="https://x.com/" target="_blank" rel="noreferrer" className="social-icon">
+									<a href={rows[0]?.x || "https://x.com/"} target="_blank" rel="noreferrer" className="social-icon">
 										<i className="fa-brands fa-x-twitter"></i>
 									</a>
-									<a href="https://facebook.com/" target="_blank" rel="noreferrer" className="social-icon">
+									<a href={rows[0]?.facebook || "https://web.facebook.com/"} target="_blank" rel="noreferrer" className="social-icon">
 										<i className="fa-brands fa-facebook"></i>
 									</a>
-									<a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="social-icon">
+									<a href={rows[0]?.linkedin || "https://linkedin.com/"} target="_blank" rel="noreferrer" className="social-icon">
 										<i className="fa-brands fa-linkedin"></i>
 									</a>
-									<a href="https://instagram.com/" target="_blank" rel="noreferrer" className="social-icon">
+									<a href={rows[0]?.instagram || "https://instagram.com/"} target="_blank" rel="noreferrer" className="social-icon">
 										<i className="fa-brands fa-instagram"></i>
 									</a>
 								</div>
