@@ -139,12 +139,12 @@ const Header = () => {
               </div>
               <div className="search-box">
                 {/* <a href="https://cms-demo.kneks.go.id/"> */}
-                <a href="https://cms.kneks.go.id/">
+                {/* <a href="https://cms.kneks.go.id/">
                   <img src="/assets/image/person-circle.svg" className="rounded-circle" alt="img-person"
                     width="32"
                     height="32"
                   />
-                </a>
+                </a> */}
               </div>
               <div className="topNav-right pr-2">
                 <ul>
