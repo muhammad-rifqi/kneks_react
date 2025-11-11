@@ -122,7 +122,8 @@ const Home = () => {
                   src={post?.[0]?.path}
                   alt="Iklan"
                 />
-                <div className="selengkapnya">
+                {/* <div className="selengkapnya"> */}
+                <div style={{marginTop : '-60px'}}>
                   <a href={`/agenda/${convertToSlug(post?.[0]?.name)}`} className="btn btn-primary btn-sm">
                     {/* Lihat Selengkapnya */}
                     {t("tombol")}
