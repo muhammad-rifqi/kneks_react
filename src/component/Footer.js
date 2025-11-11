@@ -144,7 +144,6 @@ const Footer = () => {
       .then((rows) => setVisits(rows.totalVisits))
       .catch((err) => console.error(err));
   }, []);
-rows
   return (
 
     <div>
