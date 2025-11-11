@@ -12,6 +12,7 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [cookies] = useCookies(['i18next']);
+  const [visits, setVisits] = useState(0);
   // const [activeMenu, setActiveMenu] = useState(location.pathname); // Initial state
   const [dataKota, setDataKota] = useState([]); // Initial state
   const [menu, setMenu] = useState([]);
@@ -65,7 +66,7 @@ const Footer = () => {
     return encodeURIComponent(query.trim())
       .replace(/%20/g, '+')
       .replace(/[!'()]/g, escape)
-      .replace(/\*/g, '%2A'); 
+      .replace(/\*/g, '%2A');
   };
 
   // Inline styles for the dropdown menu
@@ -137,6 +138,13 @@ const Footer = () => {
   }, []);
 
 
+  useEffect(() => {
+    fetch(process.env.REACT_APP_API_URL+"/visits")
+      .then((res) => res.json())
+      .then((rows) => setVisits(rows.totalVisits))
+      .catch((err) => console.error(err));
+  }, []);
+rows
   return (
 
     <div>
@@ -183,7 +191,7 @@ const Footer = () => {
                   <div className="footer-widget-socials ">
                     {isEkonomiSyariah ? (
                       <>
-                        
+
                       </>
                     ) : (
                       <>
@@ -416,12 +424,12 @@ const Footer = () => {
                 </div>
                 <div className="col-lg-3">
                   <div className="footer-widget">
-
                     <iframe width="100%" height="250px" frameBorder="0" scrolling="no" title="frame" marginHeight="0" marginWidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7933.418301716268!2d106.8388627!3d-6.1696863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cbd72035e3%3A0x78a3dc4ef4719cb8!2sKementerian%20Keuangan%20Republik%20Indonesia!5e0!3m2!1sid!2sid!4v1690270978567!5m2!1sid!2sid">
                     </iframe>
-
                   </div>
-
+                  <div style={{ textAlign: "center", marginTop: "50px", border:"1px solid #000", padding : "10px" }}>
+                    <h6>Jumlah Pengunjung halaman ini sebanyak {visits} kali.</h6>
+                  </div>
                 </div>
               </div>
             </div>
@@ -458,7 +466,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="mobile-nav-container">
-         
+
           </div>
           <ul className="mobile-nav-contact list-unstyled">
             <li>
@@ -479,7 +487,7 @@ const Footer = () => {
           <ul className="mobile-nav-social list-unstyled">
             {isEkonomiSyariah ? (
               <>
-              
+
               </>
             ) : (
               <>
