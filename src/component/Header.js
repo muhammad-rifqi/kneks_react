@@ -137,15 +137,14 @@ const Header = () => {
                   <i className="flaticon-search-interface-symbol"></i>
                 </a>
               </div>
-              <div className="search-box">
-                {/* <a href="https://cms-demo.kneks.go.id/"> */}
-                {/* <a href="https://cms.kneks.go.id/">
+              {/* <div className="search-box">
+                 <a href="https://cms.kneks.go.id/">
                   <img src="/assets/image/person-circle.svg" className="rounded-circle" alt="img-person"
                     width="32"
                     height="32"
                   />
-                </a> */}
-              </div>
+                </a>
+              </div> */}
               <div className="topNav-right pr-2">
                 <ul>
                   <li onClick={() => changeLanguage('id')} className={cookies.i18next === 'id' ? 'text-primary bg-white' : ''}>ID</li>
