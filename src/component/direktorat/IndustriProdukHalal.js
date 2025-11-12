@@ -347,9 +347,9 @@ const IndustriProdukHalal = () => {
                                                     detaildir[0]?.detail && detaildir[0].detail.length > 0 ? (
                                                         detaildir[0].detail.map((element) => (
                                                             <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} key={element.id}>
-                                                                <summary>{element?.title}</summary>
+                                                                <summary>{cookies.i18next === 'en' ? element?.title_en : element?.title }</summary>
                                                                 <div style={{ padding: '10px', color: 'white' }}>
-                                                                    <p style={{ color: 'white' }}>{element?.description}</p>
+                                                                    <p style={{ color: 'white' }}>{cookies.i18next === 'en' ? element?.description_en : element?.description}</p>
                                                                 </div>
                                                             </details>
                                                         ))
