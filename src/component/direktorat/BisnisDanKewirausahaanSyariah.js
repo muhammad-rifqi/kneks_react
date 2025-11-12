@@ -294,6 +294,12 @@ const BisnisDanKewirausahaanSyariah = () => {
         );
     }
 
+
+
+    function nl2brHtml(str) {
+        return str.replace(/\n/g, "<br>");
+    }
+
     return (
         <>
             <div className="page-wrapper">
@@ -350,10 +356,10 @@ const BisnisDanKewirausahaanSyariah = () => {
                                                 {
                                                     detaildir[0]?.detail && detaildir[0].detail.length > 0 ? (
                                                         detaildir[0].detail.map((element) => (
-                                                            <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} key={element.id}>
-                                                                <summary>{element?.title}</summary>
+                                                            <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} key={element?.id}>
+                                                                <summary>{cookies.i18next === 'en' ? element?.title_en : element?.title}</summary>
                                                                 <div style={{ padding: '10px', color: 'white' }}>
-                                                                    <p style={{ color: 'white' }}>{element?.description}</p>
+                                                                    <p style={{ color: 'white' }}  dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? nl2brHtml(element?.description_en) : nl2brHtml(element?.description)}} />
                                                                 </div>
                                                             </details>
                                                         ))

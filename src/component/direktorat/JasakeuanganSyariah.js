@@ -171,7 +171,7 @@ const JasakeuanganSyariah = () => {
                 const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_PHOTOS + '/' + id_dir;
                 const responses = await axios.get(`${urls}${endpoints}`);
                 setItemsPhoto(responses.data);
-                
+
                 // Inisialisasi VenoBox setelah data dimuat
                 setTimeout(() => {
                     if (document.querySelectorAll('.my-image-links-c').length > 0) {
@@ -189,7 +189,7 @@ const JasakeuanganSyariah = () => {
                         });
                     }
                 }, 500);
-                
+
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -201,14 +201,14 @@ const JasakeuanganSyariah = () => {
             }
         };
         fetchPosts();
-    
+
         return () => {
             // Bersihkan semua instance VenoBox untuk mencegah duplikasi
             const elements = document.querySelectorAll(".my-image-links-c");
             elements.forEach((el) => {
                 el.removeAttribute("data-venobox-initialized");
             });
-            
+
             // Hapus elemen VenoBox dari DOM
             const venoboxOverlay = document.querySelector('.vbox-overlay');
             if (venoboxOverlay) {
@@ -226,7 +226,7 @@ const JasakeuanganSyariah = () => {
                 const endpoints = process.env.REACT_APP_API_POST_DIREKTORAT_VIDEOS + '/' + id_dir;
                 const responses = await axios.get(`${urls}${endpoints}`);
                 setItemsVideo(responses.data);
-                
+
                 // Inisialisasi VenoBox setelah data dimuat
                 setTimeout(() => {
                     if (document.querySelectorAll('.my-video-links').length > 0) {
@@ -242,12 +242,12 @@ const JasakeuanganSyariah = () => {
                             titleattr: 'data-title',
                             titleStyle: 'block'
                         });
-                        
+
                         // Simpan instance VenoBox ke window untuk akses global
                         window.myVideoVenoBox = myVenoBox;
                     }
                 }, 500);
-                
+
             } catch (err) {
                 Swal.fire({
                     icon: "error",
@@ -259,7 +259,7 @@ const JasakeuanganSyariah = () => {
             }
         };
         fetchPosts();
-    
+
         return () => {
             // Tutup VenoBox jika masih terbuka
             if (window.myVideoVenoBox) {
@@ -270,13 +270,13 @@ const JasakeuanganSyariah = () => {
                     console.error("Error closing VenoBox:", e);
                 }
             }
-            
+
             // Bersihkan semua instance VenoBox untuk mencegah duplikasi
             const elements = document.querySelectorAll(".my-video-links");
             elements.forEach((el) => {
                 el.removeAttribute("data-venobox-initialized");
             });
-            
+
             // Hapus elemen VenoBox dari DOM
             const venoboxOverlay = document.querySelector('.vbox-overlay');
             if (venoboxOverlay) {
@@ -293,6 +293,10 @@ const JasakeuanganSyariah = () => {
                 </div>
             </div>
         );
+    }
+
+    function nl2brHtml(str) {
+        return str.replace(/\n/g, "<br>");
     }
 
     return (
@@ -350,10 +354,10 @@ const JasakeuanganSyariah = () => {
                                                 {
                                                     detaildir[0]?.detail && detaildir[0].detail.length > 0 ? (
                                                         detaildir[0].detail.map((element) => (
-                                                            <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} key={element.id}>
-                                                                <summary>{element?.title}</summary>
+                                                            <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} key={element?.id}>
+                                                                <summary>{cookies.i18next === 'en' ? element?.title_en : element?.title}</summary>
                                                                 <div style={{ padding: '10px', color: 'white' }}>
-                                                                    <p style={{ color: 'white' }}>{element?.description}</p>
+                                                                    <p style={{ color: 'white' }} dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? nl2brHtml(element?.description_en) : nl2brHtml(element?.description) }} />
                                                                 </div>
                                                             </details>
                                                         ))
@@ -651,7 +655,7 @@ const JasakeuanganSyariah = () => {
                                                 className="my-image-links-c"
                                                 data-gall="gallery10"
                                                 data-title={item?.title}
-                                                title= {cookies.i18next === 'id' ? item.title : item.title_en}
+                                                title={cookies.i18next === 'id' ? item.title : item.title_en}
                                             >
                                                 <div className="card-box-b card-shadow news-box">
                                                     <div className="img-box-b">
@@ -697,21 +701,21 @@ const JasakeuanganSyariah = () => {
                         <div className="row row-gutter-y-40">
                             <section className="video-section-x">
                                 {/* <div className="container"> */}
-                                    <div className="row row-gutter-y-40">
-                                        {loadingVideo
-                                            ? Array(4)
-                                                .fill()
-                                                .map((_, index) => (
-                                                    <div
-                                                        className='col-lg-3 col-xl-3 d-flex'
-                                                        key={index}>
-                                                        <SkeletonCardBerita />
-                                                    </div>
-                                                ))
-                                            :
-                                            item_video.length > 0 ? (
-                                                item_video.slice(0, 4).map((item) => (
-                                                    <div className="col-md-3 col-lg-3" key={item.id}>
+                                <div className="row row-gutter-y-40">
+                                    {loadingVideo
+                                        ? Array(4)
+                                            .fill()
+                                            .map((_, index) => (
+                                                <div
+                                                    className='col-lg-3 col-xl-3 d-flex'
+                                                    key={index}>
+                                                    <SkeletonCardBerita />
+                                                </div>
+                                            ))
+                                        :
+                                        item_video.length > 0 ? (
+                                            item_video.slice(0, 4).map((item) => (
+                                                <div className="col-md-3 col-lg-3" key={item.id}>
                                                     <a href={`https://www.youtube.com/watch?v=${item?.video}`} className="my-video-links" data-autoplay="true" data-vbtype="video" data-title={item?.title} title={cookies.i18next === 'id' ? item.title : item.title_en}>
                                                         <div className="card-box-b-d card-shadow news-box">
                                                             <div className="img-box-bc-d">
@@ -726,7 +730,7 @@ const JasakeuanganSyariah = () => {
                                                                 <div className="card-header-b-x-d">
                                                                     <div className="card-title-b-d">
                                                                         <h2 className="title-2-x-d text-white">
-                                                                        {cookies.i18next === 'id' ? item.title : item.title_en}
+                                                                            {cookies.i18next === 'id' ? item.title : item.title_en}
                                                                         </h2>
                                                                     </div>
                                                                     <div className="card-date-d">
@@ -737,14 +741,14 @@ const JasakeuanganSyariah = () => {
                                                         </div>
                                                     </a>
                                                 </div>
-                                                ))
-                                            ) : (
-                                                <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
-                                                    <p className="text-center text-danger">No posts available</p>
-                                                </div>
-                                            )
-                                        }
-                                    </div>
+                                            ))
+                                        ) : (
+                                            <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+                                                <p className="text-center text-danger">No posts available</p>
+                                            </div>
+                                        )
+                                    }
+                                </div>
                                 {/* </div> */}
                             </section>
                         </div>

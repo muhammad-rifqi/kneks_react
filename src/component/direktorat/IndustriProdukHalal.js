@@ -291,6 +291,10 @@ const IndustriProdukHalal = () => {
         );
     }
 
+    function nl2brHtml(str) {
+        return str.replace(/\n/g, "<br>");
+    }
+
     return (
         <>
             <div className="page-wrapper">
@@ -346,10 +350,10 @@ const IndustriProdukHalal = () => {
                                                 {
                                                     detaildir[0]?.detail && detaildir[0].detail.length > 0 ? (
                                                         detaildir[0].detail.map((element) => (
-                                                            <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} key={element.id}>
-                                                                <summary>{cookies.i18next === 'en' ? element?.title_en : element?.title }</summary>
+                                                            <details style={{ padding: '10px', borderBottom: '1px solid #fff', color: '#fff' }} key={element?.id}>
+                                                                <summary>{cookies.i18next === 'en' ? element?.title_en : element?.title}</summary>
                                                                 <div style={{ padding: '10px', color: 'white' }}>
-                                                                    <p style={{ color: 'white' }}>{cookies.i18next === 'en' ? element?.description_en : element?.description}</p>
+                                                                    <p style={{ color: 'white' }} dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? nl2brHtml(element?.description_en) : nl2brHtml(element?.description) }} />
                                                                 </div>
                                                             </details>
                                                         ))
@@ -716,7 +720,7 @@ const IndustriProdukHalal = () => {
                                                                 <div className="card-header-b-x-d">
                                                                     <div className="card-title-b-d">
                                                                         <h2 className="title-2-x-d text-white">
-                                                                        {cookies.i18next === 'id' ? item.title : item.title_en}
+                                                                            {cookies.i18next === 'id' ? item.title : item.title_en}
                                                                         </h2>
                                                                     </div>
                                                                     <div className="card-date-d">
