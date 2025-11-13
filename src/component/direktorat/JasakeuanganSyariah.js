@@ -324,7 +324,7 @@ const JasakeuanganSyariah = () => {
                                 </div>
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title text-center">{cookies.i18next === 'en' ? detaildir[0]?.title_en : detaildir[0]?.title}</h2>
-                                    <p>{t('direktorat.direktoratIndustriProdukHalalAdalah')}</p>
+                                    {/* <p>{t('direktorat.direktoratIndustriProdukHalalAdalah')}</p> */}
                                     <p dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? decodeHtmlEntities(detaildir[0]?.description_en) : decodeHtmlEntities(detaildir[0]?.description)}} />
                                     <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
 
