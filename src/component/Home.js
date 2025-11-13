@@ -7,7 +7,7 @@ import Section2 from '../component/home/Section2'
 // import Section2backup from '../component/home/Section2backup ';
 import Section3 from '../component/home/Section3'
 import Section4 from '../component/home/Section4'
-import Section5 from '../component/home/Section5'
+// import Section5 from '../component/home/Section5'
 import News from '../component/home/News'
 // import Zona from '../component/home/Zona';
 import Section6 from '../component/home/Section6'
@@ -85,7 +85,7 @@ const Home = () => {
 
       <Section4 />
       <Section8 />
-      <Section5 />
+      {/* <Section5 /> */}
       {/* <Section12 /> */}
 
       <Section6 />

@@ -26,6 +26,10 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import AgendaMap from "./AgendaMap";
 
+import { useTranslation } from "react-i18next";
+import { Carousel } from "react-bootstrap";
+import "./home/s5.css";
+
 
 const Agenda = () => {
     const [showDetailModal, setShowDetailModal] = useState(false);
@@ -43,6 +47,9 @@ const Agenda = () => {
         setSelectedEvent(event);
         setShowDetailModal(true);
     };
+
+    const { t } = useTranslation();
+    const [dataTabs, setDataTab] = useState([]);
 
     // Fetch events data on initial render
     useEffect(() => {
@@ -77,6 +84,24 @@ const Agenda = () => {
         };
         fetchAgenda();
     }, [searchQuery]);
+
+    useEffect(() => {
+        const fetchTab = async () => {
+            try {
+                const url = process.env.REACT_APP_API_URL;
+                const endpoint = process.env.REACT_APP_API_AGENDA_GRAPH;
+                const response = await axios.get(`${url}${endpoint}`);
+                setDataTab(response.data);
+            } catch (err) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: err,
+                });
+            }
+        };
+        fetchTab();
+    }, [])
 
     // const filteredEvents = posts.filter(event =>
     //     event.title.toLowerCase().includes((searchQuery || "").toLowerCase())
@@ -133,6 +158,7 @@ const Agenda = () => {
             style={{ border: '1px solid #ccc', padding: '8.5px' }}
         />
     ));
+
     return (
         <>
             <div className="page-wrapper">
@@ -163,7 +189,7 @@ const Agenda = () => {
                                     />
                                     <InputGroup.Text id="basic-addon2"><i className="fa fa-calendar"></i></InputGroup.Text>
                                 </InputGroup>
-                                
+
                             </Col>
                             <Col lg={6} sm={12}>
                                 <InputGroup className="mb-3">
@@ -243,6 +269,69 @@ const Agenda = () => {
                         </Row>
                     </div>
                 </section>
+
+                <section className='funfact-section'>
+                    <div className='container-fluid'>
+                        <div className='blog-box' style={{ paddingBottom: "50px" }}>
+                            <div className='section-title-box text-center'>
+                                <h2 className='section-title text-white'>
+                                    {t("event")}
+                                </h2>
+                            </div>
+                        </div>
+                        <Carousel className='custom-carousel-x' interval={3000}>
+                            {dataTabs.slice(0, 6).map((item) => {
+                                return (
+                                    <Carousel.Item key={item.key}>
+                                        <div className='row d-flex align-items-start chart-container'>
+                                            <h3 className='text-center text-white'>
+                                                {item.key}
+                                            </h3>
+                                            <div className='col-lg-4'>
+                                                <Card className='text-center'>
+                                                    <Card.Body>
+                                                        <Card.Title>
+                                                            Total Kegiatan
+                                                        </Card.Title>
+                                                        <h1>
+                                                            {item.data.totalKegiatan}
+                                                        </h1>
+                                                    </Card.Body>
+                                                </Card>
+                                            </div>
+                                            <div className='col-lg-4 '>
+                                                <Card className='text-center'>
+                                                    <Card.Body>
+                                                        <Card.Title>
+                                                            Total Peserta
+                                                        </Card.Title>
+                                                        <h1>
+                                                            {item.data.totalPeserta}
+                                                        </h1>
+                                                    </Card.Body>
+                                                </Card>
+                                            </div>
+                                            <div className='col-lg-4'>
+                                                <Card className='text-center'>
+                                                    <Card.Body>
+                                                        <Card.Title>
+                                                            Total Wilayah
+                                                        </Card.Title>
+                                                        <h1>
+                                                            {item.data.totalWilayah}
+                                                        </h1>
+                                                    </Card.Body>
+                                                </Card>
+                                            </div>
+                                        </div>
+                                    </Carousel.Item>
+                                );
+                            })}
+                        </Carousel>
+
+                    </div>
+                </section>
+
                 <EventDetailModal
                     show={showDetailModal}
                     handleClose={() => setShowDetailModal(false)}

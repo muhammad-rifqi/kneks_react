@@ -95,10 +95,11 @@ const Section6 = () => {
                 name={selectedZona}
             />
 
-            <section className='mayor-section-maps'>
+            {/* <section className='mayor-section-maps'> */}
+            <section className='funfact-section'>
                 <div className='blog-box-x'>
                     <div className='section-title-box text-center' data-aos="fade-up">
-                        <h2 className='section-title'>{t("zona")}</h2>
+                        <h2 className='section-title text-white'>{t("zona")}</h2>
                     </div>
                 </div>
                 <div className="row justify-content-center mb-4 gx-2 gy-2">

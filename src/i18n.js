@@ -159,7 +159,7 @@ const resources = {
 
             "event": "Event Ekonomi dan Keuangan Syariah",
             "statistik_slider": "Data Ekonomi dan Keuangan Syariah",
-            "zona": "Zona KHAS",
+            "zona": "Zona Kuliner Halal Aman dan Sehat ",
             "agenda_maps": "Agenda Maps",
             "bannerJudul": "Menyatukan langkah, Memajukan Negeri",
             "bannerIsi": "Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional ",

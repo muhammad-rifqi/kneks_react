@@ -38,12 +38,13 @@ const Section11 = () => {
 
 	return (
 		<>
-			<section className="sm-section funfact-section-post">
+			{/* <section className="sm-section funfact-section-post"> */}
+			<section className="mayor-section">
 				<div className="container">
 					<div className="sm-box">
 						<div className="section-title-box text-center" data-aos="fade-up">
 							<div className="section-tagline-b">{t('sosialMedia')}</div>
-							<h2 className="section-title">{t('instagram')}</h2>
+							<h2 className="section-title text-dark">{t('instagram')}</h2>
 						</div>
 					</div>
 					<div className="row m-0" data-aos="fade-down" >
@@ -70,8 +71,8 @@ const Section11 = () => {
 					<div className="sm-box" style={{ marginTop: `100px` }}>
 						<div className="section-title-box text-center" data-aos="fade-up">
 
-							<h2 className="section-title">{t('instansi')}</h2>
-							<div className="section-text-b "><p className="text-white ">
+							<h2 className="section-title text-dark">{t('instansi')}</h2>
+							<div className="section-text-b "><p className="text-dark ">
 								{t('instansiIsi')} <br /> {t('instansiIsi2')}	</p>
 							</div>
 						</div>
