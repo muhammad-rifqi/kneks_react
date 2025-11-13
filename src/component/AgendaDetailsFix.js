@@ -3,8 +3,13 @@ import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
+import 'dayjs/locale/en';
 import axios from 'axios';
 import VenoBox from 'venobox';
+import { useTranslation } from 'react-i18next';
+import { useCookies } from 'react-cookie';
+import './home/s8.css';
+
 const AgendaDetailsFix = () => {
     new VenoBox({
         selector: '.my-image-links-foto',
@@ -31,10 +36,18 @@ const AgendaDetailsFix = () => {
         titleStyle: 'block'
     });
 
+    const { t } = useTranslation();
+    const [cookies] = useCookies(['i18next']);
+    const formatDate = (date, locale = 'en') => {
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
+
     dayjs.locale('id');
 
     const { slug } = useParams();
     const [rows, setItem] = useState(null);
+    const [posts, setPosts] = useState([]);
 
     const convertToSlug = (title) => {
         if (!title) return ""; // Handle null or undefined title
@@ -54,11 +67,12 @@ const AgendaDetailsFix = () => {
                     const endpoint = process.env.REACT_APP_API_AGENDA;
                     const responsei = await axios.get(`${url}${endpoint}`);
                     const foundItem = responsei.data.find(agenda => convertToSlug(agenda.title) === slug);
-
                     // throw new Error("Error!");
 
                     if (responsei) {
                         setItem(foundItem);
+                        setPosts(responsei.data)
+
                     }
 
                 } catch (err) {
@@ -88,8 +102,8 @@ const AgendaDetailsFix = () => {
                         </div>
                     </div>
                 </section>
-                <section className="event-details-section-ber">
-                    <div className="container">
+                <section className="about-one-section">
+                    <div className="container-md">
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="event-details-content-box">
@@ -97,7 +111,7 @@ const AgendaDetailsFix = () => {
                                     <div dangerouslySetInnerHTML={{ __html: rows?.description }} />
                                 </div>
                                 <br />
-                                <p> 
+                                <p>
                                     {/* {
                                         rows?.area == null ? (
                                             <iframe src={rows?.area} title={rows?.area} width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -190,9 +204,7 @@ const AgendaDetailsFix = () => {
                 </section >
                 <section className="department-all">
                     <div className="container">
-
                         <div className="row row-gutter-y-30 d-flex justify-content-center">
-
                             <div className="col-lg-12">
                                 {/* <div className="row ">
                                     <div className="col-12 col-md-6 col-xl-3">
@@ -265,7 +277,7 @@ const AgendaDetailsFix = () => {
                                     </div>
 
                                 </div> */}
-                                <div className="row row-gutter-y-30 d-flex justify-content-center pt-5">
+                                {/* <div className="row row-gutter-y-30 d-flex justify-content-center pt-5">
                                     <div className="col-md-3 col-lg-3">
                                         <a href={`${process.env.PUBLIC_URL}/assets/image/berita2.jpeg`} className="my-image-links-foto" data-gall="gallery01">
                                             <div className="card-box-b card-shadow news-box">
@@ -302,7 +314,7 @@ const AgendaDetailsFix = () => {
                                             </div>
                                         </a>
                                     </div>
-                                </div>
+                                </div> */}
                                 {/* <section className="video-section-x">
                                     <div className="row row-gutter-y-40">
                                         <div className="col-md-3 col-lg-3">
@@ -368,84 +380,49 @@ const AgendaDetailsFix = () => {
 
                                     </div>
                                 </section> */}
-                                <section className="department-all">
-                                    <div className="container">
-                                        <div className="blog-box-x">
-                                            <div className="section-title-box text-center">
-                                                <h2 className="section-title">Rekomendasi Agenda Lainnya</h2>
-                                            </div>
-                                        </div>
-                                        <div className="row ">
-                                            <div className="col-lg-3 col-md-3">
-                                                <a href="/agenda/detail">
-                                                    <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-                                                        <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-                                                        <div className="card-body">
-                                                            <div className="card-text">24/05/2024 - 24/05/2024</div>
-                                                            <div className="card-text">12:00 - 14:00 WIP</div>
-
-                                                        </div>
-                                                        <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-                                                            <i className="fa-solid fa-calendar "></i>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className="col-lg-3 col-md-3">
-                                                <a href="/agenda/detail">
-                                                    <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-                                                        <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-                                                        <div className="card-body">
-                                                            <div className="card-text">24/05/2024 - 24/05/2024</div>
-                                                            <div className="card-text">12:00 - 14:00 WIP</div>
-
-                                                        </div>
-                                                        <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-                                                            <i className="fa-solid fa-calendar "></i>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className="col-lg-3 col-md-3">
-                                                <a href="/agenda/detail">
-                                                    <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-                                                        <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-                                                        <div className="card-body">
-                                                            <div className="card-text">24/05/2024 - 24/05/2024</div>
-                                                            <div className="card-text">12:00 - 14:00 WIP</div>
-
-                                                        </div>
-                                                        <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-                                                            <i className="fa-solid fa-calendar "></i>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div className="col-lg-3 col-md-3">
-                                                <a href="/agenda/detail">
-                                                    <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-                                                        <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-                                                        <div className="card-body">
-                                                            <div className="card-text">24/05/2024 - 24/05/2024</div>
-                                                            <div className="card-text">12:00 - 14:00 WIP</div>
-
-                                                        </div>
-                                                        <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-                                                            <i className="fa-solid fa-calendar "></i>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-
-
-                                        </div>
-
-                                    </div>
-                                </section >
                             </div>
                         </div>
                     </div>
                 </section>
+                <section className="funfact-section">
+                    <div className='container-fluid'>
+                        <div className="blog-box-x" style={{ marginTop: '-10px' }}>
+                            <div className="section-title-box text-center">
+                                <h2 className="section-title text-white">{t('rekomendasi')}</h2>
+                            </div>
+                        </div>
+                        <div className="row">
+                            {posts?.length > 0 ? (
+                                posts?.slice(0, 4).map((item) => (
+                                    <div style={{ marginTop: '-40px', padding: '30px' }} className="col-lg-3 col-md-4 pb-2" key={item?.id}>
+                                        <a href={`/agenda/${convertToSlug(item?.title)}`}>
+                                            <div className="card shadow p-3 rounded card-agendas h-100" style={{ background: `#146AA4`, color: `#ffffff` }}>
+                                                <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, paddingBottom: `10px`, background: `#146AA4` }}><h4>{cookies.i18next === 'id' ? item.title : item.title_en}</h4></div>
+                                                <div className="card-body">
+                                                    <div className="card-text">{cookies.i18next === 'id' ? formatDate(item.agenda_datetime, 'id') : formatDate(item.agenda_datetime, 'en')}</div>
+                                                    <div className="card-text">{dayjs(item.agenda_datetime).locale('id').format('h:mm')} WIB</div>
+
+                                                </div>
+                                                <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
+                                                    <i className="fa-solid fa-calendar "></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                ))
+
+                            ) : (
+                                <p className="text-center">No posts available.</p>
+                            )}
+                        </div>
+                        <div className="selengkapnya" data-aos="fade-down-left" style={{ textAlign: 'center', marginTop: '20px' }}>
+                            <a href={`/agenda`} className="btn btn-primary btn-sm" style={{ backgroundColor: "#006699" }}>
+                                Lihat Selengkapnya
+                            </a>
+                        </div>
+
+                    </div>
+                </section >
             </div >
         </>
     )

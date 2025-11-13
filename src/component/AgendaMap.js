@@ -10,7 +10,7 @@ const AgendaMap = () => {
     const [dataAgenda, setDataAgenda] = useState([]);
 
     const handleShow = (item) => {
-        console.log(item)
+        // console.log(item)
         setShowDetailModal(true);
         setSelectedItem(item)
     };

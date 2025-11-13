@@ -79,7 +79,7 @@ const Agenda = () => {
                 const response = await axios.get(`${url}`);
                 setDataCari(response.data);
             } catch (err) {
-                console.log(err)
+                // console.log(err)
             }
         };
         fetchAgenda();

@@ -36,7 +36,7 @@ const Data = () => {
         const response = await axios.get(`${url}/data_menu_fe`);
         return response.data
     };
-    console.log(`sc`, narasi)
+    // console.log(`sc`, narasi)
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);

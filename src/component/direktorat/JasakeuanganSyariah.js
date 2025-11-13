@@ -61,7 +61,7 @@ const JasakeuanganSyariah = () => {
                 const endpoints = process.env.REACT_APP_API_DIREKTORAT_DETAIL + '/' + id_dir;
                 const responses = await axios.get(`${urls}${endpoints}`);
                 setDetailDirektorat(responses.data);
-                console.log(responses.data)
+                // console.log(responses.data)
             } catch (err) {
                 Swal.fire({
                     icon: "error",

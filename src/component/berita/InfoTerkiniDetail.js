@@ -53,13 +53,13 @@ const InfoTerkiniDetail = () => {
                             convertToSlug(post.title) === slug
                     );
                     // throw new Error("Error!");
-                    console.log(responsei)
+                    // console.log(responsei)
                     if (responsei) {
                         setItemx(responsei.data);
                         setItem(foundItem);
                     }
-                    console.log(responsei.data)
-                    console.log(foundItem)
+                    // console.log(responsei.data)
+                    // console.log(foundItem)
                 } catch (err) {
                     Swal.fire({
                         icon: "error",

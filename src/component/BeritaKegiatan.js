@@ -126,7 +126,7 @@ const BeritaKegiatan = () => {
         />
     ));
 
-    console.log(posts)
+    // console.log(posts)
     return (
         <>
             <div className='page-wrapper'>
