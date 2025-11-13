@@ -43,7 +43,7 @@ const resources = {
             "tombol": "See More",
 
             "beritaTerkait": "Related News",
-            "zona": "Khas Zone",
+            "zona": "Halal, Safe and Healthy Culinary Zone (ZONA KHAS)",
             "agenda_maps": "Maps Agenda",
             "pernekalkan": "About Us",
             "pernekalkanJudul": "National Committee for Sharia Economics and Finance (KNEKS)",
@@ -159,7 +159,7 @@ const resources = {
 
             "event": "Event Ekonomi dan Keuangan Syariah",
             "statistik_slider": "Data Ekonomi dan Keuangan Syariah",
-            "zona": "Zona Kuliner Halal Aman dan Sehat ",
+            "zona": "Zona Kuliner Halal Aman dan Sehat (KHAS)",
             "agenda_maps": "Agenda Maps",
             "bannerJudul": "Menyatukan langkah, Memajukan Negeri",
             "bannerIsi": "Dengan mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional ",
