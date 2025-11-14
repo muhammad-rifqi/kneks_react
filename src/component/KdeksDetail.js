@@ -468,166 +468,71 @@ const KdeksDetail = () => {
                     </div >
 
                 </section>
-                {/* <section className="portfolio-section">
-                    <div className="container">
-                        <div className="section-title-box text-center">
-                            <h2 className="section-title">{t('beritaDanKegiatan')}</h2>
-                        </div>
-                        <div className="row row-gutter-30">
-
-                            {loadingNew
-                                ? Array(4)
-                                    .fill()
-                                    .map((_, index) => (
-                                        <div
-                                            className='col-lg-3 col-xl-3 d-flex'
-                                            key={index}>
-                                            <SkeletonCardBerita />
-                                        </div>
-                                    ))
-                                :
-                                posts.length > 0 ? (
-                                    <div className="swiper swiper-kdeks">
-                                        <div className="swiper-wrapper">
-                                            {posts.slice(0, 5).map((item) => (
-                                                <div className="col-lg-3 swiper-slide" key={item.id}>
-                                                    <div className="berita-card">
-                                                        <div className="berita-card-imgbox-direktorat-home">
-                                                            <a href={item.title ? `/berita-kegiatan/${item?.id}/${convertToSlug(item?.title)}` : ''}>
-                                                                <img
-                                                                    src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
-                                                                    onError={(e) => {
-                                                                        e.target.onerror = null;
-                                                                        e.target.src = `/assets/image/foto-beritas.png`;
-                                                                    }}
-                                                                    className="img-fluid" alt={cookies.i18next === 'en' ? item?.title_en : item?.title} style={{ width: '100%', height: '200px', overflowY: 'hidden' }} />
-                                                            </a>
-                                                        </div>
-                                                        <div className="berita-content-direktorat-xs">
-                                                            <div className="direktorat-tag-home">
-                                                                <span>{cookies.i18next === 'id' ? '#BERITABARU' : '#CURRENTNEWS'}</span>
-                                                            </div>
-                                                            <div className="event-card-title-direktorat-kdek pb-2">
-                                                                <h4>
-                                                                    <a href={item.title ? `/berita-kegiatan/${item?.id}/${convertToSlug(item?.title)}` : ''}>{cookies.i18next === 'en' ? item?.title_en : item?.title}</a>
-                                                                </h4>
-                                                            </div>
-                                                            <div className="event-card-info-direktorat">
-                                                                <span>{cookies.i18next === 'id' ? formatDate(item?.news_datetime, 'id') : formatDate(item?.news_datetime, 'en')}</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <div className="swiper-button-prev">
-                                            <i className="fa-solid fa-chevron-left"></i>
-                                        </div>
-                                        <div className="swiper-button-next">
-                                            <i className="fa-solid fa-chevron-right"></i>
-                                        </div>
-                                    </div >
-                                ) : (
-                                    <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
-                                        <p className="text-center text-danger">No posts available</p>
-                                    </div>
-                                )}
-                        </div >
-                    </div >
-
-                </section > */}
+                
                 <section className="funfact-section-struktur-x">
-                    {/* <section className="funfact-section">
+                    <section className="funfact-section">
                         <div className="container">
                             <div className="funfact-box">
                                 <div className="section-title-box text-center">
-                                    <h2 className="section-title">Agenda</h2>
+                                    <h2 className="section-title">{t('beritaTerkait')}</h2>
                                 </div>
                             </div>
-                            <div className="row ">
-                                <div className="swiper swiper-kdeks-agenda">
-                                    <div className="swiper-wrapper">
-                                        <div className="col-lg-3 col-md-6 swiper-slide">
-                                            <a href="/agenda/detail">
-                                                <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-                                                    <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-                                                    <div className="card-body">
-                                                        <div className="card-text">24/05/2024 - 24/05/2024</div>
-                                                        <div className="card-text">12:00 - 14:00 WIP</div>
-
+                            <div className="row row-gutter-30">
+                                {loadingNew
+                                    ? Array(4)
+                                        .fill()
+                                        .map((_, index) => (
+                                            <div
+                                                className='col-lg-3 col-xl-3 d-flex'
+                                                key={index}>
+                                                <SkeletonCardBerita />
+                                            </div>
+                                        ))
+                                    :
+                                    posts.length > 0 ? (
+                                        posts.slice(0, 4).map((item) => (
+                                            <div className="col-lg-3 " key={item.id}>
+                                                <div className="berita-card">
+                                                    <div className="berita-card-imgbox-direktorat-homes " >
+                                                        <a href={`/berita-kegiatan/${btoa(item.id)}/${convertToSlug(item.title)}`}>
+                                                            <img
+                                                                src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                                onError={(e) => {
+                                                                    e.target.onerror = null;
+                                                                    e.target.src = `/assets/image/foto-beritas.png`;
+                                                                }}
+                                                                className="img-fluid berita-img-responsive" alt={item.title} />
+                                                        </a>
                                                     </div>
-                                                    <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-                                                        <i className="fa-solid fa-calendar "></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div className="col-lg-3 col-md-6 swiper-slide">
-                                            <a href="/agenda/detail">
-                                                <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-                                                    <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-                                                    <div className="card-body">
-                                                        <div className="card-text">24/05/2024 - 24/05/2024</div>
-                                                        <div className="card-text">12:00 - 14:00 WIP</div>
-
-                                                    </div>
-                                                    <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-                                                        <i className="fa-solid fa-calendar "></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div className="col-lg-3 col-md-6 swiper-slide">
-                                            <a href="/agenda/detail">
-                                                <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-                                                    <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-                                                    <div className="card-body">
-                                                        <div className="card-text">24/05/2024 - 24/05/2024</div>
-                                                        <div className="card-text">12:00 - 14:00 WIP</div>
-
-                                                    </div>
-                                                    <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-                                                        <i className="fa-solid fa-calendar "></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div className="col-lg-3 col-md-6 swiper-slide">
-                                            <a href="/agenda/detail">
-                                                <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-                                                    <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-                                                    <div className="card-body">
-                                                        <div className="card-text">24/05/2024 - 24/05/2024</div>
-                                                        <div className="card-text">12:00 - 14:00 WIP</div>
-
-                                                    </div>
-                                                    <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-                                                        <i className="fa-solid fa-calendar "></i>
+                                                    <div className="berita-content-direktorat-x-t" >
+                                                        <div className="direktorat-tag-home">
+                                                            <span>#BERITABARU</span>
+                                                            {/* {item?.tag.split(",").map((tag, index) => (
+                                                                                                   <span key={index}>{tag ? '#' + tag : ''} </span>
+                                       
+                                                                                               ))} */}
+                                                        </div>
+                                                        <div className="event-card-title-direktorat pb-2">
+                                                            <h4>
+                                                                <a href={`/berita-kegiatan/${btoa(item.id)}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                            </h4>
+                                                        </div>
+                                                        <div className="event-card-info-direktorat-t">
+                                                            <span>{dayjs(item.news_datetime).format('DD MMMM YYYY')}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+                                            <p className="text-center text-danger">No posts available</p>
                                         </div>
-                                        <div className="col-lg-3 col-md-6 swiper-slide">
-                                            <a href="/agenda/detail">
-                                                <div className="card shadow p-3 mb-5 rounded" style={{ background: `#146AA4`, color: `#ffffff` }}>
-                                                    <div className="card-header" style={{ borderBottom: `1px solid #ffffff`, fontSize: `18px`, paddingBottom: `15px`, background: `#146AA4` }}>Webinar Keuangan</div>
-                                                    <div className="card-body">
-                                                        <div className="card-text">24/05/2024 - 24/05/2024</div>
-                                                        <div className="card-text">12:00 - 14:00 WIP</div>
-
-                                                    </div>
-                                                    <div className="card-footer text-end" style={{ borderTop: `none`, background: `#146AA4`, color: `#ffffff` }}>
-                                                        <i className="fa-solid fa-calendar "></i>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                                    )
+                                }
+                            </div >
                         </div>
-                    </section> */}
+                    </section>
                     <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
