@@ -17,7 +17,7 @@ const BeritaKegiatanDetail = () => {
     };
 
     const { id, slug } = useParams();
-    const [rows, setItem] = useState(null);
+    const [rows, setItem] = useState([]);
 
     const [itemx, setItemx] = useState([]);
 
@@ -36,21 +36,22 @@ const BeritaKegiatanDetail = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_POST;
-                    const responsei = await axios.get(`${url}/newsdetail/${id}`);
-                    const responlain = await axios.get(`${url}${endpoint}`);
+                    // const endpoint = process.env.REACT_APP_API_POST;
+                    const responsei = await axios.get(`${url}/newsdetail/${atob(id)}`);
+                    const responlain = await axios.get(`${url}/news_category/cat/1`);
 
-                    const foundItem = responsei.data.find(
-                        (post) =>
-                            post.id === Number(id) &&
-                            convertToSlug(post.title) === slug
-                    );
+                    // const foundItem = responsei.data.find(
+                    //     (post) =>
+                    //         post.id === atob(id) &&
+                    //         convertToSlug(post.title) === slug
+                    // );
 
                     // throw new Error("Error!");
 
                     if (responlain) {
                         setItemx(responlain.data);
-                        setItem(foundItem);
+                        setItem(responsei?.data);
+
                     }
 
                 } catch (err) {
@@ -86,19 +87,19 @@ const BeritaKegiatanDetail = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                    <h4>{cookies.i18next === 'en' ? rows?.title_en : rows?.title}</h4>
-                                    <p>{cookies.i18next === 'id' ? formatDate(rows?.news_datetime, 'id') : formatDate(rows?.news_datetime, 'en')}</p>
+                                    <h4>{cookies.i18next === 'en' ? rows[0]?.title_en : rows[0]?.title}</h4>
+                                    <p>{cookies.i18next === 'id' ? formatDate(rows[0]?.news_datetime, 'id') : formatDate(rows[0]?.news_datetime, 'en')}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
                                     <img
-                                        src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image}
+                                        src={rows[0]?.image === "" ? '/assets/image/foto-beritas.png' : rows[0]?.image}
                                         onError={(e) => {
                                             e.target.onerror = null;
                                             e.target.src = `/assets/image/foto-beritas.png`;
                                         }}
-                                        width={`100%`} className="img-fluid" alt={rows?.title} />
+                                        width={`100%`} className="img-fluid" alt={rows[0]?.title} />
                                 </div>
                             </div>
                             <div className="row">
@@ -126,12 +127,12 @@ const BeritaKegiatanDetail = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
                                     {/* <p style={{ textAlign: `justify` }}>{rows?.content}</p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? rows?.content_en : rows?.content }} />
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? rows[0]?.content_en : rows[0]?.content }} />
                                 </div>
                             </div>
                             <hr />
                             <div className="news-details-list-title pb-3">
-                                <h4>Tags : {rows?.tag}</h4>
+                                <h4>Tags : {rows[0]?.tag}</h4>
                             </div>
                             {/* {(rows?.tagging || "").trim().length > 0 && (
                                 <div className="news-details-list-button">
@@ -141,9 +142,9 @@ const BeritaKegiatanDetail = () => {
                                         ))}
                                 </div>
                             )} */}
-                            {rows?.tagging && (
+                            {rows[0]?.tagging && (
                                 <div className="news-details-list-button">
-                                    {(JSON.parse(rows.tagging || '[]')).map((t, i) => (
+                                    {(JSON.parse(rows[0].tagging || '[]')).map((t, i) => (
                                         <a key={i} href="#t" className="btn btn-primary me-2">
                                             {t.value}
                                         </a>
@@ -171,32 +172,32 @@ const BeritaKegiatanDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>
+                                                <a href={`/berita-kegiatan/${btoa(item.id)}/${convertToSlug(item?.title)}`}>
                                                     <img
                                                         src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
                                                         onError={(e) => {
                                                             e.target.onerror = null;
                                                             e.target.src = `/assets/image/foto-beritas.png`;
                                                         }}
-                                                        className="img-fluid" alt={item.title} />
+                                                        className="img-fluid" alt={item?.title} />
                                                     {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
                                                 </a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
                                                     {/* <span>#BERITABARU</span> */}
-                                                    {item.tags.split(",").map((tag, index) => (
+                                                    {item?.tags?.split(",").map((tag, index) => (
                                                         <span key={index}>{tag ? '#' + tag : ''} </span>
 
                                                     ))}
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/berita-kegiatan/${btoa(item?.id)}/${convertToSlug(item?.title)}`}>{item?.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
-                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
+                                                    <span>{dayjs(item?.news_datetime).format("DD MMMM YYYY")}</span>
                                                 </div>
                                             </div>
                                         </div>

@@ -88,8 +88,8 @@ const Opini = () => {
                                             <div className="event-card">
                                                 <div className="event-card-image">
                                                     <div className="event-card-image-inner-x">
-                                                        <a href={`/opini/${item.id}/${convertToSlug(item.title)}`}>
-                                                            <img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} />
+                                                        <a href={`/opini/${btoa(item.id)}/${convertToSlug(item.title)}`}>
+                                                            <img src="/assets/image/foto-beritas.png" className="img-fluid w-100" alt={item.title} />
                                                             {/* <img
                                                                 src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
                                                                 onError={(e) => {
@@ -109,19 +109,19 @@ const Opini = () => {
                                                                 {/* {item.tags.split(",").map((tag, index) => (
                                                                     <span key={index}>{tag ? '#' + tag : ''} </span>
                                                                 ))} */}
-                                                                {Array.isArray(item.tags) && item.tags.map((tag, index) => (
+                                                                {Array.isArray(item?.tags) && item?.tags?.map((tag, index) => (
                                                                     <span key={index}>#{tag.value} </span>
                                                                 ))}
                                                             </li>
                                                         </ul>
                                                     </div>
                                                     <div className="event-card-title pb-4">
-                                                        <h4><a href={`/opini/${item.id}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a></h4>
+                                                        <h4><a href={`/opini/${btoa(item.id)}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a></h4>
                                                     </div>
                                                     <div className="event-card-info">
                                                         <ul className="list-unstyled">
                                                             <li>
-                                                                <span>{cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
+                                                                <span>{cookies.i18next === 'id' ? formatDate(item?.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
                                                             </li>
                                                         </ul>
                                                     </div>

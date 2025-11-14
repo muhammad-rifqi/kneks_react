@@ -5,12 +5,21 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import axios from 'axios';
 import VenoBox from 'venobox';
+import { useTranslation } from "react-i18next";
+import { useCookies } from 'react-cookie';
 
 const LiputanMediaDetail = () => {
+    const [cookies] = useCookies(['i18next']);
+    const { t } = useTranslation()
     dayjs.locale('id');
 
+    const formatDate = (date, locale = 'en') => {
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
+
     const { id, slug } = useParams();
-    const [rows, setItem] = useState(null);
+    const [rows, setItem] = useState([]);
 
     const [itemx, setItemx] = useState([]);
 
@@ -44,21 +53,21 @@ const LiputanMediaDetail = () => {
                 try {
                     // const endpoint = process.env.REACT_APP_API_LIPUTAN_MEDIA;
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = process.env.REACT_APP_API_POST;
-                    const responsei = await axios.get(`${url}/newsdetail/${id}`);
-                    const responlain = await axios.get(`${url}${endpoint}`);
+                    // const endpoint = process.env.REACT_APP_API_POST;
+                    const responsei = await axios.get(`${url}/newsdetail/${atob(id)}`);
+                    const responlain = await axios.get(`${url}/news_category/cat/2`);
 
-                    const foundItem = responsei.data.find(
-                        (post) =>
-                            post.id === Number(id) &&
-                            convertToSlug(post.title) === slug
-                    );
+                    // const foundItem = responsei.data.find(
+                    //     (post) =>
+                    //         post.id === Number(id) &&
+                    //         convertToSlug(post.title) === slug
+                    // );
 
                     // throw new Error("Error!");
 
                     if (responlain) {
                         setItemx(responlain.data);
-                        setItem(foundItem);
+                        setItem(responsei.data);
                     }
                 } catch (err) {
                     Swal.fire({
@@ -76,7 +85,7 @@ const LiputanMediaDetail = () => {
             }
         }
     }, [id, slug]);
-    const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
+    // const formattedDate = rows[0]?.news_datetime ? dayjs(rows[0]?.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
 
     return (
@@ -85,7 +94,7 @@ const LiputanMediaDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>Liputan Media</h3>
+                            <h3>{t('liputanMedia')}</h3>
                         </div>
                     </div>
                 </section>
@@ -94,20 +103,20 @@ const LiputanMediaDetail = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                    <h4>{rows?.title}</h4>
-                                    <p>{formattedDate}</p>
+                                    <h4>{cookies.i18next === 'en' ? rows[0]?.title_en : rows[0]?.title}</h4>
+                                    <p>{cookies.i18next === 'id' ? formatDate(rows[0]?.news_datetime, 'id') : formatDate(rows[0]?.news_datetime, 'en')}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
                                     {/* <img src={`${process.env.REACT_APP_API_NEWS}` + rows.image} width={`100%`} className="img-fluid" alt={rows?.title} /> */}
                                     <img
-                                        src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image}
+                                        src={rows[0]?.image === "" ? '/assets/image/foto-beritas.png' : rows[0]?.image}
                                         onError={(e) => {
                                             e.target.onerror = null;
                                             e.target.src = `/assets/image/foto-beritas.png`;
                                         }}
-                                        width={`100%`} className="img-fluid" alt={rows?.title} />
+                                        width={`100%`} className="img-fluid" alt={rows[0]?.title} />
                                 </div>
                             </div>
                             <div className="row">
@@ -120,7 +129,7 @@ const LiputanMediaDetail = () => {
                                                     width="100%"
                                                     style={{ height: "195px" }}
                                                     className="img-fluid"
-                                                    alt={rows?.title}
+                                                    alt={rows[0]?.title}
                                                 />
                                             </a>
                                         </div>
@@ -135,7 +144,7 @@ const LiputanMediaDetail = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
                                     {/* <p style={{ textAlign: `justify` }}>{rows?.content}</p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: rows?.content }} />
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? rows[0]?.content_en : rows[0]?.content }} />
                                 </div>
                             </div>
                             <hr />
@@ -151,9 +160,9 @@ const LiputanMediaDetail = () => {
                                         ))}
                                 </div>
                             )} */}
-                            {rows?.tagging && (
+                            {rows[0]?.tagging && (
                                 <div className="news-details-list-button">
-                                    {(JSON.parse(rows.tagging || '[]')).map((t, i) => (
+                                    {(JSON.parse(rows[0]?.tagging || '[]')).map((t, i) => (
                                         <a key={i} href="#t" className="btn btn-primary me-2">
                                             {t.value}
                                         </a>
@@ -178,33 +187,33 @@ const LiputanMediaDetail = () => {
                         <div className="row row-gutter-30">
                             {itemx.slice(0, 3).map((item) => {
                                 return (
-                                    <div className="col-lg-4 col-xl-4" key={item.id}>
+                                    <div className="col-lg-4 col-xl-4" key={item?.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 {/* <a href={`/liputan-media/${convertToSlug(item.title)}`}> <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /></a> */}
-                                                <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>
+                                                <a href={`/liputan-media/${btoa(item.id)}/${convertToSlug(item?.title)}`}>
                                                     <img
                                                         src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
                                                         onError={(e) => {
                                                             e.target.onerror = null;
                                                             e.target.src = `/assets/image/foto-beritas.png`;
                                                         }}
-                                                        className="img-fluid" alt={item.title} /></a>
+                                                        className="img-fluid w-100" alt={item?.title} /></a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>
                                                     {/* <span>#BERITABARU</span> */}
-                                                    {item.tags.split(",").map((tag, index) => (
+                                                    {item?.tags?.split(",").map((tag, index) => (
                                                         <span key={index}>{tag ? '#' + tag : ''} </span>
                                                     ))}
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/liputan-media/${btoa(item.id)}/${convertToSlug(item?.title)}`}>{item?.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
-                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
+                                                    <span>{dayjs(item?.news_datetime).format("DD MMMM YYYY")}</span>
                                                 </div>
                                             </div>
                                         </div>

@@ -16,7 +16,7 @@ const OpiniDetail = () => {
     };
 
     const { id, slug } = useParams();
-    const [rows, setItem] = useState(null);
+    const [rows, setItem] = useState([]);
 
     const [itemx, setItemx] = useState([]);
 
@@ -36,20 +36,21 @@ const OpiniDetail = () => {
             const fetchPosts = async () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
-                    const endpoint = '/api_opini_detail/' + id;
+                    const endpoint = '/api_opini_detail/' + atob(id);
                     const responsei = await axios.get(`${url}${endpoint}`);
+                    const responselain = await axios.get(`${url}/api_opini`);
                     // const foundItem = responsei.data.find(kneks => convertToSlug(kneks.title) === slug);
 
                     // throw new Error("Error!");
-                    const foundItem = responsei.data.find(
-                        (post) =>
-                            post.id === Number(id) &&
-                            convertToSlug(post.title) === slug
-                    );
+                    // const foundItem = responsei.data.find(
+                    //     (post) =>
+                    //         post.id === Number(id) &&
+                    //         convertToSlug(post.title) === slug
+                    // );
                     // console.log(foundItem)
                     if (responsei) {
-                        setItemx(responsei.data);
-                        setItem(foundItem);
+                        setItemx(responselain.data);
+                        setItem(responsei.data);
                     }
 
                 } catch (err) {
@@ -87,8 +88,8 @@ const OpiniDetail = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                    <h4>{cookies.i18next === 'id' ? rows?.title : rows?.title_en}</h4>
-                                    <p>{cookies.i18next === 'id' ? formatDate(rows?.date, 'id') : formatDate(rows?.date, 'en')}</p>
+                                    <h4>{cookies.i18next === 'id' ? rows[0]?.title : rows[0]?.title_en}</h4>
+                                    <p>{cookies.i18next === 'id' ? formatDate(rows[0]?.date, 'id') : formatDate(rows[0]?.date, 'en')}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
@@ -125,7 +126,7 @@ const OpiniDetail = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
                                     {/* <p style={{ textAlign: `justify` }}>{rows?.content}</p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? rows?.content_en : rows?.content }} />
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? rows[0]?.content_en : rows[0]?.content }} />
                                 </div>
                             </div>
                             <hr />
@@ -141,9 +142,9 @@ const OpiniDetail = () => {
                                         ))}
                                 </div>
                             )} */}
-                            {rows?.tagging && (
+                            {rows[0]?.tagging && (
                                 <div className="news-details-list-button">
-                                    {(JSON.parse(rows.tagging || '[]')).map((t, i) => (
+                                    {(JSON.parse(rows[0]?.tagging || '[]')).map((t, i) => (
                                         <a key={i} href="#t" className="btn btn-primary me-2">
                                             {t.value}
                                         </a>
@@ -171,7 +172,7 @@ const OpiniDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>
+                                                <a href={`/opini/${btoa(item.id)}/${convertToSlug(item?.title)}`}>
                                                     <img src={`${process.env.PUBLIC_URL}/assets/image/foto-beritas.png`} className="img-fluid" alt={item.title} />
                                                     {/* <img
                                                         src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
@@ -187,13 +188,13 @@ const OpiniDetail = () => {
                                                     {/* {item.tags.split(",").map((tag, index) => (
                                                         <span key={index}>{tag ? '#' + tag : ''} </span>
                                                     ))} */}
-                                                    {Array.isArray(item.tags) && item.tags.map((tag, index) => (
+                                                    {Array.isArray(item?.tags) && item?.tags?.map((tag, index) => (
                                                         <span key={index}>#{tag.value} </span>
                                                     ))}
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/opini/${btoa(item.id)}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">

@@ -207,7 +207,7 @@ const LiputanMedia = () => {
                                         <div className="col-lg-4 col-xl-4 col-md-6" key={item.id}>
                                             <div className="berita-card">
                                                 <div className="berita-card-imgbox ">
-                                                    <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>
+                                                    <a href={`/liputan-media/${btoa(item?.id)}/${convertToSlug(item?.title)}`}>
                                                         {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
                                                         <img
                                                             src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
@@ -215,7 +215,7 @@ const LiputanMedia = () => {
                                                                 e.target.onerror = null;
                                                                 e.target.src = `/assets/image/foto-beritas.png`;
                                                             }}
-                                                            className="img-fluid" alt={cookies.i18next === 'id' ? item.title : item.title_en} />
+                                                            className="img-fluid w-100" alt={cookies.i18next === 'id' ? item.title : item.title_en} />
                                                     </a>
                                                 </div>
                                                 <div className="berita-content ">
@@ -225,13 +225,13 @@ const LiputanMedia = () => {
                                                         {/* {item.tags.split(",").map((tag, index) => (
                                                             <span key={index}>{tag ? '#' + tag : ''} </span>
                                                         ))} */}
-                                                          {Array.isArray(item.tags) && item.tags.map((tag, index) => (
-                                                            <span key={index}>#{tag.value} </span>
+                                                          {Array.isArray(item?.tags) && item?.tags?.map((tag, index) => (
+                                                            <span key={index}>#{tag?.value} </span>
                                                         ))}
                                                     </div>
                                                     <div className="event-card-title pb-4">
                                                         <h4>
-                                                            <a href={`/liputan-media/${item.id}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
+                                                            <a href={`/liputan-media/${btoa(item?.id)}/${convertToSlug(item?.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
                                                         </h4>
                                                     </div>
                                                     <div className="event-card-info">
