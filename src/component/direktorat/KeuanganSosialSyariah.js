@@ -327,7 +327,7 @@ const KeuanganSosialSyariah = () => {
                                 <div className="about-one-inner-x">
                                     <h2 className="section-title text-center">{cookies.i18next === 'en' ? detaildir[0]?.title_en : detaildir[0]?.title}</h2>
                                     {/* <p>{t('direktorat.direktoratIndustriProdukHalalAdalah')}</p> */}
-                                   <p dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? decodeHtmlEntities(detaildir[0]?.description_en) : decodeHtmlEntities(detaildir[0]?.description)}} />
+                                    <p dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? decodeHtmlEntities(detaildir[0]?.description_en) : decodeHtmlEntities(detaildir[0]?.description) }} />
                                     <h5 className="about-one-inner-text-x">{t('divisi')}</h5>
 
                                     {/* <div className="row row-gutter-y-30 pt-5 d-flex justify-content-center">
@@ -409,7 +409,7 @@ const KeuanganSosialSyariah = () => {
                                         <div className="col-lg-3 " key={item.id}>
                                             <div className="berita-card">
                                                 <div className="berita-card-imgbox-direktorat-homes " >
-                                                    <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>
+                                                    <a href={`/berita-kegiatan/${btoa(item.id)}/${convertToSlug(item.title)}`}>
                                                         <img
                                                             src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
                                                             onError={(e) => {
@@ -429,7 +429,7 @@ const KeuanganSosialSyariah = () => {
                                                     </div>
                                                     <div className="event-card-title-direktorat pb-2">
                                                         <h4>
-                                                            <a href={`/berita-kegiatan/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                            <a href={`/berita-kegiatan/${btoa(item.id)}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                         </h4>
                                                     </div>
                                                     <div className="event-card-info-direktorat-t">
@@ -453,7 +453,7 @@ const KeuanganSosialSyariah = () => {
                         <div className="container">
                             <div className="blog-box">
                                 <div className="section-title-box text-center">
-                                    <h2 className="section-title">Opini</h2>
+                                    <h2 className="section-title">{t('menu.opini')}</h2>
                                 </div>
                             </div>
                             <div className="row row-gutter-30">
@@ -472,9 +472,9 @@ const KeuanganSosialSyariah = () => {
                                         opinidir.slice(0, 4).map((item) => (
                                             <div className="col-lg-3 col-xl-3" key={item.id}>
                                                 <div className="berita-card">
-                                                    {/* <div className="berita-card-imgbox-direktorat ">
-                                                <a href={`/berita-terkait/${item.slug}`}><img src={item.foto} className="img-fluid" alt={item.title} /></a>
-                                            </div> */}
+                                                    <div className="berita-card-imgbox-direktorat ">
+                                                        <a href={`/opini-direktorat/${item.id}/${convertToSlug(item.title)}/${id_dir}`}><img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item.title} /></a>
+                                                    </div>
                                                     <div className="berita-content-direktorat-xs">
 
                                                         <div className="event-card-title pb-2">
@@ -525,13 +525,13 @@ const KeuanganSosialSyariah = () => {
                                                     <div className="col-12 col-md-6 col-xl-3">
                                                         <div className="team-card-x">
                                                             <div className="team-card-img-x">
-                                                                <a href="#t"><img src="/assets/image/epustaka.svg" className="img-fluid" alt="img-40" /></a>
+                                                                <a href={`/e-pustaka/${item.id}`}><img src="/assets/image/book1.jpeg" className="img-fluid" alt="img-40" /></a>
                                                             </div>
                                                             <div className="team-card-content-x">
-                                                                <h4><a href="#t">{item?.title}</a></h4>
+                                                                <h4><a href={`/e-pustaka/${item.id}`}>{item?.title}</a></h4>
                                                                 <div className="d-flex justify-content-between align-items-end">
                                                                     <p>{dayjs(item.date).format('DD MMMM YYYY')}</p>
-                                                                    <a href="#t" data-bs-toggle="tooltip" title="download">
+                                                                    <a href={`/e-pustaka/${item.id}`} data-bs-toggle="tooltip" title="download">
                                                                         <i className="fa-solid fa-download" aria-hidden="true"></i>
                                                                     </a>
                                                                 </div>
@@ -550,7 +550,7 @@ const KeuanganSosialSyariah = () => {
                             </div>
                         </div>
                     </section>
-                    <section className="news-section-xx">
+                    {/* <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
                                 <div className="section-title-box text-center">
@@ -630,7 +630,7 @@ const KeuanganSosialSyariah = () => {
 
                             </div>
                         </div>
-                    </section>
+                    </section> */}
                 </section>
                 <section className="funfact-section-direk foto-section-x">
                     <div className="container">
