@@ -468,7 +468,7 @@ const KdeksDetail = () => {
                     </div >
 
                 </section>
-                
+
                 <section className="funfact-section-struktur-x">
                     <section className="funfact-section">
                         <div className="container">
@@ -556,7 +556,9 @@ const KdeksDetail = () => {
                                         postsOpini.slice(0, 4).map((item) => (
                                             <div className="col-lg-3 col-md-6" key={item.id}>
                                                 <div className="berita-card">
-
+                                                    <div className="berita-card-imgbox-direktorat" style={{width:'279px'}}>
+                                                        <a href={`/opini-kdeks/${item.id}/${convertToSlug(item.title)}/${id}`}><img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item?.title} /></a>
+                                                    </div>
                                                     <div className="berita-content-direktorat-xs">
                                                         <div className="event-card-title pb-2">
                                                             <h4>

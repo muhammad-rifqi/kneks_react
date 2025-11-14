@@ -467,7 +467,7 @@ const InfrastrukturEkosistemSyariah = () => {
                                         opinidir.slice(0, 4).map((item) => (
                                             <div className="col-lg-3 col-xl-3" key={item.id}>
                                                 <div className="berita-card">
-                                                    <div className="berita-card-imgbox-direktorat ">
+                                                    <div className="berita-card-imgbox-direktorat" style={{width:'279px'}}>
                                                         <a href={`/opini-direktorat/${item.id}/${convertToSlug(item.title)}/${id_dir}`}><img src="/assets/image/foto-beritas.png" className="img-fluid w-100" alt={item.title} /></a>
                                                     </div>
                                                     <div className="berita-content-direktorat-xs">

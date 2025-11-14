@@ -94,7 +94,7 @@ const OpiniDetailKdeks = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
-                                    <img src={`${process.env.PUBLIC_URL}/assets/image/foto-beritas.png`} width={`100%`} className="img-fluid" alt={cookies.i18next === 'id' ? rows?.title : rows?.title_en} />
+                                    <img src={`${process.env.PUBLIC_URL}/assets/image/foto-beritas.png`} width={`100%`} className="img-fluid" alt={cookies.i18next === 'id' ? rows[0]?.title : rows[0]?.title_en} />
                                     {/* <img
                                         src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image}
                                         onError={(e) => {
