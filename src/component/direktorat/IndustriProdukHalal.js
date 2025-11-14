@@ -467,7 +467,8 @@ const IndustriProdukHalal = () => {
                                             <div className="col-lg-3 col-xl-3" key={item.id}>
                                                 <div className="berita-card">
                                                     <div className="berita-card-imgbox-direktorat ">
-                                                        <a href={`/opini-direktorat/${item.id}/${convertToSlug(item.title)}/${id_dir}`}><img src="/assets/image/foto-beritas.png" className="img-fluid w-100" alt={item.title} /></a>
+                                                        {/* /${id_dir} */}
+                                                        <a href={`/opini-direktorat/${item.id}/${convertToSlug(item.title)}`}><img src="/assets/image/foto-beritas.png" className="img-fluid w-100" alt={item.title} /></a>
                                                     </div>
                                                     <div className="berita-content-direktorat-xs">
 
