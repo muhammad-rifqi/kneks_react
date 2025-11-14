@@ -5,13 +5,20 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 import axios from 'axios';
 import { useTranslation } from "react-i18next";
+import { useCookies } from 'react-cookie';
 
 
 const BeritaTerkaitDetail = () => {
-    dayjs.locale('id');
+    const [cookies] = useCookies(['i18next']);
     const { t } = useTranslation()
+    dayjs.locale('id');
+
+    const formatDate = (date, locale = 'en') => {
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
     const { id, slug } = useParams();
-    const [rows, setItem] = useState(null);
+    const [rows, setItem] = useState([]);
 
     const [itemx, setItemx] = useState([]);
 
@@ -31,20 +38,20 @@ const BeritaTerkaitDetail = () => {
                 try {
                     const url = process.env.REACT_APP_API_URL;
                     const endpoint = process.env.REACT_APP_API_POST;
-                    const responsei = await axios.get(`${url}/newsdetail/${id}`);
+                    const responsei = await axios.get(`${url}/newsdetail/${atob(id)}`);
                     const responlain = await axios.get(`${url}${endpoint}`);
 
-                    const foundItem = responsei.data.find(
-                        (post) =>
-                            post.id === Number(id) &&
-                            convertToSlug(post.title) === slug
-                    );
+                    // const foundItem = responsei.data.find(
+                    //     (post) =>
+                    //         post.id === Number(id) &&
+                    //         convertToSlug(post.title) === slug
+                    // );
 
                     // throw new Error("Error!");
 
                     if (responlain) {
                         setItemx(responlain.data);
-                        setItem(foundItem);
+                        setItem(responsei.data);
                     }
                 } catch (err) {
                     Swal.fire({
@@ -62,7 +69,7 @@ const BeritaTerkaitDetail = () => {
             }
         }
     }, [id, slug]);
-    const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
+    // const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
     return (
         <>
@@ -79,19 +86,19 @@ const BeritaTerkaitDetail = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                    <h4>{rows?.title}</h4>
-                                    <p>{formattedDate}</p>
+                                   <h4>{cookies.i18next === 'en' ? rows[0]?.title_en : rows[0]?.title}</h4>
+                                    <p>{cookies.i18next === 'id' ? formatDate(rows[0]?.news_datetime, 'id') : formatDate(rows[0]?.news_datetime, 'en')}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
                                 <div className="event-details-inner-box">
                                     <img
-                                        src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image}
+                                        src={rows[0]?.image === "" ? '/assets/image/foto-beritas.png' : rows[0]?.image}
                                         onError={(e) => {
                                             e.target.onerror = null;
                                             e.target.src = `/assets/image/foto-beritas.png`;
                                         }}
-                                        width={`100%`} className="img-fluid" alt={rows?.title} />
+                                        width={`100%`} className="img-fluid" alt={rows[0]?.title} />
                                 </div>
                             </div>
                             <div className="row">
@@ -116,7 +123,7 @@ const BeritaTerkaitDetail = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
                                     {/* <p style={{ textAlign: `justify` }}>{rows?.content}</p> */}
-                                    <div dangerouslySetInnerHTML={{ __html: rows?.content }} />
+                                    <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? rows[0]?.content_en : rows[0]?.content }} />
                                 </div>
                             </div>
                             <hr />
@@ -133,9 +140,9 @@ const BeritaTerkaitDetail = () => {
                                         ))}
                                 </div>
                             )} */}
-                            {rows?.tagging && (
+                            {rows[0]?.tagging && (
                                 <div className="news-details-list-button">
-                                    {(JSON.parse(rows.tagging || '[]')).map((t, i) => (
+                                    {(JSON.parse(rows[0]?.tagging || '[]')).map((t, i) => (
                                         <a key={i} href="#t" className="btn btn-primary me-2">
                                             {t.value}
                                         </a>
@@ -163,7 +170,7 @@ const BeritaTerkaitDetail = () => {
                                     <div className="col-lg-4 col-xl-4" key={item.id}>
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
-                                                <a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
+                                                <a href={`/berita-terkait/${btoa(item.id)}/${convertToSlug(item.title)}`}>
                                                     <img
                                                         src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
                                                         onError={(e) => {
@@ -180,7 +187,7 @@ const BeritaTerkaitDetail = () => {
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/berita-terkait/${btoa(item.id)}/${convertToSlug(item.title)}`}>{item.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
