@@ -675,7 +675,7 @@ const KdeksDetail = () => {
                             </div >
                         </div>
                     </section>
-                    <section className="news-section-xx">
+                    {/* <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
                                 <div className="section-title-box text-center">
@@ -753,7 +753,7 @@ const KdeksDetail = () => {
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> */}
                 </section>
                 <section className="funfact-section-direk foto-section-x">
                     <div className="container">
