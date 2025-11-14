@@ -24,11 +24,11 @@ const Section4 = () => {
 					<div className="col-lg-5" data-aos="zoom-in-right">
 						<div className="service-card">
 							<ul className="list-unstyled">
-								<li><a href="/industri-produk-halal/1">{t('isuPengembanganProdukIndustriHalal')} <i className="fa-solid fa-chevron-right"></i></a></li>
-								<li><a href="/jasa-keuangan-syariah/2">{t('isuPengembanganJasaKeuanganSyariah')} <i className="fa-solid fa-chevron-right"></i></a></li>
-								<li><a href="/keuangan-sosial-syariah/3">{t('isuPengembanganKeuanganSosialSyariah')} <i className="fa-solid fa-chevron-right"></i></a></li>
-								<li><a href="/bisnis-dan-kewirausahaan-syariah/4">{t('isuPengembanganBisnisDanKewirausahaanSyariah')} <i className="fa-solid fa-chevron-right"></i></a></li>
-								<li><a href="/infrastruktur-ekosistem-syariah/5">{t('isuPengembanganInfrastrukturEkosistemSyariah')} <i className="fa-solid fa-chevron-right"></i></a></li>
+								<li><a href="/industri-produk-halal/MQ==/mainpage">{t('isuPengembanganProdukIndustriHalal')} <i className="fa-solid fa-chevron-right"></i></a></li>
+								<li><a href="/jasa-keuangan-syariah/Mg==/mainpage">{t('isuPengembanganJasaKeuanganSyariah')} <i className="fa-solid fa-chevron-right"></i></a></li>
+								<li><a href="/keuangan-sosial-syariah/Mw==/mainpage">{t('isuPengembanganKeuanganSosialSyariah')} <i className="fa-solid fa-chevron-right"></i></a></li>
+								<li><a href="/bisnis-dan-kewirausahaan-syariah/NA==/mainpage">{t('isuPengembanganBisnisDanKewirausahaanSyariah')} <i className="fa-solid fa-chevron-right"></i></a></li>
+								<li><a href="/infrastruktur-ekosistem-syariah/NQ==/mainpage">{t('isuPengembanganInfrastrukturEkosistemSyariah')} <i className="fa-solid fa-chevron-right"></i></a></li>
 							</ul>
 						</div>
 					</div>

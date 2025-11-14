@@ -47,7 +47,7 @@ const Section2 = () => {
                             //   </li>
 
                             <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-3" data-aos="fade-up" key={index}>
-                                <a href={`/${convertToSlug(item.title)}/${item.id}`}>
+                                <a href={`/${convertToSlug(item.title)}/${btoa(item.id)}/mainpage`}>
                                     <div className="card card-dir h-100">
                                         <div className="card-body text-center ">
                                             <div className="department-card-gambar mb-3">
