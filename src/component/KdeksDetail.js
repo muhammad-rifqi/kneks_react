@@ -30,7 +30,7 @@ const KdeksDetail = () => {
         return dayjs(date).format('DD MMMM YYYY'); // Format the date
     };
 
-    const { slug, id } = useParams();
+    const { id, slug } = useParams();
     const [posts, setPosts] = useState([]);
     const [posts_photo, setPostsPhoto] = useState([]);
     const [postsOpini, setPostsOpini] = useState([]);
@@ -537,7 +537,7 @@ const KdeksDetail = () => {
 
                 </section > */}
                 <section className="funfact-section-struktur-x">
-                    <section className="funfact-section">
+                    {/* <section className="funfact-section">
                         <div className="container">
                             <div className="funfact-box">
                                 <div className="section-title-box text-center">
@@ -627,12 +627,12 @@ const KdeksDetail = () => {
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> */}
                     <section className="news-section-xx">
                         <div className="container">
                             <div className="blog-box">
                                 <div className="section-title-box text-center">
-                                    <h2 className="section-title">Opini</h2>
+                                    <h2 className="section-title">{t('menu.opini')}</h2>
                                 </div>
                             </div>
                             <div className="row row-gutter-30">
