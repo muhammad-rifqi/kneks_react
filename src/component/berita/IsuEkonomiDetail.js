@@ -172,7 +172,7 @@ const IsuEkonomiDetail = () => {
                                                             e.target.onerror = null;
                                                             e.target.src = `/assets/image/foto-beritas.png`;
                                                         }}
-                                                        className="img-fluid" alt={item.title} /></a>
+                                                        className="img-fluid w-100" alt={item.title} /></a>
                                             </div>
                                             <div className="berita-content ">
                                                 <div className="event-card-info-x " style={{ color: `#F2994A` }}>

@@ -78,11 +78,11 @@ function AppContent() {
         <Route path="/galeri-foto" element={<GaleriFoto />} />
         <Route path="/galeri-foto/:id/:slug" element={<GaleriFotoDetail />} />
         <Route path="/galeri-video" element={<GaleriVideo />} />
-        <Route path="/industri-produk-halal/:id" element={<IndustriProdukHalal />} />
-        <Route path="/jasa-keuangan-syariah/:id" element={<JasakeuanganSyariah />} />
-        <Route path="/keuangan-sosial-syariah/:id" element={<KeuanganSosialSyariah />} />
-        <Route path="/bisnis-dan-kewirausahaan-syariah/:id" element={<BisnisDanKewirausahaanSyariah />} />
-        <Route path="/infrastruktur-ekosistem-syariah/:id" element={<InfrastrukturEkosistemSyariah />} />
+        <Route path="/industri-produk-halal/:id/:slug" element={<IndustriProdukHalal />} />
+        <Route path="/jasa-keuangan-syariah/:id/:slug" element={<JasakeuanganSyariah />} />
+        <Route path="/keuangan-sosial-syariah/:id/:slug" element={<KeuanganSosialSyariah />} />
+        <Route path="/bisnis-dan-kewirausahaan-syariah/:id/:slug" element={<BisnisDanKewirausahaanSyariah />} />
+        <Route path="/infrastruktur-ekosistem-syariah/:id/:slug" element={<InfrastrukturEkosistemSyariah />} />
         <Route path="/siaran-pers" element={<SiaranPers />} />
         <Route path="/siaran-pers/:id/:slug" element={<SiaranPersDetail />} />
         <Route path="/liputan-media" element={<LiputanMedia />} />

@@ -177,7 +177,7 @@ const InfoTerkiniDetail = () => {
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/berita-terkini/${item.id}/${convertToSlug(item.title)}`}>
-                                                    <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid" alt={item.title} />
+                                                    <img src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image} className="img-fluid w-100" alt={item.title} />
                                                     {/* <img src={`${process.env.REACT_APP_API_NEWS}` + item.image} className="img-fluid" alt={item.title} /> */}
                                                 </a>
                                             </div>
