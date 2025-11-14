@@ -51,7 +51,10 @@ const IndustriProdukHalal = () => {
     };
 
     let params = useParams();
-    let id_dir = params.id;
+    let id_dir = atob(params.id);
+    let name_dir = params.slug;
+    console.log(name_dir)
+    
     useEffect(() => {
         const fetchPosts = async () => {
             setLoading(true);
