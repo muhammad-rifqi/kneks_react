@@ -89,7 +89,7 @@ const OpiniDetail = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
                                     <h4>{cookies.i18next === 'id' ? rows[0]?.title : rows[0]?.title_en}</h4>
-                                    <p>{cookies.i18next === 'id' ? formatDate(rows[0]?.date, 'id') : formatDate(rows[0]?.date, 'en')}</p>
+                                    <p>{cookies.i18next === 'id' ? formatDate(rows[0]?.date, 'id') : formatDate(rows[0]?.date_created, 'en')}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">

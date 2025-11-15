@@ -5,7 +5,7 @@ import VenoBox from 'venobox';
 // import OwlCarousel from 'react-owl-carousel';
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
-
+import './direktorat/dr.css';
 import Kota from "../component/dumy/dataKota";
 import { useParams } from "react-router-dom";
 
@@ -780,9 +780,9 @@ const KdeksDetail = () => {
                                     </div>
 
                                 </div>
-                                <div className="col-lg-3">
-                                    <div className="footer-widget">
-                                        <div dangerouslySetInnerHTML={{ __html: postKdeks?.maps }} />
+                                <div className="col-lg-5 d-flex justify-content-end">
+                                    <div className="footer-widget text-end">
+                                        <div className='maps-content' dangerouslySetInnerHTML={{ __html: postKdeks?.maps }} />
                                     </div>
 
                                 </div>

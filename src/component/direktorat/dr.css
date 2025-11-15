@@ -361,3 +361,10 @@
     color: #fff;
     z-index: 1000;
   }
+
+  
+.maps-content iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+}
