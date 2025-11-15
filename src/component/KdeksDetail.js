@@ -557,12 +557,12 @@ const KdeksDetail = () => {
                                             <div className="col-lg-3 col-md-6" key={item.id}>
                                                 <div className="berita-card">
                                                     <div className="berita-card-imgbox-direktorat" style={{width:'279px'}}>
-                                                        <a href={`/opini-kdeks/${item.id}/${convertToSlug(item.title)}/${id}`}><img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item?.title} /></a>
+                                                        <a href={`/opini-kdeks/${item.id}/${convertToSlug(item.title)}`}><img src="/assets/image/foto-beritas.png" className="img-fluid" alt={item?.title} /></a>
                                                     </div>
                                                     <div className="berita-content-direktorat-xs">
                                                         <div className="event-card-title pb-2">
                                                             <h4>
-                                                                <a href={`/opini-kdeks/${item?.id}/${convertToSlug(item?.title)}/${id}`}>{cookies.i18next === 'en' ? item?.title_en : item?.title}</a>
+                                                                <a href={`/opini-kdeks/${item?.id}/${convertToSlug(item?.title)}`}>{cookies.i18next === 'en' ? item?.title_en : item?.title}</a>
                                                             </h4>
                                                         </div>
                                                         <div className="event-card-info-direktorat">

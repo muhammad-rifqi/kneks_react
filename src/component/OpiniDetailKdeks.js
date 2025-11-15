@@ -89,7 +89,7 @@ const OpiniDetailKdeks = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
                                     <h4>{cookies.i18next === 'id' ? rows[0]?.title : rows[0]?.title_en}</h4>
-                                    <p>{cookies.i18next === 'id' ? formatDate(rows[0]?.date, 'id') : formatDate(rows[0]?.date, 'en')}</p>
+                                    <p>{cookies.i18next === 'id' ? formatDate(rows[0]?.date_created, 'id') : formatDate(rows[0]?.date_created, 'en')}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
@@ -194,12 +194,12 @@ const OpiniDetailKdeks = () => {
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/opini/${btoa(item.id)}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/opini/${btoa(item.id)}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item?.title : item?.title_en}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
-                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
-                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
+                                                    <span>{dayjs(item.date_created).format("DD MMMM YYYY")}</span>
+                                                    {/* <span>{dayjs(rows.date_created).format("DD MMMM YYYY")}</span> */}
                                                 </div>
                                             </div>
                                         </div>

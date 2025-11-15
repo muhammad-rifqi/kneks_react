@@ -121,7 +121,7 @@ const Opini = () => {
                                                     <div className="event-card-info">
                                                         <ul className="list-unstyled">
                                                             <li>
-                                                                <span>{cookies.i18next === 'id' ? formatDate(item?.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}</span>
+                                                                <span>{cookies.i18next === 'id' ? formatDate(item?.date_created, 'id') : formatDate(item.date_created, 'en')}</span>
                                                             </li>
                                                         </ul>
                                                     </div>

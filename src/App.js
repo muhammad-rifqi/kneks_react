@@ -101,8 +101,9 @@ function AppContent() {
         <Route path="/data/:id" element={<DataDetail />} />
         <Route path="/opini" element={<Opini />} />
         <Route path="/opini/:id/:slug" element={<OpiniDetail />} />
-        <Route path="/opini-direktorat/:id/:slug/:id_dir" element={<OpiniDetailDirektorat />} />
-        <Route path="/opini-kdeks/:id/:slug/:id_kd" element={<OpiniDetailKdeks />} />
+        {/* <Route path="/opini-direktorat/:id/:slug/:id_dir" element={<OpiniDetailDirektorat />} /> */}
+        <Route path="/opini-direktorat/:id/:slug" element={<OpiniDetailDirektorat />} />
+        <Route path="/opini-kdeks/:id/:slug" element={<OpiniDetailKdeks />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/agenda/:slug" element={<AgendaDetailsFix />} />
         <Route path="/agenda/detail" element={<AgendaDetail />} />

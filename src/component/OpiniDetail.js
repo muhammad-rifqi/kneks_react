@@ -194,12 +194,12 @@ const OpiniDetail = () => {
                                                 </div>
                                                 <div className="event-card-title pb-4">
                                                     <h4>
-                                                        <a href={`/opini/${btoa(item.id)}/${convertToSlug(item.title)}`}>{item.title}</a>
+                                                        <a href={`/opini/${btoa(item.id)}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item?.title : item?.title_en}</a>
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
-                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
-                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
+                                                    <span>{dayjs(item.date_created).format("DD MMMM YYYY")}</span>
+                                                    {/* <span>{dayjs(rows.date_created).format("DD MMMM YYYY")}</span> */}
                                                 </div>
                                             </div>
                                         </div>
