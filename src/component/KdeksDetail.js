@@ -440,7 +440,7 @@ const KdeksDetail = () => {
                             </div>
 
                         </div>
-                        <div className="row row-gutter-y-40 d-flex justify-content-center pt-5">
+                        {/* <div className="row row-gutter-y-40 d-flex justify-content-center pt-5">
                             <div className="col-lg-3 text-center">
                                 <div className="sidebar-widget">
                                     <div className="sidebar-widget-box-icon">
@@ -463,7 +463,7 @@ const KdeksDetail = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
 
