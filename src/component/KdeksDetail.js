@@ -286,7 +286,7 @@ const KdeksDetail = () => {
         const fetchPostsStructure = async () => {
             try {
                 const url = process.env.REACT_APP_API_URL;
-                const endpoint = '/multistructurekdeks/'+id;
+                const endpoint = '/multistructurekdeks/' + id;
                 const responsestruktur = await axios.get(`${url}${endpoint}`);
                 // setPosts(response.data.slice(0, 36));
                 setPosts1(responsestruktur.data);
@@ -296,7 +296,7 @@ const KdeksDetail = () => {
                     title: "Oops...",
                     text: err,
                 });
-            } 
+            }
         };
         fetchPostsStructure();
 
@@ -484,10 +484,13 @@ const KdeksDetail = () => {
                                     {renderImage('skFile7')}
                                 </div>
                             </div> */}
-                            <div>
-                                {Object.values(posts1).map((items1, index, arr) => (
-                                    <React.Fragment key={items1.id}>
-                                        {/* {index === Math.floor(arr.length / 2) && (
+                            <>
+                                {
+                                    posts1.length > 0 && (
+                                        <div>
+                                            {Object.values(posts1).map((items1, index, arr) => (
+                                                <React.Fragment key={items1.id}>
+                                                    {/* {index === Math.floor(arr.length / 2) && (
                                             <>
                                                 <hr />
                                                 <div className="blog-box-manajemen">
@@ -497,90 +500,92 @@ const KdeksDetail = () => {
                                                 </div>
                                             </>
                                         )} */}
-                                        <div className="row row-gutter-30 mb-4">
-                                            <div className="col-12 col-sm-6 col-md-4 col-lg-4 offset-lg-4 offset-md-4">
-                                                <div className="team-card-rev">
-                                                    <div className="team-card-img-rev">
-                                                        <a href="#t">
-                                                            <img
-                                                                src={items1?.photo ? `${items1?.photo}` : "assets/image/defaulttumbnail.jpeg"}
-                                                                className="img-fluid"
-                                                                alt="img-40"
-                                                            />
-                                                        </a>
-                                                        <div className="team-card-icon-rev"></div>
-                                                    </div>
-                                                    <div className="team-card-content-rev">
-                                                        <h4>
-                                                            <a href="#t">{items1?.name}</a>
-                                                        </h4>
-                                                        <p>{cookies.i18next === 'id' ? items1?.position : items1?.position_en}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        {items1?.ag?.length > 0 && (
-                                            <div className="row mb-4 justify-content-center">
-                                                {
-                                                    items1?.ag.map((item2) => (
-                                                        <div className="col-12 col-sm-6 col-md-4 mb-4" key={item2.id}>
+                                                    <div className="row row-gutter-30 mb-4">
+                                                        <div className="col-12 col-sm-6 col-md-4 col-lg-4 offset-lg-4 offset-md-4">
                                                             <div className="team-card-rev">
                                                                 <div className="team-card-img-rev">
                                                                     <a href="#t">
                                                                         <img
-                                                                            src={item2?.photo ? `${item2?.photo}` : "assets/image/defaulttumbnail.jpeg"}
+                                                                            src={items1?.photo ? `${items1?.photo}` : "assets/image/defaulttumbnail.jpeg"}
                                                                             className="img-fluid"
                                                                             alt="img-40"
                                                                         />
                                                                     </a>
+                                                                    <div className="team-card-icon-rev"></div>
                                                                 </div>
                                                                 <div className="team-card-content-rev">
                                                                     <h4>
-                                                                        <a href="#t">{item2?.name}</a>
+                                                                        <a href="#t">{items1?.name}</a>
                                                                     </h4>
-                                                                    <p>{cookies.i18next === 'id' ? item2?.position : item2?.position_en}</p>
+                                                                    <p>{cookies.i18next === 'id' ? items1?.position : items1?.position_en}</p>
                                                                 </div>
-
-                                                                {item2?.sag?.length > 0 && (
-                                                                    <ul className="list-unstyled text-left">
-                                                                        {
-                                                                            item2?.sag.map((item3) => (
-
-                                                                                <li className="d-flex align-items-center mb-2" key={item3.id}>
-                                                                                    <img
-                                                                                        src={item3?.photo ? `${item3.photo}` : "assets/image/pejabat/pak_dece.jpg"}
-                                                                                        alt="img1"
-                                                                                        className="rounded-circle me-2"
-                                                                                    />
-                                                                                    <span className="text-small">
-                                                                                        <b>
-                                                                                            <u>
-                                                                                                <a href="#t">
-                                                                                                    <b style={{ color: 'black' }}>{item3?.name}</b>
-                                                                                                </a>
-                                                                                            </u>
-                                                                                        </b>
-                                                                                        , <br />
-                                                                                        {cookies.i18next === 'id' ? item3?.position : item3?.position_en}
-                                                                                    </span>
-                                                                                </li>
-                                                                            ))
-                                                                        }
-                                                                    </ul>
-                                                                )}
                                                             </div>
                                                         </div>
+                                                    </div>
 
-                                                    ))
-                                                }
 
-                                            </div>
-                                        )}
-                                    </React.Fragment>
-                                ))}
-                            </div>
+                                                    {items1?.ag?.length > 0 && (
+                                                        <div className="row mb-4 justify-content-center">
+                                                            {
+                                                                items1?.ag.map((item2) => (
+                                                                    <div className="col-12 col-sm-6 col-md-4 mb-4" key={item2.id}>
+                                                                        <div className="team-card-rev">
+                                                                            <div className="team-card-img-rev">
+                                                                                <a href="#t">
+                                                                                    <img
+                                                                                        src={item2?.photo ? `${item2?.photo}` : "assets/image/defaulttumbnail.jpeg"}
+                                                                                        className="img-fluid"
+                                                                                        alt="img-40"
+                                                                                    />
+                                                                                </a>
+                                                                            </div>
+                                                                            <div className="team-card-content-rev">
+                                                                                <h4>
+                                                                                    <a href="#t">{item2?.name}</a>
+                                                                                </h4>
+                                                                                <p>{cookies.i18next === 'id' ? item2?.position : item2?.position_en}</p>
+                                                                            </div>
+
+                                                                            {item2?.sag?.length > 0 && (
+                                                                                <ul className="list-unstyled text-left">
+                                                                                    {
+                                                                                        item2?.sag.map((item3) => (
+
+                                                                                            <li className="d-flex align-items-center mb-2" key={item3.id}>
+                                                                                                <img
+                                                                                                    src={item3?.photo ? `${item3.photo}` : "assets/image/pejabat/pak_dece.jpg"}
+                                                                                                    alt="img1"
+                                                                                                    className="rounded-circle me-2"
+                                                                                                />
+                                                                                                <span className="text-small">
+                                                                                                    <b>
+                                                                                                        <u>
+                                                                                                            <a href="#t">
+                                                                                                                <b style={{ color: 'black' }}>{item3?.name}</b>
+                                                                                                            </a>
+                                                                                                        </u>
+                                                                                                    </b>
+                                                                                                    , <br />
+                                                                                                    {cookies.i18next === 'id' ? item3?.position : item3?.position_en}
+                                                                                                </span>
+                                                                                            </li>
+                                                                                        ))
+                                                                                    }
+                                                                                </ul>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+
+                                                                ))
+                                                            }
+
+                                                        </div>
+                                                    )}
+                                                </React.Fragment>
+                                            ))}
+                                        </div>
+                                    )}
+                            </>
                         </div>
                     </div >
 
