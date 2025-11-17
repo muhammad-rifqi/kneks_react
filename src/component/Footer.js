@@ -137,16 +137,23 @@ const Footer = () => {
     fetchMenu(); // Call fetchPosts function when component mounts
   }, []);
 
+  useEffect(() => {
+    axios.post(process.env.REACT_APP_API_URL + "/visits")
+      .then(res => console.log(res.data))
+      .catch(err => console.error(err));
+  }, []);
+  
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_API_URL + "/visits")
+    fetch(process.env.REACT_APP_API_URL + "/visitors")
       .then((res) => res.json())
       .then((rows) => {
-        const formatted = Number(rows.totalVisits).toLocaleString("id-ID");
+        const formatted = Number(rows.visitor_count).toLocaleString("id-ID");
         setVisits(formatted);
       })
       .catch((err) => console.error(err));
   }, []);
+
   return (
 
     <div>
@@ -430,7 +437,7 @@ const Footer = () => {
                     </iframe>
                   </div>
                   <div style={{ textAlign: "center", marginTop: "50px", border: "1px solid #000", padding: "10px" }}>
-                    <h6>Jumlah Pengunjung halaman ini sebanyak {visits} kali.</h6>
+                    <h6>Jumlah Pengunjung Bulan ini : {visits} .</h6>
                   </div>
                 </div>
               </div>

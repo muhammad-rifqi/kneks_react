@@ -31,6 +31,7 @@ const Data = () => {
     const [selectedSection, setSelectedSection] = useState(nilai_awal_selected);
     const [selectedTitle, setTitleSection] = useState(title_awal_selected);
     const [narasi, setSubNarations] = useState("");
+    const [result, setResult] = useState([]);
     const fetchCategories = async () => {
         const url = process.env.REACT_APP_API_URL;
         const response = await axios.get(`${url}/data_menu_fe`);
@@ -54,6 +55,13 @@ const Data = () => {
             }
         };
         fetchData();
+    }, []);
+
+    useEffect(() => {
+        fetch(process.env.REACT_APP_API_URL + "/visitors_year")
+            .then(resp => resp.json())
+            .then(results => setResult(results))
+            .catch(err => console.error(err));
     }, []);
 
     // 1: Rph,
@@ -317,7 +325,7 @@ const Data = () => {
                                                             setSelectedSection("")
                                                             setTitleSection(parent_text)
                                                             setSubNarations(naration_text)
-                                                             setSelectedImage(category.link_menu_image)
+                                                            setSelectedImage(category.link_menu_image)
                                                         } else {
                                                             setSelectedSection(category.link_menu_data)
                                                             setTitleSection(parent_text)
@@ -459,6 +467,34 @@ const Data = () => {
                                                             )
                                                         })
                                                     }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div className="col-lg-12 pt-5">
+                                    <div className="about-one-inner-x">
+                                        <div className="text-start">
+                                            <h5 >Pengunjung Website</h5>
+                                        </div>
+                                        <div className="table-responsive">
+                                            <table border="1" cellPadding="8" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        {result.map((rowt, index) => (
+                                                            <th key={index}> Tahun : {rowt?.year}</th>
+                                                        ))}
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        {result.map((rowt, index) => (
+                                                            <td key={index}>Total : {rowt?.total_visitor}</td>
+                                                        ))}
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
