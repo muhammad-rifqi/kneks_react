@@ -18,8 +18,9 @@ const Publikasi = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState("");
     const [showModal, setShowModal] = useState(false);
-    const [passcode, setPasscode] = useState("");
+    // const [passcode, setPasscode] = useState("");
     const [file, setFile] = useState(null);
+    const [titleFile, setTitleFile] = useState(null);
     const postsPerPage = 8;
 
     const formatDate = (date, locale = 'en') => {
@@ -158,6 +159,7 @@ const Publikasi = () => {
                                                 onClick={() => {
                                                     setShowModal(true)
                                                     setFile(item?.file)
+                                                    setTitleFile(item?.title)
                                                 }}
                                             >
                                                 <i className="fa-solid fa-download" aria-hidden="true"></i>
@@ -192,10 +194,10 @@ const Publikasi = () => {
             </div>
             <Modal show={showModal} onHide={() => setShowModal(false)} centered>
                 <Modal.Header closeButton>
-                    <Modal.Title>Enter Passcode</Modal.Title>
+                    <Modal.Title>File Publikasi</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
+                    {/* <Form>
                         <Form.Group>
                             <Form.Label>Passcode</Form.Label>
                             <Form.Control
@@ -206,15 +208,19 @@ const Publikasi = () => {
                                 className="border"
                             />
                         </Form.Group>
-                    </Form>
+                    </Form> */}
+                      <ul>
+                        <li>Judul/Title : {titleFile}</li>
+                        <li>File : {file} </li>
+                    </ul>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowModal(false)}>
+                    {/* <Button variant="secondary" onClick={() => setShowModal(false)}>
                         Cancel
-                    </Button>
+                    </Button> */}
                     <Button variant="success"
                         onClick={() => {
-                            if (passcode === "123456") {
+                            // if (passcode === "123456") {
                                 const link = document.createElement("a");
                                 link.href = file || "#";
                                 link.setAttribute("download", "file.pdf");
@@ -222,18 +228,18 @@ const Publikasi = () => {
                                 link.click();
                                 document.body.removeChild(link);
                                 setShowModal(false);
-                                setPasscode("");
-                            } else {
+                                // setPasscode("");
+                            // } else {
 
-                                Swal.fire({
-                                    icon: "error",
-                                    title: "Oops...",
-                                    text: "Passcode salah!",
-                                });
-                            }
+                            //     Swal.fire({
+                            //         icon: "error",
+                            //         title: "Oops...",
+                            //         text: "Passcode salah!",
+                            //     });
+                            // }
                         }}
                     >
-                        Submit
+                        Download
                     </Button>
                 </Modal.Footer>
             </Modal>

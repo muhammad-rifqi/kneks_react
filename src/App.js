@@ -57,7 +57,8 @@ import BeritaDirektorat from './component/BeritaDirektorat';
 import BeritaKdeks from './component/BeritaKdeks';
 import OpiniDetailKdeks from './component/OpiniDetailKdeks';
 
-
+import IsuTerkini from './component/berita/IsuTerkini';
+import IsuTerkiniDetail from './component/berita/IsuTerkiniDetail';
 
 function AppContent() {
   // const location = useLocation();
@@ -120,6 +121,8 @@ function AppContent() {
         <Route path="/berita-kegiatan" element={<BeritaKegiatan />} />
         <Route path="/berita-terkini" element={<BeritaTerkini />} />
         <Route path="/berita-terkini/:id/:slug" element={<InfoTerkiniDetail />} />
+        <Route path="/isu-terkini" element={<IsuTerkini />} />
+        <Route path="/isu-terkini/:id/:slug" element={<IsuTerkiniDetail />} />
         <Route path="/berita-direktorat" element={<BeritaDirektorat />} />
         <Route path="/berita-kdeks" element={<BeritaKdeks />} />
         <Route path="/berita-kegiatan/:id/:slug" element={<BeritaKegiatanDetail />} />

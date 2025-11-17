@@ -11,16 +11,15 @@ import Row from 'react-bootstrap/Row';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useCookies } from 'react-cookie';
 import { Modal, Button } from "react-bootstrap";
-const Regulasi = () => {
+const Roadmap = () => {
     const [cookies] = useCookies(['i18next']);
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState("");
     const [showModal, setShowModal] = useState(false);
-    // const [passcode, setPasscode] = useState("");
+    const [passcode, setPasscode] = useState("");
     const [file, setFile] = useState(null);
-    const [titleFile, setTitleFile] = useState(null);
     const postsPerPage = 8;
 
     const formatDate = (date, locale = 'en') => {
@@ -46,7 +45,7 @@ const Regulasi = () => {
                 const endpoint = process.env.REACT_APP_API_PUSTAKA;
                 const response = await axios.get(`${url}${endpoint}`);
 
-                const res = response.data.filter(post => post.report_category_id === 5);
+                const res = response.data.filter(post => post.report_category_id === 1);
                 setPosts(res);
             } catch (err) {
                 Swal.fire({
@@ -117,8 +116,8 @@ const Regulasi = () => {
                 <Col lg={{ span: 6 }}>
                     <InputGroup className="mb-3">
                         <Form.Control
-                            placeholder="Cari Regulasi"
-                            aria-label="Cari Regulasi"
+                            placeholder="Cari Roadmap/Masterplan"
+                            aria-label="Cari Roadmap/Masterplan"
                             aria-describedby="basic-addon2"
                             style={{ border: '1px solid #ccc', padding: '8.5px' }}
                             size="sm"
@@ -145,12 +144,19 @@ const Regulasi = () => {
                             <div className="col-12 col-md-6 col-xl-3" key={item?.id}>
                                 <div className="team-card-x">
                                     <div className="team-card-img-x">
-                                        <a href={`/e-pustaka/${item?.id}`}>
+                                        {/* <a href={`/e-pustaka/${convertToSlug(
+                                            item?.title
+                                        )}`}> */}
+                                          <a href={`/e-pustaka/${
+                                            item?.id
+                                        }`}>
                                             <img src="/assets/image/book1.jpeg" className="img-fluid" alt="img-40" />
                                         </a>
                                     </div>
                                     <div className="team-card-content-x">
-                                        <h4><a href={`/e-pustaka/${item?.id}`}>{cookies.i18next === 'en' ? item?.title_en : item?.title}</a></h4>
+                                        <h4><a href={`/e-pustaka/${
+                                            item?.id
+                                        }`}>{cookies.i18next === 'en' ? item?.title_en : item?.title}</a></h4>
                                         <div className="d-flex justify-content-between align-items-end">
                                             <p>{cookies.i18next === 'id' ? formatDate(item.date, 'id') : formatDate(item.date, 'en')}</p>
                                             <a
@@ -159,7 +165,6 @@ const Regulasi = () => {
                                                 onClick={() => {
                                                     setShowModal(true)
                                                     setFile(item?.file)
-                                                    setTitleFile(item?.title)
                                                 }}
                                             >
                                                 <i className="fa-solid fa-download" aria-hidden="true"></i>
@@ -192,12 +197,12 @@ const Regulasi = () => {
                     </div>
                 )}
             </div>
-            <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg">
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered>
                 <Modal.Header closeButton>
-                    <Modal.Title>File Regulasi</Modal.Title>
+                    <Modal.Title>Enter Passcode</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {/* <Form>
+                    <Form>
                         <Form.Group>
                             <Form.Label>Passcode</Form.Label>
                             <Form.Control
@@ -208,38 +213,34 @@ const Regulasi = () => {
                                 className="border"
                             />
                         </Form.Group>
-                    </Form> */}
-                    <ul>
-                        <li>Judul/Title : {titleFile}</li>
-                        <li>File : {file} </li>
-                    </ul>
+                    </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    {/* <Button variant="secondary" onClick={() => setShowModal(false)}>
+                    <Button variant="secondary" onClick={() => setShowModal(false)}>
                         Cancel
-                    </Button> */}
+                    </Button>
                     <Button variant="success"
                         onClick={() => {
-                            // if (passcode === "123456") {
-                            const link = document.createElement("a");
-                            link.href = file || "#";
-                            link.setAttribute("download", "file.pdf");
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                            setShowModal(false);
-                            // setPasscode("");
-                            // } else {
+                            if (passcode === "123456") {
+                                const link = document.createElement("a");
+                                link.href = file || "#";
+                                link.setAttribute("download", "file.pdf");
+                                document.body.appendChild(link);
+                                link.click();
+                                document.body.removeChild(link);
+                                setShowModal(false);
+                                setPasscode("");
+                            } else {
 
-                            //     Swal.fire({
-                            //         icon: "error",
-                            //         title: "Oops...",
-                            //         text: "Passcode salah!",
-                            //     });
-                            // }
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Oops...",
+                                    text: "Passcode salah!",
+                                });
+                            }
                         }}
                     >
-                        Download
+                        Submit
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -247,4 +248,4 @@ const Regulasi = () => {
     );
 };
 
-export default Regulasi;
+export default Roadmap;

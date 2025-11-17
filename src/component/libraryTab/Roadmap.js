@@ -18,14 +18,15 @@ const Roadmap = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState("");
     const [showModal, setShowModal] = useState(false);
-    const [passcode, setPasscode] = useState("");
+    // const [passcode, setPasscode] = useState("");
     const [file, setFile] = useState(null);
+    const [titleFile, setTitleFile] = useState(null);
     const postsPerPage = 8;
 
     const formatDate = (date, locale = 'en') => {
-		dayjs.locale(locale); // Set the locale dynamically
-		return dayjs(date).format('DD MMMM YYYY'); // Format the date
-	};
+        dayjs.locale(locale); // Set the locale dynamically
+        return dayjs(date).format('DD MMMM YYYY'); // Format the date
+    };
 
     // const convertToSlug = (title) => {
     //     if (!title) return "";
@@ -147,16 +148,14 @@ const Roadmap = () => {
                                         {/* <a href={`/e-pustaka/${convertToSlug(
                                             item?.title
                                         )}`}> */}
-                                          <a href={`/e-pustaka/${
-                                            item?.id
-                                        }`}>
+                                        <a href={`/e-pustaka/${item?.id
+                                            }`}>
                                             <img src="/assets/image/book1.jpeg" className="img-fluid" alt="img-40" />
                                         </a>
                                     </div>
                                     <div className="team-card-content-x">
-                                        <h4><a href={`/e-pustaka/${
-                                            item?.id
-                                        }`}>{cookies.i18next === 'en' ? item?.title_en : item?.title}</a></h4>
+                                        <h4><a href={`/e-pustaka/${item?.id
+                                            }`}>{cookies.i18next === 'en' ? item?.title_en : item?.title}</a></h4>
                                         <div className="d-flex justify-content-between align-items-end">
                                             <p>{cookies.i18next === 'id' ? formatDate(item.date, 'id') : formatDate(item.date, 'en')}</p>
                                             <a
@@ -165,6 +164,7 @@ const Roadmap = () => {
                                                 onClick={() => {
                                                     setShowModal(true)
                                                     setFile(item?.file)
+                                                    setTitleFile(item?.title)
                                                 }}
                                             >
                                                 <i className="fa-solid fa-download" aria-hidden="true"></i>
@@ -197,12 +197,12 @@ const Roadmap = () => {
                     </div>
                 )}
             </div>
-            <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg">
                 <Modal.Header closeButton>
-                    <Modal.Title>Enter Passcode</Modal.Title>
+                    <Modal.Title>File Preview Roadmap / Masterplan </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
+                    {/* <Form>
                         <Form.Group>
                             <Form.Label>Passcode</Form.Label>
                             <Form.Control
@@ -213,34 +213,39 @@ const Roadmap = () => {
                                 className="border"
                             />
                         </Form.Group>
-                    </Form>
+                    </Form> */}
+                    <ul>
+                        <li>Judul/Title : {titleFile}</li>
+                        <li>File : {file} </li>
+                    </ul>
+                    {/* <iframe title={`#toolbar=0`} src={file} width="100%" height="450"></iframe> */}
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowModal(false)}>
+                    {/* <Button variant="secondary" onClick={() => setShowModal(false)}>
                         Cancel
-                    </Button>
+                    </Button> */}
                     <Button variant="success"
                         onClick={() => {
-                            if (passcode === "123456") {
-                                const link = document.createElement("a");
-                                link.href = file || "#";
-                                link.setAttribute("download", "file.pdf");
-                                document.body.appendChild(link);
-                                link.click();
-                                document.body.removeChild(link);
-                                setShowModal(false);
-                                setPasscode("");
-                            } else {
+                            // if (passcode === "123456") {
+                            const link = document.createElement("a");
+                            link.href = file;
+                            link.download = "file.pdf";
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                            setShowModal(false);
+                            // setPasscode("");
+                            // } else {
 
-                                Swal.fire({
-                                    icon: "error",
-                                    title: "Oops...",
-                                    text: "Passcode salah!",
-                                });
-                            }
+                            //     Swal.fire({
+                            //         icon: "error",
+                            //         title: "Oops...",
+                            //         text: "Passcode salah!",
+                            //     });
+                            // }
                         }}
                     >
-                        Submit
+                        Download
                     </Button>
                 </Modal.Footer>
             </Modal>
