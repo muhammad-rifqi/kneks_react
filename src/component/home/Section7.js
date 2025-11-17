@@ -83,7 +83,8 @@ const Section7 = () => {
 				// Cleanup function to destroy Swiper instance
 				return () => {
 					if (swipers) {
-						swipers.destroy(true, true);
+						// swipers.destroy(true, true);
+						swipers.destroy();
 					}
 				};
 			}

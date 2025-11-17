@@ -192,7 +192,7 @@ const Kajian = () => {
                     </div>
                 )}
             </div>
-            <Modal show={showModal} onHide={() => setShowModal(false)} centered size="lg">
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered size="xl">
                 <Modal.Header closeButton>
                     <Modal.Title>File Kajian / Penelitian</Modal.Title>
                 </Modal.Header>

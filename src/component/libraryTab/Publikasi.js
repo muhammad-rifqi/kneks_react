@@ -192,7 +192,7 @@ const Publikasi = () => {
                     </div>
                 )}
             </div>
-            <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered size="xl">
                 <Modal.Header closeButton>
                     <Modal.Title>File Publikasi</Modal.Title>
                 </Modal.Header>

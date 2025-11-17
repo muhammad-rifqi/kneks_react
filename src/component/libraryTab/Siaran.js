@@ -191,7 +191,7 @@ const Siaran = () => {
                     </div>
                 )}
             </div>
-            <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered size="xl">
                 <Modal.Header closeButton>
                     <Modal.Title>File : Siaran Pers</Modal.Title>
                 </Modal.Header>
@@ -208,6 +208,11 @@ const Siaran = () => {
                             />
                         </Form.Group>
                     </Form> */}
+                    <ul>
+                        <li>Judul/Title : {titleFile}</li>
+                        <li>File : {file} </li>
+                    </ul>
+                    <p><iframe title={`#toolbar=0`} src={file} width="100%" height="450"></iframe></p>
                 </Modal.Body>
                 <Modal.Footer>
                     {/* <Button variant="secondary" onClick={() => setShowModal(false)}>
