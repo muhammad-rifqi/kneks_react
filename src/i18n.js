@@ -50,6 +50,7 @@ const resources = {
             "pernekalkanIsi": "It is a change from KNKS to improve the development of the sharia economic and financial ecosystem and make Indonesia the World Halal Center. The launch of the starting point to position Indonesia as one of the main players and hubs of the world's sharia economy was carried out in line with the launch of the Indonesian Sharia Economic Masterplan in May 2019.",
 
             "isuUtama": "The main issue",
+            "isuTerkini": "The Hot issue",
             "isuJudul": "Economy & Finance",
             "isuJudul2": "Sharia",
             "isuIsi": "Indonesia is a country with the largest Muslim majority and the largest number of Islamic financial institutions in the world. KNKS is present as a catalyst in efforts to accelerate, expand and advance the development of Islamic economics and finance in order to strengthen national economic resilience.",
@@ -174,6 +175,7 @@ const resources = {
             "pernekalkanIsi": "Merupakan perubahan dari KNKS untuk peningkatan pembangunan ekosistem ekonomi dan keuangan syariah serta menjadikan Indonesia sebagai Pusat Halal Dunia. Pencanangan titik awal untuk memposisikan Indonesia sebagai salah satu pelaku utama dan hub ekonomi syariah dunia dilakukan seiring dengan peluncuran Masterplan Ekonomi Syariah Indonesia pada bulan Mei 2019.",
 
             "isuUtama": "Isu Utama",
+            "isuTerkini": "Isu Terkini",
             "isuJudul": "Ekonomi & Keuangan",
             "isuJudul2": "Syariah",
             "isuIsi": "Indonesia merupakan negara dengan mayoritas muslim terbesar dan jumlah institusi keuangan syariah terbanyak di dunia. KNKS hadir sebagai katalisator dalam upaya mempercepat, memperluas dan memajukan pengembangan ekonomi dan keuangan syariah dalam rangka memperkuat ketahanan ekonomi nasional.",
