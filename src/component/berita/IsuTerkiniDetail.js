@@ -77,7 +77,7 @@ const IsuTerkiniDetail = () => {
                 <section className="page-banner">
                     <div className="container">
                         <div className="page-banner-title">
-                            <h3>{t('beritaTerkait')}</h3>
+                            <h3>{t('isuTerkini')}</h3>
                         </div>
                     </div>
                 </section>
@@ -121,7 +121,7 @@ const IsuTerkiniDetail = () => {
                                 )}
                             </div>
                             <div className="col-lg-12">
-                                <div className="event-details-content-box">
+                                <div className="event-details-connt-box">
                                     {/* <p style={{ textAlign: `justify` }}>{rows?.content}</p> */}
                                     <div dangerouslySetInnerHTML={{ __html: cookies.i18next === 'en' ? rows[0]?.content_en : rows[0]?.content }} />
                                 </div>

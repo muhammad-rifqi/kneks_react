@@ -148,7 +148,7 @@ const IsuTerkini = () => {
                 <section className='page-banner'>
                     <div className='container'>
                         <div className='page-banner-title'>
-                            <h3>{t('menu.isuTerkini')}</h3>
+                            <h3>{t('isuTerkini')}</h3>
                         </div>
                     </div>
                 </section>
