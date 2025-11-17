@@ -87,7 +87,7 @@ const Section6 = () => {
     return (
         <>
             {/* <iframe width="100%" height="900" src="https://metabase.kneks.go.id/public/dashboard/112dd65e-3c50-4885-aba9-0f0356404fdf" title="oa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe> */}
+			</iframe> */}
             <EventDetailModal
                 show={showDetailModal}
                 handleClose={() => setShowDetailModal(false)}
