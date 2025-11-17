@@ -218,7 +218,7 @@ const Roadmap = () => {
                         <li>Judul/Title : {titleFile}</li>
                         <li>File : {file} </li>
                     </ul>
-                    {/* <iframe title={`#toolbar=0`} src={file} width="100%" height="450"></iframe> */}
+                    <p><iframe title={`#toolbar=0`} src={file} width="100%" height="450"></iframe></p>
                 </Modal.Body>
                 <Modal.Footer>
                     {/* <Button variant="secondary" onClick={() => setShowModal(false)}>
