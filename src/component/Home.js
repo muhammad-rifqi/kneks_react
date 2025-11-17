@@ -9,6 +9,7 @@ import Section3 from '../component/home/Section3'
 import Section4 from '../component/home/Section4'
 // import Section5 from '../component/home/Section5'
 import News from '../component/home/News'
+import IsuTerkini from '../component/home/IsuTerkini'
 // import Zona from '../component/home/Zona';
 import Section6 from '../component/home/Section6'
 import Section7 from '../component/home/Section7'
@@ -19,6 +20,7 @@ import Section11 from '../component/home/Section11'
 // import Section12 from '../component/home/Section12';
 // import Section13 from '../component/home/Section13';
 // import Section14 from '../component/home/Section14';
+import Section15 from '../component/home/Section15'
 import Swal from "sweetalert2";
 import axios from "axios";
 import AOS from 'aos';
@@ -82,6 +84,9 @@ const Home = () => {
 
       <News />
       <Section7 />
+
+     <IsuTerkini/>
+     <Section15/>
 
       <Section4 />
       <Section8 />

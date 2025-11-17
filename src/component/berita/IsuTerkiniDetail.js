@@ -87,7 +87,7 @@ const IsuTerkiniDetail = () => {
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
                                    <h4>{cookies.i18next === 'en' ? rows[0]?.title_en : rows[0]?.title}</h4>
-                                    <p>{cookies.i18next === 'id' ? formatDate(rows[0]?.news_datetime, 'id') : formatDate(rows[0]?.news_datetime, 'en')}</p>
+                                    <p>{cookies.i18next === 'id' ? formatDate(rows[0]?.hot_issue_datetime, 'id') : formatDate(rows[0]?.hot_issue_datetime, 'en')}</p>
                                 </div>
                             </div>
                             <div className="col-lg-12">
@@ -191,7 +191,7 @@ const IsuTerkiniDetail = () => {
                                                     </h4>
                                                 </div>
                                                 <div className="event-card-info">
-                                                    <span>{dayjs(rows.news_datetime).format("DD MMMM YYYY")}</span>
+                                                    <span>{dayjs(item?.hot_issue_datetime).format("DD MMMM YYYY")}</span>
                                                 </div>
                                             </div>
                                         </div>

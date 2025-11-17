@@ -71,7 +71,7 @@ const IsuTerkini = () => {
         if (startDate) {
             const formattedDate = dayjs(startDate).format("YYYY-MM-DD");
             filtered = filtered.filter(
-                (post) => dayjs(post.news_datetime).format("YYYY-MM-DD") === formattedDate
+                (post) => dayjs(post.hot_issue_datetime).format("YYYY-MM-DD") === formattedDate
             );
         }
 
@@ -254,7 +254,7 @@ const IsuTerkini = () => {
                                                     </div>
                                                     <div className='event-card-info'>
                                                         <span>
-                                                            {cookies.i18next === 'id' ? formatDate(item.news_datetime, 'id') : formatDate(item.news_datetime, 'en')}
+                                                            {cookies.i18next === 'id' ? formatDate(item?.hot_issue_datetime, 'id') : formatDate(item?.hot_issue_datetime, 'en')}
                                                         </span>
                                                     </div>
                                                 </div>
