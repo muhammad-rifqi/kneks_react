@@ -41,34 +41,34 @@ const Section11 = () => {
 			{/* <section className="sm-section funfact-section-post"> */}
 			<section className="mayor-section">
 				<div className="container">
-					<div className="sm-box">
+					{/* <div className="sm-box">
 						<div className="section-title-box text-center" data-aos="fade-up">
 							<div className="section-tagline-b">{t('sosialMedia')}</div>
 							<h2 className="section-title text-dark">{t('instagram')}</h2>
 						</div>
-					</div>
-					<div className="row m-0" data-aos="fade-down" >
-						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
+					</div> */}
+					{/* <div className="row m-0" data-aos="fade-down" >
+						<div className="col-lg-4 col-md-4 col-sm-6 mb-4"> */}
 							{/* <InstagramEmbed url="https://www.instagram.com/p/C6pooCOBSOA"
 								width="100%"
 							/> */}
-							<img src={process.env.PUBLIC_URL + '/assets/ig/1.png'} alt="Intagram1" width="100%"/>
-						</div >
-						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
+							{/* <img src={process.env.PUBLIC_URL + '/assets/ig/1.png'} alt="Intagram1" width="100%"/> */}
+						{/* </div >
+						<div className="col-lg-4 col-md-4 col-sm-6 mb-4"> */}
 							{/* <InstagramEmbed url="https://www.instagram.com/p/CtjUgOFrnVn/"
 								width="100%"
 							/> */}
-							<img src={process.env.PUBLIC_URL + '/assets/ig/2.png'} alt="Intagram2" width="100%"/>
-						</div >
-						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
+							{/* <img src={process.env.PUBLIC_URL + '/assets/ig/2.png'} alt="Intagram2" width="100%"/> */}
+						{/* </div >
+						<div className="col-lg-4 col-md-4 col-sm-6 mb-4"> */}
 							{/* <InstagramEmbed url="https://www.instagram.com/p/DB2pOXjz09c/"
 								width="100%"
 							/> */}
-							<img src={process.env.PUBLIC_URL + '/assets/ig/3.png'} alt="Intagram3" width="100%"/>
-						</div >
-					</div>
+							{/* <img src={process.env.PUBLIC_URL + '/assets/ig/3.png'} alt="Intagram3" width="100%"/> */}
+						{/* </div >
+					</div> */}
 
-					<div className="sm-box" style={{ marginTop: `100px` }}>
+					<div className="sm-box" style={{ marginTop: `-50px` }}>
 						<div className="section-title-box text-center" data-aos="fade-up">
 
 							<h2 className="section-title text-dark">{t('instansi')}</h2>
