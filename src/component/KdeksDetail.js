@@ -531,7 +531,7 @@ const KdeksDetail = () => {
                                                                     <div className="col-12 col-sm-6 col-md-4 mb-4" key={item2.id}>
                                                                         <div className="team-card-rev">
                                                                             <div className="team-card-img-rev">
-                                                                                <a href={`/struktur-organisasi/${convertToSlug(items1?.position)}?tbl=${btoa('anggota_kdeks')}&keyid=${btoa(items1?.id)}`}>
+                                                                                <a href={`/struktur-organisasi/${convertToSlug(item2?.position)}?tbl=${btoa('anggota_kdeks')}&keyid=${btoa(item2?.id)}`}>
                                                                                     <img
                                                                                         src={item2?.photo ? `${item2?.photo}` : "assets/image/defaulttumbnail.jpeg"}
                                                                                         className="img-fluid"
@@ -541,7 +541,7 @@ const KdeksDetail = () => {
                                                                             </div>
                                                                             <div className="team-card-content-rev">
                                                                                 <h4>
-                                                                                    <a href={`/struktur-organisasi/${convertToSlug(items1?.position)}?tbl=${btoa('anggota_kdeks')}&keyid=${btoa(items1?.id)}`}>{item2?.name}</a>
+                                                                                    <a href={`/struktur-organisasi/${convertToSlug(item2?.position)}?tbl=${btoa('anggota_kdeks')}&keyid=${btoa(item2?.id)}`}>{item2?.name}</a>
                                                                                 </h4>
                                                                                 <p>{cookies.i18next === 'id' ? item2?.position : item2?.position_en}</p>
                                                                             </div>
@@ -560,7 +560,7 @@ const KdeksDetail = () => {
                                                                                                 <span className="text-small">
                                                                                                     <b>
                                                                                                         <u>
-                                                                                                            <a href={`/struktur-organisasi/${convertToSlug(items1?.position)}?tbl=${btoa('sub_anggota_kdeks')}&keyid=${btoa(items1?.id)}`}>
+                                                                                                            <a href={`/struktur-organisasi/${convertToSlug(item3?.position)}?tbl=${btoa('sub_anggota_kdeks')}&keyid=${btoa(item3?.id)}`}>
                                                                                                                 <b style={{ color: 'black' }}>{item3?.name}</b>
                                                                                                             </a>
                                                                                                         </u>

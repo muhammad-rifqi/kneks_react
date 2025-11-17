@@ -481,7 +481,7 @@ const Data = () => {
                                             <h5 >Pengunjung Website</h5>
                                         </div>
                                         <div className="table-responsive">
-                                            <table border="1" cellPadding="8" width="100%">
+                                            <table border="1" cellPadding="8" width="100%" className="table">
                                                 <thead>
                                                     <tr>
                                                         {result.map((rowt, index) => (
