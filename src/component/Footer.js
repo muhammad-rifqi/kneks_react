@@ -139,7 +139,7 @@ const Footer = () => {
 
   useEffect(() => {
     axios.post(process.env.REACT_APP_API_URL + "/visits")
-      .then(res => console.log(res.data))
+      .then(res => console.log("kneks"))
       .catch(err => console.error(err));
   }, []);
   

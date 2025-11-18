@@ -18,6 +18,7 @@ const Section6 = () => {
         setSelectedItem(result);
         setSelectedZona(item);
         setShowDetailModal(true);
+        console.log(dataKhas)
     };
 
     const strokeColor = "#000000";
