@@ -10,6 +10,7 @@ const Section11 = () => {
 	// const [cookies] = useCookies(['i18next']);
 	const { t } = useTranslation()
 	const [posts, setPosts] = useState([]);
+	const [posts1, setPosts1] = useState([]);
 	const [loading, setLoading] = useState(true);
 	useEffect(() => {
 		const fetchPosts = async () => {
@@ -34,6 +35,34 @@ const Section11 = () => {
 		fetchPosts();
 	}, []);
 
+	useEffect(() => {
+		const fetchPosts1 = async () => {
+			setLoading(true);
+			try {
+				const url = process.env.REACT_APP_API_URL;
+				const response1 = await axios.get(`${url}/postsosmed`);
+				setPosts1(response1.data);
+
+			} catch (err) {
+				Swal.fire({
+					icon: "error",
+					title: "Oops...",
+					text: err.message,
+				});
+			} finally {
+				setLoading(false);
+			}
+		};
+
+		fetchPosts1();
+	}, []);
+
+	useEffect(() => {
+		if (window.instgrm) {
+			window.instgrm.Embeds.process();
+		}
+	}, [posts1]);
+
 	if (loading) return <p>Loading...</p>
 
 	return (
@@ -48,24 +77,25 @@ const Section11 = () => {
 						</div>
 					</div>
 					<div className="row m-0" data-aos="fade-down" >
-						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
-							{/* <InstagramEmbed url="https://www.instagram.com/p/C6pooCOBSOA"
-								width="100%"
-							/> */}
-							<img src={process.env.PUBLIC_URL + '/assets/ig/1.png'} alt="Intagram1" width="100%"/>
-						</div >
-						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
-							{/* <InstagramEmbed url="https://www.instagram.com/p/CtjUgOFrnVn/"
-								width="100%"
-							/> */}
-							<img src={process.env.PUBLIC_URL + '/assets/ig/2.png'} alt="Intagram2" width="100%"/>
-						</div >
-						<div className="col-lg-4 col-md-4 col-sm-6 mb-4">
-							{/* <InstagramEmbed url="https://www.instagram.com/p/DB2pOXjz09c/"
-								width="100%"
-							/> */}
-							<img src={process.env.PUBLIC_URL + '/assets/ig/3.png'} alt="Intagram3" width="100%"/>
-						</div >
+						{posts1 && posts1.length > 0 ? (
+							<>
+								{posts1.slice(0, 3).map((item1, indexs) => (
+									<div className="col-lg-4 col-md-4 col-sm-6 mb-4" key={item1.id || indexs}>
+										<blockquote className="instagram-media"
+											data-instgrm-permalink={item1?.link_post || 'instagram'}
+											data-instgrm-version="14"
+											style={{ background: "#FFF", border: "0", margin: "0 auto", maxWidth: "540px", width: "100%" }}>
+										</blockquote>
+									</div >
+								))}
+							</>
+						) : (
+							<div className="col-lg-12 col-md-12" style={{ paddingBottom: '100px' }}>
+								<p className="text-center text-danger">No posts available</p>
+							</div>
+						)}
+
+
 					</div>
 
 					<div className="sm-box" style={{ marginTop: `100px` }}>
