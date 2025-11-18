@@ -140,11 +140,11 @@ const TentangKami = () => {
                         {/* row untuk masing - masing konten */}
                         <div className="row row-gutter-y-40" >
 
-                            <div className="col-lg-12 col-xl-12">
+                            {/* <div className="col-lg-12 col-xl-12">
                                 <div className="about-one-image" style={{ textAlign: 'center' }}>
                                     <img src="assets/image/filosofiTk.svg" alt="img-59" className="img-fluid" />
                                 </div>
-                            </div>
+                            </div> */}
 
                             {/* konten sebelah kanan */}
                             <div className="col-lg-12 col-xl-12">
