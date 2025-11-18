@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import DataKota from "../component/dumy/dataKota";
 const MapsKdeks = () => {
 
