@@ -492,7 +492,7 @@ const Data = () => {
                                                 <tbody>
                                                     <tr>
                                                         {result.map((rowt, index) => (
-                                                            <td key={index}>Total : {rowt?.total_visitor}</td>
+                                                            <td key={index}>Total : {new Intl.NumberFormat("id-ID").format(rowt?.total_visitor)}</td>
                                                         ))}
                                                     </tr>
                                                 </tbody>
