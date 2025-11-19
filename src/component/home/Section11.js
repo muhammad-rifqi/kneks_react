@@ -40,7 +40,7 @@ const Section11 = () => {
 			setLoading(true);
 			try {
 				const url = process.env.REACT_APP_API_URL;
-				const response1 = await axios.get(`${url}/postsosmed`);
+				const response1 = await axios.get(`${url}/postsosmedfe`);
 				setPosts1(response1.data);
 
 			} catch (err) {
