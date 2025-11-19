@@ -94,11 +94,27 @@ const Section11 = () => {
 								<p className="text-center text-danger">No posts available</p>
 							</div>
 						)}
-
-
 					</div>
 
-					<div className="sm-box" style={{ marginTop: `100px` }}>
+					<div className="row m-0" data-aos="fade-down" >
+						<div className="col-lg-4 col-md-4">
+							<p className="text-center"><a rel="noreferrer" href="https://www.youtube.com/@komitenasionalekonomidanke2792" target="_blank">
+								<img src="https://cms.kneks.go.id/assets/images/youtube.png" alt="youtube" width="80"/> <br/> <b>@komitenasionalekonomidanke2792</b></a>
+							</p>
+						</div>
+						<div className="col-lg-4 col-md-4">
+							<p className="text-center"><a rel="noreferrer" href="https://www.instagram.com/ekonomisyariah.official" target="_blank">
+								<img src="https://cms.kneks.go.id/assets/images/instagram.png" alt="instagram" width="80"/> <br/><b>@ekonomisyariah.officia</b></a>
+							</p>
+						</div>
+						<div className="col-lg-4 col-md-4">
+							<p className="text-center"><a rel="noreferrer" href="https://www.instagram.com/kneks.id" target="_blank">
+								<img src="https://cms.kneks.go.id/assets/images/instagram.png" alt="instagram" width="80"/> <br/> <b>@kneks.go.id</b></a>
+							</p>
+						</div>
+					</div>
+
+					<div className="sm-box" style={{ marginTop: `10px` }}>
 						<div className="section-title-box text-center" data-aos="fade-up">
 
 							<h2 className="section-title text-dark">{t('instansi')}</h2>
