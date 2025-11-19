@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route ,useLocation} from 'react-router-dom';
 import Home from './component/Home';
 import Detail from './component/Detail';
 import Add from './component/Add';
@@ -61,9 +60,12 @@ import IsuTerkini from './component/berita/IsuTerkini';
 import IsuTerkiniDetail from './component/berita/IsuTerkiniDetail';
 
 function AppContent() {
-  // const location = useLocation();
+  const location = useLocation();
   // const isLoginPage = location.pathname === '/login';
+  const path = location.pathname;
 
+  // regex untuk match /kdeks/123/slug-judul
+  const hideFooter = /^\/kdeks\/[^/]+\/[^/]+$/.test(path);
   return (
     <div>
       {/* {!isLoginPage && <Header />} */}
@@ -128,7 +130,7 @@ function AppContent() {
         <Route path="/berita-kegiatan/:id/:slug" element={<BeritaKegiatanDetail />} />
         <Route path="/search" element={<SearchHome />} />
       </Routes>
-      <Footer />
+      {!hideFooter && <Footer />}
       {/* {!isLoginPage && <Footer />} */}
     </div>
   );

@@ -14,7 +14,7 @@ const dataKota = () => {
             kode: "aceh"
         },
         {
-            title: "Jakarta",
+            title: "DKI Jakarta",
             tanggal: "20 Juni 2024",
             foto: "",
             skFile: null,
@@ -27,7 +27,7 @@ const dataKota = () => {
             kode: "jakarta"
         },
         {
-            title: "Yogyakarta",
+            title: "DI Yogyakarta",
             tanggal: "20 Juni 2024",
             foto: "",
             skFile: null,
@@ -431,6 +431,57 @@ const dataKota = () => {
             skFile7: null,
             kode: "papua"
         }, {
+            title: "Papua Barat Daya",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "papbarday"
+        },
+         {
+            title: "Papua Selatan",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "papsel"
+        },{
+            title: "Papua Tengah",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "papteng"
+        },
+         {
+            title: "Papua Pegunungan",
+            tanggal: "20 Juni 2024",
+            foto: null,
+            skFile: null,
+            skFile2: null,
+            skFile3: null,
+            skFile4: null,
+            skFile5: null,
+            skFile6: null,
+            skFile7: null,
+            kode: "pappeg"
+        },
+         {
             title: "Nusa Tenggara Timur",
             tanggal: "20 Juni 2024",
             foto: null,
