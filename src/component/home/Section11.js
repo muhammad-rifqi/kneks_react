@@ -79,7 +79,7 @@ const Section11 = () => {
 					<div className="row m-0" data-aos="fade-down" >
 						{posts1 && posts1.length > 0 ? (
 							<>
-								{posts1.slice(0, 3).map((item1, indexs) => (
+								{posts1.slice(0, 6).map((item1, indexs) => (
 									<div className="col-lg-4 col-md-4 col-sm-6 mb-4" key={item1.id || indexs}>
 										<blockquote className="instagram-media"
 											data-instgrm-permalink={item1?.link_post || 'instagram'}
