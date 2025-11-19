@@ -143,7 +143,7 @@ const Section11 = () => {
 								))}
 
 								{/* Render item ke-13 hingga ke-16 dengan layout col-6 col-md-4 col-lg-3 */}
-								{posts.length > 12 && posts.slice(12, 16).map((item, index) => (
+								{posts.length > 12 && posts.slice(12, 21).map((item, index) => (
 									<div className="col-6 col-md-4 col-lg-3 pb-3" data-aos="fade-up" key={item.id || index + 12}>
 										<a rel="noreferrer" href={item?.link} target="_blank" className="component-service d-block">
 											<div className="service-image">
