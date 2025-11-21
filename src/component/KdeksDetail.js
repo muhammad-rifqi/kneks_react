@@ -30,7 +30,8 @@ const KdeksDetail = () => {
         return dayjs(date).format('DD MMMM YYYY'); // Format the date
     };
 
-    const { id, slug } = useParams();
+    const { key, slug } = useParams();
+    const id = atob(key);
     const [posts, setPosts] = useState([]);
     const [posts_photo, setPostsPhoto] = useState([]);
     const [postsOpini, setPostsOpini] = useState([]);
