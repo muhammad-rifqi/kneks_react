@@ -282,11 +282,11 @@ const Footer = () => {
                         >
                           <a href="#direktorat" style={menuItemStyle}>{t('menu.direktorat')}</a>
                           <ul style={hoveredItem === 'direktorat' ? showSubmenuStyle : submenuStyle}>
-                            {/* <li
+                            <li
                             onMouseEnter={() => setHoveredSubItem('subItem6')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/industri-produk-halal" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem6')}>
+                            <a href="/industri-produk-halal/MQ==/mainpage" className='mt-2' style={submenuItemStyle(hoveredSubItem === 'subItem6')}>
                               {t('menu.industriProdukHalal')}
                             </a>
                           </li>
@@ -294,7 +294,7 @@ const Footer = () => {
                             onMouseEnter={() => setHoveredSubItem('subItem7')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/jasa-keuangan-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem7')}>
+                            <a href="/jasa-keuangan-syariah/Mg==/mainpage" style={submenuItemStyle(hoveredSubItem === 'subItem7')}>
                               {t('menu.jasaKeuanganSyariah')}
                             </a>
                           </li>
@@ -302,7 +302,7 @@ const Footer = () => {
                             onMouseEnter={() => setHoveredSubItem('subItem8')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/keuangan-sosial-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem8')}>
+                            <a href="/keuangan-sosial-syariah/Mw==/mainpage" style={submenuItemStyle(hoveredSubItem === 'subItem8')}>
                               {t('menu.keuanganSosialSyariah')}
                             </a>
                           </li>
@@ -310,7 +310,7 @@ const Footer = () => {
                             onMouseEnter={() => setHoveredSubItem('subItem9')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/bisnis-dan-kewiraushaan-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem9')}>
+                            <a href="/bisnis-dan-kewirausahaan-syariah/NA==/mainpage" style={submenuItemStyle(hoveredSubItem === 'subItem9')}>
                               {t('menu.bisnisDanKewirausahaan')}
                             </a>
                           </li>
@@ -318,11 +318,11 @@ const Footer = () => {
                             onMouseEnter={() => setHoveredSubItem('subItem10')}
                             onMouseLeave={() => setHoveredSubItem(null)}
                           >
-                            <a href="/infrastruktur-ekosistem-syariah" style={submenuItemStyle(hoveredSubItem === 'subItem10')}>
+                            <a href="/infrastruktur-ekosistem-syariah/NQ==/mainpage" style={submenuItemStyle(hoveredSubItem === 'subItem10')}>
                               {t('menu.infrastrukturEkosistem')}
                             </a>
-                          </li> */}
-                            {menu.map((item, index) => (
+                          </li>
+                            {/* {menu.map((item, index) => (
                               <li
                                 key={index}
                                 onMouseEnter={() => setHoveredSubItem(index)}
@@ -330,7 +330,7 @@ const Footer = () => {
                               >
                                 <a href={`/${convertToSlug(item.title)}`} style={submenuItemStyle(hoveredSubItem === index)}>{cookies.i18next === 'en' ? item.title_en : item.title}</a>
                               </li>
-                            ))}
+                            ))} */}
                           </ul>
                         </li>
 
