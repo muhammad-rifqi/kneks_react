@@ -365,6 +365,11 @@ const KdeksDetail = () => {
     };
     return (
         <>
+            <div itemScope itemType="https://schema.org/Organization">
+                <meta itemProp="name" content={cookies.i18next === 'en' ? postKdeks?.title_en : postKdeks?.title} />
+                <meta itemProp="description" content={cookies.i18next === 'en' ? postKdeks?.historys_en : postKdeks?.historys} />
+                <meta itemProp="image" content="https://www.kneks.go.id/assets/image/logoKdeks.png" />
+            </div>
             <div className="page-wrapper">
 
                 <section className="page-banner-kdeks ">

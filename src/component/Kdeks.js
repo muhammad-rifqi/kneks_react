@@ -60,8 +60,12 @@ const Kdeks = () => {
 
     return (
         <>
+            <div itemScope itemType="https://schema.org/Organization">
+                <meta itemProp="name" content="kneks.go.id" />
+                <meta itemProp="description" content="Web Komite Nasional Ekonomi Keuangan Syariah" />
+                <meta itemProp="image" content="https://www.kneks.go.id/assets/image/logoKdeks.png" />
+            </div>
             <div className="page-wrapper">
-
                 <section className="page-banner-kdeks ">
                     <div className="container">
                         <div className="page-banner-title">
@@ -72,7 +76,6 @@ const Kdeks = () => {
                 <section className="about-one-section-kdeks ">
                     <div className="container">
                         <div className="row row-gutter-y-40">
-
                             {/* konten sebelah kiri */}
                             <div className="col-lg-12 col-xl-6">
                                 <div className="about-one-image">
