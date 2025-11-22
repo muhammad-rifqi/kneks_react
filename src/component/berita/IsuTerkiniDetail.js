@@ -71,6 +71,42 @@ const IsuTerkiniDetail = () => {
     }, [id, slug]);
     // const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
+     useEffect(() => {
+                document.title = rows[0]?.title;
+        
+                // --- Meta Description ---
+                const metaDescription = document.createElement("meta");
+                metaDescription.name = "description";
+                metaDescription.content = rows[0]?.content
+                document.head.appendChild(metaDescription);
+        
+                // --- OG Title ---
+                const metaOgTitle = document.createElement("meta");
+                metaOgTitle.setAttribute("property", "og:title");
+                metaOgTitle.content = rows[0]?.title;
+                document.head.appendChild(metaOgTitle);
+        
+                // --- OG Description ---
+                const metaOgDescription = document.createElement("meta");
+                metaOgDescription.setAttribute("property", "og:description");
+                metaOgDescription.content = rows[0]?.content
+                document.head.appendChild(metaOgDescription);
+        
+                // --- OG Image ---
+                const metaOgImage = document.createElement("meta");
+                metaOgImage.setAttribute("property", "og:image");
+                metaOgImage.content = rows[0]?.image === "" ? '/assets/image/foto-beritas.png' : rows[0]?.image
+                document.head.appendChild(metaOgImage);
+        
+                return () => {
+                    document.head.removeChild(metaDescription);
+                    document.head.removeChild(metaOgTitle);
+                    document.head.removeChild(metaOgDescription);
+                    document.head.removeChild(metaOgImage);
+                };
+        
+            }, [rows])
+            
     return (
         <>
             <div className="page-wrapper">
