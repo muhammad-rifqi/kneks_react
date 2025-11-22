@@ -129,7 +129,7 @@ const BeritaKegiatanDetail = () => {
                 ? item.image
                 : `${window.location.origin}/assets/image/foto-beritas.png`;
 
-        const pageUrl = `${window.location.origin}/berita-kegiatan/${id}/${slug}`;
+        const pageUrl = `${window.location.origin}/berita-kegiatan/${atob(id)}/${slug}`;
 
         // TITLE
         document.title = `${title} | KNEKS`;
