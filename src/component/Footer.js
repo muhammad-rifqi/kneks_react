@@ -6,16 +6,16 @@ import Kota from "../component/dumy/dataKota";
 import { useTranslation } from 'react-i18next';
 import Swal from "sweetalert2";
 import axios from "axios";
-import { useCookies } from 'react-cookie';
+// import { useCookies } from 'react-cookie';
 // import { useParams } from "react-router-dom";
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [cookies] = useCookies(['i18next']);
+  // const [cookies] = useCookies(['i18next']);
   const [visits, setVisits] = useState(0);
   // const [activeMenu, setActiveMenu] = useState(location.pathname); // Initial state
   const [dataKota, setDataKota] = useState([]); // Initial state
-  const [menu, setMenu] = useState([]);
+  // const [menu, setMenu] = useState([]);
   const convertToSlug = (title) => {
     return title
       .toLowerCase()
@@ -123,7 +123,8 @@ const Footer = () => {
         const url = process.env.REACT_APP_API_URL;
         const endpoint = process.env.REACT_APP_API_MENU_DIREKTORAT;
         const response = await axios.get(`${url}${endpoint}`);
-        setMenu(response.data);
+        // setMenu(response.data);
+        console.log(response.data)
 
       } catch (err) {
         Swal.fire({

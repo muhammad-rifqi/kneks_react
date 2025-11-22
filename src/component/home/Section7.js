@@ -114,7 +114,7 @@ const Section7 = () => {
 										<div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 swiper-slide" key={item.id}>
 											<div className="berita-card-kdeks d-flex flex-column">
 												<div className="berita-card-imgbox-berita">
-													<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>
+													<a href={`/berita-terkait/${btoa(item.id)}/${convertToSlug(item.title)}`}>
 														<img
 															src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
 															onError={(e) => {
@@ -134,7 +134,7 @@ const Section7 = () => {
 														</div>
 														<div className="event-card-title pb-2">
 															<h4 className="mb-0">
-																<a href={`/berita-terkait/${item.id}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
+																<a href={`/berita-terkait/${btoa(item.id)}/${convertToSlug(item.title)}`}>{cookies.i18next === 'id' ? item.title : item.title_en}</a>
 															</h4>
 														</div>
 														<div className="event-card-info-direktorat mt-auto">

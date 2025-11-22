@@ -71,6 +71,42 @@ const BeritaTerkaitDetail = () => {
     }, [id, slug]);
     // const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
+    useEffect(() => {
+        document.title = rows[0]?.title;
+
+        // --- Meta Description ---
+        const metaDescription = document.createElement("meta");
+        metaDescription.name = "description";
+        metaDescription.content = rows[0]?.content
+        document.head.appendChild(metaDescription);
+
+        // --- OG Title ---
+        const metaOgTitle = document.createElement("meta");
+        metaOgTitle.setAttribute("property", "og:title");
+        metaOgTitle.content = rows[0]?.title;
+        document.head.appendChild(metaOgTitle);
+
+        // --- OG Description ---
+        const metaOgDescription = document.createElement("meta");
+        metaOgDescription.setAttribute("property", "og:description");
+        metaOgDescription.content = rows[0]?.content
+        document.head.appendChild(metaOgDescription);
+
+        // --- OG Image ---
+        const metaOgImage = document.createElement("meta");
+        metaOgImage.setAttribute("property", "og:image");
+        metaOgImage.content = rows[0]?.image === "" ? '/assets/image/foto-beritas.png' : rows[0]?.image
+        document.head.appendChild(metaOgImage);
+
+        return () => {
+            document.head.removeChild(metaDescription);
+            document.head.removeChild(metaOgTitle);
+            document.head.removeChild(metaOgDescription);
+            document.head.removeChild(metaOgImage);
+        };
+
+    }, [rows])
+
     return (
         <>
             <div className="page-wrapper">
@@ -86,7 +122,7 @@ const BeritaTerkaitDetail = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="event-details-content-box">
-                                   <h4>{cookies.i18next === 'en' ? rows[0]?.title_en : rows[0]?.title}</h4>
+                                    <h4>{cookies.i18next === 'en' ? rows[0]?.title_en : rows[0]?.title}</h4>
                                     <p>{cookies.i18next === 'id' ? formatDate(rows[0]?.news_datetime, 'id') : formatDate(rows[0]?.news_datetime, 'en')}</p>
                                 </div>
                             </div>
@@ -150,6 +186,12 @@ const BeritaTerkaitDetail = () => {
                                 </div>
                             )}
                         </div>
+                          {/* <div>
+                            ShareThis BEGIN 
+                            <br /><br />
+                            <div className="sharethis-inline-share-buttons" style={{ textAlign: "left" }}></div>
+                            ShareThis END 
+                        </div> */}
                     </div>
                 </section>
 
@@ -200,6 +242,7 @@ const BeritaTerkaitDetail = () => {
                             })}
                         </div>
                     </div>
+
                 </section>
 
             </div>
