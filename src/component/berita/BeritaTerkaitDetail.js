@@ -8,6 +8,46 @@ import { useTranslation } from "react-i18next";
 import { useCookies } from 'react-cookie';
 
 
+const upsertMeta = ({ name, property, content }) => {
+    if (!content) return;
+
+    const selector = name
+        ? `meta[name="${name}"]`
+        : `meta[property="${property}"]`;
+
+    let tag = document.querySelector(selector);
+
+    if (!tag) {
+        tag = document.createElement("meta");
+        if (name) tag.setAttribute("name", name);
+        if (property) tag.setAttribute("property", property);
+        document.head.appendChild(tag);
+    }
+
+    tag.setAttribute("content", content);
+};
+
+// canonical updater
+const upsertCanonical = (href) => {
+    if (!href) return;
+    let link = document.querySelector(`link[rel="canonical"]`);
+    if (!link) {
+        link = document.createElement("link");
+        link.setAttribute("rel", "canonical");
+        document.head.appendChild(link);
+    }
+    link.setAttribute("href", href);
+};
+
+// excerpt dari html
+const stripHtml = (html = "") =>
+    html.replace(/<[^>]*>?/gm, "").replace(/\s+/g, " ").trim();
+
+const makeExcerpt = (html, max = 160) => {
+    const text = stripHtml(html);
+    return text.length > max ? text.slice(0, max - 1) + "…" : text;
+};
+
 const BeritaTerkaitDetail = () => {
     const [cookies] = useCookies(['i18next']);
     const { t } = useTranslation()
@@ -72,40 +112,45 @@ const BeritaTerkaitDetail = () => {
     // const formattedDate = rows?.news_datetime ? dayjs(rows.news_datetime).format("DD MMMM YYYY") : "Tanggal tidak tersedia";
 
     useEffect(() => {
-        document.title = rows[0]?.title;
+        const item = rows?.[0];
+        if (!item) return;
 
-        // --- Meta Description ---
-        const metaDescription = document.createElement("meta");
-        metaDescription.name = "description";
-        metaDescription.content = rows[0]?.content
-        document.head.appendChild(metaDescription);
+        const isEn = cookies.i18next === "en";
 
-        // --- OG Title ---
-        const metaOgTitle = document.createElement("meta");
-        metaOgTitle.setAttribute("property", "og:title");
-        metaOgTitle.content = rows[0]?.title;
-        document.head.appendChild(metaOgTitle);
+        const title = (isEn ? item.title_en : item.title) || item.title;
+        const contentHtml = (isEn ? item.content_en : item.content) || item.content;
 
-        // --- OG Description ---
-        const metaOgDescription = document.createElement("meta");
-        metaOgDescription.setAttribute("property", "og:description");
-        metaOgDescription.content = rows[0]?.content
-        document.head.appendChild(metaOgDescription);
+        const excerpt = makeExcerpt(contentHtml, 160);
 
-        // --- OG Image ---
-        const metaOgImage = document.createElement("meta");
-        metaOgImage.setAttribute("property", "og:image");
-        metaOgImage.content = rows[0]?.image === "" ? '/assets/image/foto-beritas.png' : rows[0]?.image
-        document.head.appendChild(metaOgImage);
+        const imageUrl =
+            item.image && item.image !== ""
+                ? item.image
+                : `${window.location.origin}/assets/image/foto-beritas.png`;
 
-        return () => {
-            document.head.removeChild(metaDescription);
-            document.head.removeChild(metaOgTitle);
-            document.head.removeChild(metaOgDescription);
-            document.head.removeChild(metaOgImage);
-        };
+        const pageUrl = `${window.location.origin}/berita-kegiatan/${id}/${slug}`;
 
-    }, [rows])
+        // TITLE
+        document.title = `${title} | KNEKS`;
+
+        // BASIC META
+        upsertMeta({ name: "description", content: excerpt });
+
+        // OG
+        upsertMeta({ property: "og:title", content: title });
+        upsertMeta({ property: "og:description", content: excerpt });
+        upsertMeta({ property: "og:image", content: imageUrl });
+        upsertMeta({ property: "og:type", content: "article" });
+        upsertMeta({ property: "og:url", content: pageUrl });
+
+        // Twitter
+        upsertMeta({ name: "twitter:title", content: title });
+        upsertMeta({ name: "twitter:description", content: excerpt });
+        upsertMeta({ name: "twitter:image", content: imageUrl });
+
+        // canonical
+        upsertCanonical(pageUrl);
+
+    }, [rows, cookies.i18next, id, slug]);
 
     return (
         <>
@@ -186,7 +231,7 @@ const BeritaTerkaitDetail = () => {
                                 </div>
                             )}
                         </div>
-                          {/* <div>
+                        {/* <div>
                             ShareThis BEGIN 
                             <br /><br />
                             <div className="sharethis-inline-share-buttons" style={{ textAlign: "left" }}></div>
