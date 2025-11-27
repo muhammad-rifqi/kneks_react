@@ -96,12 +96,12 @@ const OpiniDetail = () => {
                                 <div className="event-details-inner-box">
                                     {/* <img src={`${process.env.PUBLIC_URL}/assets/image/foto-beritas.png`} width={`100%`} className="img-fluid" alt={cookies.i18next === 'id' ? rows?.title : rows?.title_en} /> */}
                                     <img
-                                        src={rows?.image === "" ? '/assets/image/foto-beritas.png' : rows?.image}
+                                        src={rows[0]?.image === "" ? '/assets/image/foto-beritas.png' : rows[0]?.image}
                                         onError={(e) => {
                                             e.target.onerror = null;
                                             e.target.src = `/assets/image/foto-beritas.png`;
                                         }}
-                                        className="img-fluid" width={`100%`} alt={cookies.i18next === 'id' ? rows?.title : rows?.title_en} />
+                                        className="img-fluid" width={`100%`} alt={cookies.i18next === 'id' ? rows[0]?.title : rows[0]?.title_en} />
                                 </div>
                             </div>
                             <div className="row">
