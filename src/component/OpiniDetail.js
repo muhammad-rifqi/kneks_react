@@ -96,7 +96,7 @@ const OpiniDetail = () => {
                                 <div className="event-details-inner-box">
                                     {/* <img src={`${process.env.PUBLIC_URL}/assets/image/foto-beritas.png`} width={`100%`} className="img-fluid" alt={cookies.i18next === 'id' ? rows?.title : rows?.title_en} /> */}
                                     <img
-                                        src={rows[0]?.image === "" ? '/assets/image/foto-beritas.png' : rows[0]?.image}
+                                        src={rows[0]?.images === "" ? '/assets/image/foto-beritas.png' : rows[0]?.images}
                                         onError={(e) => {
                                             e.target.onerror = null;
                                             e.target.src = `/assets/image/foto-beritas.png`;
@@ -173,14 +173,14 @@ const OpiniDetail = () => {
                                         <div className="berita-card">
                                             <div className="berita-card-imgbox ">
                                                 <a href={`/opini/${btoa(item.id)}/${convertToSlug(item?.title)}`}>
-                                                    <img src={`${process.env.PUBLIC_URL}/assets/image/foto-beritas.png`} className="img-fluid" alt={item.title} />
-                                                    {/* <img
-                                                        src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                    {/* <img src={`${process.env.PUBLIC_URL}/assets/image/foto-beritas.png`} className="img-fluid" alt={item.title} /> */}
+                                                    <img
+                                                        src={item?.images === "" ? '/assets/image/foto-beritas.png' : item?.images}
                                                         onError={(e) => {
                                                             e.target.onerror = null;
                                                             e.target.src = `/assets/image/foto-beritas.png`;
                                                         }}
-                                                        className="img-fluid" alt={item.title} /> */}
+                                                        className="img-fluid" alt={item?.title} />
                                                 </a>
                                             </div>
                                             <div className="berita-content ">

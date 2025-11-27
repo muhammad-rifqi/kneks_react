@@ -91,7 +91,7 @@ const Opini = () => {
                                                         <a href={`/opini/${btoa(item.id)}/${convertToSlug(item.title)}`}>
                                                             {/* <img src="/assets/image/foto-beritas.png" className="img-fluid w-100" alt={item.title} /> */}
                                                             <img
-                                                                src={item?.image === "" ? '/assets/image/foto-beritas.png' : item?.image}
+                                                                src={item?.images === "" ? '/assets/image/foto-beritas.png' : item?.images}
                                                                 onError={(e) => {
                                                                     e.target.onerror = null;
                                                                     e.target.src = `/assets/image/foto-beritas.png`;
