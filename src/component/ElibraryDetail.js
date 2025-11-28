@@ -133,11 +133,11 @@ const Elibrabry = () => {
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Penulis</div>
-                                                <div className="col-sm-10 text-primary"> : {rows?.penulis || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.writer || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Penerbit</div>
-                                                <div className="col-sm-10 text-primary"> : {rows?.penerbit || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.publisher || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Tagging</div>
@@ -145,7 +145,7 @@ const Elibrabry = () => {
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Sinopsis</div>
-                                                <div className="col-sm-10 text-primary"> : {rows?.sinopsis || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.synopsis || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">ISBN</div>
@@ -153,15 +153,15 @@ const Elibrabry = () => {
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Jumlah Halaman</div>
-                                                <div className="col-sm-10 text-primary"> : {rows?.jumlah_hal || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.number_of_pages || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Lebar</div>
-                                                <div className="col-sm-10 text-primary"> : {rows?.lebar || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.width || '-'}</div>
                                             </div>
                                             <div className="row g-0 mb-4">
                                                 <div className="col-sm-2 fw-semibold">Panjang</div>
-                                                <div className="col-sm-10 text-primary"> : {rows?.panjang || '-'}</div>
+                                                <div className="col-sm-10 text-primary"> : {rows?.height || '-'}</div>
                                             </div>
 
                                         </div>
