@@ -5,6 +5,7 @@ import Kajian from "./libraryTab/Kajian";
 import Publikasi from "./libraryTab/Publikasi";
 import Regulasi from "./libraryTab/Regulasi";
 import Siaran from "./libraryTab/Siaran";
+import Katalog from "./libraryTab/Katalog";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -97,6 +98,7 @@ const Elibrabry = () => {
         7: Publikasi,
         5: Regulasi,
         6: Siaran,
+        12: Katalog 
     };
 
     const renderContent = () => {
