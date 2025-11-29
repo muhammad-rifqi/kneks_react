@@ -113,8 +113,8 @@ const Katalog = () => {
                 <Col lg={{ span: 6 }}>
                     <InputGroup className="mb-3">
                         <Form.Control
-                            placeholder="Cari Siaran Pers"
-                            aria-label="Cari Siaran Pers"
+                            placeholder="Cari Katalog"
+                            aria-label="Cari Katalog"
                             aria-describedby="basic-addon2"
                             style={{ border: '1px solid #ccc', padding: '8.5px' }}
                             size="sm"
@@ -193,7 +193,7 @@ const Katalog = () => {
             </div>
             <Modal show={showModal} onHide={() => setShowModal(false)} centered size="xl">
                 <Modal.Header closeButton>
-                    <Modal.Title>File : Siaran Pers</Modal.Title>
+                    <Modal.Title>File : Katalog</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     {/* <Form>
