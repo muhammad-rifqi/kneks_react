@@ -81,46 +81,51 @@ const Section9 = () => {
 					</div>
 				</div>
 				<OwlCarousel className="owl-theme custom-carouselx" loop={true} nav={true} dots={true} {...options} data-aos="fade-down-left">
-                {data.map((item, index) => (
-                    <div
-                        key={index}
-                        className="item px-2"
-                    >
-                        <a
-                            href={`/data`}
-                            className="text-decoration-none"
-                        >
-                            <div className="card bg-light border-0 shadow p-3">
-                                <div className="card-body text-center">
-                                    <i className="fas fa-briefcase fa-3x mb-3"></i>
-                                    <h5
-                                        style={{ 
-                                            fontSize: '17px',
-                                            minHeight: '48px',
-                                            display: '-webkit-box',
-                                            WebkitLineClamp: '2',
-                                            WebkitBoxOrient: 'vertical',
-                                            // overflow: 'hidden',
-                                            // textOverflow: 'ellipsis'
-                                        }}
-                                        className="card-title mb-3"
-                                    >
-                                        {cookies.i18next === 'id'
-                                            ? item.title
-                                            : item.title_en}
-                                    </h5>
-                                    <h3 className="card-text mb-2">{item.value}</h3>
-                                    <p className="card-text text-muted mb-0">
-                                        {cookies.i18next === 'id'
-                                            ? formatDate(item.date, 'id')
-                                            : formatDate(item.date, 'en')}
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                ))}
-            </OwlCarousel>
+					{data.map((item, index) => (
+						<div
+							key={index}
+							className="item px-2"
+						>
+							<a
+								href={`/data`}
+								className="text-decoration-none"
+							>
+								<div className="card bg-light border-0 shadow p-3">
+									<div className="card-body text-center">
+										<i className="fas fa-briefcase fa-3x mb-3"></i>
+										<h5
+											style={{
+												fontSize: '17px',
+												minHeight: '48px',
+												display: '-webkit-box',
+												WebkitLineClamp: '2',
+												WebkitBoxOrient: 'vertical',
+												// overflow: 'hidden',
+												// textOverflow: 'ellipsis'
+											}}
+											className="card-title mb-3"
+										>
+											{cookies.i18next === 'id'
+												? item.title
+												: item.title_en}
+										</h5>
+										<h3 className="card-text mb-2">{item.value}</h3>
+										<p className="card-text text-muted mb-0">
+											{cookies.i18next === 'id'
+												? formatDate(item.date, 'id')
+												: formatDate(item.date, 'en')}
+										</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					))}
+				</OwlCarousel>
+				<div className="selengkapnya" data-aos="fade-down-left" style={{ textAlign: 'center', marginTop: '20px' }}>
+					<a href={`/data`} className="btn btn-primary btn-sm" style={{ backgroundColor: "#006699" }}>
+						Simulator Industri Halal
+					</a>
+				</div>
 			</div>
 		</section>
 	);
