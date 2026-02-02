@@ -104,7 +104,7 @@ const Section11 = () => {
 						</div>
 						<div className="col-lg-4 col-md-4">
 							<p className="text-center"><a rel="noreferrer" href="https://www.instagram.com/ekonomisyariah.official" target="_blank">
-								<img src="https://cms.kneks.go.id/assets/images/instagram.png" alt="instagram" width="80"/> <br/><b>@ekonomisyariah.officia</b></a>
+								<img src="https://cms.kneks.go.id/assets/images/instagram.png" alt="instagram" width="80"/> <br/><b>@ekonomisyariah.official</b></a>
 							</p>
 						</div>
 						<div className="col-lg-4 col-md-4">
