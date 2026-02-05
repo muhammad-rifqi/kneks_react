@@ -90,7 +90,7 @@ const Data = () => {
     // return Component ? <Component /> : <p>Pilih kategori untuk melihat konten.</p>;
     // };
 
-    const [data, setData] = useState([]);
+    const [datasetlist, setData] = useState([]);
     // useEffect(() => {
     //     fetch(process.env.REACT_APP_API_URL + '/sourcesdata')
     //         .then(resp => resp.json())
@@ -450,7 +450,7 @@ const Data = () => {
                                                 </thead>
                                                 <tbody>
                                                     {
-                                                        data?.map((items, index) => {
+                                                        datasetlist?.map((items, index) => {
                                                             return (
                                                                 <tr key={items?.id}>
                                                                     <td><a href={`/data/${items?.id}`}>{items?.dataset}</a></td>
