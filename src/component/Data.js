@@ -449,7 +449,7 @@ const Data = () => {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {
+                                                     {
                                                         datasetlist?.map((items, index) => {
                                                             return (
                                                                 <tr key={items?.id}>
@@ -466,7 +466,7 @@ const Data = () => {
                                                                 </tr>
                                                             )
                                                         })
-                                                    }
+                                                    } 
                                                 </tbody>
                                             </table>
                                         </div>
